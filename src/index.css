@@ -1,226 +1,123 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
-
-[data-theme='dark'] {
-  --background-header: #121212; 
-  --background: #121212; 
-  --text: #f9f7f7d3;
-  --button-mode: #ecd46a;
-  --menu-hamburguesa: rgb(69, 71, 90);
-  --hover-menu-h: color-mix(in srgb, var(--menu-hamburguesa), white 10%);
-  --open-work-back: rgb(204, 244, 204, 0.10);
-  --open-work-text: #166534;
-  --open-work-border: #166534;
-}
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Concert+One&display=swap');
 
 [data-theme='light'] {
-  --background-header: color-mix(in srgb, var(--background), white 10%);
-  --background: #e6e6cc;
-  --text: #000000;
-  --button-mode: rgb(168, 168, 250);
-  --menu-hamburguesa: #ffffff;
-  --hover-menu-h: color-mix(in srgb, var(--menu-hamburguesa), black 10%);
-  --open-work-back: #5faa76;
-  --open-work-text: #f9f7f7d3;
-  --open-work-border: #5faa76;
+  --title-font: "Acme", sans-serif;
+  --text-font: "Inter", sans-serif;
+  --color1: #fff;
+  --backgroundApp: #f4f4f4;
+  --colorPortafolioBtn: #0BB89E;
 }
 
+[data-theme='dark'] {
+  --title-font: "Acme", sans-serif;
+  --text-font: "Inter", sans-serif;
+}
+
+/*APP*/
 .main-container{
-    background-color: var(--background);
-}
-
-.body-field{
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
+  background-color: var(--backgroundApp);
   width: 100%;
+  min-height: 100vh;
 }
 
-/*HEADER*/
 
-.header-container {
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: var(--background-header);
-  color: var(--text);
-  backdrop-filter: blur(12px) saturate(150%);
+/*CABECERA*/
+.header-container{
   display: flex;
+  background-color: var(--color1);
+  width: 100%;
+  height: 60px;
+}
+
+.lista-cabecera{
+  display: flex;
+  margin-top: 1.2em;
+  margin-bottom: 1.2em;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  gap: 150px;
-  padding: 7px; 
-  z-index: 9999;
 }
 
-.header-name {
-  font-family: 'Concert One', sans-serif;
-  font-size: 1.6rem;
-  text-transform: uppercase;
-  letter-spacing: -1.5px;
-  margin: 0;
+.elemento-cabecera{
+  padding: 40px;
+  font-family: var(--text-font);
+  font-size: 1.2em;
 }
 
-.header-nav {
+.nombre-cabecera{
+  padding-right: 70px;
+  font-family: var(--title-font);
+  font-size: 2em;
+}
+
+.boton-cabecera{
+  padding-left: 70px;
+  font-family: var(--title-font);
+  font-size: 2em;
+}
+
+/*BIO*/
+.bio-contenedor{
+  flex: 1;
+}
+
+.perfil{
+  padding: 4em;
+  font-family: var(--title-font);
   display: flex;
-  align-items: center;
-  gap: 25px;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 40%;
 }
 
-.header-link {
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-  color: var(--text);
-  text-decoration: none;
-  padding: 5px;
-  transition: all 0.3s ease;
+.perfil > h1{
+  font-size: xx-large;
 }
 
-.header-nav a:hover{
-    text-decoration: underline;
-    text-underline-offset: 2px;
+.perfil > h2{
+  font-size: x-large;
 }
 
-.change-mode {
-  padding: .5em;
-  border-radius: .5em;
-  background-color: var(--button-mode);
-  cursor: pointer;
-  border: none;
-}
-
-.hamburger-btn {
-  display: none;
-}
-
-.header-actions {
+.trabajo{
   display: flex;
-  align-items: center;
-  gap: 15px; /* Espacio entre el sol/luna y el libro */
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+  width: 32%;
+  font-family: var(--text-font);
+  text-indent: 30px;
+  font-size: large;
+  padding-bottom: 4em;
 }
 
-/*DATA*/
-.data-wrapper {
-  display: flex;
-  width: 80%;
-  max-width: 550px;
-  padding: 2rem;
-  justify-content: space-between;
-  background-color: var(--background);
-  color: var(--text);
-  text-align: left; 
-}
-
-.name-user{
-  color: var(--text);
-  font-family: 'Concert One', sans-serif;
-  font-size: 2.4rem;
-  text-transform: uppercase;
-  letter-spacing: -1.5px;
-  margin: 0;
-}
-
-.text-data-name p {
-    margin-bottom: 8px;
-}
-
-.work-state{
-    padding: .3em .4em;
-    color: var(--open-work-text);
-    border: 1px solid var(--open-work-border);
-    border-radius: .8em;
-    background-color: var(--open-work-back);
-}
-
-.foto{
-    margin-top: 10px;
-    width: 120px;
-    height: 120px;
-    border-radius: 10em;
-    margin-right: 0;
-}
-
-/*PROJECTS*/
-.projects-container {
-  display: block;
-  width: 80%;
-  max-width: 550px;
-  padding: 2rem;
-  justify-content: space-between;
-  background-color: var(--background);
-  color: var(--text);
-}
-
-.projects-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  justify-items: center;
+.botonPortafolio{
+  margin-top: 4em;
   text-align: center;
+  font-family: var(--text-font);
+}
+
+.botonPortafolio > button{
+  width: 180px;
+  height: 60px;
+  border-radius: .5em;
+  background-color: var(--colorPortafolioBtn);
+  color: var(--color1);
+}
+
+img{
+  width: 50px;
+  height: 50px;
+  border-radius: 5em;
+}
+
+/*FOOTER*/
+.footer-container{
+  display: flex;
+  justify-content: center;
   width: 100%;
-}
-
-.projects-name{
-  text-align: left;
-  font-size: 1.4em;
-  font-family: 'Concert One', sans-serif;
-  color: var(--text);
-}
-
-
-@media (max-width: 800px) { 
-  /*HEADER*/
-  .header-container {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: var(--background);
-    color: var(--text);
-    backdrop-filter: blur(12px) saturate(250%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px;
-    z-index: 9999;
-  }
-
-  .header-nav .header-link {
-    width: 100%;
-    padding: 5px 20px;
-    text-align: left;
-    box-sizing: border-box;
-  }
-
-  .header-link:hover {
-    background-color: var(--hover-menu-h);
-  }
-
-  .hamburger-btn {
-    display: flex;
-    flex-direction: column;
-    z-index: 10000;
-    padding: .5em;
-  }
-
-  .header-nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    background-color: var(--menu-hamburguesa);
-    padding: 10px 0;
-    margin-right: 10px;
-    border: 2px solid blcak;
-    border-radius: .2em;
-  }
-
-  .header-nav.is-open {
-    display: flex;
-  }
+  font-family: var(--title-font);
 }

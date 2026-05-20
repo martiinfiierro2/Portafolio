@@ -1,34 +1,34 @@
 import React, { useState, useEffect } from 'react';
 
 export default function Header() {
-  const [isDark, setIsDark] = useState(true);
+  const [isMode, setIsMode] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const themeValue = isDark ? 'dark' : 'light';
+    const themeValue = isMode ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', themeValue);
     console.log("Tema actual:", themeValue);
-  }, [isDark]);
+  }, [isMode]);
 
   return (
     <div className="header-container">
-      <span className="header-name">Martín Fierro</span>
-
-      <nav className={`header-nav ${isOpen ? 'is-open' : ''}`}>
-        <a href="#proyectos" className="header-link" onClick={() => setIsOpen(false)}>Proyectos</a>
-        <a href="#redes" className="header-link" onClick={() => setIsOpen(false)}>Linkedin</a>
-        <a href="#redes" className="header-link" onClick={() => setIsOpen(false)}>Github</a>
-      </nav>
-
-      <div className="header-actions">
-        <button className="change-mode" onClick={() => setIsDark(!isDark)}>
-            {isDark ? '☀️' : '🌙'}
-        </button>
-
-        <button className="hamburger-btn" onClick={() => setIsOpen(!isOpen)}>
-          📖
-        </button>
-      </div>
+      <ul className="lista-cabecera">
+        <li className="nombre-cabecera">
+          <a>Martín Fierro</a>
+        </li>
+        <li className="elemento-cabecera">
+          <a>Proyectos</a>
+        </li>
+        <li className="elemento-cabecera">
+          <a>LindenIn</a>
+        </li>
+        <li className="elemento-cabecera">
+          <a>GitHub</a>
+        </li>
+        <li className="boton-cabecera">
+          <button>Claro/Oscuro</button>
+        </li>
+      </ul>
     </div>
   );
 }
