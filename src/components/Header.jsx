@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Header() {
   const [isMode, setIsMode] = useState(true);
@@ -14,10 +15,10 @@ export default function Header() {
     <div className="header-container">
       <ul className="lista-cabecera">
         <li className="nombre-cabecera">
-          <a>Martín Fierro</a>
+          <Link to="/">Martín Fierro</Link>
         </li>
         <li className="elemento-cabecera">
-          <a>Proyectos</a>
+          <NavLink to="/proyectos">Proyectos</NavLink>
         </li>
         <li className="elemento-cabecera">
           <a>LindenIn</a>

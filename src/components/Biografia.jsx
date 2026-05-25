@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-export default function Bio() {
+export default function Biografia() {
   return (
     <div className="bio-container">
         <div className="perfil">

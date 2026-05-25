@@ -1,15 +1,15 @@
 import React from 'react';
-import { motion } from 'framer-motion';
-import Header from './Header';
-import Footer from './Footer';
-import Bio from './Bio';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import MiPage from './pages/miPage';
+import Proyectos from './pages/proyectos';
 
 export default function App() {
   return (
-    <div className="main-container">
-      <Header />
-      <Bio />
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={ <MiPage/> }/>
+        <Route path="proyectos" element={ <Proyectos/> }/>
+      </Routes>
+    </BrowserRouter>
   );
 }
