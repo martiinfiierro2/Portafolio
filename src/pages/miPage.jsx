@@ -4,7 +4,7 @@ import Header from '../components/Header';
 
 export default function MiPage() {
   return (
-    <div>
+    <div className='main-container'>
         <Header />
         <Biografia />
         <Footer />

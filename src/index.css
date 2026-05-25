@@ -60,18 +60,22 @@
 }
 
 /*BIO*/
-.bio-contenedor{
-  flex: 1;
+.bio-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
 }
 
 .perfil{
-  padding: 4em;
+  padding-top: 2em;
+  padding-bottom: 6em;
   font-family: var(--title-font);
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto;
-  width: 40%;
 }
 
 .perfil > h1{
@@ -85,13 +89,14 @@
 .trabajo{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  margin: auto;
-  width: 32%;
   font-family: var(--text-font);
   text-indent: 30px;
   font-size: large;
   padding-bottom: 4em;
+}
+
+.trabajo > p{
+  padding-bottom: 3em;
 }
 
 .botonPortafolio{
@@ -120,4 +125,47 @@ img{
   justify-content: center;
   width: 100%;
   font-family: var(--title-font);
+}
+
+/*PROYECTOS*/
+.proyectos-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.titulo-proyectos{
+  font-family: var(--title-font);
+  font-size: xx-large; 
+  padding-top: 1em;
+}
+
+.grid-proyectos {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+  padding: 3em;
+}
+
+.tarjeta-proyecto > h2{
+  font-family: var(--title-font);
+}
+
+.botonVerMas{
+  margin-top: 2em;
+  text-align: center;
+  font-family: var(--text-font);
+}
+
+.botonVerMas > button{
+  width: 100px;
+  height: 40px;
+  border-radius: .5em;
+  background-color: var(--colorPortafolioBtn);
+  color: var(--color1);
 }

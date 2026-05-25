@@ -1,12 +1,13 @@
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import ListaProyectos from '../components/ListaProyectos';
 
 export default function Proyectos() {
   return (
-    <div>
-        <Header />
-        <p>Proyectos</p>
-        <Footer />
+    <div className='main-container'>
+      <Header />
+      <ListaProyectos />
+      <Footer />
     </div>
   );
 }
