@@ -7,6 +7,7 @@
   --color1: #fff;
   --backgroundApp: #f4f4f4;
   --colorPortafolioBtn: #0BB89E;
+  --tarjetaTitulo: #fff;
 }
 
 [data-theme='dark'] {
@@ -113,7 +114,7 @@
   color: var(--color1);
 }
 
-img{
+.imgPerfil{
   width: 50px;
   height: 50px;
   border-radius: 5em;
@@ -144,15 +145,16 @@ img{
 }
 
 .grid-proyectos {
-  text-align: center;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
   width: 100%;
-  padding: 3em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
 }
 
 .tarjeta-proyecto > h2{
+  margin: 0;
   font-family: var(--title-font);
 }
 
@@ -160,6 +162,51 @@ img{
   margin-top: 2em;
   text-align: center;
   font-family: var(--text-font);
+}
+
+/*TARJETA PROYECTO*/
+.tarjeta-proyecto{
+  display:flex;
+  flex-direction: column;
+}
+
+.imagenTitulo{
+  border-radius: 1em 1em 0 0;
+  overflow: hidden;
+}
+
+.imgTitulo > img{
+  width: 100%;
+  height: 30%;
+  object-fit: cover;
+  object-fit: cover;
+}
+
+.imagenTitulo > h2{
+  display: flex;
+  background-color: var(--tarjetaTitulo);
+  font-family: var(--title-font);
+  font-size: large;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  height: 40px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.botonVerMas{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+.botonVerMas > p{
+  width: 220px;
+  padding-top: 1em;
+  padding-bottom: 1em;
 }
 
 .botonVerMas > button{

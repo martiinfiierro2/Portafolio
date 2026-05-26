@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const misProyectos = [
-  { id: 1, titulo: "E-commerce Tech", descripcion: "weytvdkwevkcdfvwlejhvflj", foto: "..." },
-  { id: 2, titulo: "App Clima", descripcion: "ervhlwehrcvlhjw dhc lhj weljh lwehj chjlw", foto: "..." },
-  { id: 3, titulo: "App Clima", descripcion: "ervhlwehrcvlhjw dhc lhj weljh lwehj chjlw", foto: "..." },
-  { id: 4, titulo: "App Clima", descripcion: "ervhlwehrcvlhjw dhc lhj weljh lwehj chjlw", foto: "..." }
+  { id: 1, titulo: "E-commerce Tech", descripcion: "weytvdkwevkcdfvwlejhvflj", foto: "/img/sistemaDistribuido.png" },
+  { id: 2, titulo: "App Clima", descripcion: "ervhlwehrcvlhjw dhc lhj weljh lwehj chjlw", foto: "/img/sistemaDistribuido.png" },
+  { id: 3, titulo: "App Clima", descripcion: "ervhlwehrcvlhjw dhc lhj weljh lwehj chjlw", foto: "/img/sistemaDistribuido.png" },
+  { id: 4, titulo: "App Clima", descripcion: "ervhlwehrcvlhjw dhc lhj weljh lwehj chjlw", foto: "/img/sistemaDistribuido.png" }
 ];
 
 export default function ListaProyectos() {
@@ -24,11 +24,11 @@ export function TarjetaProyecto({ proyecto }) {
   return (
     <div className="tarjeta-proyecto">
       <div className='imagenTitulo'>
-        <img src={proyecto.foto} alt={proyecto.titulo} />
+        <img src='../img/sistemaDistribuido.png' alt={proyecto.titulo} />
         <h2>{proyecto.titulo}</h2>
       </div>
-      <p>{proyecto.descripcion}</p>
       <div className='botonVerMas'>
+        <p>{proyecto.descripcion}</p>
         <button>Ver más</button>
       </div>
     </div>

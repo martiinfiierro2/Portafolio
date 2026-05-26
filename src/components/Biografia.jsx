@@ -7,7 +7,7 @@ export default function Biografia() {
             <h1>Martín Fierro</h1>
             <h2>Junior Software Developer</h2>
             <div>
-                <img src="./img/martin.jpg"/>
+                <img className='imgPerfil' src="/img/martin.jpg"/>
             </div>
         </div>
         <div className="trabajo">
