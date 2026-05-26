@@ -65,59 +65,61 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: auto;
+  margin: auto;
   width: 40%;
 }
 
 .perfil{
-  padding-top: 2em;
   padding-bottom: 6em;
   font-family: var(--title-font);
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.perfil > h1{
+.texto-perfil{
+  display: flex;
+  flex-direction: column; 
+}
+
+.texto-perfil > h1{
   font-size: xx-large;
 }
 
-.perfil > h2{
+.texto-perfil > h2{
   font-size: x-large;
+}
+
+.imgPerfil {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
 
 .trabajo{
   display: flex;
   flex-direction: column;
   font-family: var(--text-font);
-  text-indent: 30px;
   font-size: large;
   padding-bottom: 4em;
 }
 
 .trabajo > p{
   padding-bottom: 3em;
+  text-indent: 30px;
 }
 
-.botonPortafolio{
-  margin-top: 4em;
-  text-align: center;
-  font-family: var(--text-font);
-}
-
-.botonPortafolio > button{
-  width: 180px;
-  height: 60px;
-  border-radius: .5em;
+.botonPortafolio {
+  display: inline-flex;
+  justify-content: center; 
+  align-items: center;
+  text-decoration: none;
   background-color: var(--colorPortafolioBtn);
   color: var(--color1);
-}
-
-.imgPerfil{
-  width: 50px;
-  height: 50px;
-  border-radius: 5em;
+  width: 160px;
+  height: 60px;
+  border-radius: 0.5em;
+  margin: auto;
 }
 
 /*FOOTER*/

@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Biografia() {
   return (
     <div className="bio-container">
         <div className="perfil">
-            <h1>Martín Fierro</h1>
-            <h2>Junior Software Developer</h2>
-            <div>
+            <div className="texto-perfil">
+                <h1>Martín Fierro</h1>
+                <h2>Junior Software Developer</h2>
+            </div>
+            <div className="contenedor-img">
                 <img className='imgPerfil' src="/img/martin.jpg"/>
             </div>
         </div>
@@ -15,9 +18,9 @@ export default function Biografia() {
                 desde el diseño de la interfaz hasta el código del backend en sus proyectos personales. 
                 Cuando no está programando, disfruta del deporte en general. 
             </p>
-            <div className='botonPortafolio'>
-                <button>Mi Portafolio</button>
-            </div>
+            <NavLink to='/proyectos' className='botonPortafolio'>
+                Mi Portafolio
+            </NavLink>
         </div>
     </div>
   );
