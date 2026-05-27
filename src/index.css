@@ -218,3 +218,67 @@
   background-color: var(--colorPortafolioBtn);
   color: var(--color1);
 }
+
+/*PROYECTO INDIVIDUAL*/
+.tecnologias-container{
+  display: flex;
+  margin: 1em 1em 1em 1em;
+}
+
+.lista-data > li{
+  display: flex;
+  padding-left: 40px;
+}
+
+.lista-content{
+  padding-left: 0.5em;
+}
+
+.tecnologias{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.5em;
+}
+
+.tecnologias > label{
+  background-color: #0BB89E;
+  color: #ffffff;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-radius: 1em;
+  margin-left: 0.5em;
+}
+
+.proyecto-data{
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%; 
+  justify-content: space-between;
+}
+
+.proyecto-data > h1{
+  font-family: var(--title-font);
+  font-size: xx-large;
+  padding-top: 1em;
+}
+
+.proyecto-data > p{
+  font-family: var(--text-font);
+  text-indent: 30px;
+  padding-top: 1em;
+}
+
+.img-container{
+  display:flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.img-container > img{
+  border-radius: 1em;
+  width: 600px;
+  height: 300px;
+  margin: 0.5em;
+}

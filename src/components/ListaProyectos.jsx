@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
 const misProyectos = [
   { id: 1, titulo: "E-commerce Tech", descripcion: "weytvdkwevkcdfvwlejhvflj", foto: "/img/sistemaDistribuido.png" },
@@ -29,7 +30,7 @@ export function TarjetaProyecto({ proyecto }) {
       </div>
       <div className='botonVerMas'>
         <p>{proyecto.descripcion}</p>
-        <button>Ver más</button>
+        <NavLink to={`${proyecto.id}`}>Ver más</NavLink>
       </div>
     </div>
   );
