@@ -173,8 +173,17 @@
 }
 
 .imagenTitulo{
+  width: 100%;
+  height: 250px;
   border-radius: 1em 1em 0 0;
   overflow: hidden;
+}
+
+
+.imagenTitulo > img {
+  width: 100%;
+  height: 85%;
+  object-fit: cover; /* Evita que se estire */
 }
 
 .imgTitulo > img{
@@ -211,9 +220,10 @@
   padding-bottom: 1em;
 }
 
-.botonVerMas > button{
+.botonVerMasNavLink{
   width: 100px;
   height: 40px;
+  padding: 0.5em;
   border-radius: .5em;
   background-color: var(--colorPortafolioBtn);
   color: var(--color1);
