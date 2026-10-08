@@ -16,6 +16,6 @@ export default function ProfileScreen() {
       </div>
       {!profile.cvUrl && <p className="availability-note" id="cv-note">El CV estará disponible aquí.</p>}
     </div>
-    <div className="screen-hint"><Sparkles size={17} /><span>Explora las memorias del selector. La conexión estará disponible próximamente.</span></div>
+    <div className="screen-hint"><Sparkles size={17} /><span>Selecciona una memoria para explorar los proyectos.</span></div>
   </div>;
 }

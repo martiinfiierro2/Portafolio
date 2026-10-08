@@ -1,8 +1,8 @@
-// Proyectos de muestra para desarrollar el selector; sustituir por proyectos reales.
+// Contenido ficticio y marcado como ejemplo. No enlazar demos o repositorios inventados.
 export const projects = [
-  { id: 'tienda', title: 'Tienda', color: 'mint', icon: 'shop' },
-  { id: 'gestor', title: 'Gestor', color: 'lavender', icon: 'tasks' },
-  { id: 'juego', title: 'Juego', color: 'rose', icon: 'game' },
-  { id: 'blog', title: 'Blog', color: 'blue', icon: 'notes' },
-  { id: 'dashboard', title: 'Dashboard', color: 'sand', icon: 'chart' },
+  { id: 'tienda', title: 'Tienda', color: 'mint', icon: 'shop', description: 'Ejemplo de una tienda con catálogo de productos y carrito de compra.', technologies: ['React', 'Node.js'], previewHeading: 'Nuestro catálogo', previewItems: ['Colección de temporada', 'Productos destacados', 'Tu carrito'] },
+  { id: 'gestor', title: 'Gestor', color: 'lavender', icon: 'tasks', description: 'Ejemplo de una aplicación para organizar tareas y seguir el progreso de un proyecto.', technologies: ['React', 'Node.js'], previewHeading: 'Mis tareas', previewItems: ['Diseñar la interfaz', 'Conectar la API', 'Revisar el proyecto'] },
+  { id: 'juego', title: 'Juego', color: 'rose', icon: 'game', description: 'Ejemplo de un juego web con puntuaciones y partidas desde el navegador.', technologies: ['JavaScript', 'CSS'], previewHeading: 'Elige tu partida', previewItems: ['Nueva partida', 'Mis puntuaciones', 'Cómo jugar'] },
+  { id: 'blog', title: 'Blog', color: 'blue', icon: 'notes', description: 'Ejemplo de un espacio para compartir artículos y aprendizajes de desarrollo.', technologies: ['React', 'CSS'], previewHeading: 'Últimos artículos', previewItems: ['Primeros pasos con React', 'Diseño de componentes', 'Lo que aprendí'] },
+  { id: 'dashboard', title: 'Dashboard', color: 'sand', icon: 'chart', description: 'Ejemplo de un panel de datos con indicadores y seguimiento de actividad.', technologies: ['React', 'JavaScript'], previewHeading: 'Resumen de actividad', previewItems: ['Visitas de la semana', 'Actividad reciente', 'Resultados del mes'] },
 ];
