@@ -100,3 +100,11 @@
 }
 @media (max-width: 400px) { .drive-list .drive-button { width: 155px; } .all-projects-grid { grid-template-columns: 1fr; } }
 @media (min-width: 801px) { .selector-controls.mobile-controls { display: none; } }
+/* En móvil el conector apunta hacia el puerto inferior, con etiquetas derechas. */
+.usb-drive-vertical { display: none; }
+@media (max-width: 800px) {
+  .usb-drive-horizontal { display: none; }
+  .usb-drive-vertical { display: block; height: 200px; width: auto; max-width: 100%; margin-inline: auto; }
+  .drive-list .drive-button { width: 96px; padding-bottom: 18px; }
+  .drive-selected { right: 0; left: 0; justify-content: center; bottom: 2px; }
+}
