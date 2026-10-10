@@ -1,52 +1,95 @@
-# Portafolio de Martín Fierro
+# Portfolio de Martín Fierro
 
-Portafolio en React y Vite con una colección de disquetes: cada disco abre un proyecto. El reproductor ocupa todo el contenedor, con cabecera y ranura visibles y desplazamiento del contenido central cuando hace falta.
+Portfolio personal en React y Vite, con una colección interactiva de tarjetas de proyectos. Esta versión sustituye completamente la interfaz anterior en la rama `cambio_portafolio`. La rama `work` conserva el portfolio anterior.
 
 ## Desarrollo
+
+Requiere Node.js 22.12 o superior y npm. No requiere servicios externos, base de datos, variables de entorno ni credenciales para arrancar.
 
 ```bash
 npm ci
 npm run dev
 ```
 
-La página principal `/` abre el perfil. Los enlaces anteriores `/disquetes` y `/disquetes/` también muestran el portafolio.
+Para verificar y preparar producción:
 
 ```bash
-npm run build
-npm run lint
 npm test
+npm run lint
 npm run format:check
+npm run build
+npm run preview
 ```
 
-El código usa una indentación de dos espacios. Para aplicar el formato automáticamente:
+En el entorno en la nube, si la caché habitual de npm no es escribible:
 
 ```bash
-npm run format
+npm ci --cache /workspace/.npm-cache
+npm run dev -- --host 0.0.0.0
 ```
+
+## Páginas
+
+- `/`: presentación personal, baraja e inspector del proyecto seleccionado.
+- `/projects`: colección, contexto del proyecto y acceso directo al índice.
+- `/projects/:slug`: caso de estudio con ocho secciones y galería.
+- `/cv`: experiencia, formación, habilidades y descarga del CV cuando exista.
+- `/contact`: email, LinkedIn, GitHub y copia del email cuando esté configurado.
 
 ## Organización
 
-- `FloppyPortfolio.jsx`: conecta los datos, el reproductor y los componentes; no implementa sus detalles visuales.
-- `Header.jsx`: marca y navegación. Recibe `name`, `githubUrl`, `view`, `busy` y las acciones `onProfile`, `onProjects`, `onContact`.
-- `Footer.jsx`: créditos, estado y expulsión. Recibe `name`, `disk`, `phase`, `busy`, `onEject`, `onAnimationComplete`.
-- `FloppyReader.jsx`: ranura y animación física; comunica cuándo termina una inserción o expulsión, sin modificar el estado.
-- `PortfolioContent.jsx`: cambio de pantalla, desplazamiento y foco accesible.
-- `views/`: una pantalla por módulo: presentación, colección y detalle del proyecto. Reciben sus datos y acciones mediante props.
-- `ContactDialog.jsx`: diálogo controlado con `open`, `onClose` y `githubUrl`; gestiona su referencia internamente.
-- `src/hooks/useFloppyPlayer.js`: acciones del reproductor. Su reducer mantiene la navegación, el disco activo y las fases de conexión.
-- `src/hooks/playerReducer.test.js`: verifica las transiciones y protege frente a clics y finalizaciones tardías durante las animaciones.
-- `src/components/TechnologyList.jsx`: lista de tecnologías compartida por perfil y proyectos.
-- `src/data/`: información personal y colección de proyectos.
-- `floppy.css` y `src/index.css`: estilos compartidos del reproductor y base de la aplicación.
+```text
+src/
+  App.jsx                         Rutas y estado compartido de selección
+  components/
+    layout/                       Estructura de página y footer
+    navigation/                   Header y menú móvil accesible
+    project-deck/                 Tarjetas, controles, inspector y galería
+    ui/                           Tecnologías, enlaces y esquema de arquitectura
+  data/
+    profile.js                    Datos personales y enlaces
+    projects.js                   Todas las fichas y sus medios
+  hooks/                          Selección, títulos y navegación con transición
+  pages/                          Inicio, proyectos, ficha, CV, contacto y 404
+  styles/                         Estética global, responsive y fuentes locales
+  utils/                          Cálculo circular de la baraja y gestos, con pruebas
+public/
+  covers/                         Ilustraciones conceptuales SVG
+  favicon.svg
+  _redirects                      Fallback SPA para Netlify
+vercel.json                       Fallback SPA para Vercel
+```
 
-Los componentes usan exportaciones por defecto e importaciones sin llaves; el reducer exporta sus funciones por nombre. Los módulos visuales no reciben setters de estado ni referencias internas del reproductor. Para ampliar la colección basta con añadir los datos de un proyecto; la secuencia de conexión se mantiene en un único lugar.
+## Contenido pendiente de completar
 
-## Navegación
+Las cinco fichas iniciales son **muestras**, no proyectos publicados ni una declaración de experiencia real. Sus stacks son orientativos. Las ilustraciones SVG no son capturas de aplicaciones existentes. No se han inventado métricas, empresas, fechas, títulos académicos ni enlaces a demos o repositorios.
 
-El perfil aparece al abrir la página, sin fotografía y con la unidad vacía. No hay un disquete de perfil. «Proyectos» y «Expulsar» llevan a la colección; elegir un disco carga su contenido. «Perfil» vuelve a la presentación. «Contacto» abre un diálogo independiente. La expulsión está desactivada cuando la unidad está vacía.
+En `src/data/profile.js`, completa:
 
-Las animaciones de inserción y expulsión respetan la preferencia de movimiento reducido. El diseño se adapta a escritorio y móvil, y mantiene el tamaño del reproductor al cambiar de pantalla.
+- `email`, `linkedinUrl` y `cvUrl`.
+- `experience`, `education` y las habilidades confirmadas. Las estructuras esperadas se ven en `src/pages/CV.jsx`.
+- Tu presentación y disponibilidad, si quieres ajustar el texto.
 
-La portada usa una composición tipográfica sencilla. La colección muestra disquetes grandes, sin tarjetas alrededor; el nombre, la descripción breve y las tecnologías están en la etiqueta de cada disco. Las fichas de proyecto presentan el contenido directamente. El perfil se abre desde la navegación; si hay un proyecto insertado, primero se expulsa su disquete.
+Para el PDF, puedes guardarlo como `public/cv/martin-fierro.pdf` y configurar `cvUrl: '/cv/martin-fierro.pdf'`.
 
-Los proyectos actuales son ejemplos identificados como tales. Los enlaces de demo, código y CV quedan pendientes hasta añadir contenido real.
+En `src/data/projects.js`, sustituye las muestras por tus proyectos. Cada ficha contiene `slug`, `number`, `title`, `shortDescription`, `fullDescription`, `icon`, `color`, `tint`, `technologies`, `technologyNote`, `type`, `role`, `status`, `year`, `cover`, `coverAlt`, `media`, `problem`, `solution`, `features`, `architecture`, `architectureNote`, `decisions`, `learnings`, `demoUrl`, `repositoryUrl`, `featured` e `isPlaceholder`.
+
+Confirma el contenido antes de establecer `isPlaceholder: false`. Reemplaza los textos pendientes y las imágenes conceptuales, incluida `architectureNote`, la nota de arquitectura del caso de estudio. Usa `technologyNote` para explicar la elección del stack. Los enlaces ausentes se muestran deshabilitados, sin destinos ficticios.
+
+Las entradas de `media` usan `id`, `label`, `type`, `src`, `alt` y `caption`. `type: 'architecture'` utiliza los nodos de `architecture`; `presentation: 'mobile'` presenta una imagen vertical. Guarda capturas optimizadas en `public/projects/` y referencia sus rutas desde los datos. Elimina fichas de muestra que no representen proyectos reales. Para más de siete proyectos, los puntos se sustituyen automáticamente por un selector.
+
+## Interacción y accesibilidad
+
+- Flechas, puntos o selector para cambiar de tarjeta; flechas del teclado y Enter en la baraja.
+- Deslizamiento horizontal en móvil, conservando el scroll vertical.
+- Selección compartida entre Inicio y Proyectos y recordada en `sessionStorage`.
+- Tabs de galería con flechas, Inicio y Fin; menú móvil con cierre por Escape y foco gestionado por un diálogo nativo.
+- Enlaces convencionales para proyectos, CV y contacto; no hay una animación obligatoria para acceder.
+- `prefers-reduced-motion` elimina animaciones. La transición de portada usa View Transitions cuando el navegador la soporta y navegación normal en el resto.
+- Fuentes Manrope y Caveat alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
+
+## Publicación
+
+Ejecuta `npm run build` y publica `dist/`. Vercel y Netlify cuentan con fallback incluido para permitir abrir o recargar rutas como `/projects/calendar`. En otros servidores, configura las rutas desconocidas para devolver `index.html`; no sustituyas los archivos estáticos existentes. GitHub Pages requiere configurar explícitamente rutas y base si se publica bajo un subdirectorio.
+
+No hay un formulario que simule envíos: Contacto usa enlaces directos. Añadir un formulario requiere conectar un servicio real y sus estados de envío.
