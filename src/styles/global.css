@@ -2231,7 +2231,7 @@ h3,
   }
 }
 
-/* Frosted-glass objects in a white, three-dimensional carousel. */
+/* Clear glass objects: transparent faces, polished edges and specular highlights. */
 .collection-section .project-deck {
   max-width: 1100px;
 }
@@ -2246,14 +2246,14 @@ h3,
 .collection-section .project-card {
   border: 1px solid #ffffffd9;
   border-radius: 22px;
-  background: linear-gradient(135deg, #ffffffe0 0%, #edf2f794 42%, #cbd5e159 100%);
-  -webkit-backdrop-filter: blur(18px) saturate(0.6);
-  backdrop-filter: blur(18px) saturate(0.6);
+  background: linear-gradient(135deg, #ffffff38 0%, #e5ecf208 42%, #a9bbd326 100%);
+  -webkit-backdrop-filter: blur(1.5px) saturate(1.2);
+  backdrop-filter: blur(1.5px) saturate(1.2);
   box-shadow:
-    3px 4px 0 #b6c2d161,
-    0 18px 32px #2428311a,
-    inset 0 1px 0 #ffffffed,
-    inset -1px -2px 0 #8b9dbd1a;
+    3px 4px 0 #90a6c133,
+    0 22px 40px #28374b14,
+    inset 1px 1px 0 #ffffff,
+    inset -1px -2px 2px #8197b033;
   transform-origin: 50% 50%;
 }
 .collection-section .project-card::after {
@@ -2261,38 +2261,39 @@ h3,
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: linear-gradient(115deg, #ffffff52 0%, #ffffff0a 30%, transparent 48%, #ffffff38 100%);
+  background: linear-gradient(135deg, #7189a014, transparent 16%, transparent 80%, #617e9f1a);
   border: 1px solid #ffffffcc;
-  border-right: 2px solid #a5b4c552;
-  border-bottom: 2px solid #a5b4c561;
+  border-right: 3px solid #8b9eb466;
+  border-bottom: 3px solid #8b9eb46b;
   border-radius: inherit;
   pointer-events: none;
 }
 .collection-section .project-card.active {
   border-color: #bdc9d7a6;
   box-shadow:
-    3px 5px 0 #afbed073,
-    0 25px 42px #2428311f,
-    inset 0 1px 0 #ffffff;
+    4px 5px 0 #8fa6c14d,
+    0 28px 48px #28374b1c,
+    inset 1px 1px 0 #ffffff,
+    inset -2px -2px 3px #7e95ae33;
 }
 .collection-section .card-cover {
-  background: #d5dfe826;
-  border-bottom: 1px solid #a9b9ca38;
+  background: transparent;
+  border-bottom: 1px solid #a9b9ca26;
 }
 .collection-section .card-cover img {
   filter: grayscale(1) contrast(0.9) brightness(1.06);
   opacity: 0.76;
 }
 .collection-section .card-body {
-  background: #ffffff38;
+  background: transparent;
 }
 .collection-section .card-icon {
-  background: #9caec333;
+  background: #9caec31a;
   color: #434a56;
 }
 .collection-section .card-number {
-  background: #ffffffa6;
-  border-color: #adbdcf66;
+  background: #ffffff26;
+  border-color: #adbdcf4d;
   color: #343841;
 }
 .collection-section .card-open {
@@ -2317,15 +2318,17 @@ h3,
   }
   .collection-section .project-card {
     box-shadow:
-      2px 3px 0 #b6c2d161,
-      0 15px 25px #2428311a,
-      inset 0 1px 0 #ffffffed;
+      2px 3px 0 #90a6c133,
+      0 18px 30px #28374b14,
+      inset 1px 1px 0 #ffffff,
+      inset -1px -2px 2px #8197b033;
   }
   .collection-section .project-card.active {
     box-shadow:
-      2px 4px 0 #afbed073,
-      0 20px 32px #2428311f,
-      inset 0 1px 0 #ffffff;
+      3px 4px 0 #8fa6c14d,
+      0 24px 38px #28374b1c,
+      inset 1px 1px 0 #ffffff,
+      inset -2px -2px 3px #7e95ae33;
   }
   .collection-section .deck-note {
     max-width: 280px;
@@ -2346,7 +2349,7 @@ h3,
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .collection-section .project-card {
-    background: #edf1f6;
+    background: #eef3f533;
   }
 }
 
@@ -2357,4 +2360,40 @@ h3,
 }
 .collection-section .card-number {
   z-index: 3;
+}
+
+.collection-section .project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  pointer-events: none;
+  background:
+    radial-gradient(
+      ellipse 220px 160px at var(--glare-x, 30%) var(--glare-y, 15%),
+      #ffffffb3,
+      transparent 75%
+    ),
+    linear-gradient(
+      120deg,
+      transparent 10%,
+      #ffffffa6 11%,
+      #ffffff14 15%,
+      transparent 16%,
+      transparent 49%,
+      #ffffffb3 50%,
+      #ffffff26 53%,
+      transparent 54%
+    );
+}
+.glass-card-emblem {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: #66788b;
+  filter: drop-shadow(0 1px 0 #ffffff) drop-shadow(1px 2px 1px #788ba633);
+}
+.glass-card-emblem svg {
+  stroke-width: 1.15;
 }

@@ -15,6 +15,22 @@ export default function ProjectCard({ project, position, spacing = 310, onSelect
         zIndex: 10 - Math.abs(position),
         visibility: visible ? 'visible' : 'hidden',
       }}
+      onPointerMove={(event) => {
+        if (reduced) return;
+        const bounds = event.currentTarget.getBoundingClientRect();
+        event.currentTarget.style.setProperty(
+          '--glare-x',
+          `${((event.clientX - bounds.left) / bounds.width) * 100}%`,
+        );
+        event.currentTarget.style.setProperty(
+          '--glare-y',
+          `${((event.clientY - bounds.top) / bounds.height) * 100}%`,
+        );
+      }}
+      onPointerLeave={(event) => {
+        event.currentTarget.style.removeProperty('--glare-x');
+        event.currentTarget.style.removeProperty('--glare-y');
+      }}
       initial={false}
       animate={{
         x: position * spacing,
@@ -40,14 +56,9 @@ export default function ProjectCard({ project, position, spacing = 310, onSelect
         className="card-cover"
         style={{ viewTransitionName: active ? 'project-cover' : 'none' }}
       >
-        <img
-          src={project.cover}
-          alt=""
-          width="640"
-          height="480"
-          loading={visible ? 'eager' : 'lazy'}
-          decoding="async"
-        />
+        <span className="glass-card-emblem">
+          <ProjectIcon name={project.icon} size={86} />
+        </span>
         <span className="card-number">{project.number}</span>
       </span>
       <span className="card-body">
