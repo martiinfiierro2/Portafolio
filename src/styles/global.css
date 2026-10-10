@@ -2231,7 +2231,7 @@ h3,
   }
 }
 
-/* Opaque graphite objects in a white, three-dimensional carousel. */
+/* Frosted-glass objects in a white, three-dimensional carousel. */
 .collection-section .project-deck {
   max-width: 1100px;
 }
@@ -2244,12 +2244,16 @@ h3,
   cursor: grabbing;
 }
 .collection-section .project-card {
-  border: 1px solid #b4b8c0;
+  border: 1px solid #ffffffd9;
   border-radius: 22px;
-  background: #dfe2e7;
+  background: linear-gradient(135deg, #ffffffe0 0%, #edf2f794 42%, #cbd5e159 100%);
+  -webkit-backdrop-filter: blur(18px) saturate(0.6);
+  backdrop-filter: blur(18px) saturate(0.6);
   box-shadow:
-    5px 6px 0 #b0b4bc,
-    0 18px 30px #2428311f;
+    3px 4px 0 #b6c2d161,
+    0 18px 32px #2428311a,
+    inset 0 1px 0 #ffffffed,
+    inset -1px -2px 0 #8b9dbd1a;
   transform-origin: 50% 50%;
 }
 .collection-section .project-card::after {
@@ -2257,35 +2261,38 @@ h3,
   position: absolute;
   inset: 0;
   z-index: 2;
-  border: 1px solid #f9fafb;
-  border-right: 3px solid #bac0c8;
-  border-bottom: 3px solid #bdc2ca;
+  background: linear-gradient(115deg, #ffffff52 0%, #ffffff0a 30%, transparent 48%, #ffffff38 100%);
+  border: 1px solid #ffffffcc;
+  border-right: 2px solid #a5b4c552;
+  border-bottom: 2px solid #a5b4c561;
   border-radius: inherit;
   pointer-events: none;
 }
 .collection-section .project-card.active {
-  border-color: #979da8;
+  border-color: #bdc9d7a6;
   box-shadow:
-    6px 7px 0 #a5abb5,
-    0 25px 42px #24283124;
+    3px 5px 0 #afbed073,
+    0 25px 42px #2428311f,
+    inset 0 1px 0 #ffffff;
 }
 .collection-section .card-cover {
-  background: #d3d6dc;
-  border-bottom: 1px solid #bfc4cc;
+  background: #d5dfe826;
+  border-bottom: 1px solid #a9b9ca38;
 }
 .collection-section .card-cover img {
-  filter: grayscale(1) contrast(0.95);
+  filter: grayscale(1) contrast(0.9) brightness(1.06);
+  opacity: 0.76;
 }
 .collection-section .card-body {
-  background: #dfe2e7;
+  background: #ffffff38;
 }
 .collection-section .card-icon {
-  background: #ccd1d9;
+  background: #9caec333;
   color: #434a56;
 }
 .collection-section .card-number {
-  background: #f0f2f5;
-  border-color: #bcc2cc;
+  background: #ffffffa6;
+  border-color: #adbdcf66;
   color: #343841;
 }
 .collection-section .card-open {
@@ -2310,13 +2317,15 @@ h3,
   }
   .collection-section .project-card {
     box-shadow:
-      4px 5px 0 #b0b4bc,
-      0 15px 25px #2428311f;
+      2px 3px 0 #b6c2d161,
+      0 15px 25px #2428311a,
+      inset 0 1px 0 #ffffffed;
   }
   .collection-section .project-card.active {
     box-shadow:
-      5px 6px 0 #a5abb5,
-      0 20px 32px #24283124;
+      2px 4px 0 #afbed073,
+      0 20px 32px #2428311f,
+      inset 0 1px 0 #ffffff;
   }
   .collection-section .deck-note {
     max-width: 280px;
@@ -2333,4 +2342,19 @@ h3,
 }
 .carousel-track .project-card {
   pointer-events: auto;
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .collection-section .project-card {
+    background: #edf1f6;
+  }
+}
+
+/* Keep the text above the glass reflection layer. */
+.collection-section .card-body > span {
+  position: relative;
+  z-index: 3;
+}
+.collection-section .card-number {
+  z-index: 3;
 }
