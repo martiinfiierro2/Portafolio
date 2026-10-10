@@ -2513,3 +2513,18 @@ h3,
     height: 444px;
   }
 }
+
+/* Morph only the card; render the background in its final state immediately. */
+html[data-transition='project'] {
+  view-transition-name: none;
+}
+html[data-transition='project']::view-transition-group(root) {
+  animation: none;
+}
+html[data-transition='project']::view-transition-old(root) {
+  display: none;
+}
+html[data-transition='project']::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}

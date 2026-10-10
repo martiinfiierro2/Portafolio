@@ -24,7 +24,7 @@ export default function Header({ profile }) {
   const close = () => setMenu({ path: location.pathname, open: false });
   return (
     <>
-      <header className="site-header" style={{ viewTransitionName: 'site-header' }}>
+      <header className="site-header">
         <div className="header-inner">
           <Link to="/" className="brand" onClick={(event) => follow(event, '/')}>
             <span className="wordmark">

@@ -42,7 +42,6 @@ export default function ProjectMedia({ project, large = false }) {
           className="media-frame"
           style={{
             '--project-tint': project.tint,
-            viewTransitionName: large ? 'project-cover' : 'none',
           }}
         >
           <AnimatePresence mode="wait" initial={false}>

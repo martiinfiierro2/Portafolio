@@ -1,7 +1,7 @@
 import { ArrowUpRight } from 'lucide-react';
 export default function Footer({ profile }) {
   return (
-    <footer className="site-footer" style={{ viewTransitionName: 'site-footer' }}>
+    <footer className="site-footer">
       <div className="footer-inner">
         <p className="availability">
           <span aria-hidden="true" />
