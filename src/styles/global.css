@@ -4,17 +4,17 @@
   background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #392b40;
+  --ink: #29382b;
   color-scheme: light;
-  --muted: #65566a;
-  --primary: #a64e38;
-  --primary-hover: #8c3e2c;
-  --background: #e9e1f0;
-  --surface-soft: #f3edf6;
-  --accent-soft: #f3e3dd;
-  --accent: #a64e38;
-  --deep: #884331;
-  --border: #d8cbdf;
+  --muted: #53604c;
+  --primary: #983d59;
+  --primary-hover: #7c2d46;
+  --background: #e6edce;
+  --surface-soft: #f2f5e7;
+  --accent-soft: #f5e4eb;
+  --accent: #983d59;
+  --deep: #7c2d46;
+  --border: #cbd5b6;
   --surface: #ffffff;
 }
 * {
@@ -245,7 +245,7 @@ h1:focus-visible {
   z-index: 50;
   height: 76px;
   border-bottom: 0;
-  background: #e9e1f0eb;
+  background: #e6edceeb;
   border-bottom-color: var(--border);
   backdrop-filter: blur(7px);
 }
@@ -1455,7 +1455,7 @@ h1:focus-visible {
   border-color: var(--border);
 }
 .site-footer {
-  background: #e2d6ea;
+  background: #dce5c3;
   border-top-color: var(--border);
 }
 .site-footer .availability,
@@ -2244,22 +2244,22 @@ h3,
   cursor: grabbing;
 }
 .collection-section .project-card {
-  border: 1px solid #dfd3e5;
+  border: 1px solid #d8dfc8;
   border-radius: 22px;
   background: #ffffff;
   transform-origin: 50% 50%;
 }
 .collection-section .card-cover {
   background: #ffffff;
-  border-bottom: 1px solid #efe8f2;
+  border-bottom: 1px solid #edf0e4;
 }
 .collection-section .card-body {
   background: #ffffff;
 }
 .collection-section .card-number {
-  background: #f5eff8;
-  border-color: #e2d6e8;
-  color: #6b5c70;
+  background: #f3f6e9;
+  border-color: #dce4cb;
+  color: #53604c;
 }
 .collection-section .card-description,
 .collection-section .card-tech {
@@ -2288,7 +2288,7 @@ h3,
   display: grid;
   place-items: center;
   height: 100%;
-  color: #80648a;
+  color: #697c55;
 }
 .card-emblem svg {
   stroke-width: 1.25;
@@ -2312,19 +2312,19 @@ h3,
   inset: 10% -5% -4%;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse at 50% 48%, #d0b5df40 0%, #e4bca22e 38%, transparent 72%);
+  background: radial-gradient(ellipse at 50% 48%, #b9cd8d40 0%, #ecc4ad2e 38%, transparent 72%);
 }
 .collection-section .project-card,
 .collection-section .project-card.active {
   box-shadow:
-    2px 3px 0 #d3c4dc,
-    0 16px 30px #392b4014;
+    2px 3px 0 #c5d0b0,
+    0 16px 30px #29382b14;
 }
 .collection-section .project-card.active {
-  border-color: #a64e3899;
+  border-color: #983d5999;
   box-shadow:
-    2px 3px 0 #dcc4ba,
-    0 18px 34px #392b401a;
+    2px 3px 0 #ddbdc8,
+    0 18px 34px #29382b1a;
 }
 .collection-section .card-cover {
   height: 208px;
@@ -2428,21 +2428,21 @@ html[data-transition='project']::view-transition-new(root) {
   mix-blend-mode: normal;
 }
 
-/* Lila & clay: broad, quiet pigment washes behind solid white objects. */
+/* Pistachio & raspberry: soft botanical washes behind white cards. */
 .site-shell {
   background:
-    radial-gradient(ellipse 70% 36% at 12% 20%, #ddb2c64d, transparent 70%),
-    radial-gradient(ellipse 65% 38% at 92% 62%, #cab3dd66, transparent 72%), var(--background);
+    radial-gradient(ellipse 70% 36% at 12% 20%, #d7e7a24d, transparent 70%),
+    radial-gradient(ellipse 65% 38% at 92% 62%, #b8d49a66, transparent 72%), var(--background);
 }
 .project-dialog::backdrop {
-  background: #392b4080;
+  background: #29382b80;
   backdrop-filter: blur(8px);
 }
 .project-dialog-sheet {
   background: #ffffff;
-  border-color: #e0d3e6;
-  box-shadow: 0 24px 90px #392b402e;
+  border-color: #d8dfc8;
+  box-shadow: 0 24px 90px #29382b2e;
 }
 ::selection {
-  background: #ddb19d66;
+  background: #d8a3b666;
 }
