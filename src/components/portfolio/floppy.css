@@ -641,7 +641,7 @@ body:has(.floppy-portfolio),
 }
 .floppy-slot-lip {
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   top: 35px;
   left: 15px;
   right: 15px;

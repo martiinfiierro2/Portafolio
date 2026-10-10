@@ -47,9 +47,10 @@ export default function FloppyDisk({ disk, compact = false }) {
         <rect x="207" y="93" width="13" height="3" fill={dark} />
         <text
           x="120"
-          y="87"
+          y="85"
           textAnchor="middle"
-          fontSize="10"
+          fontSize="14"
+          fontWeight="500"
           fill="#253340"
           fontFamily="'Segoe UI', system-ui, sans-serif"
         >
