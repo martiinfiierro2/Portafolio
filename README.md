@@ -1,16 +1,34 @@
-# React + Vite
+# Portafolio de Martín Fierro
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio en React y Vite con una colección de disquetes: cada disco abre el perfil o un proyecto. El reproductor ocupa todo el contenedor, con cabecera y ranura visibles y desplazamiento del contenido central cuando hace falta.
 
-Currently, two official plugins are available:
+## Desarrollo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm ci
+npm run dev
+```
 
-## React Compiler
+La página principal `/` abre el perfil. Los enlaces anteriores `/disquetes` y `/disquetes/` también muestran el portafolio.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+npm run lint
+```
 
-## Expanding the ESLint configuration
+## Organización
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/components/portfolio/`: pantallas, disquetes SVG, controles, animaciones y estilos del reproductor.
+- `src/components/TechnologyIcon.jsx`: iconos de las tecnologías.
+- `src/data/profile.js`: información personal y enlace al CV.
+- `src/data/disks.js`: colección y contenido de los proyectos.
+- `src/index.css`: estilos base.
+- `src/img/martin.jpg`: fotografía del perfil.
+
+## Navegación
+
+El perfil aparece al abrir la página. «Proyectos» y «Expulsar» llevan a la colección; elegir un disco carga su contenido. «Perfil» vuelve a la presentación. «Contacto» abre un diálogo independiente. La expulsión está desactivada cuando la unidad está vacía.
+
+Las animaciones de inserción y expulsión respetan la preferencia de movimiento reducido. El diseño se adapta a escritorio y móvil, y mantiene el tamaño del reproductor al cambiar de pantalla.
+
+Los proyectos actuales son ejemplos identificados como tales. Los enlaces de demo, código y CV quedan pendientes hasta añadir contenido real.

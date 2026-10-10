@@ -4,7 +4,7 @@ import { ArrowUpRight, Triangle, X } from 'lucide-react';
 import { profile } from '../../data/profile';
 import { ProfileView, CollectionView, ProjectView } from './FloppyViews';
 import FloppyDisk from './FloppyDisk';
-import { disks } from './data';
+import { disks } from '../../data/disks';
 import './floppy.css';
 
 export default function FloppyPortfolio() {
@@ -52,7 +52,6 @@ export default function FloppyPortfolio() {
           <button className={view !== 'profile' ? 'active' : ''} aria-current={view !== 'profile' ? 'page' : undefined} disabled={busy} onClick={() => load(null)}>Proyectos</button>
           <button onClick={() => contactRef.current.showModal()}>Contacto</button>
         </nav>
-        <a className="floppy-version-link" href="/" aria-label="Ver versión USB">Versión USB <ArrowUpRight size={14} /></a>
       </header>
       <main ref={contentRef} id="floppy-content" className="floppy-content" tabIndex={-1}>
         <Motion.div className="floppy-view" key={view === 'project' ? contentDisk.id : view} initial={{ opacity: reduced ? 1 : 0 }} animate={{ opacity: 1 }} transition={{ duration: reduced ? 0 : .2 }}>

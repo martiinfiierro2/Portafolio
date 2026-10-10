@@ -1,4 +1,4 @@
-/* Todos los estilos retro están aislados de la versión USB. */
+/* Pantallas y controles del portafolio de disquetes. */
 /* El reproductor necesita también todo el espacio de sus contenedores padre. */
 html:has(.floppy-portfolio),
 body:has(.floppy-portfolio),
@@ -19,8 +19,6 @@ body:has(.floppy-portfolio),
 .floppy-portfolio button:disabled { cursor: not-allowed; color: #776b5d; background: #ebe2d680; border-color: #cfc1ad; }
 .floppy-portfolio :focus-visible { outline: 2px solid var(--floppy-rust); outline-offset: 5px; }
 .floppy-portfolio h1:focus-visible { outline-offset: 8px; }
-.floppy-version-link { justify-self: end; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #665c51; font: 12px/1.5 system-ui, sans-serif; white-space: nowrap; }
-.floppy-version-link:hover { color: var(--floppy-rust); }
 .floppy-player { width: 100%; max-width: none; height: 100%; margin: 0; display: grid; grid-template-rows: 64px minmax(0, 1fr) 116px; background: url('../../assets/paper-grain.svg'), linear-gradient(140deg, #f7f0e5, #ede2d1); }
 .floppy-header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 20px; padding-inline: clamp(24px, 3vw, 40px); border-bottom: 1px solid #d2c5b526; }
 .floppy-brand { font-size: 24px; font-weight: 600; letter-spacing: -.06em; white-space: nowrap; }
@@ -116,8 +114,7 @@ body:has(.floppy-portfolio),
 @media (max-width: 800px) {
   .floppy-player { grid-template-rows: 88px minmax(0, 1fr) 156px; }
   .floppy-header { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 36px 44px; padding: 4px 20px; gap: 0 12px; }
-  .floppy-brand { font-size: 22px; }
-  .floppy-version-link { grid-column: 2; grid-row: 1; min-height: 36px; font-size: 11px; }
+  .floppy-brand { grid-column: 1 / -1; text-align: center; font-size: 22px; }
   .floppy-header nav { grid-column: 1 / -1; grid-row: 2; gap: 26px; }
   .floppy-header nav button { min-height: 44px; font-size: 14px; }
   .floppy-profile { grid-template-columns: 1fr; gap: 20px; padding: 20px; }

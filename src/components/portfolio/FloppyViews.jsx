@@ -2,7 +2,7 @@ import { ArrowUpRight, ArrowRight, ArrowLeft } from 'lucide-react';
 import { profile } from '../../data/profile';
 import portrait from '../../img/martin.jpg';
 import FloppyDisk from './FloppyDisk';
-import TechnologyIcon from '../../components/TechnologyIcon';
+import TechnologyIcon from '../TechnologyIcon';
 
 export function ProfileView({ load, busy }) {
   return (
@@ -38,7 +38,7 @@ export function CollectionView({ disks, load, busy }) {
         <p className="floppy-kicker">La colección</p>
         <h1 id="floppy-collection-title" tabIndex={-1}>Un disco, una historia.</h1>
         <p>Elige mi perfil o descubre uno de mis proyectos.</p>
-        <small>Proyectos de muestra para comparar el diseño.</small>
+        <small>Proyectos de muestra · contenido en desarrollo.</small>
       </div>
       <div className="floppy-disk-grid">
         {disks.map((item, index) => (
