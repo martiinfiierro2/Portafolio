@@ -37,7 +37,7 @@ Cormorant Garamond identifica el nombre principal con el apellido en cursiva; Sp
 ## Página única
 
 - `/`: presentación con nombre y profesión; al deslizar, el nombre se difumina y aparece la baraja de proyectos, sin inspector lateral.
-- `/#proyectos`: colección navegable con flechas, teclado y gestos, centrada bajo la cabecera al pulsar Proyectos. Al abrir una tarjeta, el caso de estudio se expande desde sus dimensiones y posición hasta un diálogo sobre la página. View Transitions anima la misma pieza al abrir y al cerrar; los navegadores sin esa API usan una expansión desde la geometría de la carta. Al cerrarlo se recuperan el foco, la tarjeta y la posición de scroll.
+- `/#proyectos`: colección navegable con flechas, teclado y gestos, centrada bajo la cabecera al pulsar Proyectos. Al abrir una tarjeta, el caso de estudio se expande desde sus dimensiones y posición hasta un diálogo sobre la página. Una sola animación de Framer Motion expande el diálogo desde la geometría de la carta y lo devuelve al cerrar. Las aperturas duplicadas se bloquean; Escape puede interrumpir la expansión sin dejar la página bloqueada. El detalle se desplaza dentro de una superficie de altura estable. Al cerrarlo se recuperan el foco, la tarjeta y la posición de scroll.
 - `/#contacto`: contacto al final de la misma página.
 - Las rutas anteriores `/projects` y `/contact` redirigen a sus secciones; `/cv` vuelve al inicio. `/projects/:slug` abre el proyecto sobre la página principal mediante `?project=slug#proyectos`. `/index.html` sigue redirigiendo a Inicio. Las rutas antiguas o no reconocidas vuelven a `/` y sustituyen la entrada del historial, evitando que un enlace guardado deje al visitante en una pantalla 404.
 
@@ -82,12 +82,14 @@ Las entradas de `media` usan `id`, `label`, `type`, `src`, `alt` y `caption`. `t
 
 ## Interacción y accesibilidad
 
+El header muestra un indicador frambuesa del progreso de lectura. Las cartas laterales tienen menor escala, sombras más discretas y símbolos menos saturados; sus textos conservan contraste. El cierre de contacto utiliza una frase grande y únicamente enlaces reales configurados, sin filas de datos pendientes.
+
 - Flechas, puntos o selector para cambiar de tarjeta; flechas del teclado y Enter en la baraja.
 - Deslizamiento horizontal en móvil, conservando el scroll vertical.
 - Selección recordada en `sessionStorage` al volver a la colección de Proyectos.
 - Tabs de galería con flechas, Inicio y Fin; menú móvil con cierre por Escape y foco gestionado por un diálogo nativo.
 - Anclas para acceder a proyectos y contacto en la misma página. El detalle usa un diálogo nativo con cierre por Escape, foco contenido y restauración del foco al cerrar.
-- `prefers-reduced-motion` elimina el desplazamiento animado, el desenfoque y las animaciones de apertura y cierre. El header no tiene separador. El sitio no requiere la API View Transitions para recorrer la colección.
+- `prefers-reduced-motion` elimina el desplazamiento animado, el desenfoque y las animaciones de apertura y cierre. El header no tiene separador. La apertura de las cartas no depende de la API View Transitions.
 - Fuentes Cormorant Garamond, Space Grotesk y DM Sans alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
 
 ## Publicación

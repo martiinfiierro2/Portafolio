@@ -30,6 +30,7 @@ html {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 100px;
+  scrollbar-gutter: stable;
 }
 #root {
   min-height: 100vh;
@@ -1190,64 +1191,6 @@ h1:focus-visible {
   max-width: 900px;
   padding-top: 80px;
 }
-.contact-options {
-  margin-top: 44px;
-}
-.contact-options section {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-  padding: 26px 0;
-  border-bottom: 1px solid var(--border);
-}
-.contact-icon {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: var(--surface-soft);
-  color: var(--deep);
-}
-.contact-options h2 {
-  font-size: 16px;
-  letter-spacing: -0.02em;
-}
-.contact-options p {
-  font-size: 12px;
-  line-height: 1.7;
-  margin-top: 7px;
-}
-.contact-options > section > .button,
-.contact-options > section > .text-link,
-.pending-label {
-  margin-left: auto;
-  flex-shrink: 0;
-}
-.pending-label {
-  font-size: 11px;
-  color: var(--muted);
-}
-.contact-options .text-link {
-  font-size: 12px;
-}
-.copy-button {
-  min-width: 125px;
-}
-.copy-status {
-  min-height: 40px;
-  padding-top: 15px;
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--muted);
-}
-.contact-signoff {
-  font-size: 13px;
-  color: var(--muted);
-  padding-top: 26px;
-}
 .not-found {
   padding-block: 100px;
 }
@@ -1372,9 +1315,6 @@ h1:focus-visible {
   border: 1px solid var(--border);
   border-radius: 14px;
   background: var(--surface);
-}
-.contact-options section {
-  border-color: var(--border);
 }
 .site-footer {
   background: #dce5c3;
@@ -1683,29 +1623,6 @@ html[data-transition='collection']::view-transition-new(portfolio-scene) {
   }
   .narrow-container {
     padding: 36px 24px 55px;
-  }
-  .contact-options {
-    margin-top: 24px;
-  }
-  .contact-options section {
-    flex-wrap: wrap;
-    gap: 14px;
-    padding-block: 22px;
-  }
-  .contact-options > section > div {
-    flex: 1;
-  }
-  .contact-options > section > .button,
-  .contact-options > section > .text-link,
-  .pending-label {
-    margin-left: 62px;
-  }
-  .contact-icon {
-    width: 46px;
-    height: 46px;
-  }
-  .contact-signoff {
-    font-size: 12px;
   }
   .footer-inner {
     padding: 24px;
@@ -2245,31 +2162,6 @@ h3,
 .collection-section .card-tech {
   padding-top: 22px;
 }
-::view-transition-group(project-card) {
-  animation-duration: 0.48s;
-  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-}
-::view-transition-old(project-card) {
-  animation: card-expand-out 0.18s ease-out both;
-  mix-blend-mode: normal;
-}
-::view-transition-new(project-card) {
-  animation: card-expand-in 0.3s 0.06s ease-out both;
-  mix-blend-mode: normal;
-}
-@keyframes card-expand-out {
-  to {
-    opacity: 0;
-  }
-}
-@keyframes card-expand-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 @media (max-width: 767px) {
   .collection-section .card-cover {
     height: 190px;
@@ -2290,14 +2182,6 @@ h3,
     font-size: 22px;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-group(project-card),
-  ::view-transition-old(project-card),
-  ::view-transition-new(project-card) {
-    animation: none;
-  }
-}
-
 /* Size the central card directly so its text stays sharp at rest. */
 .collection-section .project-card.active {
   width: 340px;
@@ -2314,21 +2198,6 @@ h3,
     width: 250px;
     height: 444px;
   }
-}
-
-/* Morph only the card; render the background in its final state immediately. */
-html[data-transition='project'] {
-  view-transition-name: none;
-}
-html[data-transition='project']::view-transition-group(root) {
-  animation: none;
-}
-html[data-transition='project']::view-transition-old(root) {
-  display: none;
-}
-html[data-transition='project']::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
 }
 
 /* Pistachio & raspberry: soft botanical washes behind white cards. */
@@ -2406,6 +2275,103 @@ html[data-transition='project']::view-transition-new(root) {
   background:
     radial-gradient(ellipse at 32% 45%, #fff7dea6, transparent 65%),
     radial-gradient(ellipse at 75% 60%, #adc48959, transparent 67%);
+  mask-image: radial-gradient(ellipse, #000 35%, transparent 72%);
+}
+
+/* Reading progress and a quieter frame around the selected piece. */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--primary);
+  transform-origin: left;
+  pointer-events: none;
+}
+.collection-section .project-card:not(.active) {
+  border-color: #e0e5d7;
+  box-shadow:
+    2px 3px 0 #d5ddc7,
+    0 14px 28px -12px #29382b1a;
+}
+.project-card:not(.active) .card-emblem {
+  filter: saturate(0.45);
+}
+.project-card:not(.active) .card-folio {
+  opacity: 0.1;
+}
+
+/* A single, controlled expansion runs in every browser. */
+.project-dialog-sheet {
+  height: calc(100svh - 48px);
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+.contact-section {
+  max-width: 1440px;
+  width: calc(100% - 96px);
+  margin: 40px auto 0;
+  padding-bottom: 76px;
+  border-radius: 48px 48px 0 0;
+  background: #fff8e1a6;
+}
+.contact-section .contact-page {
+  padding-top: 90px;
+  text-align: center;
+}
+.contact-section .page-heading h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(56px, 6.5vw, 90px);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+.contact-page .page-heading em {
+  color: var(--primary);
+  font-weight: inherit;
+}
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 30px;
+  margin-top: 36px;
+}
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  min-height: 52px;
+  padding: 12px 2px;
+  border-bottom: 1px solid var(--primary);
+  color: var(--primary);
+  font-size: 17px;
+}
+.contact-link svg {
+  transition: transform 0.2s;
+}
+.contact-link:hover svg {
+  transform: translate(3px, -3px);
+}
+@media (max-width: 767px) {
+  .project-dialog-sheet {
+    height: calc(100svh - 16px);
+  }
+  .contact-section {
+    width: calc(100% - 24px);
+    border-radius: 28px 28px 0 0;
+    margin-top: 24px;
+    padding-bottom: 48px;
+  }
+  .contact-section .contact-page {
+    padding: 58px 22px 0;
+  }
+  .contact-section .page-heading h2 {
+    font-size: clamp(48px, 12vw, 66px);
+  }
 }
 @media (max-width: 767px) {
   .intro-ornament {

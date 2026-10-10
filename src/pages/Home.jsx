@@ -9,7 +9,6 @@ import ProjectDeck from '../components/project-deck/ProjectDeck';
 import ProjectDialog from '../components/project-deck/ProjectDialog';
 import Contact from './Contact';
 import usePortfolioNavigation from '../hooks/usePortfolioNavigation';
-import { transition } from '../utils/viewTransition';
 
 export default function Home() {
   useDocumentTitle('Inicio');
@@ -28,21 +27,28 @@ export default function Home() {
     if (opened && selectedSlug !== opened.slug) selectProject(opened.slug);
   }, [opened, selectedSlug, selectProject]);
   const [origin, setOrigin] = useState(null);
+  const opening = useRef(false);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0.65]);
   const filter = useTransform(scrollYProgress, [0, 0.7], ['blur(0px)', 'blur(12px)']);
   function openProject(project) {
+    if (opening.current || opened) return;
+    opening.current = true;
     const card = document.querySelector('.project-card.active');
     const bounds = card?.getBoundingClientRect();
     const rectangle = bounds
-      ? { left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height }
+      ? {
+          left: bounds.left,
+          top: bounds.top,
+          width: bounds.width,
+          height: bounds.height,
+          element: card,
+        }
       : null;
-    transition(() => {
-      selectProject(project.slug);
-      setOrigin(rectangle);
-      setOpened(project);
-    });
+    selectProject(project.slug);
+    setOrigin(rectangle);
+    setOpened(project);
   }
   return (
     <div className="progressive-portfolio">
@@ -110,6 +116,7 @@ export default function Home() {
           project={opened}
           origin={origin}
           onClose={() => {
+            opening.current = false;
             setOpened(null);
             if (location.search)
               navigate({ pathname: '/', hash: location.hash }, { replace: true });

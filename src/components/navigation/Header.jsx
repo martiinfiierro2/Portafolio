@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { m, useReducedMotion } from 'framer-motion';
+import { m, useReducedMotion, useScroll } from 'framer-motion';
 import { Menu, ArrowUpRight } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 import usePortfolioNavigation from '../../hooks/usePortfolioNavigation';
@@ -19,6 +19,7 @@ export default function Header({ profile }) {
   };
   const [menu, setMenu] = useState({ path: location.pathname, open: false });
   const reduced = useReducedMotion();
+  const { scrollYProgress } = useScroll();
   const open = menu.path === location.pathname && menu.open;
   const close = () => setMenu({ path: location.pathname, open: false });
   return (
@@ -69,6 +70,7 @@ export default function Header({ profile }) {
             <Menu size={23} />
           </button>
         </div>
+        <m.div className="scroll-progress" aria-hidden="true" style={{ scaleX: scrollYProgress }} />
       </header>
       <MobileMenu open={open} onClose={close} profile={profile} onNavigate={follow} />
     </>

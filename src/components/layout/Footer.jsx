@@ -8,19 +8,15 @@ export default function Footer({ profile }) {
           {profile.availability}
         </p>
         <div className="footer-links">
-          {profile.email ? (
+          {profile.email && (
             <a href={`mailto:${profile.email}`}>
               Email <ArrowUpRight size={13} />
             </a>
-          ) : (
-            <span>Email pendiente</span>
           )}
-          {profile.linkedinUrl ? (
+          {profile.linkedinUrl && (
             <a href={profile.linkedinUrl} target="_blank" rel="noreferrer">
               LinkedIn <ArrowUpRight size={13} />
             </a>
-          ) : (
-            <span>LinkedIn pendiente</span>
           )}
           <a href={profile.githubUrl} target="_blank" rel="noreferrer">
             GitHub <ArrowUpRight size={13} />

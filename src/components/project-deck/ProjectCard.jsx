@@ -12,7 +12,7 @@ export default function ProjectCard({
   const reduced = useReducedMotion();
   const active = position === 0;
   const visible = Math.abs(position) <= 2;
-  const scale = active ? 1 : 1 - Math.abs(position) * 0.15;
+  const scale = active ? 1 : 1 - Math.abs(position) * 0.18;
   return (
     <m.button
       className={`project-card${active ? ' active' : ''}`}
@@ -20,15 +20,14 @@ export default function ProjectCard({
         '--project-color': project.color,
         '--project-tint': project.tint,
         zIndex: 10 - Math.abs(position),
-        viewTransitionName: active && !detailOpen ? 'project-card' : 'none',
-        visibility: visible ? 'visible' : 'hidden',
+        visibility: visible && !(active && detailOpen) ? 'visible' : 'hidden',
       }}
       initial={false}
       animate={{
         x: position * spacing,
         y: Math.abs(position) * 23,
         scale,
-        z: -Math.abs(position) * 100,
+        z: -Math.abs(position) * 120,
         rotate: 0,
         rotateY: position * -28,
         opacity: 1,
