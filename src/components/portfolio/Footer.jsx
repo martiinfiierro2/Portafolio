@@ -22,7 +22,10 @@ export default function Footer({ name, disk, phase, busy, onEject, onAnimationCo
       <FloppyReader disk={disk} phase={phase} onAnimationComplete={onAnimationComplete} />
       <div className="floppy-console-status">
         <p className="floppy-reading" role="status">
-          <span className={disk ? 'reading-light on' : 'reading-light'} aria-hidden="true" />
+          <span
+            className={`reading-light${disk ? ' on' : ''}${busy ? ' working' : ''}`}
+            aria-hidden="true"
+          />
           {status}
         </p>
         <button className="floppy-eject" disabled={!disk || busy} onClick={onEject}>

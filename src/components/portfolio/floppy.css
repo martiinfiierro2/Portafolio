@@ -698,10 +698,27 @@ body:has(.floppy-portfolio),
   border-radius: 50%;
   background: #888a82;
   box-shadow: inset 0 0 0 1px #0002;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
 }
 .reading-light.on {
   background: #438975;
   box-shadow: 0 0 7px #43897530;
+}
+.reading-light.working {
+  animation: reader-activity 0.7s ease-in-out infinite;
+}
+@keyframes reader-activity {
+  0%,
+  100% {
+    opacity: 0.45;
+    box-shadow: 0 0 3px #43897520;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 10px #43897570;
+  }
 }
 .floppy-eject {
   flex-shrink: 0;
@@ -961,6 +978,9 @@ body:has(.floppy-portfolio),
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reading-light.working {
+    animation: none;
+  }
   .floppy-portfolio *,
   .floppy-portfolio *::before,
   .floppy-portfolio *::after {
