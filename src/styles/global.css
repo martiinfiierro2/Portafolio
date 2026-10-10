@@ -2431,8 +2431,12 @@ html[data-transition='project']::view-transition-new(root) {
 /* Pistachio & raspberry: soft botanical washes behind white cards. */
 .site-shell {
   background:
-    radial-gradient(ellipse 70% 36% at 12% 20%, #d7e7a24d, transparent 70%),
-    radial-gradient(ellipse 65% 38% at 92% 62%, #b8d49a66, transparent 72%), var(--background);
+    url('/paper-grain.svg') repeat,
+    radial-gradient(ellipse 56% 24% at 82% 10%, #fff4d7a3, transparent 72%),
+    radial-gradient(ellipse 64% 28% at 10% 35%, #c7d99599, transparent 72%),
+    radial-gradient(ellipse 55% 30% at 94% 53%, #b5cda080, transparent 72%),
+    radial-gradient(ellipse 72% 22% at 30% 85%, #fff6dfb3, transparent 74%),
+    var(--background);
 }
 .project-dialog::backdrop {
   background: #29382b80;
@@ -2445,4 +2449,63 @@ html[data-transition='project']::view-transition-new(root) {
 }
 ::selection {
   background: #d8a3b666;
+}
+
+/* A small graphic signature introduces the collection without adding content. */
+.intro-ornament {
+  position: relative;
+  width: 86px;
+  height: 52px;
+  margin: 0 auto 28px;
+}
+.intro-ornament span {
+  position: absolute;
+  top: 3px;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #697c5573;
+  border-radius: 50%;
+}
+.intro-ornament span:nth-child(1) {
+  left: 6px;
+  background: #fff9e159;
+}
+.intro-ornament span:nth-child(2) {
+  right: 6px;
+  top: 9px;
+}
+.intro-ornament span:nth-child(3) {
+  top: 5px;
+  right: 12px;
+  width: 9px;
+  height: 9px;
+  border: 0;
+  background: var(--primary);
+}
+.collection-section .project-card {
+  border-color: #d3dcc3;
+  box-shadow:
+    1px 1px 0 #f7f9f1,
+    3px 4px 0 #c6d0b4,
+    0 8px 14px #29382b0a,
+    0 25px 42px -14px #29382b26;
+}
+.collection-section .project-card.active {
+  border-color: #983d5973;
+  box-shadow:
+    1px 1px 0 #fff9fc,
+    3px 4px 0 #dec7cf,
+    0 8px 14px #29382b0a,
+    0 30px 48px -14px #29382b33;
+}
+.collection-section .deck-stage::before {
+  inset: 16% -5% -4%;
+  background:
+    radial-gradient(ellipse at 32% 45%, #fff7dea6, transparent 65%),
+    radial-gradient(ellipse at 75% 60%, #adc48959, transparent 67%);
+}
+@media (max-width: 767px) {
+  .intro-ornament {
+    margin-bottom: 22px;
+  }
 }

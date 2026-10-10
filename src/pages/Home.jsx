@@ -52,6 +52,15 @@ export default function Home() {
         aria-labelledby="home-title"
       >
         <m.div className="home-intro">
+          <m.div
+            className="intro-ornament"
+            aria-hidden="true"
+            style={reduced ? undefined : { opacity }}
+          >
+            <span />
+            <span />
+            <span />
+          </m.div>
           <p className="eyebrow intro-greeting">¡Hola! Soy</p>
           <m.h1 id="home-title" tabIndex={-1} style={reduced ? undefined : { opacity, filter }}>
             {profile.name.split(' ')[0]}{' '}

@@ -30,7 +30,7 @@ npm run dev -- --host 0.0.0.0
 
 ## Estética
 
-Fondo pistacho `#E6EDCE` con manchas suaves de lima y salvia. Las cartas y el detalle abierto mantienen el mismo blanco sólido `#FFFFFF`. Texto verde profundo `#29382B`, secundarios `#53604C` y acentos frambuesa `#983D59` para selección, enlaces y acciones. Los bordes finos y las sombras suaves dan relieve sin transparencia ni reflejos de cristal.
+Fondo pistacho `#E6EDCE` con manchas suaves de lima y salvia. Las cartas y el detalle abierto mantienen el mismo blanco sólido `#FFFFFF`. Texto verde profundo `#29382B`, secundarios `#53604C` y acentos frambuesa `#983D59` para selección, enlaces y acciones. Una textura de papel muy fina y manchas crema y salvia dan profundidad al fondo. El inicio incorpora un motivo discreto de círculos; las cartas conservan sus portadas provisionales y ganan un canto fino y sombras en varias capas, sin transparencia ni reflejos de cristal.
 
 Space Grotesk identifica los nombres y títulos; DM Sans acompaña los textos y controles. Ambas fuentes variables se alojan localmente. La carta central es mayor y frontal, las vecinas giran en perspectiva y el carrusel se puede arrastrar con ratón o deslizar en móvil sin impedir el scroll vertical. Las cartas muestran símbolo, título, descripción breve y hasta tres tecnologías. Al abrirlas se expanden al detalle, con resumen y portada en dos columnas en escritorio y apilados en móvil.
 
