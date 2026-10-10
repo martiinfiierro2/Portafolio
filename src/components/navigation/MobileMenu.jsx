@@ -7,7 +7,7 @@ const links = [
   ['/cv', 'CV'],
   ['/contact', 'Contacto'],
 ];
-export default function MobileMenu({ open, onClose, profile }) {
+export default function MobileMenu({ open, onClose, profile, onNavigate }) {
   const ref = useRef(null);
   useEffect(() => {
     const dialog = ref.current;
@@ -40,7 +40,15 @@ export default function MobileMenu({ open, onClose, profile }) {
       </div>
       <nav aria-label="Navegación móvil">
         {links.map(([to, label]) => (
-          <NavLink key={to} to={to} end={to === '/'} onClick={onClose}>
+          <NavLink
+            key={to}
+            to={to}
+            end={to === '/'}
+            onClick={(event) => {
+              onClose();
+              onNavigate(event, to);
+            }}
+          >
             {label}
             <ArrowUpRight size={20} />
           </NavLink>

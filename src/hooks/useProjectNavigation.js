@@ -1,14 +1,7 @@
 import { useNavigate } from 'react-router-dom';
-import { flushSync } from 'react-dom';
 import useProjectSelection from './useProjectSelection';
+import { transition } from '../utils/viewTransition';
 
-function transition(update) {
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (!reduced && document.startViewTransition) {
-    const animation = document.startViewTransition(() => flushSync(update));
-    animation.ready.catch(() => {});
-  } else update();
-}
 export default function useProjectNavigation() {
   const navigate = useNavigate();
   const { selectProject } = useProjectSelection();

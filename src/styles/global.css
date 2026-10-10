@@ -244,7 +244,7 @@ h1:focus-visible {
   top: 0;
   z-index: 50;
   height: 76px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 0;
   background: #2b3123f2;
   border-bottom-color: var(--border);
   backdrop-filter: blur(7px);
@@ -371,114 +371,88 @@ h1:focus-visible {
   align-items: center;
   gap: 8px;
 }
-/* Standalone introduction: the collection lives only on /projects. */
+/* A quiet opening scene; the collection is the next chapter. */
 .home-page {
-  max-width: 1200px;
+  max-width: 1440px;
   min-height: calc(100svh - 166px);
   display: grid;
   align-items: center;
-  padding-block: 64px;
+  padding-block: 70px;
+  text-align: center;
 }
 .home-intro {
-  max-width: 940px;
-  animation: enter 0.35s both;
+  width: 100%;
+  animation: enter 0.45s both;
 }
 .home-intro h1 {
-  margin-top: 18px;
-  font-size: clamp(54px, 7vw, 100px);
-  font-weight: 750;
+  margin-top: 22px;
+  font-size: clamp(60px, 8.5vw, 128px);
+  font-weight: 650;
   letter-spacing: -0.065em;
-  line-height: 1.12;
-  text-wrap: balance;
+  line-height: 1.15;
 }
 .home-intro .profile-role {
-  margin-top: 24px;
-  font-size: clamp(18px, 2vw, 25px);
-  font-weight: 600;
-  line-height: 1.5;
-  color: var(--deep);
+  margin-top: 28px;
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink);
 }
-.home-intro .profile-description {
-  max-width: 650px;
-  margin-top: 24px;
-  color: var(--muted);
-  font-size: 17px;
-  line-height: 1.85;
-  text-wrap: pretty;
-}
-.home-intro .button-row {
-  margin-top: 32px;
-  align-items: center;
-  gap: 12px;
-}
-.home-intro .button {
-  min-height: 48px;
-  padding: 13px 22px;
-  font-size: 14px;
-}
-.home-contact {
-  margin-left: 8px;
-}
-.profile-notes {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  list-style: none;
-  margin: 30px 0 0;
-  padding: 0;
-  font-size: 12px;
+.home-tagline {
+  margin-top: 15px;
+  font-size: 15px;
+  line-height: 1.8;
   color: var(--muted);
 }
-.profile-notes li {
-  display: flex;
+.collection-entry {
+  display: inline-flex;
+  flex-direction: column;
   align-items: center;
-  gap: 8px;
-}
-.profile-notes li + li {
-  padding-left: 20px;
-  border-left: 1px solid var(--border);
-}
-.home-signature {
-  margin-top: 32px;
-  padding-left: 12px;
-  border-left: 3px solid var(--accent);
+  justify-content: center;
+  gap: 13px;
+  min-height: 44px;
+  margin-top: 56px;
+  padding: 12px 24px;
   font-size: 12px;
-  line-height: 1.7;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+.collection-entry-line {
+  width: 1px;
+  height: 32px;
+  background: var(--accent);
+  transition: height 0.22s;
+}
+.collection-entry svg {
+  color: #f0be9c;
+  transition: transform 0.22s;
+}
+.collection-entry:hover .collection-entry-line {
+  height: 40px;
+}
+.collection-entry:hover svg {
+  transform: translateY(4px);
 }
 @media (max-width: 767px) {
   .home-page {
     min-height: calc(100svh - 230px);
-    padding-block: 48px;
+    padding-block: 52px;
   }
   .home-intro h1 {
-    font-size: clamp(40px, 10.5vw, 72px);
-    line-height: 1.2;
+    font-size: clamp(48px, 13vw, 82px);
+    line-height: 1.16;
   }
   .home-intro .profile-role {
-    font-size: 18px;
-    margin-top: 22px;
+    margin-top: 24px;
+    font-size: 17px;
   }
-  .home-intro .profile-description {
-    font-size: 15px;
-    line-height: 1.85;
-  }
-  .home-intro .button-row {
-    gap: 10px;
-    margin-top: 26px;
-  }
-  .home-intro .button {
-    padding-inline: 16px;
+  .home-tagline {
     font-size: 13px;
+    max-width: 270px;
+    margin-inline: auto;
   }
-  .home-contact {
-    margin-left: 0;
-  }
-  .profile-notes {
-    gap: 12px;
-    font-size: 11px;
-  }
-  .profile-notes li + li {
-    padding-left: 12px;
+  .collection-entry {
+    margin-top: 32px;
   }
 }
 .project-workspace {
@@ -526,8 +500,8 @@ h1:focus-visible {
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: var(--surface);
-  box-shadow: 0 12px 35px #1e284614;
+  background: var(--project-tint);
+  box-shadow: 0 12px 35px #00000024;
   text-align: left;
   transform-style: preserve-3d;
   overflow: hidden;
@@ -564,11 +538,11 @@ h1:focus-visible {
   font-size: 10px;
   font-weight: 650;
   letter-spacing: 0.04em;
-  color: var(--project-color);
+  color: var(--ink);
   padding: 4px 7px;
-  border: 1px solid #454d36;
+  border: 1px solid #ffffff20;
   border-radius: 5px;
-  background: #454d36;
+  background: var(--project-tint);
 }
 .card-body {
   display: flex;
@@ -926,11 +900,29 @@ h1:focus-visible {
   max-width: 580px;
 }
 .projects-page {
-  padding-top: 48px;
-  padding-bottom: 60px;
+  padding-top: 24px;
+  padding-bottom: 32px;
+  min-height: calc(100svh - 166px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.projects-page .page-heading {
-  max-width: 760px;
+.projects-page > .project-workspace {
+  width: 100%;
+  max-width: 1150px;
+  margin: 12px auto;
+  gap: 64px;
+}
+.projects-page > .project-index {
+  width: 100%;
+  margin-top: 24px;
+}
+.projects-page .deck-stage {
+  height: 486px;
+}
+.projects-page .project-card {
+  width: 270px;
+  height: 442px;
 }
 .expanded-workspace {
   max-width: 1150px;
@@ -1483,6 +1475,42 @@ h1:focus-visible {
   to {
     opacity: 1;
     translate: 0 0;
+  }
+}
+::view-transition-group(portfolio-scene) {
+  animation-duration: 0.5s;
+}
+html[data-transition='collection']::view-transition-old(portfolio-scene) {
+  animation: dissolve-name 0.3s ease-in both;
+}
+html[data-transition='collection']::view-transition-new(portfolio-scene) {
+  animation: reveal-collection 0.4s 0.12s ease-out both;
+}
+@keyframes dissolve-name {
+  to {
+    opacity: 0;
+    filter: blur(14px);
+    transform: scale(1.035);
+  }
+}
+@keyframes reveal-collection {
+  from {
+    opacity: 0;
+    filter: blur(6px);
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}
+@media (max-width: 767px) {
+  .projects-page > .project-workspace {
+    margin-top: 0;
+  }
+  .projects-page .project-card {
+    width: min(78vw, 300px);
   }
 }
 ::view-transition-group(project-cover) {

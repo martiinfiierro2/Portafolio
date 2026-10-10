@@ -1,6 +1,7 @@
 export const profile = {
   name: 'Martín Fierro',
   role: 'Desarrollador full-stack junior',
+  tagline: 'Interfaces cuidadas. Aplicaciones completas.',
   introduction:
     'Desarrollo aplicaciones web combinando interfaces cuidadas con una lógica sólida en backend. Me gusta convertir problemas reales en productos simples, útiles y mantenibles.',
   availability: 'Abierto a oportunidades junior',

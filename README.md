@@ -30,12 +30,12 @@ npm run dev -- --host 0.0.0.0
 
 ## Paleta
 
-Fondo oliva oscuro `#2B3123`, superficies oliva `#373E2B` y texto blanco cálido `#F6F5ED`. Los botones usan naranja quemado `#AD4D22`; los detalles, el subrayado del apellido y los bordes de selección añaden matices cálidos. El texto secundario mantiene contraste con un tono claro, y las portadas y galerías siguen la misma paleta. Las variables de tema se centralizan en `src/styles/global.css`.
+Fondo oliva oscuro `#2B3123`, superficies oliva `#373E2B` y texto blanco cálido `#F6F5ED`. Los botones usan naranja quemado `#AD4D22`; los detalles, el subrayado del apellido y los bordes de selección añaden matices cálidos. El texto secundario mantiene contraste con un tono claro. Las tarjetas tienen identidades propias: rojo vino, azul petróleo, ocre, ciruela y salvia, sobre la base oliva del sitio. Las variables de tema se centralizan en `src/styles/global.css`.
 
 ## Páginas
 
-- `/`: presentación personal y accesos a Proyectos, CV y Contacto. `/index.html` redirige a Inicio para evitar un 404 al abrir la entrada HTML directamente.
-- `/projects`: colección, contexto del proyecto y acceso directo al índice.
+- `/`: presentación centrada en el nombre y el perfil, con una entrada discreta «Explorar colección». CV y Contacto siguen accesibles desde la navegación. `/index.html` redirige a Inicio para evitar un 404 al abrir la entrada HTML directamente.
+- `/projects`: baraja e inspector directamente, sin cabecera editorial ni índice adicional. Los controles permiten acceder a todos los proyectos.
 - `/projects/:slug`: caso de estudio con ocho secciones y galería.
 - `/cv`: experiencia, formación, habilidades y descarga del CV cuando exista.
 - `/contact`: email, LinkedIn, GitHub y copia del email cuando esté configurado.
@@ -89,7 +89,7 @@ Las entradas de `media` usan `id`, `label`, `type`, `src`, `alt` y `caption`. `t
 - Selección recordada en `sessionStorage` al volver a la colección de Proyectos.
 - Tabs de galería con flechas, Inicio y Fin; menú móvil con cierre por Escape y foco gestionado por un diálogo nativo.
 - Enlaces convencionales para proyectos, CV y contacto; no hay una animación obligatoria para acceder.
-- `prefers-reduced-motion` elimina animaciones. La transición de portada usa View Transitions cuando el navegador la soporta y navegación normal en el resto.
+- `prefers-reduced-motion` elimina animaciones. La entrada Inicio → Proyectos usa un desenfoque breve y revela la colección con View Transitions; la portada mantiene su transición al caso de estudio. El header no tiene separador y permanece estable durante el cambio. En navegadores sin esa API, la navegación funciona directamente.
 - Fuentes Manrope y Caveat alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
 
 ## Publicación

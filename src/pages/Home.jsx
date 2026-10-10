@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, FileText, Layers2, ArrowUpRight } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 import { profile } from '../data/profile';
 import useDocumentTitle from '../hooks/useDocumentTitle';
+import usePortfolioNavigation from '../hooks/usePortfolioNavigation';
 export default function Home() {
   useDocumentTitle('Inicio');
+  const navigateTo = usePortfolioNavigation();
   return (
-    <div className="home-page page-container">
+    <div className="home-page page-container" style={{ viewTransitionName: 'portfolio-scene' }}>
       <section className="home-intro" aria-labelledby="home-title">
         <p className="eyebrow intro-greeting">¡Hola! Soy</p>
         <h1 id="home-title" tabIndex={-1}>
@@ -13,27 +15,20 @@ export default function Home() {
           <span className="name-highlight">{profile.name.split(' ').slice(1).join(' ')}</span>
         </h1>
         <p className="profile-role">{profile.role}</p>
-        <p className="profile-description">{profile.introduction}</p>
-        <div className="button-row">
-          <Link className="button primary" to="/projects">
-            Ver proyectos <ArrowRight size={17} />
-          </Link>
-          <Link className="button secondary" to="/cv">
-            <FileText size={16} />
-            Ver CV
-          </Link>
-          <Link className="text-link home-contact" to="/contact">
-            Hablemos <ArrowUpRight size={17} />
-          </Link>
-        </div>
-        <ul className="profile-notes">
-          <li>
-            <Layers2 size={15} />
-            Frontend + Backend
-          </li>
-          <li>React · Node.js</li>
-        </ul>
-        <p className="home-signature">Cada proyecto, una pieza de mi evolución.</p>
+        <p className="home-tagline">{profile.tagline}</p>
+        <Link
+          className="collection-entry"
+          to="/projects"
+          onClick={(event) => {
+            if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+            event.preventDefault();
+            navigateTo('/projects');
+          }}
+        >
+          <span className="collection-entry-line" aria-hidden="true" />
+          <span>Explorar colección</span>
+          <ArrowDown size={19} aria-hidden="true" />
+        </Link>
       </section>
     </div>
   );
