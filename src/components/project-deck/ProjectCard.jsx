@@ -22,22 +22,6 @@ export default function ProjectCard({
         viewTransitionName: active && !detailOpen ? 'project-card' : 'none',
         visibility: visible ? 'visible' : 'hidden',
       }}
-      onPointerMove={(event) => {
-        if (reduced) return;
-        const bounds = event.currentTarget.getBoundingClientRect();
-        event.currentTarget.style.setProperty(
-          '--glare-x',
-          `${((event.clientX - bounds.left) / bounds.width) * 100}%`,
-        );
-        event.currentTarget.style.setProperty(
-          '--glare-y',
-          `${((event.clientY - bounds.top) / bounds.height) * 100}%`,
-        );
-      }}
-      onPointerLeave={(event) => {
-        event.currentTarget.style.removeProperty('--glare-x');
-        event.currentTarget.style.removeProperty('--glare-y');
-      }}
       initial={false}
       animate={{
         x: position * spacing,
@@ -59,7 +43,7 @@ export default function ProjectCard({
       onClick={() => (active ? onOpen(project) : onSelect(project.slug))}
     >
       <span aria-hidden="true" className="card-cover">
-        <span className="glass-card-emblem">
+        <span className="card-emblem">
           <ProjectIcon name={project.icon} size={68} />
         </span>
         <span className="card-number">{project.number}</span>

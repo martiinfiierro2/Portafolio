@@ -30,9 +30,9 @@ npm run dev -- --host 0.0.0.0
 
 ## Estética
 
-Fondo blanco `#FFFFFF`, texto grafito `#292B30` y controles en gris oscuro. Las tarjetas simulan cristal transparente: caras con muy poco tinte, bordes pulidos, reflejos especulares y un desenfoque mínimo del contenido que queda detrás. El reflejo responde al ratón. Las portadas muestran símbolos con aspecto grabado en vidrio; las imágenes del proyecto se ven al abrir el detalle. El texto mantiene su opacidad para conservar la legibilidad. Los navegadores sin `backdrop-filter` conservan la superficie transparente y los reflejos. Una iluminación azul grisácea localizada revela la transparencia sobre el fondo blanco. El carrusel separa las piezas lateralmente y gira las vecinas en perspectiva, manteniendo la tarjeta central más grande y de frente. Las cartas muestran símbolo, título, descripción breve y hasta tres tecnologías, sin iconos o instrucciones repetidos. El arrastre con ratón y el gesto horizontal en móvil desplazan las piezas y seleccionan la siguiente al soltar, sin impedir el scroll vertical.
+Fondo lila `#E9E1F0` con manchas amplias y suaves de rosa empolvado y violeta. Las cartas y el detalle abierto mantienen el mismo blanco sólido `#FFFFFF`. Texto ciruela `#392B40`, secundarios `#65566A` y acentos arcilla `#A64E38` para selección, enlaces y acciones. Los bordes finos y las sombras cálidas dan relieve sin transparencia ni reflejos de cristal.
 
-Space Grotesk identifica los nombres y títulos; DM Sans acompaña los textos y controles. Ambas fuentes variables se alojan localmente. Las tarjetas de escritorio miden 330 × 480 px y se adaptan a móvil. El detalle combina resumen y portada en dos columnas en escritorio y los apila en móvil; sus imágenes conservan sus colores.
+Space Grotesk identifica los nombres y títulos; DM Sans acompaña los textos y controles. Ambas fuentes variables se alojan localmente. La carta central es mayor y frontal, las vecinas giran en perspectiva y el carrusel se puede arrastrar con ratón o deslizar en móvil sin impedir el scroll vertical. Las cartas muestran símbolo, título, descripción breve y hasta tres tecnologías. Al abrirlas se expanden al detalle, con resumen y portada en dos columnas en escritorio y apilados en móvil.
 
 ## Página única
 
