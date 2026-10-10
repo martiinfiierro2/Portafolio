@@ -54,7 +54,37 @@ export default function FloppyPortfolio() {
           {isProject && <ProjectView disk={contentDisk} load={load} busy={busy} />}
         </Motion.div>
       </main>
-      <footer className="floppy-console"><span className="floppy-copyright">Martín Fierro © {new Date().getFullYear()}</span><div className="floppy-slot" aria-hidden="true"><div className="floppy-slot-mouth" />{disk && <Motion.div key={`${disk.id}-${phase === 'inserting' ? 'insert' : 'rest'}`} className="floppy-loaded" initial={phase === 'inserting' ? { y: 45, opacity: 0 } : false} animate={phase === 'ejecting' ? { y: 45, opacity: 0 } : { y: 0, opacity: 1 }} transition={{ duration: reduced ? 0 : .32, ease: [.22, 1, .36, 1] }} onAnimationComplete={completeAnimation}><FloppyDisk disk={disk} compact /><span>{disk.id === 'profile' ? 'Martín / Perfil' : disk.title}</span></Motion.div>}</div><p className="floppy-reading" role="status"><span className={disk ? 'reading-light on' : 'reading-light'} />{phase === 'ejecting' ? 'Expulsando…' : phase === 'inserting' ? 'Leyendo disco…' : disk ? `Leyendo: ${disk.id === 'profile' ? 'Perfil' : disk.title}` : 'Selecciona un disco'}</p><button className="floppy-eject" disabled={!disk || busy} onClick={() => load(null)}><Triangle size={13} />Expulsar</button><span className="floppy-signoff">Hecho con intención.</span></footer>
+      <footer className="floppy-console">
+        <div className="floppy-console-credit">
+          <span className="floppy-copyright">Martín Fierro © {new Date().getFullYear()}</span>
+          <span className="floppy-signoff">Hecho con intención.</span>
+        </div>
+        <div className="floppy-slot" aria-hidden="true">
+          <div className="floppy-slot-housing" />
+          <div className="floppy-slot-mouth" />
+          {disk && (
+            <Motion.div
+              key={`${disk.id}-${phase === 'inserting' ? 'insert' : 'rest'}`}
+              className="floppy-loaded"
+              initial={phase === 'inserting' ? { y: 45, opacity: 0 } : false}
+              animate={phase === 'ejecting' ? { y: 45, opacity: 0 } : { y: 0, opacity: 1 }}
+              transition={{ duration: reduced ? 0 : .32, ease: [.22, 1, .36, 1] }}
+              onAnimationComplete={completeAnimation}
+            >
+              <FloppyDisk disk={disk} compact />
+              <span>{disk.id === 'profile' ? 'Martín / Perfil' : disk.title}</span>
+            </Motion.div>
+          )}
+          <div className="floppy-slot-lip" />
+        </div>
+        <div className="floppy-console-status">
+          <p className="floppy-reading" role="status">
+            <span className={disk ? 'reading-light on' : 'reading-light'} />
+            {phase === 'ejecting' ? 'Expulsando…' : phase === 'inserting' ? 'Leyendo disco…' : disk ? `Leyendo: ${disk.id === 'profile' ? 'Perfil' : disk.title}` : 'Selecciona un disco'}
+          </p>
+          <button className="floppy-eject" disabled={!disk || busy} onClick={() => load(null)}><Triangle size={13} />Expulsar</button>
+        </div>
+      </footer>
     </div>
     <dialog className="floppy-contact" ref={contactRef} aria-labelledby="floppy-contact-title"><button className="floppy-close" aria-label="Cerrar contacto" onClick={() => contactRef.current.close()}><X size={20} /></button><p className="floppy-kicker">Contacto</p><h2 id="floppy-contact-title">Sigamos en contacto.</h2><p>Por ahora puedes encontrarme en GitHub. Añadiré otros canales próximamente.</p><a className="floppy-button primary" href={profile.githubUrl} target="_blank" rel="noreferrer">Ver GitHub <ArrowUpRight size={16} /></a></dialog>
   </div>;

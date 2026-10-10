@@ -1,5 +1,5 @@
 /* Portafolio USB. El tamaño del dispositivo depende del viewport, nunca del contenido. */
-.site-header { min-height: 104px; display: flex; align-items: center; gap: 24px; }
+.site-header { min-height: 76px; display: flex; align-items: center; gap: 24px; }
 .brand { display: flex; align-items: center; gap: 12px; font-size: 1.25rem; font-weight: 750; letter-spacing: -.045em; white-space: nowrap; }
 .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; color: white; background: linear-gradient(145deg, #8c71ed, #6546ce); font-size: 1.4rem; }
 .header-role { color: var(--muted); font-size: .75rem; }
@@ -8,19 +8,21 @@
 .navigation a:hover { color: var(--accent-dark); }
 .navigation .variant-link { padding: 9px 12px; border: 1px solid #dcd3f1; border-radius: 9px; color: var(--accent-dark); background: #f0eaff; font-size: .75rem; }
 .menu-toggle { display: none; }
-.portfolio-experience { --display-height: clamp(580px, 70svh, 660px); position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: start; column-gap: 40px; padding: 24px 0 64px; }
+.portfolio-experience { --display-height: clamp(360px, calc(100svh - 156px), 620px); position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 250px; align-items: start; column-gap: 40px; padding: 12px 0 48px; }
 .display-column { min-width: 0; }
-.display-frame { position: relative; height: var(--display-height); padding: 12px; border-radius: 27px; border: 1px solid #77737f; background: linear-gradient(135deg, #4c4955, #202027 48%, #37343e); box-shadow: 0 22px 44px #28203818, 0 3px 5px #211b3220, inset 0 0 0 2px #ffffff0a; }
+.display-frame { position: relative; height: var(--display-height); padding: 18px; border-radius: 27px; border: 1px solid #77737f; background: linear-gradient(135deg, #4c4955, #202027 48%, #37343e); box-shadow: 0 22px 44px #28203818, 0 3px 5px #211b3220, inset 0 0 0 2px #ffffff0a; }
+.display-frame::before { content: ''; position: absolute; top: 6px; left: calc(50% - 3px); width: 6px; height: 6px; border: 1px solid #66616d; border-radius: 50%; background: #16141c; box-shadow: inset 0 0 0 1px #2e3346; }
+.display-frame::after { content: ''; position: absolute; bottom: 7px; left: calc(50% - 20px); width: 40px; height: 2px; background: #66616d; border-radius: 2px; }
 .display-screen { height: 100%; overflow: hidden; border-radius: 15px; background: #faf9fd; box-shadow: inset 0 0 0 1px #ffffffb3; container: usb-screen / inline-size; }
 .screen-content { height: 100%; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; scrollbar-color: #c6b9e5 transparent; }
-.profile-screen { position: relative; min-height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 34px; background: radial-gradient(ellipse at 90% 20%, #ece3fc 0, transparent 55%), linear-gradient(135deg, #fff, #f7f4fc); }
-.profile-composition { display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 12px; margin-block: auto; }
-.profile-art { display: none; min-width: 0; }
+.profile-screen { position: relative; min-height: 100%; display: flex; flex-direction: column; justify-content: center; padding: 28px 32px; background: radial-gradient(ellipse at 90% 20%, #ece3fc 0, transparent 55%), linear-gradient(135deg, #fff, #f7f4fc); }
+.profile-composition { width: 100%; max-width: 850px; display: grid; grid-template-columns: minmax(0, 1fr); align-items: center; gap: 24px; margin: auto; }
+.profile-art { display: none; min-width: 0; width: 100%; max-width: 280px; justify-self: center; }
 .identity-artwork { display: block; width: 100%; height: auto; }
 .profile-content { position: relative; z-index: 1; min-width: 0; }
-.profile-content h1 { margin-top: 14px; font-size: clamp(3.1rem, 7.8cqw, 5rem); line-height: .96; font-weight: 750; letter-spacing: -.07em; }
-.profile-content h1 span { display: block; color: #7153a1; }
-.profile-role { max-width: 360px; color: #463954; font-size: 1.03rem; line-height: 1.5; margin-top: 16px; font-weight: 550; letter-spacing: -.025em; }
+.profile-content h1 { margin-top: 12px; font-size: clamp(2rem, 5.4cqw, 3.25rem); line-height: 1.08; font-weight: 750; letter-spacing: -.055em; }
+.profile-content h1 span { color: #7153a1; }
+.profile-role { max-width: 360px; color: #463954; font-size: 1rem; line-height: 1.5; margin-top: 12px; font-weight: 550; letter-spacing: -.025em; }
 .introduction { max-width: 360px; color: var(--muted); font-size: .93rem; line-height: 1.75; margin-top: 16px; }
 .technology-list { display: flex; flex-wrap: wrap; list-style: none; padding: 0; gap: 8px; margin: 18px 0 22px; }
 .technology-list li { display: inline-flex; align-items: center; gap: 6px; padding: 7px 10px; border: 1px solid #ddd4ef; border-radius: 7px; background: #f2edf9; color: #514098; font-size: .71rem; line-height: 1.4; }
@@ -30,7 +32,7 @@
 .profile-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .profile-cv-link, .availability-note { display: flex; align-items: center; gap: 7px; width: fit-content; font-size: .74rem; line-height: 1.5; color: var(--muted); margin-top: 16px; }
 .profile-cv-link { padding: 5px 0; color: var(--accent-dark); }
-.screen-hint { position: relative; flex-shrink: 0; display: flex; align-items: center; gap: 10px; color: #665a84; font-size: .72rem; line-height: 1.6; border: 1px solid #e2d9ef; border-radius: 10px; padding: 13px 15px; margin-top: 24px; background: #ffffff8c; }
+.screen-hint { position: relative; flex-shrink: 0; display: flex; align-items: center; gap: 10px; color: #665a84; font-size: .72rem; line-height: 1.6; border: 1px solid #e2d9ef; border-radius: 10px; padding: 11px 14px; margin-top: 20px; background: #ffffff8c; }
 .screen-hint > svg:last-child { margin-left: auto; }
 
 .usb-port { position: absolute; right: -10px; top: calc(100% - 65px); transform: translateY(-50%); width: 20px; height: 60px; }
@@ -53,7 +55,7 @@
 .usb-drive-vertical { display: none; }
 .drive-away .usb-drive { visibility: hidden; }
 .drive-selected { position: absolute; z-index: 1; inset: 0; display: flex; justify-content: center; align-items: center; gap: 6px; font-size: .7rem; color: #6b6182; }
-.docking-lane { height: 92px; }
+.docking-lane { height: 100px; }
 .selector-footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 5px 0; }
 .selector-count { color: var(--muted); font-size: .72rem; }
 .all-projects { display: flex; align-items: center; gap: 5px; min-height: 44px; border: 0; background: transparent; color: var(--accent-dark); padding: 8px 0; font-size: .78rem; font-weight: 600; }
@@ -71,7 +73,7 @@
 .connection-badge { display: flex; align-items: center; gap: 6px; color: #28644d; }
 .connection-badge span { width: 6px; height: 6px; border-radius: 50%; background: #268363; }
 .project-layout { flex-shrink: 0; display: flex; flex-direction: column; gap: 28px; margin-block: auto; }
-.project-information h1 { font-size: clamp(2rem, 4.5cqw, 3.2rem); letter-spacing: -.06em; line-height: 1.05; margin-top: 16px; }
+.project-information h1 { font-size: clamp(1.8rem, 4cqw, 2.5rem); letter-spacing: -.06em; line-height: 1.05; margin-top: 16px; }
 .project-description { color: var(--muted); line-height: 1.8; font-size: .92rem; margin-top: 15px; }
 .project-screen .technology-list { margin-block: 18px; }
 .project-preview { --preview-tint: #eee7fa; --preview-accent: #8165b8; align-self: stretch; border: 1px solid #ddd6eb; background: white; border-radius: 14px; overflow: hidden; box-shadow: 0 18px 30px #4d397010, 0 2px 4px #4d397006; }
@@ -104,21 +106,23 @@
 .contact-section { display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 34px; border: 1px solid var(--line); border-radius: 20px; background: linear-gradient(120deg, #f1ecfb99, #faf9fc); }
 .contact-section p:not(.eyebrow) { max-width: 540px; font-size: .85rem; color: var(--muted); line-height: 1.8; margin-top: 14px; }
 .contact-section .button { flex-shrink: 0; }
-@container usb-screen (min-width: 700px) { .profile-composition { grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr); gap: 14px; } .profile-art { display: block; } .project-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 30px; align-items: center; } }
+@container usb-screen (min-width: 700px) { .profile-composition { grid-template-columns: minmax(0, 1.4fr) minmax(0, .85fr); gap: 24px; } .profile-art { display: block; } .project-layout { display: grid; grid-template-columns: 1fr 1.15fr; gap: 30px; align-items: center; } }
 @media (max-width: 1200px) { .header-role { display: none; } }
-@media (min-width: 801px) and (max-width: 1050px) { .portfolio-experience { grid-template-columns: minmax(0, 1fr) 210px; column-gap: 32px; } .profile-screen { padding: 32px 25px; } .profile-content h1 { font-size: 3.3rem; } .project-screen { padding: 25px; } .navigation { gap: 18px; } }
+@media (min-width: 801px) and (max-width: 1050px) { .portfolio-experience { --display-height: clamp(360px, min(calc((100vw - 322px) / 1.3), calc(100svh - 156px)), 540px); grid-template-columns: minmax(0, 1fr) 210px; column-gap: 32px; } .profile-screen { padding: 22px 24px; } .profile-content h1 { font-size: 2.3rem; } .profile-screen .technology-list { margin-block: 14px 16px; } .profile-screen .screen-hint { margin-top: 16px; } .project-screen { padding: 25px; } .navigation { gap: 18px; } }
 @media (max-width: 800px) {
-  .site-header { position: relative; min-height: 82px; }
+  .site-header { position: relative; min-height: 64px; }
   .menu-toggle { display: grid; place-items: center; width: 44px; height: 44px; margin-left: auto; border: 1px solid var(--line); border-radius: 11px; background: white; color: var(--ink); }
-  .navigation { display: none; position: absolute; top: 72px; left: 0; right: 0; margin-left: 0; z-index: 5; border: 1px solid var(--line); border-radius: 14px; padding: 12px; background: #fff; box-shadow: 0 14px 35px #19182b14; }
+  .navigation { display: none; position: absolute; top: 60px; left: 0; right: 0; margin-left: 0; z-index: 5; border: 1px solid var(--line); border-radius: 14px; padding: 12px; background: #fff; box-shadow: 0 14px 35px #19182b14; }
   .navigation.is-open { display: flex; flex-direction: column; align-items: stretch; gap: 4px; }
   .navigation a { padding: 10px 12px; }
   .navigation .variant-link { margin-top: 4px; }
-  .portfolio-experience { --display-height: clamp(570px, 76svh, 660px); grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 175px; padding-block: 8px 40px; }
-  .display-frame { padding: 9px; border-radius: 23px; }
+  .portfolio-experience { --display-height: clamp(340px, calc(100svh - 240px), 600px); grid-template-columns: minmax(0, 1fr); column-gap: 0; row-gap: 175px; padding-block: 8px 40px; }
+  .display-frame { padding: 13px; border-radius: 23px; }
+  .display-frame::before { width: 4px; height: 4px; top: 4px; }
+  .display-frame::after { bottom: 5px; }
   .display-screen { border-radius: 15px; }
-  .profile-screen { padding: 32px 26px 24px; }
-  .profile-content h1 { font-size: clamp(3rem, 9vw, 4rem); }
+  .profile-screen { padding: 24px 22px; }
+  .profile-content h1 { font-size: clamp(1.9rem, 6.6vw, 2.75rem); }
   .profile-role { font-size: 1rem; }
   .profile-screen .technology-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 310px; }
   .profile-screen .profile-actions { flex-direction: row; }
@@ -143,3 +147,8 @@
   .contact-section { flex-direction: column; align-items: flex-start; padding: 26px; }
 }
 @media (max-width: 400px) { .profile-screen { padding-inline: 20px; } .profile-role { font-size: 1.02rem; } .introduction { font-size: .92rem; } .profile-actions { flex-direction: column; } .profile-actions .button { width: 100%; } .project-screen { padding-inline: 18px; } .projects-dialog { padding: 20px; } .projects-dialog .selector-heading h2 { font-size: .9rem; } .all-projects-grid { grid-template-columns: 1fr; } }
+
+@media (max-height: 600px) and (min-width: 801px) { .site-header { min-height: 60px; } .portfolio-experience { --display-height: clamp(280px, calc(100svh - 88px), 440px); padding-top: 8px; } .profile-screen { padding-block: 22px; } }
+@media (max-height: 700px) and (max-width: 800px) { .portfolio-experience { --display-height: clamp(300px, calc(100svh - 240px), 460px); } }
+
+@media (max-width: 800px) and (max-height: 500px) and (orientation: landscape) { .site-header { min-height: 56px; } .portfolio-experience { --display-height: clamp(220px, calc(100svh - 104px), 390px); } .profile-screen { padding: 18px 22px; } .project-screen { padding: 18px; } }
