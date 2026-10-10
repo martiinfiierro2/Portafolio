@@ -14,6 +14,13 @@ La página principal `/` abre el perfil. Los enlaces anteriores `/disquetes` y `
 ```bash
 npm run build
 npm run lint
+npm run format:check
+```
+
+El código usa una indentación de dos espacios. Para aplicar el formato automáticamente:
+
+```bash
+npm run format
 ```
 
 ## Organización
