@@ -30,11 +30,11 @@ npm run dev -- --host 0.0.0.0
 
 ## Paleta
 
-Naranja `#FF5C23` para botones y acentos; azul claro `#C8F3FF` para superficies, galerías y portadas. El fondo usa una variación muy suave del azul y las tarjetas conservan superficies blancas. Los textos sobre naranja son oscuros; los enlaces usan naranja profundo para mantener contraste AA.
+Naranja `#FF5C23` para botones y acentos; azul claro `#C8F3FF` para superficies, galerías y portadas. El fondo usa el azul claro exacto; la cabecera, el pie y el apellido destacado utilizan naranja en bloques completos. Las tarjetas y el inspector conservan superficies blancas para equilibrar la composición. Los textos sobre naranja son oscuros; los enlaces usan naranja profundo para mantener contraste AA.
 
 ## Páginas
 
-- `/`: presentación personal, baraja e inspector del proyecto seleccionado.
+- `/`: presentación personal, baraja e inspector del proyecto seleccionado. `/index.html` redirige a Inicio para evitar un 404 al abrir la entrada HTML directamente.
 - `/projects`: colección, contexto del proyecto y acceso directo al índice.
 - `/projects/:slug`: caso de estudio con ocho secciones y galería.
 - `/cv`: experiencia, formación, habilidades y descarga del CV cuando exista.

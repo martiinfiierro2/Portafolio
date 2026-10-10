@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { LazyMotion, domMax } from 'framer-motion';
 import { projects } from './data/projects';
 import { resolveProject } from './utils/deck';
@@ -43,6 +43,7 @@ export default function App() {
           <Routes>
             <Route element={<Layout />}>
               <Route index element={<Home />} />
+              <Route path="index.html" element={<Navigate to="/" replace />} />
               <Route path="projects" element={<Projects />} />
               <Route path="projects/:slug" element={<ProjectDetail />} />
               <Route path="cv" element={<CV />} />

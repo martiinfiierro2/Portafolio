@@ -10,7 +10,8 @@ export default function Home() {
       <section className="profile-block" aria-labelledby="home-title">
         <p className="eyebrow intro-greeting">¡Hola! Soy</p>
         <h1 id="home-title" tabIndex={-1}>
-          {profile.name}
+          {profile.name.split(' ')[0]}{' '}
+          <span className="name-highlight">{profile.name.split(' ').slice(1).join(' ')}</span>
         </h1>
         <p className="profile-role">{profile.role}</p>
         <p className="profile-description">{profile.introduction}</p>

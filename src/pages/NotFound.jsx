@@ -7,9 +7,14 @@ export default function NotFound({ project = false }) {
         {project ? 'Proyecto no encontrado.' : 'Esta página no está en la colección.'}
       </h1>
       <p>El enlace puede haber cambiado. Puedes volver a explorar los proyectos.</p>
-      <Link className="button primary" to="/projects">
-        Ver proyectos →
-      </Link>
+      <div className="button-row">
+        <Link className="button primary" to="/">
+          Volver al inicio →
+        </Link>
+        <Link className="button secondary" to="/projects">
+          Ver proyectos
+        </Link>
+      </div>
     </div>
   );
 }
