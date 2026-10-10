@@ -5,16 +5,13 @@ export default function CollectionView({ projects, onSelect, busy }) {
     <section className="floppy-collection" aria-labelledby="floppy-collection-title">
       <div className="floppy-collection-title">
         <p className="floppy-kicker">
-          La colección{' '}
           <span className="floppy-collection-count">
             {String(projects.length).padStart(2, '0')} discos
           </span>
         </p>
         <h1 id="floppy-collection-title" tabIndex={-1}>
-          Un disco, una historia.
+          Un disco, un proyecto.
         </h1>
-        <p>Selecciona un disquete para explorar el proyecto.</p>
-        <small>Proyectos de muestra · contenido en desarrollo.</small>
       </div>
       <div className="floppy-disk-grid">
         {projects.map((item, index) => (

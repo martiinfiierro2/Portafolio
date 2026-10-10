@@ -5,6 +5,8 @@ const colors = {
   navy: ['#497592', '#244961', '#162f43'],
   sage: ['#a3ad92', '#788568', '#536047'],
   ivory: ['#f2e8d4', '#dccfb5', '#b7a689'],
+  green: ['#207119', '#078a1f', '#27a237'],
+  red: ['#f40a0a', '#ed0b16', '#ec3f3f'],
 };
 
 const icons = { meals: CalendarDays, nodes: Network, portfolio: MousePointer2 };
@@ -13,6 +15,7 @@ export default function FloppyDisk({ disk, compact = false }) {
   const id = useId();
   const [light, base, dark] = colors[disk.color];
   const Icon = icons[disk.icon];
+  
   if (compact)
     return (
       <svg

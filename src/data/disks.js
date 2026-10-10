@@ -34,4 +34,28 @@ export const disks = [
     technologies: ['React', 'SVG', 'Framer Motion'],
     features: ['Colección de proyectos', 'Conexión y expulsión', 'Diseño adaptable'],
   },
+  {
+    id: 'nodes',
+    number: '02',
+    title: 'Nodos',
+    subtitle: 'Monitorización de sistemas',
+    color: 'green',
+    icon: 'nodes',
+    description:
+      'Una propuesta de panel para explorar el estado y la actividad de sistemas conectados.',
+    technologies: ['React', 'Node.js'],
+    features: ['Vista general de sistemas', 'Estado de los nodos', 'Registro de actividad'],
+  },
+  {
+    id: 'portfolio',
+    number: '03',
+    title: 'Portafolio',
+    subtitle: 'Diseño e interacción',
+    color: 'red',
+    icon: 'portfolio',
+    description:
+      'Una propuesta de portafolio que convierte la navegación en una colección de historias.',
+    technologies: ['React', 'SVG', 'Framer Motion'],
+    features: ['Colección de proyectos', 'Conexión y expulsión', 'Diseño adaptable'],
+  },
 ];
