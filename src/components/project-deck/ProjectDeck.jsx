@@ -25,7 +25,7 @@ export default function ProjectDeck({
     observer.observe(stage);
     return () => observer.disconnect();
   }, [projects.length]);
-  const spacing = Math.min(310, Math.max(195, stageWidth * 0.29));
+  const spacing = Math.min(345, Math.max(185, stageWidth * 0.29));
   const activeIndex = Math.max(
     0,
     projects.findIndex((project) => project.slug === selectedSlug),
@@ -43,8 +43,11 @@ export default function ProjectDeck({
   return (
     <section className="project-deck" aria-label="Baraja de proyectos">
       <div className="deck-caption">
-        <span>La colección</span>
-        <span>{String(projects.length).padStart(2, '0')} piezas</span>
+        <div>
+          <h2 className="deck-title">La colección</h2>
+          <p className="deck-subtitle">Proyectos seleccionados</p>
+        </div>
+        <span className="deck-total">{String(projects.length).padStart(2, '0')} proyectos</span>
       </div>
       <div
         ref={regionRef}

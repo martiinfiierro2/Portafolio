@@ -99,7 +99,6 @@ export default function Home() {
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: reduced ? 0 : 0.6 }}
       >
-        <h2 className="sr-only">Proyectos</h2>
         <ProjectDeck
           projects={projects}
           selectedSlug={selectedSlug}

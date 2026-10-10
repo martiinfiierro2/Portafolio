@@ -2385,13 +2385,65 @@ h3,
   font-style: italic;
   color: var(--primary);
 }
+@media (max-width: 767px) {
+  .home-intro h1 {
+    font-size: clamp(60px, 16vw, 96px);
+    line-height: 1.02;
+  }
+}
+
+/* Collection cards: compact editorial headers, previews and a quiet footer. */
+.collection-section .project-deck {
+  max-width: 1280px;
+}
+.collection-section .deck-caption {
+  align-items: flex-start;
+  padding-inline: 20px;
+  text-transform: none;
+}
+.deck-title {
+  font-size: clamp(24px, 2.1vw, 30px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.deck-subtitle {
+  margin-top: 6px;
+  font-size: 13px;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+.deck-total {
+  padding-top: 8px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.collection-section .deck-stage {
+  height: 490px;
+  margin-top: 0;
+}
+.collection-section .project-card {
+  width: clamp(260px, 23vw, 330px);
+  height: clamp(370px, 36vw, 440px);
+  border-color: transparent;
+  border-radius: 16px;
+}
+.collection-section .project-card.active {
+  width: clamp(290px, 29vw, 370px);
+  height: clamp(380px, 37vw, 450px);
+}
 .collection-section .card-cover {
-  height: 172px;
+  height: 92px;
   border-bottom: 0;
 }
 .card-topline {
   position: absolute;
-  inset: 24px 26px auto;
+  inset: 16px 18px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -2403,18 +2455,18 @@ h3,
   border: 0;
   background: transparent;
   color: var(--muted);
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 500;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 .collection-section .card-emblem {
   position: absolute;
-  left: 26px;
-  bottom: 8px;
-  width: 68px;
-  height: 68px;
-  border-radius: 18px;
+  left: 18px;
+  bottom: 6px;
+  width: 54px;
+  height: 54px;
+  border-radius: 13px;
   background: var(--project-tint);
   color: var(--project-color);
 }
@@ -2423,92 +2475,159 @@ h3,
 }
 .card-folio {
   position: absolute;
-  right: 24px;
-  bottom: -6px;
+  right: 20px;
+  bottom: -4px;
   font-family: 'Cormorant Garamond', Georgia, serif;
-  font-size: 128px;
+  font-size: 106px;
   font-style: italic;
   font-weight: 500;
   line-height: 1;
-  letter-spacing: -0.065em;
+  letter-spacing: -0.07em;
   color: var(--project-color);
-  opacity: 0.16;
+  opacity: 0.13;
 }
 .collection-section .card-body {
-  padding: 26px;
+  padding: 12px 18px 16px;
 }
 .collection-section .card-title {
-  font-size: 32px;
-  line-height: 1.1;
-  letter-spacing: -0.05em;
+  max-width: 80%;
+  font-size: clamp(21px, 1.8vw, 26px);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
+}
+.card-context {
+  margin-top: 6px;
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--muted);
+  letter-spacing: 0.02em;
 }
 .collection-section .card-description {
-  margin-top: 16px;
-  font-size: 14px;
-  line-height: 1.6;
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.card-preview {
+  display: block;
+  flex: 1;
+  min-height: 0;
+  margin-top: 12px;
+  overflow: hidden;
+  border: 1px solid #29382b08;
+  border-radius: 10px;
+  background: var(--project-tint);
+}
+.card-preview img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+.card-footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
 }
 .collection-section .card-tech {
   display: flex;
+  flex: 1;
   flex-wrap: wrap;
-  gap: 6px;
-  padding-top: 18px;
-  border-top: 1px solid #edf0e4;
-  font-size: 10px;
+  gap: 5px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 9px;
+  line-height: 1.5;
 }
 .card-tech > span {
-  padding: 4px 8px;
+  padding: 4px 6px;
   border: 1px solid #e5e9df;
   border-radius: 6px;
-  background: #f8faf5;
+  background: #f5f7f1;
+}
+.project-card.active .card-tech > span {
+  background: var(--project-tint);
+  border-color: transparent;
+  color: var(--project-color);
+}
+.card-explore {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 5px;
+  padding: 9px 12px;
+  border-radius: 18px;
+  background: var(--ink);
+  color: #fff;
+  font-size: 10px;
+  line-height: 1.2;
+  box-shadow: 0 3px 8px #29382b20;
+}
+.collection-section .deck-note {
+  margin-top: 10px;
+  font-size: 11px;
 }
 @media (max-width: 767px) {
-  .home-intro h1 {
-    font-size: clamp(60px, 16vw, 96px);
-    line-height: 1.02;
+  .collection-section .deck-caption {
+    padding-inline: 0;
+    gap: 16px;
   }
-  .collection-section .card-cover {
-    height: 152px;
+  .deck-title {
+    font-size: 23px;
   }
-  .collection-section .card-body {
-    padding: 24px;
+  .deck-subtitle {
+    font-size: 11px;
+  }
+  .deck-total {
+    font-size: 9px;
+  }
+  .collection-section .deck-stage {
+    height: 484px;
+    margin-top: 12px;
+  }
+  .collection-section .project-card {
+    width: 280px;
+    height: 430px;
+  }
+  .collection-section .project-card.active {
+    width: 290px;
+    height: 440px;
   }
   .collection-section .card-title {
-    font-size: 28px;
+    font-size: 24px;
   }
-  .collection-section .card-description {
-    font-size: 13px;
-  }
-  .card-topline {
-    inset: 22px 24px auto;
-  }
-  .collection-section .card-emblem {
-    left: 24px;
-    width: 60px;
-    height: 60px;
-  }
-  .card-folio {
-    font-size: 112px;
+  .card-explore {
+    padding-inline: 9px;
+    font-size: 9px;
   }
 }
 @media (max-width: 359px) {
-  .collection-section .card-cover {
-    height: 136px;
+  .collection-section .project-card {
+    width: 250px;
+    height: 430px;
+  }
+  .collection-section .project-card.active {
+    width: 260px;
+    height: 440px;
   }
   .collection-section .card-body {
-    padding: 20px;
+    padding-inline: 14px;
   }
   .collection-section .card-title {
-    font-size: 25px;
+    font-size: 22px;
   }
-  .card-topline {
-    inset: 18px 20px auto;
+  .deck-caption {
+    flex-wrap: wrap;
   }
-  .collection-section .card-emblem {
-    left: 20px;
-    width: 54px;
-    height: 54px;
+  .deck-total {
+    padding-top: 4px;
   }
-  .card-folio {
-    font-size: 100px;
+  .card-footer {
+    gap: 6px;
+  }
+  .card-explore {
+    padding-inline: 8px;
   }
 }
