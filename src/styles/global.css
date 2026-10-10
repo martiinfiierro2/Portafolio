@@ -2140,12 +2140,6 @@ h3,
     2px 3px 0 #c5d0b0,
     0 16px 30px #29382b14;
 }
-.collection-section .project-card.active {
-  border-color: #983d5999;
-  box-shadow:
-    2px 3px 0 #ddbdc8,
-    0 18px 34px #29382b1a;
-}
 .collection-section .card-cover {
   height: 208px;
 }
@@ -2257,18 +2251,18 @@ h3,
 .collection-section .project-card {
   border-color: #d3dcc3;
   box-shadow:
-    1px 1px 0 #f7f9f1,
-    3px 4px 0 #c6d0b4,
-    0 8px 14px #29382b0a,
-    0 25px 42px -14px #29382b26;
+    0 8px 18px -8px #29382b1f,
+    0 24px 42px -12px #29382b38;
 }
 .collection-section .project-card.active {
-  border-color: #983d5973;
+  border-color: transparent;
   box-shadow:
-    1px 1px 0 #fff9fc,
-    3px 4px 0 #dec7cf,
-    0 8px 14px #29382b0a,
-    0 30px 48px -14px #29382b33;
+    0 10px 22px -8px #29382b26,
+    0 32px 60px -14px #29382b4d;
+}
+.collection-section .project-card:focus-visible {
+  outline-color: var(--ink);
+  outline-offset: 5px;
 }
 .collection-section .deck-stage::before {
   inset: 16% -5% -4%;
@@ -2292,8 +2286,8 @@ h3,
 .collection-section .project-card:not(.active) {
   border-color: #e0e5d7;
   box-shadow:
-    2px 3px 0 #d5ddc7,
-    0 14px 28px -12px #29382b1a;
+    0 6px 14px -6px #29382b1a,
+    0 22px 38px -12px #29382b38;
 }
 .project-card:not(.active) .card-emblem {
   filter: saturate(0.45);
