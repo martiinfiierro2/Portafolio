@@ -164,16 +164,22 @@ body:has(.floppy-portfolio),
 .floppy-profile {
   width: 100%;
   min-height: 100%;
-  max-width: 1240px;
+  max-width: 1120px;
   margin-inline: auto;
-  display: grid;
-  grid-template-columns: 1.12fr 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 70px;
-  padding: 40px clamp(24px, 4vw, 64px);
+  gap: 40px;
+  padding: 48px clamp(24px, 4vw, 64px);
 }
 .floppy-intro {
-  min-width: 0;
+  width: 100%;
+  max-width: 840px;
+  text-align: center;
+}
+.floppy-profile .floppy-kicker {
+  justify-content: center;
 }
 .floppy-kicker {
   display: flex;
@@ -195,8 +201,7 @@ body:has(.floppy-portfolio),
   background: var(--floppy-rust);
 }
 .floppy-profile h1 {
-  max-width: 550px;
-  font-size: clamp(40px, 5.3vw, 72px);
+  font-size: clamp(48px, 6.5vw, 88px);
 }
 .floppy-profile h1 em {
   color: var(--floppy-rust);
@@ -293,113 +298,27 @@ body:has(.floppy-portfolio),
   color: #657b4f;
 }
 
-/* El collage conserva el carácter de papel y objeto físico. */
-.floppy-collage {
-  position: relative;
-  width: 100%;
-  max-width: 470px;
-  height: clamp(310px, 43svh, 420px);
-  display: flex;
-  align-items: flex-end;
-  min-width: 0;
-  justify-self: center;
+.floppy-profile .floppy-lead {
+  max-width: 600px;
+  margin-inline: auto;
+  font-size: clamp(20px, 2.2vw, 26px);
 }
-.floppy-photo {
-  position: relative;
-  z-index: 1;
-  width: 78%;
-  height: calc(100% - 32px);
-  overflow: hidden;
-  border: 7px solid #fffdf7;
-  border-radius: 7px;
-  background: #eee9dc;
-  box-shadow: 0 12px 25px #20363f12;
-  transform: rotate(-3deg);
+.floppy-profile .floppy-description {
+  max-width: 490px;
+  margin-inline: auto;
 }
-.floppy-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 45%;
-  filter: saturate(0.8);
+.floppy-profile .floppy-actions,
+.floppy-profile .floppy-technologies {
+  justify-content: center;
 }
-.floppy-paper {
-  position: absolute;
-  top: 12px;
-  left: 17px;
-  width: 78%;
-  height: 89%;
-  border: 1px solid #d8d4c5;
-  border-radius: 6px;
-  background: url('../../assets/paper-grain.svg'), #e9e4d6;
-  transform: rotate(3deg);
-}
-.floppy-color-paper {
-  position: absolute;
-  right: 7px;
-  bottom: 25px;
-  width: 46%;
-  height: 64%;
-  border-radius: 8px;
-  background: #344f5a;
-  transform: rotate(4deg);
-}
-.floppy-sun {
-  position: absolute;
-  top: 18px;
-  left: 3px;
-  z-index: 2;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #bb7252;
-}
-.floppy-monogram {
-  position: absolute;
-  z-index: 2;
-  top: 5px;
-  right: 2px;
-  font:
-    72px/1 Georgia,
-    serif;
-  letter-spacing: -0.2em;
-}
-.floppy-monogram span {
-  position: relative;
-  top: 20px;
-}
-.floppy-collage p {
-  position: absolute;
-  z-index: 2;
-  bottom: 52px;
-  right: 0;
-  padding: 15px 18px;
-  border: 1px solid #e4e0d4;
-  border-radius: 9px;
-  background: #fffefa;
-  color: var(--floppy-ink);
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 1.6;
-  box-shadow: 0 8px 20px #20363f0a;
-}
-.floppy-collage-label {
-  display: block;
+.floppy-profile-note {
+  width: min(100%, 600px);
+  padding-top: 24px;
+  border-top: 1px solid var(--floppy-line);
   color: var(--floppy-muted);
-  font-size: 10px;
-  font-weight: 400;
-}
-.floppy-portrait-signature {
-  position: absolute;
-  z-index: 2;
-  right: 8px;
-  bottom: -10px;
-  color: #344f5a;
-  font:
-    italic 18px/1.3 Georgia,
-    serif;
-  transform: rotate(-6deg);
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.025em;
 }
 
 /* Colección */
@@ -446,109 +365,94 @@ body:has(.floppy-portfolio),
 }
 .floppy-disk-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: start;
+  width: 100%;
+  gap: 28px;
   margin-top: 32px;
 }
 .floppy-choice {
-  --disk-tint: #f3e9df;
   min-width: 0;
   width: 100%;
-  padding: 16px;
-  border: 1px solid var(--floppy-line);
-  border-radius: 12px;
-  background: #fffefa99;
+  max-width: 360px;
+  margin-inline: auto;
+  padding: 6px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
   color: var(--floppy-ink);
   text-align: left;
-  transition:
-    border-color 0.2s,
-    background 0.2s,
-    box-shadow 0.2s;
-}
-.choice-navy {
-  --disk-tint: #e8eef0;
-}
-.choice-sage {
-  --disk-tint: #edf0e7;
-}
-.choice-ivory {
-  --disk-tint: #f0ece2;
 }
 .floppy-choice:disabled {
-  background: #fffefa99;
-}
-.floppy-choice:not(:disabled):hover,
-.floppy-choice:focus-visible {
-  border-color: #b6bfb5;
-  background: var(--floppy-surface);
-  box-shadow: 0 8px 18px #20363f08;
-}
-.floppy-choice-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--floppy-muted);
-  font-size: 10px;
-  line-height: 1.5;
-}
-.floppy-choice-meta > span {
-  font:
-    10px/1.5 ui-monospace,
-    'SFMono-Regular',
-    Consolas,
-    monospace;
-  color: #627067;
-}
-.floppy-choice-art {
-  display: grid;
-  place-items: center;
-  min-width: 0;
-  padding: 12px 4px;
-  margin-top: 12px;
-  border-radius: 8px;
-  background: radial-gradient(ellipse, var(--disk-tint), transparent 75%);
+  background: transparent;
 }
 .floppy-disk {
   display: block;
   width: 100%;
   filter: drop-shadow(0 7px 5px #36291f28);
 }
-.floppy-choice .floppy-disk {
-  max-width: 176px;
-  margin-inline: auto;
-  transform: rotate(var(--disk-angle));
-  transition: transform 0.2s ease;
-}
-.floppy-choice:not(:disabled):hover .floppy-disk,
-.floppy-choice:focus-visible .floppy-disk {
-  transform: rotate(0) translateY(-3px);
-}
-.floppy-choice-copy {
+.floppy-disk-object {
+  position: relative;
   display: block;
-  padding-top: 16px;
-  margin-top: 8px;
-  border-top: 1px solid var(--floppy-line);
+  width: 100%;
+  container-type: inline-size;
+  transform: rotate(var(--disk-angle));
+  transition: transform 0.22s ease;
 }
-.floppy-choice-title {
+.floppy-choice:not(:disabled):hover .floppy-disk-object,
+.floppy-choice:focus-visible .floppy-disk-object {
+  transform: rotate(0) translateY(-6px);
+}
+.floppy-disk-label {
+  position: absolute;
+  left: 12.273%;
+  top: 45.417%;
+  width: 72.727%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6cqw;
+  padding: 3.7cqw 4cqw;
+  color: #253340;
+}
+.floppy-label-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: -0.03em;
+  gap: 2cqw;
+  color: #786a55;
+  font:
+    3.4cqw/1.3 ui-monospace,
+    'SFMono-Regular',
+    Consolas,
+    monospace;
+  letter-spacing: 0.03em;
+}
+.floppy-label-meta svg {
+  width: 5.6cqw;
+  height: 5.6cqw;
+  flex-shrink: 0;
+  color: #3c5661;
+}
+.floppy-label-title {
+  font-size: 7cqw;
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
   overflow-wrap: anywhere;
 }
-.floppy-choice-title svg {
-  color: #819087;
+.floppy-label-description {
+  color: #59615b;
+  font-size: 4.3cqw;
+  line-height: 1.4;
 }
-.floppy-choice-description {
-  display: block;
-  min-height: 30px;
-  margin-top: 6px;
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--floppy-muted);
+.floppy-label-technologies {
+  margin-top: auto;
+  padding-top: 2cqw;
+  border-top: 1px solid #d6c8af;
+  color: #786a55;
+  font-size: 3.3cqw;
+  line-height: 1.4;
 }
 
 /* Proyecto: contenido directo, sin otra pantalla dentro. */
@@ -857,9 +761,6 @@ body:has(.floppy-portfolio),
 }
 
 @media (max-width: 1100px) {
-  .floppy-profile {
-    gap: 40px;
-  }
   .floppy-console-status {
     flex-direction: column;
     align-items: flex-end;
@@ -870,9 +771,6 @@ body:has(.floppy-portfolio),
   }
   .floppy-project-details {
     padding: 24px;
-  }
-  .floppy-choice {
-    padding: 12px;
   }
 }
 
@@ -909,15 +807,14 @@ body:has(.floppy-portfolio),
     padding-inline: 17px;
   }
   .floppy-profile {
-    grid-template-columns: 1fr;
-    gap: 36px;
-    padding: 28px 24px 34px;
+    gap: 30px;
+    padding: 36px 24px;
   }
   .floppy-portfolio h1 {
     font-size: clamp(32px, 6vw, 42px);
   }
   .floppy-profile h1 {
-    font-size: clamp(42px, 7vw, 56px);
+    font-size: clamp(48px, 8vw, 68px);
   }
   .floppy-lead {
     margin-top: 18px;
@@ -943,33 +840,14 @@ body:has(.floppy-portfolio),
   .floppy-technologies {
     margin-top: 22px;
   }
+  .floppy-profile .floppy-actions {
+    margin-inline: auto;
+  }
   .floppy-profile .floppy-technologies {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    max-width: 330px;
+    gap: 6px;
   }
-  .floppy-collage {
-    height: 245px;
-    max-width: 330px;
-  }
-  .floppy-photo {
-    height: 220px;
-  }
-  .floppy-monogram {
-    font-size: 58px;
-  }
-  .floppy-sun {
-    width: 20px;
-    height: 20px;
-    top: 15px;
-  }
-  .floppy-collage p {
-    padding: 12px 14px;
-    bottom: 35px;
-    font-size: 12px;
-  }
-  .floppy-portrait-signature {
-    font-size: 17px;
+  .floppy-profile .floppy-lead {
+    font-size: 20px;
   }
   .floppy-collection {
     padding: 28px 24px 34px;
@@ -982,14 +860,8 @@ body:has(.floppy-portfolio),
   }
   .floppy-disk-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
+    gap: 24px;
     margin-top: 24px;
-  }
-  .floppy-choice-title {
-    font-size: 12px;
-  }
-  .floppy-choice-description {
-    font-size: 10px;
   }
   .floppy-project {
     padding: 14px 24px 32px;
@@ -1025,6 +897,16 @@ body:has(.floppy-portfolio),
   }
 }
 
+@media (max-width: 580px) {
+  .floppy-disk-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+  .floppy-choice {
+    max-width: 320px;
+  }
+}
+
 @media (max-width: 380px) {
   .floppy-header,
   .floppy-console {
@@ -1039,30 +921,13 @@ body:has(.floppy-portfolio),
     letter-spacing: 0.08em;
   }
   .floppy-profile h1 {
-    font-size: 40px;
+    font-size: 48px;
   }
   .floppy-collection {
     padding-inline: 16px;
   }
   .floppy-disk-grid {
     gap: 10px;
-  }
-  .floppy-choice {
-    padding: 10px;
-  }
-  .floppy-choice-title {
-    font-size: 11px;
-    gap: 3px;
-  }
-  .floppy-choice-title svg {
-    width: 12px;
-    height: 12px;
-  }
-  .floppy-choice-art {
-    padding-inline: 0;
-  }
-  .floppy-choice-copy {
-    padding-top: 12px;
   }
   .floppy-project-details {
     padding: 18px;

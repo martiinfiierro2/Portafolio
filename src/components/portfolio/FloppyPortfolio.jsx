@@ -12,12 +12,13 @@ const ejectedPosition = { y: 16, opacity: 0 };
 
 export default function FloppyPortfolio() {
   const [view, setView] = useState('profile');
-  const [contentDisk, setContentDisk] = useState(disks[0]);
-  const [disk, setDisk] = useState(disks[0]);
+  const [contentDisk, setContentDisk] = useState(null);
+  const [disk, setDisk] = useState(null);
   const [pending, setPending] = useState(null);
   const [phase, setPhase] = useState('idle');
   const contactRef = useRef(null);
   const contentRef = useRef(null);
+  const emptyViewRef = useRef('collection');
   const reduced = useReducedMotion();
   const busy = phase !== 'idle';
   const isProject = view === 'project';
@@ -29,13 +30,16 @@ export default function FloppyPortfolio() {
       contentRef.current?.querySelector('h1')?.focus({ preventScroll: true });
     });
   }
-  function load(next) {
+  function load(next, emptyView = 'collection') {
     if (busy || (disk?.id === next?.id && next)) return;
+    emptyViewRef.current = emptyView;
     setPending(next);
     if (disk) setPhase('ejecting');
     else if (next) {
       setDisk(next);
       setPhase('inserting');
+    } else {
+      showView(emptyView);
     }
   }
   function completeAnimation() {
@@ -45,12 +49,12 @@ export default function FloppyPortfolio() {
         setPhase('inserting');
       } else {
         setDisk(null);
-        showView('collection');
+        showView(emptyViewRef.current);
         setPhase('idle');
       }
     } else if (phase === 'inserting') {
       setContentDisk(disk);
-      showView(disk.id === 'profile' ? 'profile' : 'project');
+      showView('project');
       setPhase('idle');
     }
   }
@@ -66,7 +70,7 @@ export default function FloppyPortfolio() {
             className="floppy-brand"
             onClick={(event) => {
               event.preventDefault();
-              load(disks[0]);
+              load(null, 'profile');
             }}
           >
             <span className="floppy-brand-mark" aria-hidden="true">
@@ -79,7 +83,7 @@ export default function FloppyPortfolio() {
               className={view === 'profile' ? 'active' : ''}
               aria-current={view === 'profile' ? 'page' : undefined}
               disabled={busy}
-              onClick={() => load(disks[0])}
+              onClick={() => load(null, 'profile')}
             >
               Perfil
             </button>
@@ -147,8 +151,8 @@ export default function FloppyPortfolio() {
                 : phase === 'inserting'
                   ? 'Leyendo disco…'
                   : disk
-                    ? `Leyendo: ${disk.id === 'profile' ? 'Perfil' : disk.title}`
-                    : 'Selecciona un disco'}
+                    ? `Leyendo: ${disk.title}`
+                    : 'Unidad lista · sin disco'}
             </p>
             <button className="floppy-eject" disabled={!disk || busy} onClick={() => load(null)}>
               <Triangle size={13} />

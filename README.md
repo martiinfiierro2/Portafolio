@@ -1,6 +1,6 @@
 # Portafolio de Martín Fierro
 
-Portafolio en React y Vite con una colección de disquetes: cada disco abre el perfil o un proyecto. El reproductor ocupa todo el contenedor, con cabecera y ranura visibles y desplazamiento del contenido central cuando hace falta.
+Portafolio en React y Vite con una colección de disquetes: cada disco abre un proyecto. El reproductor ocupa todo el contenedor, con cabecera y ranura visibles y desplazamiento del contenido central cuando hace falta.
 
 ## Desarrollo
 
@@ -30,14 +30,13 @@ npm run format
 - `src/data/profile.js`: información personal y enlace al CV.
 - `src/data/disks.js`: colección y contenido de los proyectos.
 - `src/index.css`: estilos base.
-- `src/img/martin.jpg`: fotografía del perfil.
 
 ## Navegación
 
-El perfil aparece al abrir la página. «Proyectos» y «Expulsar» llevan a la colección; elegir un disco carga su contenido. «Perfil» vuelve a la presentación. «Contacto» abre un diálogo independiente. La expulsión está desactivada cuando la unidad está vacía.
+El perfil aparece al abrir la página, sin fotografía y con la unidad vacía. No hay un disquete de perfil. «Proyectos» y «Expulsar» llevan a la colección; elegir un disco carga su contenido. «Perfil» vuelve a la presentación. «Contacto» abre un diálogo independiente. La expulsión está desactivada cuando la unidad está vacía.
 
 Las animaciones de inserción y expulsión respetan la preferencia de movimiento reducido. El diseño se adapta a escritorio y móvil, y mantiene el tamaño del reproductor al cambiar de pantalla.
 
-La interfaz combina tipografía moderna, fondo marfil, navegación en pestañas y tarjetas ligeras con el aspecto físico de los disquetes y la ranura. El perfil conserva detalles de papel y una firma tipográfica; las fichas de proyecto presentan el contenido directamente.
+La portada usa una composición tipográfica sencilla. La colección muestra disquetes grandes, sin tarjetas alrededor; el nombre, la descripción breve y las tecnologías están en la etiqueta de cada disco. Las fichas de proyecto presentan el contenido directamente. El perfil se abre desde la navegación; si hay un proyecto insertado, primero se expulsa su disquete.
 
 Los proyectos actuales son ejemplos identificados como tales. Los enlaces de demo, código y CV quedan pendientes hasta añadir contenido real.

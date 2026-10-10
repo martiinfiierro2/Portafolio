@@ -1,13 +1,5 @@
 export const disks = [
   {
-    id: 'profile',
-    number: '00',
-    title: 'Mi perfil',
-    subtitle: 'Quién soy',
-    color: 'rust',
-    icon: 'profile',
-  },
-  {
     id: 'meals',
     number: '01',
     title: 'OrganizaCompra',
