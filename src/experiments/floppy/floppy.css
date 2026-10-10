@@ -1,5 +1,19 @@
 /* Todos los estilos retro están aislados de la versión USB. */
-.floppy-portfolio { --floppy-ink: #152f40; --floppy-rust: #9c4f31; --floppy-line: #d0c3b1; height: 100vh; height: 100dvh; overflow: hidden; color: var(--floppy-ink); font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(ellipse at 70% 0, #f7f0e6, #e4d7c5 90%); }
+/* El reproductor necesita también todo el espacio de sus contenedores padre. */
+html:has(.floppy-portfolio),
+body:has(.floppy-portfolio),
+#root:has(.floppy-portfolio) {
+  display: block;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.floppy-portfolio { --floppy-ink: #152f40; --floppy-rust: #9c4f31; --floppy-line: #d0c3b1; width: 100%; max-width: none; height: 100%; margin: 0; padding: 0; overflow: hidden; color: var(--floppy-ink); font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(ellipse at 70% 0, #f7f0e6, #e4d7c5 90%); }
 .floppy-portfolio * { box-sizing: border-box; }
 .floppy-portfolio button { font-family: inherit; }
 .floppy-portfolio button:disabled { cursor: not-allowed; color: #776b5d; background: #ebe2d680; border-color: #cfc1ad; }
@@ -7,7 +21,7 @@
 .floppy-portfolio h1:focus-visible { outline-offset: 8px; }
 .floppy-version-link { justify-self: end; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #665c51; font: 12px/1.5 system-ui, sans-serif; white-space: nowrap; }
 .floppy-version-link:hover { color: var(--floppy-rust); }
-.floppy-player { width: 100%; height: 100%; display: grid; grid-template-rows: 64px minmax(0, 1fr) 116px; background: url('../../assets/paper-grain.svg'), linear-gradient(140deg, #f7f0e5, #ede2d1); }
+.floppy-player { width: 100%; max-width: none; height: 100%; margin: 0; display: grid; grid-template-rows: 64px minmax(0, 1fr) 116px; background: url('../../assets/paper-grain.svg'), linear-gradient(140deg, #f7f0e5, #ede2d1); }
 .floppy-header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 20px; padding-inline: clamp(24px, 3vw, 40px); border-bottom: 1px solid #d2c5b526; }
 .floppy-brand { font-size: 24px; font-weight: 600; letter-spacing: -.06em; white-space: nowrap; }
 .floppy-header nav { display: flex; align-items: center; justify-content: center; gap: 26px; }
