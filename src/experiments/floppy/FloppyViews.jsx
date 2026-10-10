@@ -2,20 +2,21 @@ import { ArrowUpRight, ArrowRight, ArrowLeft } from 'lucide-react';
 import { profile } from '../../data/profile';
 import portrait from '../../img/martin.jpg';
 import FloppyDisk from './FloppyDisk';
+import TechnologyIcon from '../../components/TechnologyIcon';
 
 export function ProfileView({ load, busy }) {
   return (
     <section className="floppy-profile" aria-labelledby="floppy-profile-title">
       <div className="floppy-intro">
         <p className="floppy-kicker">Desarrollador full-stack junior</p>
-        <h1 id="floppy-profile-title" tabIndex={-1}>Hola, soy Martín.</h1>
+        <h1 id="floppy-profile-title" tabIndex={-1}>Hola, soy <em>Martín.</em></h1>
         <p className="floppy-lead">Diseño y desarrollo aplicaciones web con personalidad.</p>
         <p className="floppy-description">{profile.introduction}</p>
         <div className="floppy-actions">
           <button className="floppy-button primary" onClick={() => load(null)} disabled={busy}>Ver proyectos <ArrowRight size={16} /></button>
           {profile.cvUrl ? <a className="floppy-button" href={profile.cvUrl}>Ver CV <ArrowUpRight size={16} /></a> : <button className="floppy-button" disabled>CV pendiente</button>}
         </div>
-        <ul className="floppy-technologies" aria-label="Tecnologías">{profile.technologies.map(technology => <li key={technology}>{technology}</li>)}</ul>
+        <ul className="floppy-technologies" aria-label="Tecnologías">{profile.technologies.map(technology => <li key={technology}><TechnologyIcon name={technology} />{technology}</li>)}</ul>
       </div>
       <div className="floppy-collage">
         <span className="floppy-paper" aria-hidden="true" />
@@ -24,6 +25,7 @@ export function ProfileView({ load, busy }) {
         <div className="floppy-photo"><img src={portrait} alt="Martín Fierro" width="1536" height="2048" decoding="async" /></div>
         <div className="floppy-monogram" aria-hidden="true">M<span>F</span></div>
         <p>Interfaces cuidadas.<br />Aplicaciones completas.</p>
+        <span className="floppy-portrait-signature" aria-hidden="true">Martín Fierro.</span>
       </div>
     </section>
   );
@@ -60,14 +62,14 @@ export function ProjectView({ disk, load, busy }) {
           <p className="floppy-kicker">Proyecto de muestra</p>
           <h1 id="floppy-project-title" tabIndex={-1}>{disk.title}</h1>
           <p className="floppy-lead">{disk.description}</p>
-          <ul className="floppy-technologies" aria-label="Tecnologías de ejemplo">{disk.technologies.map(item => <li key={item}>{item}</li>)}</ul>
+          <ul className="floppy-technologies" aria-label="Tecnologías de ejemplo">{disk.technologies.map(item => <li key={item}><TechnologyIcon name={item} />{item}</li>)}</ul>
           <div className="floppy-actions">
             <button className="floppy-button" disabled>Demo pendiente <ArrowUpRight size={16} /></button>
             <button className="floppy-button" disabled>Código pendiente <ArrowUpRight size={16} /></button>
           </div>
         </div>
         <div className="floppy-project-details">
-          <section><h2>Qué hace</h2><ul>{disk.features.map(feature => <li key={feature}>{feature}</li>)}</ul></section>
+          <section><h2>Qué hace</h2><ul>{disk.features.map((feature, index) => <li key={feature}><span className="floppy-feature-number" aria-hidden="true">0{index + 1}</span>{feature}</li>)}</ul></section>
           <section><h2>Mi aportación</h2><p>Aquí explicaré mi trabajo, las decisiones técnicas y los aprendizajes del proyecto.</p><small>Contenido provisional; no representa un proyecto publicado.</small></section>
         </div>
       </div>

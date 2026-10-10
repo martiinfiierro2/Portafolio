@@ -1,5 +1,5 @@
 /* Todos los estilos retro están aislados de la versión USB. */
-.floppy-portfolio { --floppy-ink: #152f40; --floppy-rust: #9c4f31; --floppy-line: #d0c3b1; --floppy-content-height: clamp(530px, 64svh, 620px); min-height: 100vh; padding: 24px clamp(16px, 4vw, 60px) 55px; color: var(--floppy-ink); font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(ellipse at 70% 0, #fbf6ee, #eee5d8 85%); }
+.floppy-portfolio { --floppy-ink: #152f40; --floppy-rust: #9c4f31; --floppy-line: #d0c3b1; --floppy-content-height: clamp(530px, 64svh, 620px); min-height: 100vh; padding: 24px clamp(16px, 4vw, 60px) 55px; color: var(--floppy-ink); font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(ellipse at 70% 0, #f7f0e6, #e4d7c5 90%); }
 .floppy-portfolio * { box-sizing: border-box; }
 .floppy-portfolio button { font-family: inherit; }
 .floppy-portfolio button:disabled { cursor: not-allowed; color: #776b5d; background: #ebe2d680; border-color: #cfc1ad; }
@@ -8,9 +8,9 @@
 .floppy-comparison { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1280px; margin: 0 auto 24px; color: #665c51; font: 12px/1.5 system-ui, sans-serif; }
 .floppy-comparison a { padding: 8px 0; min-height: 36px; border-bottom: 1px solid #b7a792; }
 .floppy-comparison a:hover { color: var(--floppy-rust); }
-.floppy-player { width: 100%; max-width: 1280px; margin: auto; background: linear-gradient(140deg, #f7f0e5, #efe5d6); border: 1px solid #d0c2ad; box-shadow: 0 24px 45px #4d382521, 0 4px 6px #4d38250c; }
+.floppy-player { width: 100%; max-width: 1280px; margin: auto; background: url('../../assets/paper-grain.svg'), linear-gradient(140deg, #f7f0e5, #ede2d1); border: 1px solid #c4b498; box-shadow: 0 28px 50px #4d382528, 0 4px 6px #4d38251a, inset 0 0 0 1px #ffffff73; }
 .floppy-header { display: flex; align-items: center; gap: 32px; height: 90px; padding-inline: clamp(28px, 4vw, 56px); border-bottom: 1px solid #d2c5b526; }
-.floppy-brand { font-size: 27px; letter-spacing: -.055em; white-space: nowrap; }
+.floppy-brand { font-size: 27px; font-weight: 600; letter-spacing: -.06em; white-space: nowrap; }
 .floppy-header nav { display: flex; align-items: center; gap: 30px; margin-left: auto; }
 .floppy-header nav button { min-height: 44px; padding: 12px 0; font-size: 14px; color: var(--floppy-ink); background: none; border: 0; border-bottom: 1px solid transparent; }
 .floppy-header nav button.active { border-bottom-color: var(--floppy-ink); }
@@ -18,30 +18,38 @@
 .floppy-header nav button:disabled { background: none; border: 0; border-bottom: 1px solid transparent; }
 .floppy-content { height: var(--floppy-content-height); overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; scrollbar-color: #c5af94 transparent; }
 .floppy-view { min-height: 100%; }
-.floppy-profile { min-height: var(--floppy-content-height); display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 40px; padding: 30px clamp(28px, 4vw, 60px) 50px; }
+.floppy-profile { min-height: var(--floppy-content-height); display: grid; grid-template-columns: 1.05fr 1fr; align-items: center; gap: 40px; padding: 26px clamp(28px, 4vw, 60px) 40px; }
 .floppy-intro { min-width: 0; }
-.floppy-kicker { font: 11px/1.6 system-ui, sans-serif; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 18px; }
+.floppy-kicker { display: flex; align-items: center; gap: 12px; font: 10px/1.6 system-ui, sans-serif; letter-spacing: .17em; text-transform: uppercase; margin-bottom: 20px; }
+.floppy-intro .floppy-kicker::before { content: ''; width: 28px; height: 1px; background: #9c4f31; }
 .floppy-portfolio h1 { font-size: clamp(38px, 4.4vw, 62px); font-weight: 500; letter-spacing: -.06em; line-height: 1.08; text-wrap: balance; }
-.floppy-lead { max-width: 490px; font-size: 21px; line-height: 1.5; margin-top: 16px; text-wrap: pretty; }
+.floppy-profile h1 { font-size: clamp(54px, 5.6vw, 82px); line-height: .98; font-weight: 600; letter-spacing: -.065em; }
+.floppy-profile h1 em { display: block; color: #9c4f31; font-weight: 400; }
+.floppy-lead { max-width: 430px; font-size: 21px; line-height: 1.5; margin-top: 18px; text-wrap: pretty; }
 .floppy-description { max-width: 390px; font: 14px/1.8 system-ui, sans-serif; color: #3d4650; margin-top: 15px; }
 .floppy-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .floppy-button { display: inline-flex; justify-content: center; align-items: center; gap: 12px; min-height: 46px; padding: 12px 20px; border: 1px solid #91816d; border-radius: 3px; background: transparent; color: var(--floppy-ink); font-size: 14px; }
-.floppy-button.primary { background: var(--floppy-rust); border-color: var(--floppy-rust); color: #fff9f1; }
+.floppy-button.primary { background: linear-gradient(120deg, #ac5d39, #934b2f); border-color: #92482d; color: #fff9f1; box-shadow: inset 0 1px 0 #ffffff26, 0 2px 3px #7d41231a; }
 .floppy-button.primary:not(:disabled):hover { background: #814027; }
 .floppy-button:not(.primary):not(:disabled):hover { background: #e7dbc9; }
-.floppy-technologies { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 25px 0 0; list-style: none; }
-.floppy-technologies li { padding: 6px 9px; border: 1px solid #d0c1ad; border-radius: 3px; font: 12px/1.4 system-ui, sans-serif; background: #f7efe366; }
+.floppy-technologies { display: flex; flex-wrap: wrap; gap: 12px 18px; padding: 0; margin: 25px 0 0; list-style: none; }
+.floppy-technologies li { display: inline-flex; align-items: center; gap: 7px; padding: 4px 0; font: 11px/1.4 system-ui, sans-serif; }
+.floppy-technologies svg { width: 20px; height: 20px; color: #365f72; }
+.floppy-technologies li:first-child svg { color: #288da8; }
+.floppy-technologies li:nth-child(2) svg { color: #597d47; }
 .floppy-collage { position: relative; height: 380px; display: flex; align-items: flex-end; justify-content: flex-start; min-width: 0; }
-.floppy-photo { position: relative; z-index: 1; width: 75%; height: 345px; overflow: hidden; clip-path: polygon(4% 1%, 98% 0, 100% 96%, 73% 100%, 40% 98%, 0 99%, 2% 35%); }
-.floppy-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 75%; transform: scale(1.3); transform-origin: 50% 80%; filter: saturate(.8); }
-.floppy-paper { position: absolute; top: 5px; left: 10px; width: 70%; height: 96%; background: linear-gradient(130deg, #ded2bf, #d0c2ab); transform: rotate(-5deg); }
-.floppy-color-paper { position: absolute; right: 1%; bottom: 14px; width: 46%; height: 235px; background: #385c71; clip-path: polygon(9% 0, 96% 4%, 91% 99%, 0 95%); }
+.floppy-photo { position: relative; z-index: 1; width: 75%; height: 345px; overflow: hidden; background: #e7d9c3; clip-path: polygon(4% 2%, 34% 0, 55% 2%, 97% 0, 99% 25%, 98% 54%, 100% 95%, 84% 98%, 73% 96%, 60% 100%, 41% 97%, 25% 100%, 0 97%, 2% 68%, 0 40%); }
+.floppy-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 75%; transform: scale(1.3); transform-origin: 50% 80%; filter: saturate(.65) contrast(1.04); mix-blend-mode: multiply; }
+.floppy-paper { position: absolute; top: 5px; left: 10px; width: 70%; height: 96%; background: url('../../assets/paper-grain.svg'), linear-gradient(130deg, #ded2bf, #cbbca1); transform: rotate(-5deg); clip-path: polygon(0 1%, 38% 0, 55% 2%, 100% 0, 97% 100%, 63% 98%, 0 100%); }
+.floppy-color-paper { position: absolute; right: 1%; bottom: 14px; width: 46%; height: 235px; background: url('../../assets/paper-grain.svg'), #385c71; clip-path: polygon(9% 0, 31% 3%, 53% 0, 72% 4%, 96% 2%, 94% 51%, 96% 70%, 91% 99%, 51% 96%, 30% 99%, 0 95%); }
 .floppy-sun { position: absolute; top: 45px; left: -16px; z-index: 2; width: 44px; height: 44px; border-radius: 50%; background: #a95d3e; }
-.floppy-monogram { position: absolute; z-index: 2; top: 7px; right: 4px; font-size: 80px; line-height: 1; letter-spacing: -.2em; }
+.floppy-monogram { position: absolute; z-index: 2; top: 7px; right: 4px; font-size: 104px; line-height: 1; letter-spacing: -.2em; }
 .floppy-monogram span { position: relative; top: 20px; }
-.floppy-collage p { position: absolute; z-index: 2; bottom: 52px; right: 0; padding: 12px; background: #f0e7d8; font-size: 13px; line-height: 1.55; box-shadow: 0 3px 12px #3c32230a; }
+.floppy-collage p { position: absolute; z-index: 2; bottom: 55px; right: 0; padding: 13px; background: url('../../assets/paper-grain.svg'), #f0e7d8; font-size: 13px; line-height: 1.55; box-shadow: 0 3px 12px #3c32230a; }
+.floppy-portrait-signature { position: absolute; z-index: 2; right: -3px; bottom: -5px; color: #203749; font: italic 20px/1.3 Georgia, serif; transform: rotate(-10deg); }
 .floppy-collection { padding: 24px 45px 42px; }
 .floppy-collection-title { text-align: center; }
+.floppy-collection-title .floppy-kicker { justify-content: center; }
 .floppy-collection-title .floppy-kicker { margin-bottom: 10px; color: #78624c; }
 .floppy-collection-title h1 { font-size: 38px; }
 .floppy-collection-title p:not(.floppy-kicker) { margin-top: 10px; font-size: 17px; line-height: 1.5; }
@@ -52,23 +60,23 @@
 .floppy-disk { display: block; width: 100%; filter: drop-shadow(0 7px 5px #36291f28); }
 .floppy-choice .floppy-disk { max-width: 228px; margin-inline: auto; transform: rotate(var(--disk-angle)); transition: transform .2s ease; }
 .floppy-choice:not(:disabled):hover .floppy-disk, .floppy-choice:focus-visible .floppy-disk { transform: rotate(0) translateY(-5px); }
-.floppy-choice-title { display: block; margin-top: 15px; font-size: 15px; }
+.floppy-choice-title { display: block; margin-top: 15px; font-size: 17px; letter-spacing: -.025em; }
 .floppy-choice-description { display: block; margin-top: 5px; font: 11px/1.5 system-ui, sans-serif; color: #665c50; }
-.floppy-project { padding: 16px clamp(28px, 4vw, 56px) 38px; }
+.floppy-project { min-height: var(--floppy-content-height); display: flex; flex-direction: column; padding: 16px clamp(28px, 4vw, 56px) 38px; }
 .floppy-back { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; border: 0; padding: 7px 0; color: var(--floppy-ink); background: transparent; font-size: 13px; }
 .floppy-back:disabled { background: transparent; }
-.floppy-project-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 50px; margin-top: 30px; }
-.floppy-project h1 { font-size: clamp(35px, 3.5vw, 52px); overflow-wrap: anywhere; }
+.floppy-project-grid { flex: 1; display: grid; grid-template-columns: 1.05fr 1fr; gap: 50px; align-items: center; padding-top: 30px; }
+.floppy-project h1 { font-size: clamp(35px, 4.2vw, 60px); overflow-wrap: anywhere; }
 .floppy-project-intro { min-width: 0; }
 .floppy-project-details { border-left: 1px solid var(--floppy-line); padding-left: 42px; min-width: 0; }
 .floppy-project-details h2 { font-size: 27px; font-weight: 500; letter-spacing: -.035em; }
 .floppy-project-details ul { list-style: none; padding: 0; margin: 21px 0 28px; }
-.floppy-project-details li { display: flex; align-items: center; gap: 12px; margin-top: 15px; font-size: 16px; line-height: 1.4; }
-.floppy-project-details li::before { content: ''; flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--floppy-rust); }
+.floppy-project-details li { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px solid #d0c3b16b; font-size: 17px; line-height: 1.4; }
+.floppy-feature-number { flex-shrink: 0; color: var(--floppy-rust); font: 10px/1.4 system-ui, sans-serif; letter-spacing: .08em; }
 .floppy-project-details section + section { border-top: 1px solid var(--floppy-line); padding-top: 23px; }
 .floppy-project-details p { font-size: 15px; line-height: 1.75; margin-top: 13px; }
 .floppy-project-details small { display: block; font: 11px/1.65 system-ui, sans-serif; color: #71614e; margin-top: 12px; }
-.floppy-console { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 235px 150px 90px minmax(0, 1fr); align-items: center; gap: 16px; min-height: 102px; padding: 12px 30px; border-top: 1px solid var(--floppy-line); background: linear-gradient(#eee4d6, #e8dbc9); }
+.floppy-console { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 235px 150px 90px minmax(0, 1fr); align-items: center; gap: 16px; min-height: 102px; padding: 12px 30px; border-top: 1px solid #bbaa8d; background: url('../../assets/paper-grain.svg'), linear-gradient(#eee4d6, #dfd0b9); box-shadow: inset 0 1px 0 #ffffff80; }
 .floppy-copyright, .floppy-signoff { font-size: 11px; line-height: 1.5; }
 .floppy-signoff { text-align: right; }
 .floppy-slot { position: relative; height: 66px; }
@@ -99,10 +107,15 @@
   .floppy-header nav button { min-height: 44px; font-size: 14px; }
   .floppy-profile { grid-template-columns: 1fr; gap: 24px; padding: 26px; }
   .floppy-portfolio h1 { font-size: clamp(35px, 6vw, 48px); }
+  .floppy-profile h1 { font-size: clamp(48px, 9vw, 64px); }
   .floppy-lead { font-size: 19px; }
-  .floppy-collage { width: 100%; height: 220px; max-width: 390px; margin: 0 auto; }
-  .floppy-photo { height: 205px; }
+  .floppy-collage { width: 100%; height: 205px; max-width: 390px; margin: 0 auto; }
+  .floppy-photo { height: 190px; }
+  .floppy-profile .floppy-description { display: none; }
+  .floppy-profile .floppy-technologies { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 14px; max-width: 290px; }
   .floppy-monogram { right: 3px; font-size: 65px; }
+  .floppy-color-paper { height: 155px; }
+  .floppy-portrait-signature { bottom: -6px; font-size: 17px; }
   .floppy-collage p { right: 0; bottom: 38px; }
   .floppy-sun { top: 35px; left: -10px; width: 36px; height: 36px; }
   .floppy-actions { margin-top: 24px; gap: 10px; }
@@ -115,7 +128,7 @@
   .floppy-choice-title { font-size: 14px; }
   .floppy-choice-description { font-size: 11px; }
   .floppy-project { padding: 14px 26px 32px; }
-  .floppy-project-grid { grid-template-columns: 1fr; gap: 30px; margin-top: 24px; }
+  .floppy-project-grid { grid-template-columns: 1fr; gap: 30px; align-items: start; padding-top: 24px; }
   .floppy-project-details { padding: 27px 0 0; border-left: 0; border-top: 1px solid var(--floppy-line); }
   .floppy-console { grid-template-columns: minmax(0, 1fr) 96px; min-height: 155px; gap: 9px 12px; padding: 10px 22px 17px; }
   .floppy-slot { grid-column: 1 / -1; grid-row: 1; width: min(235px, 100%); margin-inline: auto; }

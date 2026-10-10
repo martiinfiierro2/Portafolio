@@ -1,4 +1,5 @@
 import { ExternalLink, Code2, LogOut } from 'lucide-react';
+import TechnologyIcon from '../TechnologyIcon';
 
 export default function ProjectScreen({ project, onDisconnect, busy }) {
   return (
@@ -14,7 +15,7 @@ export default function ProjectScreen({ project, onDisconnect, busy }) {
             <h1 id="project-title" tabIndex={-1}>{project.title}</h1>
             <p className="project-description">{project.description}</p>
             <ul className="technology-list" aria-label="Tecnologías de ejemplo">
-              {project.technologies.map(item => <li key={item}>{item}</li>)}
+              {project.technologies.map(item => <li key={item}><TechnologyIcon name={item} />{item}</li>)}
             </ul>
             <div className="profile-actions">
               <button className="button button-secondary" disabled><ExternalLink size={17} />Demo pendiente</button>
