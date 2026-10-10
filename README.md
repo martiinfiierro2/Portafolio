@@ -30,9 +30,9 @@ npm run dev -- --host 0.0.0.0
 
 ## Estética
 
-Base de papel cálido `#F5F2ED`, superficies blancas `#FFFDFA`, texto grafito `#292B30` y acento terracota `#A54D36`. Las portadas tienen fondos suaves y acentos propios: arcilla, azul tinta, ocre, ciruela y salvia. El cuerpo de las tarjetas permanece claro para mantener una lectura uniforme.
+Fondo blanco `#FFFFFF`, texto grafito `#292B30` y controles en gris oscuro. Las tarjetas son objetos grises opacos: portadas desaturadas, cuerpo gris sólido, bordes con relieve y sombras de profundidad. El carrusel separa las piezas lateralmente y gira las vecinas en perspectiva, manteniendo la tarjeta central de frente. El arrastre con ratón y el gesto horizontal en móvil desplazan las piezas y seleccionan la siguiente al soltar, sin impedir el scroll vertical.
 
-Space Grotesk identifica los nombres y títulos; DM Sans acompaña los textos y controles. Ambas fuentes variables se alojan localmente. Las tarjetas de escritorio miden 330 × 480 px y se adaptan a móvil. El detalle combina resumen y portada en dos columnas en escritorio y los apila en móvil.
+Space Grotesk identifica los nombres y títulos; DM Sans acompaña los textos y controles. Ambas fuentes variables se alojan localmente. Las tarjetas de escritorio miden 330 × 480 px y se adaptan a móvil. El detalle combina resumen y portada en dos columnas en escritorio y los apila en móvil; sus imágenes conservan sus colores.
 
 ## Página única
 

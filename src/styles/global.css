@@ -7,15 +7,15 @@
   --ink: #292b30;
   color-scheme: light;
   --muted: #62646a;
-  --primary: #a54d36;
-  --primary-hover: #8b3f2b;
-  --background: #f5f2ed;
-  --surface-soft: #eae5de;
-  --accent-soft: #ead8cf;
-  --accent: #a54d36;
+  --primary: #343841;
+  --primary-hover: #20242b;
+  --background: #ffffff;
+  --surface-soft: #f0f1f3;
+  --accent-soft: #e5e7eb;
+  --accent: #555b65;
   --deep: #343d48;
-  --border: #d9d3cb;
-  --surface: #fffdfa;
+  --border: #d8dbe0;
+  --surface: #ffffff;
 }
 * {
   box-sizing: border-box;
@@ -245,7 +245,7 @@ h1:focus-visible {
   z-index: 50;
   height: 76px;
   border-bottom: 0;
-  background: #f5f2edf0;
+  background: #fffffff2;
   border-bottom-color: var(--border);
   backdrop-filter: blur(7px);
 }
@@ -1455,7 +1455,7 @@ h1:focus-visible {
   border-color: var(--border);
 }
 .site-footer {
-  background: #ede9e2;
+  background: #f5f6f7;
   border-top-color: var(--border);
 }
 .site-footer .availability,
@@ -2229,4 +2229,108 @@ h3,
   .card-body {
     padding: 17px;
   }
+}
+
+/* Opaque graphite objects in a white, three-dimensional carousel. */
+.collection-section .project-deck {
+  max-width: 1100px;
+}
+.collection-section .deck-stage {
+  perspective: 1400px;
+  cursor: grab;
+}
+.deck-stage.is-dragging,
+.deck-stage.is-dragging .project-card {
+  cursor: grabbing;
+}
+.collection-section .project-card {
+  border: 1px solid #b4b8c0;
+  border-radius: 22px;
+  background: #dfe2e7;
+  box-shadow:
+    5px 6px 0 #b0b4bc,
+    0 18px 30px #2428311f;
+  transform-origin: 50% 50%;
+}
+.collection-section .project-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border: 1px solid #f9fafb;
+  border-right: 3px solid #bac0c8;
+  border-bottom: 3px solid #bdc2ca;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.collection-section .project-card.active {
+  border-color: #979da8;
+  box-shadow:
+    6px 7px 0 #a5abb5,
+    0 25px 42px #24283124;
+}
+.collection-section .card-cover {
+  background: #d3d6dc;
+  border-bottom: 1px solid #bfc4cc;
+}
+.collection-section .card-cover img {
+  filter: grayscale(1) contrast(0.95);
+}
+.collection-section .card-body {
+  background: #dfe2e7;
+}
+.collection-section .card-icon {
+  background: #ccd1d9;
+  color: #434a56;
+}
+.collection-section .card-number {
+  background: #f0f2f5;
+  border-color: #bcc2cc;
+  color: #343841;
+}
+.collection-section .card-open {
+  color: #343841;
+}
+.collection-section .card-kind,
+.collection-section .card-description,
+.collection-section .card-tech {
+  color: #555c67;
+}
+.collection-section .deck-note {
+  max-width: 440px;
+  font-size: 12px;
+  line-height: 1.65;
+}
+.project-dialog .case-heading h1 {
+  color: var(--ink);
+}
+@media (max-width: 767px) {
+  .collection-section .deck-caption {
+    padding-inline: 8px;
+  }
+  .collection-section .project-card {
+    box-shadow:
+      4px 5px 0 #b0b4bc,
+      0 15px 25px #2428311f;
+  }
+  .collection-section .project-card.active {
+    box-shadow:
+      5px 6px 0 #a5abb5,
+      0 20px 32px #24283124;
+  }
+  .collection-section .deck-note {
+    max-width: 280px;
+  }
+}
+
+.carousel-track {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform-style: preserve-3d;
+  pointer-events: none;
+}
+.carousel-track .project-card {
+  pointer-events: auto;
 }

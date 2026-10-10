@@ -1,11 +1,11 @@
 import { m, useReducedMotion } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 import ProjectIcon from '../ui/ProjectIcon';
-export default function ProjectCard({ project, position, onSelect, onOpen }) {
+export default function ProjectCard({ project, position, spacing = 310, onSelect, onOpen }) {
   const reduced = useReducedMotion();
   const active = position === 0;
   const visible = Math.abs(position) <= 2;
-  const scale = 1 - Math.abs(position) * 0.075;
+  const scale = 1 - Math.abs(position) * 0.11;
   return (
     <m.button
       className={`project-card${active ? ' active' : ''}`}
@@ -17,17 +17,18 @@ export default function ProjectCard({ project, position, onSelect, onOpen }) {
       }}
       initial={false}
       animate={{
-        x: position * 52,
-        y: Math.abs(position) * 14,
+        x: position * spacing,
+        y: Math.abs(position) * 18,
         scale,
-        rotate: position * 2.5,
-        rotateY: position * -4,
+        z: -Math.abs(position) * 80,
+        rotate: 0,
+        rotateY: position * -24,
         opacity: 1,
       }}
       transition={
-        reduced ? { duration: 0 } : { type: 'spring', stiffness: 280, damping: 30, mass: 0.85 }
+        reduced ? { duration: 0 } : { type: 'spring', stiffness: 230, damping: 28, mass: 0.9 }
       }
-      whileHover={reduced ? undefined : { y: Math.abs(position) * 14 - 5, rotate: position * 1.5 }}
+      whileHover={reduced ? undefined : { y: Math.abs(position) * 18 - 5, rotate: position * 1.5 }}
       whileTap={reduced ? undefined : { scale: scale - 0.02 }}
       tabIndex={active ? 0 : -1}
       aria-hidden={!visible || undefined}
