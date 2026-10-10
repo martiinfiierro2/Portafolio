@@ -30,7 +30,7 @@ npm run dev -- --host 0.0.0.0
 
 ## Paleta
 
-Naranja `#FF5C23` para botones y acentos; azul claro `#C8F3FF` para superficies, galerías y portadas. El fondo usa el azul claro exacto; la cabecera, el pie y el apellido destacado utilizan naranja en bloques completos. Las tarjetas y el inspector conservan superficies blancas para equilibrar la composición. Los textos sobre naranja son oscuros; los enlaces usan naranja profundo para mantener contraste AA.
+Fondo marfil `#F7F5F0`, tinta `#182D3C` y botones azul profundo `#243D4D`. El terracota `#9A6048` aparece en detalles: punto del logo, indicador de navegación, borde de selección y pequeñas líneas. El apellido lleva un subrayado cálido suave, en lugar de un bloque de color. Las portadas combinan azul pizarra, salvia y tonos tierra apagados; las superficies blancas y los bordes finos mantienen legibilidad y contraste AA.
 
 ## Páginas
 

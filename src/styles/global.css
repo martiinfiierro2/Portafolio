@@ -1,18 +1,19 @@
 :root {
   font-family: 'Manrope Variable', Manrope, system-ui, sans-serif;
-  color: #11182b;
+  color: var(--ink);
   background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #11182b;
-  --muted: #626b80;
-  --primary: #ff5c23;
-  --primary-hover: #f55018;
-  --background: #c8f3ff;
-  --blue: #c8f3ff;
-  --warm: #fff0e8;
-  --deep: #a4320f;
-  --border: #a7d3e1;
+  --ink: #182d3c;
+  --muted: #5e6973;
+  --primary: #243d4d;
+  --primary-hover: #182d3c;
+  --background: #f7f5f0;
+  --blue: #e8eff1;
+  --warm: #f1e4d8;
+  --accent: #9a6048;
+  --deep: #354e60;
+  --border: #dedfd9;
   --surface: #fff;
 }
 * {
@@ -71,7 +72,7 @@ button {
   border: 0;
 }
 ::selection {
-  background: #ff5c2330;
+  background: #9a60482b;
 }
 :focus-visible {
   outline: 3px solid var(--deep);
@@ -180,8 +181,8 @@ h1:focus-visible {
 }
 .button.primary {
   background: var(--primary);
-  color: var(--ink);
-  box-shadow: 0 4px 12px #ff5c2320;
+  color: white;
+  box-shadow: 0 4px 12px #243d4d15;
 }
 .button.secondary {
   background: white;
@@ -243,8 +244,9 @@ h1:focus-visible {
   z-index: 50;
   height: 76px;
   border-bottom: 1px solid var(--border);
-  background: var(--primary);
-  border-bottom-color: #d43f0f;
+  background: #f7f5f0f2;
+  border-bottom-color: var(--border);
+  backdrop-filter: blur(7px);
 }
 .header-inner {
   height: 100%;
@@ -309,7 +311,7 @@ h1:focus-visible {
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  border: 1px solid #efc4b5;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 11px;
   font-weight: 700;
@@ -438,7 +440,7 @@ h1:focus-visible {
 .home-signature {
   margin-top: 32px;
   padding-left: 12px;
-  border-left: 3px solid var(--primary);
+  border-left: 3px solid var(--accent);
   font-size: 12px;
   line-height: 1.7;
 }
@@ -537,7 +539,7 @@ h1:focus-visible {
   border-color: var(--primary);
   box-shadow:
     0 22px 45px #2d37641c,
-    0 0 0 3px #ff5c2314;
+    0 0 0 3px #9a604810;
 }
 .card-cover {
   position: relative;
@@ -823,7 +825,7 @@ h1:focus-visible {
   grid-template-rows: minmax(0, 1fr);
   place-items: center;
   height: 140px;
-  background: var(--project-tint, #c8f3ff);
+  background: var(--project-tint, #e8eff1);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -1401,32 +1403,33 @@ h1:focus-visible {
   line-height: 1.7;
   text-align: right;
 }
-/* The two brand colors frame the content, rather than only accenting it. */
+/* Quiet surfaces, ink typography and a restrained warm accent. */
 .site-header .wordmark > span {
-  color: var(--ink);
+  color: var(--accent);
 }
 .site-header .desktop-nav a,
 .site-header .brand {
   color: var(--ink);
 }
 .site-header .nav-indicator {
-  background: var(--ink);
+  background: var(--accent);
 }
 .site-header .header-cta {
-  color: var(--ink);
-  background: var(--blue);
+  color: white;
+  background: var(--primary);
   border-color: transparent;
 }
 .site-header .menu-toggle {
-  background: var(--blue);
-  border-color: transparent;
+  background: white;
+  border-color: var(--border);
 }
 .name-highlight {
   display: inline-block;
   padding: 0.02em 0.11em 0.08em;
   margin-left: -0.02em;
-  background: var(--primary);
-  border-radius: 0.1em;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: inset 0 -0.14em var(--warm);
   color: var(--ink);
 }
 .project-inspector,
@@ -1442,10 +1445,11 @@ h1:focus-visible {
   border-color: transparent;
 }
 .card-cover {
-  border-bottom: 3px solid var(--primary);
+  border-bottom: 1px solid var(--border);
 }
 .project-card.active {
-  border-width: 2px;
+  border-color: var(--accent);
+  border-width: 1px;
 }
 .project-index {
   padding: 0 20px;
@@ -1458,8 +1462,8 @@ h1:focus-visible {
   border-color: var(--border);
 }
 .site-footer {
-  background: var(--primary);
-  border-top-color: #d43f0f;
+  background: #efefea;
+  border-top-color: var(--border);
 }
 .site-footer .availability,
 .site-footer .footer-links,
@@ -1468,7 +1472,7 @@ h1:focus-visible {
   color: var(--ink);
 }
 .site-footer .availability > span {
-  background: var(--ink);
+  background: #476859;
 }
 @keyframes enter {
   from {
