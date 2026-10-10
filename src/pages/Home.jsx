@@ -9,6 +9,7 @@ import ProjectDeck from '../components/project-deck/ProjectDeck';
 import ProjectDialog from '../components/project-deck/ProjectDialog';
 import Contact from './Contact';
 import CV from './CV';
+import { transition } from '../utils/viewTransition';
 
 export default function Home() {
   useDocumentTitle('Inicio');
@@ -25,20 +26,22 @@ export default function Home() {
   useEffect(() => {
     if (opened && selectedSlug !== opened.slug) selectProject(opened.slug);
   }, [opened, selectedSlug, selectProject]);
-  const [origin, setOrigin] = useState('50% 50%');
+  const [origin, setOrigin] = useState(null);
   const reduced = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ['start start', 'end start'] });
   const opacity = useTransform(scrollYProgress, [0, 0.7], [1, 0.65]);
   const filter = useTransform(scrollYProgress, [0, 0.7], ['blur(0px)', 'blur(12px)']);
   function openProject(project) {
-    selectProject(project.slug);
     const card = document.querySelector('.project-card.active');
     const bounds = card?.getBoundingClientRect();
-    if (bounds)
-      setOrigin(
-        `${((bounds.left + bounds.width / 2) / window.innerWidth) * 100}% ${Math.min(90, Math.max(10, ((bounds.top + bounds.height / 2) / window.innerHeight) * 100))}%`,
-      );
-    setOpened(project);
+    const rectangle = bounds
+      ? { left: bounds.left, top: bounds.top, width: bounds.width, height: bounds.height }
+      : null;
+    transition(() => {
+      selectProject(project.slug);
+      setOrigin(rectangle);
+      setOpened(project);
+    });
   }
   return (
     <div className="progressive-portfolio">
@@ -78,6 +81,7 @@ export default function Home() {
           selectedSlug={selectedSlug}
           onSelect={selectProject}
           onOpen={openProject}
+          detailOpen={Boolean(opened)}
         />
       </m.section>
       <section id="cv" className="inline-cv narrow-container" aria-label="Currículum">

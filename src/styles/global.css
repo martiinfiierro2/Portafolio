@@ -2397,3 +2397,119 @@ h3,
 .glass-card-emblem svg {
   stroke-width: 1.15;
 }
+
+/* Light reveals the transparent edges without changing the white page. */
+.collection-section .deck-stage::before {
+  content: '';
+  position: absolute;
+  inset: 10% -5% -4%;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 48%, #a6bdda33 0%, #b7c9dd1a 36%, transparent 70%);
+}
+.collection-section .project-card,
+.collection-section .project-card.active {
+  box-shadow:
+    2px 3px 0 #90a6c133,
+    0 16px 30px #28374b12,
+    inset 1px 1px 0 #ffffff,
+    inset -1px -2px 2px #8197b033;
+}
+.collection-section .project-card.active {
+  border-color: #a8bbd2aa;
+}
+.collection-section .project-card::before {
+  background:
+    radial-gradient(
+      ellipse 150px 90px at var(--glare-x, 28%) var(--glare-y, 12%),
+      #ffffffa6,
+      transparent 75%
+    ),
+    linear-gradient(122deg, transparent 18%, #ffffffc2 19%, #ffffff14 21%, transparent 22%);
+}
+.collection-section .card-cover {
+  height: 208px;
+}
+.collection-section .card-body {
+  padding-top: 30px;
+  padding-bottom: 26px;
+}
+.collection-section .card-title {
+  font-size: 26px;
+}
+.collection-section .card-description {
+  margin-top: 14px;
+}
+.collection-section .card-tech {
+  padding-top: 22px;
+}
+::view-transition-group(project-card) {
+  animation-duration: 0.48s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+::view-transition-old(project-card) {
+  animation: glass-card-out 0.18s ease-out both;
+  mix-blend-mode: normal;
+}
+::view-transition-new(project-card) {
+  animation: glass-card-in 0.3s 0.06s ease-out both;
+  mix-blend-mode: normal;
+}
+@keyframes glass-card-out {
+  to {
+    opacity: 0;
+  }
+}
+@keyframes glass-card-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (max-width: 767px) {
+  .collection-section .card-cover {
+    height: 190px;
+  }
+  .collection-section .card-body {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .collection-section .card-title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 359px) {
+  .collection-section .card-cover {
+    height: 175px;
+  }
+  .collection-section .card-title {
+    font-size: 22px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(project-card),
+  ::view-transition-old(project-card),
+  ::view-transition-new(project-card) {
+    animation: none;
+  }
+}
+
+/* Size the central card directly so its text stays sharp at rest. */
+.collection-section .project-card.active {
+  width: 340px;
+  height: 492px;
+}
+@media (max-width: 767px) {
+  .collection-section .project-card.active {
+    width: 286px;
+    height: 470px;
+  }
+}
+@media (max-width: 359px) {
+  .collection-section .project-card.active {
+    width: 250px;
+    height: 444px;
+  }
+}

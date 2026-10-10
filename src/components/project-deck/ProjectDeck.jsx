@@ -3,7 +3,13 @@ import { m, animate, useMotionValue, useReducedMotion } from 'framer-motion';
 import { relativePosition, swipeDirection, wrapIndex } from '../../utils/deck';
 import ProjectCard from './ProjectCard';
 import ProjectNavigation from './ProjectNavigation';
-export default function ProjectDeck({ projects, selectedSlug, onSelect, onOpen }) {
+export default function ProjectDeck({
+  projects,
+  selectedSlug,
+  onSelect,
+  onOpen,
+  detailOpen = false,
+}) {
   const regionRef = useRef(null),
     startRef = useRef(null),
     swipedRef = useRef(false);
@@ -108,6 +114,7 @@ export default function ProjectDeck({ projects, selectedSlug, onSelect, onOpen }
               project={project}
               position={relativePosition(index, activeIndex, projects.length)}
               spacing={spacing}
+              detailOpen={detailOpen}
               onSelect={onSelect}
               onOpen={onOpen}
             />
