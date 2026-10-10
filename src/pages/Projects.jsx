@@ -10,8 +10,7 @@ export default function Projects() {
         <p className="eyebrow">Trabajo & aprendizaje</p>
         <h1 tabIndex={-1}>
           Una colección de ideas.
-          <br />{' '}
-          <span>Y lo que aprendo construyéndolas.</span>
+          <br /> <span>Y lo que aprendo construyéndolas.</span>
         </h1>
         <p>Elige una pieza de la baraja para explorar su contexto, su solución y sus decisiones.</p>
       </header>
