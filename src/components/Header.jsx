@@ -12,6 +12,7 @@ export default function Header() {
       <a href="#proyectos" onClick={() => setOpen(false)}>Proyectos</a>
       <a href="#sobre-mi" onClick={() => setOpen(false)}>Sobre mí</a>
       <a href="#contacto" onClick={() => setOpen(false)}>Contacto <ArrowUpRight size={15} /></a>
+      <a className="variant-link" href="/disquetes" onClick={() => setOpen(false)}>Comparar con disquetes <ArrowUpRight size={15} /></a>
     </nav>
   </header>;
 }

@@ -185,3 +185,5 @@
   .docking-lane { height: 70px; }
 }
 .drive-button.drive-away { border-color: transparent; background: transparent; }
+.navigation .variant-link { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: var(--lavender); color: var(--accent-dark); }
+@media (min-width: 801px) and (max-width: 1200px) { .header-role { display: none; } .navigation { gap: 20px; } }
