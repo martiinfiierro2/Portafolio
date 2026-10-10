@@ -8,7 +8,6 @@ export const profile = {
   githubUrl: 'https://github.com/martiinfiierro2',
   email: null,
   linkedinUrl: null,
-  cvUrl: null,
   experience: [],
   education: [],
   skills: [

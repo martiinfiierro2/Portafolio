@@ -7,7 +7,6 @@ import usePortfolioNavigation from '../../hooks/usePortfolioNavigation';
 const links = [
   ['/', 'Inicio'],
   ['/#proyectos', 'Proyectos'],
-  ['/#cv', 'CV'],
   ['/#contacto', 'Contacto'],
 ];
 export default function Header({ profile }) {

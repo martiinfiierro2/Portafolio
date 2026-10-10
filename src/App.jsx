@@ -45,7 +45,7 @@ export default function App() {
               <Route path="index.html" element={<Navigate to="/" replace />} />
               <Route path="projects" element={<Navigate to="/#proyectos" replace />} />
               <Route path="projects/:slug" element={<ProjectRedirect />} />
-              <Route path="cv" element={<Navigate to="/#cv" replace />} />
+              <Route path="cv" element={<Navigate to="/" replace />} />
               <Route path="contact" element={<Navigate to="/#contacto" replace />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Route>

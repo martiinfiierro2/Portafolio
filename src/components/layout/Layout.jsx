@@ -3,19 +3,14 @@ import { Outlet, useLocation } from 'react-router-dom';
 import Header from '../navigation/Header';
 import Footer from './Footer';
 import { profile } from '../../data/profile';
+import scrollToSection from '../../utils/scrollToSection';
 export default function Layout() {
   const { pathname, hash } = useLocation();
   const previous = useRef(pathname),
     mainRef = useRef(null);
   useEffect(() => {
     if (hash) {
-      const frame = requestAnimationFrame(() =>
-        document.getElementById(hash.slice(1))?.scrollIntoView({
-          behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-            ? 'instant'
-            : 'smooth',
-        }),
-      );
+      const frame = requestAnimationFrame(() => scrollToSection(hash.slice(1)));
       previous.current = pathname;
       return () => cancelAnimationFrame(frame);
     }

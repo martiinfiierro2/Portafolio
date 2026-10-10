@@ -1185,84 +1185,7 @@ h1:focus-visible {
   padding-top: 20px;
   border-top: 1px solid var(--border);
 }
-/* CV & contact */
-.cv-page .page-heading > .button {
-  margin-top: 24px;
-}
-.cv-page .page-heading > .data-note {
-  margin-top: 10px;
-  font-size: 11px;
-}
-.cv-section {
-  padding: 32px 0;
-  border-bottom: 1px solid var(--border);
-}
-.cv-section:first-of-type {
-  margin-top: 32px;
-}
-.cv-section h2 {
-  font-size: 12px;
-  letter-spacing: 0.09em;
-  text-transform: uppercase;
-  margin-bottom: 22px;
-}
-.placeholder-copy {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-}
-.cv-skills {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-}
-.cv-skills h3 {
-  font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-.cv-skills p {
-  font-size: 13px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-.cv-page > .text-link {
-  margin-top: 30px;
-}
-.timeline {
-  list-style: none;
-  margin: 0;
-  padding-left: 20px;
-  border-left: 1px solid var(--border);
-}
-.timeline li {
-  position: relative;
-  margin-bottom: 24px;
-}
-.timeline li:before {
-  content: '';
-  position: absolute;
-  left: -25px;
-  top: 5px;
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--primary);
-}
-.timeline li > span {
-  color: var(--muted);
-  font-size: 11px;
-}
-.timeline h3 {
-  font-size: 16px;
-  margin-top: 7px;
-}
-.timeline p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin-top: 7px;
-}
+/* Contact */
 .contact-page {
   max-width: 900px;
   padding-top: 80px;
@@ -1450,7 +1373,6 @@ h1:focus-visible {
   border-radius: 14px;
   background: var(--surface);
 }
-.cv-section,
 .contact-options section {
   border-color: var(--border);
 }
@@ -1762,12 +1684,6 @@ html[data-transition='collection']::view-transition-new(portfolio-scene) {
   .narrow-container {
     padding: 36px 24px 55px;
   }
-  .cv-section {
-    padding-block: 26px;
-  }
-  .cv-skills {
-    gap: 22px;
-  }
   .contact-options {
     margin-top: 24px;
   }
@@ -1899,8 +1815,7 @@ html {
 }
 #inicio,
 #proyectos,
-#contacto,
-#cv {
+#contacto {
   scroll-margin-top: 100px;
 }
 .progressive-portfolio .home-page {
@@ -1931,18 +1846,6 @@ html {
 .contact-section .page-heading h2 {
   font-size: clamp(34px, 5vw, 62px);
   letter-spacing: -0.055em;
-}
-.inline-cv {
-  padding-block: 24px;
-}
-.inline-cv summary {
-  cursor: pointer;
-  color: var(--muted);
-  padding-block: 14px;
-}
-.inline-cv .cv-page {
-  padding-top: 24px;
-  padding-inline: 0;
 }
 .project-dialog {
   position: fixed;
@@ -2507,5 +2410,145 @@ html[data-transition='project']::view-transition-new(root) {
 @media (max-width: 767px) {
   .intro-ornament {
     margin-bottom: 22px;
+  }
+}
+
+/* Expressive identity and editorial white project cards. */
+.home-intro h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(76px, 9.5vw, 132px);
+  font-weight: 500;
+  letter-spacing: -0.055em;
+  line-height: 1.05;
+}
+.home-intro .name-highlight {
+  font-style: italic;
+  color: var(--primary);
+}
+.collection-section .card-cover {
+  height: 172px;
+  border-bottom: 0;
+}
+.card-topline {
+  position: absolute;
+  inset: 24px 26px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--primary);
+}
+.collection-section .card-number {
+  position: static;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.collection-section .card-emblem {
+  position: absolute;
+  left: 26px;
+  bottom: 8px;
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: var(--project-tint);
+  color: var(--project-color);
+}
+.collection-section .project-card.active .card-emblem {
+  color: var(--project-color);
+}
+.card-folio {
+  position: absolute;
+  right: 24px;
+  bottom: -6px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 128px;
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.065em;
+  color: var(--project-color);
+  opacity: 0.16;
+}
+.collection-section .card-body {
+  padding: 26px;
+}
+.collection-section .card-title {
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+.collection-section .card-description {
+  margin-top: 16px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.collection-section .card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding-top: 18px;
+  border-top: 1px solid #edf0e4;
+  font-size: 10px;
+}
+.card-tech > span {
+  padding: 4px 8px;
+  border: 1px solid #e5e9df;
+  border-radius: 6px;
+  background: #f8faf5;
+}
+@media (max-width: 767px) {
+  .home-intro h1 {
+    font-size: clamp(60px, 16vw, 96px);
+    line-height: 1.02;
+  }
+  .collection-section .card-cover {
+    height: 152px;
+  }
+  .collection-section .card-body {
+    padding: 24px;
+  }
+  .collection-section .card-title {
+    font-size: 28px;
+  }
+  .collection-section .card-description {
+    font-size: 13px;
+  }
+  .card-topline {
+    inset: 22px 24px auto;
+  }
+  .collection-section .card-emblem {
+    left: 24px;
+    width: 60px;
+    height: 60px;
+  }
+  .card-folio {
+    font-size: 112px;
+  }
+}
+@media (max-width: 359px) {
+  .collection-section .card-cover {
+    height: 136px;
+  }
+  .collection-section .card-body {
+    padding: 20px;
+  }
+  .collection-section .card-title {
+    font-size: 25px;
+  }
+  .card-topline {
+    inset: 18px 20px auto;
+  }
+  .collection-section .card-emblem {
+    left: 20px;
+    width: 54px;
+    height: 54px;
+  }
+  .card-folio {
+    font-size: 100px;
   }
 }

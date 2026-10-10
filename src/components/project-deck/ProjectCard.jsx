@@ -1,5 +1,6 @@
 import { m, useReducedMotion } from 'framer-motion';
 import ProjectIcon from '../ui/ProjectIcon';
+import { ArrowUpRight } from 'lucide-react';
 export default function ProjectCard({
   project,
   position,
@@ -43,15 +44,23 @@ export default function ProjectCard({
       onClick={() => (active ? onOpen(project) : onSelect(project.slug))}
     >
       <span aria-hidden="true" className="card-cover">
-        <span className="card-emblem">
-          <ProjectIcon name={project.icon} size={68} />
+        <span className="card-topline">
+          <span className="card-number">{project.number} / Proyecto</span>
+          <ArrowUpRight size={18} />
         </span>
-        <span className="card-number">{project.number}</span>
+        <span className="card-emblem">
+          <ProjectIcon name={project.icon} size={44} />
+        </span>
+        <span className="card-folio">{project.number}</span>
       </span>
       <span className="card-body">
         <span className="card-title">{project.title}</span>
         <span className="card-description">{project.shortDescription}</span>
-        <span className="card-tech">{project.technologies.slice(0, 3).join(' · ')}</span>
+        <span className="card-tech">
+          {project.technologies.slice(0, 3).map((technology) => (
+            <span key={technology}>{technology}</span>
+          ))}
+        </span>
       </span>
     </m.button>
   );

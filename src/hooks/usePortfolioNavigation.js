@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import scrollToSection from '../utils/scrollToSection';
 export default function usePortfolioNavigation() {
   const navigate = useNavigate();
   return (path) => {
@@ -6,12 +7,7 @@ export default function usePortfolioNavigation() {
     const id = path.split('#')[1];
     requestAnimationFrame(() => {
       const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (id === 'cv') {
-        const details = document.querySelector('#cv details');
-        if (details) details.open = true;
-      }
-      if (id)
-        document.getElementById(id)?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' });
+      if (id) scrollToSection(id);
       else if (path === '/') window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' });
     });
   };

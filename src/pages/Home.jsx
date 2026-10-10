@@ -8,7 +8,7 @@ import useProjectSelection from '../hooks/useProjectSelection';
 import ProjectDeck from '../components/project-deck/ProjectDeck';
 import ProjectDialog from '../components/project-deck/ProjectDialog';
 import Contact from './Contact';
-import CV from './CV';
+import usePortfolioNavigation from '../hooks/usePortfolioNavigation';
 import { transition } from '../utils/viewTransition';
 
 export default function Home() {
@@ -17,6 +17,7 @@ export default function Home() {
   const { projects, selectedSlug, selectProject } = useProjectSelection();
   const location = useLocation();
   const navigate = useNavigate();
+  const navigateTo = usePortfolioNavigation();
   const [opened, setOpened] = useState(
     () =>
       projects.find(
@@ -68,7 +69,15 @@ export default function Home() {
           </m.h1>
           <p className="profile-role">{profile.role}</p>
           <p className="home-tagline">{profile.tagline}</p>
-          <a className="collection-entry" href="#proyectos">
+          <a
+            className="collection-entry"
+            href="#proyectos"
+            onClick={(event) => {
+              if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+              event.preventDefault();
+              navigateTo('/#proyectos');
+            }}
+          >
             <span className="collection-entry-line" aria-hidden="true" />
             <span>Explorar colección</span>
             <ArrowDown size={19} aria-hidden="true" />
@@ -79,8 +88,8 @@ export default function Home() {
         id="proyectos"
         className="collection-section page-container"
         aria-label="Proyectos"
-        initial={reduced ? false : { opacity: 0, y: 45 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={reduced ? false : { opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: reduced ? 0 : 0.6 }}
       >
@@ -93,12 +102,6 @@ export default function Home() {
           detailOpen={Boolean(opened)}
         />
       </m.section>
-      <section id="cv" className="inline-cv narrow-container" aria-label="Currículum">
-        <details>
-          <summary>Currículum</summary>
-          <CV embedded />
-        </details>
-      </section>
       <section id="contacto" className="contact-section" aria-label="Contacto">
         <Contact embedded />
       </section>

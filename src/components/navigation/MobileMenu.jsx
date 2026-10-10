@@ -4,7 +4,6 @@ import { X, ArrowUpRight } from 'lucide-react';
 const links = [
   ['/', 'Inicio'],
   ['/#proyectos', 'Proyectos'],
-  ['/#cv', 'CV'],
   ['/#contacto', 'Contacto'],
 ];
 export default function MobileMenu({ open, onClose, profile, onNavigate }) {

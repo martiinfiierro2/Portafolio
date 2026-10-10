@@ -32,15 +32,14 @@ npm run dev -- --host 0.0.0.0
 
 Fondo pistacho `#E6EDCE` con manchas suaves de lima y salvia. Las cartas y el detalle abierto mantienen el mismo blanco sólido `#FFFFFF`. Texto verde profundo `#29382B`, secundarios `#53604C` y acentos frambuesa `#983D59` para selección, enlaces y acciones. Una textura de papel muy fina y manchas crema y salvia dan profundidad al fondo. El inicio incorpora un motivo discreto de círculos; las cartas conservan sus portadas provisionales y ganan un canto fino y sombras en varias capas, sin transparencia ni reflejos de cristal.
 
-Space Grotesk identifica los nombres y títulos; DM Sans acompaña los textos y controles. Ambas fuentes variables se alojan localmente. La carta central es mayor y frontal, las vecinas giran en perspectiva y el carrusel se puede arrastrar con ratón o deslizar en móvil sin impedir el scroll vertical. Las cartas muestran símbolo, título, descripción breve y hasta tres tecnologías. Al abrirlas se expanden al detalle, con resumen y portada en dos columnas en escritorio y apilados en móvil.
+Cormorant Garamond identifica el nombre principal con el apellido en cursiva; Space Grotesk se utiliza en los títulos y DM Sans en textos y controles. Las tres fuentes se alojan localmente. Las cartas tienen una composición editorial con folio grande, icono compacto, título protagonista y tecnologías en etiquetas. La carta central es mayor y frontal, las vecinas giran en perspectiva y el carrusel se puede arrastrar con ratón o deslizar en móvil sin impedir el scroll vertical. Las cartas muestran símbolo, título, descripción breve y hasta tres tecnologías. Al abrirlas se expanden al detalle, con resumen y portada en dos columnas en escritorio y apilados en móvil.
 
 ## Página única
 
 - `/`: presentación con nombre y profesión; al deslizar, el nombre se difumina y aparece la baraja de proyectos, sin inspector lateral.
-- `/#proyectos`: colección navegable con flechas, teclado y gestos. Al abrir una tarjeta, el caso de estudio se expande desde sus dimensiones y posición hasta un diálogo sobre la página. View Transitions anima la misma pieza al abrir y al cerrar; los navegadores sin esa API usan una expansión desde la geometría de la carta. Al cerrarlo se recuperan el foco, la tarjeta y la posición de scroll.
-- `/#cv`: currículum en un apartado desplegable.
+- `/#proyectos`: colección navegable con flechas, teclado y gestos, centrada bajo la cabecera al pulsar Proyectos. Al abrir una tarjeta, el caso de estudio se expande desde sus dimensiones y posición hasta un diálogo sobre la página. View Transitions anima la misma pieza al abrir y al cerrar; los navegadores sin esa API usan una expansión desde la geometría de la carta. Al cerrarlo se recuperan el foco, la tarjeta y la posición de scroll.
 - `/#contacto`: contacto al final de la misma página.
-- Las rutas anteriores `/projects`, `/cv` y `/contact` redirigen a sus secciones. `/projects/:slug` abre el proyecto sobre la página principal mediante `?project=slug#proyectos`. `/index.html` sigue redirigiendo a Inicio. Las rutas antiguas o no reconocidas vuelven a `/` y sustituyen la entrada del historial, evitando que un enlace guardado deje al visitante en una pantalla 404.
+- Las rutas anteriores `/projects` y `/contact` redirigen a sus secciones; `/cv` vuelve al inicio. `/projects/:slug` abre el proyecto sobre la página principal mediante `?project=slug#proyectos`. `/index.html` sigue redirigiendo a Inicio. Las rutas antiguas o no reconocidas vuelven a `/` y sustituyen la entrada del historial, evitando que un enlace guardado deje al visitante en una pantalla 404.
 
 ## Organización
 
@@ -56,7 +55,7 @@ src/
     profile.js                    Datos personales y enlaces
     projects.js                   Todas las fichas y sus medios
   hooks/                          Selección, títulos y navegación con transición
-  pages/                          Página principal y contenido de ficha, CV y contacto
+  pages/                          Página principal y contenido de ficha y contacto
   styles/                         Estética global, responsive y fuentes locales
   utils/                          Cálculo circular de la baraja y gestos, con pruebas
 public/
@@ -72,11 +71,8 @@ Las cinco fichas iniciales son **muestras**, no proyectos publicados ni una decl
 
 En `src/data/profile.js`, completa:
 
-- `email`, `linkedinUrl` y `cvUrl`.
-- `experience`, `education` y las habilidades confirmadas. Las estructuras esperadas se ven en `src/pages/CV.jsx`.
+- `email` y `linkedinUrl`.
 - Tu presentación y disponibilidad, si quieres ajustar el texto.
-
-Para el PDF, puedes guardarlo como `public/cv/martin-fierro.pdf` y configurar `cvUrl: '/cv/martin-fierro.pdf'`.
 
 En `src/data/projects.js`, sustituye las muestras por tus proyectos. Cada ficha contiene `slug`, `number`, `title`, `shortDescription`, `fullDescription`, `icon`, `color`, `tint`, `technologies`, `technologyNote`, `type`, `role`, `status`, `year`, `cover`, `coverAlt`, `media`, `problem`, `solution`, `features`, `architecture`, `architectureNote`, `decisions`, `learnings`, `demoUrl`, `repositoryUrl`, `featured` e `isPlaceholder`.
 
@@ -90,9 +86,9 @@ Las entradas de `media` usan `id`, `label`, `type`, `src`, `alt` y `caption`. `t
 - Deslizamiento horizontal en móvil, conservando el scroll vertical.
 - Selección recordada en `sessionStorage` al volver a la colección de Proyectos.
 - Tabs de galería con flechas, Inicio y Fin; menú móvil con cierre por Escape y foco gestionado por un diálogo nativo.
-- Anclas para acceder a proyectos, CV y contacto en la misma página. El detalle usa un diálogo nativo con cierre por Escape, foco contenido y restauración del foco al cerrar.
+- Anclas para acceder a proyectos y contacto en la misma página. El detalle usa un diálogo nativo con cierre por Escape, foco contenido y restauración del foco al cerrar.
 - `prefers-reduced-motion` elimina el desplazamiento animado, el desenfoque y las animaciones de apertura y cierre. El header no tiene separador. El sitio no requiere la API View Transitions para recorrer la colección.
-- Fuentes Space Grotesk y DM Sans alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
+- Fuentes Cormorant Garamond, Space Grotesk y DM Sans alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
 
 ## Publicación
 
