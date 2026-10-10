@@ -720,7 +720,7 @@ body:has(.floppy-portfolio),
 }
 .floppy-slot-mouth {
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   top: 14px;
   left: 14px;
   right: 14px;
@@ -743,28 +743,23 @@ body:has(.floppy-portfolio),
 }
 .floppy-loaded {
   position: absolute;
-  z-index: 1;
-  left: 24px;
-  top: 24px;
-  width: calc(100% - 48px);
+  left: 9px;
+  top: 0;
+  width: calc(100% - 18px);
   height: 60px;
-  overflow: hidden;
 }
 .floppy-loaded .floppy-disk {
   width: 100%;
   height: 60px;
 }
-.floppy-loaded > span {
+.floppy-slot-channel {
   position: absolute;
-  top: 37px;
-  left: 24px;
-  right: 24px;
-  padding: 4px;
-  border: 1px solid #c8b597;
-  background: #f3e7d4;
-  text-align: center;
-  color: #253340;
-  font: 10px/1.2 var(--floppy-ui);
+  z-index: 2;
+  top: 16px;
+  left: 15px;
+  right: 15px;
+  bottom: 0;
+  overflow: hidden;
 }
 .floppy-reading {
   min-width: 0;

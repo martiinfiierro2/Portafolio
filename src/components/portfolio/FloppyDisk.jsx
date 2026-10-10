@@ -35,6 +35,17 @@ export default function FloppyDisk({ disk, compact = false }) {
         <path d="M10 43h220" stroke="#fff" strokeOpacity=".3" />
         <rect x="18" y="46" width="15" height="6" fill={dark} />
         <rect x="207" y="46" width="13" height="6" fill={dark} />
+        <path d="M47 35h146l3 19H44Z" fill="#f3e7d4" stroke="#c8b597" strokeWidth=".7" />
+        <text
+          x="120"
+          y="49"
+          textAnchor="middle"
+          fontSize="11"
+          fill="#253340"
+          fontFamily="'Segoe UI', system-ui, sans-serif"
+        >
+          {disk.id === 'profile' ? 'Martín / Perfil' : disk.title}
+        </text>
       </svg>
     );
   return (

@@ -7,6 +7,9 @@ import FloppyDisk from './FloppyDisk';
 import { disks } from '../../data/disks';
 import './floppy.css';
 
+const insertedPosition = { y: -12, opacity: 1 };
+const ejectedPosition = { y: 16, opacity: 0 };
+
 export default function FloppyPortfolio() {
   const [view, setView] = useState('profile');
   const [contentDisk, setContentDisk] = useState(disks[0]);
@@ -120,19 +123,20 @@ export default function FloppyPortfolio() {
           <div className="floppy-slot" aria-hidden="true">
             <div className="floppy-slot-housing" />
             <div className="floppy-slot-mouth" />
-            {disk && (
-              <Motion.div
-                key={`${disk.id}-${phase === 'inserting' ? 'insert' : 'rest'}`}
-                className="floppy-loaded"
-                initial={phase === 'inserting' ? { y: 45, opacity: 0 } : false}
-                animate={phase === 'ejecting' ? { y: 45, opacity: 0 } : { y: 0, opacity: 1 }}
-                transition={{ duration: reduced ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
-                onAnimationComplete={completeAnimation}
-              >
-                <FloppyDisk disk={disk} compact />
-                <span>{disk.id === 'profile' ? 'Martín / Perfil' : disk.title}</span>
-              </Motion.div>
-            )}
+            <div className="floppy-slot-channel">
+              {disk && (
+                <Motion.div
+                  key={disk.id}
+                  className="floppy-loaded"
+                  initial={phase === 'inserting' ? ejectedPosition : false}
+                  animate={phase === 'ejecting' ? ejectedPosition : insertedPosition}
+                  transition={{ duration: reduced ? 0 : 0.32, ease: [0.22, 1, 0.36, 1] }}
+                  onAnimationComplete={completeAnimation}
+                >
+                  <FloppyDisk disk={disk} compact />
+                </Motion.div>
+              )}
+            </div>
             <div className="floppy-slot-lip" />
           </div>
           <div className="floppy-console-status">
