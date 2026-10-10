@@ -24,7 +24,7 @@ export function ProfileView({ load, busy }) {
         <span className="floppy-sun" aria-hidden="true" />
         <div className="floppy-photo"><img src={portrait} alt="Martín Fierro" width="1536" height="2048" decoding="async" /></div>
         <div className="floppy-monogram" aria-hidden="true">M<span>F</span></div>
-        <p>Interfaces cuidadas.<br />Aplicaciones completas.</p>
+        <p><span className="floppy-collage-label">De la interfaz a la lógica.</span>Frontend + Backend</p>
         <span className="floppy-portrait-signature" aria-hidden="true">Martín Fierro.</span>
       </div>
     </section>
@@ -35,17 +35,20 @@ export function CollectionView({ disks, load, busy }) {
   return (
     <section className="floppy-collection" aria-labelledby="floppy-collection-title">
       <div className="floppy-collection-title">
-        <p className="floppy-kicker">La colección</p>
+        <p className="floppy-kicker">La colección <span className="floppy-collection-count">{String(disks.length).padStart(2, '0')} discos</span></p>
         <h1 id="floppy-collection-title" tabIndex={-1}>Un disco, una historia.</h1>
         <p>Elige mi perfil o descubre uno de mis proyectos.</p>
         <small>Proyectos de muestra · contenido en desarrollo.</small>
       </div>
       <div className="floppy-disk-grid">
         {disks.map((item, index) => (
-          <button className="floppy-choice" key={item.id} disabled={busy} onClick={() => load(item)} style={{ '--disk-angle': `${[-5, -3, 3, -4][index % 4]}deg` }} aria-label={`Abrir ${item.title}`}>
-            <FloppyDisk disk={item} />
-            <span className="floppy-choice-title">{item.title}</span>
-            <span className="floppy-choice-description">{item.subtitle}</span>
+          <button className={`floppy-choice choice-${item.color}`} key={item.id} disabled={busy} onClick={() => load(item)} style={{ '--disk-angle': `${[-5, -3, 3, -4][index % 4]}deg` }} aria-label={`Abrir ${item.title}`}>
+            <span className="floppy-choice-meta"><span>{item.number}</span>{item.id === 'profile' ? 'Perfil' : 'Proyecto'}</span>
+            <span className="floppy-choice-art"><FloppyDisk disk={item} /></span>
+            <span className="floppy-choice-copy">
+              <span className="floppy-choice-title">{item.title}<ArrowUpRight size={16} aria-hidden="true" /></span>
+              <span className="floppy-choice-description">{item.subtitle}</span>
+            </span>
           </button>
         ))}
       </div>
@@ -59,7 +62,7 @@ export function ProjectView({ disk, load, busy }) {
       <button className="floppy-back" disabled={busy} onClick={() => load(null)}><ArrowLeft size={15} />Volver a los discos</button>
       <div className="floppy-project-grid">
         <div className="floppy-project-intro">
-          <p className="floppy-kicker">Proyecto de muestra</p>
+          <p className="floppy-kicker"><span className="floppy-project-number">{disk.number}</span>Proyecto de muestra</p>
           <h1 id="floppy-project-title" tabIndex={-1}>{disk.title}</h1>
           <p className="floppy-lead">{disk.description}</p>
           <ul className="floppy-technologies" aria-label="Tecnologías de ejemplo">{disk.technologies.map(item => <li key={item}><TechnologyIcon name={item} />{item}</li>)}</ul>

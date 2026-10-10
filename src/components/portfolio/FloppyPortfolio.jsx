@@ -46,12 +46,15 @@ export default function FloppyPortfolio() {
     <a className="floppy-skip" href="#floppy-content">Saltar al contenido</a>
     <div className="floppy-player">
       <header className="floppy-header">
-        <a href="#perfil" className="floppy-brand" onClick={event => { event.preventDefault(); load(disks[0]); }}>{profile.name}</a>
+        <a href="#perfil" className="floppy-brand" onClick={event => { event.preventDefault(); load(disks[0]); }}>
+          <span className="floppy-brand-mark" aria-hidden="true">MF</span>{profile.name}
+        </a>
         <nav aria-label="Navegación de disquetes">
           <button className={view === 'profile' ? 'active' : ''} aria-current={view === 'profile' ? 'page' : undefined} disabled={busy} onClick={() => load(disks[0])}>Perfil</button>
           <button className={view !== 'profile' ? 'active' : ''} aria-current={view !== 'profile' ? 'page' : undefined} disabled={busy} onClick={() => load(null)}>Proyectos</button>
           <button onClick={() => contactRef.current.showModal()}>Contacto</button>
         </nav>
+        <a className="floppy-header-link" href={profile.githubUrl} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={14} aria-hidden="true" /></a>
       </header>
       <main ref={contentRef} id="floppy-content" className="floppy-content" tabIndex={-1}>
         <Motion.div className="floppy-view" key={view === 'project' ? contentDisk.id : view} initial={{ opacity: reduced ? 1 : 0 }} animate={{ opacity: 1 }} transition={{ duration: reduced ? 0 : .2 }}>

@@ -31,4 +31,6 @@ El perfil aparece al abrir la página. «Proyectos» y «Expulsar» llevan a la 
 
 Las animaciones de inserción y expulsión respetan la preferencia de movimiento reducido. El diseño se adapta a escritorio y móvil, y mantiene el tamaño del reproductor al cambiar de pantalla.
 
+La interfaz combina tipografía moderna, fondo marfil, navegación en pestañas y tarjetas ligeras con el aspecto físico de los disquetes y la ranura. El perfil conserva detalles de papel y una firma tipográfica; las fichas de proyecto presentan el contenido directamente.
+
 Los proyectos actuales son ejemplos identificados como tales. Los enlaces de demo, código y CV quedan pendientes hasta añadir contenido real.
