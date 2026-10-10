@@ -28,6 +28,10 @@ npm ci --cache /workspace/.npm-cache
 npm run dev -- --host 0.0.0.0
 ```
 
+## Paleta
+
+Naranja `#FF5C23` para botones y acentos; azul claro `#C8F3FF` para superficies, galerías y portadas. El fondo usa una variación muy suave del azul y las tarjetas conservan superficies blancas. Los textos sobre naranja son oscuros; los enlaces usan naranja profundo para mantener contraste AA.
+
 ## Páginas
 
 - `/`: presentación personal, baraja e inspector del proyecto seleccionado.

@@ -1,14 +1,18 @@
 :root {
   font-family: 'Manrope Variable', Manrope, system-ui, sans-serif;
   color: #11182b;
-  background: #f5f7fc;
+  background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   --ink: #11182b;
   --muted: #626b80;
-  --primary: #5665f5;
-  --deep: #303fcb;
-  --border: #e5e9f2;
+  --primary: #ff5c23;
+  --primary-hover: #f55018;
+  --background: #f2fbfe;
+  --blue: #c8f3ff;
+  --warm: #fff0e8;
+  --deep: #a4320f;
+  --border: #d3e7ed;
   --surface: #fff;
 }
 * {
@@ -67,17 +71,17 @@ button {
   border: 0;
 }
 ::selection {
-  background: #5665f528;
+  background: #ff5c2330;
 }
 :focus-visible {
-  outline: 3px solid #5665f5;
+  outline: 3px solid var(--deep);
   outline-offset: 5px;
 }
 h1:focus {
   outline: none;
 }
 h1:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--deep);
   outline-offset: 8px;
 }
 .sr-only {
@@ -176,19 +180,19 @@ h1:focus-visible {
 }
 .button.primary {
   background: var(--primary);
-  color: white;
-  box-shadow: 0 4px 12px #5665f517;
+  color: var(--ink);
+  box-shadow: 0 4px 12px #ff5c2320;
 }
 .button.secondary {
   background: white;
-  border-color: #dde2ed;
+  border-color: var(--border);
 }
 .button:not(:disabled):hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 18px #26325312;
 }
 .button.primary:not(:disabled):hover {
-  background: var(--deep);
+  background: var(--primary-hover);
 }
 .button:active:not(:disabled) {
   transform: scale(0.98);
@@ -214,7 +218,7 @@ h1:focus-visible {
     transform 0.18s;
 }
 .icon-button:hover:not(:disabled) {
-  background: #eef0ff;
+  background: var(--blue);
   transform: translateY(-1px);
 }
 .icon-button:disabled {
@@ -239,7 +243,7 @@ h1:focus-visible {
   z-index: 50;
   height: 76px;
   border-bottom: 1px solid var(--border);
-  background: #f5f7fcf2;
+  background: #f2fbfef2;
   backdrop-filter: blur(7px);
 }
 .header-inner {
@@ -305,7 +309,7 @@ h1:focus-visible {
   align-items: center;
   gap: 8px;
   padding: 10px 14px;
-  border: 1px solid #d9def4;
+  border: 1px solid #efc4b5;
   border-radius: 8px;
   font-size: 11px;
   font-weight: 700;
@@ -324,7 +328,7 @@ h1:focus-visible {
   max-height: none;
   border: 0;
   padding: 24px;
-  background: #f5f7fc;
+  background: var(--background);
   color: var(--ink);
 }
 .mobile-menu::backdrop {
@@ -422,7 +426,7 @@ h1:focus-visible {
 }
 .profile-notes li + li {
   padding-left: 12px;
-  border-left: 1px solid #dde2ed;
+  border-left: 1px solid var(--border);
 }
 .profile-footnote {
   margin-top: 32px;
@@ -474,7 +478,7 @@ h1:focus-visible {
   width: 250px;
   height: 442px;
   padding: 0;
-  border: 1px solid #dde2ed;
+  border: 1px solid var(--border);
   border-radius: 16px;
   background: white;
   box-shadow: 0 12px 35px #1e284614;
@@ -487,10 +491,10 @@ h1:focus-visible {
   flex-direction: column;
 }
 .project-card.active {
-  border-color: #7985f7;
+  border-color: var(--primary);
   box-shadow:
     0 22px 45px #2d37641c,
-    0 0 0 3px #5665f508;
+    0 0 0 3px #ff5c2314;
 }
 .card-cover {
   position: relative;
@@ -710,7 +714,7 @@ h1:focus-visible {
 }
 .tech-tags li {
   padding: 5px 8px;
-  border: 1px solid #e2e6f0;
+  border: 1px solid var(--border);
   border-radius: 5px;
   background: white;
   font-size: 11px;
@@ -768,7 +772,7 @@ h1:focus-visible {
 }
 .media-tabs button[aria-selected='true'] {
   color: var(--deep);
-  background: #e9ecfc;
+  background: var(--blue);
   font-weight: 650;
 }
 .media-frame {
@@ -776,8 +780,8 @@ h1:focus-visible {
   grid-template-rows: minmax(0, 1fr);
   place-items: center;
   height: 140px;
-  background: var(--project-tint, #edf0fa);
-  border: 1px solid #dee3ef;
+  background: var(--project-tint, #c8f3ff);
+  border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
 }
@@ -839,7 +843,7 @@ h1:focus-visible {
   flex-direction: column;
   gap: 6px;
   background: white;
-  border: 1px solid #dce2ee;
+  border: 1px solid var(--border);
   border-radius: 8px;
   padding: 12px 9px;
   min-width: 0;
@@ -955,7 +959,7 @@ h1:focus-visible {
 }
 .project-index li button:hover,
 .project-index li button[aria-pressed='true'] {
-  background: #ebeefa;
+  background: var(--blue);
 }
 .project-index li button > span:first-child {
   color: var(--deep);
@@ -1191,7 +1195,7 @@ h1:focus-visible {
   list-style: none;
   margin: 0;
   padding-left: 20px;
-  border-left: 1px solid #dde2ed;
+  border-left: 1px solid var(--border);
 }
 .timeline li {
   position: relative;
@@ -1241,9 +1245,9 @@ h1:focus-visible {
   flex-shrink: 0;
   width: 48px;
   height: 48px;
-  border: 1px solid #e0e5f8;
+  border: 1px solid var(--border);
   border-radius: 12px;
-  background: #edf0fc;
+  background: var(--blue);
   color: var(--deep);
 }
 .contact-options h2 {
@@ -1330,7 +1334,7 @@ h1:focus-visible {
   height: 6px;
   flex-shrink: 0;
   border-radius: 50%;
-  background: #358270;
+  background: var(--primary);
 }
 .footer-links {
   display: flex;
