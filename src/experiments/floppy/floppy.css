@@ -1,14 +1,13 @@
 /* Todos los estilos retro están aislados de la versión USB. */
-.floppy-portfolio { --floppy-ink: #152f40; --floppy-rust: #9c4f31; --floppy-line: #d0c3b1; --floppy-player-height: clamp(380px, calc(100svh - 88px), 800px); min-height: 100vh; padding: 16px clamp(12px, 4vw, 48px) 24px; color: var(--floppy-ink); font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(ellipse at 70% 0, #f7f0e6, #e4d7c5 90%); }
+.floppy-portfolio { --floppy-ink: #152f40; --floppy-rust: #9c4f31; --floppy-line: #d0c3b1; height: 100vh; height: 100dvh; overflow: hidden; color: var(--floppy-ink); font-family: Georgia, 'Times New Roman', serif; background: radial-gradient(ellipse at 70% 0, #f7f0e6, #e4d7c5 90%); }
 .floppy-portfolio * { box-sizing: border-box; }
 .floppy-portfolio button { font-family: inherit; }
 .floppy-portfolio button:disabled { cursor: not-allowed; color: #776b5d; background: #ebe2d680; border-color: #cfc1ad; }
 .floppy-portfolio :focus-visible { outline: 2px solid var(--floppy-rust); outline-offset: 5px; }
 .floppy-portfolio h1:focus-visible { outline-offset: 8px; }
-.floppy-comparison { display: flex; align-items: center; justify-content: space-between; gap: 16px; max-width: 1200px; margin: 0 auto 12px; color: #665c51; font: 12px/1.5 system-ui, sans-serif; }
-.floppy-comparison a { padding: 8px 0; min-height: 36px; border-bottom: 1px solid #b7a792; }
-.floppy-comparison a:hover { color: var(--floppy-rust); }
-.floppy-player { width: 100%; max-width: 1200px; height: var(--floppy-player-height); display: grid; grid-template-rows: 64px minmax(0, 1fr) 116px; margin: auto; background: url('../../assets/paper-grain.svg'), linear-gradient(140deg, #f7f0e5, #ede2d1); border: 1px solid #c4b498; box-shadow: 0 28px 50px #4d382528, 0 4px 6px #4d38251a, inset 0 0 0 1px #ffffff73; }
+.floppy-version-link { justify-self: end; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: #665c51; font: 12px/1.5 system-ui, sans-serif; white-space: nowrap; }
+.floppy-version-link:hover { color: var(--floppy-rust); }
+.floppy-player { width: 100%; height: 100%; display: grid; grid-template-rows: 64px minmax(0, 1fr) 116px; background: url('../../assets/paper-grain.svg'), linear-gradient(140deg, #f7f0e5, #ede2d1); }
 .floppy-header { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); align-items: center; gap: 20px; padding-inline: clamp(24px, 3vw, 40px); border-bottom: 1px solid #d2c5b526; }
 .floppy-brand { font-size: 24px; font-weight: 600; letter-spacing: -.06em; white-space: nowrap; }
 .floppy-header nav { display: flex; align-items: center; justify-content: center; gap: 26px; }
@@ -47,7 +46,7 @@
 .floppy-monogram span { position: relative; top: 20px; }
 .floppy-collage p { position: absolute; z-index: 2; bottom: 55px; right: 0; padding: 13px; background: url('../../assets/paper-grain.svg'), #f0e7d8; font-size: 13px; line-height: 1.55; box-shadow: 0 3px 12px #3c32230a; }
 .floppy-portrait-signature { position: absolute; z-index: 2; right: -3px; bottom: -5px; color: #203749; font: italic 20px/1.3 Georgia, serif; transform: rotate(-10deg); }
-.floppy-collection { padding: 24px 45px 42px; }
+.floppy-collection { width: 100%; max-width: 1200px; min-height: 100%; margin-inline: auto; display: flex; flex-direction: column; justify-content: center; padding: 24px 45px 42px; }
 .floppy-collection-title { text-align: center; }
 .floppy-collection-title .floppy-kicker { justify-content: center; }
 .floppy-collection-title .floppy-kicker { margin-bottom: 10px; color: #78624c; }
@@ -62,7 +61,7 @@
 .floppy-choice:not(:disabled):hover .floppy-disk, .floppy-choice:focus-visible .floppy-disk { transform: rotate(0) translateY(-5px); }
 .floppy-choice-title { display: block; margin-top: 15px; font-size: 17px; letter-spacing: -.025em; }
 .floppy-choice-description { display: block; margin-top: 5px; font: 11px/1.5 system-ui, sans-serif; color: #665c50; }
-.floppy-project { min-height: 100%; display: flex; flex-direction: column; padding: 16px clamp(28px, 4vw, 56px) 38px; }
+.floppy-project { width: 100%; max-width: 1200px; min-height: 100%; margin-inline: auto; display: flex; flex-direction: column; padding: 16px clamp(28px, 4vw, 56px) 38px; }
 .floppy-back { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; border: 0; padding: 7px 0; color: var(--floppy-ink); background: transparent; font-size: 13px; }
 .floppy-back:disabled { background: transparent; }
 .floppy-project-grid { flex: 1; display: grid; grid-template-columns: 1.05fr 1fr; gap: 50px; align-items: center; padding-top: 30px; }
@@ -101,13 +100,11 @@
 .floppy-skip:focus { top: 10px; }
 @media (max-width: 1100px) { .floppy-console { gap: 12px; padding-inline: 20px; } .floppy-console-status { flex-direction: column; align-items: flex-end; gap: 7px; } .floppy-profile { gap: 30px; } .floppy-monogram { font-size: 65px; } .floppy-lead { font-size: 19px; } .floppy-project-grid { gap: 30px; } .floppy-project-details { padding-left: 28px; } }
 @media (max-width: 800px) {
-  .floppy-portfolio { --floppy-player-height: clamp(380px, calc(100svh - 84px), 800px); padding: 12px; }
   .floppy-player { grid-template-rows: 88px minmax(0, 1fr) 156px; }
-  .floppy-comparison { margin-bottom: 12px; font-size: 11px; gap: 15px; }
-  .floppy-comparison span { text-align: right; max-width: 150px; }
-  .floppy-header { display: flex; justify-content: center; padding: 8px 20px 4px; flex-wrap: wrap; gap: 0; }
-  .floppy-brand { width: 100%; text-align: center; font-size: 22px; }
-  .floppy-header nav { margin-inline: auto; gap: 26px; }
+  .floppy-header { grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: 36px 44px; padding: 4px 20px; gap: 0 12px; }
+  .floppy-brand { font-size: 22px; }
+  .floppy-version-link { grid-column: 2; grid-row: 1; min-height: 36px; font-size: 11px; }
+  .floppy-header nav { grid-column: 1 / -1; grid-row: 2; gap: 26px; }
   .floppy-header nav button { min-height: 44px; font-size: 14px; }
   .floppy-profile { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
   .floppy-portfolio h1 { font-size: clamp(30px, 5vw, 40px); }
@@ -144,5 +141,4 @@
 @media (max-width: 380px) { .floppy-profile { padding-inline: 20px; } .floppy-header { padding-inline: 20px; } .floppy-kicker { font-size: 10px; } .floppy-lead { font-size: 18px; } .floppy-project { padding-inline: 20px; } .floppy-project h1 { font-size: 30px; } .floppy-actions .floppy-button { flex: 1; padding-inline: 12px; } .floppy-disk-grid { gap: 26px 10px; } .floppy-choice-title { font-size: 13px; overflow-wrap: anywhere; } .floppy-collection { padding-inline: 17px; } }
 @media (prefers-reduced-motion: reduce) { .floppy-choice .floppy-disk { transition: none; } }
 
-@media (max-height: 600px) { .floppy-portfolio { --floppy-player-height: clamp(280px, calc(100svh - 76px), 524px); padding-top: 8px; } .floppy-comparison { margin-bottom: 8px; } }
 @media (max-height: 600px) and (min-width: 801px) { .floppy-player { grid-template-rows: 56px minmax(0, 1fr) 104px; } .floppy-console { padding-block: 7px; } }

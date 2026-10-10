@@ -44,9 +44,16 @@ export default function FloppyPortfolio() {
   }
   return <div className="floppy-portfolio">
     <a className="floppy-skip" href="#floppy-content">Saltar al contenido</a>
-    <div className="floppy-comparison"><a href="/">← Ver versión USB</a><span>Propuesta alternativa · Disquetes</span></div>
     <div className="floppy-player">
-      <header className="floppy-header"><a href="#perfil" className="floppy-brand" onClick={event => { event.preventDefault(); load(disks[0]); }}>{profile.name}</a><nav aria-label="Navegación de disquetes"><button className={view === 'profile' ? 'active' : ''} aria-current={view === 'profile' ? 'page' : undefined} disabled={busy} onClick={() => load(disks[0])}>Perfil</button><button className={view !== 'profile' ? 'active' : ''} aria-current={view !== 'profile' ? 'page' : undefined} disabled={busy} onClick={() => load(null)}>Proyectos</button><button onClick={() => contactRef.current.showModal()}>Contacto</button></nav></header>
+      <header className="floppy-header">
+        <a href="#perfil" className="floppy-brand" onClick={event => { event.preventDefault(); load(disks[0]); }}>{profile.name}</a>
+        <nav aria-label="Navegación de disquetes">
+          <button className={view === 'profile' ? 'active' : ''} aria-current={view === 'profile' ? 'page' : undefined} disabled={busy} onClick={() => load(disks[0])}>Perfil</button>
+          <button className={view !== 'profile' ? 'active' : ''} aria-current={view !== 'profile' ? 'page' : undefined} disabled={busy} onClick={() => load(null)}>Proyectos</button>
+          <button onClick={() => contactRef.current.showModal()}>Contacto</button>
+        </nav>
+        <a className="floppy-version-link" href="/" aria-label="Ver versión USB">Versión USB <ArrowUpRight size={14} /></a>
+      </header>
       <main ref={contentRef} id="floppy-content" className="floppy-content" tabIndex={-1}>
         <Motion.div className="floppy-view" key={view === 'project' ? contentDisk.id : view} initial={{ opacity: reduced ? 1 : 0 }} animate={{ opacity: 1 }} transition={{ duration: reduced ? 0 : .2 }}>
           {view === 'profile' && <ProfileView load={load} busy={busy} />}
