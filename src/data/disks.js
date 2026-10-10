@@ -39,7 +39,7 @@ export const disks = [
     number: '02',
     title: 'Nodos',
     subtitle: 'Monitorización de sistemas',
-    color: 'green',
+    color: 'sage',
     icon: 'nodes',
     description:
       'Una propuesta de panel para explorar el estado y la actividad de sistemas conectados.',
@@ -51,7 +51,7 @@ export const disks = [
     number: '03',
     title: 'Portafolio',
     subtitle: 'Diseño e interacción',
-    color: 'red',
+    color: 'ivory',
     icon: 'portfolio',
     description:
       'Una propuesta de portafolio que convierte la navegación en una colección de historias.',
