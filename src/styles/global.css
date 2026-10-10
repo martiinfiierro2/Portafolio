@@ -368,72 +368,115 @@ h1:focus-visible {
   align-items: center;
   gap: 8px;
 }
-/* Home */
-.home-grid {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.93fr) minmax(0, 2fr);
-  gap: 44px;
-  align-items: center;
+/* Standalone introduction: the collection lives only on /projects. */
+.home-page {
+  max-width: 1200px;
   min-height: calc(100svh - 166px);
-  padding-block: 36px;
+  display: grid;
+  align-items: center;
+  padding-block: 64px;
 }
-.profile-block {
-  max-width: 350px;
-  padding-bottom: 20px;
+.home-intro {
+  max-width: 940px;
+  animation: enter 0.35s both;
 }
-.profile-block h1 {
-  margin-top: 14px;
-  max-width: 340px;
-  font-size: clamp(44px, 4.4vw, 64px);
+.home-intro h1 {
+  margin-top: 18px;
+  font-size: clamp(54px, 7vw, 100px);
   font-weight: 750;
   letter-spacing: -0.065em;
-  line-height: 1.08;
+  line-height: 1.12;
   text-wrap: balance;
 }
-.profile-role {
-  font-size: 16px;
-  font-weight: 550;
-  line-height: 1.6;
-  margin-top: 20px;
-  color: var(--deep);
-  max-width: 310px;
-}
-.profile-description {
+.home-intro .profile-role {
   margin-top: 24px;
-  max-width: 330px;
-  font-size: 14px;
-  line-height: 1.9;
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--deep);
+}
+.home-intro .profile-description {
+  max-width: 650px;
+  margin-top: 24px;
   color: var(--muted);
+  font-size: 17px;
+  line-height: 1.85;
   text-wrap: pretty;
 }
-.profile-block .button-row {
-  margin-top: 28px;
+.home-intro .button-row {
+  margin-top: 32px;
+  align-items: center;
+  gap: 12px;
+}
+.home-intro .button {
+  min-height: 48px;
+  padding: 13px 22px;
+  font-size: 14px;
+}
+.home-contact {
+  margin-left: 8px;
 }
 .profile-notes {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 20px;
   list-style: none;
-  margin: 28px 0 0;
+  margin: 30px 0 0;
   padding: 0;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--muted);
 }
 .profile-notes li {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
 }
 .profile-notes li + li {
-  padding-left: 12px;
+  padding-left: 20px;
   border-left: 1px solid var(--border);
 }
-.profile-footnote {
+.home-signature {
   margin-top: 32px;
-  font-size: 11px;
+  padding-left: 12px;
+  border-left: 3px solid var(--primary);
+  font-size: 12px;
   line-height: 1.7;
-  color: var(--muted);
-  max-width: 260px;
+}
+@media (max-width: 767px) {
+  .home-page {
+    min-height: calc(100svh - 230px);
+    padding-block: 48px;
+  }
+  .home-intro h1 {
+    font-size: clamp(40px, 10.5vw, 72px);
+    line-height: 1.2;
+  }
+  .home-intro .profile-role {
+    font-size: 18px;
+    margin-top: 22px;
+  }
+  .home-intro .profile-description {
+    font-size: 15px;
+    line-height: 1.85;
+  }
+  .home-intro .button-row {
+    gap: 10px;
+    margin-top: 26px;
+  }
+  .home-intro .button {
+    padding-inline: 16px;
+    font-size: 13px;
+  }
+  .home-contact {
+    margin-left: 0;
+  }
+  .profile-notes {
+    gap: 12px;
+    font-size: 11px;
+  }
+  .profile-notes li + li {
+    padding-left: 12px;
+  }
 }
 .project-workspace {
   display: grid;
@@ -1386,11 +1429,6 @@ h1:focus-visible {
   border-radius: 0.1em;
   color: var(--ink);
 }
-.profile-footnote {
-  color: var(--ink);
-  border-left: 3px solid var(--primary);
-  padding-left: 12px;
-}
 .project-inspector,
 .expanded-workspace .project-inspector {
   padding: 24px;
@@ -1432,36 +1470,6 @@ h1:focus-visible {
 .site-footer .availability > span {
   background: var(--ink);
 }
-.intro-greeting,
-.profile-block h1,
-.profile-role,
-.profile-description,
-.profile-block .button-row,
-.home-grid .deck-stage,
-.home-grid .inspector-switch {
-  animation: enter 0.35s both;
-}
-.intro-greeting {
-  animation-delay: 0.08s;
-}
-.profile-block h1 {
-  animation-delay: 0.15s;
-}
-.profile-role {
-  animation-delay: 0.22s;
-}
-.profile-description {
-  animation-delay: 0.3s;
-}
-.profile-block .button-row {
-  animation-delay: 0.36s;
-}
-.home-grid .deck-stage {
-  animation-delay: 0.25s;
-}
-.home-grid .inspector-switch {
-  animation-delay: 0.5s;
-}
 @keyframes enter {
   from {
     opacity: 0;
@@ -1476,43 +1484,7 @@ h1:focus-visible {
   animation-duration: 0.36s;
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
-@media (min-width: 1101px) and (max-height: 800px) {
-  .home-grid {
-    padding-block: 24px;
-  }
-  .home-grid .deck-stage {
-    height: 448px;
-  }
-  .home-grid .project-card {
-    height: 412px;
-    width: 232px;
-  }
-  .home-grid .card-cover {
-    height: 183px;
-  }
-  .home-grid .project-inspector .media-frame {
-    height: 120px;
-  }
-  .home-grid .project-inspector {
-    padding: 16px;
-  }
-  .home-grid .project-facts,
-  .home-grid .project-media {
-    margin-top: 12px;
-  }
-  .home-grid .project-inspector > .button-row {
-    margin-top: 12px;
-  }
-  .home-grid .profile-block h1 {
-    font-size: 54px;
-  }
-  .home-grid .profile-description {
-    margin-top: 20px;
-  }
-  .home-grid .profile-footnote {
-    margin-top: 22px;
-  }
-}
+
 @media (max-width: 1200px) {
   .page-container {
     padding-inline: 32px;
@@ -1520,21 +1492,11 @@ h1:focus-visible {
   .header-inner {
     padding-inline: 32px;
   }
-  .home-grid {
-    gap: 26px;
-    grid-template-columns: minmax(240px, 0.86fr) minmax(0, 2fr);
-  }
   .project-workspace {
     gap: 22px;
   }
   .project-inspector {
     padding-left: 20px;
-  }
-  .home-grid .project-card {
-    width: 234px;
-  }
-  .home-grid .deck-stage {
-    height: 465px;
   }
   .expanded-workspace {
     gap: 38px;
@@ -1548,65 +1510,11 @@ h1:focus-visible {
   }
 }
 @media (max-width: 1100px) {
-  .home-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding-block: 40px;
-    min-height: 0;
-  }
-  .profile-block {
-    max-width: none;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 40px;
-    padding-bottom: 0;
-  }
-  .profile-block .eyebrow,
-  .profile-block h1,
-  .profile-role {
-    grid-column: 1;
-  }
-  .profile-description,
-  .profile-block .button-row,
-  .profile-notes,
-  .profile-footnote {
-    grid-column: 2;
-  }
-  .profile-description {
-    grid-row: 1/4;
-    margin-top: 0;
-    align-self: center;
-    max-width: 430px;
-  }
-  .profile-block .button-row {
-    grid-row: 4;
-    margin-top: 20px;
-  }
-  .profile-notes {
-    margin-top: 20px;
-  }
-  .profile-role {
-    grid-row: 4;
-    margin-top: 20px;
-  }
-  .profile-footnote {
-    margin-top: 15px;
-  }
   .project-workspace {
     max-width: 850px;
     margin-inline: auto;
     width: 100%;
     gap: 40px;
-  }
-  .home-grid .project-card {
-    width: 260px;
-    height: 442px;
-  }
-  .home-grid .deck-stage {
-    height: 486px;
-  }
-  .home-grid .card-cover {
-    height: 211px;
   }
   .expanded-workspace {
     max-width: none;
@@ -1655,42 +1563,6 @@ h1:focus-visible {
   .page-container {
     padding-inline: 24px;
   }
-  .home-grid {
-    display: block;
-    padding-top: 32px;
-    padding-bottom: 40px;
-  }
-  .profile-block {
-    display: block;
-    max-width: 460px;
-    margin: auto;
-  }
-  .profile-block h1 {
-    font-size: 44px;
-    max-width: none;
-    margin-top: 10px;
-  }
-  .profile-role {
-    font-size: 14px;
-    margin-top: 13px;
-    max-width: none;
-  }
-  .profile-description {
-    margin-top: 18px;
-    font-size: 12px;
-    line-height: 1.85;
-    max-width: none;
-  }
-  .profile-block .button-row {
-    margin-top: 22px;
-  }
-  .profile-notes {
-    margin-top: 20px;
-    font-size: 10px;
-  }
-  .profile-footnote {
-    display: none;
-  }
   .project-workspace {
     display: block;
     margin-top: 42px;
@@ -1703,16 +1575,13 @@ h1:focus-visible {
     height: 475px;
     overflow: visible;
   }
-  .home-grid .project-card,
   .expanded-workspace .project-card {
     width: min(78vw, 300px);
     height: 442px;
   }
-  .home-grid .deck-stage,
   .expanded-workspace .deck-stage {
     height: 475px;
   }
-  .home-grid .card-cover,
   .expanded-workspace .card-cover {
     height: 211px;
   }
@@ -1914,21 +1783,15 @@ h1:focus-visible {
   .brand-name {
     font-size: 11px;
   }
-  .profile-block h1 {
-    font-size: 40px;
-  }
   .project-card,
-  .home-grid .project-card,
   .expanded-workspace .project-card {
     width: 236px;
     height: 428px;
   }
-  .home-grid .card-cover,
   .expanded-workspace .card-cover {
     height: 198px;
   }
   .deck-stage,
-  .home-grid .deck-stage,
   .expanded-workspace .deck-stage {
     height: 460px;
   }
@@ -1989,16 +1852,6 @@ h1:focus-visible {
   *::after {
     animation: none !important;
     transition: none !important;
-  }
-  .intro-greeting,
-  .profile-block h1,
-  .profile-role,
-  .profile-description,
-  .profile-block .button-row,
-  .home-grid .deck-stage,
-  .home-grid .inspector-switch {
-    opacity: 1;
-    translate: none;
   }
   ::view-transition-group(*),
   ::view-transition-old(*),

@@ -1,13 +1,12 @@
 import { Link } from 'react-router-dom';
-import { ArrowRight, FileText, Layers2 } from 'lucide-react';
+import { ArrowRight, FileText, Layers2, ArrowUpRight } from 'lucide-react';
 import { profile } from '../data/profile';
 import useDocumentTitle from '../hooks/useDocumentTitle';
-import ProjectWorkspace from '../components/project-deck/ProjectWorkspace';
 export default function Home() {
   useDocumentTitle('Inicio');
   return (
-    <div className="home-grid page-container">
-      <section className="profile-block" aria-labelledby="home-title">
+    <div className="home-page page-container">
+      <section className="home-intro" aria-labelledby="home-title">
         <p className="eyebrow intro-greeting">¡Hola! Soy</p>
         <h1 id="home-title" tabIndex={-1}>
           {profile.name.split(' ')[0]}{' '}
@@ -23,6 +22,9 @@ export default function Home() {
             <FileText size={16} />
             Ver CV
           </Link>
+          <Link className="text-link home-contact" to="/contact">
+            Hablemos <ArrowUpRight size={17} />
+          </Link>
         </div>
         <ul className="profile-notes">
           <li>
@@ -31,9 +33,8 @@ export default function Home() {
           </li>
           <li>React · Node.js</li>
         </ul>
-        <p className="profile-footnote">Cada proyecto, una pieza de mi evolución.</p>
+        <p className="home-signature">Cada proyecto, una pieza de mi evolución.</p>
       </section>
-      <ProjectWorkspace />
     </div>
   );
 }

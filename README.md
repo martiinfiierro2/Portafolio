@@ -34,7 +34,7 @@ Naranja `#FF5C23` para botones y acentos; azul claro `#C8F3FF` para superficies,
 
 ## Páginas
 
-- `/`: presentación personal, baraja e inspector del proyecto seleccionado. `/index.html` redirige a Inicio para evitar un 404 al abrir la entrada HTML directamente.
+- `/`: presentación personal y accesos a Proyectos, CV y Contacto. `/index.html` redirige a Inicio para evitar un 404 al abrir la entrada HTML directamente.
 - `/projects`: colección, contexto del proyecto y acceso directo al índice.
 - `/projects/:slug`: caso de estudio con ocho secciones y galería.
 - `/cv`: experiencia, formación, habilidades y descarga del CV cuando exista.
@@ -86,7 +86,7 @@ Las entradas de `media` usan `id`, `label`, `type`, `src`, `alt` y `caption`. `t
 
 - Flechas, puntos o selector para cambiar de tarjeta; flechas del teclado y Enter en la baraja.
 - Deslizamiento horizontal en móvil, conservando el scroll vertical.
-- Selección compartida entre Inicio y Proyectos y recordada en `sessionStorage`.
+- Selección recordada en `sessionStorage` al volver a la colección de Proyectos.
 - Tabs de galería con flechas, Inicio y Fin; menú móvil con cierre por Escape y foco gestionado por un diálogo nativo.
 - Enlaces convencionales para proyectos, CV y contacto; no hay una animación obligatoria para acceder.
 - `prefers-reduced-motion` elimina animaciones. La transición de portada usa View Transitions cuando el navegador la soporta y navegación normal en el resto.
