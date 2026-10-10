@@ -6,6 +6,7 @@ const colors = {
   sage: ['#a3ad92', '#788568', '#536047'],
   ivory: ['#f2e8d4', '#dccfb5', '#b7a689'],
 };
+
 const icons = { meals: CalendarDays, nodes: Network, portfolio: MousePointer2 };
 
 export default function FloppyDisk({ disk, compact = false }) {
