@@ -45,9 +45,7 @@ export default function PortfolioContent({
         {view === 'collection' && (
           <CollectionView projects={projects} onSelect={onSelect} busy={busy} />
         )}
-        {view === 'project' && 
-          <ProjectView project={project} onBack={onProjects} busy={busy} />
-        }
+        {view === 'project' && <ProjectView project={project} onBack={onProjects} busy={busy} />}
       </Motion.div>
     </main>
   );

@@ -22,7 +22,7 @@ export default function FloppyDisk({ disk, compact = false }) {
     return (
       <svg
         className="floppy-disk floppy-disk-compact"
-        viewBox="0 0 240 70"
+        viewBox="0 0 240 100"
         aria-hidden="true"
         focusable="false"
       >
@@ -34,31 +34,21 @@ export default function FloppyDisk({ disk, compact = false }) {
           </linearGradient>
         </defs>
 
-        <path
-          d="M13 5h214l10 38-6 13H9L3 43Z"
-          fill={`url(#${id}-compact)`}
-          stroke={dark}
-        />
-        <path d="M25 8h189l6 27H19Z" fill={light} stroke={dark} />
-        <path
-          d="M49 8h116l3 24H46Z"
-          fill="#bcb8ac"
-          stroke="#85867c"
-          strokeWidth=".7"
-        />
-        <path d="M13 43h218v10H13Z" fill={base} stroke={dark} />
-        <path d="M10 43h220" stroke="#fff" strokeOpacity=".3" />
-        <rect x="18" y="46" width="15" height="6" fill={dark} />
-        <rect x="207" y="46" width="13" height="6" fill={dark} />
-        <path
-          d="M47 35h146l3 19H44Z"
-          fill="#f3e7d4"
-          stroke="#c8b597"
-          strokeWidth=".7"
-        />
+        <path d="M25 5h190l22 79-6 10H9L3 84Z" fill={`url(#${id}-compact)`} stroke={dark} />
+        <path d="M28 8h184l19 72H9Z" fill={light} stroke={dark} />
+        <path d="M54 8h112l6 32H46Z" fill="#bcb8ac" stroke="#85867c" strokeWidth=".7" />
+        <path d="M136 13h20l4 20h-22Z" fill={base} stroke={dark} strokeWidth=".7" />
+        <path d="M31 10h177M31 10 13 77" fill="none" stroke="#fff" strokeOpacity=".35" />
+        <path d="M34 50h172l7 24H27Z" fill="#f3e7d4" stroke="#c8b597" strokeWidth=".7" />
+        <path d="M43 58h153M41 65h113" stroke="#c8b597" strokeWidth=".8" />
+        <path d="M9 84h222v8H9Z" fill={base} stroke={dark} />
+        <path d="M9 84h222" stroke="#fff" strokeOpacity=".3" />
+        <rect x="18" y="86" width="15" height="5" fill={dark} />
+        <rect x="207" y="86" width="13" height="5" fill={dark} />
+        <path d="M47 73h146l4 18H43Z" fill="#f3e7d4" stroke="#c8b597" strokeWidth=".7" />
         <text
           x="120"
-          y="49"
+          y="87"
           textAnchor="middle"
           fontSize="11"
           fill="#253340"
@@ -72,35 +62,19 @@ export default function FloppyDisk({ disk, compact = false }) {
 
   return (
     <span className="floppy-disk-object" aria-hidden="true">
-      <svg
-        className="floppy-disk"
-        viewBox="0 0 220 240"
-        focusable="false"
-      >
+      <svg className="floppy-disk" viewBox="0 0 220 240" focusable="false">
         <defs>
           <linearGradient id={`${id}-shell`} x2=".8" y2="1">
             <stop stopColor={light} />
             <stop offset="1" stopColor={base} />
           </linearGradient>
 
-          <linearGradient
-            id={`${id}-side`}
-            x1="0"
-            y1="0"
-            x2="1"
-            y2="0"
-          >
+          <linearGradient id={`${id}-side`} x1="0" y1="0" x2="1" y2="0">
             <stop offset="0" stopColor={base} />
             <stop offset="1" stopColor={dark} />
           </linearGradient>
 
-          <linearGradient
-            id={`${id}-bottom`}
-            x1="0"
-            y1="0"
-            x2="0"
-            y2="1"
-          >
+          <linearGradient id={`${id}-bottom`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0" stopColor={dark} />
             <stop offset="1" stopColor="#18252b" />
           </linearGradient>
@@ -119,76 +93,28 @@ export default function FloppyDisk({ disk, compact = false }) {
             <stop offset="1" stopColor="#e9ddc7" />
           </linearGradient>
 
-          <pattern
-            id={`${id}-brushed`}
-            width="3"
-            height="3"
-            patternUnits="userSpaceOnUse"
-          >
-            <path
-              d="M0 1h3"
-              stroke="#444a47"
-              strokeWidth=".25"
-              opacity=".18"
-            />
+          <pattern id={`${id}-brushed`} width="3" height="3" patternUnits="userSpaceOnUse">
+            <path d="M0 1h3" stroke="#444a47" strokeWidth=".25" opacity=".18" />
           </pattern>
 
-          <pattern
-            id={`${id}-grain`}
-            width="12"
-            height="12"
-            patternUnits="userSpaceOnUse"
-          >
-            <circle
-              cx="2"
-              cy="4"
-              r=".35"
-              fill="#897859"
-              opacity=".3"
-            />
-            <circle
-              cx="9"
-              cy="10"
-              r=".3"
-              fill="#897859"
-              opacity=".25"
-            />
+          <pattern id={`${id}-grain`} width="12" height="12" patternUnits="userSpaceOnUse">
+            <circle cx="2" cy="4" r=".35" fill="#897859" opacity=".3" />
+            <circle cx="9" cy="10" r=".3" fill="#897859" opacity=".25" />
           </pattern>
         </defs>
 
         {/* Cuerpo y volumen del disquete */}
-        <path
-          d="M22 17h175l10 13v193H22Z"
-          fill={dark}
-          stroke={dark}
-          strokeWidth="2"
-        />
+        <path d="M22 17h175l10 13v193H22Z" fill={dark} stroke={dark} strokeWidth="2" />
         <path
           d="M16 12h171l12 13v192H16Z"
           fill={`url(#${id}-shell)`}
           stroke={dark}
           strokeWidth="1.4"
         />
-        <path
-          d="m199 25 8 5v193l-8-6Z"
-          fill={`url(#${id}-side)`}
-        />
-        <path
-          d="m16 217 6 6h185l-8-6Z"
-          fill={`url(#${id}-bottom)`}
-        />
-        <path
-          d="M20 16h162m-162 0v196"
-          fill="none"
-          stroke="#fff"
-          strokeOpacity=".3"
-        />
-        <path
-          d="M194 38v173H33"
-          fill="none"
-          stroke={dark}
-          strokeOpacity=".5"
-        />
+        <path d="m199 25 8 5v193l-8-6Z" fill={`url(#${id}-side)`} />
+        <path d="m16 217 6 6h185l-8-6Z" fill={`url(#${id}-bottom)`} />
+        <path d="M20 16h162m-162 0v196" fill="none" stroke="#fff" strokeOpacity=".3" />
+        <path d="M194 38v173H33" fill="none" stroke={dark} strokeOpacity=".5" />
 
         {/* Pieza metálica */}
         <path d="M26 14h144v81H26Z" fill={dark} opacity=".35" />
@@ -198,48 +124,16 @@ export default function FloppyDisk({ disk, compact = false }) {
           stroke="#76786e"
           strokeWidth=".7"
         />
-        <path
-          d="M59 12h102v79H59Z"
-          fill={`url(#${id}-brushed)`}
-        />
-        <path
-          d="M61 14h98M61 14v75"
-          stroke="#fff"
-          strokeOpacity=".7"
-          fill="none"
-        />
-        <path
-          d="M60 89h99"
-          stroke="#696f68"
-          strokeOpacity=".45"
-        />
-        <rect
-          x="127"
-          y="24"
-          width="23"
-          height="53"
-          rx="1"
-          fill={base}
-          stroke={dark}
-        />
-        <path
-          d="M63 16v70m3-70v70"
-          stroke="#fff"
-          strokeOpacity=".24"
-        />
+        <path d="M59 12h102v79H59Z" fill={`url(#${id}-brushed)`} />
+        <path d="M61 14h98M61 14v75" stroke="#fff" strokeOpacity=".7" fill="none" />
+        <path d="M60 89h99" stroke="#696f68" strokeOpacity=".45" />
+        <rect x="127" y="24" width="23" height="53" rx="1" fill={base} stroke={dark} />
+        <path d="M63 16v70m3-70v70" stroke="#fff" strokeOpacity=".24" />
         <rect x="26" y="22" width="9" height="13" fill={dark} />
         <path d="M28 24h5v3h-5Z" fill="#cab89a" />
 
         {/* Papel de la etiqueta */}
-        <rect
-          x="27"
-          y="110"
-          width="160"
-          height="96"
-          rx="3"
-          fill={dark}
-          opacity=".3"
-        />
+        <rect x="27" y="110" width="160" height="96" rx="3" fill={dark} opacity=".3" />
         <rect
           x="27"
           y="109"
@@ -250,19 +144,8 @@ export default function FloppyDisk({ disk, compact = false }) {
           stroke="#b7a68a"
           strokeWidth=".8"
         />
-        <rect
-          x="27"
-          y="109"
-          width="160"
-          height="96"
-          rx="3"
-          fill={`url(#${id}-grain)`}
-        />
-        <path
-          d="M33 112h148"
-          stroke="#fff"
-          strokeOpacity=".65"
-        />
+        <rect x="27" y="109" width="160" height="96" rx="3" fill={`url(#${id}-grain)`} />
+        <path d="M33 112h148" stroke="#fff" strokeOpacity=".65" />
 
         {/* Detalles del plástico */}
         <rect x="23" y="195" width="8" height="12" fill={dark} />
@@ -277,12 +160,8 @@ export default function FloppyDisk({ disk, compact = false }) {
         </span>
 
         <span className="floppy-label-title">{disk.title}</span>
-        <span className="floppy-label-description">
-          {disk.subtitle}
-        </span>
-        <span className="floppy-label-technologies">
-          {disk.technologies.join(' · ')}
-        </span>
+        <span className="floppy-label-description">{disk.subtitle}</span>
+        <span className="floppy-label-technologies">{disk.technologies.join(' · ')}</span>
       </span>
     </span>
   );
