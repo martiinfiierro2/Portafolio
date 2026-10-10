@@ -1,14 +1,14 @@
 import { useState } from 'react';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { m, useReducedMotion } from 'framer-motion';
 import { Menu, ArrowUpRight } from 'lucide-react';
 import MobileMenu from './MobileMenu';
 import usePortfolioNavigation from '../../hooks/usePortfolioNavigation';
 const links = [
   ['/', 'Inicio'],
-  ['/projects', 'Proyectos'],
-  ['/cv', 'CV'],
-  ['/contact', 'Contacto'],
+  ['/#proyectos', 'Proyectos'],
+  ['/#cv', 'CV'],
+  ['/#contacto', 'Contacto'],
 ];
 export default function Header({ profile }) {
   const location = useLocation();
@@ -34,23 +34,30 @@ export default function Header({ profile }) {
           </Link>
           <nav className="desktop-nav" aria-label="Navegación principal">
             {links.map(([to, label]) => (
-              <NavLink key={to} to={to} end={to === '/'} onClick={(event) => follow(event, to)}>
-                {({ isActive }) => (
-                  <>
-                    {label}
-                    {isActive && (
-                      <m.span
-                        className="nav-indicator"
-                        layoutId="navigation-indicator"
-                        transition={{ duration: reduced ? 0 : 0.22 }}
-                      />
-                    )}
-                  </>
-                )}
-              </NavLink>
+              <Link
+                key={to}
+                to={to}
+                onClick={(event) => follow(event, to)}
+                aria-current={
+                  location.pathname === '/' &&
+                  (location.hash ? to.endsWith(location.hash) : to === '/')
+                    ? 'location'
+                    : undefined
+                }
+              >
+                {label}
+                {location.pathname === '/' &&
+                  (location.hash ? to.endsWith(location.hash) : to === '/') && (
+                    <m.span
+                      className="nav-indicator"
+                      layoutId="navigation-indicator"
+                      transition={{ duration: reduced ? 0 : 0.22 }}
+                    />
+                  )}
+              </Link>
             ))}
           </nav>
-          <Link to="/contact" className="header-cta">
+          <Link to="/#contacto" className="header-cta">
             Hablemos <ArrowUpRight size={15} />
           </Link>
           <button

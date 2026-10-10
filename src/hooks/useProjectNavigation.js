@@ -14,7 +14,7 @@ export default function useProjectNavigation() {
     backToProjects: (project) =>
       transition(() => {
         selectProject(project.slug);
-        navigate('/projects');
+        navigate('/#proyectos');
       }),
   };
 }

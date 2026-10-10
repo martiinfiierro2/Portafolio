@@ -1892,3 +1892,144 @@ html[data-transition='collection']::view-transition-new(portfolio-scene) {
     animation: none !important;
   }
 }
+
+/* One continuous page: identity, collection and contact. */
+html {
+  scroll-behavior: smooth;
+}
+#inicio,
+#proyectos,
+#contacto,
+#cv {
+  scroll-margin-top: 100px;
+}
+.progressive-portfolio .home-page {
+  min-height: calc(100svh - 82px);
+}
+.collection-section {
+  min-height: 90svh;
+  display: grid;
+  place-items: center;
+  padding-block: 70px;
+}
+.collection-section .project-deck {
+  max-width: 650px;
+}
+.collection-section .deck-stage {
+  height: 510px;
+}
+.collection-section .project-card {
+  width: 270px;
+  height: 442px;
+}
+.contact-section {
+  padding-bottom: 70px;
+}
+.contact-section .contact-page {
+  padding-top: 70px;
+}
+.contact-section .page-heading h2 {
+  font-size: clamp(34px, 5vw, 62px);
+  letter-spacing: -0.055em;
+}
+.inline-cv {
+  padding-block: 24px;
+}
+.inline-cv summary {
+  cursor: pointer;
+  color: var(--muted);
+  padding-block: 14px;
+}
+.inline-cv .cv-page {
+  padding-top: 24px;
+  padding-inline: 0;
+}
+.project-dialog {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 24px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.project-dialog::backdrop {
+  background: #11180de0;
+  backdrop-filter: blur(8px);
+}
+.project-dialog-sheet {
+  position: relative;
+  max-width: 1280px;
+  min-height: calc(100svh - 48px);
+  margin-inline: auto;
+  background: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 30px 100px #00000050;
+  overflow: clip;
+}
+.project-dialog .case-study {
+  padding-top: 34px;
+}
+.project-dialog-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  margin: 12px 12px 0 0;
+  z-index: 5;
+  background: var(--surface);
+}
+.project-dialog .case-heading h1 {
+  color: var(--project-color);
+}
+.project-dialog .back-link {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+@media (max-width: 767px) {
+  .collection-section {
+    padding-block: 40px;
+    min-height: 85svh;
+  }
+  .collection-section .deck-stage {
+    height: 465px;
+  }
+  .collection-section .project-card {
+    width: 238px;
+    height: 418px;
+  }
+  .project-dialog {
+    padding: 8px;
+  }
+  .project-dialog-sheet {
+    border-radius: 16px;
+    min-height: calc(100svh - 16px);
+  }
+  .project-dialog .case-study {
+    padding: 24px 20px;
+  }
+  .contact-section .contact-page {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 359px) {
+  .collection-section .project-card {
+    width: 214px;
+    height: 396px;
+  }
+  .collection-section .deck-stage {
+    height: 442px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

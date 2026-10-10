@@ -1,12 +1,18 @@
-import { useLocation, useNavigate } from 'react-router-dom';
-import { transition } from '../utils/viewTransition';
-
+import { useNavigate } from 'react-router-dom';
 export default function usePortfolioNavigation() {
-  const { pathname } = useLocation();
   const navigate = useNavigate();
   return (path) => {
-    if (path === pathname) return;
-    const kind = pathname === '/' && path === '/projects' ? 'collection' : 'page';
-    transition(() => navigate(path), kind);
+    navigate(path);
+    const id = path.split('#')[1];
+    requestAnimationFrame(() => {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (id === 'cv') {
+        const details = document.querySelector('#cv details');
+        if (details) details.open = true;
+      }
+      if (id)
+        document.getElementById(id)?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth' });
+      else if (path === '/') window.scrollTo({ top: 0, behavior: reduced ? 'instant' : 'smooth' });
+    });
   };
 }

@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { X, ArrowUpRight } from 'lucide-react';
 const links = [
   ['/', 'Inicio'],
-  ['/projects', 'Proyectos'],
-  ['/cv', 'CV'],
-  ['/contact', 'Contacto'],
+  ['/#proyectos', 'Proyectos'],
+  ['/#cv', 'CV'],
+  ['/#contacto', 'Contacto'],
 ];
 export default function MobileMenu({ open, onClose, profile, onNavigate }) {
   const ref = useRef(null);
@@ -40,10 +40,9 @@ export default function MobileMenu({ open, onClose, profile, onNavigate }) {
       </div>
       <nav aria-label="Navegación móvil">
         {links.map(([to, label]) => (
-          <NavLink
+          <Link
             key={to}
             to={to}
-            end={to === '/'}
             onClick={(event) => {
               onClose();
               onNavigate(event, to);
@@ -51,7 +50,7 @@ export default function MobileMenu({ open, onClose, profile, onNavigate }) {
           >
             {label}
             <ArrowUpRight size={20} />
-          </NavLink>
+          </Link>
         ))}
       </nav>
       <div className="mobile-menu-social">

@@ -2,8 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Mail, Copy, Check, Code2, ArrowUpRight, Contact as ContactIcon } from 'lucide-react';
 import { profile } from '../data/profile';
 import useDocumentTitle from '../hooks/useDocumentTitle';
-export default function Contact() {
-  useDocumentTitle('Contacto');
+export default function Contact({ embedded = false }) {
+  useDocumentTitle(embedded ? 'Inicio' : 'Contacto');
+  const Heading = embedded ? 'h2' : 'h1';
   const [copyState, setCopyState] = useState('idle');
   const timer = useRef(null);
   useEffect(() => () => clearTimeout(timer.current), []);
@@ -21,7 +22,7 @@ export default function Contact() {
     <div className="contact-page narrow-container">
       <header className="page-heading">
         <p className="eyebrow">Contacto</p>
-        <h1 tabIndex={-1}>¿Construimos algo?</h1>
+        <Heading tabIndex={-1}>¿Construimos algo?</Heading>
         <p>Estoy abierto a oportunidades junior, colaboraciones y proyectos.</p>
       </header>
       <div className="contact-options">

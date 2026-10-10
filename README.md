@@ -32,13 +32,13 @@ npm run dev -- --host 0.0.0.0
 
 Fondo oliva oscuro `#2B3123`, superficies oliva `#373E2B` y texto blanco cálido `#F6F5ED`. Los botones usan naranja quemado `#AD4D22`; los detalles, el subrayado del apellido y los bordes de selección añaden matices cálidos. El texto secundario mantiene contraste con un tono claro. Las tarjetas tienen identidades propias: rojo vino, azul petróleo, ocre, ciruela y salvia, sobre la base oliva del sitio. Las variables de tema se centralizan en `src/styles/global.css`.
 
-## Páginas
+## Página única
 
-- `/`: presentación centrada en el nombre y el perfil, con una entrada discreta «Explorar colección». CV y Contacto siguen accesibles desde la navegación. `/index.html` redirige a Inicio para evitar un 404 al abrir la entrada HTML directamente.
-- `/projects`: baraja e inspector directamente, sin cabecera editorial ni índice adicional. Los controles permiten acceder a todos los proyectos.
-- `/projects/:slug`: caso de estudio con ocho secciones y galería.
-- `/cv`: experiencia, formación, habilidades y descarga del CV cuando exista.
-- `/contact`: email, LinkedIn, GitHub y copia del email cuando esté configurado.
+- `/`: presentación con nombre y profesión; al deslizar, el nombre se difumina y aparece la baraja de proyectos, sin inspector lateral.
+- `/#proyectos`: colección navegable con flechas, teclado y gestos. Al abrir una tarjeta, el caso de estudio se expande en un diálogo sobre la página. Al cerrarlo se recuperan el foco, la tarjeta y la posición de scroll.
+- `/#cv`: currículum en un apartado desplegable.
+- `/#contacto`: contacto al final de la misma página.
+- Las rutas anteriores `/projects`, `/cv` y `/contact` redirigen a sus secciones. `/projects/:slug` abre el proyecto sobre la página principal mediante `?project=slug#proyectos`. `/index.html` sigue redirigiendo a Inicio.
 
 ## Organización
 
@@ -48,13 +48,13 @@ src/
   components/
     layout/                       Estructura de página y footer
     navigation/                   Header y menú móvil accesible
-    project-deck/                 Tarjetas, controles, inspector y galería
+    project-deck/                 Tarjetas, controles, diálogo y galería
     ui/                           Tecnologías, enlaces y esquema de arquitectura
   data/
     profile.js                    Datos personales y enlaces
     projects.js                   Todas las fichas y sus medios
   hooks/                          Selección, títulos y navegación con transición
-  pages/                          Inicio, proyectos, ficha, CV, contacto y 404
+  pages/                          Página principal y contenido de ficha, CV y contacto
   styles/                         Estética global, responsive y fuentes locales
   utils/                          Cálculo circular de la baraja y gestos, con pruebas
 public/
@@ -88,8 +88,8 @@ Las entradas de `media` usan `id`, `label`, `type`, `src`, `alt` y `caption`. `t
 - Deslizamiento horizontal en móvil, conservando el scroll vertical.
 - Selección recordada en `sessionStorage` al volver a la colección de Proyectos.
 - Tabs de galería con flechas, Inicio y Fin; menú móvil con cierre por Escape y foco gestionado por un diálogo nativo.
-- Enlaces convencionales para proyectos, CV y contacto; no hay una animación obligatoria para acceder.
-- `prefers-reduced-motion` elimina animaciones. La entrada Inicio → Proyectos usa un desenfoque breve y revela la colección con View Transitions; la portada mantiene su transición al caso de estudio. El header no tiene separador y permanece estable durante el cambio. En navegadores sin esa API, la navegación funciona directamente.
+- Anclas para acceder a proyectos, CV y contacto en la misma página. El detalle usa un diálogo nativo con cierre por Escape, foco contenido y restauración del foco al cerrar.
+- `prefers-reduced-motion` elimina el desplazamiento animado, el desenfoque y las animaciones de apertura y cierre. El header no tiene separador. El sitio no requiere la API View Transitions para recorrer la colección.
 - Fuentes Manrope y Caveat alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
 
 ## Publicación

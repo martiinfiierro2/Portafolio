@@ -2,13 +2,14 @@ import { Download, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { profile } from '../data/profile';
 import useDocumentTitle from '../hooks/useDocumentTitle';
-export default function CV() {
-  useDocumentTitle('CV');
+export default function CV({ embedded = false }) {
+  useDocumentTitle(embedded ? 'Inicio' : 'CV');
+  const Heading = embedded ? 'h2' : 'h1';
   return (
     <div className="cv-page narrow-container">
       <header className="page-heading">
         <p className="eyebrow">Currículum</p>
-        <h1 tabIndex={-1}>{profile.name}</h1>
+        <Heading tabIndex={-1}>{profile.name}</Heading>
         <p className="cv-role">{profile.role}</p>
         {profile.cvUrl ? (
           <a className="button primary" href={profile.cvUrl} download>

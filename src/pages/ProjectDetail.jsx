@@ -8,33 +8,26 @@ import ProjectLinks from '../components/ui/ProjectLinks';
 import TechTags from '../components/ui/TechTags';
 import ArchitectureDiagram from '../components/ui/ArchitectureDiagram';
 import NotFound from './NotFound';
-export default function ProjectDetail() {
+export default function ProjectDetail({ project: providedProject, onClose }) {
   const { slug } = useParams();
   const { projects } = useProjectSelection();
-  const project = projects.find((item) => item.slug === slug);
+  const project = providedProject ?? projects.find((item) => item.slug === slug);
   const { backToProjects } = useProjectNavigation();
   useDocumentTitle(project?.title ?? 'Proyecto no encontrado');
   if (!project) return <NotFound project />;
+  const close = () => (onClose ? onClose() : backToProjects(project));
   return (
     <article className="case-study page-container" style={{ '--project-color': project.color }}>
-      <Link
-        className="text-link back-link"
-        to="/projects"
-        onClick={(event) => {
-          if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
-          event.preventDefault();
-          backToProjects(project);
-        }}
-      >
-        <ArrowLeft size={16} />
-        Todos los proyectos
-      </Link>
+      <button className="text-link back-link" onClick={close}>
+        <ArrowLeft size={16} /> Cerrar y volver a las tarjetas
+      </button>
       <header className="case-heading">
         <div>
           <p className="eyebrow">
             {project.number} / {project.title}
           </p>
-          <h1 tabIndex={-1}>{project.shortDescription}</h1>
+          <h1 tabIndex={-1}>{project.title}</h1>
+          <p>{project.shortDescription}</p>
           <p className="sample-label">
             {project.isPlaceholder ? 'Ficha de muestra · contenido por documentar' : project.type}
           </p>
@@ -138,11 +131,11 @@ export default function ProjectDetail() {
         </div>
       </div>
       <div className="case-bottom">
-        <button className="button secondary" onClick={() => backToProjects(project)}>
+        <button className="button secondary" onClick={close}>
           <ArrowLeft size={16} />
           Volver a la colección
         </button>
-        <Link className="text-link" to="/contact">
+        <Link className="text-link" to="/#contacto" onClick={onClose}>
           Hablemos de proyectos →
         </Link>
       </div>
