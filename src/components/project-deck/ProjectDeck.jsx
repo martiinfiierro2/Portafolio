@@ -86,18 +86,7 @@ export default function ProjectDeck({ projects, selectedSlug, onSelect, onOpen }
         ))}
       </div>
       <ProjectNavigation projects={projects} activeIndex={activeIndex} onChange={change} />
-      <p className="deck-note">
-        Haz clic en una tarjeta para ver el proyecto
-        <svg width="30" height="28" viewBox="0 0 30 28" fill="none" aria-hidden="true">
-          <path
-            d="M3 25C20 24 26 17 22 4m-5 5 5-5 5 5"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </p>
+      <p className="deck-note">Explora las tarjetas y abre un proyecto.</p>
       <p className="sr-only">
         Proyecto seleccionado: {projects[activeIndex].title}.{' '}
         {projects[activeIndex].isPlaceholder ? 'Ficha de muestra.' : ''}

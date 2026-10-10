@@ -28,9 +28,11 @@ npm ci --cache /workspace/.npm-cache
 npm run dev -- --host 0.0.0.0
 ```
 
-## Paleta
+## Estética
 
-Fondo oliva oscuro `#2B3123`, superficies oliva `#373E2B` y texto blanco cálido `#F6F5ED`. Los botones usan naranja quemado `#AD4D22`; los detalles, el subrayado del apellido y los bordes de selección añaden matices cálidos. El texto secundario mantiene contraste con un tono claro. Las tarjetas tienen identidades propias: rojo vino, azul petróleo, ocre, ciruela y salvia, sobre la base oliva del sitio. Las variables de tema se centralizan en `src/styles/global.css`.
+Base de papel cálido `#F5F2ED`, superficies blancas `#FFFDFA`, texto grafito `#292B30` y acento terracota `#A54D36`. Las portadas tienen fondos suaves y acentos propios: arcilla, azul tinta, ocre, ciruela y salvia. El cuerpo de las tarjetas permanece claro para mantener una lectura uniforme.
+
+Space Grotesk identifica los nombres y títulos; DM Sans acompaña los textos y controles. Ambas fuentes variables se alojan localmente. Las tarjetas de escritorio miden 330 × 480 px y se adaptan a móvil. El detalle combina resumen y portada en dos columnas en escritorio y los apila en móvil.
 
 ## Página única
 
@@ -90,7 +92,7 @@ Las entradas de `media` usan `id`, `label`, `type`, `src`, `alt` y `caption`. `t
 - Tabs de galería con flechas, Inicio y Fin; menú móvil con cierre por Escape y foco gestionado por un diálogo nativo.
 - Anclas para acceder a proyectos, CV y contacto en la misma página. El detalle usa un diálogo nativo con cierre por Escape, foco contenido y restauración del foco al cerrar.
 - `prefers-reduced-motion` elimina el desplazamiento animado, el desenfoque y las animaciones de apertura y cierre. El header no tiene separador. El sitio no requiere la API View Transitions para recorrer la colección.
-- Fuentes Manrope y Caveat alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
+- Fuentes Space Grotesk y DM Sans alojadas localmente; iconos Lucide y medios SVG ligeros. Las capturas secundarias se cargan de forma diferida.
 
 ## Publicación
 

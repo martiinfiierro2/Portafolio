@@ -21,20 +21,23 @@ export default function ProjectDetail({ project: providedProject, onClose }) {
       <button className="text-link back-link" onClick={close}>
         <ArrowLeft size={16} /> Cerrar y volver a las tarjetas
       </button>
-      <header className="case-heading">
-        <div>
-          <p className="eyebrow">
-            {project.number} / {project.title}
-          </p>
-          <h1 tabIndex={-1}>{project.title}</h1>
-          <p>{project.shortDescription}</p>
-          <p className="sample-label">
-            {project.isPlaceholder ? 'Ficha de muestra · contenido por documentar' : project.type}
-          </p>
-        </div>
-        <ProjectLinks project={project} />
-      </header>
-      <ProjectMedia key={project.slug} project={project} large />
+      <div className="case-overview">
+        <header className="case-heading">
+          <div>
+            <p className="eyebrow">
+              {project.number} / {project.title}
+            </p>
+            <h1 tabIndex={-1}>{project.title}</h1>
+            <p>{project.shortDescription}</p>
+            <p className="sample-label">
+              {project.isPlaceholder ? 'Ficha de muestra · contenido por documentar' : project.type}
+            </p>
+          </div>
+          <TechTags technologies={project.technologies} />
+          <ProjectLinks project={project} />
+        </header>
+        <ProjectMedia key={project.slug} project={project} large />
+      </div>
       <div className="case-body">
         <aside className="case-sidebar">
           <p className="eyebrow">En esta pieza</p>

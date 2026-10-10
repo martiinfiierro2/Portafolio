@@ -22,7 +22,7 @@ export default function ProjectCard({ project, position, onSelect, onOpen }) {
         scale,
         rotate: position * 2.5,
         rotateY: position * -4,
-        opacity: Math.abs(position) > 1 ? 0.75 : 1,
+        opacity: 1,
       }}
       transition={
         reduced ? { duration: 0 } : { type: 'spring', stiffness: 280, damping: 30, mass: 0.85 }
