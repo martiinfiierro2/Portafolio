@@ -30,7 +30,7 @@ npm run dev -- --host 0.0.0.0
 
 ## Paleta
 
-Fondo marfil `#F7F5F0`, tinta `#182D3C` y botones azul profundo `#243D4D`. El terracota `#9A6048` aparece en detalles: punto del logo, indicador de navegación, borde de selección y pequeñas líneas. El apellido lleva un subrayado cálido suave, en lugar de un bloque de color. Las portadas combinan azul pizarra, salvia y tonos tierra apagados; las superficies blancas y los bordes finos mantienen legibilidad y contraste AA.
+Fondo oliva oscuro `#2B3123`, superficies oliva `#373E2B` y texto blanco cálido `#F6F5ED`. Los botones usan naranja quemado `#AD4D22`; los detalles, el subrayado del apellido y los bordes de selección añaden matices cálidos. El texto secundario mantiene contraste con un tono claro, y las portadas y galerías siguen la misma paleta. Las variables de tema se centralizan en `src/styles/global.css`.
 
 ## Páginas
 

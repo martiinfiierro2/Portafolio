@@ -4,17 +4,18 @@
   background: var(--background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #182d3c;
-  --muted: #5e6973;
-  --primary: #243d4d;
-  --primary-hover: #182d3c;
-  --background: #f7f5f0;
-  --blue: #e8eff1;
-  --warm: #f1e4d8;
-  --accent: #9a6048;
-  --deep: #354e60;
-  --border: #dedfd9;
-  --surface: #fff;
+  --ink: #f6f5ed;
+  color-scheme: dark;
+  --muted: #c7ccb9;
+  --primary: #ad4d22;
+  --primary-hover: #98401b;
+  --background: #2b3123;
+  --surface-soft: #454d36;
+  --accent-soft: #754327;
+  --accent: #c46c37;
+  --deep: #f6f5ed;
+  --border: #555e43;
+  --surface: #373e2b;
 }
 * {
   box-sizing: border-box;
@@ -72,7 +73,7 @@ button {
   border: 0;
 }
 ::selection {
-  background: #9a60482b;
+  background: #c46c3740;
 }
 :focus-visible {
   outline: 3px solid var(--deep);
@@ -101,7 +102,7 @@ h1:focus-visible {
   left: 12px;
   z-index: 1000;
   padding: 12px 20px;
-  background: white;
+  background: var(--surface);
   border: 2px solid var(--primary);
   border-radius: 8px;
   transform: translateY(-160%);
@@ -182,10 +183,10 @@ h1:focus-visible {
 .button.primary {
   background: var(--primary);
   color: white;
-  box-shadow: 0 4px 12px #243d4d15;
+  box-shadow: 0 4px 12px #00000020;
 }
 .button.secondary {
-  background: white;
+  background: var(--surface);
   border-color: var(--border);
 }
 .button:not(:disabled):hover {
@@ -199,9 +200,9 @@ h1:focus-visible {
   transform: scale(0.98);
 }
 .button:disabled {
-  background: #ebeef5;
-  border-color: #e0e4ed;
-  color: #626b80;
+  background: var(--surface-soft);
+  border-color: var(--border);
+  color: var(--muted);
   cursor: not-allowed;
   box-shadow: none;
 }
@@ -213,13 +214,13 @@ h1:focus-visible {
   padding: 8px;
   border: 1px solid var(--border);
   border-radius: 50%;
-  background: white;
+  background: var(--surface);
   transition:
     background 0.18s,
     transform 0.18s;
 }
 .icon-button:hover:not(:disabled) {
-  background: var(--blue);
+  background: var(--surface-soft);
   transform: translateY(-1px);
 }
 .icon-button:disabled {
@@ -244,7 +245,7 @@ h1:focus-visible {
   z-index: 50;
   height: 76px;
   border-bottom: 1px solid var(--border);
-  background: #f7f5f0f2;
+  background: #2b3123f2;
   border-bottom-color: var(--border);
   backdrop-filter: blur(7px);
 }
@@ -525,7 +526,7 @@ h1:focus-visible {
   padding: 0;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: white;
+  background: var(--surface);
   box-shadow: 0 12px 35px #1e284614;
   text-align: left;
   transform-style: preserve-3d;
@@ -539,7 +540,7 @@ h1:focus-visible {
   border-color: var(--primary);
   box-shadow:
     0 22px 45px #2d37641c,
-    0 0 0 3px #9a604810;
+    0 0 0 3px #c46c3720;
 }
 .card-cover {
   position: relative;
@@ -565,9 +566,9 @@ h1:focus-visible {
   letter-spacing: 0.04em;
   color: var(--project-color);
   padding: 4px 7px;
-  border: 1px solid #ffffffb0;
+  border: 1px solid #454d36;
   border-radius: 5px;
-  background: #ffffffb0;
+  background: #454d36;
 }
 .card-body {
   display: flex;
@@ -669,7 +670,7 @@ h1:focus-visible {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: #bcc4d4;
+  background: #82906c;
   transition:
     background 0.15s,
     width 0.15s;
@@ -685,7 +686,7 @@ h1:focus-visible {
   border: 1px solid var(--border);
   border-radius: 6px;
   font-size: 11px;
-  background: white;
+  background: var(--surface);
 }
 .deck-note {
   display: flex;
@@ -697,7 +698,7 @@ h1:focus-visible {
   font-family: Caveat, cursive;
   font-size: 20px;
   line-height: 1.15;
-  color: #596787;
+  color: var(--muted);
   text-align: center;
 }
 .deck-note svg {
@@ -761,10 +762,10 @@ h1:focus-visible {
   padding: 5px 8px;
   border: 1px solid var(--border);
   border-radius: 5px;
-  background: white;
+  background: var(--surface);
   font-size: 11px;
   font-weight: 600;
-  color: #454f68;
+  color: var(--ink);
   line-height: 1.4;
 }
 .project-inspector > .data-note {
@@ -817,7 +818,7 @@ h1:focus-visible {
 }
 .media-tabs button[aria-selected='true'] {
   color: var(--deep);
-  background: var(--blue);
+  background: var(--surface-soft);
   font-weight: 650;
 }
 .media-frame {
@@ -825,7 +826,7 @@ h1:focus-visible {
   grid-template-rows: minmax(0, 1fr);
   place-items: center;
   height: 140px;
-  background: var(--project-tint, #e8eff1);
+  background: var(--project-tint, #454d36);
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
@@ -846,10 +847,10 @@ h1:focus-visible {
 .media-content.mobile-preview {
   width: 88px;
   height: 125px;
-  border: 3px solid #283249;
+  border: 3px solid #1e2419;
   border-radius: 13px;
   margin: 6px 0;
-  background: white;
+  background: var(--surface);
   overflow: hidden;
   box-shadow: 0 4px 9px #25304b0a;
 }
@@ -887,7 +888,7 @@ h1:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  background: white;
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 8px;
   padding: 12px 9px;
@@ -903,7 +904,7 @@ h1:focus-visible {
   white-space: nowrap;
 }
 .architecture svg {
-  color: #8c97b1;
+  color: #c7ccb9;
 }
 .page-heading h1 {
   margin-top: 14px;
@@ -1004,7 +1005,7 @@ h1:focus-visible {
 }
 .project-index li button:hover,
 .project-index li button[aria-pressed='true'] {
-  background: var(--blue);
+  background: var(--surface-soft);
 }
 .project-index li button > span:first-child {
   color: var(--deep);
@@ -1292,7 +1293,7 @@ h1:focus-visible {
   height: 48px;
   border: 1px solid var(--border);
   border-radius: 12px;
-  background: var(--blue);
+  background: var(--surface-soft);
   color: var(--deep);
 }
 .contact-options h2 {
@@ -1392,7 +1393,7 @@ h1:focus-visible {
   display: flex;
   align-items: center;
   gap: 4px;
-  color: #424d66;
+  color: var(--ink);
 }
 .footer-links a:hover {
   color: var(--deep);
@@ -1403,7 +1404,7 @@ h1:focus-visible {
   line-height: 1.7;
   text-align: right;
 }
-/* Quiet surfaces, ink typography and a restrained warm accent. */
+/* Olive surfaces, warm white typography and burnt-orange accents. */
 .site-header .wordmark > span {
   color: var(--accent);
 }
@@ -1415,12 +1416,12 @@ h1:focus-visible {
   background: var(--accent);
 }
 .site-header .header-cta {
-  color: white;
+  color: var(--ink);
   background: var(--primary);
   border-color: transparent;
 }
 .site-header .menu-toggle {
-  background: white;
+  background: var(--surface);
   border-color: var(--border);
 }
 .name-highlight {
@@ -1429,19 +1430,19 @@ h1:focus-visible {
   margin-left: -0.02em;
   background: transparent;
   border-radius: 0;
-  box-shadow: inset 0 -0.14em var(--warm);
+  box-shadow: inset 0 -0.14em var(--accent-soft);
   color: var(--ink);
 }
 .project-inspector,
 .expanded-workspace .project-inspector {
   padding: 24px;
-  border: 1px solid #ffffff;
+  border: 1px solid var(--border);
   border-radius: 20px;
   background: var(--surface);
   box-shadow: 0 10px 28px #175a7008;
 }
 .tech-tags li {
-  background: var(--blue);
+  background: var(--surface-soft);
   border-color: transparent;
 }
 .card-cover {
@@ -1455,14 +1456,14 @@ h1:focus-visible {
   padding: 0 20px;
   border: 1px solid var(--border);
   border-radius: 14px;
-  background: white;
+  background: var(--surface);
 }
 .cv-section,
 .contact-options section {
   border-color: var(--border);
 }
 .site-footer {
-  background: #efefea;
+  background: #252b1e;
   border-top-color: var(--border);
 }
 .site-footer .availability,
@@ -1472,7 +1473,7 @@ h1:focus-visible {
   color: var(--ink);
 }
 .site-footer .availability > span {
-  background: #476859;
+  background: #a5b386;
 }
 @keyframes enter {
   from {
