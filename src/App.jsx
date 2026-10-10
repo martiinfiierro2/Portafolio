@@ -6,7 +6,6 @@ import { resolveProject } from './utils/deck';
 import { ProjectSelectionContext } from './hooks/useProjectSelection';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
-import NotFound from './pages/NotFound';
 const storageKey = 'martin-portfolio-selected-project';
 function ProjectRedirect() {
   const { slug } = useParams();
@@ -48,7 +47,7 @@ export default function App() {
               <Route path="projects/:slug" element={<ProjectRedirect />} />
               <Route path="cv" element={<Navigate to="/#cv" replace />} />
               <Route path="contact" element={<Navigate to="/#contacto" replace />} />
-              <Route path="*" element={<NotFound />} />
+              <Route path="*" element={<Navigate to="/" replace />} />
             </Route>
           </Routes>
         </BrowserRouter>

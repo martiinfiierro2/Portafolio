@@ -38,7 +38,7 @@ Fondo oliva oscuro `#2B3123`, superficies oliva `#373E2B` y texto blanco cálido
 - `/#proyectos`: colección navegable con flechas, teclado y gestos. Al abrir una tarjeta, el caso de estudio se expande en un diálogo sobre la página. Al cerrarlo se recuperan el foco, la tarjeta y la posición de scroll.
 - `/#cv`: currículum en un apartado desplegable.
 - `/#contacto`: contacto al final de la misma página.
-- Las rutas anteriores `/projects`, `/cv` y `/contact` redirigen a sus secciones. `/projects/:slug` abre el proyecto sobre la página principal mediante `?project=slug#proyectos`. `/index.html` sigue redirigiendo a Inicio.
+- Las rutas anteriores `/projects`, `/cv` y `/contact` redirigen a sus secciones. `/projects/:slug` abre el proyecto sobre la página principal mediante `?project=slug#proyectos`. `/index.html` sigue redirigiendo a Inicio. Las rutas antiguas o no reconocidas vuelven a `/` y sustituyen la entrada del historial, evitando que un enlace guardado deje al visitante en una pantalla 404.
 
 ## Organización
 
