@@ -34,23 +34,22 @@ export default function FloppyDisk({ disk, compact = false }) {
           </linearGradient>
         </defs>
 
-        <path d="M25 5h190l22 79-6 10H9L3 84Z" fill={`url(#${id}-compact)`} stroke={dark} />
-        <path d="M28 8h184l19 72H9Z" fill={light} stroke={dark} />
+        <path d="M25 5h190l22 87-6 7H9L3 92Z" fill={`url(#${id}-compact)`} stroke={dark} />
+        <path d="M28 8h184l19 82H9Z" fill={light} stroke={dark} />
         <path d="M54 8h112l6 32H46Z" fill="#bcb8ac" stroke="#85867c" strokeWidth=".7" />
         <path d="M136 13h20l4 20h-22Z" fill={base} stroke={dark} strokeWidth=".7" />
         <path d="M31 10h177M31 10 13 77" fill="none" stroke="#fff" strokeOpacity=".35" />
-        <path d="M34 50h172l7 24H27Z" fill="#f3e7d4" stroke="#c8b597" strokeWidth=".7" />
+        <path d="M38 50h164l9 39H29Z" fill="#f3e7d4" stroke="#c8b597" strokeWidth=".7" />
         <path d="M43 58h153M41 65h113" stroke="#c8b597" strokeWidth=".8" />
-        <path d="M9 84h222v8H9Z" fill={base} stroke={dark} />
-        <path d="M9 84h222" stroke="#fff" strokeOpacity=".3" />
-        <rect x="18" y="86" width="15" height="5" fill={dark} />
-        <rect x="207" y="86" width="13" height="5" fill={dark} />
-        <path d="M47 73h146l4 18H43Z" fill="#f3e7d4" stroke="#c8b597" strokeWidth=".7" />
+        <path d="M9 92h222v5H9Z" fill={base} stroke={dark} />
+        <path d="M9 92h222" stroke="#fff" strokeOpacity=".3" />
+        <rect x="18" y="93" width="15" height="3" fill={dark} />
+        <rect x="207" y="93" width="13" height="3" fill={dark} />
         <text
           x="120"
           y="87"
           textAnchor="middle"
-          fontSize="11"
+          fontSize="10"
           fill="#253340"
           fontFamily="'Segoe UI', system-ui, sans-serif"
         >
