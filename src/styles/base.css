@@ -3,7 +3,7 @@
 }
 body {
   margin: 0;
-  min-width: 320px;
+  min-width: min(320px, 100%);
 }
 html {
   scrollbar-gutter: stable;

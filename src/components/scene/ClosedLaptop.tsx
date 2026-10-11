@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import type { MouseEvent, RefObject } from 'react';
 
 interface Props {
@@ -6,6 +7,8 @@ interface Props {
 }
 
 export default function ClosedLaptop({ portalRef, onExplore }: Props) {
+  const finishId = useId();
+
   return (
     <div className="laptop-portal" ref={portalRef}>
       <button
@@ -14,9 +17,19 @@ export default function ClosedLaptop({ portalRef, onExplore }: Props) {
         aria-label="Explorar proyectos"
         onClick={onExplore}
       >
-        <span className="laptop-monogram" aria-hidden="true">
-          MF
-        </span>
+        <svg className="laptop-monogram" viewBox="0 0 80 64" aria-hidden="true" focusable="false">
+          <defs>
+            <linearGradient id={finishId} x1="0" y1="0" x2="0.3" y2="1">
+              <stop offset="0" stopColor="#282b2e" />
+              <stop offset="0.42" stopColor="#101214" />
+              <stop offset="1" stopColor="#171a1d" />
+            </linearGradient>
+          </defs>
+          <path
+            fill={`url(#${finishId})`}
+            d="M3 54V10h10l14 23 14-23h36v9H52v10h21v9H52v16H42V27L27 47 12 27v27Z"
+          />
+        </svg>
         <span className="laptop-hint">Explorar proyectos</span>
       </button>
     </div>

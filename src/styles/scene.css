@@ -87,24 +87,24 @@
 }
 .desk-introduction h1 {
   font-family: var(--code-font);
-  font-size: clamp(36px, 5.6cqw, 88px);
+  font-size: clamp(42px, 7.2cqw, 112px);
   font-weight: 800;
-  letter-spacing: -0.08em;
-  line-height: 1.2;
+  letter-spacing: -0.095em;
+  line-height: 1.12;
   margin: 16px 0 20px;
 }
 .desk-introduction h1 span {
   color: var(--accent);
 }
 .desk-role {
-  font-size: clamp(13px, 1.35cqw, 21px);
-  font-weight: 500;
+  font-size: clamp(15px, 1.6cqw, 24px);
+  font-weight: 600;
   line-height: 1.5;
 }
 .desk-description {
   margin-top: 12px;
   color: #526166;
-  font-size: clamp(11px, 1.15cqw, 18px);
+  font-size: clamp(12px, 1.25cqw, 19px);
   line-height: 1.6;
 }
 .desk-notebook {
@@ -112,6 +112,7 @@
   z-index: 2;
   inset: 27% 3.8% auto 81.8%;
   height: 33%;
+  rotate: 4deg;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,17 +196,11 @@
   outline-offset: -9px;
 }
 .laptop-monogram {
-  font-family: var(--code-font);
-  font-size: clamp(36px, 4.8cqw, 78px);
-  font-weight: 800;
-  letter-spacing: -0.18em;
-  padding-right: 0.18em;
-  line-height: 1;
-  text-shadow:
-    0 1px 1px #ffffff40,
-    0 -1px 2px #00000080;
+  width: clamp(42px, 5.2cqw, 78px);
+  height: auto;
+  filter: drop-shadow(0 1px 0 #ffffff18) drop-shadow(0 -1px 1px #00000060);
   transition:
-    color 0.2s,
+    filter 0.2s,
     transform 0.2s;
 }
 .laptop-hint {
@@ -223,7 +218,7 @@
 }
 .explore-button:hover .laptop-monogram,
 .explore-button:focus-visible .laptop-monogram {
-  color: #e2e8eb;
+  filter: drop-shadow(0 1px 0 #ffffff30) drop-shadow(0 -1px 1px #00000080);
   transform: scale(1.035);
 }
 .explore-button:hover .laptop-hint,
@@ -241,11 +236,11 @@
   border-radius: 14px;
 }
 .desk-access-contact {
-  left: 6.65%;
-  top: 61.15%;
-  width: 9.55%;
-  height: 30.3%;
-  rotate: -8deg;
+  left: 86.15%;
+  top: 68.3%;
+  width: 8.9%;
+  height: 27.25%;
+  rotate: -11deg;
   color: #eff6f8;
 }
 .phone-screen-content {
@@ -277,16 +272,19 @@
   color: #b2e7fa;
 }
 .desk-access-cv {
-  left: 80.4%;
-  top: 66.65%;
-  width: 16.6%;
-  height: 27.1%;
+  /* Only the exposed folder is clickable; the lid keeps its own target. */
+  --postit-left: 54%;
+  --postit-top: 51%;
+  left: 2.8%;
+  top: 59%;
+  width: 20.3%;
+  height: 36%;
 }
 .folder-postit-label {
   position: absolute;
-  left: 51%;
-  top: 47%;
-  transform: translate(-50%, -50%) rotate(8deg);
+  left: var(--postit-left);
+  top: var(--postit-top);
+  transform: translate(-50%, -50%) rotate(-12deg);
   font-family: var(--sketch-font);
   font-size: clamp(28px, 3cqw, 46px);
   font-weight: 600;
@@ -309,9 +307,9 @@
 @media (max-width: 900px) {
   .desk-stage {
     --laptop-left: 8.4%;
-    --laptop-top: 67.4%;
+    --laptop-top: 66.3%;
     --laptop-width: 82.4%;
-    --laptop-height: 31.15%;
+    --laptop-height: 31.4%;
     aspect-ratio: 2 / 3;
     max-width: 100%;
   }
@@ -327,14 +325,14 @@
     padding: 8px 10px;
   }
   .desk-introduction {
-    inset: 4.8% 22% auto;
+    inset: 4.8% 26.5% auto 14.5%;
     height: 18.5%;
   }
   .desk-eyebrow {
     font-size: clamp(9px, 1.9cqw, 14px);
   }
   .desk-introduction h1 {
-    font-size: clamp(22px, 6.8cqw, 50px);
+    font-size: clamp(24px, 8cqw, 60px);
     margin: 8px 0;
   }
   .desk-role {
@@ -346,8 +344,9 @@
     line-height: 1.5;
   }
   .desk-notebook {
-    inset: 26.1% 27.2% auto 29.7%;
-    height: 21.2%;
+    inset: 27.2% 24% auto 30.3%;
+    height: 21%;
+    rotate: 3deg;
   }
   .desk-notebook h2 {
     font-size: clamp(17px, 4cqw, 29px);
@@ -380,11 +379,11 @@
     height: clamp(10px, 3cqw, 21px);
   }
   .desk-access-contact {
-    left: 10.35%;
-    top: 47.8%;
+    left: 84.2%;
+    top: 46%;
     width: 12.8%;
-    height: 17.1%;
-    rotate: -8deg;
+    height: 17%;
+    rotate: -6deg;
   }
   .phone-screen-content {
     gap: 5px;
@@ -394,24 +393,24 @@
     height: clamp(16px, 4cqw, 28px);
   }
   .phone-screen-title {
-    font-size: clamp(8px, 2.2cqw, 15px);
+    font-size: clamp(9px, 2.5cqw, 18px);
   }
   .phone-screen-message {
-    font-size: clamp(7px, 1.7cqw, 11px);
+    font-size: clamp(8px, 1.9cqw, 12px);
   }
   .desk-access-cv {
-    left: 77.2%;
-    top: 46.4%;
-    width: 19.5%;
-    height: 18.4%;
+    --postit-left: 53%;
+    --postit-top: 54%;
+    left: 0.5%;
+    top: 51.3%;
+    width: 25.3%;
+    height: 14.7%;
   }
   .folder-postit-label {
-    top: 43%;
-    left: 50%;
     font-size: clamp(21px, 5cqw, 36px);
   }
   .laptop-monogram {
-    font-size: clamp(36px, 9.5cqw, 66px);
+    width: clamp(42px, 10.5cqw, 72px);
   }
   .laptop-hint {
     font-size: 9px;
