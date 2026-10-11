@@ -37,14 +37,14 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 
 ## La experiencia
 
-- **Escritorio:** una escena fotorealista cenital de una mesa clara con luz cálida, plantas, gafas, café con posavasos de corcho, bandeja y flexo, libreta, carpeta con clip, portátil cerrado y teléfono. Las versiones horizontal y vertical son imágenes WebP locales optimizadas. Todos los textos, iconos y botones siguen siendo HTML/SVG configurables y accesibles.
+- **Escritorio:** una escena fotorealista cenital con portátil cerrado, carpeta de CV, teléfono y libreta de tecnologías sobre una mesa clara. Ocupa todo el ancho y alto del navegador en ordenador. Los objetos son imágenes WebP independientes con transparencia; mantienen sus proporciones al adaptarse al formato. Todos los textos, iconos y botones siguen siendo HTML/SVG configurables y accesibles.
 - **Presentación:** DM Sans identifica el nombre y el texto principal; Caveat da un aspecto de anotación a la libreta y la carpeta. Las fuentes se alojan localmente. La libreta agrupa las tecnologías por Frontend, Backend y Datos / SQL. Los iconos mantienen un trazo de boceto.
-- **Accesos:** `ProjectEntry` presenta el botón central «Ver mis proyectos» con una pequeña nota y flecha en escritorio. El portátil conserva su monograma MF oscuro y permite entrar por su tapa. `DeskAccess` integra Contacto dentro del teléfono y el CV y su descripción sobre la carpeta. Cada objeto tiene un botón real y foco visible; la foto y los controles escalan juntos sin recortes ni zonas de clic fijas.
+- **Accesos:** `ProjectEntry` presenta el botón central «Ver mis proyectos» con una pequeña nota y flecha en escritorio. El portátil conserva su monograma MF oscuro y permite entrar por su tapa. `DeskAccess` integra Contacto dentro del teléfono y el CV y su descripción sobre la carpeta. Cada objeto tiene un botón real y foco visible; las imágenes y sus controles escalan juntos sin deformarse ni perder la alineación.
 - **Proyectos:** la tapa del portátil se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
 - **Índice editorial:** imágenes amplias y composición alternada. El hover levanta la imagen y muestra un acceso; ese acceso también se ve en dispositivos táctiles. Las fichas son páginas completas dentro del espacio digital, con una transición compartida de su portada.
 - **CV:** la carpeta abre una ventana grande desde su posición. Un PDF configurado se puede visualizar y descargar. Si falta, se muestra un estado pendiente real.
 - **Contacto:** el móvil abre una ventana con Email, LinkedIn y GitHub. Copiar email aparece solo cuando existe un email configurado; informa del éxito o del fallo del portapapeles.
-- **Móvil:** una escena vertical propia conserva la presentación arriba, la libreta con tecnologías agrupadas en el centro, el teléfono y el guardafolios a los lados, y el portátil cerrado abajo. Los textos y los accesos escalan con los objetos. Mantiene los mismos recorridos de entrada y vuelta.
+- **Móvil:** una disposición vertical conserva la presentación arriba, la libreta con tecnologías agrupadas en el centro, el guardafolios y el teléfono a los lados, y el portátil cerrado abajo. Los textos y los accesos escalan con los objetos. Mantiene los mismos recorridos de entrada y vuelta.
 
 ## Estructura
 
@@ -66,7 +66,7 @@ src/
   utils/navigation.ts          Rutas y geometría de la cámara
   styles/                      Tokens, base, escena, proyectos, ventanas y fuentes
 public/projects/               Medios locales de proyectos
-public/desk/                   Escenas WebP de escritorio y móvil
+public/desk/                   Objetos WebP con transparencia
 tests/navigation.test.mjs     Pruebas de rutas, geometría e integridad de medios
 ```
 
@@ -74,7 +74,7 @@ Los módulos se separan por responsabilidad. El contenido no está incrustado en
 
 El footer comparte el ancho de la escena y mantiene sus márgenes en cada formato. La libreta presenta Frontend en filas, Backend en columnas y SQL junto a su símbolo. En móvil utiliza una disposición compacta por grupos. La nota de la carpeta se reserva para escritorio; el acceso CV siempre está visible.
 
-La geometría visual de la escena está en `src/styles/scene.css`: las variables `--laptop-*` alinean `ClosedLaptop` con la tapa fotografiada, `DeskIntroduction` coloca la presentación central y contiene `ProjectEntry` y `DeskNotebook` coloca las tecnologías sobre el papel y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
+La geometría de la escena está en `src/styles/scene.css`. Cada objeto conserva su relación de aspecto y su contenido HTML se posiciona dentro del mismo componente. `DeskObjectArt` centraliza las imágenes decorativas de los objetos; `DeskIntroduction` contiene la presentación y `ProjectEntry`; `DeskNotebook` presenta las tecnologías sobre el papel. En ordenador, los tamaños consideran tanto el ancho como el alto disponibles. Por debajo de 900 px, los elementos pasan a una cuadrícula vertical con desplazamiento natural. No hay accesorios decorativos ni imágenes de fondo con controles superpuestos.
 
 ## Configurar tu información
 

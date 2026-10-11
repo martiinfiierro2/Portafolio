@@ -1,5 +1,6 @@
 import { useId } from 'react';
 import type { MouseEvent, RefObject } from 'react';
+import DeskObjectArt from './DeskObjectArt';
 
 interface Props {
   portalRef: RefObject<HTMLDivElement | null>;
@@ -17,6 +18,7 @@ export default function ClosedLaptop({ portalRef, onExplore }: Props) {
         aria-label="Abrir proyectos desde el portátil"
         onClick={onExplore}
       >
+        <DeskObjectArt kind="laptop" />
         <svg className="laptop-monogram" viewBox="0 0 80 64" aria-hidden="true" focusable="false">
           <defs>
             <linearGradient id={finishId} x1="0" y1="0" x2="0.3" y2="1">

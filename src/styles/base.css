@@ -155,3 +155,9 @@ ol {
     scroll-behavior: auto !important;
   }
 }
+
+@media (min-width: 901px) {
+  html {
+    scrollbar-gutter: auto;
+  }
+}

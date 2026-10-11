@@ -8,47 +8,40 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  background: #f8f3ea;
+  background: radial-gradient(ellipse at 35% 5%, #fffdf8, #f7f1e7 65%, #f1e7d9);
 }
 .desk-stage {
-  /* All coordinates follow the complete, uncropped reference photograph. */
-  --laptop-left: 27.5%;
-  --laptop-top: 50.2%;
-  --laptop-width: 46.5%;
-  --laptop-height: 39.1%;
   position: relative;
   width: 100%;
-  max-width: calc((100svh - var(--desk-footer-height)) * 1448 / 1086);
-  margin: 0 auto;
+  height: calc(100svh - var(--desk-footer-height));
+  margin: 0;
   container-type: inline-size;
   flex-shrink: 0;
 }
 .desk-workspace {
   position: relative;
   width: 100%;
-  aspect-ratio: 1448 / 1086;
+  height: 100%;
   container-type: inline-size;
 }
-.desk-photograph {
+.desk-object-art {
   position: absolute;
-  display: block;
   inset: 0;
-  transition: filter 0.65s;
-  pointer-events: none;
-}
-.desk-photograph img {
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 12px 16px #4936211b);
 }
-.desk-stage.is-away .desk-photograph {
-  filter: blur(4px);
+.desk-stage.is-away .desk-object-art {
+  filter: blur(3px);
 }
 .desk-introduction {
   position: absolute;
   z-index: 2;
-  inset: 17% 22% auto;
-  height: 31%;
+  inset: 4% 22% auto 18%;
+  height: 39%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,9 +154,15 @@
 .desk-notebook {
   position: absolute;
   z-index: 2;
-  inset: 14% 2.5% auto 83.5%;
-  height: 35%;
-  rotate: 10deg;
+  inset: 4% 2% auto auto;
+  width: min(24vw, 36vh);
+  aspect-ratio: 640 / 853;
+  container-type: inline-size;
+}
+.notebook-content {
+  position: absolute;
+  inset: 14% 13% 13% 24%;
+  rotate: 8deg;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -171,10 +170,10 @@
   color: #233039;
 }
 .desk-notebook h2 {
-  font-size: clamp(21px, 2.25cqw, 33px);
+  font-size: clamp(21px, 8.5cqw, 32px);
   font-weight: 500;
   line-height: 1.15;
-  margin-bottom: clamp(10px, 1.2cqw, 18px);
+  margin-bottom: clamp(9px, 4cqw, 16px);
   flex-shrink: 0;
 }
 .desk-notebook h2::after {
@@ -187,14 +186,14 @@
 .notebook-groups {
   display: flex;
   flex-direction: column;
-  gap: clamp(10px, 1.35cqw, 20px);
+  gap: clamp(9px, 4cqw, 16px);
   flex-shrink: 0;
 }
 .notebook-group {
   min-width: 0;
 }
 .notebook-group h3 {
-  font-size: clamp(16px, 1.6cqw, 24px);
+  font-size: clamp(15px, 6.5cqw, 23px);
   font-weight: 500;
   line-height: 1.15;
 }
@@ -211,7 +210,7 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  font-size: clamp(12px, 1.15cqw, 17px);
+  font-size: clamp(12px, 5.3cqw, 17px);
   line-height: 1.2;
 }
 .notebook-technologies[data-category='frontend'] {
@@ -223,21 +222,22 @@
 .notebook-technologies[data-count='1'] li {
   flex-direction: row;
   justify-content: flex-start;
-  gap: clamp(8px, 1cqw, 15px);
+  gap: clamp(7px, 3.5cqw, 13px);
 }
 .notebook-technologies svg {
-  width: clamp(22px, 2.2cqw, 32px);
-  height: clamp(22px, 2.2cqw, 32px);
+  width: clamp(18px, 8cqw, 29px);
+  height: clamp(18px, 8cqw, 29px);
   stroke-linecap: round;
   stroke-dasharray: 42 0.3 18 0.3;
 }
 .laptop-portal {
   position: absolute;
   z-index: 2;
-  left: var(--laptop-left);
-  top: var(--laptop-top);
-  width: var(--laptop-width);
-  height: var(--laptop-height);
+  left: 50%;
+  bottom: 0;
+  width: min(54vw, 82vh);
+  aspect-ratio: 1000 / 625;
+  transform: translateX(-50%);
 }
 .explore-button {
   display: flex;
@@ -253,6 +253,7 @@
   outline-offset: -9px;
 }
 .laptop-monogram {
+  position: relative;
   width: clamp(42px, 5cqw, 74px);
   height: auto;
   transform: translateY(-20%);
@@ -276,34 +277,35 @@
   border-radius: 14px;
 }
 .desk-access-contact {
-  left: 81.2%;
-  top: 63.2%;
-  width: 10.7%;
-  height: 28.4%;
-  rotate: -13deg;
+  right: 3%;
+  bottom: 2%;
+  width: min(19vw, 27vh);
+  aspect-ratio: 480 / 720;
+  container-type: inline-size;
   color: #eff6f8;
 }
 .phone-screen-content {
+  position: absolute;
+  inset: 20% 24%;
+  rotate: -10deg;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 11px;
-  width: 90%;
-  height: 80%;
   transition: color 0.2s;
 }
 .phone-screen-content > svg:not(.phone-screen-arrow) {
-  width: clamp(24px, 2.7cqw, 40px);
-  height: clamp(24px, 2.7cqw, 40px);
+  width: clamp(24px, 16cqw, 40px);
+  height: clamp(24px, 16cqw, 40px);
   stroke-width: 1.25;
 }
 .phone-screen-title {
-  font-size: clamp(12px, 1.45cqw, 21px);
+  font-size: clamp(12px, 8cqw, 21px);
   font-weight: 600;
 }
 .phone-screen-message {
-  font-size: clamp(9px, 0.95cqw, 14px);
+  font-size: clamp(9px, 5.5cqw, 14px);
   color: #c1d7df;
 }
 .phone-screen-arrow {
@@ -317,17 +319,21 @@
   color: #b2e7fa;
 }
 .desk-access-cv {
+  z-index: 1;
   left: 4%;
-  top: 56.7%;
-  width: 19.5%;
-  height: 38.8%;
-  rotate: -11deg;
+  bottom: 1%;
+  width: min(27vw, 40vh);
+  aspect-ratio: 640 / 853;
+  container-type: inline-size;
   color: #1c313a;
 }
 .folder-cover-copy {
   position: absolute;
-  left: 21%;
-  top: 27%;
+  left: 25%;
+  right: 25%;
+  top: 39%;
+  rotate: -10deg;
+  transform-origin: top left;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -335,7 +341,7 @@
   text-align: left;
 }
 .folder-cover-title {
-  font-size: clamp(32px, 3.8cqw, 55px);
+  font-size: clamp(30px, 17cqw, 55px);
   font-weight: 600;
   line-height: 1;
 }
@@ -348,7 +354,7 @@
 }
 .folder-cover-note {
   margin-top: 18px;
-  font-size: clamp(14px, 1.5cqw, 22px);
+  font-size: clamp(14px, 6.7cqw, 22px);
   line-height: 1.15;
 }
 .desk-access-cv:hover .folder-cover-copy,
@@ -361,9 +367,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  max-width: calc((100svh - var(--desk-footer-height)) * 1448 / 1086);
   min-height: var(--desk-footer-height);
-  margin: auto auto 0;
+  margin: 0;
   gap: 12px 20px;
   padding: 18px 24px;
   color: #46504f;
@@ -375,47 +380,120 @@
   max-width: 100%;
   overflow-wrap: anywhere;
 }
-@media (max-width: 900px) {
-  .desk-stage {
-    --laptop-left: 20.6%;
-    --laptop-top: 70.3%;
-    --laptop-width: 60.5%;
-    --laptop-height: 22.5%;
-    max-width: 100%;
-  }
-  .desk-workspace {
-    aspect-ratio: 941 / 1672;
-  }
-  .desk-introduction {
-    inset: 18.5% 11% auto 13%;
-    height: 22%;
+@media (min-width: 901px) and (max-height: 740px) {
+  .desk-introduction h1 {
+    font-size: clamp(44px, 6cqw, 78px);
+    margin: 8px 0;
   }
   .desk-eyebrow {
-    font-size: clamp(10px, 2.5cqw, 17px);
+    font-size: 12px;
+  }
+  .desk-role {
+    font-size: 18px;
+  }
+  .desk-description {
+    font-size: 14px;
+    margin-top: 7px;
+  }
+  .project-entry {
+    margin-top: 15px;
+  }
+  .project-entry-button {
+    min-height: 46px;
+    padding-block: 11px;
+  }
+  .project-entry-note {
+    font-size: 17px;
+  }
+}
+@media (max-width: 1100px) and (min-width: 901px) {
+  .desk-notebook {
+    width: 25vw;
+    right: 1%;
+  }
+  .desk-introduction {
+    inset: 3% 27% auto 11%;
+    height: 41%;
+  }
+  .desk-introduction h1 {
+    font-size: 6.4cqw;
+  }
+  .desk-role {
+    font-size: 17px;
+  }
+  .desk-description {
+    font-size: 13px;
+  }
+  .project-entry-note {
+    display: none;
+  }
+  .desk-access-cv {
+    left: 1%;
+    width: 28vw;
+  }
+  .desk-access-contact {
+    right: 0;
+    width: 23vw;
+  }
+  .notebook-technologies li {
+    font-size: 12px;
+  }
+  .notebook-technologies svg {
+    width: 18px;
+    height: 18px;
+  }
+  .notebook-group h3 {
+    font-size: 15px;
+  }
+  .notebook-groups {
+    gap: 9px;
+  }
+}
+@media (max-width: 900px) {
+  .desk-stage {
+    height: auto;
+    min-height: 830px;
+  }
+  .desk-workspace {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: center;
+    gap: 24px 0;
+    padding: 40px 18px 10px;
+  }
+  .desk-introduction {
+    position: relative;
+    inset: auto;
+    height: auto;
+    grid-column: 1 / -1;
+    margin-bottom: 4px;
+  }
+  .desk-eyebrow {
+    font-size: 12px;
     gap: 9px;
   }
   .desk-eyebrow::after {
     width: 20px;
   }
   .desk-introduction h1 {
-    font-size: clamp(29px, 8.1cqw, 59px);
-    margin: 5px 0;
+    font-size: clamp(32px, 7.8cqw, 60px);
+    margin: 10px 0;
   }
   .desk-role {
-    font-size: clamp(12px, 3.2cqw, 21px);
+    font-size: clamp(14px, 3.4cqw, 21px);
   }
   .desk-description {
-    font-size: clamp(11px, 2.85cqw, 18px);
-    margin-top: 5px;
+    font-size: clamp(12px, 3cqw, 18px);
+    margin-top: 7px;
   }
   .project-entry {
-    margin-top: 10px;
+    margin-top: 17px;
   }
   .project-entry-button {
-    min-width: 192px;
-    min-height: 44px;
-    padding: 11px 18px;
-    font-size: 12px;
+    min-width: 208px;
+    min-height: 46px;
+    padding: 12px 18px;
+    font-size: 13px;
     gap: 11px;
   }
   .project-entry-button > svg {
@@ -426,95 +504,56 @@
     display: none;
   }
   .desk-notebook {
-    inset: 47.2% 23% auto 33%;
-    height: 18.7%;
-    rotate: 10deg;
+    position: relative;
+    inset: auto;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(280px, 75vw);
   }
-  .desk-notebook h2 {
-    font-size: clamp(20px, 5cqw, 34px);
-    margin-bottom: 10px;
-  }
-  .notebook-groups {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 2cqw;
-  }
-  .notebook-group h3 {
-    font-size: clamp(12px, 3cqw, 21px);
-    white-space: nowrap;
-  }
-  .notebook-technologies,
-  .notebook-technologies[data-category='frontend'] {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-top: 7px;
-  }
-  .notebook-technologies li,
-  .notebook-technologies[data-category='frontend'] li,
-  .notebook-technologies[data-count='1'] li {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 4px;
-    font-size: clamp(11px, 2.85cqw, 19px);
-  }
-  .notebook-technologies svg {
-    width: clamp(12px, 3.2cqw, 23px);
-    height: clamp(12px, 3.2cqw, 23px);
-  }
-  .desk-access-contact {
-    left: 85%;
-    top: 72.2%;
-    width: 13.8%;
-    height: 17.1%;
-    rotate: -12deg;
-  }
-  .phone-screen-content {
-    gap: 6px;
-  }
-  .phone-screen-content > svg:not(.phone-screen-arrow) {
-    width: 20px;
-    height: 20px;
-  }
-  .phone-screen-title {
-    font-size: clamp(10px, 2.7cqw, 18px);
-  }
-  .phone-screen-message {
-    font-size: clamp(9px, 2.2cqw, 13px);
-  }
-  .phone-screen-arrow {
-    width: 12px;
-    height: 12px;
+  .notebook-content {
+    inset: 15% 13% 14% 24%;
   }
   .desk-access-cv {
-    left: 0.8%;
-    top: 66%;
-    width: 18.9%;
-    height: 25%;
-    rotate: 0deg;
+    position: relative;
+    inset: auto;
+    grid-column: 1;
+    grid-row: 3;
+    width: min(240px, 100%);
+    justify-self: center;
   }
-  .folder-cover-copy {
-    left: 21%;
-    top: 25%;
-    rotate: -10deg;
-    transform-origin: top left;
+  .desk-access-contact {
+    position: relative;
+    inset: auto;
+    grid-column: 2;
+    grid-row: 3;
+    width: min(190px, 100%);
+    justify-self: center;
   }
-  .folder-cover-title {
-    font-size: clamp(26px, 7.3cqw, 47px);
+  .phone-screen-content {
+    gap: 8px;
   }
   .folder-cover-title::after {
-    width: 38px;
-    margin-top: 7px;
+    width: 42px;
+    margin-top: 8px;
   }
   .folder-cover-note {
-    font-size: clamp(11px, 3cqw, 18px);
-    margin-top: 9px;
+    font-size: clamp(12px, 6.8cqw, 18px);
+    margin-top: 10px;
+  }
+  .laptop-portal {
+    position: relative;
+    inset: auto;
+    transform: none;
+    grid-column: 1 / -1;
+    grid-row: 4;
+    justify-self: center;
+    width: min(620px, 100%);
+    margin-top: -12px;
   }
   .laptop-monogram {
-    width: clamp(36px, 10cqw, 60px);
+    width: clamp(36px, 9cqw, 60px);
   }
   .desk-bottomline {
-    max-width: 100%;
     min-height: 64px;
     font-size: 9px;
     text-align: center;
@@ -522,6 +561,11 @@
   }
 }
 @media (max-width: 480px) {
+  .desk-workspace {
+    column-gap: 0;
+    row-gap: 18px;
+    padding-inline: 10px;
+  }
   .folder-cover-note {
     display: none;
   }
@@ -529,29 +573,5 @@
     flex-direction: column;
     justify-content: center;
     gap: 6px;
-  }
-}
-@media (max-width: 359px) {
-  .desk-introduction {
-    top: 17.5%;
-  }
-  .notebook-technologies li,
-  .notebook-technologies[data-category='frontend'] li,
-  .notebook-technologies[data-count='1'] li {
-    gap: 2px;
-    font-size: 10px;
-  }
-  .notebook-technologies[data-category='backend'] li {
-    flex-wrap: nowrap;
-  }
-  .notebook-technologies svg {
-    width: 10px;
-    height: 10px;
-  }
-  .phone-screen-title {
-    font-size: 9px;
-  }
-  .phone-screen-message {
-    font-size: 8px;
   }
 }
