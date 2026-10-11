@@ -37,14 +37,14 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 
 ## La experiencia
 
-- **Escritorio:** cuatro objetos con materiales y volumen construidos con CSS y SVG. No depende de una fotografía con zonas de clic fijas ni de un motor WebGL. La pantalla contiene HTML real, legible y seleccionable. El teclado y los detalles del hardware son decorativos.
-- **Decoración:** superficie blanca mate y objetos fotorealistas de un flexo, café, lápices y una libreta con anotaciones en HTML. Los cuatro recortes tienen transparencia y se sirven como WebP locales optimizados desde `public/desk/`; el hardware utiliza acabados de metal, cristal y tela con CSS. `DeskDecorations` y `decorations.css` mantienen estos detalles separados de las interacciones. Son decorativos, no capturan clics ni entran en la navegación por teclado; en móvil se reordenan debajo de los accesos.
+- **Escritorio:** una escena fotorealista completa, con una mesa blanca, portátil, teléfono, carpeta, disco externo y elementos de trabajo bajo la misma luz. Dos imágenes WebP locales componen las versiones horizontal y vertical. Los objetos forman parte de la escena; la información del portátil sigue siendo HTML legible, seleccionable y configurable.
+- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono, la carpeta y el disco. Sus etiquetas visibles y el foco indican qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. El teclado también permite entrar en los proyectos.
 - **Proyectos:** la pantalla física se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
 - **Índice editorial:** imágenes amplias y composición alternada. El hover levanta la imagen y muestra un acceso; ese acceso también se ve en dispositivos táctiles. Las fichas son páginas completas dentro del espacio digital, con una transición compartida de su portada.
 - **CV:** la carpeta abre una ventana grande desde su posición. Un PDF configurado se puede visualizar y descargar. Si falta, se muestra un estado pendiente real.
 - **Contacto:** el móvil abre una ventana con Email, LinkedIn y GitHub. Copiar email aparece solo cuando existe un email configurado; informa del éxito o del fallo del portapapeles.
 - **Stack:** el LED se ilumina al consultar información adicional en un formato JSON discreto.
-- **Móvil:** el ordenador ocupa el ancho disponible y los tres objetos secundarios se organizan debajo. Mantiene los mismos recorridos de entrada y vuelta.
+- **Móvil:** una escena vertical propia muestra el ordenador arriba y los tres accesos debajo, sobre la misma mesa. En pantallas pequeñas se priorizan nombre, profesión, tecnologías y acceso a proyectos; la descripción permanece disponible para lectores de pantalla. Mantiene los mismos recorridos de entrada y vuelta.
 
 ## Estructura
 
@@ -54,7 +54,7 @@ src/
     App.tsx                    Orquestación de vistas, ventanas y foco
     DigitalSurface.tsx         Transición entre pantalla física y espacio digital
   components/
-    scene/                     Portátil, objetos, decoraciones y composición responsive
+    scene/                     Escena, pantalla HTML y accesos a los objetos
     projects/                  Índice, fichas, enlaces y galería
     panels/                    Ventanas de CV, Contacto y Stack
     ui/                        Elementos visuales reutilizables
@@ -66,10 +66,13 @@ src/
   utils/navigation.ts          Rutas y geometría de la cámara
   styles/                      Tokens, base, escena, proyectos, ventanas y fuentes
 public/projects/               Medios locales de proyectos
+public/desk/                   Escenas WebP de escritorio y móvil
 tests/navigation.test.mjs     Pruebas de rutas, geometría e integridad de medios
 ```
 
 Los módulos se separan por responsabilidad. El contenido no está incrustado en los componentes; añadir un proyecto no exige modificar la navegación o la animación. Los estilos de cada experiencia se mantienen separados y los colores y fuentes comparten tokens.
+
+La geometría visual de la escena está en `src/styles/scene.css`: las variables `--screen-*` alinean `LaptopScreen` con la pantalla fotografiada y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
 
 ## Configurar tu información
 
@@ -101,7 +104,7 @@ Guarda capturas optimizadas en `public/projects/`, preferiblemente WebP o AVIF, 
 - Las ventanas utilizan `dialog` nativo: foco contenido, cierre por Escape, clic en el fondo y restauración del foco al objeto de origen.
 - Al abrir una ficha se enfoca su título; al volver se restaura el acceso y el desplazamiento del índice.
 - Las superficies inactivas se marcan `inert` durante las transiciones. No hay un cursor personalizado que sustituya al del navegador.
-- `prefers-reduced-motion` elimina parallax, desplazamientos magnéticos y recorridos de cámara, conservando todas las funciones.
+- `prefers-reduced-motion` elimina parallax y recorridos de cámara, conservando todas las funciones.
 - Las fuentes se alojan localmente. La interfaz de proyectos se carga de forma diferida; las imágenes del índice usan lazy loading. No hay animaciones continuas de fondo.
 
 ## Publicación
