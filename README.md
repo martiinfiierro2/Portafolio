@@ -38,7 +38,7 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 ## La experiencia
 
 - **Escritorio:** una escena fotorealista completa, con una mesa blanca, portátil negro, teléfono inclinado, libreta de una página y guardafolios bajo la misma luz. La lámpara y el café mantienen su ubicación; los lápices descansan junto al café y la carpeta queda parcialmente bajo el portátil. El teléfono ocupa el lado derecho. Dos imágenes WebP locales componen las versiones horizontal y vertical. Los objetos forman parte de la escena; la presentación y los bocetos de tecnologías siguen siendo HTML legible, seleccionable y configurable. JetBrains Mono identifica la presentación; el monograma MF es un SVG con acabado oscuro; Caveat da un aspecto de anotación a la libreta. Las dos fuentes se alojan localmente. La cámara mira desde arriba y el portátil cerrado ocupa el borde inferior, centrado.
-- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono y el guardafolios. Contacto aparece integrado en la pantalla del teléfono y CV sobre el post-it de la carpeta. El foco indica qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. Toda la tapa del portátil permite entrar en los proyectos.
+- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono y el guardafolios. Contacto aparece integrado en la pantalla del teléfono y CV sobre el post-it de la carpeta. El foco indica qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. Una anotación visible, «Explora mis proyectos», y una flecha señalan el portátil. Tanto la anotación como la tapa permiten entrar con ratón, teclado o toque.
 - **Proyectos:** la tapa del portátil se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
 - **Índice editorial:** imágenes amplias y composición alternada. El hover levanta la imagen y muestra un acceso; ese acceso también se ve en dispositivos táctiles. Las fichas son páginas completas dentro del espacio digital, con una transición compartida de su portada.
 - **CV:** la carpeta abre una ventana grande desde su posición. Un PDF configurado se puede visualizar y descargar. Si falta, se muestra un estado pendiente real.
@@ -70,6 +70,8 @@ tests/navigation.test.mjs     Pruebas de rutas, geometría e integridad de medio
 ```
 
 Los módulos se separan por responsabilidad. El contenido no está incrustado en los componentes; añadir un proyecto no exige modificar la navegación o la animación. Los estilos de cada experiencia se mantienen separados y los colores y fuentes comparten tokens.
+
+La cabecera y el footer comparten el ancho de la escena y mantienen sus márgenes en cada formato. La libreta adapta las columnas al número de tecnologías de cada grupo.
 
 La geometría visual de la escena está en `src/styles/scene.css`: las variables `--laptop-*` alinean `ClosedLaptop` con la tapa fotografiada, `DeskIntroduction` coloca la presentación central y `DeskNotebook` coloca las tecnologías sobre el papel y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
 

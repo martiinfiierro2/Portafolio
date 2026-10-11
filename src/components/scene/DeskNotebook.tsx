@@ -16,7 +16,13 @@ export default function DeskNotebook() {
               aria-labelledby={`tech-${category.id}`}
             >
               <h3 id={`tech-${category.id}`}>{category.label}</h3>
-              <ul className="notebook-technologies">
+              <ul
+                className="notebook-technologies"
+                data-count={technologies.length}
+                style={{
+                  gridTemplateColumns: `repeat(${Math.min(technologies.length, 3)}, minmax(0, 1fr))`,
+                }}
+              >
                 {technologies.map((tech) => (
                   <li key={tech.id}>
                     <TechnologyIcon id={tech.id} />

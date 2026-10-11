@@ -1,4 +1,5 @@
 .desk-scene {
+  --desk-footer-height: 64px;
   position: relative;
   isolation: isolate;
   min-height: 100svh;
@@ -10,11 +11,11 @@
 .desk-topline {
   position: absolute;
   z-index: 4;
-  inset: 20px 28px auto;
+  inset: 18px clamp(16px, 2.2cqw, 28px) auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 12px;
   pointer-events: none;
 }
 .desk-topline .brand-mark {
@@ -33,12 +34,16 @@
   font-size: 10px;
   color: #44544c;
   background: #fffffff0;
+  min-width: 0;
+  max-width: calc(100% - 76px);
+  line-height: 1.4;
 }
 .desk-status i {
   width: 5px;
   height: 5px;
   border-radius: 50%;
   background: #568369;
+  flex-shrink: 0;
 }
 .desk-stage {
   /* Geometry follows the full, uncropped photograph. */
@@ -48,11 +53,16 @@
   --laptop-height: 41.95%;
   position: relative;
   width: 100%;
-  max-width: calc((100svh - 43px) * 1586 / 993);
-  aspect-ratio: 1586 / 993;
+  max-width: calc((100svh - var(--desk-footer-height)) * 1586 / 993);
   margin: auto auto 0;
   container-type: inline-size;
   flex-shrink: 0;
+}
+.desk-workspace {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1586 / 993;
+  container-type: inline-size;
 }
 .desk-photograph {
   position: absolute;
@@ -110,8 +120,8 @@
 .desk-notebook {
   position: absolute;
   z-index: 2;
-  inset: 27% 3.8% auto 81.8%;
-  height: 33%;
+  inset: 28% 4.2% auto 82.2%;
+  height: 31%;
   rotate: 4deg;
   display: flex;
   flex-direction: column;
@@ -120,16 +130,18 @@
   color: #233f50;
 }
 .desk-notebook h2 {
-  font-size: clamp(22px, 2.1cqw, 32px);
+  font-size: clamp(20px, 1.95cqw, 30px);
   font-weight: 600;
   line-height: 1.1;
   rotate: -2deg;
-  margin-bottom: 13px;
+  margin-bottom: 10px;
+  flex-shrink: 0;
 }
 .notebook-groups {
   display: flex;
   flex-direction: column;
-  gap: clamp(8px, 1cqw, 16px);
+  gap: clamp(8px, 0.8cqw, 12px);
+  flex-shrink: 0;
 }
 .notebook-group {
   min-width: 0;
@@ -146,11 +158,10 @@
 }
 .notebook-technologies {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px 5px;
+  gap: 8px 10px;
   list-style: none;
   padding: 0;
-  margin-top: 9px;
+  margin-top: 6px;
 }
 .notebook-technologies li {
   min-width: 0;
@@ -158,8 +169,8 @@
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  font-size: clamp(13px, 1.3cqw, 20px);
-  line-height: 1.1;
+  font-size: clamp(12px, 1.1cqw, 17px);
+  line-height: 1.2;
 }
 .notebook-technologies li:nth-child(even) {
   rotate: 2deg;
@@ -172,6 +183,11 @@
   height: clamp(17px, 1.7cqw, 26px);
   stroke-linecap: round;
   stroke-dasharray: 42 0.3 18 0.3;
+}
+.notebook-technologies[data-count='1'] li {
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 8px;
 }
 .laptop-portal {
   position: absolute;
@@ -203,28 +219,40 @@
     filter 0.2s,
     transform 0.2s;
 }
-.laptop-hint {
+.laptop-invitation {
   position: absolute;
   left: 50%;
-  top: 70%;
-  transform: translate(-50%, 4px);
-  opacity: 0;
-  color: #fff;
-  font-size: 11px;
+  bottom: calc(100% + 14px);
+  transform: translateX(-50%) rotate(-3deg);
+  color: var(--accent-dark);
+  font-family: var(--sketch-font);
+  font-size: clamp(20px, 1.8cqw, 28px);
+  font-weight: 600;
+  line-height: 1.2;
   white-space: nowrap;
-  transition:
-    opacity 0.2s,
-    transform 0.2s;
+  transition: transform 0.2s;
+}
+.laptop-invitation svg {
+  position: absolute;
+  width: 54px;
+  height: 44px;
+  top: 0;
+  left: calc(100% + 5px);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
 }
 .explore-button:hover .laptop-monogram,
 .explore-button:focus-visible .laptop-monogram {
   filter: drop-shadow(0 1px 0 #ffffff30) drop-shadow(0 -1px 1px #00000080);
   transform: scale(1.035);
 }
-.explore-button:hover .laptop-hint,
-.explore-button:focus-visible .laptop-hint {
-  opacity: 1;
-  transform: translate(-50%, 0);
+.explore-button:hover .laptop-invitation,
+.explore-button:focus-visible .laptop-invitation {
+  transform: translate(-50%, -2px) rotate(-3deg);
 }
 .desk-access {
   position: absolute;
@@ -297,12 +325,24 @@
 }
 .desk-bottomline {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 20px;
-  padding: 15px 32px;
+  width: 100%;
+  max-width: calc((100svh - var(--desk-footer-height)) * 1586 / 993);
+  min-height: var(--desk-footer-height);
+  margin-inline: auto;
+  gap: 12px 20px;
+  padding: 20px clamp(16px, 2.2vw, 28px);
   color: #46504f;
   font-size: 10px;
+  line-height: 1.5;
   background: #f9f9f6;
+}
+.desk-bottomline > span {
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 @media (max-width: 900px) {
   .desk-stage {
@@ -310,11 +350,17 @@
     --laptop-top: 66.3%;
     --laptop-width: 82.4%;
     --laptop-height: 31.4%;
-    aspect-ratio: 2 / 3;
     max-width: 100%;
   }
+  .desk-workspace {
+    aspect-ratio: 2 / 3;
+  }
   .desk-topline {
-    inset: 12px 14px auto;
+    position: relative;
+    inset: auto;
+    min-height: 44px;
+    padding: 0 14px;
+    margin-bottom: 8px;
   }
   .desk-topline .brand-mark {
     font-size: 22px;
@@ -364,8 +410,8 @@
   .notebook-technologies {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    margin-top: 9px;
+    gap: 6px;
+    margin-top: 6px;
   }
   .notebook-technologies li {
     flex-direction: row;
@@ -412,14 +458,26 @@
   .laptop-monogram {
     width: clamp(42px, 10.5cqw, 72px);
   }
-  .laptop-hint {
-    font-size: 9px;
+  .laptop-invitation {
+    left: 57%;
+    bottom: calc(100% + 12px);
+    font-size: clamp(18px, 4.6cqw, 27px);
+  }
+  .laptop-invitation svg {
+    left: calc(100% - 30px);
+    top: 18px;
+    width: 32px;
+    height: 28px;
   }
   .desk-bottomline {
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 72px;
+    text-align: center;
     gap: 7px;
-    font-size: 8px;
-    padding: 15px;
+    font-size: 9px;
+    padding: 16px 24px;
   }
 }
