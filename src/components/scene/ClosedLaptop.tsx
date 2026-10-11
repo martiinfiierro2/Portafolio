@@ -1,4 +1,3 @@
-import { ArrowUpRight, FolderCode } from 'lucide-react';
 import type { MouseEvent, RefObject } from 'react';
 
 interface Props {
@@ -15,12 +14,10 @@ export default function ClosedLaptop({ portalRef, onExplore }: Props) {
         aria-label="Explorar proyectos"
         onClick={onExplore}
       >
-        <span className="laptop-sticker">
-          <FolderCode size={22} aria-hidden="true" />
-          <span>Proyectos</span>
-          <ArrowUpRight size={15} aria-hidden="true" />
+        <span className="laptop-monogram" aria-hidden="true">
+          MF
         </span>
-        <span className="laptop-hint">Pulsa para explorar</span>
+        <span className="laptop-hint">Explorar proyectos</span>
       </button>
     </div>
   );

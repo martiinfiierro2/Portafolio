@@ -7,6 +7,8 @@
   --line: #deded7;
   --font: 'DM Sans Variable', system-ui, sans-serif;
   --display: 'Space Grotesk Variable', var(--font);
+  --code-font: 'JetBrains Mono Variable', monospace;
+  --sketch-font: 'Caveat Variable', cursive;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   font-family: var(--font);
   color: var(--ink);

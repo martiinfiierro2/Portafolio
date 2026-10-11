@@ -1,38 +1,33 @@
-import { profile } from '../../data/profile';
+import { profile, technologyCategories } from '../../data/profile';
 import TechnologyIcon from '../ui/TechnologyIcon';
 
 export default function DeskNotebook() {
-  const [firstName, ...familyName] = profile.name.split(' ');
-
   return (
-    <article className="desk-notebook" aria-labelledby="desk-title">
-      <div className="notebook-profile">
-        <p className="notebook-eyebrow">Hola, soy</p>
-        <h1 id="desk-title">
-          {firstName}
-          <span>{familyName.join(' ')}</span>
-        </h1>
-        <p className="notebook-role">{profile.role}</p>
-        <p className="notebook-description">{profile.introduction}</p>
+    <aside className="desk-notebook" aria-labelledby="notebook-title">
+      <h2 id="notebook-title">Tecnologías</h2>
+      <div className="notebook-groups">
+        {technologyCategories.map((category) => {
+          const technologies = profile.technologies.filter((tech) => tech.category === category.id);
+          if (!technologies.length) return null;
+          return (
+            <section
+              className="notebook-group"
+              key={category.id}
+              aria-labelledby={`tech-${category.id}`}
+            >
+              <h3 id={`tech-${category.id}`}>{category.label}</h3>
+              <ul className="notebook-technologies">
+                {technologies.map((tech) => (
+                  <li key={tech.id}>
+                    <TechnologyIcon id={tech.id} />
+                    <span>{tech.label}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })}
       </div>
-      <div className="notebook-stack">
-        <h2>Tecnologías</h2>
-        <ul className="notebook-technologies" aria-label="Tecnologías">
-          {profile.technologies.map((tech) => (
-            <li key={tech.id}>
-              <span style={{ color: tech.color }} aria-hidden="true">
-                <TechnologyIcon id={tech.id} />
-              </span>
-              <span className="technology-name">{tech.label}</span>
-            </li>
-          ))}
-        </ul>
-        <p className="notebook-note" aria-hidden="true">
-          idea → interfaz → API
-          <br />
-          Menos ruido. Más claridad.
-        </p>
-      </div>
-    </article>
+    </aside>
   );
 }

@@ -1,11 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { m, useAnimationControls, useReducedMotion } from 'framer-motion';
-import { X, FileText, MessageCircle, Braces } from 'lucide-react';
+import { X, FileText, MessageCircle } from 'lucide-react';
 import type { PanelState } from '../../types/portfolio';
 import useViewport from '../../hooks/useViewport';
 import ContactPanel from './ContactPanel';
 import CvPanel from './CvPanel';
-import StackPanel from './StackPanel';
 import { profile } from '../../data/profile';
 
 export default function ObjectPanel({
@@ -20,14 +19,8 @@ export default function ObjectPanel({
   const controls = useAnimationControls();
   const reduced = useReducedMotion();
   const viewport = useViewport();
-  const width = Math.min(
-    viewport.width - 32,
-    panel.kind === 'cv' ? 860 : panel.kind === 'stack' ? 580 : 520,
-  );
-  const height = Math.min(
-    viewport.height - 40,
-    panel.kind === 'cv' ? 720 : panel.kind === 'stack' ? 480 : 570,
-  );
+  const width = Math.min(viewport.width - 32, panel.kind === 'cv' ? 860 : 520);
+  const height = Math.min(viewport.height - 40, panel.kind === 'cv' ? 720 : 570);
   const origin = {
     x: panel.origin.x + panel.origin.width / 2 - viewport.width / 2,
     y: panel.origin.y + panel.origin.height / 2 - viewport.height / 2,
@@ -60,13 +53,8 @@ export default function ObjectPanel({
     });
     onClose();
   }
-  const Icon = panel.kind === 'cv' ? FileText : panel.kind === 'contact' ? MessageCircle : Braces;
-  const title =
-    panel.kind === 'cv'
-      ? 'Mi recorrido.'
-      : panel.kind === 'contact'
-        ? 'Hablemos.'
-        : 'developer_info.json';
+  const Icon = panel.kind === 'cv' ? FileText : MessageCircle;
+  const title = panel.kind === 'cv' ? 'Mi recorrido.' : 'Hablemos.';
   return (
     <dialog
       ref={dialogRef}
@@ -101,18 +89,11 @@ export default function ObjectPanel({
         </header>
         <div className="panel-scroll" tabIndex={0} role="region" aria-labelledby="panel-title">
           <h2 id="panel-title">{title}</h2>
-          {panel.kind === 'contact' ? (
-            <ContactPanel />
-          ) : panel.kind === 'cv' ? (
-            <CvPanel />
-          ) : (
-            <StackPanel />
-          )}
+          {panel.kind === 'contact' ? <ContactPanel /> : <CvPanel />}
         </div>
         <footer className="panel-footer">
           <span>
-            {profile.name} /{' '}
-            {panel.kind === 'stack' ? 'Stack' : panel.kind === 'cv' ? 'CV' : 'Contacto'}
+            {profile.name} / {panel.kind === 'cv' ? 'CV' : 'Contacto'}
           </span>
           <button className="text-link" onClick={() => void close()}>
             Cerrar <X size={14} aria-hidden="true" />

@@ -1,8 +1,10 @@
 export type TechnologyId = 'react' | 'javascript' | 'node' | 'java' | 'python' | 'sql';
+export type TechnologyCategory = 'frontend' | 'backend' | 'database';
 export interface Technology {
   id: TechnologyId;
   label: string;
   color: string;
+  category: TechnologyCategory;
 }
 export interface Profile {
   name: string;
@@ -13,7 +15,6 @@ export interface Profile {
   githubUrl: string;
   cvUrl: string | null;
   technologies: Technology[];
-  currentlyLearning: string[];
 }
 export interface ProjectMedia {
   id: string;
@@ -45,7 +46,7 @@ export interface Project {
   media: ProjectMedia[];
 }
 export type View = { kind: 'desk' } | { kind: 'projects' } | { kind: 'project'; slug: string };
-export type PanelKind = 'contact' | 'cv' | 'stack';
+export type PanelKind = 'contact' | 'cv';
 export interface Rectangle {
   x: number;
   y: number;

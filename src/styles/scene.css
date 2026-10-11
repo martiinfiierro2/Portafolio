@@ -41,22 +41,22 @@
   background: #568369;
 }
 .desk-stage {
-  /* Percentages follow the uncropped overhead photograph. */
-  --laptop-left: 24.05%;
-  --laptop-top: 58.15%;
-  --laptop-width: 49.95%;
-  --laptop-height: 41.3%;
+  /* Geometry follows the full, uncropped photograph. */
+  --laptop-left: 24.2%;
+  --laptop-top: 57.55%;
+  --laptop-width: 49.8%;
+  --laptop-height: 41.95%;
   position: relative;
   width: 100%;
-  max-width: calc((100svh - 43px) * 1586 / 992);
-  aspect-ratio: 1586 / 992;
+  max-width: calc((100svh - 43px) * 1586 / 993);
+  aspect-ratio: 1586 / 993;
   margin: auto auto 0;
   container-type: inline-size;
   flex-shrink: 0;
 }
 .desk-photograph {
-  display: block;
   position: absolute;
+  display: block;
   inset: 0;
   transition: filter 0.65s;
   pointer-events: none;
@@ -69,86 +69,108 @@
 .desk-stage.is-away .desk-photograph {
   filter: blur(4px);
 }
+.desk-introduction {
+  position: absolute;
+  z-index: 2;
+  inset: 15% 25% auto 24%;
+  height: 35%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.desk-eyebrow {
+  color: #526166;
+  font-family: var(--code-font);
+  font-size: clamp(11px, 1cqw, 16px);
+}
+.desk-introduction h1 {
+  font-family: var(--code-font);
+  font-size: clamp(36px, 5.6cqw, 88px);
+  font-weight: 800;
+  letter-spacing: -0.08em;
+  line-height: 1.2;
+  margin: 16px 0 20px;
+}
+.desk-introduction h1 span {
+  color: var(--accent);
+}
+.desk-role {
+  font-size: clamp(13px, 1.35cqw, 21px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+.desk-description {
+  margin-top: 12px;
+  color: #526166;
+  font-size: clamp(11px, 1.15cqw, 18px);
+  line-height: 1.6;
+}
 .desk-notebook {
   position: absolute;
   z-index: 2;
-  inset: 14% 28.5% auto 24%;
-  height: 35%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 20%;
-}
-.notebook-profile,
-.notebook-stack {
-  min-width: 0;
+  inset: 27% 3.8% auto 81.8%;
+  height: 33%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: var(--sketch-font);
+  color: #233f50;
 }
-.notebook-eyebrow {
-  font-size: clamp(10px, 0.95cqw, 14px);
-  color: #526166;
-}
-.notebook-profile h1 {
-  font-family: var(--display);
-  font-size: clamp(32px, 3.8cqw, 66px);
+.desk-notebook h2 {
+  font-size: clamp(22px, 2.1cqw, 32px);
   font-weight: 600;
-  letter-spacing: -0.055em;
-  line-height: 1.02;
-  margin: 12px 0 16px;
+  line-height: 1.1;
+  rotate: -2deg;
+  margin-bottom: 13px;
 }
-.notebook-profile h1 span {
-  display: block;
-  color: var(--accent);
+.notebook-groups {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1cqw, 16px);
 }
-.notebook-role {
-  font-size: clamp(11px, 1.12cqw, 18px);
-  font-weight: 500;
-  line-height: 1.4;
+.notebook-group {
+  min-width: 0;
 }
-.notebook-description {
-  font-size: clamp(10px, 0.94cqw, 14px);
-  line-height: 1.6;
-  color: #526166;
-  margin-top: 12px;
-}
-.notebook-stack h2 {
-  font-family: var(--display);
-  font-size: clamp(16px, 1.7cqw, 26px);
-  font-weight: 500;
-  letter-spacing: -0.035em;
+.notebook-group h3 {
+  font-size: clamp(15px, 1.6cqw, 24px);
+  font-weight: 600;
+  line-height: 1.15;
+  text-decoration: underline;
+  text-decoration-color: #52738280;
+  text-decoration-style: wavy;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
 }
 .notebook-technologies {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 25px 10px;
-  margin-top: 25px;
+  gap: 8px 5px;
   list-style: none;
   padding: 0;
+  margin-top: 9px;
 }
 .notebook-technologies li {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  font-size: clamp(8px, 0.78cqw, 12px);
-  color: #37484e;
+  gap: 4px;
+  font-size: clamp(13px, 1.3cqw, 20px);
+  line-height: 1.1;
 }
-.notebook-technologies li > span {
-  display: grid;
-  place-items: center;
+.notebook-technologies li:nth-child(even) {
+  rotate: 2deg;
+}
+.notebook-technologies li:nth-child(odd) {
+  rotate: -2deg;
 }
 .notebook-technologies svg {
-  width: clamp(19px, 1.6cqw, 28px);
-  height: clamp(19px, 1.6cqw, 28px);
-}
-.notebook-note {
-  margin-top: 24px;
-  font-size: clamp(9px, 0.85cqw, 13px);
-  line-height: 1.8;
-  font-style: italic;
-  color: #4b626b;
-  rotate: -2deg;
+  width: clamp(17px, 1.7cqw, 26px);
+  height: clamp(17px, 1.7cqw, 26px);
+  stroke-linecap: round;
+  stroke-dasharray: 42 0.3 18 0.3;
 }
 .laptop-portal {
   position: absolute;
@@ -160,45 +182,54 @@
 }
 .explore-button {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  position: relative;
   width: 100%;
   height: 100%;
   background: transparent;
   border-radius: 16px;
-  color: #f7f9fa;
+  color: #bac2c7;
 }
 .explore-button:focus-visible {
   outline-offset: -9px;
 }
-.laptop-sticker {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  padding: 14px 20px;
-  border: 1px solid #d8d8cf;
-  border-radius: 9px;
-  background: #f3f2eafa;
-  color: #273b45;
-  box-shadow: 0 2px 5px #131b232e;
-  font-size: 15px;
-  font-weight: 600;
-  rotate: -3deg;
-  transition: transform 0.2s;
-}
-.explore-button:hover .laptop-sticker,
-.explore-button:focus-visible .laptop-sticker {
-  transform: translateY(-4px);
+.laptop-monogram {
+  font-family: var(--code-font);
+  font-size: clamp(36px, 4.8cqw, 78px);
+  font-weight: 800;
+  letter-spacing: -0.18em;
+  padding-right: 0.18em;
+  line-height: 1;
+  text-shadow:
+    0 1px 1px #ffffff40,
+    0 -1px 2px #00000080;
+  transition:
+    color 0.2s,
+    transform 0.2s;
 }
 .laptop-hint {
-  font-size: 11px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: #25323cc9;
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, 4px);
+  opacity: 0;
   color: #fff;
+  font-size: 11px;
+  white-space: nowrap;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+.explore-button:hover .laptop-monogram,
+.explore-button:focus-visible .laptop-monogram {
+  color: #e2e8eb;
+  transform: scale(1.035);
+}
+.explore-button:hover .laptop-hint,
+.explore-button:focus-visible .laptop-hint {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 .desk-access {
   position: absolute;
@@ -210,54 +241,63 @@
   border-radius: 14px;
 }
 .desk-access-contact {
-  left: 7%;
-  top: 62%;
-  width: 10%;
-  height: 30.5%;
+  left: 6.65%;
+  top: 61.15%;
+  width: 9.55%;
+  height: 30.3%;
+  rotate: -8deg;
+  color: #eff6f8;
 }
-.desk-access-cv {
-  left: 79.5%;
-  top: 26%;
-  width: 19%;
-  height: 39%;
-}
-.desk-access-stack {
-  left: 84.7%;
-  top: 70.5%;
-  width: 9.4%;
-  height: 21.5%;
-}
-.desk-access-label {
-  display: inline-flex;
+.phone-screen-content {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  min-height: 38px;
-  padding: 8px 11px;
-  border: 1px solid #ffffff80;
-  border-radius: 7px;
-  background: #ffffffee;
-  color: #26343c;
-  box-shadow: 0 3px 9px #161c2024;
-  font-size: 11px;
+  gap: 10px;
+  width: 90%;
+  height: 88%;
+  transition: color 0.2s;
+}
+.phone-screen-content > svg {
+  width: clamp(21px, 2.7cqw, 42px);
+  height: clamp(21px, 2.7cqw, 42px);
+  stroke-width: 1.25;
+}
+.phone-screen-title {
+  font-size: clamp(10px, 1.2cqw, 19px);
+  font-weight: 500;
+}
+.phone-screen-message {
+  font-size: clamp(8px, 0.78cqw, 12px);
+  color: #b5c5ce;
+}
+.desk-access-contact:hover .phone-screen-content,
+.desk-access-contact:focus-visible .phone-screen-content,
+.desk-access-contact.is-open .phone-screen-content {
+  color: #b2e7fa;
+}
+.desk-access-cv {
+  left: 80.4%;
+  top: 66.65%;
+  width: 16.6%;
+  height: 27.1%;
+}
+.folder-postit-label {
+  position: absolute;
+  left: 51%;
+  top: 47%;
+  transform: translate(-50%, -50%) rotate(8deg);
+  font-family: var(--sketch-font);
+  font-size: clamp(28px, 3cqw, 46px);
   font-weight: 600;
-  transition: transform 0.2s;
+  color: #22343e;
+  transition: color 0.2s;
 }
-.desk-access-contact .desk-access-label {
-  background: #12252dec;
-  color: #fff;
-  border-color: #ffffff35;
-}
-.desk-access:hover .desk-access-label,
-.desk-access:focus-visible .desk-access-label,
-.desk-access.is-open .desk-access-label {
-  transform: translateY(-3px);
-}
-.access-arrow {
-  opacity: 0.6;
+.desk-access-cv:hover .folder-postit-label,
+.desk-access-cv:focus-visible .folder-postit-label {
+  color: var(--accent);
 }
 .desk-bottomline {
-  margin-top: 0;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -266,37 +306,12 @@
   font-size: 10px;
   background: #f9f9f6;
 }
-@media (min-width: 901px) and (max-width: 1150px) {
-  .notebook-profile h1 {
-    margin-block: 8px;
-    font-size: 3.8cqw;
-  }
-  .notebook-description {
-    margin-top: 8px;
-    line-height: 1.5;
-  }
-  .notebook-technologies {
-    gap: 18px 8px;
-    margin-top: 18px;
-  }
-  .notebook-note {
-    margin-top: 18px;
-  }
-  .desk-access-label {
-    gap: 5px;
-    padding-inline: 8px;
-    font-size: 10px;
-  }
-  .access-arrow {
-    display: none;
-  }
-}
 @media (max-width: 900px) {
   .desk-stage {
     --laptop-left: 8.4%;
-    --laptop-top: 67.6%;
+    --laptop-top: 67.4%;
     --laptop-width: 82.4%;
-    --laptop-height: 30.9%;
+    --laptop-height: 31.15%;
     aspect-ratio: 2 / 3;
     max-width: 100%;
   }
@@ -311,88 +326,92 @@
     font-size: 8px;
     padding: 8px 10px;
   }
-  .desk-notebook {
-    inset: 7.5% 27.5% auto 29%;
-    height: 36.5%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 3cqw;
+  .desk-introduction {
+    inset: 4.8% 22% auto;
+    height: 18.5%;
   }
-  .notebook-profile,
-  .notebook-stack {
-    flex: none;
+  .desk-eyebrow {
+    font-size: clamp(9px, 1.9cqw, 14px);
   }
-  .notebook-eyebrow {
-    font-size: clamp(8px, 1.8cqw, 13px);
+  .desk-introduction h1 {
+    font-size: clamp(22px, 6.8cqw, 50px);
+    margin: 8px 0;
   }
-  .notebook-profile h1 {
-    font-size: clamp(24px, 5.6cqw, 50px);
-    margin: 1.5cqw 0 2cqw;
+  .desk-role {
+    font-size: clamp(10px, 2.4cqw, 18px);
   }
-  .notebook-role {
-    font-size: clamp(10px, 2.1cqw, 17px);
-    line-height: 1.35;
-  }
-  .notebook-description {
-    font-size: clamp(9px, 1.8cqw, 15px);
-    margin-top: 2cqw;
+  .desk-description {
+    font-size: clamp(10px, 2.2cqw, 17px);
+    margin-top: 8px;
     line-height: 1.5;
   }
-  .notebook-stack h2 {
-    font-size: clamp(10px, 2.2cqw, 18px);
+  .desk-notebook {
+    inset: 26.1% 27.2% auto 29.7%;
+    height: 21.2%;
+  }
+  .desk-notebook h2 {
+    font-size: clamp(17px, 4cqw, 29px);
+    margin-bottom: 9px;
+  }
+  .notebook-groups {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2cqw;
+  }
+  .notebook-group h3 {
+    font-size: clamp(11px, 2.8cqw, 20px);
+    white-space: nowrap;
   }
   .notebook-technologies {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-    gap: 2cqw;
-    margin-top: 2cqw;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 9px;
   }
   .notebook-technologies li {
-    gap: 4px;
-    font-size: 1.2cqw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3px;
+    font-size: clamp(10px, 2.7cqw, 18px);
+    line-height: 1.2;
   }
   .notebook-technologies svg {
-    width: clamp(12px, 2.5cqw, 21px);
-    height: clamp(12px, 2.5cqw, 21px);
-  }
-  .notebook-note {
-    display: none;
+    width: clamp(10px, 3cqw, 21px);
+    height: clamp(10px, 3cqw, 21px);
   }
   .desk-access-contact {
-    left: 10.1%;
+    left: 10.35%;
     top: 47.8%;
-    width: 14.2%;
-    height: 17%;
+    width: 12.8%;
+    height: 17.1%;
+    rotate: -8deg;
   }
-  .desk-access-cv {
-    left: 34.8%;
-    top: 48.9%;
-    width: 30.6%;
-    height: 15.9%;
-  }
-  .desk-access-stack {
-    left: 75.9%;
-    top: 49.2%;
-    width: 14.4%;
-    height: 14.7%;
-  }
-  .desk-access-label {
-    min-height: 36px;
-    padding: 7px;
-    font-size: 10px;
+  .phone-screen-content {
     gap: 5px;
   }
-  .access-arrow {
-    display: none;
+  .phone-screen-content > svg {
+    width: clamp(16px, 4cqw, 28px);
+    height: clamp(16px, 4cqw, 28px);
   }
-  .laptop-sticker {
-    font-size: 12px;
-    gap: 9px;
-    padding: 11px 15px;
+  .phone-screen-title {
+    font-size: clamp(8px, 2.2cqw, 15px);
   }
-  .laptop-sticker > svg {
-    width: 18px;
-    height: 18px;
+  .phone-screen-message {
+    font-size: clamp(7px, 1.7cqw, 11px);
+  }
+  .desk-access-cv {
+    left: 77.2%;
+    top: 46.4%;
+    width: 19.5%;
+    height: 18.4%;
+  }
+  .folder-postit-label {
+    top: 43%;
+    left: 50%;
+    font-size: clamp(21px, 5cqw, 36px);
+  }
+  .laptop-monogram {
+    font-size: clamp(36px, 9.5cqw, 66px);
   }
   .laptop-hint {
     font-size: 9px;
@@ -403,31 +422,5 @@
     gap: 7px;
     font-size: 8px;
     padding: 15px;
-  }
-}
-@media (max-width: 480px) {
-  .notebook-profile h1 {
-    font-size: clamp(24px, 6.8cqw, 32px);
-  }
-  .notebook-role {
-    font-size: 11px;
-    line-height: 1.4;
-  }
-  .notebook-description,
-  .technology-name {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    overflow: hidden;
-    clip-path: inset(50%);
-    white-space: nowrap;
-  }
-  .desk-access-label {
-    padding-inline: 6px;
-    font-size: 9px;
-  }
-  .desk-access-label svg {
-    display: none;
   }
 }

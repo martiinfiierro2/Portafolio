@@ -1,6 +1,6 @@
 # El escritorio de Martín Fierro
 
-Portfolio interactivo en React, Vite y TypeScript. La libreta muestra la presentación y la tapa del portátil cerrado da acceso a los proyectos; el teléfono abre Contacto, la carpeta abre el CV y el disco externo muestra `developer_info.json`.
+Portfolio interactivo en React, Vite y TypeScript. La presentación ocupa el centro de la mesa; la libreta de una página agrupa las tecnologías y el monograma MF del portátil cerrado da acceso a los proyectos. El teléfono abre Contacto y el guardafolios con un post-it abre el CV.
 
 Esta implementación está en `portfolio-escritorio`. `main` conserva el código anterior.
 
@@ -37,14 +37,13 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 
 ## La experiencia
 
-- **Escritorio:** una escena fotorealista completa, con una mesa blanca, portátil, teléfono, carpeta, disco externo y elementos de trabajo bajo la misma luz. Dos imágenes WebP locales componen las versiones horizontal y vertical. Los objetos forman parte de la escena; la información sobre las páginas de la libreta sigue siendo HTML legible, seleccionable y configurable. La cámara mira desde arriba y el portátil cerrado ocupa el borde inferior, centrado.
-- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono, la carpeta y el disco. Sus etiquetas visibles y el foco indican qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. Toda la tapa del portátil permite entrar en los proyectos.
+- **Escritorio:** una escena fotorealista completa, con una mesa blanca, portátil negro, teléfono inclinado, libreta de una página y guardafolios bajo la misma luz. La lámpara, los lápices y el café conservan su ubicación. Dos imágenes WebP locales componen las versiones horizontal y vertical. Los objetos forman parte de la escena; la presentación y los bocetos de tecnologías siguen siendo HTML legible, seleccionable y configurable. JetBrains Mono identifica la presentación y el monograma; Caveat da un aspecto de anotación a la libreta. Las dos fuentes se alojan localmente. La cámara mira desde arriba y el portátil cerrado ocupa el borde inferior, centrado.
+- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono y el guardafolios. Contacto aparece integrado en la pantalla del teléfono y CV sobre el post-it de la carpeta. El foco indica qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. Toda la tapa del portátil permite entrar en los proyectos.
 - **Proyectos:** la tapa del portátil se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
 - **Índice editorial:** imágenes amplias y composición alternada. El hover levanta la imagen y muestra un acceso; ese acceso también se ve en dispositivos táctiles. Las fichas son páginas completas dentro del espacio digital, con una transición compartida de su portada.
 - **CV:** la carpeta abre una ventana grande desde su posición. Un PDF configurado se puede visualizar y descargar. Si falta, se muestra un estado pendiente real.
 - **Contacto:** el móvil abre una ventana con Email, LinkedIn y GitHub. Copiar email aparece solo cuando existe un email configurado; informa del éxito o del fallo del portapapeles.
-- **Stack:** el LED se ilumina al consultar información adicional en un formato JSON discreto.
-- **Móvil:** una escena vertical propia muestra una página de libreta arriba, los tres accesos en medio y el portátil cerrado abajo, sobre la misma mesa. En pantallas pequeñas se priorizan nombre, profesión, tecnologías y acceso a proyectos; la descripción permanece disponible para lectores de pantalla. Mantiene los mismos recorridos de entrada y vuelta.
+- **Móvil:** una escena vertical propia conserva la presentación arriba, la libreta con tecnologías agrupadas en el centro, el teléfono y el guardafolios a los lados, y el portátil cerrado abajo. Los textos y los accesos escalan con los objetos. Mantiene los mismos recorridos de entrada y vuelta.
 
 ## Estructura
 
@@ -54,9 +53,9 @@ src/
     App.tsx                    Orquestación de vistas, ventanas y foco
     DigitalSurface.tsx         Transición entre tapa del portátil y espacio digital
   components/
-    scene/                     Escena, libreta HTML y accesos a los objetos
+    scene/                     Escena, presentación, libreta y accesos a los objetos
     projects/                  Índice, fichas, enlaces y galería
-    panels/                    Ventanas de CV, Contacto y Stack
+    panels/                    Ventanas de CV y Contacto
     ui/                        Elementos visuales reutilizables
   data/
     profile.ts                 Información personal y enlaces
@@ -72,7 +71,7 @@ tests/navigation.test.mjs     Pruebas de rutas, geometría e integridad de medio
 
 Los módulos se separan por responsabilidad. El contenido no está incrustado en los componentes; añadir un proyecto no exige modificar la navegación o la animación. Los estilos de cada experiencia se mantienen separados y los colores y fuentes comparten tokens.
 
-La geometría visual de la escena está en `src/styles/scene.css`: las variables `--laptop-*` alinean `ClosedLaptop` con la tapa fotografiada, `DeskNotebook` coloca la presentación sobre el papel y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
+La geometría visual de la escena está en `src/styles/scene.css`: las variables `--laptop-*` alinean `ClosedLaptop` con la tapa fotografiada, `DeskIntroduction` coloca la presentación central y `DeskNotebook` coloca las tecnologías sobre el papel y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
 
 ## Configurar tu información
 
@@ -82,8 +81,7 @@ Edita `src/data/profile.ts`:
 - `linkedinUrl`: tu URL real.
 - `githubUrl`: ya utiliza `https://github.com/martiinfiierro2`.
 - `cvUrl`: ruta como `/cv-martin-fierro.pdf`, con el archivo en `public/`, o una URL accesible. Permanece `null` hasta que añadas el documento.
-- `currentlyLearning`: alimenta el disco externo cuando hay contenido.
-- `technologies`: las seis tecnologías de la portada solicitadas: React, JavaScript, Node.js, Java, Python y SQL.
+- `technologies`: React, JavaScript, Node.js, Java, Python y SQL. Cada entrada indica `category`: `frontend`, `backend` o `database`. Los títulos de los grupos están en `technologyCategories`; los grupos vacíos no se muestran.
 
 No hay formularios que simulen envíos ni enlaces de contacto inventados.
 

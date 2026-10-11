@@ -186,42 +186,6 @@
   color: var(--muted);
   margin-top: 10px;
 }
-.panel-stack h2 {
-  font-size: 27px;
-  letter-spacing: -0.04em;
-}
-.developer-json {
-  background: #edf2ef;
-  border: 1px solid #dce5df;
-  border-radius: 7px;
-  padding: 19px;
-  margin-top: 24px;
-  font-size: 12px;
-  line-height: 1.9;
-  overflow-x: auto;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-.json-key {
-  color: #386979;
-}
-.json-value {
-  color: #755839;
-}
-.stack-caption {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--muted);
-  font-size: 10px;
-  margin-top: 18px;
-}
-.stack-caption > span {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: #4c7b61;
-}
 @media (max-width: 767px) {
   .panel-header {
     padding: 16px 18px 0;
@@ -232,18 +196,11 @@
   .panel-scroll h2 {
     font-size: 36px;
   }
-  .panel-stack h2 {
-    font-size: 22px;
-  }
   .panel-introduction {
     font-size: 12px;
   }
   .panel-footer {
     margin-inline: 22px;
-  }
-  .developer-json {
-    font-size: 10px;
-    padding: 14px;
   }
   .contact-list small {
     font-size: 10px;

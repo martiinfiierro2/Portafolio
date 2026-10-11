@@ -2,6 +2,7 @@ import { m, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 import type { MouseEvent, RefObject } from 'react';
 import type { PanelKind } from '../../types/portfolio';
 import DeskNotebook from './DeskNotebook';
+import DeskIntroduction from './DeskIntroduction';
 import ClosedLaptop from './ClosedLaptop';
 import DeskAccess from './DeskAccess';
 import { profile } from '../../data/profile';
@@ -52,16 +53,17 @@ export default function DeskScene({ active, activePanel, portalRef, onExplore, o
           <img
             src="/desk/workspace.webp"
             width="1586"
-            height="992"
+            height="993"
             alt=""
             fetchPriority="high"
             decoding="async"
             draggable={false}
           />
         </picture>
+        <DeskIntroduction />
         <DeskNotebook />
         <ClosedLaptop portalRef={portalRef} onExplore={onExplore} />
-        {(['contact', 'cv', 'stack'] as const).map((kind) => (
+        {(['contact', 'cv'] as const).map((kind) => (
           <DeskAccess key={kind} kind={kind} selected={activePanel === kind} onOpen={onPanel} />
         ))}
       </m.div>
