@@ -3,7 +3,7 @@
   isolation: isolate;
   min-height: 100svh;
   overflow: hidden;
-  background: #fdfefd;
+  background: linear-gradient(125deg, #fff, #fafaf8 65%, #f3f4f2);
 }
 .desk-scene::before {
   content: '';
@@ -11,19 +11,16 @@
   z-index: -1;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(#396b7824 0.7px, transparent 0.7px);
-  background-size: 24px 24px;
-  mask-image: linear-gradient(115deg, #0006, transparent 30%, transparent 75%, #0005);
+  background-image: url('/desk/grain.svg');
+  opacity: 0.3;
 }
 .desk-scene::after {
   content: '';
   position: absolute;
   pointer-events: none;
   z-index: -1;
-  inset: 14% 5% 12%;
-  border: 1px solid #396b7807;
-  border-radius: 50%;
-  transform: rotate(-8deg);
+  inset: 0;
+  background: linear-gradient(122deg, #fff9, transparent 40%, #eef0ed35);
 }
 .desk-light {
   position: absolute;
@@ -71,17 +68,18 @@
 .laptop {
   position: relative;
   container-type: inline-size;
-  filter: drop-shadow(0 18px 16px #233a341c);
+  filter: drop-shadow(8px 20px 16px #20262b2b);
 }
 .laptop-lid {
   position: relative;
   padding: 19px 15px 21px;
   border-radius: 18px 18px 8px 8px;
-  border: 2px solid #697573;
-  background: #253332;
+  border: 2px solid #777e80;
+  background: linear-gradient(135deg, #4b5053, #12171a 34%, #202629 80%, #3c4346);
   box-shadow:
-    inset 0 0 0 1px #ffffff18,
-    0 2px 0 #152b29;
+    inset 0 1px 2px #ffffff65,
+    inset 0 -2px 2px #000a,
+    0 2px 0 #0e1316;
 }
 .webcam {
   position: absolute;
@@ -109,10 +107,12 @@
   aspect-ratio: 1.72;
   min-height: 360px;
   position: relative;
-  background: #fff;
+  background: #fdfdfc;
   border-radius: 3px;
   overflow: hidden;
-  box-shadow: inset 0 0 0 1px #0002;
+  box-shadow:
+    inset 0 0 0 1px #0003,
+    0 0 3px #0007;
 }
 .screen-topbar {
   display: flex;
@@ -252,7 +252,7 @@
 .screen-reflection {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, #ffffff0e 10%, transparent 50%);
+  background: linear-gradient(120deg, #fff0 22%, #ffffff18 42%, #fff0 58%);
   background-size: 220% 220%;
   pointer-events: none;
 }
@@ -262,12 +262,15 @@
   width: calc(100% + 30px);
   margin: 3px 0 0 -15px;
   padding: 13px 54px 11px;
-  background: #a5b2ae;
-  border: 1px solid #8a9b94;
-  border-bottom: 4px solid #74857d;
+  background:
+    url('/desk/grain.svg'), linear-gradient(116deg, #c2c5c7, #8e9599 40%, #b5babc 72%, #92999c);
+  border: 1px solid #b9bfc0;
+  border-bottom: 4px solid #626b70;
   border-radius: 5px 5px 19px 19px;
   clip-path: polygon(2% 0, 98% 0, 100% 97%, 99% 100%, 1% 100%, 0 97%);
-  box-shadow: inset 0 1px 0 #ffffff80;
+  box-shadow:
+    inset 0 1px 1px #ffffffb0,
+    inset 0 -2px 2px #343a3d60;
 }
 .laptop-base:focus-visible {
   outline-offset: -7px;
@@ -276,9 +279,11 @@
   display: grid;
   gap: 4px;
   padding: 5px 7px;
-  background: #788984;
+  background: linear-gradient(#51595d, #353d42);
   border-radius: 6px;
-  box-shadow: none;
+  box-shadow:
+    inset 0 1px 3px #121719a0,
+    0 1px 0 #ffffff60;
 }
 .key-row {
   display: grid;
@@ -290,10 +295,12 @@
   place-items: center;
   min-height: 15px;
   border-radius: 3px;
-  background: #2f4140;
-  color: #d8e2dc;
-  border: 1px solid #5c7269;
-  box-shadow: none;
+  background: linear-gradient(#30363a, #141b20);
+  color: #d6dbdd;
+  border: 1px solid #5a6369;
+  box-shadow:
+    0 1px 1px #090f13,
+    inset 0 1px 0 #ffffff10;
   font-size: 6px;
   line-height: 1;
 }
@@ -302,10 +309,12 @@
   width: 32%;
   height: 33px;
   margin: 9px auto 2px;
-  background: #afbab4;
-  border: 1px solid #83978b;
+  background: linear-gradient(120deg, #9ea6ab, #aeb6ba);
+  border: 1px solid #737e86;
   border-radius: 5px;
-  box-shadow: none;
+  box-shadow:
+    inset 0 1px 2px #56616b60,
+    0 1px 0 #e0e5e5;
 }
 .laptop-notch {
   position: absolute;
@@ -314,7 +323,7 @@
   bottom: -1px;
   height: 4px;
   border-radius: 4px 4px 0 0;
-  background: #bdc0b9;
+  background: linear-gradient(#d1d6d8, #939ba0);
 }
 .secondary-object {
   transition:
@@ -329,7 +338,7 @@
   padding: 0;
   background: transparent;
   position: relative;
-  filter: drop-shadow(2px 7px 5px #243e3018);
+  filter: drop-shadow(5px 11px 7px #20262b30);
 }
 .scene-object:focus-visible {
   outline: 3px solid var(--accent);
@@ -347,10 +356,13 @@
   width: 100%;
   aspect-ratio: 0.49;
   padding: 5px;
-  border: 2px solid #737979;
+  border: 2px solid #7d858c;
   border-radius: 22px;
-  background: #253332;
-  box-shadow: 2px 2px 0 #cbd6d1;
+  background: linear-gradient(115deg, #545d65, #070e14 35%, #18232c);
+  box-shadow:
+    inset 1px 0 1px #d2d8de,
+    2px 2px 0 #343d45,
+    3px 3px 1px #bcc1c4;
   rotate: -8deg;
 }
 .phone-glass {
@@ -358,7 +370,7 @@
   height: 100%;
   width: 100%;
   position: relative;
-  background: #244e5a;
+  background: linear-gradient(145deg, #234958, #0d2836 65%, #122a36);
   border-radius: 16px;
   overflow: hidden;
   color: #f7f8f4;
@@ -371,6 +383,15 @@
   height: 8px;
   border-radius: 8px;
   background: #091419;
+}
+.phone-glass::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(118deg, #ffffff12, transparent 45%, #ffffff04 70%, transparent);
+  box-shadow: inset 0 0 1px 1px #ffffff10;
+  border-radius: inherit;
 }
 .phone-time {
   position: absolute;
@@ -432,13 +453,16 @@
   position: absolute;
   inset: 0;
   border-radius: 3px 9px 8px 3px;
-  background: #295360;
-  box-shadow: 2px 3px 0 #cadad8;
+  background: #254651;
+  box-shadow:
+    2px 2px 0 #ecece6,
+    3px 3px 0 #28414a,
+    4px 4px 0 #b6c0c1;
 }
 .folder-paper {
   position: absolute;
   inset: 6% 5% 3% 6%;
-  background: #fff;
+  background: url('/desk/grain.svg'), linear-gradient(110deg, #fffffc, #f2f1ea);
   border: 1px solid #d4cfbf;
   transform: rotate(-2deg);
   box-shadow:
@@ -464,14 +488,18 @@
   position: absolute;
   inset: 0;
   place-items: center;
-  background: #396b78;
-  border: 1px solid #315e69;
-  border-left: 4px solid #254e59;
+  background:
+    url('/desk/grain.svg'), repeating-linear-gradient(0deg, #ffffff04 0 1px, transparent 1px 3px),
+    linear-gradient(120deg, #4a6e7a, #2c4f5c 68%, #365764);
+  border: 1px solid #365562;
+  border-left: 4px solid #1e3e4a;
   border-radius: 2px 8px 8px 2px;
   color: #f6f3e9;
   transform-origin: 0 50%;
   transition: transform 0.4s var(--ease);
-  box-shadow: inset 0 1px 0 #ffffff20;
+  box-shadow:
+    inset 0 1px 1px #adc1c860,
+    inset -2px 0 4px #1a2e3840;
 }
 .folder-object:hover .folder-cover {
   transform: perspective(500px) rotateY(-12deg);
@@ -494,10 +522,9 @@
   right: 12%;
   top: 0;
   bottom: 0;
-  width: 3px;
-  background: #cad4cc;
-  box-shadow: 1px 0 #0d3746;
-  opacity: 0.5;
+  width: 4px;
+  background: linear-gradient(90deg, #193f4c, #78929c, #254653);
+  box-shadow: 1px 0 2px #10232e80;
 }
 .drive-position {
   position: absolute;
@@ -512,17 +539,19 @@
   width: 100%;
   aspect-ratio: 1.35;
   border-radius: 9px;
-  border: 1px solid #929a97;
-  border-bottom: 3px solid #3b4e49;
-  background: #596d65;
-  box-shadow: 2px 3px 0 #d1ddd5;
+  border: 1px solid #707a82;
+  border-bottom: 3px solid #1b242b;
+  background: url('/desk/grain.svg'), linear-gradient(140deg, #5a646b, #303c44 55%, #202e37);
+  box-shadow:
+    inset 1px 1px 1px #c3cdd460,
+    2px 3px 0 #15222b;
   rotate: 10deg;
   color: #ecf0e9;
 }
 .drive-grooves {
   position: absolute;
   inset: 8px 4px;
-  border: 1px solid #ffffff12;
+  background: repeating-linear-gradient(0deg, #ffffff04 0 1px, #00000006 1px 3px);
   border-radius: 5px;
 }
 .drive-label {
@@ -531,11 +560,12 @@
   justify-content: center;
   gap: 8px;
   position: relative;
-  background: #f3f7f2;
+  background: linear-gradient(110deg, #f7f6f1, #e7e7e2);
   color: #3c494b;
   padding: 9px 13px;
   border: 1px solid #cfcec1;
   border-radius: 3px;
+  box-shadow: 0 1px 2px #111c2340;
   font-family: ui-monospace, monospace;
   font-size: 12px;
 }
@@ -560,12 +590,12 @@
   height: 100%;
   z-index: 1;
   fill: none;
-  stroke: #333d3e;
+  stroke: #252d33;
   stroke-width: 5;
   stroke-linecap: round;
 }
 .drive-cable .cable-shadow {
-  stroke: #47362635;
+  stroke: #272e3430;
   stroke-width: 9;
   transform: translate(0, 6px);
 }
