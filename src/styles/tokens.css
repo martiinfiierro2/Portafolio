@@ -1,0 +1,18 @@
+:root {
+  --ink: #171c1f;
+  --muted: #60696e;
+  --accent: #396b78;
+  --accent-dark: #254e59;
+  --paper: #fbfaf7;
+  --line: #deded7;
+  --font: 'DM Sans Variable', system-ui, sans-serif;
+  --display: 'Space Grotesk Variable', var(--font);
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  font-family: var(--font);
+  color: var(--ink);
+  background: #f2f0ea;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  color-scheme: light;
+}
