@@ -38,6 +38,7 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 ## La experiencia
 
 - **Escritorio:** cuatro objetos con materiales y volumen construidos con CSS y SVG. No depende de una fotografía con zonas de clic fijas ni de un motor WebGL. La pantalla contiene HTML real, legible y seleccionable. El teclado y los detalles del hardware son decorativos.
+- **Decoración:** superficie blanca con puntos tenues, dibujos minimalistas de un flexo, café, lápices y una libreta de notas. `DeskDecorations` y `decorations.css` mantienen estos detalles separados de las interacciones. Son decorativos, no capturan clics ni entran en la navegación por teclado; en móvil se reordenan debajo de los accesos.
 - **Proyectos:** la pantalla física se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
 - **Índice editorial:** imágenes amplias y composición alternada. El hover levanta la imagen y muestra un acceso; ese acceso también se ve en dispositivos táctiles. Las fichas son páginas completas dentro del espacio digital, con una transición compartida de su portada.
 - **CV:** la carpeta abre una ventana grande desde su posición. Un PDF configurado se puede visualizar y descargar. Si falta, se muestra un estado pendiente real.
@@ -53,7 +54,7 @@ src/
     App.tsx                    Orquestación de vistas, ventanas y foco
     DigitalSurface.tsx         Transición entre pantalla física y espacio digital
   components/
-    scene/                     Portátil, objetos y composición responsive
+    scene/                     Portátil, objetos, decoraciones y composición responsive
     projects/                  Índice, fichas, enlaces y galería
     panels/                    Ventanas de CV, Contacto y Stack
     ui/                        Elementos visuales reutilizables

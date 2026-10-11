@@ -4,6 +4,7 @@ import type { MouseEvent, RefObject } from 'react';
 import type { PanelKind } from '../../types/portfolio';
 import Laptop from './Laptop';
 import ObjectButton from './ObjectButton';
+import DeskDecorations from './DeskDecorations';
 import { profile } from '../../data/profile';
 
 interface Props {
@@ -47,6 +48,7 @@ export default function DeskScene({ active, activePanel, screenRef, onExplore, o
         </span>
       </div>
       <div className={`desk-stage${active ? '' : ' is-away'}`}>
+        <DeskDecorations subdued={!active} />
         <svg
           className="drive-cable"
           viewBox="0 0 1200 730"
