@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { ArrowRight, MessageCircle } from 'lucide-react';
 import type { MouseEvent } from 'react';
 import type { PanelKind } from '../../types/portfolio';
 
@@ -22,10 +22,15 @@ export default function DeskAccess({ kind, selected, onOpen }: Props) {
           <MessageCircle aria-hidden="true" />
           <span className="phone-screen-title">Contacto</span>
           <span className="phone-screen-message">Hablemos</span>
+          <ArrowRight className="phone-screen-arrow" aria-hidden="true" />
         </span>
       ) : (
-        <span className="folder-postit-label" aria-hidden="true">
-          CV
+        <span className="folder-cover-copy" aria-hidden="true">
+          <span className="folder-cover-title">CV</span>
+          <span className="folder-cover-note">
+            Mi experiencia
+            <br />y más sobre mí.
+          </span>
         </span>
       )}
     </button>

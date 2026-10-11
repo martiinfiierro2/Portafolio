@@ -18,6 +18,7 @@ export default function DeskNotebook() {
               <h3 id={`tech-${category.id}`}>{category.label}</h3>
               <ul
                 className="notebook-technologies"
+                data-category={category.id}
                 data-count={technologies.length}
                 style={{
                   gridTemplateColumns: `repeat(${Math.min(technologies.length, 3)}, minmax(0, 1fr))`,

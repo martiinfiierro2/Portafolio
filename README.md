@@ -1,6 +1,6 @@
 # El escritorio de Martín Fierro
 
-Portfolio interactivo en React, Vite y TypeScript. La presentación ocupa el centro de la mesa; la libreta de una página agrupa las tecnologías y el monograma MF del portátil cerrado da acceso a los proyectos. El teléfono abre Contacto y el guardafolios con un post-it abre el CV.
+Portfolio interactivo en React, Vite y TypeScript. La presentación ocupa el centro de la mesa; la libreta de una página agrupa las tecnologías y el botón central «Ver mis proyectos» da acceso a la colección; la tapa del portátil también permite entrar. El teléfono abre Contacto y la carpeta de documentos abre el CV.
 
 Esta implementación está en `portfolio-escritorio`. `main` conserva el código anterior.
 
@@ -37,8 +37,9 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 
 ## La experiencia
 
-- **Escritorio:** una escena fotorealista completa, con una mesa blanca, portátil negro, teléfono inclinado, libreta de una página y guardafolios bajo la misma luz. La lámpara y el café mantienen su ubicación; los lápices descansan junto al café y la carpeta queda parcialmente bajo el portátil. El teléfono ocupa el lado derecho. Dos imágenes WebP locales componen las versiones horizontal y vertical. Los objetos forman parte de la escena; la presentación y los bocetos de tecnologías siguen siendo HTML legible, seleccionable y configurable. JetBrains Mono identifica la presentación; el monograma MF es un SVG con acabado oscuro; Caveat da un aspecto de anotación a la libreta. Las dos fuentes se alojan localmente. La cámara mira desde arriba y el portátil cerrado ocupa el borde inferior, centrado.
-- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono y el guardafolios. Contacto aparece integrado en la pantalla del teléfono y CV sobre el post-it de la carpeta. El foco indica qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. Una anotación visible, «Explora mis proyectos», y una flecha señalan el portátil. Tanto la anotación como la tapa permiten entrar con ratón, teclado o toque.
+- **Escritorio:** una escena fotorealista cenital de una mesa clara con luz cálida, plantas, gafas, café con posavasos de corcho, bandeja y flexo, libreta, carpeta con clip, portátil cerrado y teléfono. Las versiones horizontal y vertical son imágenes WebP locales optimizadas. Todos los textos, iconos y botones siguen siendo HTML/SVG configurables y accesibles.
+- **Presentación:** DM Sans identifica el nombre y el texto principal; Caveat da un aspecto de anotación a la libreta y la carpeta. Las fuentes se alojan localmente. La libreta agrupa las tecnologías por Frontend, Backend y Datos / SQL. Los iconos mantienen un trazo de boceto.
+- **Accesos:** `ProjectEntry` presenta el botón central «Ver mis proyectos» con una pequeña nota y flecha en escritorio. El portátil conserva su monograma MF oscuro y permite entrar por su tapa. `DeskAccess` integra Contacto dentro del teléfono y el CV y su descripción sobre la carpeta. Cada objeto tiene un botón real y foco visible; la foto y los controles escalan juntos sin recortes ni zonas de clic fijas.
 - **Proyectos:** la tapa del portátil se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
 - **Índice editorial:** imágenes amplias y composición alternada. El hover levanta la imagen y muestra un acceso; ese acceso también se ve en dispositivos táctiles. Las fichas son páginas completas dentro del espacio digital, con una transición compartida de su portada.
 - **CV:** la carpeta abre una ventana grande desde su posición. Un PDF configurado se puede visualizar y descargar. Si falta, se muestra un estado pendiente real.
@@ -71,9 +72,9 @@ tests/navigation.test.mjs     Pruebas de rutas, geometría e integridad de medio
 
 Los módulos se separan por responsabilidad. El contenido no está incrustado en los componentes; añadir un proyecto no exige modificar la navegación o la animación. Los estilos de cada experiencia se mantienen separados y los colores y fuentes comparten tokens.
 
-La cabecera y el footer comparten el ancho de la escena y mantienen sus márgenes en cada formato. La libreta adapta las columnas al número de tecnologías de cada grupo.
+El footer comparte el ancho de la escena y mantiene sus márgenes en cada formato. La libreta presenta Frontend en filas, Backend en columnas y SQL junto a su símbolo. En móvil utiliza una disposición compacta por grupos. La nota de la carpeta se reserva para escritorio; el acceso CV siempre está visible.
 
-La geometría visual de la escena está en `src/styles/scene.css`: las variables `--laptop-*` alinean `ClosedLaptop` con la tapa fotografiada, `DeskIntroduction` coloca la presentación central y `DeskNotebook` coloca las tecnologías sobre el papel y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
+La geometría visual de la escena está en `src/styles/scene.css`: las variables `--laptop-*` alinean `ClosedLaptop` con la tapa fotografiada, `DeskIntroduction` coloca la presentación central y contiene `ProjectEntry` y `DeskNotebook` coloca las tecnologías sobre el papel y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
 
 ## Configurar tu información
 

@@ -1,6 +1,12 @@
 import { profile } from '../../data/profile';
+import type { MouseEvent } from 'react';
+import ProjectEntry from './ProjectEntry';
 
-export default function DeskIntroduction() {
+export default function DeskIntroduction({
+  onExplore,
+}: {
+  onExplore: (event: MouseEvent<HTMLElement>) => void;
+}) {
   const [firstName, ...familyName] = profile.name.split(' ');
   return (
     <article className="desk-introduction" aria-labelledby="desk-title">
@@ -10,6 +16,7 @@ export default function DeskIntroduction() {
       </h1>
       <p className="desk-role">{profile.role}</p>
       <p className="desk-description">{profile.introduction}</p>
+      <ProjectEntry onExplore={onExplore} />
     </article>
   );
 }

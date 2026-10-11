@@ -14,7 +14,7 @@ export default function ClosedLaptop({ portalRef, onExplore }: Props) {
       <button
         type="button"
         className="explore-button"
-        aria-label="Explora mis proyectos"
+        aria-label="Abrir proyectos desde el portátil"
         onClick={onExplore}
       >
         <svg className="laptop-monogram" viewBox="0 0 80 64" aria-hidden="true" focusable="false">
@@ -30,12 +30,6 @@ export default function ClosedLaptop({ portalRef, onExplore }: Props) {
             d="M3 54V10h10l14 23 14-23h36v9H52v10h21v9H52v16H42V27L27 47 12 27v27Z"
           />
         </svg>
-        <span className="laptop-invitation">
-          Explora mis proyectos
-          <svg viewBox="0 0 60 48" aria-hidden="true" focusable="false">
-            <path d="M4 6C28 3 47 16 50 42M42 34l8 9 6-11" />
-          </svg>
-        </span>
       </button>
     </div>
   );

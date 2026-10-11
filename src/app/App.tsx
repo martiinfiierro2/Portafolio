@@ -42,7 +42,7 @@ export default function App() {
   }
   function returnToDesk() {
     if (busy) return;
-    triggerRef.current ??= portalRef.current?.querySelector<HTMLElement>('.explore-button') ?? null;
+    triggerRef.current ??= document.querySelector<HTMLElement>('.project-entry-button');
     if (portalRef.current) setOrigin(readRectangle(portalRef.current));
     setBusy(true);
     navigate({ kind: 'desk' });
@@ -63,7 +63,7 @@ export default function App() {
         onClick={(event) => {
           event.preventDefault();
           document
-            .querySelector<HTMLElement>(digital ? '.digital-title' : '.explore-button')
+            .querySelector<HTMLElement>(digital ? '.digital-title' : '.project-entry-button')
             ?.focus();
         }}
       >

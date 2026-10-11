@@ -8,7 +8,7 @@ export const technologyCategories: { id: TechnologyCategory; label: string }[] =
 export const profile: Profile = {
   name: 'Martín Fierro',
   role: 'Desarrollador full-stack junior',
-  introduction: 'Construyo aplicaciones robustas y de utilidad.',
+  introduction: 'Construyo aplicaciones web robustas y de utilidad.',
   email: null,
   linkedinUrl: null,
   githubUrl: 'https://github.com/martiinfiierro2',

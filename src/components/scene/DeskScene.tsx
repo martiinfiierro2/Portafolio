@@ -39,29 +39,20 @@ export default function DeskScene({ active, activePanel, portalRef, onExplore, o
       }}
     >
       <m.div className={`desk-stage${active ? '' : ' is-away'}`} style={{ x: springX, y: springY }}>
-        <header className="desk-topline">
-          <span className="brand-mark" aria-label={profile.name}>
-            MF<span>.</span>
-          </span>
-          <span className="desk-status">
-            <i aria-hidden="true" />
-            <span>Disponible para nuevas ideas</span>
-          </span>
-        </header>
         <div className="desk-workspace">
           <picture className="desk-photograph" aria-hidden="true">
             <source media="(max-width: 900px)" srcSet="/desk/workspace-mobile.webp" />
             <img
               src="/desk/workspace.webp"
-              width="1586"
-              height="993"
+              width="1448"
+              height="1086"
               alt=""
               fetchPriority="high"
               decoding="async"
               draggable={false}
             />
           </picture>
-          <DeskIntroduction />
+          <DeskIntroduction onExplore={onExplore} />
           <DeskNotebook />
           <ClosedLaptop portalRef={portalRef} onExplore={onExplore} />
           {(['contact', 'cv'] as const).map((kind) => (
