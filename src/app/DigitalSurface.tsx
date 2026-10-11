@@ -25,7 +25,7 @@ export default function DigitalSurface({ origin, busy, onEntered, children }: Pr
       initial={
         reduced || !origin
           ? { opacity: reduced ? 1 : 0 }
-          : { ...start, opacity: 1, borderRadius: 10, boxShadow: '0 0 0 16px #161a1c' }
+          : { ...start, opacity: 1, borderRadius: 10, boxShadow: '0 0 0 3px #626b70' }
       }
       animate={{
         x: 0,
@@ -34,7 +34,7 @@ export default function DigitalSurface({ origin, busy, onEntered, children }: Pr
         scaleY: 1,
         opacity: 1,
         borderRadius: 0,
-        boxShadow: '0 0 0 0px #161a1c',
+        boxShadow: '0 0 0 0px #626b70',
       }}
       exit={
         reduced
@@ -43,7 +43,7 @@ export default function DigitalSurface({ origin, busy, onEntered, children }: Pr
               ...start,
               opacity: 0,
               borderRadius: 10,
-              boxShadow: '0 0 0 16px #161a1c',
+              boxShadow: '0 0 0 3px #626b70',
               transition: {
                 duration: 0.8,
                 ease: [0.22, 1, 0.36, 1],

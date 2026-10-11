@@ -1,19 +1,20 @@
 import { m, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 import type { MouseEvent, RefObject } from 'react';
 import type { PanelKind } from '../../types/portfolio';
-import LaptopScreen from './LaptopScreen';
+import DeskNotebook from './DeskNotebook';
+import ClosedLaptop from './ClosedLaptop';
 import DeskAccess from './DeskAccess';
 import { profile } from '../../data/profile';
 
 interface Props {
   active: boolean;
   activePanel: PanelKind | null;
-  screenRef: RefObject<HTMLDivElement | null>;
+  portalRef: RefObject<HTMLDivElement | null>;
   onExplore: (event: MouseEvent<HTMLElement>) => void;
   onPanel: (kind: PanelKind, event: MouseEvent<HTMLElement>) => void;
 }
 
-export default function DeskScene({ active, activePanel, screenRef, onExplore, onPanel }: Props) {
+export default function DeskScene({ active, activePanel, portalRef, onExplore, onPanel }: Props) {
   const reduced = useReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -58,13 +59,8 @@ export default function DeskScene({ active, activePanel, screenRef, onExplore, o
             draggable={false}
           />
         </picture>
-        <LaptopScreen screenRef={screenRef} onExplore={onExplore} />
-        <button
-          type="button"
-          className="desk-keyboard"
-          aria-label="Abrir proyectos desde el portátil"
-          onClick={onExplore}
-        />
+        <DeskNotebook />
+        <ClosedLaptop portalRef={portalRef} onExplore={onExplore} />
         {(['contact', 'cv', 'stack'] as const).map((kind) => (
           <DeskAccess key={kind} kind={kind} selected={activePanel === kind} onOpen={onPanel} />
         ))}

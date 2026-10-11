@@ -1,6 +1,6 @@
 # El escritorio de Martín Fierro
 
-Portfolio interactivo en React, Vite y TypeScript. El ordenador muestra la presentación y se convierte en la interfaz de proyectos; el teléfono abre Contacto, la carpeta abre el CV y el disco externo muestra `developer_info.json`.
+Portfolio interactivo en React, Vite y TypeScript. La libreta muestra la presentación y la tapa del portátil cerrado da acceso a los proyectos; el teléfono abre Contacto, la carpeta abre el CV y el disco externo muestra `developer_info.json`.
 
 Esta implementación está en `portfolio-escritorio`. `main` conserva el código anterior.
 
@@ -37,14 +37,14 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 
 ## La experiencia
 
-- **Escritorio:** una escena fotorealista completa, con una mesa blanca, portátil, teléfono, carpeta, disco externo y elementos de trabajo bajo la misma luz. Dos imágenes WebP locales componen las versiones horizontal y vertical. Los objetos forman parte de la escena; la información del portátil sigue siendo HTML legible, seleccionable y configurable.
-- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono, la carpeta y el disco. Sus etiquetas visibles y el foco indican qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. El teclado también permite entrar en los proyectos.
-- **Proyectos:** la pantalla física se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
+- **Escritorio:** una escena fotorealista completa, con una mesa blanca, portátil, teléfono, carpeta, disco externo y elementos de trabajo bajo la misma luz. Dos imágenes WebP locales componen las versiones horizontal y vertical. Los objetos forman parte de la escena; la información sobre las páginas de la libreta sigue siendo HTML legible, seleccionable y configurable. La cámara mira desde arriba y el portátil cerrado ocupa el borde inferior, centrado.
+- **Accesos:** `DeskAccess` coloca botones reales sobre el teléfono, la carpeta y el disco. Sus etiquetas visibles y el foco indican qué se puede abrir. La imagen y los controles escalan juntos con coordenadas proporcionales; no hay zonas de clic en píxeles fijos. Toda la tapa del portátil permite entrar en los proyectos.
+- **Proyectos:** la tapa del portátil se mide al entrar. Una superficie digital se expande desde esa geometría hasta ocupar el navegador en unos 850 ms. La vuelta invierte el recorrido. Las transformaciones principales usan escala, desplazamiento y opacidad.
 - **Índice editorial:** imágenes amplias y composición alternada. El hover levanta la imagen y muestra un acceso; ese acceso también se ve en dispositivos táctiles. Las fichas son páginas completas dentro del espacio digital, con una transición compartida de su portada.
 - **CV:** la carpeta abre una ventana grande desde su posición. Un PDF configurado se puede visualizar y descargar. Si falta, se muestra un estado pendiente real.
 - **Contacto:** el móvil abre una ventana con Email, LinkedIn y GitHub. Copiar email aparece solo cuando existe un email configurado; informa del éxito o del fallo del portapapeles.
 - **Stack:** el LED se ilumina al consultar información adicional en un formato JSON discreto.
-- **Móvil:** una escena vertical propia muestra el ordenador arriba y los tres accesos debajo, sobre la misma mesa. En pantallas pequeñas se priorizan nombre, profesión, tecnologías y acceso a proyectos; la descripción permanece disponible para lectores de pantalla. Mantiene los mismos recorridos de entrada y vuelta.
+- **Móvil:** una escena vertical propia muestra una página de libreta arriba, los tres accesos en medio y el portátil cerrado abajo, sobre la misma mesa. En pantallas pequeñas se priorizan nombre, profesión, tecnologías y acceso a proyectos; la descripción permanece disponible para lectores de pantalla. Mantiene los mismos recorridos de entrada y vuelta.
 
 ## Estructura
 
@@ -52,9 +52,9 @@ Las pruebas de navegación utilizan el soporte nativo de TypeScript de Node 22.1
 src/
   app/
     App.tsx                    Orquestación de vistas, ventanas y foco
-    DigitalSurface.tsx         Transición entre pantalla física y espacio digital
+    DigitalSurface.tsx         Transición entre tapa del portátil y espacio digital
   components/
-    scene/                     Escena, pantalla HTML y accesos a los objetos
+    scene/                     Escena, libreta HTML y accesos a los objetos
     projects/                  Índice, fichas, enlaces y galería
     panels/                    Ventanas de CV, Contacto y Stack
     ui/                        Elementos visuales reutilizables
@@ -72,7 +72,7 @@ tests/navigation.test.mjs     Pruebas de rutas, geometría e integridad de medio
 
 Los módulos se separan por responsabilidad. El contenido no está incrustado en los componentes; añadir un proyecto no exige modificar la navegación o la animación. Los estilos de cada experiencia se mantienen separados y los colores y fuentes comparten tokens.
 
-La geometría visual de la escena está en `src/styles/scene.css`: las variables `--screen-*` alinean `LaptopScreen` con la pantalla fotografiada y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
+La geometría visual de la escena está en `src/styles/scene.css`: las variables `--laptop-*` alinean `ClosedLaptop` con la tapa fotografiada, `DeskNotebook` coloca la presentación sobre el papel y las clases `desk-access-*` posicionan los botones. El breakpoint de 900 px coincide con el `source` del elemento `picture`. Al sustituir una escena, conserva su relación de aspecto y recalibra esos porcentajes; no uses recortes con `object-fit: cover`, que separarían los controles de sus objetos.
 
 ## Configurar tu información
 

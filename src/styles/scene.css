@@ -10,7 +10,7 @@
 .desk-topline {
   position: absolute;
   z-index: 4;
-  inset: 24px 32px auto;
+  inset: 20px 28px auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -41,14 +41,16 @@
   background: #568369;
 }
 .desk-stage {
-  /* Coordinates are relative to the full uncropped scene, including on resize. */
-  --screen-left: 26.23%;
-  --screen-top: 10.79%;
-  --screen-width: 47.29%;
-  --screen-height: 44.56%;
+  /* Percentages follow the uncropped overhead photograph. */
+  --laptop-left: 24.05%;
+  --laptop-top: 58.15%;
+  --laptop-width: 49.95%;
+  --laptop-height: 41.3%;
   position: relative;
   width: 100%;
+  max-width: calc((100svh - 43px) * 1586 / 992);
   aspect-ratio: 1586 / 992;
+  margin: auto auto 0;
   container-type: inline-size;
   flex-shrink: 0;
 }
@@ -67,145 +69,136 @@
 .desk-stage.is-away .desk-photograph {
   filter: blur(4px);
 }
-.laptop-screen {
-  cursor: pointer;
+.desk-notebook {
   position: absolute;
   z-index: 2;
-  left: var(--screen-left);
-  top: var(--screen-top);
-  width: var(--screen-width);
-  height: var(--screen-height);
-  overflow: hidden;
-  background: #fdfdfb;
-  container-type: inline-size;
-  color: var(--ink);
+  inset: 14% 28.5% auto 24%;
+  height: 35%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20%;
+}
+.notebook-profile,
+.notebook-stack {
+  min-width: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
-.screen-topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-shrink: 0;
-  height: 35px;
-  margin: 0 24px;
-  border-bottom: 1px solid #e7e6df;
-  color: #687575;
-  font-size: 8px;
+.notebook-eyebrow {
+  font-size: clamp(10px, 0.95cqw, 14px);
+  color: #526166;
 }
-.screen-wordmark {
+.notebook-profile h1 {
   font-family: var(--display);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: -0.08em;
-  color: var(--ink);
-}
-.screen-wordmark span {
-  color: var(--accent);
-}
-.screen-topbar > svg {
-  color: #547c69;
-}
-.screen-introduction {
-  flex: 1;
-  min-height: 0;
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.7fr);
-  align-content: center;
-  column-gap: 22px;
-  padding: 18px 28px 24px;
-}
-.screen-eyebrow {
-  grid-column: 1;
-  color: var(--muted);
-  font-size: clamp(8px, 1.5cqw, 11px);
-}
-.screen-introduction h1 {
-  grid-column: 1;
-  font-family: var(--display);
-  font-size: clamp(32px, 7.5cqw, 68px);
-  line-height: 1.02;
-  letter-spacing: -0.065em;
+  font-size: clamp(32px, 3.8cqw, 66px);
   font-weight: 600;
-  margin: 10px 0 12px;
+  letter-spacing: -0.055em;
+  line-height: 1.02;
+  margin: 12px 0 16px;
 }
-.screen-introduction h1 span {
+.notebook-profile h1 span {
+  display: block;
   color: var(--accent);
 }
-.screen-role {
-  grid-column: 1;
-  font-size: clamp(11px, 2cqw, 18px);
+.notebook-role {
+  font-size: clamp(11px, 1.12cqw, 18px);
   font-weight: 500;
   line-height: 1.4;
 }
-.screen-description {
-  grid-column: 1;
-  margin-top: 11px;
-  color: var(--muted);
-  font-size: clamp(9px, 1.65cqw, 13px);
-  line-height: 1.55;
-  max-width: 335px;
+.notebook-description {
+  font-size: clamp(10px, 0.94cqw, 14px);
+  line-height: 1.6;
+  color: #526166;
+  margin-top: 12px;
 }
-.screen-technologies {
-  grid-column: 2;
-  grid-row: 2 / 6;
+.notebook-stack h2 {
+  font-family: var(--display);
+  font-size: clamp(16px, 1.7cqw, 26px);
+  font-weight: 500;
+  letter-spacing: -0.035em;
+}
+.notebook-technologies {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-content: center;
-  gap: 7px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 25px 10px;
+  margin-top: 25px;
   list-style: none;
   padding: 0;
 }
-.screen-technologies li {
+.notebook-technologies li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: clamp(8px, 0.78cqw, 12px);
+  color: #37484e;
+}
+.notebook-technologies li > span {
+  display: grid;
+  place-items: center;
+}
+.notebook-technologies svg {
+  width: clamp(19px, 1.6cqw, 28px);
+  height: clamp(19px, 1.6cqw, 28px);
+}
+.notebook-note {
+  margin-top: 24px;
+  font-size: clamp(9px, 0.85cqw, 13px);
+  line-height: 1.8;
+  font-style: italic;
+  color: #4b626b;
+  rotate: -2deg;
+}
+.laptop-portal {
+  position: absolute;
+  z-index: 2;
+  left: var(--laptop-left);
+  top: var(--laptop-top);
+  width: var(--laptop-width);
+  height: var(--laptop-height);
+}
+.explore-button {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 6px;
-  min-height: 54px;
-  padding: 6px 2px;
-  border: 1px solid #e4e6de;
-  border-radius: 6px;
-  background: #ffffff60;
-  color: #515c60;
-  font-size: 8px;
-}
-.screen-technologies li > span {
-  display: grid;
-  place-items: center;
-}
-.explore-button {
-  grid-column: 1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  width: max-content;
-  min-height: 44px;
-  padding: 8px 0;
-  margin-top: 8px;
+  gap: 14px;
+  width: 100%;
+  height: 100%;
   background: transparent;
-  color: var(--accent);
-  font-size: 11px;
-  font-weight: 600;
+  border-radius: 16px;
+  color: #f7f9fa;
 }
-.explore-button svg {
+.explore-button:focus-visible {
+  outline-offset: -9px;
+}
+.laptop-sticker {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 20px;
+  border: 1px solid #d8d8cf;
+  border-radius: 9px;
+  background: #f3f2eafa;
+  color: #273b45;
+  box-shadow: 0 2px 5px #131b232e;
+  font-size: 15px;
+  font-weight: 600;
+  rotate: -3deg;
   transition: transform 0.2s;
 }
-.explore-button:hover svg {
-  transform: translateX(4px);
+.explore-button:hover .laptop-sticker,
+.explore-button:focus-visible .laptop-sticker {
+  transform: translateY(-4px);
 }
-.desk-keyboard {
-  position: absolute;
-  z-index: 1;
-  left: 19.5%;
-  top: 58%;
-  width: 61%;
-  height: 29%;
-  border-radius: 12px;
-  background: transparent;
-}
-.desk-keyboard:focus-visible {
-  outline-offset: -10px;
+.laptop-hint {
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #25323cc9;
+  color: #fff;
 }
 .desk-access {
   position: absolute;
@@ -217,22 +210,22 @@
   border-radius: 14px;
 }
 .desk-access-contact {
-  left: 0;
-  top: 52%;
-  width: 17.5%;
-  height: 19%;
+  left: 7%;
+  top: 62%;
+  width: 10%;
+  height: 30.5%;
 }
 .desk-access-cv {
-  left: 76%;
-  top: 30%;
-  width: 24%;
-  height: 23%;
+  left: 79.5%;
+  top: 26%;
+  width: 19%;
+  height: 39%;
 }
 .desk-access-stack {
-  left: 85%;
-  top: 56%;
-  width: 15%;
-  height: 14%;
+  left: 84.7%;
+  top: 70.5%;
+  width: 9.4%;
+  height: 21.5%;
 }
 .desk-access-label {
   display: inline-flex;
@@ -248,9 +241,7 @@
   box-shadow: 0 3px 9px #161c2024;
   font-size: 11px;
   font-weight: 600;
-  transition:
-    transform 0.2s,
-    background 0.2s;
+  transition: transform 0.2s;
 }
 .desk-access-contact .desk-access-label {
   background: #12252dec;
@@ -266,7 +257,7 @@
   opacity: 0.6;
 }
 .desk-bottomline {
-  margin-top: auto;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -276,47 +267,41 @@
   background: #f9f9f6;
 }
 @media (min-width: 901px) and (max-width: 1150px) {
-  .screen-topbar {
-    height: 27px;
-    margin-inline: 16px;
-    font-size: 7px;
+  .notebook-profile h1 {
+    margin-block: 8px;
+    font-size: 3.8cqw;
   }
-  .screen-introduction {
-    padding: 10px 17px 12px;
-    column-gap: 14px;
-  }
-  .screen-introduction h1 {
-    font-size: 7cqw;
-    margin-block: 7px;
-  }
-  .screen-description {
+  .notebook-description {
     margin-top: 8px;
+    line-height: 1.5;
   }
-  .screen-technologies li {
-    min-height: 43px;
-    font-size: 7px;
-    gap: 4px;
+  .notebook-technologies {
+    gap: 18px 8px;
+    margin-top: 18px;
   }
-  .screen-technologies svg {
-    width: 17px;
-    height: 17px;
+  .notebook-note {
+    margin-top: 18px;
   }
-  .explore-button {
-    min-height: 36px;
-    margin-top: 5px;
+  .desk-access-label {
+    gap: 5px;
+    padding-inline: 8px;
     font-size: 10px;
+  }
+  .access-arrow {
+    display: none;
   }
 }
 @media (max-width: 900px) {
   .desk-stage {
-    --screen-left: 13.87%;
-    --screen-top: 10.49%;
-    --screen-width: 72.4%;
-    --screen-height: 28.46%;
+    --laptop-left: 8.4%;
+    --laptop-top: 67.6%;
+    --laptop-width: 82.4%;
+    --laptop-height: 30.9%;
     aspect-ratio: 2 / 3;
+    max-width: 100%;
   }
   .desk-topline {
-    inset: 14px 14px auto;
+    inset: 12px 14px auto;
   }
   .desk-topline .brand-mark {
     font-size: 22px;
@@ -326,93 +311,91 @@
     font-size: 8px;
     padding: 8px 10px;
   }
-  .screen-topbar {
-    display: none;
-  }
-  .screen-introduction {
+  .desk-notebook {
+    inset: 7.5% 27.5% auto 29%;
+    height: 36.5%;
     display: flex;
     flex-direction: column;
-    padding: 5cqw 6cqw 4cqw;
     justify-content: center;
+    gap: 3cqw;
   }
-  .screen-eyebrow {
-    display: none;
+  .notebook-profile,
+  .notebook-stack {
+    flex: none;
   }
-  .screen-introduction h1 {
-    font-size: 10cqw;
-    margin: 0 0 2cqw;
-    letter-spacing: -0.06em;
+  .notebook-eyebrow {
+    font-size: clamp(8px, 1.8cqw, 13px);
   }
-  .screen-role {
-    font-size: 3.65cqw;
-    line-height: 1.3;
+  .notebook-profile h1 {
+    font-size: clamp(24px, 5.6cqw, 50px);
+    margin: 1.5cqw 0 2cqw;
   }
-  .screen-description {
-    font-size: 3.1cqw;
-    line-height: 1.4;
+  .notebook-role {
+    font-size: clamp(10px, 2.1cqw, 17px);
+    line-height: 1.35;
+  }
+  .notebook-description {
+    font-size: clamp(9px, 1.8cqw, 15px);
     margin-top: 2cqw;
-    max-width: none;
+    line-height: 1.5;
   }
-  .screen-technologies {
+  .notebook-stack h2 {
+    font-size: clamp(10px, 2.2cqw, 18px);
+  }
+  .notebook-technologies {
     grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 2cqw;
-    margin-top: 3cqw;
-  }
-  .screen-technologies li {
-    min-height: 0;
-    padding: 0;
-    gap: 2px;
-    border: 0;
-    background: transparent;
-    font-size: 2.35cqw;
-  }
-  .screen-technologies svg {
-    width: 5cqw;
-    height: 5cqw;
-  }
-  .explore-button {
-    font-size: 3.35cqw;
-    min-height: 0;
     margin-top: 2cqw;
-    padding: 2cqw 0;
-    gap: 2cqw;
   }
-  .explore-button svg {
-    width: 4cqw;
-    height: 4cqw;
+  .notebook-technologies li {
+    gap: 4px;
+    font-size: 1.2cqw;
   }
-  .desk-keyboard {
-    left: 5.5%;
-    top: 42%;
-    width: 88%;
-    height: 13.5%;
+  .notebook-technologies svg {
+    width: clamp(12px, 2.5cqw, 21px);
+    height: clamp(12px, 2.5cqw, 21px);
+  }
+  .notebook-note {
+    display: none;
   }
   .desk-access-contact {
-    left: 44%;
-    top: 59%;
-    width: 21%;
-    height: 15%;
+    left: 10.1%;
+    top: 47.8%;
+    width: 14.2%;
+    height: 17%;
   }
   .desk-access-cv {
-    left: 0;
-    top: 57%;
-    width: 35%;
-    height: 22%;
+    left: 34.8%;
+    top: 48.9%;
+    width: 30.6%;
+    height: 15.9%;
   }
   .desk-access-stack {
-    left: 76%;
-    top: 59%;
-    width: 22%;
-    height: 13%;
+    left: 75.9%;
+    top: 49.2%;
+    width: 14.4%;
+    height: 14.7%;
   }
   .desk-access-label {
-    gap: 5px;
-    padding: 7px;
     min-height: 36px;
+    padding: 7px;
     font-size: 10px;
+    gap: 5px;
   }
   .access-arrow {
     display: none;
+  }
+  .laptop-sticker {
+    font-size: 12px;
+    gap: 9px;
+    padding: 11px 15px;
+  }
+  .laptop-sticker > svg {
+    width: 18px;
+    height: 18px;
+  }
+  .laptop-hint {
+    font-size: 9px;
   }
   .desk-bottomline {
     flex-direction: column;
@@ -422,20 +405,15 @@
     padding: 15px;
   }
 }
-
 @media (max-width: 480px) {
-  .screen-introduction {
-    padding: 12px 15px;
+  .notebook-profile h1 {
+    font-size: clamp(24px, 6.8cqw, 32px);
   }
-  .screen-introduction h1 {
-    font-size: clamp(25px, 10cqw, 34px);
-    margin-bottom: 5px;
-  }
-  .screen-role {
+  .notebook-role {
     font-size: 11px;
-    line-height: 1.25;
+    line-height: 1.4;
   }
-  .screen-description,
+  .notebook-description,
   .technology-name {
     position: absolute;
     width: 1px;
@@ -445,17 +423,11 @@
     clip-path: inset(50%);
     white-space: nowrap;
   }
-  .screen-technologies {
-    margin-top: 10px;
+  .desk-access-label {
+    padding-inline: 6px;
+    font-size: 9px;
   }
-  .screen-technologies svg {
-    width: 16px;
-    height: 16px;
-  }
-  .explore-button {
-    min-height: 26px;
-    font-size: 11px;
-    margin-top: 6px;
-    padding: 3px 0;
+  .desk-access-label svg {
+    display: none;
   }
 }

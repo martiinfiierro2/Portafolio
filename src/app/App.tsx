@@ -15,7 +15,7 @@ const ProjectsExperience = lazy(() => import('../components/projects/ProjectsExp
 
 export default function App() {
   const { view, navigate } = useExperience(projects.map((project) => project.slug));
-  const screenRef = useRef<HTMLDivElement>(null);
+  const portalRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLElement | null>(null);
   const [origin, setOrigin] = useState<Rectangle | null>(null);
   const [busy, setBusy] = useState(false);
@@ -31,19 +31,19 @@ export default function App() {
   }, [digital, busy]);
 
   function explore(event: MouseEvent<HTMLElement>) {
-    if (busy || !screenRef.current) return;
+    if (busy || !portalRef.current) return;
     triggerRef.current =
       event.currentTarget instanceof HTMLButtonElement
         ? event.currentTarget
         : event.currentTarget.querySelector<HTMLElement>('.explore-button');
-    setOrigin(readRectangle(screenRef.current));
+    setOrigin(readRectangle(portalRef.current));
     setBusy(true);
     navigate({ kind: 'projects' });
   }
   function returnToDesk() {
     if (busy) return;
-    triggerRef.current ??= screenRef.current?.querySelector<HTMLElement>('.explore-button') ?? null;
-    if (screenRef.current) setOrigin(readRectangle(screenRef.current));
+    triggerRef.current ??= portalRef.current?.querySelector<HTMLElement>('.explore-button') ?? null;
+    if (portalRef.current) setOrigin(readRectangle(portalRef.current));
     setBusy(true);
     navigate({ kind: 'desk' });
   }
@@ -72,7 +72,7 @@ export default function App() {
       <DeskScene
         active={!digital && !busy}
         activePanel={panel?.kind ?? null}
-        screenRef={screenRef}
+        portalRef={portalRef}
         onExplore={explore}
         onPanel={openPanel}
       />
