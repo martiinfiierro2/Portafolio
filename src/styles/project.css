@@ -14,7 +14,7 @@
 }
 .detail-back:hover,
 .demo-back:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .detail-hero {
   padding-bottom: 36px;
@@ -28,7 +28,7 @@
   font:
     10px Consolas,
     monospace;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-bottom: 20px;
 }
 .detail-intro {
@@ -59,8 +59,8 @@
 }
 .detail-action.is-primary {
   background: var(--accent);
-  color: var(--bg);
-  border-color: var(--accent);
+  color: var(--on-accent);
+  border-color: var(--accent-ink);
   font-weight: 600;
 }
 .detail-action:hover {
@@ -82,7 +82,7 @@
   margin-bottom: 20px;
 }
 .detail-section-heading svg {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .detail-section-heading h2 {
   font-size: 23px;
@@ -143,7 +143,7 @@
   font:
     11px Consolas,
     monospace;
-  color: var(--accent);
+  color: var(--accent-ink);
   border: 1px solid var(--line-soft);
   background: var(--surface);
   width: 33px;
@@ -171,7 +171,7 @@
   color: var(--muted);
 }
 .detail-features svg {
-  color: var(--accent);
+  color: var(--accent-ink);
   flex-shrink: 0;
 }
 .detail-sidebar {
@@ -245,7 +245,7 @@
   text-align: left;
 }
 .gallery-open:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-ink);
 }
 .gallery-image {
   width: 100%;
@@ -322,7 +322,7 @@
   margin-bottom: 0;
 }
 .detail-section-heading > span {
-  color: var(--accent);
+  color: var(--accent-ink);
   font:
     10px Consolas,
     monospace;
@@ -338,7 +338,7 @@
 }
 .detail-architecture-item > svg {
   flex-shrink: 0;
-  color: var(--accent);
+  color: var(--accent-ink);
   margin-top: 1px;
 }
 .detail-sidebar {

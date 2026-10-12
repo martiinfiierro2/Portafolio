@@ -69,6 +69,8 @@ h1:focus {
   --radius-pill: 999px;
   --accent: #45e0d0;
   --accent-soft: #45e0d014;
+  --accent-ink: var(--accent);
+  --on-accent: var(--bg);
   --purple: #baa2ff;
   --green: #9ad8b8;
   background: var(--bg);
@@ -79,16 +81,18 @@ h1:focus {
     color 200ms;
 }
 .site[data-theme="light"] {
-  --bg: #f1f5f8;
-  --surface: #ffffff;
-  --surface-high: #e8eef4;
-  --ink: #16293a;
-  --muted: #526678;
-  --line: #cbd7e2;
-  --accent: #007f78;
-  --accent-soft: #007f780d;
-  --purple: #7548bd;
-  --green: #277055;
+  --bg: #f7f1e7;
+  --surface: #fffaf3;
+  --surface-high: #eee4d4;
+  --ink: #193f33;
+  --muted: #4d6355;
+  --line: #d7cbbb;
+  --accent: #ed955a;
+  --accent-soft: #ed955a1a;
+  --accent-ink: #244638;
+  --on-accent: #193f33;
+  --purple: #284f3d;
+  --green: #24533d;
 }
 .shell {
   max-width: 1200px;
@@ -96,7 +100,7 @@ h1:focus {
   margin-inline: auto;
 }
 .accent {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .muted {
   color: var(--muted);
@@ -129,7 +133,7 @@ h1:focus {
   font-size: 12px;
 }
 .header nav a:hover {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 .theme-toggle {
   display: grid;
@@ -142,8 +146,8 @@ h1:focus {
   background: var(--surface);
 }
 .theme-toggle:hover {
-  color: var(--accent);
-  border-color: var(--accent);
+  color: var(--accent-ink);
+  border-color: var(--accent-ink);
 }
 .eyebrow {
   font:
@@ -151,7 +155,7 @@ h1:focus {
     Consolas,
     monospace;
   letter-spacing: 1.7px;
-  color: var(--accent);
+  color: var(--accent-ink);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -203,7 +207,7 @@ p {
 
 .primary {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--on-accent);
 }
 
 .primary:hover {
@@ -218,6 +222,27 @@ p {
 }
 
 .secondary:hover {
-  border-color: var(--accent);
+  border-color: var(--accent-ink);
+  color: var(--accent-ink);
+}
+
+.site[data-theme="light"] ::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.site[data-theme="light"] .wordmark .accent {
   color: var(--accent);
+}
+
+.site[data-theme="light"] .secondary {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: transparent;
+}
+
+.site[data-theme="light"] .detail-action:not(.is-primary) {
+  background: var(--accent);
+  color: var(--ink);
+  border-color: transparent;
 }
