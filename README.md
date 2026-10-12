@@ -1,6 +1,6 @@
 # Martín Fierro / Portfolio
 
-Portafolio de ingeniería multimedia y desarrollo full-stack construido con React y Vite. Incluye un catálogo con búsqueda y categorías, fichas individuales de proyectos y demos interactivas locales.
+Portafolio de ingeniería multimedia y desarrollo full-stack construido con React y Vite. La página principal se recorre con scroll: portada, enfoque, proyectos, perfil y contacto. Incluye un catálogo con búsqueda y categorías, fichas individuales de proyectos y demos interactivas locales.
 
 ## Desarrollo
 
@@ -20,11 +20,13 @@ npm run preview
 ## Estructura
 
 - `src/data/projects.js`: contenido de todas las fichas, tecnologías, proceso, capturas y enlaces.
+- `src/components/Experience.jsx`: sección del enfoque de trabajo.
 - `src/components/Projects.jsx`: catálogo y filtros.
 - `src/components/ProjectDetail.jsx`: ficha reutilizable.
 - `src/components/ProjectMedia.jsx`: capturas ampliables.
 - `src/components/demos/`: TaskFlow, Pulse API y Media Lab.
 - `src/hooks/useHashRoute.js`: navegación mediante hash para hosting estático.
+- `src/hooks/useActiveSection.js`: seguimiento de la sección visible en la cabecera.
 - `src/styles/`: estilos separados por interfaz, catálogo, fichas y demos; `src/index.css` agrupa sus importaciones.
 
 Consulta [cómo añadir proyectos](docs/PROJECTS.md) para crear nuevas fichas sin duplicar componentes. Cada proyecto tiene una dirección propia, por ejemplo `#/proyectos/taskflow`, que se puede abrir directamente o compartir.

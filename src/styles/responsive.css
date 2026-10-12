@@ -2,9 +2,6 @@
   .shell {
     width: calc(100% - 64px);
   }
-  .about {
-    gap: 40px;
-  }
   .catalog-toolbar {
     flex-wrap: wrap;
   }
@@ -29,7 +26,7 @@
 }
 @media (max-width: 760px) {
   .site {
-    --header-height: 76px;
+    --header-height: 56px;
   }
   .shell {
     width: calc(100% - 40px);
@@ -76,10 +73,6 @@
   }
   .catalog-card-body > p {
     min-height: 0;
-  }
-  .about {
-    grid-template-columns: 1fr;
-    gap: 30px;
   }
   .contact {
     flex-direction: column;

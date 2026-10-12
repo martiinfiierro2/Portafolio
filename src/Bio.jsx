@@ -1,30 +1,55 @@
+import { useRef } from "react";
+import {
+  motion as Motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Reveal from "./components/Reveal";
-import HeroShowcase from "./components/HeroShowcase";
+import ProductPreview from "./components/ProductPreview";
 
 export default function Bio() {
+  const sectionRef = useRef(null);
+  const reducedMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const scale = useTransform(scrollYProgress, [0, 0.75], [1, 0.92]);
+  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0.25]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 24]);
+
   return (
-    <section className="hero" id="inicio" aria-labelledby="hero-title">
-      <div className="hero-paper-glow" aria-hidden="true" />
+    <section
+      ref={sectionRef}
+      className="hero"
+      id="inicio"
+      aria-labelledby="hero-title"
+    >
       <Reveal className="hero-heading shell">
-        <h1 id="hero-title" aria-label="Portafolio de Martín Fierro">
-          Portafolio<span className="hero-title-mark">.</span>
-        </h1>
         <p className="hero-role">
-          Ingeniero multimedia · Desarrollador full-stack
+          Ingeniería multimedia. Desarrollo full-stack.
         </p>
+        <h1 id="hero-title">
+          Ideas que
+          <br />
+          <span>cobran vida.</span>
+        </h1>
       </Reveal>
-      <Reveal className="hero-art shell" delay={0.12}>
-        <HeroShowcase />
-      </Reveal>
+      <Motion.div
+        className="hero-art shell"
+        style={reducedMotion ? undefined : { scale, opacity, y }}
+      >
+        <ProductPreview />
+      </Motion.div>
       <div className="hero-discover shell">
         <a className="discover-link" href="#proyectos">
-          <span>Ver mis proyectos</span>
-          <ArrowUpRight size={18} aria-hidden="true" />
+          Ver mis proyectos <ArrowUpRight size={17} aria-hidden="true" />
         </a>
-        <span className="discover-hint">
-          <ArrowDown size={13} aria-hidden="true" /> Desliza para ver más
-        </span>
+        <a className="discover-hint" href="#enfoque">
+          <ArrowDown size={13} aria-hidden="true" /> Sigue explorando
+        </a>
       </div>
     </section>
   );

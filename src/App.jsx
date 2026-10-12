@@ -7,6 +7,7 @@ import Projects from "./components/Projects";
 import ProjectDetail from "./components/ProjectDetail";
 import DemoPage from "./components/DemoPage";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import { projects } from "./data/projects";
 import useHashRoute from "./hooks/useHashRoute";
 
@@ -33,6 +34,13 @@ export default function App() {
       // The theme still works when storage is unavailable.
     }
     document.documentElement.style.colorScheme = dark ? "dark" : "light";
+    const background = getComputedStyle(document.querySelector(".site"))
+      .getPropertyValue("--bg")
+      .trim();
+    document.documentElement.style.backgroundColor = background;
+    document
+      .querySelector('meta[name="theme-color"]')
+      ?.setAttribute("content", background);
   }, [dark]);
 
   useEffect(() => {
@@ -70,11 +78,16 @@ export default function App() {
       >
         Saltar al contenido
       </a>
-      <Header dark={dark} onToggleTheme={() => setDark(!dark)} />
+      <Header
+        dark={dark}
+        onToggleTheme={() => setDark(!dark)}
+        page={route.page}
+      />
       <main id="contenido" tabIndex={-1}>
         {route.page === "home" ? (
           <>
             <Bio />
+            <Experience />
             <Projects />
             <About />
           </>
@@ -93,7 +106,7 @@ export default function App() {
           </section>
         )}
       </main>
-      <Footer />
+      <Footer immersive={route.page === "home"} />
     </div>
   );
 }

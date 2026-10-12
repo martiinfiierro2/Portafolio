@@ -1,20 +1,25 @@
 .about {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  border-top: 1px solid var(--line);
+  align-items: center;
+  text-align: center;
+}
+.about-inner {
+  max-width: 1000px;
+}
+.about-copy {
+  max-width: 580px;
+  margin-inline: auto;
 }
 .about-copy p {
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.9;
-  max-width: 490px;
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 .about-copy p:last-child {
   margin-bottom: 0;
 }
 .footer {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-soft);
   background: var(--surface);
 }
 .contact {
@@ -28,23 +33,39 @@
   font-size: 30px;
 }
 .contact p:not(.eyebrow) {
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 0;
 }
 .contact .button {
   flex-shrink: 0;
+}
+.contact-screen .contact {
+  min-height: calc(100svh - var(--header-height) - 74px);
+  flex-direction: column;
+  justify-content: center;
+  gap: 28px;
+  padding-block: 80px;
+  text-align: center;
+}
+.contact-screen .contact h2 {
+  max-width: 780px;
+  font-size: clamp(40px, 5.5vw, 76px);
+  letter-spacing: -0.055em;
+  line-height: 1.09;
+  margin: 0 auto 25px;
+}
+.contact-screen .contact p:not(.eyebrow) {
+  font-size: 15px;
 }
 .footer-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--line-soft);
   padding-block: 24px;
   color: var(--muted);
-  font:
-    10px Consolas,
-    monospace;
+  font-size: 11px;
 }
 .footer-bottom .wordmark {
   font-size: 15px;
@@ -72,4 +93,15 @@
 }
 .not-found p {
   font-size: 14px;
+}
+@media (max-width: 760px) {
+  .about-copy p {
+    font-size: 15px;
+  }
+  .contact-screen .contact {
+    padding-block: 72px;
+  }
+  .contact-screen .contact h2 {
+    font-size: 38px;
+  }
 }

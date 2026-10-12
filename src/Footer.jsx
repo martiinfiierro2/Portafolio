@@ -1,14 +1,17 @@
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 import Reveal from "./components/Reveal";
 
-export default function Footer() {
+export default function Footer({ immersive = false }) {
   return (
-    <footer id="contacto" className="footer">
+    <footer
+      id="contacto"
+      className={`footer${immersive ? " contact-screen" : ""}`}
+    >
       <div className="shell">
         <Reveal className="contact">
           <div>
-            <p className="eyebrow">SIGAMOS EN CONTACTO</p>
-            <h2>¿Hablamos?</h2>
+            <p className="eyebrow">CONECTEMOS</p>
+            <h2>Lo siguiente empieza con una conversación.</h2>
             <p>Puedes encontrarme y seguir mis proyectos en GitHub.</p>
           </div>
           <a
