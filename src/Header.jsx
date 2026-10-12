@@ -1,34 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import { ArrowUpRight, Moon, Sun } from "lucide-react";
 
-export default function Header() {
-  const [isMode, setIsMode] = useState(true);
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const themeValue = isMode ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', themeValue);
-    console.log("Tema actual:", themeValue);
-  }, [isMode]);
-
+export default function Header({ dark, onToggleTheme }) {
   return (
-    <div className="header-container">
-      <ul className="lista-cabecera">
-        <li className="nombre-cabecera">
-          <a>Martín Fierro</a>
-        </li>
-        <li className="elemento-cabecera">
-          <a>Proyectos</a>
-        </li>
-        <li className="elemento-cabecera">
-          <a>LindenIn</a>
-        </li>
-        <li className="elemento-cabecera">
-          <a>GitHub</a>
-        </li>
-        <li className="boton-cabecera">
-          <button>Claro/Oscuro</button>
-        </li>
-      </ul>
-    </div>
+    <header className="header shell">
+      <a className="wordmark" href="#inicio" aria-label="Martín Fierro, inicio">
+        mf<span>.</span>
+      </a>
+      <nav aria-label="Navegación principal">
+        <a href="#proyectos">Proyectos</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a className="nav-contact" href="#contacto">
+          Hablemos <ArrowUpRight size={15} />
+        </a>
+      </nav>
+      <button
+        className="theme-toggle"
+        onClick={onToggleTheme}
+        aria-label={dark ? "Activar tema claro" : "Activar tema oscuro"}
+      >
+        {dark ? <Sun size={19} /> : <Moon size={19} />}
+      </button>
+    </header>
   );
 }
