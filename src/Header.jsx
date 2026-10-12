@@ -10,7 +10,7 @@ export default function Header({ dark, onToggleTheme }) {
           aria-label="Martín Fierro, inicio"
         >
           <span>
-            mf<span className="accent">.</span>
+            Martín Fierro<span className="accent">.</span>
           </span>
         </a>
         <nav aria-label="Navegación principal">

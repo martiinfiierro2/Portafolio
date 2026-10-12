@@ -1,5 +1,5 @@
 import { ArrowUpRight, Code2, Layers, ListTodo } from "lucide-react";
-import DeveloperMascot from "./DeveloperMascot";
+import CreativeWorkspace from "./CreativeWorkspace";
 import { projects } from "../data/projects";
 
 const previewProjects = projects
@@ -60,12 +60,12 @@ export default function HeroShowcase() {
               <i />
               <i />
             </span>
-            <span>Ideas en marcha</span>
+            <span>Mi espacio creativo</span>
             <span className="showcase-window-mark">mf.</span>
           </div>
-          <DeveloperMascot />
+          <CreativeWorkspace />
           <div className="showcase-caption">
-            <span>De una idea a algo que funciona.</span>
+            <span>Ideas que toman forma.</span>
             <ArrowUpRight size={17} />
           </div>
         </div>

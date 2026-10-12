@@ -7,7 +7,6 @@ export default function Bio() {
     <section className="hero" id="inicio" aria-labelledby="hero-title">
       <div className="hero-paper-glow" aria-hidden="true" />
       <Reveal className="hero-heading shell">
-        <p className="hero-intro">Hola, soy Martín Fierro</p>
         <h1 id="hero-title" aria-label="Portafolio de Martín Fierro">
           Portafolio<span className="hero-title-mark">.</span>
         </h1>
@@ -18,16 +17,15 @@ export default function Bio() {
       <Reveal className="hero-art shell" delay={0.12}>
         <HeroShowcase />
       </Reveal>
-      <Reveal className="hero-discover shell" delay={0.2}>
+      <div className="hero-discover shell">
         <a className="discover-link" href="#proyectos">
-          <span>Explora mis proyectos</span>
+          <span>Ver mis proyectos</span>
           <ArrowUpRight size={18} aria-hidden="true" />
         </a>
         <span className="discover-hint">
-          <ArrowDown size={13} aria-hidden="true" /> O desliza para descubrir
-          más
+          <ArrowDown size={13} aria-hidden="true" /> Desliza para ver más
         </span>
-      </Reveal>
+      </div>
     </section>
   );
 }

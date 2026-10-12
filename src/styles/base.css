@@ -110,7 +110,7 @@ h1:focus {
   background: var(--bg);
 }
 .header-inner {
-  height: var(--header-height);
+  height: calc(var(--header-height) - 1px);
   display: flex;
   align-items: center;
   gap: 30px;
@@ -245,4 +245,29 @@ p {
   background: var(--accent);
   color: var(--ink);
   border-color: transparent;
+}
+
+.header .wordmark {
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+@media (max-width: 760px) {
+  .header .wordmark {
+    font-size: 15px;
+    letter-spacing: -0.4px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-inner {
+    gap: 10px;
+  }
+  .header nav {
+    gap: 10px;
+    font-size: 10px;
+  }
+  .header .wordmark {
+    font-size: 14px;
+  }
 }
