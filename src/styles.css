@@ -168,41 +168,19 @@ a {
   width: min(14cqw, 29cqh, 290px);
 }
 
-/* Portrait screens use a readable arrangement rather than a cropped desktop. */
-@media (max-width: 900px), (max-aspect-ratio: 6/5) {
+/* Keep the whole portrait composition inside one mobile viewport. */
+@media (max-width: 900px) and (orientation: portrait), (max-aspect-ratio: 6/5) {
   .desk-scene {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    grid-template-areas:
-      'navigation navigation'
-      'intro intro'
-      'laptop laptop'
-      'notebook notebook'
-      'folder phone';
-    gap: 28px 14px;
-    align-items: center;
-    justify-items: center;
-    height: auto;
-    min-height: 100svh;
-    padding: 16px 24px 40px;
-    container-type: inline-size;
-  }
-
-  .site-header,
-  .home-content,
-  .laptop,
-  .notebook,
-  .folder,
-  .phone {
-    position: relative;
-    inset: auto;
-    transform: none;
+    height: 100svh;
+    min-height: 0;
   }
 
   .site-header {
-    grid-area: navigation;
+    top: max(2%, env(safe-area-inset-top));
+    right: 50%;
+    width: calc(100% - 32px);
     justify-content: center;
-    width: 100%;
+    transform: translateX(50%);
   }
   .navigation {
     gap: clamp(16px, 4cqw, 30px);
@@ -211,33 +189,55 @@ a {
   .navigation button {
     font-size: 14px;
   }
+
   .home-content {
-    grid-area: intro;
-    width: 100%;
-    padding-block: 24px 8px;
+    top: 11%;
+    left: 50%;
+    width: 94%;
   }
   .home-content h1 {
-    font-size: clamp(36px, 10.5cqw, 72px);
+    font-size: min(10.5cqw, 8cqh, 72px);
   }
   .home-role {
-    font-size: clamp(16px, 3.6cqw, 24px);
+    margin-top: 8px;
+    font-size: clamp(14px, min(4cqw, 3cqh), 24px);
+  }
+
+  .notebook {
+    top: 24%;
+    right: 3%;
+    bottom: auto;
+    left: auto;
+    width: min(44cqw, 22.4cqh, 300px);
   }
   .laptop {
-    grid-area: laptop;
-    width: min(100%, 620px);
-  }
-  .notebook {
-    grid-area: notebook;
-    width: min(88%, 360px);
+    top: 49%;
+    bottom: auto;
+    width: min(94cqw, 37cqh, 640px);
   }
   .folder {
-    grid-area: folder;
-    width: 100%;
-    max-width: 260px;
+    top: auto;
+    right: auto;
+    bottom: max(2%, env(safe-area-inset-bottom));
+    left: 3%;
+    width: min(42cqw, 20cqh, 270px);
   }
   .phone {
-    grid-area: phone;
-    width: 100%;
-    max-width: 260px;
+    top: auto;
+    right: 3%;
+    bottom: max(4%, env(safe-area-inset-bottom));
+    width: min(42cqw, 22cqh, 270px);
+  }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+  .desk-scene {
+    min-height: 0;
+  }
+  .home-content {
+    top: 18%;
+  }
+  .home-content h1 {
+    font-size: min(6.2cqw, 12cqh, 110px);
   }
 }

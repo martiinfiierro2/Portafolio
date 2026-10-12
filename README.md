@@ -6,7 +6,7 @@ La portada contiene el escritorio fotográfico, el nombre Martín Fierro, la nav
 
 La escena diurna usa un fondo con el flexo apagado. Las sombras de ventana se dibujan en una capa decorativa común sobre la madera y los objetos; el texto y la navegación permanecen por encima para conservar su legibilidad. El fondo y esa capa comparten proporciones de referencia y el mismo recorte centrado.
 
-En ordenador, las posiciones y los tamaños se calculan respecto al contenedor del escritorio, teniendo en cuenta también su altura. En pantallas estrechas o en formato vertical, los objetos se organizan en una cuadrícula que permite desplazarse sin recortarlos.
+En ordenador, las posiciones y los tamaños se calculan respecto al contenedor del escritorio, teniendo en cuenta también su altura. En móvil vertical, la libreta queda arriba a la derecha, el portátil centrado debajo y el CV y el teléfono en las esquinas inferiores. Los cuatro objetos caben dentro de una pantalla, sin desplazamiento, manteniendo las proporciones de sus PNG. En horizontal se usa la composición de escritorio con ajustes para ventanas de poca altura.
 
 Inicio enlaza a la portada. Proyectos, CV y Contacto están preparados visualmente y deshabilitados hasta desarrollar esas secciones, para evitar enlaces a páginas inexistentes.
 
