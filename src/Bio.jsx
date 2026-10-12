@@ -1,38 +1,49 @@
-import { ArrowDown } from "lucide-react";
-import portrait from "./img/martin.jpg";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Reveal from "./components/Reveal";
 
 export default function Bio() {
   return (
-    <section className="hero shell" id="inicio" aria-labelledby="hero-title">
-      <Reveal className="hero-copy">
-        <img
-          className="hero-portrait"
-          src={portrait}
-          alt="Retrato de Martín Fierro"
-          width="80"
-          height="80"
-          fetchPriority="high"
-        />
-        <p className="hero-greeting">Hola, soy</p>
-        <h1 id="hero-title">
-          Martín Fierro<span className="accent">.</span>
-        </h1>
-        <p className="hero-role">
-          Ingeniero multimedia · Desarrollador full-stack
-        </p>
-        <p className="hero-description">
-          Creo experiencias digitales que conectan ideas y personas.
-        </p>
-      </Reveal>
-      <Reveal className="hero-discover" delay={0.15}>
-        <a className="discover-link" href="#proyectos">
-          <span>Descubre mis proyectos</span>
-          <span className="discover-hint">
-            Desliza o haz clic para explorar
+    <section className="hero" id="inicio" aria-labelledby="hero-title">
+      <div className="hero-atmosphere" aria-hidden="true">
+        <span className="hero-glow hero-glow-violet" />
+        <span className="hero-glow hero-glow-mint" />
+        <span className="hero-orbit" />
+      </div>
+
+      <div className="hero-content shell">
+        <Reveal className="hero-copy">
+          <p className="hero-greeting">Hola, soy</p>
+          <h1 id="hero-title" aria-label="Martín Fierro">
+            <span className="hero-name-first">Martín</span>
+            <span className="hero-name-last">
+              Fierro<span className="hero-name-dot">.</span>
+            </span>
+          </h1>
+        </Reveal>
+
+        <Reveal className="hero-profile" delay={0.12}>
+          <span className="hero-profile-mark" aria-hidden="true">
+            <ArrowUpRight size={30} strokeWidth={1.5} />
           </span>
+          <p className="hero-role-label">Ingeniero multimedia</p>
+          <p className="hero-role">
+            Desarrollador
+            <br />
+            <span>full-stack.</span>
+          </p>
+        </Reveal>
+      </div>
+
+      <Reveal className="hero-discover shell" delay={0.2}>
+        <a className="discover-link" href="#proyectos">
           <span className="discover-arrow">
-            <ArrowDown size={20} aria-hidden="true" />
+            <ArrowDown size={21} aria-hidden="true" />
+          </span>
+          <span className="discover-copy">
+            <span>Descubre mis proyectos</span>
+            <span className="discover-hint">
+              Desliza o haz clic para explorar
+            </span>
           </span>
         </a>
       </Reveal>

@@ -1,116 +1,225 @@
 .hero {
+  --hero-violet: #ae8cff;
+  --hero-mint: #72f4d5;
+  --hero-blue: #74cbe8;
   position: relative;
   isolation: isolate;
   min-height: calc(100svh - var(--header-height));
   display: grid;
   grid-template-rows: 1fr auto;
-  gap: 28px;
-  padding-block: 40px 32px;
-  text-align: center;
+  gap: 40px;
+  padding-block: 70px 38px;
 }
 
-.hero::before {
-  content: "";
+.hero-atmosphere {
   position: absolute;
   z-index: -1;
-  inset: 8% 5% 15%;
-  background: radial-gradient(
-    ellipse at center,
-    var(--accent-soft),
-    transparent 66%
-  );
+  inset: 0;
+  overflow: hidden;
   pointer-events: none;
 }
 
-.hero-copy {
-  align-self: center;
-  max-width: 800px;
-  width: 100%;
-  margin-inline: auto;
+.hero-glow {
+  position: absolute;
+  width: min(62vw, 680px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  opacity: 0.55;
+  will-change: transform;
 }
 
-.hero-portrait {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  object-position: center 30%;
+.hero-glow-violet {
+  right: -12%;
+  top: -16%;
+  background: radial-gradient(
+    circle,
+    #9361ff4a 0%,
+    #9361ff1b 36%,
+    transparent 67%
+  );
+  animation: hero-drift-violet 18s ease-in-out infinite alternate;
+}
+
+.hero-glow-mint {
+  left: 16%;
+  bottom: -35%;
+  background: radial-gradient(
+    circle,
+    #38ecc42b 0%,
+    #38ecc40c 36%,
+    transparent 67%
+  );
+  animation: hero-drift-mint 22s ease-in-out infinite alternate;
+}
+
+.hero-orbit {
+  position: absolute;
+  top: 12%;
+  right: -8%;
+  width: 440px;
+  height: 440px;
+  border: 1px solid #ae8cff20;
   border-radius: 50%;
-  display: block;
-  margin: 0 auto 24px;
-  border: 1px solid var(--line);
+  transform: rotate(-28deg) scaleY(0.65);
+  pointer-events: none;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 36px;
+  align-items: center;
+  align-self: center;
 }
 
 .hero-greeting {
+  font-size: 15px;
   color: var(--muted);
-  font-size: 14px;
-  margin-bottom: 12px;
+  margin-bottom: 28px;
 }
 
 .hero h1 {
-  font-size: clamp(48px, 7vw, 92px);
-  font-weight: 600;
-  letter-spacing: -4px;
-  line-height: 1.08;
-  margin-bottom: 20px;
+  font-size: clamp(88px, 12.4vw, 172px);
+  font-weight: 750;
+  letter-spacing: -0.065em;
+  line-height: 0.89;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.hero-name-first,
+.hero-name-last {
+  display: block;
+}
+
+.hero-name-last {
+  margin-top: 0.08em;
+  color: var(--hero-mint);
+  background: linear-gradient(
+    110deg,
+    var(--hero-mint) 10%,
+    var(--hero-blue) 44%,
+    var(--hero-violet) 88%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-name-dot {
+  -webkit-text-fill-color: var(--hero-violet);
+}
+
+.hero-profile {
+  padding-top: 42px;
+}
+
+.hero-profile-mark {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 1px solid color-mix(in srgb, var(--hero-violet) 45%, transparent);
+  border-radius: 50%;
+  color: var(--hero-violet);
+  margin-bottom: 25px;
+  transform: rotate(-12deg);
+}
+
+.hero-role-label {
+  font-size: 16px;
+  color: var(--muted);
+  margin-bottom: 12px;
 }
 
 .hero-role {
-  font-size: clamp(15px, 1.5vw, 19px);
+  font-size: clamp(27px, 3.1vw, 44px);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 1.25;
   color: var(--ink);
-  font-weight: 400;
-  line-height: 1.6;
-  margin-bottom: 14px;
+  margin: 0;
 }
 
-.hero-description {
-  font-size: 15px;
-  line-height: 1.7;
-  max-width: 430px;
-  margin: 0 auto;
+.hero-role > span {
+  color: var(--hero-violet);
 }
 
 .hero-discover {
-  justify-self: center;
+  justify-self: start;
 }
 
 .discover-link {
   display: inline-flex;
-  flex-direction: column;
   align-items: center;
-  gap: 8px;
-  padding: 8px 20px;
+  gap: 16px;
+  padding: 6px 0;
   border-radius: 6px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 500;
+}
+
+.discover-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .discover-hint {
   color: var(--muted);
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 400;
 }
 
 .discover-arrow {
   display: grid;
   place-items: center;
-  width: 38px;
-  height: 38px;
-  border: 1px solid var(--line);
+  width: 48px;
+  height: 48px;
+  background: var(--ink);
+  color: var(--bg);
   border-radius: 50%;
-  color: var(--accent);
-  margin-top: 7px;
   transition:
     transform 200ms,
-    border-color 200ms;
+    background 200ms;
 }
 
 .discover-link:hover .discover-arrow {
-  border-color: var(--accent);
+  background: var(--hero-mint);
+  color: #090f18;
   transform: translateY(4px);
 }
 
 .discover-arrow svg {
   animation: discover-nudge 2.8s ease-in-out infinite;
+}
+
+.site[data-theme="light"] .hero {
+  --hero-violet: #7040bd;
+  --hero-mint: #167a6d;
+  --hero-blue: #317caa;
+}
+
+.site[data-theme="light"] .hero-glow {
+  opacity: 0.8;
+}
+
+@keyframes hero-drift-violet {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(-35px, 35px) scale(1.12);
+  }
+}
+
+@keyframes hero-drift-mint {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(45px, -25px) scale(1.08);
+  }
 }
 
 @keyframes discover-nudge {
@@ -124,88 +233,144 @@
   }
 }
 
-@media (max-width: 760px) {
-  .hero {
-    padding-block: 28px 22px;
+@media (max-width: 1050px) {
+  .hero-content {
     gap: 24px;
+    grid-template-columns: 1.4fr 1fr;
   }
-
   .hero h1 {
-    font-size: clamp(44px, 10vw, 68px);
-    letter-spacing: -2.5px;
+    font-size: clamp(80px, 12vw, 132px);
   }
-
-  .hero-role {
-    max-width: 310px;
-    margin-inline: auto;
-  }
-
-  .hero-description {
-    max-width: 310px;
-    font-size: 14px;
+  .hero-orbit {
+    width: 330px;
+    height: 330px;
   }
 }
 
-@media (max-height: 640px) {
+@media (max-width: 760px) {
   .hero {
-    padding-block: 20px 16px;
-    gap: 18px;
+    padding-block: 38px 24px;
+    gap: 30px;
   }
-
-  .hero-portrait {
-    width: 58px;
-    height: 58px;
-    margin-bottom: 16px;
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
-
-  .hero h1 {
-    font-size: clamp(40px, 7vw, 64px);
-    margin-bottom: 12px;
-  }
-
   .hero-greeting {
-    margin-bottom: 8px;
+    font-size: 13px;
+    margin-bottom: 22px;
+  }
+  .hero h1 {
+    font-size: clamp(76px, 21vw, 132px);
+  }
+  .hero-profile {
+    padding-top: 0;
+  }
+  .hero-profile-mark {
+    display: none;
+  }
+  .hero-role-label {
+    font-size: 14px;
+    margin-bottom: 7px;
+  }
+  .hero-role {
+    font-size: clamp(27px, 7vw, 36px);
+  }
+  .hero-glow {
+    width: 100vw;
+  }
+  .hero-glow-violet {
+    right: -40%;
+    top: -4%;
+  }
+  .hero-glow-mint {
+    bottom: -20%;
+    left: -45%;
+  }
+  .hero-orbit {
+    right: -60%;
+    top: 6%;
+  }
+  .discover-link {
+    font-size: 12px;
+    gap: 12px;
+  }
+  .discover-hint {
+    font-size: 10px;
+  }
+  .discover-arrow {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+@media (max-height: 640px) and (min-width: 761px) {
+  .hero {
+    padding-block: 30px 22px;
+    gap: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(70px, 10vw, 112px);
+  }
+  .hero-profile {
+    padding-top: 20px;
+  }
+  .hero-profile-mark {
+    display: none;
+  }
+}
+
+@media (max-height: 640px) and (max-width: 760px) {
+  .hero {
+    padding-block: 24px 18px;
+    gap: 24px;
+  }
+  .hero-content {
+    gap: 20px;
+  }
+  .hero-greeting {
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-size: clamp(70px, 20vw, 100px);
+  }
+  .hero-role {
+    font-size: 25px;
   }
 }
 
 @media (max-height: 450px) {
   .hero {
-    padding-block: 16px;
-    gap: 16px;
+    padding-block: 20px 16px;
+    gap: 18px;
   }
-
-  .hero-portrait,
+  .hero-content {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+  }
+  .hero h1 {
+    font-size: clamp(48px, 9vw, 82px);
+  }
   .hero-greeting {
+    margin-bottom: 14px;
+  }
+  .hero-profile {
+    padding-top: 16px;
+  }
+  .hero-profile-mark {
     display: none;
   }
-
-  .hero h1 {
-    font-size: 44px;
-    margin-bottom: 10px;
+  .hero-role-label {
+    font-size: 12px;
   }
-
   .hero-role {
-    font-size: 14px;
-    margin-bottom: 6px;
+    font-size: 24px;
   }
-
-  .hero-description {
-    font-size: 13px;
+  .discover-arrow {
+    width: 36px;
+    height: 36px;
   }
-
-  .discover-link {
-    flex-direction: row;
-    gap: 14px;
-    padding: 4px 12px;
-  }
-
   .discover-hint {
     display: none;
-  }
-
-  .discover-arrow {
-    width: 32px;
-    height: 32px;
-    margin-top: 0;
   }
 }
