@@ -1,0 +1,141 @@
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 1000;
+  src: url('@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2') format('woff2');
+}
+
+:root {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  color: #0b1328;
+  background: #e4bd91;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.home {
+  position: relative;
+  min-height: 100svh;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.home-background {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.site-header {
+  display: flex;
+  justify-content: flex-end;
+  width: min(1100px, calc(100% - 64px));
+  margin-inline: auto;
+  padding-top: 20px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: clamp(20px, 2.6vw, 44px);
+}
+
+.navigation a,
+.navigation button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 10px 0;
+  border: 0;
+  background: transparent;
+  font:
+    500 clamp(14px, 1.2vw, 20px) 'DM Sans',
+    sans-serif;
+  color: #132c53;
+  text-decoration: none;
+}
+
+.navigation a[aria-current='page'] {
+  color: #00557a;
+}
+
+.navigation a[aria-current='page']::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 5px;
+  height: 2px;
+  background: currentColor;
+}
+
+.navigation button:disabled {
+  cursor: default;
+}
+
+.navigation a:focus-visible {
+  outline: 3px solid #00557a;
+  outline-offset: 5px;
+}
+
+.home-content {
+  width: min(1100px, calc(100% - 40px));
+  margin: clamp(65px, 10svh, 125px) auto 0;
+  text-align: center;
+}
+
+.home-content h1 {
+  margin: 0;
+  font-size: clamp(48px, 6.2vw, 110px);
+  font-weight: 850;
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+}
+
+.home-content h1 span {
+  color: #009ed3;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    width: calc(100% - 32px);
+    justify-content: center;
+    padding-top: 12px;
+  }
+
+  .navigation {
+    gap: clamp(18px, 5vw, 30px);
+  }
+
+  .navigation a,
+  .navigation button {
+    font-size: 14px;
+  }
+
+  .home-content {
+    margin-top: 110px;
+  }
+
+  .home-content h1 {
+    font-size: clamp(42px, 10.5vw, 62px);
+  }
+}
