@@ -15,13 +15,13 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   padding: 9px 12px;
   font:
     10px Consolas,
     monospace;
   color: var(--purple);
-  border-radius: 4px;
+  border-radius: var(--radius-pill);
   flex-shrink: 0;
 }
 .demo-description {
@@ -30,9 +30,9 @@
   margin-bottom: 30px;
 }
 .demo-workspace {
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   background: var(--surface);
-  border-radius: 8px;
+  border-radius: var(--radius-lg);
   padding: 28px;
 }
 .demo-section-label {
@@ -75,9 +75,9 @@
   min-width: 0;
   background: var(--bg);
   color: var(--ink);
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   padding: 12px;
-  border-radius: 4px;
+  border-radius: var(--radius-md);
   font-size: 12px;
 }
 .task-input-row input::placeholder {
@@ -91,7 +91,7 @@
   background: var(--accent);
   color: var(--bg);
   border: 0;
-  border-radius: 4px;
+  border-radius: var(--radius-pill);
   padding: 12px 16px;
   font-size: 12px;
   flex-shrink: 0;
@@ -113,8 +113,8 @@ button:disabled {
 .task-column {
   background: var(--bg);
   padding: 17px;
-  border: 1px solid var(--line);
-  border-radius: 5px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
   min-height: 250px;
 }
 .task-column-title {
@@ -147,8 +147,8 @@ button:disabled {
 }
 .task-card {
   background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: 4px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-sm);
   padding: 15px;
 }
 .task-card > p {
@@ -238,8 +238,8 @@ button:disabled {
 }
 .api-console {
   background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 5px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
   min-width: 0;
 }
 .api-console-header {
@@ -315,10 +315,10 @@ button:disabled {
   font:
     10px Consolas,
     monospace;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   background: var(--bg);
   color: var(--muted);
-  border-radius: 4px;
+  border-radius: var(--radius-pill);
 }
 .media-filters button.is-active {
   border-color: var(--accent);
@@ -335,9 +335,9 @@ button:disabled {
 }
 .media-card {
   padding: 0;
-  border: 1px solid var(--line);
+  border: 1px solid var(--line-soft);
   background: var(--bg);
-  border-radius: 5px;
+  border-radius: var(--radius-md);
   text-align: left;
   color: var(--ink);
   overflow: hidden;
@@ -472,8 +472,8 @@ button:disabled {
 }
 .media-detail {
   background: var(--bg);
-  border: 1px solid var(--line);
-  border-radius: 5px;
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-md);
   padding: 22px;
   align-self: start;
 }
