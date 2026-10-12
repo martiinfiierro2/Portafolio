@@ -1,5 +1,5 @@
-import DeskScene from './components/DeskScene.jsx';
+import MobileStudy from './components/MobileStudy.jsx';
 
 export default function App() {
-  return <DeskScene />;
+  return <MobileStudy />;
 }
