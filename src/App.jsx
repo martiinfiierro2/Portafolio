@@ -47,7 +47,12 @@ export default function App() {
         document.querySelector("main h1")?.focus({ preventScroll: true });
       } else if (route.hash && !route.hash.startsWith("#/")) {
         const target = document.getElementById(route.hash.slice(1));
-        target?.scrollIntoView({ behavior: "instant" });
+        target?.scrollIntoView({
+          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
+            .matches
+            ? "instant"
+            : "smooth",
+        });
       }
     });
     return () => cancelAnimationFrame(frame);

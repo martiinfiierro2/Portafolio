@@ -1,4 +1,4 @@
-import { ArrowUpRight, Moon, Sun, Terminal } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 
 export default function Header({ dark, onToggleTheme }) {
   return (
@@ -9,21 +9,13 @@ export default function Header({ dark, onToggleTheme }) {
           href="#inicio"
           aria-label="Martín Fierro, inicio"
         >
-          <Terminal size={22} />
           <span>
-            martín<span className="accent">.dev</span>
+            mf<span className="accent">.</span>
           </span>
         </a>
         <nav aria-label="Navegación principal">
-          <a href="#proyectos">
-            <span className="nav-index">01</span> Proyectos
-          </a>
-          <a href="#sobre-mi">
-            <span className="nav-index">02</span> Perfil
-          </a>
-          <a className="nav-contact" href="#contacto">
-            Conectar <ArrowUpRight size={14} />
-          </a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#sobre-mi">Sobre mí</a>
         </nav>
         <button
           className="theme-toggle"

@@ -2,13 +2,6 @@
   .shell {
     width: calc(100% - 64px);
   }
-  .hero {
-    gap: 30px;
-  }
-  .code-panel {
-    font-size: 9px;
-    padding-inline: 14px;
-  }
   .about {
     gap: 40px;
   }
@@ -35,59 +28,27 @@
   }
 }
 @media (max-width: 760px) {
+  .site {
+    --header-height: 76px;
+  }
   .shell {
     width: calc(100% - 40px);
   }
   .header-inner {
-    height: 76px;
+    height: var(--header-height);
     gap: 14px;
   }
   .header nav {
     gap: 18px;
     font-size: 11px;
   }
-  .nav-index,
-  .header .nav-contact {
-    display: none;
-  }
   .wordmark {
     font-size: 17px;
     gap: 6px;
   }
-  .wordmark > svg {
-    width: 18px;
-  }
-  .hero {
-    grid-template-columns: 1fr;
-    padding-top: 56px;
-    gap: 32px;
-  }
   h1 {
     font-size: clamp(40px, 8vw, 58px);
     letter-spacing: -2px;
-  }
-  .hero .eyebrow {
-    font-size: 9px;
-    letter-spacing: 1.1px;
-  }
-  .hero-description {
-    font-size: 14px;
-  }
-  .code-panel {
-    font-size: 11px;
-  }
-  .hero-layers {
-    margin-top: 8px;
-  }
-  .hero-layers > div {
-    padding: 18px 12px;
-    gap: 10px;
-  }
-  .hero-layers small {
-    font-size: 9px;
-  }
-  .hero-layers svg {
-    display: none;
   }
   .section {
     padding-block: 52px;
@@ -115,9 +76,6 @@
   }
   .catalog-card-body > p {
     min-height: 0;
-  }
-  .catalog-visual {
-    min-height: 190px;
   }
   .about {
     grid-template-columns: 1fr;
@@ -208,9 +166,6 @@
   }
   .wordmark {
     font-size: 15px;
-  }
-  .code-panel {
-    font-size: 9px;
   }
   .task-input-row {
     flex-direction: column;

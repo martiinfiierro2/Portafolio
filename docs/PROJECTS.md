@@ -84,9 +84,9 @@ Puedes sustituirlos por tus proyectos reales o mantenerlos como ejercicios. Si
 añades una nueva demo interna, implementa su componente y regístrala en
 `src/components/DemoPage.jsx`; añadir `demoHref` por sí solo no crea una demo.
 
-Las portadas de las tarjetas son paneles de código decorativos definidos en
-`Projects.jsx`, separados de las capturas reales. Un proyecto nuevo recibe la
-portada genérica; puedes añadir una variante en `projectVisuals` para adaptarla.
+Las tarjetas utilizan la primera captura de `gallery` como portada. Elige una
+imagen que permita reconocer el proyecto de un vistazo. Cuando no hay capturas,
+la tarjeta muestra una portada sencilla con el nombre del proyecto.
 
 ## Comprobación
 

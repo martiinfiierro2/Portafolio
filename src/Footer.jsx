@@ -1,4 +1,4 @@
-import { ArrowUp, ArrowUpRight, Code2, Terminal } from "lucide-react";
+import { ArrowUp, ArrowUpRight } from "lucide-react";
 import Reveal from "./components/Reveal";
 
 export default function Footer() {
@@ -7,9 +7,9 @@ export default function Footer() {
       <div className="shell">
         <Reveal className="contact">
           <div>
-            <p className="eyebrow">03 / CONECTAR</p>
-            <h2>¿Construimos lo siguiente?</h2>
-            <p>Encuentra mi código y sigue el desarrollo de mis proyectos.</p>
+            <p className="eyebrow">SIGAMOS EN CONTACTO</p>
+            <h2>¿Hablamos?</h2>
+            <p>Puedes encontrarme y seguir mis proyectos en GitHub.</p>
           </div>
           <a
             className="button secondary"
@@ -17,14 +17,13 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Code2 size={18} /> Conectar en GitHub <ArrowUpRight size={17} />
+            Mi GitHub <ArrowUpRight size={17} />
           </a>
         </Reveal>
         <div className="footer-bottom">
           <a className="wordmark" href="#inicio">
-            <Terminal size={17} />
             <span>
-              mf<span className="accent">.dev</span>
+              mf<span className="accent">.</span>
             </span>
           </a>
           <span>© {new Date().getFullYear()} Martín Fierro</span>

@@ -1,76 +1,25 @@
 import { useMemo, useState } from "react";
-import {
-  Activity,
-  ArrowRight,
-  Code2,
-  Layers,
-  ListTodo,
-  Search,
-  Terminal,
-} from "lucide-react";
+import { ArrowRight, Layers, Search } from "lucide-react";
 import { projects } from "../data/projects";
 import Reveal from "./Reveal";
 
-const projectVisuals = {
-  portfolio: {
-    icon: Code2,
-    file: "portfolio.jsx",
-    lines: ["<Profile />", "<ProjectCatalog />", "<ProjectDetail />"],
-    footer: "COMPONENTES → EXPERIENCIA",
-  },
-  taskflow: {
-    icon: ListTodo,
-    file: "taskflow.js",
-    lines: ['status: "pending"', 'status: "in-progress"', 'status: "done"'],
-    footer: "IDEA → TAREA → PROGRESO",
-  },
-  "pulse-api": {
-    icon: Activity,
-    file: "response.json",
-    lines: ['"status": 200,', '"data": { … },', '"mode": "simulated"'],
-    footer: "REQUEST → RESPONSE → JSON",
-  },
-  "media-lab": {
-    icon: Layers,
-    file: "media.collection",
-    lines: ["collection.filter()", "piece.open()", "view.explore()"],
-    footer: "CONTENIDO → INTERACCIÓN",
-  },
-};
-
-function ProjectVisual({ project }) {
-  const visual = projectVisuals[project.slug] ?? projectVisuals.portfolio;
-  const Icon = visual.icon;
+function ProjectPreview({ project }) {
+  const image = project.gallery?.[0];
 
   return (
     <div
-      className="catalog-visual"
-      data-variant={project.slug}
+      className="catalog-preview"
+      data-project={project.slug}
       aria-hidden="true"
     >
-      <div className="catalog-visual-top">
-        <span>
-          <span />
-          <span />
-          <span />
-        </span>
-        <span>{visual.file}</span>
-      </div>
-      <div className="catalog-visual-code">
-        {visual.lines.map((line, index) => (
-          <div className="catalog-code-row" key={line}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <code>{line}</code>
-          </div>
-        ))}
-      </div>
-      <div className="catalog-visual-node">
-        <Icon size={30} strokeWidth={1.4} />
-      </div>
-      <div className="catalog-visual-footer">
-        <span>{visual.footer}</span>
-        <span>/{project.category.toLowerCase()}</span>
-      </div>
+      {image?.src ? (
+        <img src={image.src} alt="" loading="lazy" decoding="async" />
+      ) : (
+        <div className="catalog-preview-placeholder">
+          <Layers size={42} strokeWidth={1.2} />
+          <span>{project.title}</span>
+        </div>
+      )}
     </div>
   );
 }
@@ -78,7 +27,10 @@ function ProjectVisual({ project }) {
 export default function Projects() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState("Todos");
-  const categories = ["Todos", ...new Set(projects.map((item) => item.category))];
+  const categories = [
+    "Todos",
+    ...new Set(projects.map((item) => item.category)),
+  ];
 
   const filteredProjects = useMemo(() => {
     const normalizedQuery = query.trim().toLocaleLowerCase("es");
@@ -107,13 +59,10 @@ export default function Projects() {
     >
       <Reveal className="section-heading catalog-heading">
         <div>
-          <p className="eyebrow">01 / PROYECTOS</p>
-          <h2 id="projects-title">Código en contexto.</h2>
+          <p className="eyebrow">PROYECTOS</p>
+          <h2 id="projects-title">Mis proyectos.</h2>
         </div>
-        <p>
-          Explora cada proyecto: qué resuelve, cómo se construye y cómo funciona.
-          Las demos de ejemplo están identificadas.
-        </p>
+        <p>Abre un proyecto para conocerlo y probarlo.</p>
       </Reveal>
 
       <Reveal className="catalog-toolbar">
@@ -147,7 +96,7 @@ export default function Projects() {
             id="project-search"
             type="search"
             value={query}
-            placeholder="Buscar nombre o tecnología…"
+            placeholder="Buscar un proyecto…"
             onChange={(event) => setQuery(event.target.value)}
           />
         </label>
@@ -167,7 +116,7 @@ export default function Projects() {
               href={`#/proyectos/${project.slug}`}
               aria-label={`Explorar ${project.title}${project.isExample ? ", proyecto de ejemplo" : ""}`}
             >
-              <ProjectVisual project={project} />
+              <ProjectPreview project={project} />
               <div className="catalog-card-body">
                 <div className="catalog-meta">
                   <span>{project.category}</span>
@@ -179,15 +128,8 @@ export default function Projects() {
                 </div>
                 <h3 className="catalog-card-title">{project.title}</h3>
                 <p>{project.summary}</p>
-                {project.stack?.length > 0 && (
-                  <ul className="catalog-tags" aria-label="Tecnologías">
-                    {project.stack.slice(0, 3).map((technology) => (
-                      <li key={technology}>{technology}</li>
-                    ))}
-                  </ul>
-                )}
                 <span className="catalog-card-link">
-                  Explorar proyecto <ArrowRight size={17} aria-hidden="true" />
+                  Ver proyecto <ArrowRight size={17} aria-hidden="true" />
                 </span>
               </div>
             </a>
@@ -197,9 +139,9 @@ export default function Projects() {
 
       {filteredProjects.length === 0 && (
         <div className="catalog-empty">
-          <Terminal size={28} aria-hidden="true" />
+          <Search size={28} aria-hidden="true" />
           <h3>No hay proyectos con esta búsqueda.</h3>
-          <p>Prueba otra tecnología o restablece los filtros.</p>
+          <p>Prueba otro nombre o restablece los filtros.</p>
           <button
             className="catalog-filter"
             type="button"

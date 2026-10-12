@@ -1,55 +1,16 @@
 .about {
   display: grid;
-  grid-template-columns: 1.1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 80px;
   border-top: 1px solid var(--line);
 }
-.about-intro > p:not(.eyebrow) {
-  font-size: 13px;
-  max-width: 480px;
-}
-.about-signature {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font:
-    10px Consolas,
-    monospace;
-  color: var(--accent);
-  margin-top: 28px;
-}
-.approach-list {
-  display: grid;
-  gap: 14px;
-  align-content: center;
-}
-.approach-item {
-  display: flex;
-  gap: 16px;
-  padding: 21px;
-  border: 1px solid var(--line);
-  background: var(--surface);
-  border-radius: 6px;
-}
-.approach-item > svg {
-  color: var(--accent);
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.approach-number {
-  font:
-    9px Consolas,
-    monospace;
-  color: var(--muted);
-  padding-top: 6px;
-}
-.approach-item h3 {
+.about-copy p {
   font-size: 14px;
-  margin-bottom: 7px;
-  letter-spacing: 0;
+  line-height: 1.9;
+  max-width: 490px;
+  margin-bottom: 18px;
 }
-.approach-item p {
-  font-size: 11px;
+.about-copy p:last-child {
   margin-bottom: 0;
 }
 .footer {
