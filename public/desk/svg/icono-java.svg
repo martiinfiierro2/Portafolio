@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  role="img"
+  aria-labelledby="icono-java-title icono-java-description"
+>
+  <title id="icono-java-title">Icono java</title>
+  <desc id="icono-java-description">Icono vectorial independiente con fondo transparente.</desc>
+  <defs></defs>
+  <g fill="none" stroke="#1675b0" stroke-width="2" stroke-linecap="round">
+    <path
+      d="M11 24c0 14 25 14 25 0M35 25c11-5 10 9 1 8M8 38c4 5 29 5 34-1M15 44h21M11 21c3 2 21 3 25 0"
+    />
+  </g>
+  <g fill="none" stroke="#ef6f25" stroke-width="2.5" stroke-linecap="round">
+    <path d="M21 19C6 9 33 10 23 2M29 20C17 13 35 13 33 5" />
+  </g>
+</svg>

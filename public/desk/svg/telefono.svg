@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="350"
+  height="510"
+  viewBox="0 0 350 510"
+  role="img"
+  aria-labelledby="telefono-title telefono-description"
+>
+  <title id="telefono-title">Teléfono con pantalla vacía</title>
+  <desc id="telefono-description">
+    Teléfono negro con pantalla blanca, marco metálico y cámara. Fondo transparente y piezas
+    vectoriales.
+  </desc>
+  <defs>
+    <linearGradient id="phone-metal" x2="1" y2="1">
+      <stop stop-color="#aeb0ae" />
+      <stop offset="0.2" stop-color="#4e555c" />
+      <stop offset="0.5" stop-color="#12171d" />
+      <stop offset="0.8" stop-color="#666b6d" />
+      <stop offset="1" stop-color="#1b2028" />
+    </linearGradient>
+    <linearGradient id="phone-frame" x2="1" y2="1">
+      <stop stop-color="#222830" />
+      <stop offset="0.6" stop-color="#080c12" />
+      <stop offset="1" stop-color="#181f26" />
+    </linearGradient>
+    <linearGradient id="phone-screen" x2="0.5" y2="1">
+      <stop stop-color="#fff" />
+      <stop offset="1" stop-color="#f4f6fa" />
+    </linearGradient>
+    <linearGradient id="phone-reflection" x2="1" y2="1">
+      <stop stop-color="#fff" stop-opacity="0.15" />
+      <stop offset="0.45" stop-color="#fff" stop-opacity="0" />
+    </linearGradient>
+    <filter
+      id="phone-shadow"
+      x="-25%"
+      y="-25%"
+      width="160%"
+      height="170%"
+      color-interpolation-filters="sRGB"
+    >
+      <feDropShadow dx="3" dy="7" stdDeviation="5" flood-color="#30281d" flood-opacity="0.34" />
+    </filter>
+  </defs>
+  <g transform="rotate(-16 175 255)" filter="url(#phone-shadow)">
+    <rect x="65" y="41" width="206" height="423" rx="30" fill="url(#phone-metal)" />
+    <rect
+      x="69"
+      y="43"
+      width="200"
+      height="415"
+      rx="28"
+      fill="url(#phone-frame)"
+      stroke="#d5d7d5"
+      stroke-width="0.7"
+    />
+    <rect x="77" y="51" width="184" height="398" rx="22" fill="url(#phone-screen)" />
+    <path d="M112 51h112v7q0 13-13 13h-86q-13 0-13-13Z" fill="#10151c" />
+    <rect x="151" y="55" width="36" height="3" rx="1.5" fill="#3a434b" />
+    <circle cx="200" cy="58" r="3.5" fill="#090f1a" />
+    <circle cx="200" cy="58" r="1.6" fill="#1d384e" />
+    <path
+      d="M78 78v340q0 24 22 24"
+      fill="none"
+      stroke="#fff"
+      stroke-opacity="0.4"
+      stroke-width="1.2"
+    />
+    <rect x="63" y="111" width="3" height="18" rx="1" fill="#5e6265" />
+    <rect x="63" y="145" width="3" height="29" rx="1" fill="#53585f" />
+    <rect x="63" y="183" width="3" height="29" rx="1" fill="#53585f" />
+    <rect x="271" y="141" width="3" height="50" rx="1" fill="#4e545b" />
+    <rect x="137" y="433" width="64" height="3.5" rx="2" fill="#1c2131" opacity="0.7" />
+    <rect x="77" y="51" width="184" height="398" rx="22" fill="url(#phone-reflection)" />
+  </g>
+</svg>

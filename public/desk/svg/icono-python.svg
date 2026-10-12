@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="48"
+  height="48"
+  viewBox="0 0 48 48"
+  role="img"
+  aria-labelledby="icono-python-title icono-python-description"
+>
+  <title id="icono-python-title">Icono python</title>
+  <desc id="icono-python-description">Icono vectorial independiente con fondo transparente.</desc>
+  <defs></defs>
+  <path
+    d="M24 3c-11 0-12 3-12 10v6h13v3H8c-8 0-8 19 0 19h6v-8c0-6 5-10 11-10h10V13c0-7-1-10-11-10Z"
+    fill="#2b86bd"
+  />
+  <path
+    d="M24 45c11 0 12-3 12-10v-6H23v-3h17c8 0 8-19 0-19h-6v8c0 6-5 10-11 10H13v10c0 7 1 10 11 10Z"
+    fill="#f2c03a"
+  />
+  <circle cx="18" cy="9" r="2" fill="#fff" />
+  <circle cx="30" cy="39" r="2" fill="#fff" />
+</svg>

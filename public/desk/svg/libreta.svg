@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="520"
+  height="620"
+  viewBox="0 0 520 620"
+  role="img"
+  aria-labelledby="libreta-title libreta-description"
+>
+  <title id="libreta-title">Libreta sin anotaciones</title>
+  <desc id="libreta-description">
+    Libreta cuadriculada con espiral metálica, sin contenido, para escribir sobre ella en HTML.
+  </desc>
+  <defs>
+    <linearGradient id="notebook-cover" x2="1" y2="1">
+      <stop stop-color="#234350" />
+      <stop offset="0.6" stop-color="#152e39" />
+      <stop offset="1" stop-color="#071b25" />
+    </linearGradient>
+    <linearGradient id="notebook-paper" x2="1" y2="1">
+      <stop stop-color="#fffdf7" />
+      <stop offset="0.45" stop-color="#faf8f1" />
+      <stop offset="1" stop-color="#eae6dc" />
+    </linearGradient>
+    <linearGradient id="notebook-spine" x2="1" y2="0">
+      <stop stop-color="#a89d85" />
+      <stop offset="0.2" stop-color="#e2d6bf" />
+      <stop offset="0.65" stop-color="#f2e9d9" />
+      <stop offset="1" stop-color="#fffdf7" />
+    </linearGradient>
+    <linearGradient id="notebook-ring" x2="0.6" y2="1">
+      <stop stop-color="#6f6858" />
+      <stop offset="0.32" stop-color="#101312" />
+      <stop offset="0.55" stop-color="#958973" />
+      <stop offset="0.72" stop-color="#211f1b" />
+      <stop offset="1" stop-color="#635a49" />
+    </linearGradient>
+    <pattern id="notebook-grid" x="80" y="40" width="12" height="12" patternUnits="userSpaceOnUse">
+      <path d="M12 0H0v12" fill="none" stroke="#c6ccd0" stroke-opacity="0.48" stroke-width="0.55" />
+    </pattern>
+    <clipPath id="notebook-page-clip">
+      <rect x="86" y="33" width="365" height="522" rx="9" />
+    </clipPath>
+    <filter
+      id="notebook-paper-grain"
+      x="0"
+      y="0"
+      width="100%"
+      height="100%"
+      color-interpolation-filters="sRGB"
+    >
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.75"
+        numOctaves="3"
+        seed="3"
+        stitchTiles="stitch"
+      />
+      <feColorMatrix type="saturate" values="0" />
+      <feComponentTransfer><feFuncA type="linear" slope="0.035" /></feComponentTransfer>
+      <feComposite in2="SourceGraphic" operator="in" />
+      <feBlend in="SourceGraphic" mode="soft-light" />
+    </filter>
+    <filter
+      id="notebook-shadow"
+      x="-25%"
+      y="-25%"
+      width="160%"
+      height="170%"
+      color-interpolation-filters="sRGB"
+    >
+      <feDropShadow dx="3" dy="8" stdDeviation="6" flood-color="#30281d" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <g transform="rotate(9 260 310)" filter="url(#notebook-shadow)">
+    <rect x="78" y="29" width="383" height="539" rx="12" fill="url(#notebook-cover)" />
+    <rect x="85" y="42" width="372" height="520" rx="10" fill="#afa48c" />
+    <path d="M96 555h347M95 557h349M95 559h347" stroke="#eee9df" stroke-width="0.8" />
+    <rect
+      x="86"
+      y="33"
+      width="365"
+      height="522"
+      rx="9"
+      fill="url(#notebook-paper)"
+      filter="url(#notebook-paper-grain)"
+    />
+    <rect x="86" y="33" width="365" height="522" rx="9" fill="url(#notebook-grid)" />
+    <path d="M86 43q0-10 10-10h18v522H97q-11 0-11-10Z" fill="url(#notebook-spine)" opacity="0.65" />
+    <path d="M116 34v520" stroke="#b1b8b8" stroke-width="0.8" opacity="0.4" />
+    <rect
+      x="86"
+      y="33"
+      width="365"
+      height="522"
+      rx="9"
+      fill="none"
+      stroke="#e5dfd2"
+      stroke-width="0.8"
+    />
+    <g>
+      <ellipse cx="94" cy="58" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 62C44 67 44 40 95 45"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 61C47 66 47 41 95 45"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 46q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="81" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 85C44 90 44 63 95 68"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 84C47 89 47 64 95 68"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 69q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="104" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 108C44 113 44 86 95 91"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 107C47 112 47 87 95 91"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 92q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="127" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 131C44 136 44 109 95 114"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 130C47 135 47 110 95 114"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 115q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="150" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 154C44 159 44 132 95 137"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 153C47 158 47 133 95 137"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 138q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="173" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 177C44 182 44 155 95 160"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 176C47 181 47 156 95 160"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 161q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="196" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 200C44 205 44 178 95 183"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 199C47 204 47 179 95 183"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 184q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="219" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 223C44 228 44 201 95 206"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 222C47 227 47 202 95 206"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 207q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="242" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 246C44 251 44 224 95 229"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 245C47 250 47 225 95 229"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 230q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="265" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 269C44 274 44 247 95 252"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 268C47 273 47 248 95 252"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 253q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="288" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 292C44 297 44 270 95 275"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 291C47 296 47 271 95 275"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 276q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="311" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 315C44 320 44 293 95 298"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 314C47 319 47 294 95 298"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 299q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="334" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 338C44 343 44 316 95 321"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 337C47 342 47 317 95 321"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 322q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="357" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 361C44 366 44 339 95 344"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 360C47 365 47 340 95 344"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 345q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="380" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 384C44 389 44 362 95 367"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 383C47 388 47 363 95 367"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 368q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="403" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 407C44 412 44 385 95 390"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 406C47 411 47 386 95 390"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 391q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="426" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 430C44 435 44 408 95 413"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 429C47 434 47 409 95 413"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 414q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="449" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 453C44 458 44 431 95 436"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 452C47 457 47 432 95 436"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 437q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="472" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 476C44 481 44 454 95 459"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 475C47 480 47 455 95 459"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 460q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="495" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 499C44 504 44 477 95 482"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 498C47 503 47 478 95 482"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 483q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="518" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 522C44 527 44 500 95 505"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 521C47 526 47 501 95 505"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 506q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+    <g>
+      <ellipse cx="94" cy="541" rx="4.5" ry="6" fill="#766952" />
+      <path
+        d="M93 545C44 550 44 523 95 528"
+        fill="none"
+        stroke="#090d10"
+        stroke-width="5.8"
+        stroke-linecap="round"
+      />
+      <path
+        d="M93 544C47 549 47 524 95 528"
+        fill="none"
+        stroke="url(#notebook-ring)"
+        stroke-width="3.4"
+        stroke-linecap="round"
+      />
+      <path d="M66 529q10-4 26-1" stroke="#c2bda8" stroke-width="0.8" fill="none" opacity="0.7" />
+    </g>
+  </g>
+</svg>

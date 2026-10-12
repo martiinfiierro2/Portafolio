@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="80"
+  height="64"
+  viewBox="0 0 80 64"
+  role="img"
+  aria-labelledby="logo-mf-title logo-mf-description"
+>
+  <title id="logo-mf-title">Monograma MF</title>
+  <desc id="logo-mf-description">
+    Iniciales de Martín Fierro, dibujadas con un trazado vectorial.
+  </desc>
+  <defs></defs>
+  <g transform="translate(0 0) scale(1)" fill="#111822">
+    <path d="M3 54V10h10l14 23 14-23h36v9H52v10h21v9H52v16H42V27L27 47 12 27v27Z" />
+  </g>
+</svg>
