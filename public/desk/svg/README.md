@@ -1,6 +1,6 @@
 # Objetos vectoriales del escritorio
 
-22 SVG independientes y con fondo transparente. Su contenido utiliza trazados, formas, degradados, texto y filtros SVG. No hay fotografías incrustadas, referencias a WebP/PNG, JavaScript ni recursos de red.
+22 SVG independientes y con fondo transparente. Su contenido utiliza trazados, formas, degradados y filtros SVG. La escritura también está convertida a trazados. No hay fotografías incrustadas, fuentes externas, referencias a WebP/PNG, JavaScript ni recursos de red.
 
 La portada actual se conserva para poder sustituir los objetos uno a uno. Con Vite en marcha, `/desk/svg/index.html` muestra una galería con acceso y descarga de cada archivo.
 
@@ -43,7 +43,9 @@ node scripts/generate-desk-svg.mjs
 
 El generador usa Node y las dependencias ya declaradas en el proyecto. También actualiza `manifest.json` y la galería. Regenerar sobrescribe los SVG de esta carpeta; para conservar cambios manuales, trasládalos al generador.
 
-Los archivos con texto incluyen Caveat o DM Sans en WOFF2 mediante `@font-face` para funcionar de forma independiente en navegadores, también como `<img>`. Las licencias OFL están en `FONT-LICENSES.txt`. Algunos editores SVG no admiten fuentes incrustadas: instala estas fuentes en ese editor si muestra una sustitución tipográfica.
+La escritura utiliza contornos de Caveat y DM Sans guardados en `scripts/desk-vector-fonts.json`. Por eso se conserva igual en navegadores y editores SVG sin instalar fuentes. Las etiquetas siguen siendo texto editable en el generador; cada SVG incluye nombres accesibles y una descripción. Las licencias OFL están en `FONT-LICENSES.txt`.
+
+Para cambiar las fuentes de origen existe una utilidad opcional: `scripts/extract-desk-fonts.py`, que requiere `fonttools[woff]`. Solo se necesita al sustituir las fuentes; la regeneración habitual de los dibujos con Node utiliza los contornos ya guardados y no requiere Python.
 
 ## Aspecto
 

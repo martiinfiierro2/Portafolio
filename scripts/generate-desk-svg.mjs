@@ -3,8 +3,9 @@ import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { format, resolveConfig } from 'prettier';
 
-// These drawings contain only SVG geometry, gradients, procedural texture and
-// text. They never embed a photograph. Change the drawing here, then regenerate.
+// These drawings contain only SVG geometry, gradients and procedural texture.
+// Lettering also uses paths: no photographs or embedded fonts are required.
+// Change the drawing or its labels here, then regenerate.
 const root = fileURLToPath(new URL('../', import.meta.url));
 const output = join(root, 'public/desk/svg');
 const formatting = await resolveConfig(join(root, 'package.json'));
@@ -22,11 +23,9 @@ const fonts = {
     file: 'dm-sans-latin-wght-normal.woff2',
   },
 };
-for (const font of Object.values(fonts)) {
-  font.base64 = (
-    await readFile(join(root, 'node_modules', font.package, 'files', font.file))
-  ).toString('base64');
-}
+const vectorFonts = JSON.parse(
+  await readFile(join(root, 'scripts/desk-vector-fonts.json'), 'utf8'),
+);
 
 const ink = '#153d68';
 const blue = '#0097cc';
@@ -39,27 +38,32 @@ const escape = (value) =>
 
 function lettering(value, x, y, size, options = {}) {
   const { color = ink, family = 'sketch', weight = 500, anchor = 'start' } = options;
-  return `<text x="${x}" y="${y}" font-family="${fonts[family].family}, ${family === 'sans' ? 'sans-serif' : 'cursive'}" font-size="${size}" font-weight="${weight}" text-anchor="${anchor}" fill="${color}">${escape(value)}</text>`;
-}
-
-function fontDefinitions(names) {
-  if (!names.length) return '';
-  return `<style>${names
-    .map(
-      (name) =>
-        `@font-face { font-family: '${fonts[name].family}'; font-style: normal; font-weight: 100 1000; src: url(data:font/woff2;base64,${fonts[name].base64}) format('woff2'); }`,
-    )
-    .join('\n')}</style>`;
+  const variants = vectorFonts[family];
+  const closestWeight = Object.keys(variants).reduce((closest, next) =>
+    Math.abs(Number(next) - weight) < Math.abs(Number(closest) - weight) ? next : closest,
+  );
+  const font = variants[closestWeight];
+  let advance = 0;
+  const paths = [...value].map((character, index) => {
+    const glyph = font.glyphs[character];
+    if (!glyph) throw new Error(`Missing ${family} glyph: ${character}`);
+    if (index) advance += font.kerning[value[index - 1] + character] ?? 0;
+    const path = glyph.path ? `<path transform="translate(${advance} 0)" d="${glyph.path}"/>` : '';
+    advance += glyph.advance;
+    return path;
+  });
+  const scale = size / font.units;
+  const start = x - (anchor === 'middle' ? (advance * scale) / 2 : 0);
+  return `<g role="img" aria-label="${escape(value)}" transform="translate(${start} ${y}) scale(${scale} ${-scale})" fill="${color}">${paths.join('')}</g>`;
 }
 
 const assets = [];
-async function save(name, width, height, title, description, definitions, content, usedFonts = []) {
+async function save(name, width, height, title, description, definitions, content) {
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" role="img" aria-labelledby="${name}-title ${name}-description">
   <title id="${name}-title">${escape(title)}</title>
   <desc id="${name}-description">${escape(description)}</desc>
   <defs>
-    ${fontDefinitions(usedFonts)}
     ${definitions}
   </defs>
   ${content}
@@ -195,7 +199,6 @@ await save(
   'Teclado y trackpad vectoriales. Comparte tamaño con la tapa para usarlos como capas en la animación.',
   `${laptopDefinitions}<linearGradient id="key-fill" x2="0" y2="1"><stop stop-color="#22262d"/><stop offset="1" stop-color="#080b10"/></linearGradient><pattern id="speaker-holes" width="4" height="4" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="0.6" fill="#272e39" opacity="0.5"/></pattern>`,
   `<g filter="url(#laptop-shadow)">${laptopEdge}<path d="${lidOutline}" fill="url(#laptop-metal)" stroke="#c1c6cf" stroke-width="1.3"/><path d="${lidOutline}" fill="url(#laptop-light)"/><rect x="106" y="32" width="548" height="16" rx="7" fill="#1a202a"/><rect x="82" y="55" width="598" height="213" rx="10" fill="#313742"/>${keyboard}${bottomRow.map(([label, x, width]) => key(label, x, 232, width)).join('')}<rect x="56" y="68" width="15" height="180" rx="4" fill="url(#speaker-holes)"/><rect x="690" y="68" width="15" height="180" rx="4" fill="url(#speaker-holes)"/><rect x="258" y="286" width="242" height="118" rx="7" fill="#7c8390" fill-opacity="0.38" stroke="#4d5665" stroke-width="1.2"/><path d="M262 288h234" stroke="#c1c5cd" stroke-opacity="0.5"/></g>`,
-  ['sans'],
 );
 
 await save(
@@ -206,7 +209,6 @@ await save(
   'Marco oscuro con pantalla clara. Capa vectorial para el reverso de la tapa durante la apertura.',
   `<linearGradient id="screen-paper" x2="1" y2="1"><stop stop-color="#fffdf9"/><stop offset="1" stop-color="#f2f0ea"/></linearGradient><linearGradient id="screen-frame" x2="1" y2="1"><stop stop-color="#343a46"/><stop offset="1" stop-color="#101722"/></linearGradient>`,
   `<path d="${lidOutline}" fill="url(#screen-frame)"/><path d="M76 56H674l32 334H48Z" fill="url(#screen-paper)"/><circle cx="378" cy="41" r="3" fill="#050c15"/><circle cx="378" cy="41" r="1" fill="#506179"/>${mf(84, 77, 50)}${lettering('Proyectos.', 100, 190, 56, { family: 'sans', weight: 750, color: '#112332' })}<rect x="101" y="218" width="163" height="125" rx="9" fill="#dcebf0"/><rect x="290" y="218" width="163" height="125" rx="9" fill="#e8eee4"/><rect x="479" y="218" width="163" height="125" rx="9" fill="#eee4de"/><path d="M101 199h543" stroke="#b2cbd5" stroke-width="1.2"/>`,
-  ['sans'],
 );
 
 // Notebook: both files share exactly the same drawing, with or without writing.
@@ -276,7 +278,6 @@ for (const [name, writing] of [
       : 'Libreta cuadriculada con espiral metálica, sin contenido, para escribir sobre ella en HTML.',
     notebookDefinitions,
     `<g transform="rotate(9 260 310)" filter="url(#notebook-shadow)">${notebookPaper}${writing}${rings}</g>`,
-    writing ? ['sketch'] : [],
   );
 }
 
@@ -325,7 +326,6 @@ for (const [name, writing] of [
     'Carpeta de papel kraft con documentos, respaldo azul y clip metálico. Todas las capas son vectoriales.',
     folderDefinitions,
     `<g transform="rotate(-12 235 310)" filter="url(#folder-shadow)">${folderDrawing}${writing}</g>`,
-    writing ? ['sketch'] : [],
   );
 }
 
@@ -368,7 +368,6 @@ for (const [name, writing] of [
     'Teléfono negro con pantalla blanca, marco metálico y cámara. Fondo transparente y piezas vectoriales.',
     phoneDefinitions,
     `<g transform="rotate(-16 175 255)" filter="url(#phone-shadow)">${phoneDrawing}${writing}</g>`,
-    writing ? ['sketch', 'sans'] : [],
   );
 }
 
@@ -380,7 +379,6 @@ await save(
   'Anotación manuscrita azul con flecha curva para señalar el portátil.',
   '',
   `${lettering('Explora', 123, 48, 38, { color: blue })}${lettering('mis proyectos', 98, 91, 38, { color: blue })}<g fill="none" stroke="${blue}" stroke-linecap="round" stroke-linejoin="round"><path d="M281 109 121 122" stroke-width="1.6"/><path d="M122 78C70 96 49 133 32 183m-5-30 5 31 29-11" stroke-width="3.3"/><path d="m5 135 8 10m14-32 1 13m23-29-5 10" stroke-width="3"/></g>`,
-  ['sketch'],
 );
 await save(
   'saludo',
@@ -390,7 +388,6 @@ await save(
   'Saludo manuscrito con flecha, sobre fondo transparente.',
   '',
   `${lettering('Hola, soy', 12, 60, 49, { color: blue })}<path d="m201 44 82-15m-13-5 13 5-9 10" fill="none" stroke="${blue}" stroke-width="2.5" stroke-linecap="round"/>`,
-  ['sketch'],
 );
 await save(
   'descripcion',
@@ -400,7 +397,6 @@ await save(
   'Construyo aplicaciones web robustas y de utilidad, de la interfaz a la lógica.',
   '',
   `${lettering('Construyo aplicaciones web robustas', 290, 34, 28, { family: 'sans', color: '#3b434b', anchor: 'middle' })}${lettering('y de utilidad, de la interfaz a la lógica.', 290, 73, 28, { family: 'sans', color: '#3b434b', anchor: 'middle' })}`,
-  ['sans'],
 );
 await save(
   'navegacion',
@@ -410,7 +406,6 @@ await save(
   'Monograma MF y etiquetas Inicio, Proyectos, CV y Contacto. Este dibujo no sustituye los enlaces accesibles de la web.',
   '',
   `${mf(10, 6, 60, '#162238')}${lettering('Inicio', 422, 47, 23, { family: 'sans', color: blue, weight: 600 })}${lettering('Proyectos', 529, 47, 23, { family: 'sans', color: '#132c53' })}${lettering('CV', 687, 47, 23, { family: 'sans', color: '#132c53' })}${lettering('Contacto', 775, 47, 23, { family: 'sans', color: '#132c53' })}<path d="M423 59h54" stroke="${blue}" stroke-width="2"/>`,
-  ['sans'],
 );
 
 await writeFile(join(output, 'manifest.json'), `${JSON.stringify(assets, null, 2)}\n`);
