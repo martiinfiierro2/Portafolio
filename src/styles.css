@@ -97,9 +97,55 @@ a {
   outline-offset: 5px;
 }
 
+.laptop {
+  position: absolute;
+  left: 50%;
+  bottom: 5vh;
+  transform: translateX(-50%);
+
+  display: block;
+  width: 45vw;
+  max-width: 800px;
+  height: auto;
+}
+
+.notebook {
+  position: absolute;
+  bottom: 5vh;
+  transform: translateX(10%);
+
+  display: block;
+  width: 22vw;
+  max-width: 600px;
+  height: auto;
+}
+
+.folder {
+  position: absolute;
+  top: 20vh;
+  right: 6%;
+  transform: translateY(85%);
+
+  display: block;
+  width: 14vw;
+  max-width: 400px;
+  height: auto;
+}
+
+.phone {
+  position: absolute;
+  top: 20vh;
+  right: 12%;
+
+  display: block;
+  width: 14vw;
+  max-width: 400px;
+  height: auto;
+}
+
 .home-content {
   width: min(1100px, calc(100% - 40px));
-  margin: clamp(65px, 10svh, 125px) auto 0;
+  margin: clamp(35px, 0svh, 125px) 0 ;
   text-align: center;
 }
 
@@ -113,6 +159,13 @@ a {
 
 .home-content h1 span {
   color: #009ed3;
+}
+
+.home-role {
+  margin: 12px 0 0;
+  font-size: clamp(16px, 1.8vw, 28px);
+  font-weight: 650;
+  line-height: 1.3;
 }
 
 @media (max-width: 600px) {

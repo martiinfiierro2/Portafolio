@@ -3,7 +3,7 @@ const sections = [
   { id: 'proyectos', label: 'Proyectos', available: false },
   { id: 'cv', label: 'CV', available: false },
   { id: 'contacto', label: 'Contacto', available: false },
-];
+]; 
 
 export default function Navigation() {
   return (
