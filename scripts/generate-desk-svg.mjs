@@ -281,37 +281,79 @@ for (const [name, writing] of [
   );
 }
 
+const folderCover =
+  'M62 111C137 109 239 112 326 110Q340 110 341 123L350 541Q351 557 333 560L73 565Q55 565 54 550L49 128Q49 112 62 111Z';
 const folderDefinitions = `
-  <linearGradient id="folder-blue" x2="1" y2="1"><stop stop-color="#3c87b6"/><stop offset="1" stop-color="#075786"/></linearGradient>
-  <linearGradient id="folder-paper" x2="1" y2="1"><stop stop-color="#f4d3a3"/><stop offset="0.45" stop-color="#e6bf8e"/><stop offset="1" stop-color="#cf9e69"/></linearGradient>
-  <linearGradient id="folder-flap" x2="0.8" y2="1"><stop stop-color="#e9c997"/><stop offset="1" stop-color="#c69664"/></linearGradient>
-  <linearGradient id="folder-clip" x2="1" y2="0"><stop stop-color="#242923"/><stop offset="0.2" stop-color="#d0c9ac"/><stop offset="0.42" stop-color="#666450"/><stop offset="0.7" stop-color="#f2ead1"/><stop offset="1" stop-color="#44453b"/></linearGradient>
-  ${texture('folder-grain', 0.12, 11)}
-  ${shadow('folder-shadow', 0.26, 7, 9)}
+  <linearGradient id="folder-blue" x1="0" y1="0" x2="1" y2="0.8"><stop stop-color="#428abd"/><stop offset="0.64" stop-color="#12689f"/><stop offset="1" stop-color="#074572"/></linearGradient>
+  <linearGradient id="folder-back" x2="0.8" y2="1"><stop stop-color="#f1d3a5"/><stop offset="0.55" stop-color="#dab27d"/><stop offset="1" stop-color="#b98954"/></linearGradient>
+  <linearGradient id="folder-paper" x1="0.1" y1="0" x2="0.85" y2="1"><stop stop-color="#f8dcb0"/><stop offset="0.34" stop-color="#efd0a0"/><stop offset="0.7" stop-color="#e8c393"/><stop offset="1" stop-color="#dbae7a"/></linearGradient>
+  <radialGradient id="folder-glow" cx="0.1" cy="0.08" r="0.9"><stop stop-color="#fff9e8" stop-opacity="0.34"/><stop offset="0.65" stop-color="#fff9e8" stop-opacity="0"/><stop offset="1" stop-color="#95632c" stop-opacity="0.08"/></radialGradient>
+  <linearGradient id="folder-edge" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f5d4a3"/><stop offset="0.24" stop-color="#8b602f"/><stop offset="0.48" stop-color="#bd8c55"/><stop offset="0.72" stop-color="#744c26"/><stop offset="1" stop-color="#d4a66e"/></linearGradient>
+  <linearGradient id="folder-fold" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#f9deba"/><stop offset="0.24" stop-color="#e7be8c"/><stop offset="0.5" stop-color="#a47743"/><stop offset="0.7" stop-color="#e2b984"/><stop offset="1" stop-color="#f1d1a5"/></linearGradient>
+  <linearGradient id="folder-window-shadow" x1="0.03" y1="0" x2="0.98" y2="0.62"><stop stop-color="#6d593e" stop-opacity="0"/><stop offset="0.21" stop-color="#6d593e" stop-opacity="0"/><stop offset="0.33" stop-color="#6d593e" stop-opacity="0.13"/><stop offset="0.43" stop-color="#6d593e" stop-opacity="0.03"/><stop offset="0.62" stop-color="#6d593e" stop-opacity="0"/><stop offset="0.74" stop-color="#6d593e" stop-opacity="0.14"/><stop offset="0.91" stop-color="#6d593e" stop-opacity="0"/></linearGradient>
+  <linearGradient id="folder-clip" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#282b27"/><stop offset="0.17" stop-color="#dddace"/><stop offset="0.36" stop-color="#73766c"/><stop offset="0.57" stop-color="#f7f3df"/><stop offset="0.76" stop-color="#9a9a89"/><stop offset="1" stop-color="#30332f"/></linearGradient>
+  <linearGradient id="folder-documents" x2="0.5" y2="1"><stop stop-color="#fffdf8"/><stop offset="1" stop-color="#e9dfcd"/></linearGradient>
+  <clipPath id="folder-cover-clip"><path d="${folderCover}"/></clipPath>
+  <filter id="folder-grain" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+    <feTurbulence type="fractalNoise" baseFrequency="0.82" numOctaves="3" seed="11" stitchTiles="stitch" result="fibres"/>
+    <feColorMatrix in="fibres" type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="linear" slope="0.19"/></feComponentTransfer>
+    <feComposite in2="SourceGraphic" operator="in"/>
+    <feBlend in="SourceGraphic" mode="soft-light" result="fine-paper"/>
+    <feTurbulence type="fractalNoise" baseFrequency="0.048" numOctaves="2" seed="6" stitchTiles="stitch"/>
+    <feColorMatrix type="saturate" values="0"/>
+    <feComponentTransfer><feFuncA type="linear" slope="0.075"/></feComponentTransfer>
+    <feComposite in2="SourceGraphic" operator="in"/>
+    <feBlend in="fine-paper" mode="multiply"/>
+  </filter>
+  <filter id="folder-layer-shadow" x="-15%" y="-15%" width="140%" height="145%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="4" stdDeviation="2.5" flood-color="#684323" flood-opacity="0.32"/></filter>
+  <filter id="folder-clip-shadow" x="-70%" y="-20%" width="260%" height="155%" color-interpolation-filters="sRGB"><feDropShadow dx="2" dy="3" stdDeviation="1.4" flood-color="#2d2418" flood-opacity="0.5"/></filter>
+  ${shadow('folder-shadow', 0.29, 7, 9)}
 `;
 const folderDrawing = `
-  <path d="M110 57q0-15 15-15h240q15 0 15 15v464q0 14-15 14H110Z" fill="url(#folder-blue)" stroke="#145f82" stroke-width="1.3"/>
-  <path d="M65 68h262q12 0 12 12v28l38 13v426q0 16-18 16H65Z" fill="#b38a5c"/>
-  <path d="M59 73h267q13 0 13 13v467q0 14-15 14H59Z" fill="#e9d2aa"/>
-  <path d="M64 94h284v461H64Z" fill="#fff9ee"/>
-  <path d="M64 544h285M64 547h285M64 550h285" stroke="#cfc4ad" stroke-width="0.8"/>
-  <path d="M72 95h260q15 0 15 15v49l21 8v382q0 15-16 15H72q-17 0-17-17V112q0-17 17-17Z" fill="url(#folder-flap)" stroke="#ba8b5b" stroke-width="0.7"/>
-  <path d="M67 114h254q16 0 16 16v413q0 16-16 16H67q-16 0-16-16V130q0-16 16-16Z" fill="url(#folder-paper)" stroke="#bf986e" stroke-width="1" filter="url(#folder-grain)"/>
-  <path d="M64 119h258q10 0 10 12v408q0 15-16 15H65" fill="none" stroke="#fff0d5" stroke-opacity="0.6" stroke-width="1"/>
-  <path d="M78 115v439" stroke="#c19d72" stroke-width="0.8" opacity="0.42"/>
-  <path d="M66 559h253" stroke="#8c674a" stroke-width="1.5" opacity="0.55"/>
-  <g id="paperclip">
-    <path d="M256 125V83c0-17 22-17 22 0v48c0 12-18 12-18 0V91c0-9 10-9 10 0v36" fill="none" stroke="#402f1b" stroke-opacity="0.35" stroke-width="5" transform="translate(2 3)"/>
-    <path d="M256 125V83c0-17 22-17 22 0v48c0 12-18 12-18 0V91c0-9 10-9 10 0v36" fill="none" stroke="url(#folder-clip)" stroke-width="4" stroke-linecap="round"/>
-    <path d="M257 124V84q0-9 9-10" fill="none" stroke="#fff9dd" stroke-width="0.8" opacity="0.85"/>
+  <g id="blue-backing">
+    <path d="M98 63Q98 49 113 49H343Q359 49 359 65L375 535Q375 549 358 551L112 557Z" fill="url(#folder-blue)" stroke="#095180" stroke-width="1.2"/>
+    <path d="M349 58 369 534Q369 546 357 548" fill="none" stroke="#75aed0" stroke-width="1.2" stroke-opacity="0.55"/>
+  </g>
+  <g id="folder-back" filter="url(#folder-layer-shadow)">
+    <path d="M66 102V76Q66 62 80 62H172Q184 62 190 70L204 85H328Q343 85 344 101L361 538Q362 559 341 563L77 572Q58 572 58 552Z" fill="url(#folder-back)" stroke="#c49663" stroke-width="0.8"/>
+    <path d="M68 102V77Q68 64 81 64H174Q183 64 189 72L204 88H329" fill="none" stroke="#fff1d5" stroke-width="1.3" opacity="0.7"/>
+  </g>
+  <g id="documents">
+    <path d="M78 91 319 84 338 543 76 552Z" fill="#e4d5ba" stroke="#b9a586" stroke-width="0.7"/>
+    <path d="M74 96 319 90 337 544 72 553Z" fill="#f4ecdd" stroke="#d2c2a4" stroke-width="0.6"/>
+    <path d="M72 101 317 96 334 545 69 555Z" fill="url(#folder-documents)" stroke="#e3d8c5" stroke-width="0.5"/>
+    <path d="m75 98 242-5M73 104l244-5" stroke="#fffdf8" stroke-width="1.3"/>
+  </g>
+  <path d="M70 115 327 109Q344 109 345 127L355 542Q356 561 334 565L76 572Q54 572 54 550Z" fill="url(#folder-edge)"/>
+  <g id="kraft-front" filter="url(#folder-layer-shadow)">
+    <path d="${folderCover}" fill="url(#folder-paper)" filter="url(#folder-grain)"/>
+    <path d="${folderCover}" fill="url(#folder-glow)"/>
+    <path d="${folderCover}" fill="url(#folder-window-shadow)"/>
+    <path d="M62 111C137 109 239 112 326 110Q340 110 341 123L350 541" fill="none" stroke="#fff0d3" stroke-width="1.3" opacity="0.85"/>
+    <path d="M62 113C135 111 239 114 325 112" fill="none" stroke="#c99b65" stroke-width="0.45" opacity="0.4"/>
+    <path d="M54 135 59 538Q59 556 72 558" fill="none" stroke="#fce5c5" stroke-width="1.4" opacity="0.6"/>
+    <path d="M73 565 331 560Q349 557 350 541" fill="none" stroke="#8d6031" stroke-width="1.4" opacity="0.65"/>
+  </g>
+  <g id="folded-bottom">
+    <path d="M57 541Q55 555 68 559L334 556Q345 555 350 545L350 553Q342 565 325 568L72 576Q55 574 53 560Z" fill="url(#folder-edge)"/>
+    <path d="M67 559q-11-2-9-15l3-416" fill="none" stroke="url(#folder-fold)" stroke-width="6"/>
+    <path d="M65 562 331 558" fill="none" stroke="#4f361e" stroke-width="2.1" opacity="0.78"/>
+    <path d="M73 568 325 563" fill="none" stroke="#f5dab1" stroke-width="1" opacity="0.9"/>
+    <path d="M73 571 324 566" fill="none" stroke="#b78650" stroke-width="0.8"/>
+  </g>
+  <g id="paperclip" fill="none" stroke-linecap="round" stroke-linejoin="round" filter="url(#folder-clip-shadow)">
+    <path d="M273 136V80c0-16 19-16 19 0v58c0 14-16 14-16 0V88c0-9 10-9 10 0v45" stroke="#393b33" stroke-width="4.3"/>
+    <path d="M273 136V80c0-16 19-16 19 0v58c0 14-16 14-16 0V88c0-9 10-9 10 0v45" stroke="url(#folder-clip)" stroke-width="3"/>
+    <path d="M273 132V80q0-11 9-12M277 89v43" stroke="#fffae7" stroke-width="0.65" opacity="0.9"/>
   </g>
 `;
 const folderWriting = `
-  <g id="folder-writing">
-    ${lettering('CV', 104, 304, 77, { weight: 600 })}
-    <path d="M105 323q55-2 111-1" fill="none" stroke="${ink}" stroke-width="1.5"/>
-    ${lettering('Mi experiencia', 102, 382, 33)}
-    ${lettering('y más sobre mí.', 102, 418, 33)}
+  <g id="folder-writing" clip-path="url(#folder-cover-clip)">
+    ${lettering('CV', 95, 302, 79, { family: 'sans', weight: 750, color: '#074d76' })}
+    <path d="M96 324q60-2 121-1" fill="none" stroke="#074d76" stroke-width="1.5"/>
+    ${lettering('Mi experiencia', 95, 382, 33, { weight: 550, color: '#074d76' })}
+    ${lettering('y más sobre mí.', 95, 419, 33, { weight: 550, color: '#074d76' })}
   </g>
 `;
 for (const [name, writing] of [
