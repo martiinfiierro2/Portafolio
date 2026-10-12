@@ -1,5 +1,5 @@
 .desk-scene {
-  --desk-blue: #007bab;
+  --desk-blue: #0097cc;
   --desk-ink: #141d32;
   position: relative;
   min-height: 100svh;
@@ -39,11 +39,11 @@
 }
 .desk-workspace > .desk-header {
   position: absolute;
-  top: 3%;
-  right: 3%;
-  width: min(44vw, 86svh);
+  top: 1%;
+  left: 23.5%;
+  right: 18%;
   padding: 0;
-  min-height: 0;
+  min-height: 54px;
 }
 
 .site-brand {
@@ -84,57 +84,27 @@
   height: 2px;
   background: currentColor;
 }
+.desk-header .site-brand {
+  width: 60px;
+}
 .desk-header .site-menu {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(12px, 1.3cqw, 24px);
-}
-.note-home {
-  --note-color: #bbd8f5;
-  --note-angle: -4deg;
-}
-.note-projects {
-  --note-color: #ffc2cd;
-  --note-angle: -3deg;
-}
-.note-cv {
-  --note-color: #f7eab7;
-  --note-angle: -4deg;
-}
-.note-contact {
-  --note-color: #c3e9d3;
-  --note-angle: -3deg;
+  gap: clamp(24px, 2.1cqw, 36px);
 }
 .desk-header .site-menu button {
-  aspect-ratio: 1.28;
-  min-height: 0;
-  padding: 18px 12px;
-  font-family: var(--sketch-font);
-  font-size: clamp(19px, 1.5cqw, 28px);
-  font-weight: 500;
-  rotate: var(--note-angle);
-  border-radius: 1px 2px 4px 1px;
-  background: linear-gradient(165deg, #ffffff30, transparent 70%), var(--note-color);
-  box-shadow:
-    0 2px 1px #ffffff30 inset,
-    3px 9px 12px #49372833;
-  transition:
-    translate 0.2s,
-    box-shadow 0.2s;
+  font-family: var(--font);
+  font-size: clamp(14px, 1.16cqw, 20px);
+  background: transparent;
+  padding: 12px 0;
+  border-radius: 0;
+  box-shadow: none;
 }
-.desk-header .site-menu button:hover,
-.desk-header .site-menu button:focus-visible {
-  translate: 0 -3px;
-  box-shadow:
-    0 2px 1px #ffffff30 inset,
-    3px 12px 15px #4937283d;
+.desk-header .site-menu button[aria-current] {
+  color: var(--desk-blue);
 }
 .desk-header .site-menu button[aria-current]::after {
-  bottom: 24%;
-  left: 28%;
-  right: 28%;
-  rotate: -2deg;
+  left: 0;
+  right: 0;
+  bottom: 5px;
 }
 
 .site-menu button:hover {
@@ -143,26 +113,27 @@
 .desk-introduction {
   position: absolute;
   z-index: 2;
-  left: 29%;
-  top: 16%;
-  width: 42%;
+  left: 26%;
+  top: 9.5%;
+  width: 43%;
   text-align: center;
   color: #080e22;
 }
 .desk-eyebrow {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   gap: 12px;
+  padding-left: 6%;
   font-family: var(--sketch-font);
-  font-size: clamp(22px, 2cqw, 33px);
+  font-size: clamp(27px, 2.85cqw, 48px);
   font-weight: 550;
   line-height: 1.1;
-  color: #134274;
+  color: var(--desk-blue);
 }
 .desk-eyebrow svg {
   width: 4cqw;
-  height: 1.2cqw;
+  height: 1.5cqw;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
@@ -170,29 +141,29 @@
 }
 .desk-introduction h1 {
   white-space: nowrap;
-  font-size: clamp(44px, 5.6cqw, 96px);
+  font-size: clamp(48px, 6.2cqw, 110px);
   font-weight: 850;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.045em;
   line-height: 1.02;
   margin: 7px 0 -2px;
 }
 .desk-introduction h1 span {
-  color: #0d528e;
+  color: #009ed3;
 }
 .desk-role {
-  font-size: clamp(15px, 1.6cqw, 27px);
+  font-size: clamp(16px, 1.8cqw, 30px);
   font-weight: 750;
   letter-spacing: -0.035em;
   line-height: 1.25;
 }
 .desk-description {
   color: #3b434b;
-  font-size: clamp(12px, 1.25cqw, 21px);
+  font-size: clamp(13px, 1.3cqw, 23px);
   line-height: 1.4;
   margin-top: 9px;
 }
 .desk-object-art {
-  display: block;
+  display: none;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -204,50 +175,73 @@
 .desk-notebook {
   position: absolute;
   z-index: 2;
-  right: 3%;
-  top: 27%;
-  width: min(20vw, 32svh);
-  aspect-ratio: 640 / 853;
+  right: 1.6%;
+  top: 14.1%;
+  width: min(25.2vw, 45svh);
+  aspect-ratio: 420 / 485;
   container-type: inline-size;
 }
 .notebook-content {
   position: absolute;
-  inset: 14% 13% 14% 24%;
-  rotate: 8deg;
+  inset: 10% 8% 11% 25%;
+  rotate: 10deg;
   font-family: var(--sketch-font);
-  color: #183b71;
+  color: #23467c;
 }
 .notebook-content h2 {
-  font-size: clamp(19px, 9cqw, 30px);
+  font-size: clamp(24px, 10cqw, 40px);
   font-weight: 500;
-  line-height: 1.15;
+  line-height: 1.05;
   padding-bottom: 4px;
-  margin-bottom: 12px;
+  margin-bottom: clamp(8px, 2.5cqw, 12px);
   border-bottom: 1px solid currentColor;
+}
+.notebook-groups {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 2cqw, 9px);
+}
+.notebook-group h3 {
+  font-size: clamp(19px, 6.8cqw, 27px);
+  font-weight: 550;
+  line-height: 1.1;
 }
 .notebook-technologies {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: clamp(6px, 2.8cqw, 10px);
-  margin-left: 3%;
+  display: grid;
+  gap: clamp(6px, 2cqw, 9px) 12px;
+  margin-top: 5px;
 }
 .notebook-technologies li {
-  font-size: clamp(16px, 8cqw, 25px);
-  font-weight: 450;
-  line-height: 1.15;
+  display: flex;
+  align-items: center;
+  gap: clamp(7px, 2.5cqw, 11px);
+  font-size: clamp(18px, 6.4cqw, 26px);
+  font-weight: 550;
+  line-height: 1.1;
   white-space: nowrap;
+}
+.technology-mark {
+  width: clamp(22px, 7.8cqw, 32px);
+  height: clamp(22px, 7.8cqw, 32px);
+  flex-shrink: 0;
+}
+.notebook-technologies[data-category='backend'] {
+  grid-template-columns: 1fr 1fr;
+}
+.notebook-technologies[data-category='backend'] li:first-child {
+  grid-column: 1 / -1;
 }
 
 .laptop-portal {
   position: absolute;
   z-index: 4;
   left: 50%;
-  bottom: 7%;
-  width: min(44.2vw, 82svh);
+  bottom: 9.1%;
+  width: min(41.5vw, 82svh);
   transform: translateX(-50%);
-  aspect-ratio: 1.86;
+  aspect-ratio: 700 / 420;
   perspective: 1100px;
 }
 .explore-button {
@@ -266,15 +260,27 @@
 .explore-button > .desk-object-art {
   display: none;
 }
-.laptop-source-art {
+.reference-object-art {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  object-fit: contain;
   pointer-events: none;
   filter: drop-shadow(0 12px 8px #32251833);
 }
-.laptop-portal.is-opening .laptop-source-art {
+.reference-object-art[data-kind='folder'] {
+  height: auto;
+  top: -7%;
+}
+.reference-object-art[data-kind='phone'] {
+  width: 120%;
+  height: 120%;
+  left: -10%;
+  top: -10%;
+  rotate: -7deg;
+}
+.laptop-portal.is-opening .reference-object-art {
   opacity: 0;
 }
 .laptop-lid {
@@ -294,8 +300,8 @@
   border-radius: inherit;
 }
 .laptop-monogram {
-  width: 4.8cqw;
-  max-width: 85px;
+  width: 6.4cqw;
+  max-width: 112px;
   color: #262a2e;
   filter: drop-shadow(0 1px 0 #ffffff30);
   transition: color 0.2s;
@@ -333,10 +339,11 @@
 }
 .laptop-note {
   position: absolute;
-  right: -10%;
-  top: -31%;
+  right: -2%;
+  top: -34%;
   font-family: var(--sketch-font);
-  font-size: clamp(19px, 1.65cqw, 30px);
+  font-size: clamp(25px, 2.65cqw, 44px);
+  text-align: center;
   font-weight: 500;
   line-height: 1;
   rotate: -12deg;
@@ -353,9 +360,9 @@
 .laptop-note svg {
   position: absolute;
   top: 33%;
-  right: 95%;
-  width: 9cqw;
-  height: 5cqw;
+  right: 85%;
+  width: 8.4cqw;
+  height: 6.3cqw;
   fill: none;
   stroke: currentColor;
   stroke-width: 4;
@@ -435,22 +442,22 @@
 }
 .desk-access-cv {
   z-index: 2;
-  left: 3%;
-  bottom: 9%;
-  width: min(24vw, 43svh);
-  aspect-ratio: 640 / 853;
+  left: 2.4%;
+  bottom: 10.9%;
+  width: min(24.5vw, 49svh);
+  aspect-ratio: 410 / 488;
   container-type: inline-size;
   color: #123f66;
 }
 .folder-cover-copy {
   position: absolute;
-  inset: 35% 18% auto 24%;
-  rotate: -10deg;
+  inset: 31% 15% auto 24%;
+  rotate: -12deg;
   text-align: left;
   font-family: var(--sketch-font);
 }
 .folder-cover-title {
-  font: 550 clamp(27px, 22cqw, 62px) var(--sketch-font);
+  font: 750 clamp(34px, 16.5cqw, 68px) var(--font);
   letter-spacing: -0.04em;
 }
 .folder-cover-title::after {
@@ -462,23 +469,23 @@
 }
 .folder-cover-note {
   display: block;
-  font-size: clamp(14px, 7cqw, 23px);
+  font-size: clamp(17px, 7.2cqw, 29px);
   font-weight: 550;
   line-height: 1.2;
 }
 .desk-access-contact {
   z-index: 3;
-  right: 4%;
-  bottom: 4%;
-  width: min(16vw, 26svh);
-  aspect-ratio: 480 / 720;
+  right: 5.4%;
+  bottom: 2%;
+  width: min(15.3vw, 30svh);
+  aspect-ratio: 260 / 340;
   container-type: inline-size;
   color: #161f43;
 }
 .phone-screen-content {
   position: absolute;
-  inset: 20% 23%;
-  rotate: -10deg;
+  inset: 24% 15% 14%;
+  rotate: -17deg;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -486,17 +493,17 @@
   gap: 8px;
 }
 .phone-screen-content > svg:first-child {
-  width: 18cqw;
-  height: 18cqw;
+  width: 15.5cqw;
+  height: 15.5cqw;
   stroke-width: 1.6;
 }
 .phone-screen-title {
-  font-size: clamp(12px, 9cqw, 22px);
+  font-size: clamp(13px, 8.4cqw, 23px);
   font-weight: 800;
 }
 .phone-screen-message {
-  font-family: var(--sketch-font);
-  font-size: clamp(13px, 10cqw, 23px);
+  font-family: var(--font);
+  font-size: clamp(11px, 6.5cqw, 17px);
 }
 .phone-screen-arrow {
   width: 12cqw;
@@ -506,22 +513,39 @@
   color: var(--desk-blue);
 }
 
-@media (max-width: 1400px) and (min-width: 901px) {
+@media (max-width: 1200px) and (min-width: 901px) {
   .desk-workspace > .desk-header {
-    width: 48vw;
-  }
-  .desk-header .site-menu button {
-    font-size: clamp(16px, 1.55cqw, 22px);
+    left: 20%;
+    right: 8%;
   }
   .desk-introduction {
-    top: 19%;
+    top: 14%;
   }
   .desk-introduction h1 {
-    font-size: clamp(44px, 5.1cqw, 72px);
+    font-size: clamp(48px, 5.9cqw, 72px);
+  }
+  .desk-notebook {
+    width: min(29vw, 44svh);
+    right: 1%;
+    top: 17%;
   }
   .laptop-note {
-    right: -9%;
-    top: -33%;
+    right: 8%;
+    top: -30%;
+    font-size: 23px;
+  }
+  .notebook-groups {
+    gap: 6px;
+  }
+  .notebook-technologies {
+    margin-top: 5px;
+  }
+}
+@media (min-width: 901px) and (min-aspect-ratio: 19/10) {
+  .laptop-note {
+    right: -18%;
+    top: -18%;
+    font-size: clamp(25px, 2.3cqw, 42px);
   }
 }
 .laptop-portal.is-opening .desk-object-art {
@@ -529,6 +553,7 @@
 }
 @media (max-width: 900px) {
   .desk-scene {
+    --desk-blue: #006a91;
     background: #efd2ac;
   }
   .desk-stage {
@@ -540,7 +565,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
-    padding: 115px 20px 30px;
+    padding: 92px 20px 30px;
   }
   .desk-photograph {
     display: none;
@@ -549,38 +574,25 @@
     display: block;
   }
   .desk-workspace > .desk-header {
-    left: 14px;
-    right: 14px;
-    top: 20px;
+    left: 20px;
+    right: 20px;
+    top: 8px;
+    min-height: 64px;
     width: auto;
-    min-height: 0;
+  }
+  .desk-header .site-brand {
+    width: 38px;
   }
   .desk-header .site-menu {
-    gap: 8px;
+    gap: clamp(12px, 2.5cqw, 24px);
   }
   .desk-header .site-menu button {
-    font-size: clamp(19px, 3.3cqw, 27px);
-    padding: 15px 3px;
-    border-radius: 1px;
-    box-shadow: 3px 7px 10px #40352130;
+    font-size: 12px;
+    min-height: 44px;
+    padding: 10px 0;
   }
-  .note-home {
-    --note-color: #bbd8f5;
-  }
-  .note-projects {
-    --note-color: #ffc2cd;
-  }
-  .note-cv {
-    --note-color: #f7eab7;
-  }
-  .note-contact {
-    --note-color: #c3e9d3;
-  }
-  .desk-header .site-menu button {
-    background: linear-gradient(160deg, #ffffff30, transparent), var(--note-color);
-  }
-  .desk-header .site-menu button:hover {
-    transform: translateY(-2px);
+  .desk-header .site-menu button[aria-current] {
+    color: #07517b;
   }
   .digital-header {
     min-height: 76px;
@@ -605,6 +617,8 @@
     padding: 16px 0 24px;
   }
   .desk-eyebrow {
+    padding-left: 0;
+    justify-content: center;
     font-size: 29px;
   }
   .desk-eyebrow svg {
@@ -615,6 +629,9 @@
     font-size: clamp(38px, 8.3cqw, 68px);
     white-space: normal;
     margin: 14px 0 10px;
+  }
+  .desk-introduction h1 span {
+    color: #00799f;
   }
   .desk-role {
     font-size: clamp(14px, 3.4cqw, 22px);
@@ -635,20 +652,35 @@
     container-type: inline-size;
   }
   .notebook-content {
-    inset: 13% 13% 12% 24%;
+    inset: 13% 10% 14% 22%;
     rotate: 8deg;
   }
   .notebook-content h2 {
     font-size: clamp(26px, 9cqw, 33px);
-    margin-bottom: 14px;
+    margin-bottom: 12px;
+  }
+  .notebook-group h3 {
+    font-size: clamp(18px, 6cqw, 22px);
   }
   .notebook-technologies {
-    gap: 12px;
-    margin-left: 3%;
+    gap: 7px 8px;
+    margin-top: 6px;
   }
   .notebook-technologies li {
-    font-size: clamp(23px, 8.4cqw, 29px);
-    line-height: 1.12;
+    font-size: clamp(17px, 5.8cqw, 21px);
+  }
+  .notebook-technologies[data-category] [data-technology='react'] span {
+    color: #007699;
+  }
+  .notebook-technologies[data-category] [data-technology='javascript'] span {
+    color: #8d6100;
+  }
+  .notebook-groups {
+    gap: 10px;
+  }
+  .technology-mark {
+    width: clamp(21px, 8cqw, 26px);
+    height: clamp(21px, 8cqw, 26px);
   }
   .laptop-portal {
     position: relative;
@@ -665,7 +697,7 @@
   .laptop-front {
     background: transparent;
   }
-  .laptop-source-art {
+  .reference-object-art {
     display: none;
   }
   .explore-button > .desk-object-art {
@@ -768,7 +800,7 @@
     margin-bottom: 14px;
   }
   .notebook-technologies {
-    gap: 10px;
+    gap: 7px 8px;
   }
   .digital-header .site-menu {
     gap: 12px;

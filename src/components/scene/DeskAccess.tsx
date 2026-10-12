@@ -2,6 +2,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import type { MouseEvent } from 'react';
 import type { PanelKind } from '../../types/portfolio';
 import DeskObjectArt from './DeskObjectArt';
+import ReferenceObjectArt from './ReferenceObjectArt';
 interface Props {
   kind: PanelKind;
   selected: boolean;
@@ -17,6 +18,7 @@ export default function DeskAccess({ kind, selected, onOpen }: Props) {
       onClick={(event) => onOpen(kind, event)}
     >
       <DeskObjectArt kind={contact ? 'phone' : 'folder'} />
+      <ReferenceObjectArt kind={contact ? 'phone' : 'folder'} />
       {contact ? (
         <span className="phone-screen-content">
           <MessageCircle aria-hidden="true" />

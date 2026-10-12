@@ -2,7 +2,7 @@ import type { MouseEvent, RefObject } from 'react';
 import { ArrowUpRight } from 'lucide-react';
 import DeskObjectArt from './DeskObjectArt';
 import LaptopKeyboard from './LaptopKeyboard';
-import LaptopPhotograph from './LaptopPhotograph';
+import ReferenceObjectArt from './ReferenceObjectArt';
 
 interface Props {
   portalRef: RefObject<HTMLDivElement | null>;
@@ -13,9 +13,9 @@ export default function ClosedLaptop({ portalRef, onExplore, opening }: Props) {
   return (
     <div className={`laptop-portal${opening ? ' is-opening' : ''}`} ref={portalRef}>
       <span className="laptop-note" aria-hidden="true">
-        Explora mis
+        Explora
         <br />
-        proyectos
+        mis proyectos
         <svg viewBox="0 0 150 105">
           <path d="M140 3C91 17 52 45 17 96m-2-24 2 25 25-10M2 54l9 9m17-28 1 13m21-21-5 10" />
         </svg>
@@ -29,7 +29,7 @@ export default function ClosedLaptop({ portalRef, onExplore, opening }: Props) {
         onClick={onExplore}
       >
         <DeskObjectArt kind="laptop" />
-        <LaptopPhotograph />
+        <ReferenceObjectArt kind="laptop" />
         <span className="laptop-lid" aria-hidden="true">
           <span className="laptop-front">
             <svg className="laptop-monogram" viewBox="0 0 80 64">

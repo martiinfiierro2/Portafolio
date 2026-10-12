@@ -5,8 +5,8 @@ export default function DeskIntroduction() {
     <article className="desk-introduction" aria-labelledby="desk-title">
       <p className="desk-eyebrow">
         Hola, soy{' '}
-        <svg viewBox="0 0 80 20" aria-hidden="true">
-          <path d="M2 15Q40 0 76 11" />
+        <svg viewBox="0 0 90 25" aria-hidden="true">
+          <path d="M3 19 82 7m-9-4 10 4-7 8" />
         </svg>
       </p>
       <h1 id="desk-title">

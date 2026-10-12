@@ -9,11 +9,11 @@ export const profile: Profile = {
   githubUrl: 'https://github.com/martiinfiierro2',
   cvUrl: null,
   technologies: [
-    { id: 'react', label: 'React', color: '#007bab', category: 'frontend' },
-    { id: 'javascript', label: 'JavaScript', color: '#926000', category: 'frontend' },
+    { id: 'react', label: 'React', color: '#008fbf', category: 'frontend' },
+    { id: 'javascript', label: 'JavaScript', color: '#a87303', category: 'frontend' },
     { id: 'node', label: 'Node.js', color: '#49743b', category: 'backend' },
     { id: 'java', label: 'Java', color: '#bd2427', category: 'backend' },
-    { id: 'python', label: 'Python', color: '#366789', category: 'backend' },
+    { id: 'python', label: 'Python', color: '#126aa2', category: 'backend' },
     { id: 'sql', label: 'SQL', color: '#123c75', category: 'database' },
   ],
 };
