@@ -1,16 +1,38 @@
-# React + Vite
+# Martín Fierro / Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio de ingeniería multimedia y desarrollo full-stack construido con React y Vite. Incluye un catálogo con búsqueda y categorías, fichas individuales de proyectos y demos interactivas locales.
 
-Currently, two official plugins are available:
+## Desarrollo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Usa Node.js 24 (Vite requiere Node >=20.19 o >=22.12) y npm:
 
-## React Compiler
+```bash
+npm ci
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run lint
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Estructura
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/data/projects.js`: contenido de todas las fichas, tecnologías, proceso, capturas y enlaces.
+- `src/components/Projects.jsx`: catálogo y filtros.
+- `src/components/ProjectDetail.jsx`: ficha reutilizable.
+- `src/components/ProjectMedia.jsx`: capturas ampliables.
+- `src/components/demos/`: TaskFlow, Pulse API y Media Lab.
+- `src/hooks/useHashRoute.js`: navegación mediante hash para hosting estático.
+- `src/styles/`: estilos separados por interfaz, catálogo, fichas y demos; `src/index.css` agrupa sus importaciones.
+
+Consulta [cómo añadir proyectos](docs/PROJECTS.md) para crear nuevas fichas sin duplicar componentes. Cada proyecto tiene una dirección propia, por ejemplo `#/proyectos/taskflow`, que se puede abrir directamente o compartir.
+
+## Demos de ejemplo
+
+TaskFlow guarda tareas únicamente en el navegador. Pulse API simula respuestas JSON en memoria. Media Lab genera composiciones con CSS y permite ajustar su presentación. Son ejemplos identificados en la interfaz; no usan un servidor, cuentas ni datos de clientes.
+
+El catálogo se mantiene en el archivo de datos. No incluye un panel de administración remoto. Para añadir una demo propia, enlaza su URL desplegada; para una demo integrada, añade un componente y regístralo en `DemoPage.jsx`.
+
+Los temas respetan la elección guardada en el navegador y las animaciones respetan la preferencia de movimiento reducido. Los enlaces de demo y código se muestran solo cuando están definidos.

@@ -1,0 +1,114 @@
+.about {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 80px;
+  border-top: 1px solid var(--line);
+}
+.about-intro > p:not(.eyebrow) {
+  font-size: 13px;
+  max-width: 480px;
+}
+.about-signature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font:
+    10px Consolas,
+    monospace;
+  color: var(--accent);
+  margin-top: 28px;
+}
+.approach-list {
+  display: grid;
+  gap: 14px;
+  align-content: center;
+}
+.approach-item {
+  display: flex;
+  gap: 16px;
+  padding: 21px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 6px;
+}
+.approach-item > svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.approach-number {
+  font:
+    9px Consolas,
+    monospace;
+  color: var(--muted);
+  padding-top: 6px;
+}
+.approach-item h3 {
+  font-size: 14px;
+  margin-bottom: 7px;
+  letter-spacing: 0;
+}
+.approach-item p {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+.footer {
+  border-top: 1px solid var(--line);
+  background: var(--surface);
+}
+.contact {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 54px;
+}
+.contact h2 {
+  font-size: 30px;
+}
+.contact p:not(.eyebrow) {
+  font-size: 12px;
+  margin-bottom: 0;
+}
+.contact .button {
+  flex-shrink: 0;
+}
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+  padding-block: 24px;
+  color: var(--muted);
+  font:
+    10px Consolas,
+    monospace;
+}
+.footer-bottom .wordmark {
+  font-size: 15px;
+  color: var(--ink);
+}
+.footer-bottom > a:last-child {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.skip-link {
+  position: fixed;
+  left: 20px;
+  top: -80px;
+  padding: 12px;
+  background: var(--accent);
+  color: var(--bg);
+  z-index: 100;
+}
+.skip-link:focus {
+  top: 12px;
+}
+.not-found {
+  padding-block: 100px;
+}
+.not-found p {
+  font-size: 14px;
+}
