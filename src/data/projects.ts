@@ -1,10 +1,14 @@
 import type { Project } from '../types/portfolio';
 // Design samples, not published applications. Replace with documented work.
-const samples = [
+const samples: Pick<
+  Project,
+  'slug' | 'title' | 'category' | 'collection' | 'description' | 'technologies' | 'color'
+>[] = [
   {
     slug: 'monitorizacion',
-    title: 'Plataforma de monitorización distribuida',
+    title: 'Monitorización de nodos',
     category: 'Sistemas · Full-stack',
+    collection: 'data',
     description:
       'Un espacio para visualizar una arquitectura distribuida y entender el estado de sus nodos.',
     technologies: ['Angular', 'Node.js', 'Express', 'MySQL', 'ECharts', 'Leaflet'],
@@ -14,6 +18,7 @@ const samples = [
     slug: 'calendar',
     title: 'Calendar',
     category: 'Producto · Web',
+    collection: 'web',
     description:
       'Organización de comidas, calendario y lista de la compra en una misma experiencia.',
     technologies: ['React', 'Node.js', 'PostgreSQL'],
@@ -23,9 +28,20 @@ const samples = [
     slug: 'api-backend',
     title: 'API / Backend',
     category: 'Ingeniería · API',
+    collection: 'other',
     description: 'La lógica, los datos y las decisiones que dan forma a una aplicación.',
     technologies: ['Node.js', 'SQL'],
     color: '#736483',
+  },
+  {
+    slug: 'frontend',
+    title: 'Aplicación móvil',
+    category: 'Aplicación · Frontend',
+    collection: 'apps',
+    description:
+      'Una propuesta de interfaz adaptable para organizar la información desde cualquier dispositivo.',
+    technologies: ['React', 'CSS'],
+    color: '#9c505b',
   },
 ];
 export const projects: Project[] = samples.map((sample, index) => ({

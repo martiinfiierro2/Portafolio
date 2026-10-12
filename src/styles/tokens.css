@@ -1,9 +1,9 @@
 :root {
   --ink: #171c1f;
   --muted: #60696e;
-  --accent: #396b78;
-  --accent-dark: #254e59;
-  --paper: #fbfaf7;
+  --accent: #0b5b91;
+  --accent-dark: #063f68;
+  --paper: #fbf8f2;
   --line: #deded7;
   --font: 'DM Sans Variable', system-ui, sans-serif;
   --display: 'Space Grotesk Variable', var(--font);

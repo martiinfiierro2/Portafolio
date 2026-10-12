@@ -1,59 +1,61 @@
-import { m, useMotionValue, useReducedMotion, useSpring } from 'framer-motion';
 import type { MouseEvent, RefObject } from 'react';
 import type { PanelKind } from '../../types/portfolio';
 import DeskNotebook from './DeskNotebook';
 import DeskIntroduction from './DeskIntroduction';
 import ClosedLaptop from './ClosedLaptop';
 import DeskAccess from './DeskAccess';
-import { profile } from '../../data/profile';
-
+import SiteHeader from '../navigation/SiteHeader';
 interface Props {
   active: boolean;
+  opening: boolean;
   activePanel: PanelKind | null;
   portalRef: RefObject<HTMLDivElement | null>;
   onExplore: (event: MouseEvent<HTMLElement>) => void;
   onPanel: (kind: PanelKind, event: MouseEvent<HTMLElement>) => void;
 }
-
-export default function DeskScene({ active, activePanel, portalRef, onExplore, onPanel }: Props) {
-  const reduced = useReducedMotion();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const springX = useSpring(x, { stiffness: 90, damping: 25 });
-  const springY = useSpring(y, { stiffness: 90, damping: 25 });
-
+export default function DeskScene({
+  active,
+  opening,
+  activePanel,
+  portalRef,
+  onExplore,
+  onPanel,
+}: Props) {
   return (
     <main
       id="escritorio"
-      className="desk-scene"
+      className={`desk-scene${opening ? ' is-opening' : ''}`}
       aria-labelledby="desk-title"
       inert={!active}
-      onPointerMove={(event) => {
-        if (reduced || event.pointerType !== 'mouse') return;
-        x.set((event.clientX / window.innerWidth - 0.5) * 2);
-        y.set((event.clientY / window.innerHeight - 0.5) * 2);
-      }}
-      onPointerLeave={() => {
-        x.set(0);
-        y.set(0);
-      }}
+      aria-hidden={!active}
     >
-      <m.div className={`desk-stage${active ? '' : ' is-away'}`} style={{ x: springX, y: springY }}>
+      <img className="desk-ambient" src="/desk/cover.webp" alt="" aria-hidden="true" />
+      <div className="desk-stage">
         <div className="desk-workspace">
-          <DeskIntroduction onExplore={onExplore} />
+          <img
+            className="desk-photograph"
+            src="/desk/cover.webp"
+            alt=""
+            aria-hidden="true"
+            width="1672"
+            height="941"
+            decoding="async"
+          />
+          <SiteHeader
+            current="desk"
+            onHome={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            onProjects={onExplore}
+            onPanel={onPanel}
+            busy={opening}
+          />
+          <DeskIntroduction />
           <DeskNotebook />
-          <ClosedLaptop portalRef={portalRef} onExplore={onExplore} />
+          <ClosedLaptop portalRef={portalRef} onExplore={onExplore} opening={opening} />
           {(['cv', 'contact'] as const).map((kind) => (
             <DeskAccess key={kind} kind={kind} selected={activePanel === kind} onOpen={onPanel} />
           ))}
         </div>
-      </m.div>
-      <footer className="desk-bottomline">
-        <span>Diseñado para explorar. Construido para funcionar.</span>
-        <span>
-          {profile.name} © {new Date().getFullYear()}
-        </span>
-      </footer>
+      </div>
     </main>
   );
 }

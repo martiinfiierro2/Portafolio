@@ -27,6 +27,7 @@ export interface Project {
   number: string;
   title: string;
   category: string;
+  collection: 'web' | 'apps' | 'data' | 'other';
   description: string;
   technologies: string[];
   year: string | null;

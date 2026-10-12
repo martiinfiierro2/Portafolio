@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Mail, ContactRound, GitBranch, Copy, Check } from 'lucide-react';
 import { m, useReducedMotion } from 'framer-motion';
 import { profile } from '../../data/profile';
+import ContactForm from './ContactForm';
 
 export default function ContactPanel() {
   const [copyState, setCopyState] = useState<'idle' | 'copied' | 'failed'>('idle');
@@ -93,6 +94,7 @@ export default function ContactPanel() {
           </span>
         </m.button>
       )}
+      <ContactForm />
     </>
   );
 }

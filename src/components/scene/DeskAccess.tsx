@@ -2,13 +2,11 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 import type { MouseEvent } from 'react';
 import type { PanelKind } from '../../types/portfolio';
 import DeskObjectArt from './DeskObjectArt';
-
 interface Props {
   kind: PanelKind;
   selected: boolean;
   onOpen: (kind: PanelKind, event: MouseEvent<HTMLElement>) => void;
 }
-
 export default function DeskAccess({ kind, selected, onOpen }: Props) {
   const contact = kind === 'contact';
   return (

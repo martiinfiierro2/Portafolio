@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { m, useAnimationControls, useReducedMotion } from 'framer-motion';
-import { X, FileText, MessageCircle } from 'lucide-react';
+import { X } from 'lucide-react';
 import type { PanelState } from '../../types/portfolio';
 import useViewport from '../../hooks/useViewport';
 import ContactPanel from './ContactPanel';
@@ -19,8 +19,8 @@ export default function ObjectPanel({
   const controls = useAnimationControls();
   const reduced = useReducedMotion();
   const viewport = useViewport();
-  const width = Math.min(viewport.width - 32, panel.kind === 'cv' ? 860 : 520);
-  const height = Math.min(viewport.height - 40, panel.kind === 'cv' ? 720 : 570);
+  const width = Math.min(viewport.width - 32, panel.kind === 'cv' ? 820 : 540);
+  const height = Math.min(viewport.height - 40, panel.kind === 'cv' ? 620 : 740);
   const origin = {
     x: panel.origin.x + panel.origin.width / 2 - viewport.width / 2,
     y: panel.origin.y + panel.origin.height / 2 - viewport.height / 2,
@@ -53,8 +53,6 @@ export default function ObjectPanel({
     });
     onClose();
   }
-  const Icon = panel.kind === 'cv' ? FileText : MessageCircle;
-  const title = panel.kind === 'cv' ? 'Mi recorrido.' : 'Hablemos.';
   return (
     <dialog
       ref={dialogRef}
@@ -75,8 +73,8 @@ export default function ObjectPanel({
         animate={controls}
       >
         <header className="panel-header">
-          <span className="panel-icon">
-            <Icon size={20} strokeWidth={1.6} aria-hidden="true" />
+          <span className="brand-mark">
+            MF<span>.</span>
           </span>
           <button
             className="icon-button"
@@ -88,7 +86,11 @@ export default function ObjectPanel({
           </button>
         </header>
         <div className="panel-scroll" tabIndex={0} role="region" aria-labelledby="panel-title">
-          <h2 id="panel-title">{title}</h2>
+          {panel.kind === 'contact' && (
+            <h2 id="panel-title">
+              Contacto<span>.</span>
+            </h2>
+          )}
           {panel.kind === 'contact' ? <ContactPanel /> : <CvPanel />}
         </div>
         <footer className="panel-footer">

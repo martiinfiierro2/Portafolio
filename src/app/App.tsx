@@ -1,5 +1,5 @@
 import { lazy, Suspense, useEffect, useRef, useState } from 'react';
-import { AnimatePresence, LazyMotion, domMax } from 'framer-motion';
+import { AnimatePresence, LazyMotion, domMax, useReducedMotion } from 'framer-motion';
 import type { MouseEvent } from 'react';
 import type { PanelKind, PanelState, Rectangle } from '../types/portfolio';
 import { projects } from '../data/projects';
@@ -19,9 +19,34 @@ export default function App() {
   const triggerRef = useRef<HTMLElement | null>(null);
   const [origin, setOrigin] = useState<Rectangle | null>(null);
   const [busy, setBusy] = useState(false);
+  const [opening, setOpening] = useState(false);
+  const openingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const reduced = useReducedMotion();
   const [panel, setPanel] = useState<PanelState | null>(null);
   const digital = view.kind !== 'desk';
-  useScrollLock(digital || busy || panel !== null);
+  useScrollLock(digital || busy || opening || panel !== null);
+  useEffect(
+    () => () => {
+      if (openingTimer.current) clearTimeout(openingTimer.current);
+    },
+    [],
+  );
+  useEffect(() => {
+    if (!opening) return;
+    function cancelOpening() {
+      if (!openingTimer.current) return;
+      clearTimeout(openingTimer.current);
+      openingTimer.current = null;
+      setOpening(false);
+      requestAnimationFrame(() => triggerRef.current?.focus({ preventScroll: true }));
+    }
+    window.addEventListener('hashchange', cancelOpening);
+    window.addEventListener('popstate', cancelOpening);
+    return () => {
+      window.removeEventListener('hashchange', cancelOpening);
+      window.removeEventListener('popstate', cancelOpening);
+    };
+  }, [opening]);
   useEffect(() => {
     if (digital) return;
     document.title = `${profile.name} — ${profile.role}`;
@@ -31,24 +56,33 @@ export default function App() {
   }, [digital, busy]);
 
   function explore(event: MouseEvent<HTMLElement>) {
-    if (busy || !portalRef.current) return;
+    if (busy || opening || !portalRef.current) return;
     triggerRef.current =
       event.currentTarget instanceof HTMLButtonElement
         ? event.currentTarget
         : event.currentTarget.querySelector<HTMLElement>('.explore-button');
     setOrigin(readRectangle(portalRef.current));
-    setBusy(true);
-    navigate({ kind: 'projects' });
+    setOpening(true);
+    openingTimer.current = setTimeout(
+      () => {
+        openingTimer.current = null;
+        if (portalRef.current) setOrigin(readRectangle(portalRef.current));
+        setOpening(false);
+        setBusy(true);
+        navigate({ kind: 'projects' });
+      },
+      reduced ? 0 : 620,
+    );
   }
   function returnToDesk() {
     if (busy) return;
-    triggerRef.current ??= document.querySelector<HTMLElement>('.project-entry-button');
+    triggerRef.current ??= document.querySelector<HTMLElement>('.explore-button');
     if (portalRef.current) setOrigin(readRectangle(portalRef.current));
     setBusy(true);
     navigate({ kind: 'desk' });
   }
   function openPanel(kind: PanelKind, event: MouseEvent<HTMLElement>) {
-    if (busy) return;
+    if (busy || opening) return;
     setPanel({ kind, origin: readRectangle(event.currentTarget), trigger: event.currentTarget });
   }
   function closePanel() {
@@ -63,14 +97,15 @@ export default function App() {
         onClick={(event) => {
           event.preventDefault();
           document
-            .querySelector<HTMLElement>(digital ? '.digital-title' : '.project-entry-button')
+            .querySelector<HTMLElement>(digital ? '.digital-title' : '.explore-button')
             ?.focus();
         }}
       >
         Saltar al contenido
       </a>
       <DeskScene
-        active={!digital && !busy}
+        active={!digital && !busy && !opening}
+        opening={opening}
         activePanel={panel?.kind ?? null}
         portalRef={portalRef}
         onExplore={explore}
