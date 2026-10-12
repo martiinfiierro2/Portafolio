@@ -7,9 +7,9 @@ import {
 } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import Reveal from "./components/Reveal";
-import ProductPreview from "./components/ProductPreview";
+import DeveloperIllustration from "./components/DeveloperIllustration";
 
-export default function Bio() {
+export default function Bio({ dark }) {
   const sectionRef = useRef(null);
   const reducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -28,20 +28,18 @@ export default function Bio() {
       aria-labelledby="hero-title"
     >
       <Reveal className="hero-heading shell">
-        <p className="hero-role">
-          Ingeniería multimedia. Desarrollo full-stack.
-        </p>
+        <p className="hero-role">Ingeniería multimedia</p>
         <h1 id="hero-title">
-          Ideas que
+          Desarrollador
           <br />
-          <span>cobran vida.</span>
+          <span>full-stack</span>
         </h1>
       </Reveal>
       <Motion.div
         className="hero-art shell"
         style={reducedMotion ? undefined : { scale, opacity, y }}
       >
-        <ProductPreview />
+        <DeveloperIllustration dark={dark} />
       </Motion.div>
       <div className="hero-discover shell">
         <a className="discover-link" href="#proyectos">

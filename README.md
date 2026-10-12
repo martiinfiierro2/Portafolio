@@ -20,6 +20,7 @@ npm run preview
 ## Estructura
 
 - `src/data/projects.js`: contenido de todas las fichas, tecnologías, proceso, capturas y enlaces.
+- `src/components/DeveloperIllustration.jsx`: ilustración de Martín con variantes para cada tema en `public/illustrations/`.
 - `src/components/Experience.jsx`: sección del enfoque de trabajo.
 - `src/components/Projects.jsx`: catálogo y filtros.
 - `src/components/ProjectDetail.jsx`: ficha reutilizable.

@@ -86,7 +86,7 @@ export default function App() {
       <main id="contenido" tabIndex={-1}>
         {route.page === "home" ? (
           <>
-            <Bio />
+            <Bio dark={dark} />
             <Experience />
             <Projects />
             <About />
