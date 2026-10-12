@@ -50,7 +50,7 @@ src/
   types/                      Contratos de datos
   utils/                      Rutas y geometría
   styles/                     Tokens y estilos por experiencia
-public/desk/                  Fotografía de portada y objetos para móvil
+public/desk/                  Fondo, fotografía fuente del portátil y objetos transparentes
 public/projects/              Portadas conceptuales de muestra
 ```
 

@@ -7,17 +7,6 @@
   isolation: isolate;
   background: #e4bd91;
 }
-.desk-ambient {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: blur(4px);
-  transform: scale(5);
-  transform-origin: 50% 20%;
-  z-index: -1;
-}
 .desk-stage {
   min-height: 100svh;
   display: grid;
@@ -25,8 +14,8 @@
 }
 .desk-workspace {
   position: relative;
-  width: min(100%, 177.778svh);
-  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: 100svh;
   container-type: inline-size;
 }
 .desk-photograph {
@@ -34,7 +23,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: fill;
+  object-fit: cover;
   pointer-events: none;
   user-select: none;
 }
@@ -50,12 +39,13 @@
 }
 .desk-workspace > .desk-header {
   position: absolute;
-  top: 2.4%;
-  left: 59%;
-  right: 2%;
+  top: 3%;
+  right: 3%;
+  width: min(44vw, 86svh);
   padding: 0;
   min-height: 0;
 }
+
 .site-brand {
   display: grid;
   place-items: center;
@@ -98,30 +88,64 @@
   width: 100%;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25cqw;
+  gap: clamp(12px, 1.3cqw, 24px);
+}
+.note-home {
+  --note-color: #bbd8f5;
+  --note-angle: -4deg;
+}
+.note-projects {
+  --note-color: #ffc2cd;
+  --note-angle: -3deg;
+}
+.note-cv {
+  --note-color: #f7eab7;
+  --note-angle: -4deg;
+}
+.note-contact {
+  --note-color: #c3e9d3;
+  --note-angle: -3deg;
 }
 .desk-header .site-menu button {
-  aspect-ratio: 1.36;
+  aspect-ratio: 1.28;
   min-height: 0;
-  padding: 12% 0;
+  padding: 18px 12px;
   font-family: var(--sketch-font);
-  font-size: clamp(17px, 2.05cqw, 34px);
-  font-weight: 550;
-  rotate: -4deg;
+  font-size: clamp(19px, 1.5cqw, 28px);
+  font-weight: 500;
+  rotate: var(--note-angle);
+  border-radius: 1px 2px 4px 1px;
+  background: linear-gradient(165deg, #ffffff30, transparent 70%), var(--note-color);
+  box-shadow:
+    0 2px 1px #ffffff30 inset,
+    3px 9px 12px #49372833;
+  transition:
+    translate 0.2s,
+    box-shadow 0.2s;
+}
+.desk-header .site-menu button:hover,
+.desk-header .site-menu button:focus-visible {
+  translate: 0 -3px;
+  box-shadow:
+    0 2px 1px #ffffff30 inset,
+    3px 12px 15px #4937283d;
 }
 .desk-header .site-menu button[aria-current]::after {
-  bottom: 23%;
+  bottom: 24%;
+  left: 28%;
+  right: 28%;
   rotate: -2deg;
 }
+
 .site-menu button:hover {
   color: #003f88;
 }
 .desk-introduction {
   position: absolute;
   z-index: 2;
-  left: 31%;
-  top: 14%;
-  width: 39%;
+  left: 29%;
+  top: 16%;
+  width: 42%;
   text-align: center;
   color: #080e22;
 }
@@ -131,7 +155,7 @@
   align-items: center;
   gap: 12px;
   font-family: var(--sketch-font);
-  font-size: clamp(21px, 2.2cqw, 38px);
+  font-size: clamp(22px, 2cqw, 33px);
   font-weight: 550;
   line-height: 1.1;
   color: #134274;
@@ -146,7 +170,7 @@
 }
 .desk-introduction h1 {
   white-space: nowrap;
-  font-size: clamp(40px, 5.85cqw, 104px);
+  font-size: clamp(44px, 5.6cqw, 96px);
   font-weight: 850;
   letter-spacing: -0.055em;
   line-height: 1.02;
@@ -156,19 +180,19 @@
   color: #0d528e;
 }
 .desk-role {
-  font-size: clamp(14px, 1.8cqw, 30px);
+  font-size: clamp(15px, 1.6cqw, 27px);
   font-weight: 750;
   letter-spacing: -0.035em;
   line-height: 1.25;
 }
 .desk-description {
   color: #3b434b;
-  font-size: clamp(12px, 1.42cqw, 24px);
+  font-size: clamp(12px, 1.25cqw, 21px);
   line-height: 1.4;
   margin-top: 9px;
 }
 .desk-object-art {
-  display: none;
+  display: block;
   position: absolute;
   inset: 0;
   width: 100%;
@@ -180,46 +204,49 @@
 .desk-notebook {
   position: absolute;
   z-index: 2;
-  right: 1.8%;
-  top: 24%;
-  width: 19.8%;
-  aspect-ratio: 0.75;
-  rotate: 9deg;
+  right: 3%;
+  top: 27%;
+  width: min(20vw, 32svh);
+  aspect-ratio: 640 / 853;
+  container-type: inline-size;
 }
 .notebook-content {
   position: absolute;
-  inset: 7% 10% 9% 19%;
+  inset: 14% 13% 14% 24%;
+  rotate: 8deg;
   font-family: var(--sketch-font);
   color: #183b71;
 }
 .notebook-content h2 {
-  font-size: clamp(18px, 2cqw, 36px);
-  font-weight: 600;
-  line-height: 1.1;
+  font-size: clamp(19px, 9cqw, 30px);
+  font-weight: 500;
+  line-height: 1.15;
+  padding-bottom: 4px;
+  margin-bottom: 12px;
   border-bottom: 1px solid currentColor;
-  padding-bottom: 5px;
-  margin-bottom: 14px;
 }
 .notebook-technologies {
   list-style: none;
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: clamp(6px, 2.8cqw, 10px);
   margin-left: 3%;
 }
 .notebook-technologies li {
-  font-size: clamp(15px, 1.8cqw, 32px);
-  font-weight: 600;
-  line-height: 1.08;
+  font-size: clamp(16px, 8cqw, 25px);
+  font-weight: 450;
+  line-height: 1.15;
   white-space: nowrap;
 }
+
 .laptop-portal {
   position: absolute;
   z-index: 4;
-  left: 29.5%;
-  bottom: 10.5%;
-  width: 44.2%;
+  left: 50%;
+  bottom: 7%;
+  width: min(44.2vw, 82svh);
+  transform: translateX(-50%);
   aspect-ratio: 1.86;
   perspective: 1100px;
 }
@@ -235,6 +262,20 @@
 }
 .explore-button:focus-visible {
   outline-offset: 6px;
+}
+.explore-button > .desk-object-art {
+  display: none;
+}
+.laptop-source-art {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  filter: drop-shadow(0 12px 8px #32251833);
+}
+.laptop-portal.is-opening .laptop-source-art {
+  opacity: 0;
 }
 .laptop-lid {
   position: absolute;
@@ -292,11 +333,11 @@
 }
 .laptop-note {
   position: absolute;
-  right: -1%;
+  right: -10%;
   top: -31%;
   font-family: var(--sketch-font);
-  font-size: clamp(19px, 2.2cqw, 41px);
-  font-weight: 650;
+  font-size: clamp(19px, 1.65cqw, 30px);
+  font-weight: 500;
   line-height: 1;
   rotate: -12deg;
   color: var(--desk-blue);
@@ -394,21 +435,22 @@
 }
 .desk-access-cv {
   z-index: 2;
-  left: 4.7%;
-  bottom: 11%;
-  width: 20.5%;
-  aspect-ratio: 0.74;
-  rotate: -11deg;
+  left: 3%;
+  bottom: 9%;
+  width: min(24vw, 43svh);
+  aspect-ratio: 640 / 853;
+  container-type: inline-size;
   color: #123f66;
 }
 .folder-cover-copy {
   position: absolute;
-  inset: 32% 10% auto 17%;
+  inset: 35% 18% auto 24%;
+  rotate: -10deg;
   text-align: left;
   font-family: var(--sketch-font);
 }
 .folder-cover-title {
-  font: 650 clamp(27px, 4cqw, 68px) var(--sketch-font);
+  font: 550 clamp(27px, 22cqw, 62px) var(--sketch-font);
   letter-spacing: -0.04em;
 }
 .folder-cover-title::after {
@@ -420,22 +462,23 @@
 }
 .folder-cover-note {
   display: block;
-  font-size: clamp(14px, 1.85cqw, 32px);
+  font-size: clamp(14px, 7cqw, 23px);
   font-weight: 550;
   line-height: 1.2;
 }
 .desk-access-contact {
   z-index: 3;
-  right: 6.7%;
+  right: 4%;
   bottom: 4%;
-  width: 12.7%;
-  aspect-ratio: 0.64;
-  rotate: -17deg;
+  width: min(16vw, 26svh);
+  aspect-ratio: 480 / 720;
+  container-type: inline-size;
   color: #161f43;
 }
 .phone-screen-content {
   position: absolute;
-  inset: 22% 10% 2%;
+  inset: 20% 23%;
+  rotate: -10deg;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -443,55 +486,57 @@
   gap: 8px;
 }
 .phone-screen-content > svg:first-child {
-  width: 2.3cqw;
-  height: 2.3cqw;
+  width: 18cqw;
+  height: 18cqw;
   stroke-width: 1.6;
 }
 .phone-screen-title {
-  font-size: clamp(12px, 1.4cqw, 24px);
+  font-size: clamp(12px, 9cqw, 22px);
   font-weight: 800;
 }
 .phone-screen-message {
   font-family: var(--sketch-font);
-  font-size: clamp(13px, 1.45cqw, 25px);
+  font-size: clamp(13px, 10cqw, 23px);
 }
 .phone-screen-arrow {
-  width: 2cqw;
-  height: 2cqw;
+  width: 12cqw;
+  height: 12cqw;
 }
 .desk-access:hover {
   color: var(--desk-blue);
 }
 
-@media (max-width: 1150px) and (min-width: 901px) {
-  .notebook-technologies {
-    gap: 9px;
+@media (max-width: 1400px) and (min-width: 901px) {
+  .desk-workspace > .desk-header {
+    width: 48vw;
   }
-  .notebook-content h2 {
-    margin-bottom: 11px;
+  .desk-header .site-menu button {
+    font-size: clamp(16px, 1.55cqw, 22px);
+  }
+  .desk-introduction {
+    top: 19%;
   }
   .desk-introduction h1 {
-    margin-top: 9px;
+    font-size: clamp(44px, 5.1cqw, 72px);
   }
-  .desk-description {
-    margin-top: 8px;
+  .laptop-note {
+    right: -9%;
+    top: -33%;
   }
+}
+.laptop-portal.is-opening .desk-object-art {
+  opacity: 0;
 }
 @media (max-width: 900px) {
   .desk-scene {
     background: #efd2ac;
-  }
-  .desk-ambient {
-    object-position: 40% 10%;
-    opacity: 0.3;
-    filter: blur(45px);
   }
   .desk-stage {
     display: block;
   }
   .desk-workspace {
     width: 100%;
-    aspect-ratio: auto;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
@@ -507,6 +552,7 @@
     left: 14px;
     right: 14px;
     top: 20px;
+    width: auto;
     min-height: 0;
   }
   .desk-header .site-menu {
@@ -607,6 +653,7 @@
   .laptop-portal {
     position: relative;
     inset: auto;
+    transform: none;
     grid-column: 1 / -1;
     grid-row: 2;
     justify-self: center;
@@ -617,6 +664,12 @@
   }
   .laptop-front {
     background: transparent;
+  }
+  .laptop-source-art {
+    display: none;
+  }
+  .explore-button > .desk-object-art {
+    display: block;
   }
   .laptop-monogram {
     width: clamp(45px, 12cqw, 80px);

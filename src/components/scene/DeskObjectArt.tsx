@@ -6,7 +6,7 @@ const dimensions = {
 } as const;
 
 export default function DeskObjectArt({ kind }: { kind: keyof typeof dimensions }) {
-  return (
+  const artwork = (
     <img
       className="desk-object-art"
       src={`/desk/${kind}.webp`}
@@ -17,4 +17,5 @@ export default function DeskObjectArt({ kind }: { kind: keyof typeof dimensions 
       draggable={false}
     />
   );
+  return artwork;
 }

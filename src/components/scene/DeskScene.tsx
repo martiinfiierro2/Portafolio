@@ -29,12 +29,11 @@ export default function DeskScene({
       inert={!active}
       aria-hidden={!active}
     >
-      <img className="desk-ambient" src="/desk/cover.webp" alt="" aria-hidden="true" />
       <div className="desk-stage">
         <div className="desk-workspace">
           <img
             className="desk-photograph"
-            src="/desk/cover.webp"
+            src="/desk/background.webp"
             alt=""
             aria-hidden="true"
             width="1672"
