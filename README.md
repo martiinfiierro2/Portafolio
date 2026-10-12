@@ -26,14 +26,14 @@ npm run build
 
 ## Recorrido
 
-- **Portada:** la mesa y el flexo llenan la vista mediante `background.webp`. `ReferenceObjectArt` conserva el portátil de `reference.webp` con una máscara SVG; la carpeta y la libreta usan fotografías con transparencia. Los títulos, anotaciones y accesos son HTML/SVG editables. Los objetos conservan sus proporciones y el espacio se adapta al formato.
+- **Portada:** la mesa y el flexo llenan la vista mediante `background.webp`. `DeskObjectArt` muestra cuatro SVG completos: `portatil.svg`, `libreta-tecnologias.svg`, `carpeta-cv.svg` y `telefono-contacto.svg`. La cabecera, la presentación y la indicación para explorar son elementos React/HTML; los textos ya incluidos en los objetos no se duplican con capas visibles de HTML. Los SVG conservan sus proporciones y la libreta mantiene una lista HTML accesible para lectores de pantalla.
 - **Navegación:** los enlaces Inicio, Proyectos, CV y Contacto son botones reales, con foco visible. Proyectos y la tapa del portátil llevan a la misma colección.
-- **Apertura:** el portátil descubre su teclado y levanta la tapa con una transformación 3D; después, la superficie de proyectos se expande desde su posición. El movimiento reducido conserva el recorrido sin la animación.
+- **Acceso a proyectos:** el portátil y el botón Proyectos cambian de pantalla directamente. No hay espera, apertura de tapa ni zoom de entrada o salida. Al volver al escritorio se restaura el foco en el botón que inició la navegación.
 - **Colección:** cuadrícula de tarjetas con portada y resumen. Los filtros Todos, Web, Apps, Data y Otros usan el campo `collection` de cada proyecto. El filtro y el desplazamiento se conservan al volver de una ficha.
 - **Ficha:** portada junto al resumen, tecnologías y enlaces; debajo, funcionalidades, herramientas y aprendizajes. El desarrollo técnico se amplía de forma opcional.
 - **CV:** ventana con vista previa y enlaces al documento. El estado pendiente se muestra mientras `cvUrl` sea `null`.
 - **Contacto:** enlaces a las redes configuradas y formulario para preparar un correo. No hay envío simulado ni servidor de correo: al configurar `email`, el formulario abre la aplicación de correo con el mensaje. Hasta entonces, el envío permanece deshabilitado.
-- **Móvil:** el monograma y los cuatro enlaces siguen visibles. La presentación, el portátil y la libreta se apilan; la carpeta y el teléfono permanecen accesibles como objetos independientes. Las imágenes conservan sus proporciones.
+- **Móvil:** el monograma y los cuatro enlaces siguen visibles. La presentación, el portátil y la libreta se apilan; la carpeta y el teléfono permanecen accesibles como objetos independientes. Se utilizan los mismos cuatro SVG que en ordenador, respetando su inclinación y sus proporciones.
 
 ## Módulos
 
@@ -50,7 +50,9 @@ src/
   types/                      Contratos de datos
   utils/                      Rutas y geometría
   styles/                     Tokens y estilos por experiencia
-public/desk/                  Fondo, fotografía fuente del portátil y objetos transparentes
+public/desk/                  Fondo del escritorio y fotografías de referencia
+public/desk/svg/              Objetos vectoriales independientes y galería
+scripts/                     Generador y contornos vectoriales de las fuentes
 public/projects/              Portadas conceptuales de muestra
 ```
 
@@ -70,8 +72,8 @@ Para añadir un CV, guarda el PDF en `public/` y establece `cvUrl`, por ejemplo 
 - Las superficies inactivas son `inert` durante las transiciones.
 - Las ventanas utilizan `dialog` nativo, cierre con Escape y restauración del foco.
 - Las tarjetas recuperan el foco al volver del detalle.
-- `prefers-reduced-motion` elimina la apertura 3D y los movimientos de cámara.
-- Fuentes y fotografías locales; la colección se carga de forma diferida.
+- `prefers-reduced-motion` reduce las animaciones de las fichas y las ventanas. El acceso a proyectos es directo en todos los casos.
+- Fuentes, fondo y objetos SVG locales; la colección se carga de forma diferida.
 
 ## Publicación
 
@@ -79,4 +81,6 @@ Para añadir un CV, guarda el PDF en `public/` y establece `cvUrl`, por ejemplo 
 
 ## Fidelidad a la referencia
 
-La composición sigue la referencia de escritorio: madera clara, acentos en cian, presentación con DM Sans, anotaciones con Caveat, portátil cerrado y tecnologías agrupadas con iconos. La fuente exacta de la imagen no está identificada; los trazos de escritura, algunos iconos y las sombras son aproximaciones. La disposición se adapta al formato para evitar recortes y deformaciones.
+La composición sigue la referencia de escritorio: madera clara, acentos en cian, presentación con DM Sans, anotaciones con Caveat, portátil cerrado y tecnologías agrupadas con iconos. Los cuatro objetos son dibujos vectoriales con degradados y sombras; no conservan la textura fotográfica exacta de los originales. La disposición se adapta al formato para evitar recortes y deformaciones.
+
+Para editar los objetos, consulta `public/desk/svg/README.md`. El generador conserva las etiquetas como texto editable en su código y las exporta como trazados SVG. El nombre, la profesión, la descripción y los controles de navegación se editan en sus componentes React.

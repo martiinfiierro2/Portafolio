@@ -13,20 +13,12 @@ import ProjectPage from './ProjectPage';
 interface Props {
   view: Exclude<View, { kind: 'desk' }>;
   projects: Project[];
-  busy: boolean;
   onNavigate: (view: View) => void;
   onDesk: () => void;
   onPanel: (kind: PanelKind, event: MouseEvent<HTMLElement>) => void;
 }
 
-export default function ProjectsExperience({
-  view,
-  projects,
-  busy,
-  onNavigate,
-  onDesk,
-  onPanel,
-}: Props) {
+export default function ProjectsExperience({ view, projects, onNavigate, onDesk, onPanel }: Props) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const [filter, setFilter] = useState<ProjectFilter>('all');
   const indexScroll = useRef(0);
@@ -35,7 +27,6 @@ export default function ProjectsExperience({
   const key = project?.slug ?? 'index';
   useEffect(() => {
     document.title = `${project?.title ?? 'Proyectos'} — ${profile.name}`;
-    if (busy) return;
     const frame = requestAnimationFrame(() => {
       if (scrollRef.current) scrollRef.current.scrollTop = project ? 0 : indexScroll.current;
       const target =
@@ -45,7 +36,7 @@ export default function ProjectsExperience({
       target?.focus({ preventScroll: true });
     });
     return () => cancelAnimationFrame(frame);
-  }, [key, busy, project]);
+  }, [key, project]);
 
   function openProject(item: Project) {
     indexScroll.current = scrollRef.current?.scrollTop ?? 0;
@@ -59,14 +50,12 @@ export default function ProjectsExperience({
         onHome={onDesk}
         onProjects={() => onNavigate({ kind: 'projects' })}
         onPanel={onPanel}
-        busy={busy}
       />
       <div className="digital-page-container">
         {project && (
           <button
             className="back-link"
             onClick={project ? () => onNavigate({ kind: 'projects' }) : onDesk}
-            disabled={busy}
           >
             <ArrowLeft size={16} aria-hidden="true" />
             {project ? 'Volver a proyectos' : 'Volver al escritorio'}

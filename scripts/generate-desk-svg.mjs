@@ -444,7 +444,7 @@ const gallery = `<!doctype html>
   <body>
     <main>
       <h1>Objetos SVG del escritorio</h1>
-      <p class="intro">Dibujos independientes con fondo transparente. No contienen fotografías ni recursos externos. Tu portada sigue usando sus imágenes actuales: estos archivos están preparados para sustituirlos uno a uno.</p>
+      <p class="intro">Dibujos independientes con fondo transparente. No contienen fotografías ni recursos externos. La portada utiliza el portátil completo, la libreta con tecnologías, la carpeta de CV con texto y el teléfono con contacto. Aquí puedes revisar todas las variantes y piezas.</p>
       <section class="gallery" aria-label="Archivos SVG">
         ${assets.map((asset) => `<article ${asset.file.startsWith('icono-') || asset.file === 'logo-mf.svg' ? 'data-icon' : ''}><div class="art"><img src="${asset.file}" alt="${escape(asset.title)}" width="${asset.width}" height="${asset.height}" /></div><div class="info"><h2>${escape(asset.title)}</h2><p>${asset.file} · ${asset.width} × ${asset.height}</p><div class="links"><a href="${asset.file}">Abrir SVG</a><a href="${asset.file}" download>Descargar</a></div></div></article>`).join('\n')}
       </section>

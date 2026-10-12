@@ -2,7 +2,7 @@
 
 22 SVG independientes y con fondo transparente. Su contenido utiliza trazados, formas, degradados y filtros SVG. La escritura también está convertida a trazados. No hay fotografías incrustadas, fuentes externas, referencias a WebP/PNG, JavaScript ni recursos de red.
 
-La portada actual se conserva para poder sustituir los objetos uno a uno. Con Vite en marcha, `/desk/svg/index.html` muestra una galería con acceso y descarga de cada archivo.
+La portada utiliza `portatil.svg`, `libreta-tecnologias.svg`, `carpeta-cv.svg` y `telefono-contacto.svg`, dentro de componentes React con botones HTML. El resto de archivos son variantes y piezas independientes. Con Vite en marcha, `/desk/svg/index.html` muestra una galería con acceso y descarga de cada archivo.
 
 ## Objetos completos
 
