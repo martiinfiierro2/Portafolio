@@ -1,12 +1,19 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
+import {
+  Link,
+  Navigate,
+  Route,
+  Routes,
+  useLocation,
+  useMatch,
+} from "react-router-dom";
 import Header from "./Header";
 import Home from "./Home";
 import Footer from "./Footer";
 import ProjectDetail from "./components/ProjectDetail";
 import DemoPage from "./components/DemoPage";
 import { projects } from "./data/projects";
-import useHashRoute from "./hooks/useHashRoute";
 
 function readTheme() {
   try {
@@ -18,11 +25,23 @@ function readTheme() {
 
 export default function App() {
   const [dark, setDark] = useState(readTheme);
-  const route = useHashRoute();
-  const project = projects.find((item) => item.slug === route.slug);
-  const validDemo = projects.some(
-    (item) => item.demoHref === `#/demos/${route.slug}`,
+  const location = useLocation();
+  const projectRoute = useMatch("/proyectos/:slug");
+  const demoRoute = useMatch("/demos/:demoId");
+  const isHome = location.pathname === "/";
+  const project = projects.find(
+    (item) => item.slug === (projectRoute?.params.slug ?? demoRoute?.params.demoId),
   );
+  const validDemo = projects.some(
+    (item) => item.demoHref === `/demos/${demoRoute?.params.demoId}`,
+  );
+  const legacyTarget = isHome
+    ? location.hash.startsWith("#/")
+      ? location.hash.slice(1)
+      : location.hash === "#enfoque"
+        ? "/#inicio"
+        : null
+    : null;
 
   useEffect(() => {
     try {
@@ -41,27 +60,40 @@ export default function App() {
   }, [dark]);
 
   useEffect(() => {
-    const title =
-      route.page === "home"
-        ? "Martín Fierro — Ingeniería multimedia & Full-stack"
-        : `${project?.title ?? "Proyecto"} — Martín Fierro`;
+    const title = isHome
+      ? "Martín Fierro — Ingeniería multimedia & Full-stack"
+      : `${project?.title ?? "Página no encontrada"} — Martín Fierro`;
     document.title = title;
+    if (legacyTarget) return;
     const frame = requestAnimationFrame(() => {
-      if (route.page !== "home") {
+      if (!isHome) {
         window.scrollTo({ top: 0, behavior: "instant" });
         document.querySelector("main h1")?.focus({ preventScroll: true });
-      } else if (route.hash && !route.hash.startsWith("#/")) {
-        const target = document.getElementById(route.hash.slice(1));
+      } else if (location.hash) {
+        const target = document.getElementById(location.hash.slice(1));
         target?.scrollIntoView({
           behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
             .matches
             ? "instant"
             : "smooth",
         });
+      } else {
+        window.scrollTo({ top: 0, behavior: "instant" });
       }
     });
     return () => cancelAnimationFrame(frame);
-  }, [route.page, route.slug, route.hash, project?.title]);
+  }, [isHome, location.hash, location.key, legacyTarget, project?.title]);
+
+  const notFound = (
+    <section className="not-found shell">
+      <p className="eyebrow">404 / PÁGINA NO ENCONTRADA</p>
+      <h1 tabIndex={-1}>Esta ruta no existe.</h1>
+      <p>Vuelve al catálogo para explorar los proyectos disponibles.</p>
+      <Link className="button primary" to="/#proyectos">
+        <ArrowLeft size={17} /> Volver a proyectos
+      </Link>
+    </section>
+  );
 
   return (
     <div className="site" data-theme={dark ? "dark" : "light"}>
@@ -75,30 +107,42 @@ export default function App() {
       >
         Saltar al contenido
       </a>
-      <Header
-        dark={dark}
-        onToggleTheme={() => setDark(!dark)}
-        page={route.page}
-      />
+      <Header dark={dark} onToggleTheme={() => setDark(!dark)} />
       <main id="contenido" tabIndex={-1}>
-        {route.page === "home" ? (
-          <Home dark={dark} />
-        ) : route.page === "proyectos" && project ? (
-          <ProjectDetail key={project.slug} project={project} />
-        ) : route.page === "demos" && validDemo ? (
-          <DemoPage demoId={route.slug} />
-        ) : (
-          <section className="not-found shell">
-            <p className="eyebrow">404 / PROYECTO NO ENCONTRADO</p>
-            <h1 tabIndex={-1}>Esta ruta no existe.</h1>
-            <p>Vuelve al catálogo para explorar los proyectos disponibles.</p>
-            <a className="button primary" href="#proyectos">
-              <ArrowLeft size={17} /> Volver a proyectos
-            </a>
-          </section>
-        )}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              legacyTarget ? (
+                <Navigate to={legacyTarget} replace />
+              ) : (
+                <Home dark={dark} />
+              )
+            }
+          />
+          <Route
+            path="/proyectos/:slug"
+            element={
+              project ? (
+                <ProjectDetail key={project.slug} project={project} />
+              ) : notFound
+            }
+          />
+          <Route
+            path="/demos/:demoId"
+            element={
+              validDemo ? (
+                <DemoPage
+                  key={demoRoute.params.demoId}
+                  demoId={demoRoute.params.demoId}
+                />
+              ) : notFound
+            }
+          />
+          <Route path="*" element={notFound} />
+        </Routes>
       </main>
-      <Footer immersive={route.page === "home"} />
+      <Footer immersive={isHome} />
     </div>
   );
 }

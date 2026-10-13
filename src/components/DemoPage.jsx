@@ -1,4 +1,5 @@
 import { ArrowLeft, FlaskConical } from "lucide-react";
+import { Link } from "react-router-dom";
 import TaskFlowDemo from "./demos/TaskFlowDemo";
 import ApiExplorerDemo from "./demos/ApiExplorerDemo";
 import MediaLabDemo from "./demos/MediaLabDemo";
@@ -31,9 +32,9 @@ export default function DemoPage({ demoId }) {
   if (!demo) {
     return (
       <section className="demo-page shell" aria-labelledby="demo-title">
-        <a className="demo-back" href="#proyectos">
+        <Link className="demo-back" to="/#proyectos">
           <ArrowLeft size={16} aria-hidden="true" /> Volver a proyectos
-        </a>
+        </Link>
         <h1 id="demo-title" tabIndex={-1}>
           Demo no encontrada
         </h1>
@@ -47,9 +48,9 @@ export default function DemoPage({ demoId }) {
   return (
     <section className="demo-page shell" aria-labelledby="demo-title">
       <header className="demo-header">
-        <a className="demo-back" href={`#/proyectos/${demoId}`}>
+        <Link className="demo-back" to={`/proyectos/${demoId}`}>
           <ArrowLeft size={16} aria-hidden="true" /> Volver al proyecto
-        </a>
+        </Link>
         <div className="demo-heading-row">
           <div>
             <p className="eyebrow">ENTORNO INTERACTIVO</p>

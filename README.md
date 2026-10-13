@@ -1,6 +1,6 @@
 # Martín Fierro / Portfolio
 
-Portafolio de ingeniería multimedia y desarrollo full-stack construido con React y Vite. La página principal se recorre con scroll: portada, enfoque, proyectos, perfil y contacto. Incluye un catálogo con búsqueda y categorías, fichas individuales de proyectos y demos interactivas locales.
+Portafolio de ingeniería multimedia y desarrollo full-stack construido con React, React Router y Vite. La página principal se recorre con scroll: portada, proyectos, perfil y contacto. Incluye un catálogo con búsqueda y categorías, fichas individuales de proyectos y demos interactivas locales.
 
 ## Desarrollo
 
@@ -24,7 +24,7 @@ Cada página o sección principal reúne su contenido en un JSX y tiene al lado 
 | Apartado                  | Componente                         | Estilos                            |
 | ------------------------- | ---------------------------------- | ---------------------------------- |
 | Cabecera y menú           | `src/Header.jsx`                   | `src/Header.css`                   |
-| Portada, enfoque y perfil | `src/Home.jsx`                     | `src/Home.css`                     |
+| Portada y perfil          | `src/Home.jsx`                     | `src/Home.css`                     |
 | Catálogo y filtros        | `src/components/Projects.jsx`      | `src/components/Projects.css`      |
 | Ficha y galería           | `src/components/ProjectDetail.jsx` | `src/components/ProjectDetail.css` |
 | Página de demos           | `src/components/DemoPage.jsx`      | `src/components/DemoPage.css`      |
@@ -32,11 +32,17 @@ Cada página o sección principal reúne su contenido en un JSX y tiene al lado 
 
 `src/index.css` contiene únicamente los estilos compartidos: fuentes, temas, tipografía, controles, etiquetas de proyectos y reglas generales de adaptación y accesibilidad. Cada componente importa su propio CSS, que incluye también sus ajustes para móvil; no hay un archivo responsive separado.
 
-Las tres demos de `src/components/demos/` conservan sus componentes porque son aplicaciones independientes. Comparten `DemoPage.css` dentro del mismo apartado, sin crear un CSS por cada detalle. `Reveal.jsx` y los hooks de navegación son utilidades reutilizadas en varias páginas.
+Las tres demos de `src/components/demos/` conservan sus componentes porque son aplicaciones independientes. Comparten `DemoPage.css` dentro del mismo apartado, sin crear un CSS por cada detalle. `Reveal.jsx` y el hook de sección activa son utilidades reutilizadas; las rutas se definen en `App.jsx`.
 
 El contenido de las fichas está en `src/data/projects.js` y las ilustraciones en `public/illustrations/`. Las fuentes locales de `src/assets/fonts/` son Clash Display en negrita para títulos y Manrope para textos y controles.
 
-Consulta [cómo añadir proyectos](docs/PROJECTS.md) para crear nuevas fichas sin duplicar componentes. Cada proyecto tiene una dirección propia, por ejemplo `#/proyectos/taskflow`, que se puede abrir directamente o compartir.
+Consulta [cómo añadir proyectos](docs/PROJECTS.md) para crear nuevas fichas sin duplicar componentes. Cada proyecto tiene una dirección propia, por ejemplo `/proyectos/taskflow`, que se puede abrir directamente o compartir.
+
+## Navegación y despliegue
+
+`BrowserRouter` gestiona `/`, `/proyectos/:slug`, `/demos/:demoId` y las rutas no encontradas. Los enlaces a `/#inicio`, `/#proyectos`, `/#sobre-mi` y `/#contacto` mantienen el scroll dentro de la portada. Los antiguos enlaces `#/proyectos/...` y `#/demos/...` se redirigen a las rutas actuales.
+
+Al desplegar, configura el servidor para servir `index.html` en las rutas de la aplicación que no correspondan a archivos reales. Esto permite abrir o recargar una ficha directamente. Los servidores de desarrollo y vista previa de Vite ya incluyen este comportamiento; GitHub Pages requiere una solución de fallback o un hosting con soporte para SPA.
 
 ## Demos de ejemplo
 

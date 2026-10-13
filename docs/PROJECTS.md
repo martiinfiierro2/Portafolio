@@ -6,7 +6,7 @@ generan a partir de ese array; no necesitas duplicar componentes.
 ## 1. Crea una entrada
 
 Copia una entrada existente y utiliza un `slug` único, en minúsculas y con
-guiones. Su dirección será `#/proyectos/tu-proyecto`.
+guiones. Su dirección será `/proyectos/tu-proyecto`.
 
 ```js
 {
@@ -76,13 +76,14 @@ aparece en los filtros sin cambios en el componente.
 ## Demos de ejemplo
 
 Taskflow, Pulse API y Media Lab son ejemplos claramente identificados con
-`isExample: true`. Sus demos viven en `#/demos/taskflow`, `#/demos/pulse-api` y
-`#/demos/media-lab`. Usan datos locales o simulados y no representan proyectos de
+`isExample: true`. Sus demos viven en `/demos/taskflow`, `/demos/pulse-api` y
+`/demos/media-lab`. Usan datos locales o simulados y no representan proyectos de
 clientes ni servicios de backend desplegados.
 
 Puedes sustituirlos por tus proyectos reales o mantenerlos como ejercicios. Si
 añades una nueva demo interna, implementa su componente y regístrala en
 `src/components/DemoPage.jsx`; añadir `demoHref` por sí solo no crea una demo.
+Para enlazarla con React Router, utiliza `demoHref: "/demos/tu-proyecto"`.
 
 Las tarjetas utilizan la primera captura de `gallery` como portada. Elige una
 imagen que permita reconocer el proyecto de un vistazo. Cuando no hay capturas,

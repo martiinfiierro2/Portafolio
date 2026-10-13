@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 import {
   motion as Motion,
   useReducedMotion,
@@ -30,12 +31,12 @@ export default function Home({ dark }) {
         aria-labelledby="hero-title"
       >
         <div className="hero-inner">
-          <Reveal className="hero-heading">
-            <p className="hero-greeting">Hola, soy</p>
-            <h1 id="hero-title">Martín Fierro</h1>
-          </Reveal>
           <div className="info-container">
             <div className="info-profesion">
+              <Reveal className="hero-heading">
+                <p className="hero-greeting">Hola, soy</p>
+                <h1 id="hero-title">Martín Fierro</h1>
+              </Reveal>
               <Reveal className="hero-copy" delay={0.08}>
                 <h2>
                   Desarrollador
@@ -48,17 +49,17 @@ export default function Home({ dark }) {
               </Reveal>
               <div className="hero-discover">
                 <div className="hero-actions">
-                  <a className="discover-link" href="#proyectos">
+                  <Link className="discover-link" to="/#proyectos">
                     Ver mis proyectos
                     <ArrowUpRight size={19} aria-hidden="true" />
-                  </a>
-                  <a className="hero-secondary-link" href="#sobre-mi">
+                  </Link>
+                  <Link className="hero-secondary-link" to="/#sobre-mi">
                     Sobre mí <ArrowUpRight size={18} aria-hidden="true" />
-                  </a>
+                  </Link>
                 </div>
-                <a className="discover-hint" href="#enfoque">
+                <Link className="discover-hint" to="/#proyectos">
                   <ArrowDown size={13} aria-hidden="true" /> Sigue explorando
-                </a>
+                </Link>
               </div>
             </div>
             <Motion.div
@@ -76,39 +77,6 @@ export default function Home({ dark }) {
               />
             </Motion.div>
           </div>
-        </div>
-      </section>
-      <section
-        className="experience page-screen"
-        id="enfoque"
-        aria-labelledby="experience-title"
-      >
-        <div className="shell experience-inner">
-          <Reveal>
-            <p className="eyebrow">EL ENFOQUE</p>
-            <h2 id="experience-title">
-              Lo que ves.
-              <br />
-              <span>Y lo que lo hace funcionar.</span>
-            </h2>
-          </Reveal>
-          <Reveal className="experience-copy" delay={0.1}>
-            <p>
-              Una experiencia completa conecta una interfaz clara con la lógica
-              que hay detrás. Me gusta construir ambas, cuidando cómo funciona
-              cada detalle.
-            </p>
-          </Reveal>
-          <Reveal className="experience-flow" delay={0.15}>
-            <span>Interfaz</span>
-            <i aria-hidden="true" />
-            <span>Lógica</span>
-            <i aria-hidden="true" />
-            <span>Experiencia</span>
-          </Reveal>
-          <a className="screen-next" href="#proyectos">
-            Mira el resultado <ArrowDown size={15} aria-hidden="true" />
-          </a>
         </div>
       </section>
       <Projects />
@@ -137,9 +105,9 @@ export default function Home({ dark }) {
               ganas de entender y mejorar.
             </p>
           </Reveal>
-          <a className="screen-next" href="#contacto">
+          <Link className="screen-next" to="/#contacto">
             Sigamos en contacto <span aria-hidden="true">↓</span>
-          </a>
+          </Link>
         </div>
       </section>
     </>

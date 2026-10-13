@@ -1,4 +1,5 @@
 import { ArrowUp, ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Reveal from "./components/Reveal";
 import "./Footer.css";
 
@@ -25,15 +26,15 @@ export default function Footer({ immersive = false }) {
           </a>
         </Reveal>
         <div className="footer-bottom">
-          <a className="wordmark" href="#inicio">
+          <Link className="wordmark" to="/#inicio">
             <span>
               mf<span className="accent">.</span>
             </span>
-          </a>
+          </Link>
           <span>© {new Date().getFullYear()} Martín Fierro</span>
-          <a href="#inicio">
+          <Link to="/#inicio">
             Volver al inicio <ArrowUp size={14} />
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

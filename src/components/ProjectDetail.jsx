@@ -1,4 +1,5 @@
 import { useEffect, useId, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ArrowLeft,
   ArrowUpRight,
@@ -34,15 +35,19 @@ export default function ProjectDetail({ project }) {
 
   if (!project) return null;
 
+  const DemoLink = project.demoHref?.startsWith("/") ? Link : "a";
+  const demoLinkProps =
+    DemoLink === Link ? { to: project.demoHref } : { href: project.demoHref };
+
   const hasFacts = Boolean(
     project.type || project.role || project.status || project.stack?.length,
   );
 
   return (
     <article className="detail-shell shell" aria-labelledby="project-title">
-      <a className="detail-back" href="#proyectos">
+      <Link className="detail-back" to="/#proyectos">
         <ArrowLeft size={17} aria-hidden="true" /> Volver a proyectos
-      </a>
+      </Link>
 
       <Reveal className="detail-hero">
         <div className="detail-meta">
@@ -58,11 +63,11 @@ export default function ProjectDetail({ project }) {
         <p className="detail-intro">{project.summary}</p>
         <div className="detail-actions">
           {project.demoHref && (
-            <a className="detail-action is-primary" href={project.demoHref}>
+            <DemoLink className="detail-action is-primary" {...demoLinkProps}>
               <Play size={17} aria-hidden="true" />
               {project.demoLabel ?? "Abrir demo"}
               <ArrowUpRight size={17} aria-hidden="true" />
-            </a>
+            </DemoLink>
           )}
           {project.sourceHref && (
             <a

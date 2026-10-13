@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { Link } from "react-router-dom";
 import { ArrowRight, Layers, Search } from "lucide-react";
 import { projects } from "../data/projects";
 import Reveal from "./Reveal";
@@ -92,9 +93,9 @@ export default function Projects() {
         <div className="catalog-grid">
           {filteredProjects.map((project, index) => (
             <Reveal key={project.slug} delay={index * 0.05}>
-              <a
+              <Link
                 className="catalog-card"
-                href={`#/proyectos/${project.slug}`}
+                to={`/proyectos/${project.slug}`}
                 aria-label={`Explorar ${project.title}${project.isExample ? ", proyecto de ejemplo" : ""}`}
               >
                 <div
@@ -131,7 +132,7 @@ export default function Projects() {
                     Ver proyecto <ArrowRight size={17} aria-hidden="true" />
                   </span>
                 </div>
-              </a>
+              </Link>
             </Reveal>
           ))}
         </div>

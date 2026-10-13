@@ -1,45 +1,48 @@
 import { Moon, Sun } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import useActiveSection from "./hooks/useActiveSection";
 import "./Header.css";
 
 const links = [
-  { href: "#enfoque", id: "enfoque", label: "Enfoque" },
-  { href: "#proyectos", id: "proyectos", label: "Proyectos" },
-  { href: "#sobre-mi", id: "sobre-mi", label: "Sobre mí" },
+  { to: "/#inicio", id: "inicio", label: "Inicio" },
+  { to: "/#proyectos", id: "proyectos", label: "Proyectos" },
+  { to: "/#sobre-mi", id: "sobre-mi", label: "Sobre mí" },
 ];
 
-export default function Header({ dark, onToggleTheme, page }) {
-  const visibleSection = useActiveSection(page === "home");
+export default function Header({ dark, onToggleTheme }) {
+  const { pathname } = useLocation();
+  const isHome = pathname === "/";
+  const visibleSection = useActiveSection(isHome);
   const activeSection =
-    page === "home"
+    isHome
       ? visibleSection
-      : ["proyectos", "demos"].includes(page)
+      : /^\/(proyectos|demos)\//.test(pathname)
         ? "proyectos"
         : null;
 
   return (
     <header className="header">
       <div className="header-inner">
-        <a
+        <Link
           className="wordmark"
-          href="#inicio"
+          to="/#inicio"
           aria-label="Martín Fierro, inicio"
         >
           MF
-        </a>
+        </Link>
         <nav aria-label="Navegación principal">
           <ul className="example-1">
             {links.map((link) => (
               <li key={link.id} className="icon-content">
-                <a
-                  href={link.href}
+                <Link
+                  to={link.to}
                   className={`nav-link nav-${link.id}`}
                   aria-current={
                     activeSection === link.id ? "location" : undefined
                   }
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -13,7 +13,7 @@ export const projects = [
     role: "Desarrollo de interfaz y estructura de contenidos",
     stack: ["React", "Vite", "CSS", "Framer Motion", "Lucide React"],
     sourceHref: "https://github.com/martiinfiierro2/Portafolio",
-    demoHref: "#inicio",
+    demoHref: "/#inicio",
     demoLabel: "Explorar sitio",
     problem:
       "Un enlace al repositorio muestra el código, pero deja fuera el contexto: qué se quería resolver, cómo funciona el proyecto y qué decisiones se tomaron durante su construcción.",
@@ -95,7 +95,7 @@ export const projects = [
     stack: ["React", "JavaScript", "CSS", "Estado local"],
     sourceHref:
       "https://github.com/martiinfiierro2/Portafolio/blob/feat/portfolio-profesional/src/components/demos/TaskFlowDemo.jsx",
-    demoHref: "#/demos/taskflow",
+    demoHref: "/demos/taskflow",
     demoLabel: "Abrir demo",
     problem:
       "Un listado plano dificulta distinguir qué tareas están pendientes, cuáles están en marcha y cuáles ya se han terminado.",
@@ -160,7 +160,7 @@ export const projects = [
     stack: ["React", "JavaScript", "JSON", "HTTP simulado"],
     sourceHref:
       "https://github.com/martiinfiierro2/Portafolio/blob/feat/portfolio-profesional/src/components/demos/ApiExplorerDemo.jsx",
-    demoHref: "#/demos/pulse-api",
+    demoHref: "/demos/pulse-api",
     demoLabel: "Abrir demo",
     problem:
       "Leer una lista de endpoints sin ver sus respuestas hace más difícil comprender los datos y los estados que una interfaz debe manejar.",
@@ -225,7 +225,7 @@ export const projects = [
     stack: ["React", "CSS", "JavaScript", "Interacción multimedia"],
     sourceHref:
       "https://github.com/martiinfiierro2/Portafolio/blob/feat/portfolio-profesional/src/components/demos/MediaLabDemo.jsx",
-    demoHref: "#/demos/media-lab",
+    demoHref: "/demos/media-lab",
     demoLabel: "Abrir demo",
     problem:
       "Una colección visual necesita una estructura que permita explorar contenido sin que la interfaz compita con las piezas.",
