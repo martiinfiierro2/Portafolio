@@ -29,27 +29,40 @@ export default function Home({ dark }) {
         id="inicio"
         aria-labelledby="hero-title"
       >
-          <h1>Martín Fierro</h1>
+        <div className="hero-inner">
+          <Reveal className="hero-heading">
+            <p className="hero-greeting">Hola, soy</p>
+            <h1 id="hero-title">Martín Fierro</h1>
+          </Reveal>
           <div className="info-container">
             <div className="info-profesion">
-              <Reveal className="hero-heading">
-                <h2 id="hero-title">
+              <Reveal className="hero-copy" delay={0.08}>
+                <h2>
                   Desarrollador
                   <br />
                   <span>full-stack</span>
                 </h2>
+                <p className="hero-description">
+                  Construyo experiencias web claras, modernas y funcionales.
+                </p>
               </Reveal>
-              <div className="hero-discover shell">
-                <a className="discover-link" href="#proyectos">
-                  Ver mis proyectos <ArrowUpRight size={17} aria-hidden="true" />
-                </a>
+              <div className="hero-discover">
+                <div className="hero-actions">
+                  <a className="discover-link" href="#proyectos">
+                    Ver mis proyectos
+                    <ArrowUpRight size={19} aria-hidden="true" />
+                  </a>
+                  <a className="hero-secondary-link" href="#sobre-mi">
+                    Sobre mí <ArrowUpRight size={18} aria-hidden="true" />
+                  </a>
+                </div>
                 <a className="discover-hint" href="#enfoque">
                   <ArrowDown size={13} aria-hidden="true" /> Sigue explorando
                 </a>
               </div>
             </div>
             <Motion.div
-              className="hero-art shell"
+              className="hero-art"
               style={reducedMotion ? undefined : { scale, opacity, y }}
             >
               <img
@@ -63,6 +76,7 @@ export default function Home({ dark }) {
               />
             </Motion.div>
           </div>
+        </div>
       </section>
       <section
         className="experience page-screen"

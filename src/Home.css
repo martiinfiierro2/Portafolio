@@ -12,49 +12,123 @@
 }
 
 .hero {
-  height: calc(100vh - var(--header-height));
-  display: block;
-  gap: 20px;
-  padding-block: 38px max(24px, env(safe-area-inset-bottom));
-}
-
-.info-container{
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: calc(100svh - var(--header-height));
   display: flex;
-  width: auto;
-  margin-left: 40px;
+  align-items: center;
+  padding-block: clamp(32px, 6svh, 72px) max(32px, env(safe-area-inset-bottom));
 }
 
-.info-container > h2{
-  font-size: clamp(90px, 110px, 110px);
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 500px;
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 30% 30%,
+    var(--accent-soft),
+    transparent 72%
+  );
+  pointer-events: none;
 }
 
-.info-porfesion{
-  display: block;
+.hero::before {
+  top: 35px;
+  right: -360px;
+}
+
+.hero::after {
+  bottom: -370px;
+  left: -170px;
+  width: 560px;
+}
+
+.site[data-theme="dark"] .hero::before,
+.site[data-theme="dark"] .hero::after {
+  border-color: color-mix(in srgb, var(--ink) 10%, transparent);
+}
+
+.hero-inner {
+  width: calc(100% - 96px);
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+.hero-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 26px;
+}
+
+.hero-greeting {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-size: clamp(15px, 1.6vw, 21px);
+  font-weight: 600;
+}
+
+.hero-greeting::before {
+  content: "";
+  width: 48px;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
 }
 
 .hero h1 {
-  font-size: clamp(48px, 120px, 120px);
-  line-height: 1.04;
-  margin-left: 40px;
+  margin: 0;
+  font-size: clamp(64px, 8.2vw, 120px);
+  line-height: 1.05;
 }
 
-.hero h1 > span {
-  color: var(--muted);
+.info-container {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  align-items: start;
+  gap: clamp(24px, 3vw, 48px);
 }
 
-.hero-role {
+.info-profesion {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding-top: 24px;
+}
+
+.hero-copy h2 {
+  margin: 0;
+  font-size: clamp(32px, 4.1vw, 60px);
+  line-height: 1.1;
+}
+
+.hero-copy h2 span {
+  color: var(--ink);
+}
+
+.hero-description {
+  max-width: 470px;
+  margin: 24px 0 0;
   color: var(--muted);
-  font-size: 13px;
-  letter-spacing: 0.015em;
-  margin: 0 0 18px;
+  font-size: clamp(16px, 1.6vw, 23px);
+  line-height: 1.6;
+  text-wrap: pretty;
 }
 
 .hero-art {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 0;
-  padding-block: 12px;
+  min-width: 0;
+  transform-origin: center bottom;
 }
 
 .developer-illustration {
@@ -64,8 +138,8 @@
   display: block;
   width: auto;
   height: auto;
-  max-width: min(100%, 820px);
-  max-height: min(100%, 460px);
+  max-width: 100%;
+  max-height: max(240px, calc(100svh - var(--header-height) - 280px));
   -webkit-mask-image: var(--edge-mask);
   mask-image: var(--edge-mask);
   -webkit-mask-composite: source-in;
@@ -75,35 +149,61 @@
 .hero-discover {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.discover-link,
+.hero-secondary-link {
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
-  position: relative;
-  z-index: 2;
+  min-height: 54px;
+  padding: 15px 24px;
+  border: 1px solid transparent;
+  border-radius: 22px;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .discover-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 13px;
-  padding: 13px 24px;
-  border-radius: var(--radius-pill);
   background: var(--accent);
   color: var(--on-accent);
-  font-size: 13px;
-  font-weight: 550;
+  box-shadow: 0 12px 28px var(--accent-soft);
 }
 
-.discover-link:hover {
-  transform: translateY(-2px);
+.hero-secondary-link {
+  border-color: var(--line);
+  background: transparent;
+  color: var(--ink);
+}
+
+.discover-link:hover,
+.hero-secondary-link:hover {
+  transform: translateY(-3px);
+}
+
+.hero-secondary-link:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent-ink);
 }
 
 .discover-hint {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
+  gap: 8px;
+  padding-block: 4px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .discover-hint:hover {
@@ -160,21 +260,6 @@
 }
 
 @media (max-width: 760px) {
-  .hero {
-    padding-block: 28px max(18px, env(safe-area-inset-bottom));
-    gap: 16px;
-  }
-  .hero h1 {
-    font-size: clamp(36px, 9.8vw, 64px);
-  }
-  .hero-role {
-    max-width: 280px;
-    margin: 0 auto 16px;
-    font-size: 12px;
-  }
-  .discover-link {
-    padding: 12px 22px;
-  }
   .experience h2,
   .about h2 {
     font-size: clamp(35px, 9vw, 58px);
@@ -191,49 +276,190 @@
   }
 }
 
-@media (max-height: 600px) {
-  .hero {
-    padding-block: 18px;
-    gap: 12px;
+@media (max-width: 1000px) {
+  .hero-inner {
+    width: calc(100% - 64px);
   }
-  .hero h1 {
-    font-size: clamp(34px, 5.8vw, 60px);
+
+  .info-container {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    gap: 24px;
   }
-  .hero-role {
-    margin-bottom: 10px;
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .discover-link,
+  .hero-secondary-link {
+    padding-inline: 18px;
+    font-size: 13px;
   }
 }
 
-@media (max-height: 450px) {
+@media (max-width: 760px) {
   .hero {
-    padding-block: 10px;
+    padding-block: 32px max(24px, env(safe-area-inset-bottom));
+  }
+
+  .hero-inner {
+    width: calc(100% - 40px);
+  }
+
+  .hero-heading {
+    margin-bottom: 24px;
+  }
+
+  .hero-greeting {
+    font-size: 14px;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .hero-greeting::before {
+    width: 32px;
+    height: 3px;
+  }
+
+  .hero h1 {
+    font-size: clamp(38px, 10.5vw, 74px);
+  }
+
+  .info-container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .info-profesion {
+    padding: 0;
+  }
+
+  .hero-copy h2 {
+    font-size: clamp(29px, 7.8vw, 44px);
+  }
+
+  .hero-description {
+    max-width: 440px;
+    margin-top: 18px;
+    font-size: 15px;
+  }
+
+  .hero-discover {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .discover-link,
+  .hero-secondary-link {
+    min-height: 48px;
+    padding: 12px 18px;
+    border-radius: 18px;
+  }
+
+  .hero-art {
+    width: min(100%, 540px);
+    justify-self: center;
+  }
+
+  .developer-illustration {
+    max-height: none;
+  }
+
+  .hero::before {
+    right: -430px;
+  }
+
+  .hero::after {
+    bottom: -480px;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero-actions {
     gap: 8px;
   }
-  .hero h1 {
-    font-size: 35px;
-  }
-  .hero h1 br {
-    display: none;
-  }
-  .hero h1 > span::before {
-    content: " ";
-  }
-  .hero-role {
-    font-size: 11px;
-    margin-bottom: 8px;
-  }
-  .hero-art {
-    padding-block: 5px;
-  }
-  .hero-discover {
-    gap: 7px;
-  }
-  .discover-link {
-    padding: 9px 18px;
+
+  .discover-link,
+  .hero-secondary-link {
+    gap: 10px;
+    padding-inline: 12px;
     font-size: 12px;
   }
-  .discover-hint {
-    font-size: 10px;
+}
+
+@media (min-width: 761px) and (max-height: 800px) {
+  .hero {
+    padding-block: 24px;
+  }
+
+  .hero-heading {
+    margin-bottom: 18px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 7vw, 96px);
+  }
+
+  .hero-copy h2 {
+    font-size: clamp(32px, 3.6vw, 48px);
+  }
+
+  .hero-description {
+    font-size: 17px;
+    margin-top: 18px;
+  }
+
+  .hero-discover {
+    margin-top: 24px;
+    gap: 12px;
+  }
+
+  .info-profesion {
+    padding: 0;
+  }
+}
+
+@media (min-width: 761px) and (max-height: 450px) {
+  .hero {
+    padding-block: 12px;
+  }
+
+  .hero-heading {
+    margin-bottom: 12px;
+  }
+
+  .hero-greeting {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero-copy h2 {
+    font-size: 23px;
+  }
+
+  .hero-description {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+
+  .hero-discover {
+    margin-top: 14px;
+    gap: 6px;
+  }
+
+  .discover-link,
+  .hero-secondary-link {
+    min-height: 42px;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .developer-illustration {
+    max-height: 190px;
   }
 }
 
