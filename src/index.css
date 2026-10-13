@@ -24,7 +24,7 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  background: #000000;
+  background: #151e2d;
 }
 
 * {
@@ -82,30 +82,25 @@ h1:focus {
   outline: none;
 }
 
-::selection {
-  background: #d2d2d7;
-  color: #111111;
-}
-
 .site {
   --header-height: 60px;
-  --bg: #000000;
-  --surface: #111113;
-  --surface-high: #1c1c1e;
-  --ink: #f5f5f7;
-  --muted: #a1a1a6;
-  --line: #2c2c2e;
+  --bg: #151e2d;
+  --surface: #1c283b;
+  --surface-high: #253249;
+  --ink: #f6f7fa;
+  --muted: #b2bdcd;
+  --line: #334258;
   --line-soft: color-mix(in srgb, var(--line) 72%, transparent);
   --radius-sm: 10px;
   --radius-md: 18px;
   --radius-lg: 26px;
   --radius-pill: 999px;
-  --accent: #f5f5f7;
-  --accent-soft: #f5f5f70a;
-  --accent-ink: var(--accent);
-  --on-accent: var(--bg);
-  --purple: #b5b5bb;
-  --green: #b8b8bd;
+  --accent: #4267d5;
+  --accent-soft: #4267d51a;
+  --accent-ink: #a8beff;
+  --on-accent: #ffffff;
+  --purple: var(--accent-ink);
+  --green: var(--accent-ink);
   background: var(--bg);
   color: var(--ink);
   min-height: 100vh;
@@ -115,18 +110,18 @@ h1:focus {
 }
 
 .site[data-theme="light"] {
-  --bg: #f7f1e7;
-  --surface: #fffaf3;
-  --surface-high: #eee4d4;
-  --ink: #193f33;
-  --muted: #4d6355;
-  --line: #d7cbbb;
-  --accent: #ed955a;
-  --accent-soft: #ed955a1a;
-  --accent-ink: #244638;
-  --on-accent: #193f33;
-  --purple: #284f3d;
-  --green: #24533d;
+  --bg: #ffffff;
+  --surface: #f7f8fb;
+  --surface-high: #eef1f6;
+  --ink: #15171c;
+  --muted: #596170;
+  --line: #dee2ea;
+  --accent-ink: var(--accent);
+}
+
+.site ::selection {
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .shell {
@@ -235,18 +230,13 @@ p {
   color: var(--accent-ink);
 }
 
-.site[data-theme="light"] ::selection {
-  background: var(--accent);
-  color: var(--ink);
-}
-
 .site[data-theme="light"] .wordmark .accent {
   color: var(--accent);
 }
 
 .site[data-theme="light"] .secondary {
   background: var(--accent);
-  color: var(--ink);
+  color: var(--on-accent);
   border-color: transparent;
 }
 

@@ -7,15 +7,15 @@
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-pill);
   box-shadow:
-    8px 8px 18px #6a6b6a50,
-    -6px -6px 16px #6a6b6a50;
+    8px 8px 18px #15171c14,
+    -6px -6px 16px #15171c08;
   background: color-mix(in srgb, var(--bg) 84%, transparent);
 }
 
 .site[data-theme="dark"] .header {
   box-shadow:
-    8px 8px 18px #ffffff50,
-    -6px -6px 16px #ffffff50;
+    8px 8px 18px #080e1b66,
+    -6px -6px 16px #ffffff05;
 }
 
 .header .header-inner {
@@ -44,8 +44,8 @@
 }
 
 .header nav {
-  --nav-hover-bg: var(--ink);
-  --nav-hover-text: #fff;
+  --nav-hover-bg: var(--accent);
+  --nav-hover-text: var(--on-accent);
   grid-column: 2;
   grid-row: 1;
   justify-self: center;
@@ -90,14 +90,8 @@
   color: var(--nav-hover-text);
 }
 
-/* Fondo hundido y colores del modo oscuro. */
-
-.site[data-theme="dark"] .header nav {
-  --nav-hover-text: var(--bg);
-}
-
 .site[data-theme="dark"] .header nav .example-1 {
-  background: var(--surface);
+  background: var(--bg);
 }
 
 .header .theme-toggle {

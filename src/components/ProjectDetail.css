@@ -1,6 +1,6 @@
 .site[data-theme="light"] .detail-action:not(.is-primary) {
   background: var(--accent);
-  color: var(--ink);
+  color: var(--on-accent);
   border-color: transparent;
 }
 
