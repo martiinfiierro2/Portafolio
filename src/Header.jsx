@@ -1,5 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import useActiveSection from "./hooks/useActiveSection";
+import styled from 'styled-components';
 
 const links = [
   { href: "#enfoque", id: "enfoque", label: "Enfoque" },
@@ -18,25 +19,28 @@ export default function Header({ dark, onToggleTheme, page }) {
 
   return (
     <header className="header">
-      <div className="shell header-inner">
+      <div className="header-inner">
         <a
           className="wordmark"
           href="#inicio"
           aria-label="Martín Fierro, inicio"
         >
-          Martín Fierro
+          MF
         </a>
         <nav aria-label="Navegación principal">
-          {links.map((link) => (
-            <a
-              key={link.id}
-              href={link.href}
-              className={`nav-link nav-${link.id}`}
-              aria-current={activeSection === link.id ? "location" : undefined}
-            >
-              {link.label}
-            </a>
-          ))}
+          <ul className="example-1">
+            {links.map((link) => (
+              <li key={link.id} className="icon-content">
+                <a
+                  href={link.href}
+                  className={`nav-link nav-${link.id}`}
+                  aria-current={activeSection === link.id ? "location" : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </nav>
         <button
           className="theme-toggle"
@@ -49,3 +53,4 @@ export default function Header({ dark, onToggleTheme, page }) {
     </header>
   );
 }
+

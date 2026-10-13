@@ -4,7 +4,7 @@ export default function Reveal({ children, className = "", delay = 0 }) {
   const reducedMotion = useReducedMotion();
 
   return (
-    <Motion.div
+    <Motion.div 
       className={className}
       initial={reducedMotion ? false : { opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
