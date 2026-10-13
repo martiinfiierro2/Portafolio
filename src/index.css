@@ -101,6 +101,7 @@ h1:focus {
   --on-accent: #ffffff;
   --purple: var(--accent-ink);
   --green: var(--accent-ink);
+  padding-top: calc(var(--header-height) + 40px);
   background: var(--bg);
   color: var(--ink);
   min-height: 100vh;

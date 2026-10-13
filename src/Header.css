@@ -1,21 +1,22 @@
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: calc(100% - 40px);
   margin: 20px;
   z-index: 30;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-radius: var(--radius-pill);
   box-shadow:
-    8px 8px 18px #15171c14,
-    -6px -6px 16px #15171c08;
-  background: color-mix(in srgb, var(--bg) 84%, transparent);
+    4px 4px 16px #3a3a3a66,
+    -4px -4px 16px #3a3a3a66;
+  background: var(--bg);
 }
 
 .site[data-theme="dark"] .header {
   box-shadow:
-    8px 8px 18px #080e1b66,
-    -6px -6px 16px #ffffff05;
+    12px 12px 18px #7d7d7d66,
+    -6px -6px 16px #7d7d7d66;
 }
 
 .header .header-inner {

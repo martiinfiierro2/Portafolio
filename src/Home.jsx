@@ -34,7 +34,6 @@ export default function Home({ dark }) {
           <div className="info-container">
             <div className="info-profesion">
               <Reveal className="hero-heading">
-                <p className="hero-greeting">Hola, soy</p>
                 <h1 id="hero-title">Martín Fierro</h1>
               </Reveal>
               <Reveal className="hero-copy" delay={0.08}>

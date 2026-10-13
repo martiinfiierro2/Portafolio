@@ -41,8 +41,7 @@ export default function Projects() {
       <div className="shell catalog-content">
         <Reveal className="section-heading catalog-heading">
           <div>
-            <p className="eyebrow">PROYECTOS</p>
-            <h2 id="projects-title">Construido para explorar.</h2>
+            <h2 id="projects-title">PROYECTOS</h2>
           </div>
           <p>Abre un proyecto para conocerlo y probarlo.</p>
         </Reveal>
