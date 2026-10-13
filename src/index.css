@@ -88,7 +88,7 @@ h1:focus {
 }
 
 .site {
-  --header-height: 80px;
+  --header-height: 60px;
   --bg: #000000;
   --surface: #111113;
   --surface-high: #1c1c1e;

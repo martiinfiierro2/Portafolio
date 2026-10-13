@@ -12,6 +12,12 @@
   background: color-mix(in srgb, var(--bg) 84%, transparent);
 }
 
+.site[data-theme="dark"] .header {
+  box-shadow:
+    8px 8px 18px #ffffff50,
+    -6px -6px 16px #ffffff50;
+}
+
 .header .header-inner {
   position: relative;
   display: grid;
