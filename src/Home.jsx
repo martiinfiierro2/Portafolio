@@ -29,36 +29,40 @@ export default function Home({ dark }) {
         id="inicio"
         aria-labelledby="hero-title"
       >
-        <Reveal className="hero-heading shell">
-          <p className="hero-role">Ingeniería multimedia</p>
-          <h1 id="hero-title">
-            Desarrollador
-            <br />
-            <span>full-stack</span>
-          </h1>
-        </Reveal>
-        <Motion.div
-          className="hero-art shell"
-          style={reducedMotion ? undefined : { scale, opacity, y }}
-        >
-          <img
-            className="developer-illustration"
-            src={`/illustrations/martin-${dark ? "dark" : "light"}.png`}
-            alt="Ilustración de Martín Fierro trabajando en su portátil, con cuatro cuadros de habilidades a su izquierda: Frontend, Backend, Bases de datos y Herramientas."
-            width={1536}
-            height={1024}
-            fetchPriority="high"
-            decoding="async"
-          />
-        </Motion.div>
-        <div className="hero-discover shell">
-          <a className="discover-link" href="#proyectos">
-            Ver mis proyectos <ArrowUpRight size={17} aria-hidden="true" />
-          </a>
-          <a className="discover-hint" href="#enfoque">
-            <ArrowDown size={13} aria-hidden="true" /> Sigue explorando
-          </a>
-        </div>
+          <h1>Martín Fierro</h1>
+          <div className="info-container">
+            <div className="info-profesion">
+              <Reveal className="hero-heading">
+                <h2 id="hero-title">
+                  Desarrollador
+                  <br />
+                  <span>full-stack</span>
+                </h2>
+              </Reveal>
+              <div className="hero-discover shell">
+                <a className="discover-link" href="#proyectos">
+                  Ver mis proyectos <ArrowUpRight size={17} aria-hidden="true" />
+                </a>
+                <a className="discover-hint" href="#enfoque">
+                  <ArrowDown size={13} aria-hidden="true" /> Sigue explorando
+                </a>
+              </div>
+            </div>
+            <Motion.div
+              className="hero-art shell"
+              style={reducedMotion ? undefined : { scale, opacity, y }}
+            >
+              <img
+                className="developer-illustration"
+                src={`/illustrations/martin-${dark ? "dark" : "light"}.png`}
+                alt="Ilustración de Martín Fierro trabajando en su portátil, con cuatro cuadros de habilidades a su izquierda: Frontend, Backend, Bases de datos y Herramientas."
+                width={1536}
+                height={1024}
+                fetchPriority="high"
+                decoding="async"
+              />
+            </Motion.div>
+          </div>
       </section>
       <section
         className="experience page-screen"
