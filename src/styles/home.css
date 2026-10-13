@@ -35,11 +35,18 @@
   padding-block: 12px;
 }
 .developer-illustration {
+  --edge-mask:
+    linear-gradient(to bottom, #000 94%, #000000cc 97%, transparent 100%),
+    linear-gradient(to right, transparent, #000 3%, #000 96.5%, transparent);
   display: block;
-  width: min(100%, 820px);
-  height: 100%;
-  max-height: 460px;
-  object-fit: contain;
+  width: auto;
+  height: auto;
+  max-width: min(100%, 820px);
+  max-height: min(100%, 460px);
+  -webkit-mask-image: var(--edge-mask);
+  mask-image: var(--edge-mask);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 .hero-discover {
   display: flex;
