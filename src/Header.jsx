@@ -47,12 +47,16 @@ export default function Header({ dark, onToggleTheme }) {
             ))}
           </ul>
         </nav>
-        <button
-          className="theme-toggle"
-          onClick={onToggleTheme}
-          aria-label={dark ? "Activar tema claro" : "Activar tema oscuro"}
-        >
-          {dark ? <Sun size={17} /> : <Moon size={17} />}
+        <button className="theme-toggle">
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={dark}
+              onChange={onToggleTheme}
+              aria-label={dark ? "Activar tema claro" : "Activar tema oscuro"}
+            />
+            <span className="slider" />
+          </label>
         </button>
       </div>
     </header>
