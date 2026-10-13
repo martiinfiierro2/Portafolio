@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import Header from "./Header";
-import Bio from "./Bio";
+import Home from "./Home";
 import Footer from "./Footer";
-import Projects from "./components/Projects";
 import ProjectDetail from "./components/ProjectDetail";
 import DemoPage from "./components/DemoPage";
-import About from "./components/About";
-import Experience from "./components/Experience";
 import { projects } from "./data/projects";
 import useHashRoute from "./hooks/useHashRoute";
 
@@ -85,12 +82,7 @@ export default function App() {
       />
       <main id="contenido" tabIndex={-1}>
         {route.page === "home" ? (
-          <>
-            <Bio dark={dark} />
-            <Experience />
-            <Projects />
-            <About />
-          </>
+          <Home dark={dark} />
         ) : route.page === "proyectos" && project ? (
           <ProjectDetail key={project.slug} project={project} />
         ) : route.page === "demos" && validDemo ? (

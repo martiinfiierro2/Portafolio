@@ -1,8 +1,37 @@
-import { ArrowLeft, ArrowUpRight, Check, Code2, Play } from "lucide-react";
-import ProjectMedia from "./ProjectMedia";
+import { useEffect, useId, useRef, useState } from "react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  Check,
+  Code2,
+  Maximize2,
+  Play,
+  X,
+} from "lucide-react";
 import Reveal from "./Reveal";
+import "./ProjectDetail.css";
 
 export default function ProjectDetail({ project }) {
+  const [activeImage, setActiveImage] = useState(null);
+  const dialogRef = useRef(null);
+  const triggerRef = useRef(null);
+  const titleId = useId();
+
+  useEffect(() => {
+    if (activeImage && dialogRef.current && !dialogRef.current.open) {
+      dialogRef.current.showModal();
+    }
+  }, [activeImage]);
+
+  function closeViewer() {
+    dialogRef.current?.close();
+  }
+
+  function handleClose() {
+    setActiveImage(null);
+    triggerRef.current?.focus();
+  }
+
   if (!project) return null;
 
   const hasFacts = Boolean(
@@ -19,7 +48,7 @@ export default function ProjectDetail({ project }) {
         <div className="detail-meta">
           <span className="eyebrow">PROYECTO / {project.category}</span>
           {project.isExample && (
-            <span className="catalog-badge is-example">Ejemplo</span>
+            <span className="project-badge is-example">Ejemplo</span>
           )}
           {project.status && <span>{project.status}</span>}
         </div>
@@ -94,7 +123,10 @@ export default function ProjectDetail({ project }) {
               </div>
               <div className="detail-architecture">
                 {project.architecture.map((decision) => (
-                  <div className="detail-architecture-item" key={decision.title}>
+                  <div
+                    className="detail-architecture-item"
+                    key={decision.title}
+                  >
                     <Code2 size={20} aria-hidden="true" />
                     <div>
                       <h3>{decision.title}</h3>
@@ -137,7 +169,77 @@ export default function ProjectDetail({ project }) {
               <p className="detail-note">
                 Abre una captura para verla en detalle.
               </p>
-              <ProjectMedia gallery={project.gallery} />
+              <>
+                <div className="gallery-grid">
+                  {project.gallery.map((item) => (
+                    <figure className="gallery-item" key={item.src}>
+                      <button
+                        className="gallery-open"
+                        type="button"
+                        aria-label={`Ampliar captura: ${item.caption ?? item.alt}`}
+                        aria-haspopup="dialog"
+                        onClick={(event) => {
+                          triggerRef.current = event.currentTarget;
+                          setActiveImage(item);
+                        }}
+                      >
+                        <img
+                          className={`gallery-image${item.type === "mobile" ? " is-mobile" : ""}`}
+                          src={item.src}
+                          alt={item.alt}
+                          loading="lazy"
+                        />
+                        <span>
+                          <Maximize2 size={17} aria-hidden="true" /> Ampliar
+                        </span>
+                      </button>
+                      {item.caption && (
+                        <figcaption className="gallery-caption">
+                          {item.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  ))}
+                </div>
+
+                <dialog
+                  className="gallery-viewer"
+                  ref={dialogRef}
+                  aria-labelledby={titleId}
+                  onClose={handleClose}
+                  onClick={(event) => {
+                    if (event.target === event.currentTarget) closeViewer();
+                  }}
+                >
+                  <div className="gallery-viewer-header">
+                    <h2 id={titleId}>
+                      {activeImage?.caption ?? "Captura del proyecto"}
+                    </h2>
+                    <button
+                      className="gallery-viewer-close"
+                      type="button"
+                      aria-label="Cerrar captura"
+                      onClick={closeViewer}
+                      autoFocus
+                    >
+                      <X size={22} aria-hidden="true" />
+                    </button>
+                  </div>
+                  {activeImage && (
+                    <div className="gallery-viewer-stage">
+                      <img
+                        className="gallery-viewer-image"
+                        src={activeImage.src}
+                        alt={activeImage.alt}
+                      />
+                      <p className="gallery-viewer-caption">
+                        Esc para cerrar ·{" "}
+                        {activeImage.caption ?? activeImage.alt}
+                      </p>
+                    </div>
+                  )}
+                </dialog>
+              </>
             </Reveal>
           )}
         </div>
@@ -170,7 +272,7 @@ export default function ProjectDetail({ project }) {
                 {project.stack?.length > 0 && (
                   <>
                     <h3>Stack</h3>
-                    <ul className="catalog-tags" aria-label="Tecnologías">
+                    <ul className="project-tags" aria-label="Tecnologías">
                       {project.stack.map((technology) => (
                         <li key={technology}>{technology}</li>
                       ))}

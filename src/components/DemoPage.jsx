@@ -2,6 +2,7 @@ import { ArrowLeft, FlaskConical } from "lucide-react";
 import TaskFlowDemo from "./demos/TaskFlowDemo";
 import ApiExplorerDemo from "./demos/ApiExplorerDemo";
 import MediaLabDemo from "./demos/MediaLabDemo";
+import "./DemoPage.css";
 
 const demos = {
   taskflow: {
@@ -33,7 +34,9 @@ export default function DemoPage({ demoId }) {
         <a className="demo-back" href="#proyectos">
           <ArrowLeft size={16} aria-hidden="true" /> Volver a proyectos
         </a>
-        <h1 id="demo-title" tabIndex={-1}>Demo no encontrada</h1>
+        <h1 id="demo-title" tabIndex={-1}>
+          Demo no encontrada
+        </h1>
         <p>Consulta el catálogo para abrir un proyecto disponible.</p>
       </section>
     );
@@ -50,7 +53,9 @@ export default function DemoPage({ demoId }) {
         <div className="demo-heading-row">
           <div>
             <p className="eyebrow">ENTORNO INTERACTIVO</p>
-            <h1 id="demo-title" tabIndex={-1}>{demo.title}</h1>
+            <h1 id="demo-title" tabIndex={-1}>
+              {demo.title}
+            </h1>
           </div>
           <span className="demo-badge">
             <FlaskConical size={15} aria-hidden="true" />

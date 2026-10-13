@@ -19,17 +19,22 @@ npm run preview
 
 ## Estructura
 
-- `src/data/projects.js`: contenido de todas las fichas, tecnologías, proceso, capturas y enlaces.
-- `src/components/DeveloperIllustration.jsx`: ilustración de Martín con variantes para cada tema en `public/illustrations/`.
-- `src/components/Experience.jsx`: sección del enfoque de trabajo.
-- `src/components/Projects.jsx`: catálogo y filtros.
-- `src/components/ProjectDetail.jsx`: ficha reutilizable.
-- `src/components/ProjectMedia.jsx`: capturas ampliables.
-- `src/components/demos/`: TaskFlow, Pulse API y Media Lab.
-- `src/hooks/useHashRoute.js`: navegación mediante hash para hosting estático.
-- `src/hooks/useActiveSection.js`: seguimiento de la sección visible en la cabecera.
-- `src/styles/`: estilos separados por interfaz, catálogo, fichas y demos; `src/index.css` agrupa sus importaciones.
-- `src/assets/fonts/`: fuentes locales; Clash Display en negrita para títulos y Manrope para textos y controles.
+Cada página o sección principal reúne su contenido en un JSX y tiene al lado un CSS con el mismo nombre. El título y la ilustración de la portada se editan juntos; la galería y su visor forman parte de la ficha del proyecto.
+
+| Apartado                  | Componente                         | Estilos                            |
+| ------------------------- | ---------------------------------- | ---------------------------------- |
+| Cabecera y menú           | `src/Header.jsx`                   | `src/Header.css`                   |
+| Portada, enfoque y perfil | `src/Home.jsx`                     | `src/Home.css`                     |
+| Catálogo y filtros        | `src/components/Projects.jsx`      | `src/components/Projects.css`      |
+| Ficha y galería           | `src/components/ProjectDetail.jsx` | `src/components/ProjectDetail.css` |
+| Página de demos           | `src/components/DemoPage.jsx`      | `src/components/DemoPage.css`      |
+| Contacto y pie            | `src/Footer.jsx`                   | `src/Footer.css`                   |
+
+`src/index.css` contiene únicamente los estilos compartidos: fuentes, temas, tipografía, controles, etiquetas de proyectos y reglas generales de adaptación y accesibilidad. Cada componente importa su propio CSS, que incluye también sus ajustes para móvil; no hay un archivo responsive separado.
+
+Las tres demos de `src/components/demos/` conservan sus componentes porque son aplicaciones independientes. Comparten `DemoPage.css` dentro del mismo apartado, sin crear un CSS por cada detalle. `Reveal.jsx` y los hooks de navegación son utilidades reutilizadas en varias páginas.
+
+El contenido de las fichas está en `src/data/projects.js` y las ilustraciones en `public/illustrations/`. Las fuentes locales de `src/assets/fonts/` son Clash Display en negrita para títulos y Manrope para textos y controles.
 
 Consulta [cómo añadir proyectos](docs/PROJECTS.md) para crear nuevas fichas sin duplicar componentes. Cada proyecto tiene una dirección propia, por ejemplo `#/proyectos/taskflow`, que se puede abrir directamente o compartir.
 

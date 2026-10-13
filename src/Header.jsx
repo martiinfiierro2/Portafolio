@@ -1,6 +1,6 @@
 import { Moon, Sun } from "lucide-react";
 import useActiveSection from "./hooks/useActiveSection";
-import styled from 'styled-components';
+import "./Header.css";
 
 const links = [
   { href: "#enfoque", id: "enfoque", label: "Enfoque" },
@@ -34,7 +34,9 @@ export default function Header({ dark, onToggleTheme, page }) {
                 <a
                   href={link.href}
                   className={`nav-link nav-${link.id}`}
-                  aria-current={activeSection === link.id ? "location" : undefined}
+                  aria-current={
+                    activeSection === link.id ? "location" : undefined
+                  }
                 >
                   {link.label}
                 </a>
@@ -53,4 +55,3 @@ export default function Header({ dark, onToggleTheme, page }) {
     </header>
   );
 }
-

@@ -2,27 +2,7 @@ import { useMemo, useState } from "react";
 import { ArrowRight, Layers, Search } from "lucide-react";
 import { projects } from "../data/projects";
 import Reveal from "./Reveal";
-
-function ProjectPreview({ project }) {
-  const image = project.gallery?.[0];
-
-  return (
-    <div
-      className="catalog-preview"
-      data-project={project.slug}
-      aria-hidden="true"
-    >
-      {image?.src ? (
-        <img src={image.src} alt="" loading="lazy" decoding="async" />
-      ) : (
-        <div className="catalog-preview-placeholder">
-          <Layers size={42} strokeWidth={1.2} />
-          <span>{project.title}</span>
-        </div>
-      )}
-    </div>
-  );
-}
+import "./Projects.css";
 
 export default function Projects() {
   const [query, setQuery] = useState("");
@@ -117,14 +97,32 @@ export default function Projects() {
                 href={`#/proyectos/${project.slug}`}
                 aria-label={`Explorar ${project.title}${project.isExample ? ", proyecto de ejemplo" : ""}`}
               >
-                <ProjectPreview project={project} />
+                <div
+                  className="catalog-preview"
+                  data-project={project.slug}
+                  aria-hidden="true"
+                >
+                  {project.gallery?.[0]?.src ? (
+                    <img
+                      src={project.gallery[0].src}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <div className="catalog-preview-placeholder">
+                      <Layers size={42} strokeWidth={1.2} />
+                      <span>{project.title}</span>
+                    </div>
+                  )}
+                </div>
                 <div className="catalog-card-body">
                   <div className="catalog-meta">
                     <span>{project.category}</span>
                     {project.isExample ? (
-                      <span className="catalog-badge is-example">Ejemplo</span>
+                      <span className="project-badge is-example">Ejemplo</span>
                     ) : (
-                      <span className="catalog-badge">Proyecto personal</span>
+                      <span className="project-badge">Proyecto personal</span>
                     )}
                   </div>
                   <h3 className="catalog-card-title">{project.title}</h3>

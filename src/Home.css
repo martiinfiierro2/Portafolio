@@ -1,3 +1,16 @@
+.screen-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 13px;
+  color: var(--ink);
+  margin-top: 36px;
+}
+
+.screen-next:hover {
+  color: var(--muted);
+}
+
 .hero {
   position: relative;
   height: calc(100vh - var(--header-height));
@@ -8,23 +21,28 @@
   padding-block: 38px max(24px, env(safe-area-inset-bottom));
   text-align: center;
 }
+
 .hero-heading {
   max-width: 900px;
 }
+
 .hero h1 {
   font-size: clamp(48px, 5.8vw, 78px);
   line-height: 1.04;
   margin: 0;
 }
+
 .hero h1 > span {
   color: var(--muted);
 }
+
 .hero-role {
   color: var(--muted);
   font-size: 13px;
   letter-spacing: 0.015em;
   margin: 0 0 18px;
 }
+
 .hero-art {
   display: flex;
   align-items: center;
@@ -32,6 +50,7 @@
   min-height: 0;
   padding-block: 12px;
 }
+
 .developer-illustration {
   --edge-mask:
     linear-gradient(to bottom, #000 94%, #000000cc 97%, transparent 100%),
@@ -46,6 +65,7 @@
   -webkit-mask-composite: source-in;
   mask-composite: intersect;
 }
+
 .hero-discover {
   display: flex;
   flex-direction: column;
@@ -55,6 +75,7 @@
   position: relative;
   z-index: 2;
 }
+
 .discover-link {
   display: inline-flex;
   align-items: center;
@@ -66,9 +87,11 @@
   font-size: 13px;
   font-weight: 550;
 }
+
 .discover-link:hover {
   transform: translateY(-2px);
 }
+
 .discover-hint {
   display: inline-flex;
   align-items: center;
@@ -76,36 +99,44 @@
   color: var(--muted);
   font-size: 11px;
 }
+
 .discover-hint:hover {
   color: var(--ink);
 }
+
 .experience {
   display: grid;
   align-items: center;
   text-align: center;
 }
+
 .experience-inner {
   max-width: 1050px;
 }
+
 .experience h2,
 .about h2 {
   font-size: clamp(38px, 5.6vw, 78px);
   line-height: 1.09;
   margin-bottom: 32px;
 }
+
 .experience h2 span,
 .about h2 span {
   color: var(--muted);
 }
+
 .experience-copy {
   max-width: 580px;
   margin-inline: auto;
 }
+
 .experience-copy p {
   font-size: 17px;
   line-height: 1.8;
   margin-bottom: 0;
 }
+
 .experience-flow {
   display: flex;
   align-items: center;
@@ -115,11 +146,13 @@
   color: var(--muted);
   font-size: 13px;
 }
+
 .experience-flow i {
   width: 42px;
   height: 1px;
   background: var(--line);
 }
+
 @media (max-width: 760px) {
   .hero {
     padding-block: 28px max(18px, env(safe-area-inset-bottom));
@@ -151,6 +184,7 @@
     width: 20px;
   }
 }
+
 @media (max-height: 600px) {
   .hero {
     padding-block: 18px;
@@ -163,6 +197,7 @@
     margin-bottom: 10px;
   }
 }
+
 @media (max-height: 450px) {
   .hero {
     padding-block: 10px;
@@ -193,5 +228,36 @@
   }
   .discover-hint {
     font-size: 10px;
+  }
+}
+
+.about {
+  display: grid;
+  align-items: center;
+  text-align: center;
+}
+
+.about-inner {
+  max-width: 1000px;
+}
+
+.about-copy {
+  max-width: 580px;
+  margin-inline: auto;
+}
+
+.about-copy p {
+  font-size: 17px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.about-copy p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+  .about-copy p {
+    font-size: 15px;
   }
 }

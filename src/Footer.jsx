@@ -1,5 +1,6 @@
 import { ArrowUp, ArrowUpRight } from "lucide-react";
 import Reveal from "./components/Reveal";
+import "./Footer.css";
 
 export default function Footer({ immersive = false }) {
   return (
