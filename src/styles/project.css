@@ -7,9 +7,7 @@
   align-items: center;
   gap: 8px;
   color: var(--muted);
-  font:
-    11px Consolas,
-    monospace;
+  font-size: 11px;
   margin-bottom: 42px;
 }
 .detail-back:hover,
@@ -25,9 +23,7 @@
   flex-wrap: wrap;
   gap: 12px;
   align-items: center;
-  font:
-    10px Consolas,
-    monospace;
+  font-size: 10px;
   color: var(--accent-ink);
   margin-bottom: 20px;
 }
@@ -87,7 +83,6 @@
 .detail-section-heading h2 {
   font-size: 23px;
   margin: 0;
-  letter-spacing: -0.5px;
 }
 .detail-section > p,
 .detail-box p,
@@ -122,9 +117,7 @@
   background: var(--surface);
 }
 .detail-architecture-item h3 {
-  font:
-    13px Consolas,
-    monospace;
+  font-size: 13px;
   margin-bottom: 9px;
 }
 .detail-timeline {
@@ -140,9 +133,7 @@
 .detail-step-number {
   display: grid;
   place-items: center;
-  font:
-    11px Consolas,
-    monospace;
+  font-size: 11px;
   color: var(--accent-ink);
   border: 1px solid var(--line-soft);
   background: var(--surface);
@@ -182,9 +173,7 @@
   padding: 24px;
 }
 .detail-sidebar h2 {
-  font:
-    11px Consolas,
-    monospace;
+  font-size: 11px;
   letter-spacing: 1px;
   margin-bottom: 20px;
 }
@@ -200,9 +189,7 @@
   border-bottom: 1px solid var(--line);
 }
 .detail-facts dt {
-  font:
-    9px Consolas,
-    monospace;
+  font-size: 9px;
   color: var(--muted);
   margin-bottom: 6px;
 }
@@ -323,14 +310,11 @@
 }
 .detail-section-heading > span {
   color: var(--accent-ink);
-  font:
-    10px Consolas,
-    monospace;
+  font-size: 10px;
   margin-right: 4px;
 }
 .detail-box h2 {
   font-size: 20px;
-  letter-spacing: -0.5px;
 }
 .detail-architecture-item {
   display: flex;
@@ -366,7 +350,6 @@
 .gallery-viewer-header h2 {
   font-size: 17px;
   margin: 0;
-  letter-spacing: -0.4px;
 }
 .gallery-item:only-child {
   grid-column: 1 / -1;

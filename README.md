@@ -29,6 +29,7 @@ npm run preview
 - `src/hooks/useHashRoute.js`: navegación mediante hash para hosting estático.
 - `src/hooks/useActiveSection.js`: seguimiento de la sección visible en la cabecera.
 - `src/styles/`: estilos separados por interfaz, catálogo, fichas y demos; `src/index.css` agrupa sus importaciones.
+- `src/assets/fonts/`: fuentes locales; Clash Display en negrita para títulos y Manrope para textos y controles.
 
 Consulta [cómo añadir proyectos](docs/PROJECTS.md) para crear nuevas fichas sin duplicar componentes. Cada proyecto tiene una dirección propia, por ejemplo `#/proyectos/taskflow`, que se puede abrir directamente o compartir.
 

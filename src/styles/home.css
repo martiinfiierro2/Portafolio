@@ -13,8 +13,6 @@
 }
 .hero h1 {
   font-size: clamp(48px, 5.8vw, 78px);
-  font-weight: 650;
-  letter-spacing: -0.065em;
   line-height: 1.04;
   margin: 0;
 }
@@ -92,7 +90,6 @@
 .experience h2,
 .about h2 {
   font-size: clamp(38px, 5.6vw, 78px);
-  letter-spacing: -0.055em;
   line-height: 1.09;
   margin-bottom: 32px;
 }

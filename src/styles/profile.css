@@ -50,7 +50,6 @@
 .contact-screen .contact h2 {
   max-width: 780px;
   font-size: clamp(40px, 5.5vw, 76px);
-  letter-spacing: -0.055em;
   line-height: 1.09;
   margin: 0 auto 25px;
 }
