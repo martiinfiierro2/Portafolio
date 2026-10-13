@@ -3,9 +3,9 @@ export default function DeveloperIllustration({ dark }) {
     <img
       className="developer-illustration"
       src={`/illustrations/martin-${dark ? "dark" : "light"}.png`}
-      alt="Ilustración de Martín Fierro mirando su portátil mientras escribe, con la mesa en primer plano y ocho cuadros visibles a su izquierda: React, Angular, SQL, JavaScript, Node.js, Git, HTML y CSS."
-      width={1536}
-      height={1024}
+      alt="Ilustración de Martín Fierro trabajando en su portátil, con cuatro cuadros de habilidades a su izquierda: Frontend, Backend, Bases de datos y Herramientas."
+      width={1672}
+      height={941}
       fetchPriority="high"
       decoding="async"
     />
