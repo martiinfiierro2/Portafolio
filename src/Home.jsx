@@ -7,7 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import { ArrowDown, ArrowUpRight } from "lucide-react";
-import { Github, Instagram, Linkedin, Whatsapp } from "./components/SocialIcons";
+import SocialMedia from "./components/SocialMedia";
 import CvPreview from "./components/CvPreview";
 import { experience } from "./data/experience";
 import { contact } from "./data/contact";
@@ -128,24 +128,7 @@ export default function Home({ dark }) {
             <h2 id="contact-title">Lo siguiente empieza con una conversación.</h2>
             <p className="contact-intro">Escríbeme a través de mis redes o sigue mis proyectos.</p>
           </Reveal>
-          <Reveal className="about-contact" delay={0.15}>
-            <div className="social-links" aria-label="Redes sociales">
-              {[
-                { key: "linkedin", label: "LinkedIn", Icon: Linkedin },
-                { key: "instagram", label: "Instagram", Icon: Instagram },
-                { key: "whatsapp", label: "WhatsApp", Icon: Whatsapp },
-                { key: "github", label: "GitHub", Icon: Github },
-              ].map(({ key, label, Icon }) => contact[key] ? (
-                <a key={key} href={contact[key]} target="_blank" rel="noopener noreferrer" className="social-link">
-                  <Icon size={20} aria-hidden="true" /><span>{label}</span><ArrowUpRight size={15} aria-hidden="true" />
-                </a>
-              ) : (
-                <span key={key} className="social-link unavailable" aria-disabled="true" title="Enlace pendiente de configurar">
-                  <Icon size={20} aria-hidden="true" /><span>{label}</span><small>Pendiente</small>
-                </span>
-              ))}
-            </div>
-          </Reveal>
+          <SocialMedia />
         </div>
       </section>
     </>

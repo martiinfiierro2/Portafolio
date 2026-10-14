@@ -108,6 +108,7 @@ h1:focus {
   transition:
     background 200ms,
     color 200ms;
+  --social-card-bg: #eef1f6;
 }
 
 .site[data-theme="light"] {
@@ -118,6 +119,7 @@ h1:focus {
   --muted: #596170;
   --line: #dee2ea;
   --accent-ink: var(--accent);
+  --social-card-bg: #eef1f6;
 }
 
 .site ::selection {
