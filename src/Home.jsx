@@ -6,8 +6,10 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Download, FileText } from "lucide-react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { Github, Instagram, Linkedin, Whatsapp } from "./components/SocialIcons";
+import CvPreview from "./components/CvPreview";
+import { experience } from "./data/experience";
 import { contact } from "./data/contact";
 import Reveal from "./components/Reveal";
 import Projects from "./components/Projects";
@@ -89,7 +91,7 @@ export default function Home({ dark }) {
         <div className="shell about-inner">
           <div className="about-story">
             <Reveal>
-              <p className="eyebrow">SOBRE MÍ · CONECTEMOS</p>
+              <p className="eyebrow">SOBRE MÍ</p>
               <h2 id="about-title">
                 Siempre curioso.<br />
                 <span>Siempre construyendo.</span>
@@ -100,24 +102,33 @@ export default function Home({ dark }) {
               <p>Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.</p>
             </Reveal>
           </div>
-          <Reveal className="about-contact" delay={0.15}>
-            <div id="contacto" className="contact-anchor" />
-            <p className="eyebrow">SIGAMOS EN CONTACTO</p>
-            <h3>Lo siguiente empieza con una conversación.</h3>
+          <Reveal className="experience-panel" delay={0.15}>
+            <p className="eyebrow">MI TRAYECTORIA</p>
+            <h3>Experiencia profesional</h3>
+            {experience.length > 0 ? (
+              <ol className="experience-list">
+                {experience.map((job, index) => (
+                  <li key={`${job.company}-${job.role}-${index}`}>
+                    <p className="experience-period">{job.period}</p>
+                    <h4>{job.role}</h4>
+                    <p className="experience-company">{job.company}</p>
+                    <p>{job.description}</p>
+                  </li>
+                ))}
+              </ol>
+            ) : <p className="experience-empty">Próximamente compartiré aquí mi experiencia profesional.</p>}
+          </Reveal>
+        </div>
+      </section>
+      <section className="connect page-screen" id="contacto" aria-labelledby="contact-title">
+        <div className="shell connect-inner">
+          <Reveal className="connect-copy">
+            <p className="eyebrow">CONECTEMOS</p>
+            <h2 id="contact-title">Lo siguiente empieza con una conversación.</h2>
             <p className="contact-intro">Conoce mi trayectoria o escríbeme a través de mis redes.</p>
-            {contact.cv ? (
-              <a className="cv-card" href={contact.cv} download target="_blank" rel="noopener noreferrer">
-                <FileText size={36} aria-hidden="true" />
-                <span><strong>Mi currículum</strong><small>Descargar CV</small></span>
-                <Download size={20} aria-hidden="true" />
-              </a>
-            ) : (
-              <div className="cv-card unavailable" aria-disabled="true">
-                <FileText size={36} aria-hidden="true" />
-                <span><strong>Mi currículum</strong><small>Próximamente disponible</small></span>
-                <Download size={20} aria-hidden="true" />
-              </div>
-            )}
+          </Reveal>
+          <Reveal className="about-contact" delay={0.15}>
+            <CvPreview url={contact.cv} />
             <div className="social-links" aria-label="Redes sociales">
               {[
                 { key: "linkedin", label: "LinkedIn", Icon: Linkedin },

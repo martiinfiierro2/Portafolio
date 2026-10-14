@@ -1,4 +1,3 @@
-import { Moon, Sun } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import useActiveSection from "./hooks/useActiveSection";
 import "./Header.css";
@@ -7,6 +6,7 @@ const links = [
   { to: "/#inicio", id: "inicio", label: "Inicio" },
   { to: "/#proyectos", id: "proyectos", label: "Proyectos" },
   { to: "/#sobre-mi", id: "sobre-mi", label: "Sobre mí" },
+  { to: "/#contacto", id: "contacto", label: "Contacto" },
 ];
 
 export default function Header({ dark, onToggleTheme }) {
