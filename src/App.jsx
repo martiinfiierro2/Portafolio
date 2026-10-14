@@ -142,7 +142,7 @@ export default function App() {
           <Route path="*" element={notFound} />
         </Routes>
       </main>
-      <Footer immersive={isHome} />
+      <Footer />
     </div>
   );
 }

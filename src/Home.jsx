@@ -6,7 +6,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Download, FileText } from "lucide-react";
+import { Github, Instagram, Linkedin, Whatsapp } from "./components/SocialIcons";
+import { contact } from "./data/contact";
 import Reveal from "./components/Reveal";
 import Projects from "./components/Projects";
 import "./Home.css";
@@ -85,28 +87,54 @@ export default function Home({ dark }) {
         aria-labelledby="about-title"
       >
         <div className="shell about-inner">
-          <Reveal>
-            <p className="eyebrow">SOBRE MÍ</p>
-            <h2 id="about-title">
-              Siempre curioso.
-              <br />
-              <span>Siempre construyendo.</span>
-            </h2>
+          <div className="about-story">
+            <Reveal>
+              <p className="eyebrow">SOBRE MÍ · CONECTEMOS</p>
+              <h2 id="about-title">
+                Siempre curioso.<br />
+                <span>Siempre construyendo.</span>
+              </h2>
+            </Reveal>
+            <Reveal className="about-copy" delay={0.1}>
+              <p>Soy Martín Fierro, ingeniero multimedia y desarrollador full-stack. Convierto ideas en herramientas útiles y aprendo algo nuevo con cada proyecto.</p>
+              <p>Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.</p>
+            </Reveal>
+          </div>
+          <Reveal className="about-contact" delay={0.15}>
+            <div id="contacto" className="contact-anchor" />
+            <p className="eyebrow">SIGAMOS EN CONTACTO</p>
+            <h3>Lo siguiente empieza con una conversación.</h3>
+            <p className="contact-intro">Conoce mi trayectoria o escríbeme a través de mis redes.</p>
+            {contact.cv ? (
+              <a className="cv-card" href={contact.cv} download target="_blank" rel="noopener noreferrer">
+                <FileText size={36} aria-hidden="true" />
+                <span><strong>Mi currículum</strong><small>Descargar CV</small></span>
+                <Download size={20} aria-hidden="true" />
+              </a>
+            ) : (
+              <div className="cv-card unavailable" aria-disabled="true">
+                <FileText size={36} aria-hidden="true" />
+                <span><strong>Mi currículum</strong><small>Próximamente disponible</small></span>
+                <Download size={20} aria-hidden="true" />
+              </div>
+            )}
+            <div className="social-links" aria-label="Redes sociales">
+              {[
+                { key: "linkedin", label: "LinkedIn", Icon: Linkedin },
+                { key: "instagram", label: "Instagram", Icon: Instagram },
+                { key: "whatsapp", label: "WhatsApp", Icon: Whatsapp },
+                { key: "github", label: "GitHub", Icon: Github },
+              ].map(({ key, label, Icon }) => contact[key] ? (
+                <a key={key} href={contact[key]} target="_blank" rel="noopener noreferrer" className="social-link">
+                  <Icon size={20} aria-hidden="true" /><span>{label}</span><ArrowUpRight size={15} aria-hidden="true" />
+                </a>
+              ) : (
+                <span key={key} className="social-link unavailable" aria-disabled="true" title="Enlace pendiente de configurar">
+                  <Icon size={20} aria-hidden="true" /><span>{label}</span><small>Pendiente</small>
+                </span>
+              ))}
+            </div>
           </Reveal>
-          <Reveal className="about-copy" delay={0.1}>
-            <p>
-              Soy Martín Fierro, ingeniero multimedia y desarrollador
-              full-stack. Convierto ideas en herramientas útiles y aprendo algo
-              nuevo con cada proyecto.
-            </p>
-            <p>
-              Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las
-              ganas de entender y mejorar.
-            </p>
-          </Reveal>
-          <Link className="screen-next" to="/#contacto">
-            Sigamos en contacto <span aria-hidden="true">↓</span>
-          </Link>
         </div>
       </section>
     </>
