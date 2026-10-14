@@ -33,7 +33,7 @@ export default function CvPreview({ url }) {
     <>
       <button className="cv-card" type="button" onClick={openPreview} disabled={!url} aria-haspopup="dialog">
         <FileText size={36} aria-hidden="true" />
-        <span><strong>Mi currículum</strong><small>{url ? "Ver y descargar CV" : "Próximamente disponible"}</small></span>
+        <span><strong>Ver currículum completo</strong><small>{url ? "Ver y descargar CV" : "Próximamente disponible"}</small></span>
         <ExternalLink size={20} aria-hidden="true" />
       </button>
       <dialog ref={dialogRef} className="cv-dialog" aria-labelledby="cv-title" onClick={(event) => {

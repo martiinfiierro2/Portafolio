@@ -117,6 +117,7 @@ export default function Home({ dark }) {
                 ))}
               </ol>
             ) : <p className="experience-empty">Próximamente compartiré aquí mi experiencia profesional.</p>}
+            <CvPreview url={contact.cv} />
           </Reveal>
         </div>
       </section>
@@ -125,10 +126,9 @@ export default function Home({ dark }) {
           <Reveal className="connect-copy">
             <p className="eyebrow">CONECTEMOS</p>
             <h2 id="contact-title">Lo siguiente empieza con una conversación.</h2>
-            <p className="contact-intro">Conoce mi trayectoria o escríbeme a través de mis redes.</p>
+            <p className="contact-intro">Escríbeme a través de mis redes o sigue mis proyectos.</p>
           </Reveal>
           <Reveal className="about-contact" delay={0.15}>
-            <CvPreview url={contact.cv} />
             <div className="social-links" aria-label="Redes sociales">
               {[
                 { key: "linkedin", label: "LinkedIn", Icon: Linkedin },
