@@ -210,7 +210,8 @@
   .header nav .example-1 {
     position: absolute;
     top: calc(100% + 10px);
-    right: -44px;
+    background-color: #fff;
+    right: -90px;
     z-index: 40;
     flex-direction: column;
     align-items: stretch;
@@ -226,6 +227,10 @@
     transition:
       opacity 180ms ease,
       transform 180ms ease;
+  }
+
+  .site[data-theme="dark"]  .header nav .example-1 {
+    background-color: var(--accent);
   }
 
   .header nav:hover .example-1,
@@ -247,6 +252,16 @@
     font-size: 13px;
     text-align: left;
   }
+
+  .header nav .nav-link:hover{
+    background-color: var(--accent);
+    color: #fff;
+  }
+  
+  .site[data-theme="dark"] .header nav .nav-link:hover{
+    background-color: #fff;
+    color: var(--accent);
+  }
 }
 
 @media (max-width: 360px) {
@@ -256,13 +271,22 @@
 }
 
 @media (max-width: 760px) {
-  .header-inner {
-    height: calc(var(--header-height) - 1px);
-    gap: 14px;
-  }
   .header nav {
     gap: 18px;
     font-size: 11px;
+  }
+
+   .header .header-inner {
+    height: calc(var(--header-height) - 1px);
+    grid-template-columns: minmax(0, 1fr) 36px 56px;
+    gap: 14px;
+    padding-inline: 16px;
+  }
+
+  .header .theme-toggle {
+    width: 56px;
+    height: 36px;
+    justify-self: end;
   }
 }
 
