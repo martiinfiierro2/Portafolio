@@ -123,7 +123,6 @@ export default function MediaLabDemo() {
       <div className="media-library">
         <div className="media-controls">
           <div>
-            <p className="demo-section-label">GALERÍA GENERATIVA</p>
             <h2>Geometría en movimiento.</h2>
           </div>
           <div
@@ -178,7 +177,6 @@ export default function MediaLabDemo() {
         </div>
       </div>
       <aside className="media-detail" aria-labelledby="media-detail-title">
-        <p className="demo-section-label">FICHA DE LA PIEZA</p>
         <h3 id="media-detail-title">{selected.title}</h3>
         <p>{selected.description}</p>
         <dl className="media-metadata">

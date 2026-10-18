@@ -1,0 +1,83 @@
+- generic [ref=f1e3]:
+  - link "Saltar al contenido" [ref=f1e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f1e5]:
+    - generic [ref=f1e6]:
+      - link "Martín Fierro, inicio" [ref=f1e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=f1e8]:
+        - list [ref=f1e9]:
+          - listitem [ref=f1e10]:
+            - link "Inicio" [ref=f1e11] [cursor=pointer]:
+              - /url: /#inicio
+          - listitem [ref=f1e12]:
+            - link "Proyectos" [ref=f1e13] [cursor=pointer]:
+              - /url: /proyectos
+          - listitem [ref=f1e14]:
+            - link "Sobre mí" [ref=f1e15] [cursor=pointer]:
+              - /url: /#sobre-mi
+          - listitem [ref=f1e16]:
+            - link "Contacto" [ref=f1e17] [cursor=pointer]:
+              - /url: /#contacto
+      - generic [ref=f1e19]:
+        - checkbox "Activar tema claro" [checked]
+        - generic [ref=f1e20] [cursor=pointer]
+  - main [ref=f1e21]:
+    - region [ref=f1e22]:
+      - generic [ref=f1e23]:
+        - heading "Martín Fierro" [level=1] [ref=f1e25]:
+          - generic [ref=f1e26]: Martín
+          - generic [ref=f1e27]: Fierro
+        - generic [ref=f1e30]:
+          - heading "Desarrollador full-stack" [level=2] [ref=f1e31]
+          - paragraph [ref=f1e32]: Ingeniería multimedia para conectar diseño, interacción y datos.
+        - figure "Elige una tecla. Descubre lo que hay detrás." [ref=f1e34]:
+          - generic [ref=f1e35]:
+            - navigation "Acceso directo a los proyectos" [ref=f1e36]:
+              - link "Abrir proyecto Portfolio" [ref=f1e37] [cursor=pointer]:
+                - /url: /proyectos/portfolio
+                - generic [ref=f1e38]: Portfolio
+              - link "Abrir proyecto Taskflow" [ref=f1e42] [cursor=pointer]:
+                - /url: /proyectos/taskflow
+                - generic [ref=f1e43]: Taskflow
+              - link "Abrir proyecto Pulse API" [ref=f1e47] [cursor=pointer]:
+                - /url: /proyectos/pulse-api
+                - generic [ref=f1e48]: Pulse API
+              - link "Abrir proyecto Media Lab" [ref=f1e52] [cursor=pointer]:
+                - /url: /proyectos/media-lab
+                - generic [ref=f1e53]: Media Lab
+            - link "Explorar proyectos" [ref=f1e57] [cursor=pointer]:
+              - /url: /proyectos
+        - generic [ref=f1e62]:
+          - link "Hablemos" [ref=f1e63] [cursor=pointer]:
+            - /url: /#contacto
+          - link "GitHub" [ref=f1e67] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+    - region [ref=f1e71]:
+      - generic [ref=f1e73]:
+        - heading "Sobre mí" [level=2] [ref=f1e74]
+        - paragraph [ref=f1e75]:
+          - text: Me interesa crear experiencias web simples y funcionales, donde el
+          - strong [ref=f1e76]: diseño, la interacción y los datos
+          - text: se complementan para resolver problemas reales.
+        - paragraph [ref=f1e77]: Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.
+    - region [ref=f1e78]:
+      - generic [ref=f1e79]:
+        - generic [ref=f1e80]:
+          - heading "Hablemos." [level=2] [ref=f1e81]
+          - paragraph [ref=f1e82]: Puedes encontrarme en mis redes y seguir lo que construyo.
+        - group "Redes sociales" [ref=f1e84]:
+          - button "Instagram, enlace pendiente de configurar" [disabled] [ref=f1e85] [cursor=pointer]
+          - button "LinkedIn, enlace pendiente de configurar" [disabled] [ref=f1e90] [cursor=pointer]
+          - link "GitHub" [ref=f1e93] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+          - button "WhatsApp, enlace pendiente de configurar" [disabled] [ref=f1e96] [cursor=pointer]
+          - generic [aria-hidden]: CONTACTO
+  - contentinfo [ref=f1e99]:
+    - generic [ref=f1e101]:
+      - link "mf." [ref=f1e102] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=f1e104]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=f1e105] [cursor=pointer]:
+        - /url: /#inicio

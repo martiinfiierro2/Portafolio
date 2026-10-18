@@ -1,0 +1,85 @@
+- generic [ref=f200e3]:
+  - link "Saltar al contenido" [ref=f200e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f200e5]:
+    - generic [ref=f200e6]:
+      - link "Martín Fierro, inicio" [ref=f200e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=f200e8]:
+        - list [ref=f200e9]:
+          - listitem [ref=f200e10]:
+            - link "Inicio" [ref=f200e11] [cursor=pointer]:
+              - /url: /#inicio
+          - listitem [ref=f200e12]:
+            - link "Proyectos" [ref=f200e13] [cursor=pointer]:
+              - /url: /#proyectos
+          - listitem [ref=f200e14]:
+            - link "Sobre mí" [ref=f200e15] [cursor=pointer]:
+              - /url: /#sobre-mi
+          - listitem [ref=f200e16]:
+            - link "Contacto" [ref=f200e17] [cursor=pointer]:
+              - /url: /#contacto
+      - generic [ref=f200e19]:
+        - checkbox "Activar tema claro" [checked]
+        - generic [ref=f200e20] [cursor=pointer]
+  - main [ref=f200e21]:
+    - region [ref=f200e25]:
+      - generic [ref=f200e26]:
+        - heading "Martín Fierro" [level=1] [ref=f200e28]:
+          - img [ref=f200e30]:
+            - generic [ref=f200e31]: M
+            - generic [ref=f200e33]: A
+            - generic [ref=f200e35]: R
+            - generic [ref=f200e37]: T
+            - generic [ref=f200e39]: I
+            - generic [ref=f200e42]: "N"
+          - img [ref=f200e45]:
+            - generic [ref=f200e46]: F
+            - generic [ref=f200e48]: I
+            - generic [ref=f200e50]: E
+            - generic [ref=f200e52]: R
+            - generic [ref=f200e54]: R
+            - generic [ref=f200e56]: O
+        - generic [ref=f200e59]:
+          - heading "Desarrollador full-stack" [level=2] [ref=f200e60]
+          - paragraph [ref=f200e61]: Ingeniería multimedia para conectar diseño, interacción y datos.
+        - figure "Desliza o abre la carpeta para explorar." [ref=f200e63]:
+          - link "Explorar proyectos" [ref=f200e64] [cursor=pointer]:
+            - /url: /#proyectos
+            - generic [aria-hidden] [ref=f200e65]:
+              - generic [ref=f200e66]: ~/proyectos
+              - generic [ref=f200e67]: Abrir
+              - generic [ref=f200e79]: Proyectos
+        - generic [ref=f200e81]:
+          - link "Hablemos" [ref=f200e82] [cursor=pointer]:
+            - /url: /#contacto
+          - link "GitHub" [ref=f200e86] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+    - region [ref=f200e91]:
+      - generic [ref=f200e93]:
+        - heading "Sobre mí" [level=2] [ref=f200e94]
+        - paragraph [ref=f200e95]:
+          - text: Me interesa crear experiencias web simples y funcionales, donde el
+          - strong [ref=f200e96]: diseño, la interacción y los datos
+          - text: se complementan para resolver problemas reales.
+        - paragraph [ref=f200e97]: Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.
+    - region [ref=f200e98]:
+      - generic [ref=f200e99]:
+        - generic [ref=f200e100]:
+          - heading "Hablemos." [level=2] [ref=f200e101]
+          - paragraph [ref=f200e102]: Puedes encontrarme en mis redes y seguir lo que construyo.
+        - group "Redes sociales" [ref=f200e104]:
+          - button "Instagram, enlace pendiente de configurar" [disabled] [ref=f200e105] [cursor=pointer]
+          - button "LinkedIn, enlace pendiente de configurar" [disabled] [ref=f200e110] [cursor=pointer]
+          - link "GitHub" [ref=f200e113] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+          - button "WhatsApp, enlace pendiente de configurar" [disabled] [ref=f200e116] [cursor=pointer]
+          - generic [aria-hidden]: CONTACTO
+  - contentinfo [ref=f200e119]:
+    - generic [ref=f200e121]:
+      - link "mf." [ref=f200e122] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=f200e124]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=f200e125] [cursor=pointer]:
+        - /url: /#inicio

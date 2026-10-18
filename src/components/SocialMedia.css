@@ -1,144 +1,33 @@
-.main {
-  --card-size: clamp(100px, 20vw, 140px);
-  --spacing: clamp(8px, 4vw, 14px);
-  --radius: clamp(12px, 2.5vw, 18px);
-
-  position: relative;
-  isolation: isolate;
+.social-media {
   display: grid;
-  grid-template-columns: repeat(2, var(--card-size));
-  grid-template-rows: repeat(2, var(--card-size));
-  gap: 0;
-  width: max-content;
-  padding: var(--spacing);
-  transition: gap 0.3s ease;
+  gap: 12px;
 }
 
-.main_back {
-  position: absolute;
-  inset: var(--spacing);
-  z-index: -1;
-  border-radius: var(--radius);
-  background: var(--accent);
-  pointer-events: none;
-  transition: opacity 0.3s ease;
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  min-height: 68px;
+  padding: 20px 24px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: left;
 }
 
-.card {
-  display: grid;
-  place-items: center;
-  box-sizing: border-box;
-  width: var(--card-size);
-  height: var(--card-size);
-  padding: 0;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition:
-    border-radius 0.3s ease,
-    background-color 0.2s ease,
-    box-shadow 0.3s ease,
-    color 0.2s ease;
+.social-arrow {
+  margin-left: auto;
+  transition: transform 180ms;
 }
 
-.card:nth-child(1) { border-radius: var(--radius) 0 0 0; }
-.card:nth-child(2) { border-radius: 0 var(--radius) 0 0; }
-.card:nth-child(3) { border-radius: 0 0 0 var(--radius); }
-.card:nth-child(4) { border-radius: 0 0 var(--radius) 0; }
-
-.card svg {
-  width: calc(var(--card-size) * 0.375);
-  height: calc(var(--card-size) * 0.375);
-  opacity: 0;
-  transition: opacity 0.2s ease;
+.social-link:hover, .social-link:focus-visible {
+  background: var(--surface-high);
 }
 
-.instagram { color: #e1306c; }
-.linkedin { color: #0a66c2; }
-.github { color: #181717; }
-.whatsapp { color: #25d366; }
-
-.main:hover,
-.main:focus-within {
-  gap: var(--spacing);
-}
-
-.main:hover .main_back,
-.main:focus-within .main_back,
-.main:hover .text,
-.main:focus-within .text {
-  opacity: 0;
-}
-
-.main:hover .card,
-.main:focus-within .card {
-  border-radius: var(--radius);
-  border: 2px solid var(--accent);
-  background: var(--social-card-bg);
-  box-shadow: 0 8px 60px rgba(0, 0, 0, 0.1);
-}
-
-.main:hover .card svg,
-.main:focus-within .card svg {
-  opacity: 1;
-}
-
-.main .instagram:hover {
-  background: linear-gradient(
-    45deg,
-    #f09433,
-    #e6683c,
-    #dc2743,
-    #cc2366,
-    #bc1888
-  );
-  border: transparent;
-}
-
-.main .linkedin:hover { background-color: #0a66c2;
-  border: transparent; }
-.main .github:hover { background-color: #181717; 
-  border: transparent;}
-.main .whatsapp:hover { background-color: #25d366;
-  border: transparent; }
-
-.main .card:hover {
-  color: white;
-}
-
-.card:focus-visible {
-  outline: 2px solid currentColor;
-  outline-offset: 4px;
-}
-
-.text {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  margin: 0;
-  z-index: 1;
-  color: rgb(255, 255, 255);
-  font-size: calc(var(--card-size) * 0.1375);
-  font-weight: bold;
-  line-height: 1.8;
-  letter-spacing: 0.25em;
-  text-align: center;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-
-@media (max-width: 900px) {
-  .main {
-    margin-inline: auto;
-    transform: scale(0.85);
-    transform-origin: center;
-  }
-
-  .main:not(:hover):not(:focus-within) .card {
-    background: transparent;
-    border-color: transparent;
-    box-shadow: none;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
-    }
+.social-link:hover .social-arrow {
+  transform: translate(3px,-3px);
 }

@@ -1,0 +1,1717 @@
+{
+ "url": "http://127.0.0.1:5175/.taste-skill/referencias-2026-10-17/teclado.html?theme=light",
+ "at": "2026-10-17T11:31:47.495Z",
+ "allow": [
+  "gradient"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.91,
+    0.93,
+    0.93
+   ],
+   "motion": {
+    "elements": 15,
+    "css": 11,
+    "transitions": 4,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 2568,
+     "screens": 2.9,
+     "words": 145,
+     "img": 9,
+     "video": 0,
+     "canvas": 0,
+     "svg": 5,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 9,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png",
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "chars": 13,
+     "lines": 2,
+     "size": 108,
+     "vw": 7.5,
+     "font": "Clash Display",
+     "weight": 700,
+     "tracking": -0.045,
+     "leading": 0.96,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.36,
+     "top": 275,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "lines": 2,
+     "size": 108,
+     "font": "Clash Display"
+    },
+    "headings": [
+     {
+      "text": "Martín Fierro",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 108,
+      "vw": 7.5,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": -0.045,
+      "leading": 0.96,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 275,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 28,
+      "vw": 1.9,
+      "font": "Manrope",
+      "weight": 550,
+      "tracking": -0.025,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 507,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.1,
+      "top": 949,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Portfolio",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 1353,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Taskflow",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 1353,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.01,
+      "top": 1362,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.01,
+      "top": 1362,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Pulse API",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.36,
+      "top": 1783,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Media Lab",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 1783,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.01,
+      "top": 1792,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 2,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.01,
+      "top": 1792,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.51,
+      "top": 1969,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.27,
+      "top": 2295,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 13,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.94,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      28,
+      29,
+      32,
+      108
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 20,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 71,
+     "max": {
+      "size": 108,
+      "vw": 7.5,
+      "font": "Clash Display",
+      "text": "Martín"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 1,
+     "microLabelShare": 0.009,
+     "microSamples": [
+      "CONTACTO"
+     ],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 0,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f7f8fb",
+       "top": 897,
+       "hsl": {
+        "h": 225,
+        "s": 0.33,
+        "l": 0.98
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#15171c",
+       "share": 0.48
+      },
+      {
+       "color": "#596170",
+       "share": 0.45
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.06
+      },
+      {
+       "color": "#4267d5",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#4267d5",
+      "hsl": {
+       "h": 225,
+       "s": 0.64,
+       "l": 0.55
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 1,
+     "radius": 0,
+     "height": 76,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 5,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.site.keyboard → linear-gradient(rgba(51, 66, 88, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(51, 66, 88, 0.0",
+      "footer.footer → linear-gradient(rgba(51, 66, 88, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(51, 66, 88, 0.0"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 10,
+     "boxRadius": 16,
+     "squareMedia": 1,
+     "roundedMedia": 5,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 59,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 3,
+   "filled": [
+    0.94,
+    0.95,
+    0.95
+   ],
+   "motion": {
+    "elements": 15,
+    "css": 11,
+    "transitions": 4,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 2266,
+     "screens": 2.2,
+     "words": 145,
+     "img": 9,
+     "video": 0,
+     "canvas": 0,
+     "svg": 5,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png",
+      "martin-light.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "chars": 13,
+     "lines": 2,
+     "size": 65.3,
+     "vw": 8.5,
+     "font": "Clash Display",
+     "weight": 700,
+     "tracking": -0.045,
+     "leading": 0.96,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.4,
+     "top": 240,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "lines": 2,
+     "size": 65.3,
+     "font": "Clash Display"
+    },
+    "headings": [
+     {
+      "text": "Martín Fierro",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 65.3,
+      "vw": 8.5,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": -0.045,
+      "leading": 0.96,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 240,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Manrope",
+      "weight": 550,
+      "tracking": -0.025,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.4,
+      "top": 390,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.19,
+      "top": 797,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Portfolio",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 1073,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Taskflow",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 1073,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.03,
+      "top": 1082,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 1094,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Pulse API",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 1399,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Media Lab",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.38,
+      "top": 1399,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.03,
+      "top": 1408,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 3.8,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.03,
+      "top": 1408,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 1577,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.51,
+      "top": 1993,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 13,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.94,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      28,
+      29,
+      32,
+      65
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 20,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 38,
+     "max": {
+      "size": 65.3,
+      "vw": 8.5,
+      "font": "Clash Display",
+      "text": "Martín"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 1,
+     "microLabelShare": 0.009,
+     "microSamples": [
+      "CONTACTO"
+     ],
+     "upperShare": 0.01,
+     "centerShare": 0.04,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 0,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#f7f8fb",
+       "top": 745,
+       "hsl": {
+        "h": 225,
+        "s": 0.33,
+        "l": 0.98
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#15171c",
+       "share": 0.48
+      },
+      {
+       "color": "#596170",
+       "share": 0.45
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.06
+      },
+      {
+       "color": "#4267d5",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#4267d5",
+      "hsl": {
+       "h": 225,
+       "s": 0.64,
+       "l": 0.55
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 1,
+     "radius": 0,
+     "height": 76,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 5,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.site.keyboard → linear-gradient(rgba(51, 66, 88, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(51, 66, 88, 0.0",
+      "footer.footer → linear-gradient(rgba(51, 66, 88, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(51, 66, 88, 0.0"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 10,
+     "boxRadius": 16,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 59,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.94,
+    0.94,
+    0.94,
+    0.95
+   ],
+   "motion": {
+    "elements": 14,
+    "css": 11,
+    "transitions": 3,
+    "scripted": 0,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 3285,
+     "screens": 3.9,
+     "words": 138,
+     "img": 9,
+     "video": 0,
+     "canvas": 0,
+     "svg": 5,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png",
+      "martin-light.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "MartínFierro",
+     "words": 1,
+     "chars": 12,
+     "lines": 1,
+     "size": 46.8,
+     "vw": 12,
+     "font": "Clash Display",
+     "weight": 700,
+     "tracking": -0.045,
+     "leading": 1.02,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 124,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "MartínFierro",
+     "words": 1,
+     "lines": 1,
+     "size": 46.8,
+     "font": "Clash Display"
+    },
+    "headings": [
+     {
+      "text": "MartínFierro",
+      "words": 1,
+      "chars": 12,
+      "lines": 1,
+      "size": 46.8,
+      "vw": 12,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": -0.045,
+      "leading": 1.02,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 124,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Manrope",
+      "weight": 550,
+      "tracking": -0.025,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 190,
+      "tag": "p",
+      "kind": "statement"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 27,
+      "vw": 6.9,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.32,
+      "top": 924,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Portfolio",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.78,
+      "top": 1211,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 7.4,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.05,
+      "top": 1220,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Taskflow",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.78,
+      "top": 1521,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 7.4,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.05,
+      "top": 1529,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Pulse API",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.78,
+      "top": 1830,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 7.4,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.05,
+      "top": 1839,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Media Lab",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 28,
+      "vw": 7.2,
+      "font": "Clash Display",
+      "weight": 600,
+      "tracking": -0.025,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.78,
+      "top": 2140,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "↗",
+      "words": 1,
+      "chars": 1,
+      "lines": 1,
+      "size": 29,
+      "vw": 7.4,
+      "font": "Manrope",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.5,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.05,
+      "top": 2149,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 27,
+      "vw": 6.9,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2281,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 27,
+      "vw": 6.9,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 2908,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 13,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 1,
+     "centered": 0,
+     "medianWords": 1,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.94,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.06,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      24,
+      27,
+      28,
+      29,
+      47
+     ],
+     "sizeCount": 11,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 19,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": null
+     },
+     "measureChars": 37,
+     "max": {
+      "size": 46.8,
+      "vw": 12,
+      "font": "Clash Display",
+      "text": "Martín"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0.05,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#ffffff",
+     "bodyBgHsl": {
+      "h": 0,
+      "s": 0,
+      "l": 1
+     },
+     "dark": false,
+     "sectionBgs": [
+      {
+       "color": "#ffffff",
+       "top": 0,
+       "hsl": {
+        "h": 0,
+        "s": 0,
+        "l": 1
+       }
+      },
+      {
+       "color": "#c2ccdf",
+       "top": 416,
+       "hsl": {
+        "h": 219,
+        "s": 0.31,
+        "l": 0.82
+       }
+      },
+      {
+       "color": "#f7f8fb",
+       "top": 884,
+       "hsl": {
+        "h": 225,
+        "s": 0.33,
+        "l": 0.98
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#15171c",
+       "share": 0.47
+      },
+      {
+       "color": "#596170",
+       "share": 0.47
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.05
+      },
+      {
+       "color": "#4267d5",
+       "share": 0.02
+      }
+     ],
+     "button": {
+      "bg": "#eef1f6",
+      "hsl": {
+       "h": 218,
+       "s": 0.31,
+       "l": 0.95
+      },
+      "fg": "#4267d5"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 3,
+     "radius": 13,
+     "height": 64,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Explorar proyectos ↗"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 5,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+      "a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px"
+     ],
+     "gradients": 2,
+     "scrims": 0,
+     "gradientSamples": [
+      "div.site.keyboard → linear-gradient(rgba(51, 66, 88, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(51, 66, 88, 0.0",
+      "footer.footer → linear-gradient(rgba(51, 66, 88, 0.06) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(51, 66, 88, 0.0"
+     ],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 7,
+     "boxRadius": 8,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 55,
+     "floatingPill": true,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "1 tiny uppercase letter-spaced label(s): \"CONTACTO\"",
+   "fix": "Prefer sentence case at body size.",
+   "alsoAt": [
+    768
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "5 box-shadow(s) on elements at rest: a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px | a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px | a.keycap → rgb(161, 174, 200) 0px 9px 0px 0px",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "11 different font sizes (12, 14, 15, 16, 17, 18, 20, 28, 29, 32, 108).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "still-page",
+   "width": 1440,
+   "message": "Little motion: 15 element(s) moved while the page loaded and scrolled.",
+   "fix": "Give every section an entrance for its parts (not one fade of the whole block) and add one moving picture: a looping clip or a slow move on a photograph."
+  },
+  {
+   "level": "FAIL",
+   "id": "button-fx",
+   "width": 390,
+   "message": "Buttons with shadow/glow.",
+   "fix": "Flat fill, one colour."
+  },
+  {
+   "level": "WARN",
+   "id": "pill-nav",
+   "width": 390,
+   "message": "Floating rounded pill navigation.",
+   "fix": "Use a plain bar: wordmark left, a few links, one action."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\referencias-2026-10-17\\inspect-teclado\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\referencias-2026-10-17\\inspect-teclado\\desktop-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\referencias-2026-10-17\\inspect-teclado\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\referencias-2026-10-17\\inspect-teclado\\tablet-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\referencias-2026-10-17\\inspect-teclado\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\referencias-2026-10-17\\inspect-teclado\\mobile-page-01.jpg"
+   ]
+  }
+ ]
+}

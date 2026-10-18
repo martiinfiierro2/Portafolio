@@ -1,0 +1,195 @@
+.header {
+  position: fixed;
+  top: 0;
+  inset-inline: 0;
+  width: calc(100% - 40px);
+  margin: 20px auto;
+  z-index: 30;
+  border: 1px solid var(--line); /* taste-skill-ignore: user's floating header reference. */
+  border-radius: 18px;
+  background: var(--bg);
+}
+
+.header .header-inner {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 1520px;
+  height: var(--header-height);
+  margin-inline: auto;
+  padding-inline: clamp(18px, 3.4vw, 48px);
+}
+
+.header .wordmark {
+  justify-self: start;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.header nav .example-1 {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header nav .nav-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.header nav .nav-link:hover,
+.header nav .nav-link:focus-visible,
+.header nav .nav-link[aria-current='location'] {
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.mobile-menu-toggle {
+  display: none;
+}
+
+.header .theme-toggle {
+  justify-self: end;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 44px;
+  padding: 0;
+}
+
+/* Original sun/moon appearance and animation, preserved from the existing header. */
+.switch {
+    display: block;
+    --width-of-switch: 3.5em;
+    --height-of-switch: 2em;
+    --size-of-icon: 1.25em;
+    /* it is like a inline-padding of switch */
+    --slider-offset: 0.5em;
+    position: relative;
+    width: var(--width-of-switch);
+    height: var(--height-of-switch);
+  }
+
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ececaf;
+    transition: .4s;
+    border-radius: 1em;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: var(--size-of-icon,1.4em);
+    width: var(--size-of-icon,1.4em);
+    border-radius: 20px;
+    left: var(--slider-offset,0.3em);
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(40deg,#ff0000,#ff8c00 70%);
+    ;
+   transition: .4s;
+  }
+
+  input:checked + .slider {
+    background-color: var(--accent);
+  }
+
+  input:checked + .slider:before {
+    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    background: var(--accent);
+    /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
+    box-shadow: inset -3px -2px 5px -2px #aca8f4, inset -10px -4px 0 0 #ffffff;
+  }
+
+.switch input:focus-visible + .slider {
+  outline: 2px solid var(--ink);
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .header {
+    width: calc(100% - 24px);
+    margin-block: 12px;
+    border-radius: 16px;
+  }
+
+  .header .header-inner {
+    grid-template-columns: minmax(0, 1fr) 44px 56px;
+    gap: 10px;
+    padding-inline: 16px;
+  }
+
+  .header .wordmark {
+    font-size: 17px;
+  }
+
+  .mobile-menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--ink);
+  }
+
+  .mobile-menu-toggle:hover,
+  .mobile-menu-toggle[aria-expanded='true'] {
+    background: var(--surface-high);
+  }
+
+  .header nav .example-1 {
+    position: absolute;
+    top: calc(100% + 10px);
+    inset-inline: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 4px;
+    padding: 10px;
+    border-radius: 16px;
+    background: var(--surface-high);
+  }
+
+  .header nav[data-open='true'] .example-1 {
+    display: flex;
+  }
+
+  .header nav .nav-link {
+    justify-content: flex-start;
+    padding-inline: 18px;
+    font-size: 16px;
+  }
+}

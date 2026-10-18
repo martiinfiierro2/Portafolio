@@ -1,0 +1,101 @@
+- generic [ref=f155e3]:
+  - link "Saltar al contenido" [ref=f155e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f155e5]:
+    - generic [ref=f155e6]:
+      - link "Martín Fierro, inicio" [ref=f155e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=f155e8]:
+        - list [ref=f155e9]:
+          - listitem [ref=f155e10]:
+            - link "Inicio" [ref=f155e11] [cursor=pointer]:
+              - /url: /#inicio
+          - listitem [ref=f155e12]:
+            - link "Proyectos" [ref=f155e13] [cursor=pointer]:
+              - /url: /#proyectos
+          - listitem [ref=f155e14]:
+            - link "Sobre mí" [ref=f155e15] [cursor=pointer]:
+              - /url: /#sobre-mi
+          - listitem [ref=f155e16]:
+            - link "Contacto" [ref=f155e17] [cursor=pointer]:
+              - /url: /#contacto
+      - generic [ref=f155e19]:
+        - checkbox "Activar tema claro" [checked]
+        - generic [ref=f155e20] [cursor=pointer]
+  - main [ref=f155e21]:
+    - generic [ref=f155e22]:
+      - region [aria-hidden] [ref=f155e25]:
+        - generic [ref=f155e26]:
+          - generic [ref=f155e28]:
+            - heading [level=2] [ref=f155e29]: Desarrollador full-stack
+            - paragraph [ref=f155e30]: Ingeniería multimedia para conectar diseño, interacción y datos.
+          - figure [ref=f155e32]:
+            - link [ref=f155e33] [cursor=pointer]:
+              - /url: /#proyectos
+            - generic [ref=f155e34]: Desliza o abre la carpeta para explorar.
+          - generic [aria-hidden] [ref=f155e35]:
+            - link [ref=f155e36] [cursor=pointer]:
+              - /url: /#contacto
+              - text: Hablemos
+            - link [ref=f155e40] [cursor=pointer]:
+              - /url: https://github.com/martiinfiierro2
+              - text: GitHub
+      - region [ref=f155e46]:
+        - generic [ref=f155e47]:
+          - generic [ref=f155e48]:
+            - heading "Proyectos" [active] [level=2] [ref=f155e49]
+            - group [ref=f155e50]:
+              - generic "Buscar y filtrar" [ref=f155e51] [cursor=pointer]
+          - generic [ref=f155e55]:
+            - article [ref=f155e57]:
+              - link "Ver Portfolio / Martín Fierro" [ref=f155e58] [cursor=pointer]:
+                - /url: /proyectos/portfolio
+                - generic [ref=f155e60]:
+                  - heading "Portfolio" [level=3] [ref=f155e61]
+                  - paragraph [ref=f155e62]: Mi perfil y mis proyectos.
+            - article [ref=f155e67]:
+              - link "Ver Taskflow, proyecto de ejemplo" [ref=f155e68] [cursor=pointer]:
+                - /url: /proyectos/taskflow
+                - generic [ref=f155e70]:
+                  - heading "Taskflow" [level=3] [ref=f155e71]
+                  - paragraph [ref=f155e72]: Organización de tareas con estado local.
+            - article [ref=f155e77]:
+              - link "Ver Pulse API, proyecto de ejemplo" [ref=f155e78] [cursor=pointer]:
+                - /url: /proyectos/pulse-api
+                - generic [ref=f155e80]:
+                  - heading "Pulse API" [level=3] [ref=f155e81]
+                  - paragraph [ref=f155e82]: Respuestas JSON y HTTP simulados.
+            - article [ref=f155e87]:
+              - link "Ver Media Lab, proyecto de ejemplo" [ref=f155e88] [cursor=pointer]:
+                - /url: /proyectos/media-lab
+                - generic [ref=f155e90]:
+                  - heading "Media Lab" [level=3] [ref=f155e91]
+                  - paragraph [ref=f155e92]: Exploración de composiciones CSS.
+    - region [ref=f155e96]:
+      - generic [ref=f155e98]:
+        - heading "Sobre mí" [level=2] [ref=f155e99]
+        - paragraph [ref=f155e100]:
+          - text: Me interesa crear experiencias web simples y funcionales, donde el
+          - strong [ref=f155e101]: diseño, la interacción y los datos
+          - text: se complementan para resolver problemas reales.
+        - paragraph [ref=f155e102]: Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.
+    - region [ref=f155e103]:
+      - generic [ref=f155e104]:
+        - generic [ref=f155e105]:
+          - heading "Hablemos." [level=2] [ref=f155e106]
+          - paragraph [ref=f155e107]: Puedes encontrarme en mis redes y seguir lo que construyo.
+        - group "Redes sociales" [ref=f155e109]:
+          - button "Instagram, enlace pendiente de configurar" [disabled] [ref=f155e110] [cursor=pointer]
+          - button "LinkedIn, enlace pendiente de configurar" [disabled] [ref=f155e115] [cursor=pointer]
+          - link "GitHub" [ref=f155e118] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+          - button "WhatsApp, enlace pendiente de configurar" [disabled] [ref=f155e121] [cursor=pointer]
+          - generic [aria-hidden]: CONTACTO
+  - contentinfo [ref=f155e124]:
+    - generic [ref=f155e126]:
+      - link "mf." [ref=f155e127] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=f155e129]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=f155e130] [cursor=pointer]:
+        - /url: /#inicio

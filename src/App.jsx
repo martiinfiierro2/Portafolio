@@ -8,18 +8,36 @@ import {
   useLocation,
   useMatch,
 } from "react-router-dom";
-import Header from "./Header";
-import Home from "./Home";
-import Footer from "./Footer";
-import ProjectDetail from "./components/ProjectDetail";
-import DemoPage from "./components/DemoPage";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Footer from "./components/Footer";
+import ProjectDetail from "./pages/ProjectDetail";
+import DemoPage from "./pages/DemoPage";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import { projects } from "./data/projects";
+
+const pageTitles = {
+  "/": "Martín Fierro — Ingeniería multimedia & Full-stack",
+  "/proyectos": "Proyectos — Martín Fierro",
+  "/sobre-mi": "Sobre mí — Martín Fierro",
+  "/contacto": "Contacto — Martín Fierro",
+};
+
+const legacyPages = {
+  "#inicio": "/",
+  "#enfoque": "/",
+  "#proyectos": "/proyectos",
+  "#sobre-mi": "/sobre-mi",
+  "#contacto": "/contacto",
+};
 
 function readTheme() {
   try {
-    return localStorage.getItem("mf-theme") !== "light";
+    return localStorage.getItem("mf-theme") === "dark";
   } catch {
-    return true;
+    return false;
   }
 }
 
@@ -29,19 +47,26 @@ export default function App() {
   const projectRoute = useMatch("/proyectos/:slug");
   const demoRoute = useMatch("/demos/:demoId");
   const isHome = location.pathname === "/";
-  const project = projects.find(
-    (item) => item.slug === (projectRoute?.params.slug ?? demoRoute?.params.demoId),
-  );
+  const project = projectRoute
+    ? projects.find((item) => item.slug === projectRoute.params.slug)
+    : projects.find((item) => item.demoHref === `/demos/${demoRoute?.params.demoId}`);
   const validDemo = projects.some(
     (item) => item.demoHref === `/demos/${demoRoute?.params.demoId}`,
   );
   const legacyTarget = isHome
     ? location.hash.startsWith("#/")
       ? location.hash.slice(1)
-      : location.hash === "#enfoque"
-        ? "/#inicio"
-        : null
+      : legacyPages[location.hash] ?? null
     : null;
+  const pageName = isHome
+    ? "home"
+    : location.pathname === "/proyectos"
+      ? "projects"
+      : location.pathname === "/sobre-mi"
+        ? "about"
+        : location.pathname === "/contacto"
+          ? "contact"
+          : "detail";
 
   useEffect(() => {
     try {
@@ -60,43 +85,31 @@ export default function App() {
   }, [dark]);
 
   useEffect(() => {
-    const title = isHome
-      ? "Martín Fierro — Ingeniería multimedia & Full-stack"
-      : `${project?.title ?? "Página no encontrada"} — Martín Fierro`;
-    document.title = title;
     if (legacyTarget) return;
+    document.title = pageTitles[location.pathname]
+      ?? `${project?.title ?? "Página no encontrada"} — Martín Fierro`;
     const frame = requestAnimationFrame(() => {
-      if (!isHome) {
-        window.scrollTo({ top: 0, behavior: "instant" });
-        document.querySelector("main h1")?.focus({ preventScroll: true });
-      } else if (location.hash) {
-        const target = document.getElementById(location.hash.slice(1));
-        target?.scrollIntoView({
-          behavior: window.matchMedia("(prefers-reduced-motion: reduce)")
-            .matches
-            ? "instant"
-            : "smooth",
-        });
-      } else {
-        window.scrollTo({ top: 0, behavior: "instant" });
-      }
+      window.scrollTo({ top: 0, behavior: "instant" });
+      const heading = document.querySelector("main h1")
+        ?? document.getElementById("contenido");
+      heading?.focus({ preventScroll: true });
     });
     return () => cancelAnimationFrame(frame);
-  }, [isHome, location.hash, location.key, legacyTarget, project?.title]);
+  }, [location.key, location.pathname, legacyTarget, project?.title]);
 
   const notFound = (
     <section className="not-found shell">
-      <p className="eyebrow">404 / PÁGINA NO ENCONTRADA</p>
+      <p>404</p>
       <h1 tabIndex={-1}>Esta ruta no existe.</h1>
       <p>Vuelve al catálogo para explorar los proyectos disponibles.</p>
-      <Link className="button primary" to="/#proyectos">
+      <Link className="button primary" to="/proyectos">
         <ArrowLeft size={17} /> Volver a proyectos
       </Link>
     </section>
   );
 
   return (
-    <div className="site" data-theme={dark ? "dark" : "light"}>
+    <div className="site" data-theme={dark ? "dark" : "light"} data-page={pageName}>
       <a
         className="skip-link"
         href="#contenido"
@@ -116,10 +129,13 @@ export default function App() {
               legacyTarget ? (
                 <Navigate to={legacyTarget} replace />
               ) : (
-                <Home dark={dark} />
+                <Home />
               )
             }
           />
+          <Route path="/proyectos" element={<Projects />} />
+          <Route path="/sobre-mi" element={<About />} />
+          <Route path="/contacto" element={<Contact />} />
           <Route
             path="/proyectos/:slug"
             element={

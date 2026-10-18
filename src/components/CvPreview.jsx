@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Download, ExternalLink, FileText, X } from "lucide-react";
+import "./CvPreview.css";
 
 export default function CvPreview({ url }) {
   const dialogRef = useRef(null);

@@ -82,7 +82,7 @@ clientes ni servicios de backend desplegados.
 
 Puedes sustituirlos por tus proyectos reales o mantenerlos como ejercicios. Si
 añades una nueva demo interna, implementa su componente y regístrala en
-`src/components/DemoPage.jsx`; añadir `demoHref` por sí solo no crea una demo.
+`src/pages/DemoPage.jsx`; añadir `demoHref` por sí solo no crea una demo.
 Para enlazarla con React Router, utiliza `demoHref: "/demos/tu-proyecto"`.
 
 Las tarjetas utilizan la primera captura de `gallery` como portada. Elige una

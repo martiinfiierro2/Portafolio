@@ -1,0 +1,1565 @@
+{
+ "url": "http://127.0.0.1:5173/",
+ "at": "2026-10-15T13:40:54.342Z",
+ "allow": [],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.34,
+    0.82,
+    0.44,
+    0.21,
+    0.16
+   ],
+   "motion": {
+    "elements": 29,
+    "css": 0,
+    "transitions": 16,
+    "scripted": 13,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 4133,
+     "screens": 4.6,
+     "words": 209,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "martin-dark.png",
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 80.6,
+     "vw": 5.6,
+     "font": "Clash Display",
+     "weight": 700,
+     "tracking": 0,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.39,
+     "top": 276,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "lines": 1,
+     "size": 80.6,
+     "font": "Clash Display"
+    },
+    "headings": [
+     {
+      "text": "Martín Fierro",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 80.6,
+      "vw": 5.6,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 276,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 2,
+      "size": 59,
+      "vw": 4.1,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.39,
+      "top": 386,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "PROYECTOS",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.83,
+      "top": 999,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Siempre curioso. Siempre construyendo.",
+      "words": 4,
+      "chars": 38,
+      "lines": 3,
+      "size": 60.5,
+      "vw": 4.2,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 2638,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiencia profesional",
+      "words": 2,
+      "chars": 23,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.36,
+      "top": 2697,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Lo siguiente empieza con una conversación.",
+      "words": 6,
+      "chars": 42,
+      "lines": 3,
+      "size": 60.5,
+      "vw": 4.2,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.43,
+      "top": 3539,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 6,
+     "maxLines": 3,
+     "over2Lines": 2,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.85,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.15,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      23,
+      34,
+      59,
+      61,
+      64,
+      81
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 14,
+      "leading": 1.8,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 8.8
+     },
+     "measureChars": 73,
+     "max": {
+      "size": 80.6,
+      "vw": 5.6,
+      "font": "Clash Display",
+      "text": "Martín Fierro"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 3,
+     "microLabelShare": 0.023,
+     "microSamples": [
+      "SOBRE MÍ",
+      "MI TRAYECTORIA",
+      "CONECTEMOS"
+     ],
+     "upperShare": 0.04,
+     "centerShare": 0.06,
+     "smallText": 7
+    },
+    "eyebrows": [
+     {
+      "text": "SOBRE MÍ",
+      "above": "Siempre curioso. Siempre construyendo.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 2593
+     },
+     {
+      "text": "MI TRAYECTORIA",
+      "above": "Experiencia profesional",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 2652
+     },
+     {
+      "text": "CONECTEMOS",
+      "above": "Lo siguiente empieza con una conversació",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3495
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#151e2d",
+     "bodyBgHsl": {
+      "h": 218,
+      "s": 0.36,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#151e2d",
+       "top": 0,
+       "hsl": {
+        "h": 218,
+        "s": 0.36,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#1c283b",
+       "top": 900,
+       "hsl": {
+        "h": 217,
+        "s": 0.36,
+        "l": 0.17
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#b2bdcd",
+       "share": 0.76
+      },
+      {
+       "color": "#f6f7fa",
+       "share": 0.15
+      },
+      {
+       "color": "#a8beff",
+       "share": 0.05
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#4267d5",
+      "hsl": {
+       "h": 225,
+       "s": 0.64,
+       "l": 0.55
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 38,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Ver mis proyectos",
+      "Sobre mí"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 1,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "a.discover-link → rgba(66, 103, 213, 0.1) 0px 12px 28px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "section#contacto.connect.page-screen 1440px",
+      "footer.footer 1440px",
+      "div.footer-bottom 1200px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 6,
+     "boxRadius": 26,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 26,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.22
+     }
+    ],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 59,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.17,
+    0.74,
+    0.33,
+    0.14,
+    0.14
+   ],
+   "motion": {
+    "elements": 29,
+    "css": 0,
+    "transitions": 16,
+    "scripted": 13,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 4550,
+     "screens": 4.4,
+     "words": 209,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "martin-dark.png",
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 43,
+     "vw": 5.6,
+     "font": "Clash Display",
+     "weight": 700,
+     "tracking": 0,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.41,
+     "top": 402,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "lines": 1,
+     "size": 43,
+     "font": "Clash Display"
+    },
+    "headings": [
+     {
+      "text": "Martín Fierro",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 43,
+      "vw": 5.6,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 402,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 2,
+      "size": 32,
+      "vw": 4.2,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 474,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "PROYECTOS",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 36.9,
+      "vw": 4.8,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 1137,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Siempre curioso. Siempre construyendo.",
+      "words": 4,
+      "chars": 38,
+      "lines": 3,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 2879,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Lo siguiente empieza con una conversación.",
+      "words": 6,
+      "chars": 42,
+      "lines": 3,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 3935,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 3,
+     "over2Lines": 2,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 4,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.85,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.15,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      19,
+      23,
+      24,
+      32,
+      36,
+      37,
+      43
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 14,
+      "leading": 1.8,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 8.8
+     },
+     "measureChars": 45,
+     "max": {
+      "size": 43,
+      "vw": 5.6,
+      "font": "Clash Display",
+      "text": "Martín Fierro"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 3,
+     "microLabelShare": 0.023,
+     "microSamples": [
+      "SOBRE MÍ",
+      "MI TRAYECTORIA",
+      "CONECTEMOS"
+     ],
+     "upperShare": 0.04,
+     "centerShare": 0.06,
+     "smallText": 7
+    },
+    "eyebrows": [
+     {
+      "text": "SOBRE MÍ",
+      "above": "Siempre curioso. Siempre construyendo.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 2834
+     },
+     {
+      "text": "CONECTEMOS",
+      "above": "Lo siguiente empieza con una conversació",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3890
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#151e2d",
+     "bodyBgHsl": {
+      "h": 218,
+      "s": 0.36,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#151e2d",
+       "top": 0,
+       "hsl": {
+        "h": 218,
+        "s": 0.36,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#1c283b",
+       "top": 1024,
+       "hsl": {
+        "h": 217,
+        "s": 0.36,
+        "l": 0.17
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#b2bdcd",
+       "share": 0.76
+      },
+      {
+       "color": "#f6f7fa",
+       "share": 0.15
+      },
+      {
+       "color": "#a8beff",
+       "share": 0.05
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#4267d5",
+      "hsl": {
+       "h": 225,
+       "s": 0.64,
+       "l": 0.55
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 3,
+     "radius": "pill",
+     "height": 38,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Ver mis proyectos",
+      "Sobre mí"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 1,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "a.discover-link → rgba(66, 103, 213, 0.1) 0px 12px 28px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "section#contacto.connect.page-screen 768px",
+      "footer.footer 768px",
+      "div.footer-bottom 704px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 6,
+     "boxRadius": 26,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 26,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.11
+     }
+    ],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 59,
+     "floatingPill": false,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 6,
+   "filled": [
+    0.42,
+    0.78,
+    0.61,
+    0.54,
+    0.38,
+    0.22
+   ],
+   "motion": {
+    "elements": 29,
+    "css": 0,
+    "transitions": 16,
+    "scripted": 13,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 4806,
+     "screens": 5.7,
+     "words": 209,
+     "img": 5,
+     "video": 0,
+     "canvas": 0,
+     "svg": 16,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 0,
+     "uiAbuse": false,
+     "realPictures": 5,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "martin-dark.png",
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 41,
+     "vw": 10.5,
+     "font": "Clash Display",
+     "weight": 700,
+     "tracking": 0,
+     "leading": 1.05,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 196,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "Martín Fierro",
+     "words": 2,
+     "lines": 1,
+     "size": 41,
+     "font": "Clash Display"
+    },
+    "headings": [
+     {
+      "text": "Martín Fierro",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 41,
+      "vw": 10.5,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.05,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 196,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 2,
+      "size": 30.4,
+      "vw": 7.8,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 259,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "PROYECTOS",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "center",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 916,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Portfolio / Martín Fierro",
+      "words": 4,
+      "chars": 25,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 1457,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Taskflow",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 1935,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Pulse API",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 2413,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Media Lab",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.79,
+      "top": 2866,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Siempre curioso. Siempre construyendo.",
+      "words": 4,
+      "chars": 38,
+      "lines": 3,
+      "size": 35.1,
+      "vw": 9,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3206,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Experiencia profesional",
+      "words": 2,
+      "chars": 23,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.3,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 3617,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Lo siguiente empieza con una conversación.",
+      "words": 6,
+      "chars": 42,
+      "lines": 3,
+      "size": 35.1,
+      "vw": 9,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": 0,
+      "leading": 1.1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 4153,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 10,
+     "maxLines": 3,
+     "over2Lines": 2,
+     "statements": 0,
+     "centered": 1,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.85,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.15,
+       "mono": false
+      }
+     ],
+     "familyCount": 2,
+     "sizes": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      23,
+      24,
+      30,
+      35,
+      36,
+      41
+     ],
+     "sizeCount": 15,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 14,
+      "leading": 1.8,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 8.8
+     },
+     "measureChars": 48,
+     "max": {
+      "size": 41,
+      "vw": 10.5,
+      "font": "Clash Display",
+      "text": "Martín Fierro"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 4,
+     "microLabelShare": 0.029,
+     "microSamples": [
+      "SOBRE MÍ",
+      "MI TRAYECTORIA",
+      "CONECTEMOS",
+      "CONTACTO"
+     ],
+     "upperShare": 0.04,
+     "centerShare": 0.06,
+     "smallText": 7
+    },
+    "eyebrows": [
+     {
+      "text": "Proyecto personal",
+      "above": "Portfolio / Martín Fierro",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 10,
+      "top": 1416
+     },
+     {
+      "text": "Ejemplo",
+      "above": "Taskflow",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 10,
+      "top": 1894
+     },
+     {
+      "text": "Ejemplo",
+      "above": "Pulse API",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 10,
+      "top": 2372
+     },
+     {
+      "text": "Ejemplo",
+      "above": "Media Lab",
+      "upper": false,
+      "tracked": false,
+      "mono": false,
+      "pill": true,
+      "size": 10,
+      "top": 2825
+     },
+     {
+      "text": "SOBRE MÍ",
+      "above": "Siempre curioso. Siempre construyendo.",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3161
+     },
+     {
+      "text": "MI TRAYECTORIA",
+      "above": "Experiencia profesional",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 3572
+     },
+     {
+      "text": "CONECTEMOS",
+      "above": "Lo siguiente empieza con una conversació",
+      "upper": true,
+      "tracked": true,
+      "mono": false,
+      "pill": false,
+      "size": 12,
+      "top": 4109
+     }
+    ],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#151e2d",
+     "bodyBgHsl": {
+      "h": 218,
+      "s": 0.36,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#151e2d",
+       "top": 0,
+       "hsl": {
+        "h": 218,
+        "s": 0.36,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#1c283b",
+       "top": 844,
+       "hsl": {
+        "h": 217,
+        "s": 0.36,
+        "l": 0.17
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#b2bdcd",
+       "share": 0.76
+      },
+      {
+       "color": "#f6f7fa",
+       "share": 0.15
+      },
+      {
+       "color": "#a8beff",
+       "share": 0.05
+      },
+      {
+       "color": "#ffffff",
+       "share": 0.04
+      }
+     ],
+     "button": {
+      "bg": "#4267d5",
+      "hsl": {
+       "h": 225,
+       "s": 0.64,
+       "l": 0.55
+      },
+      "fg": "#ffffff"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 7,
+     "inHero": 4,
+     "radius": "pill",
+     "height": 48,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Inicio",
+      "Ver mis proyectos",
+      "Sobre mí"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 1,
+     "shadowOverlay": 1,
+     "shadowSamples": [
+      "a.discover-link → rgba(66, 103, 213, 0.1) 0px 12px 28px 0px"
+     ],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 3,
+     "hairlineSamples": [
+      "section#contacto.connect.page-screen 390px",
+      "footer.footer 390px",
+      "div.footer-bottom 358px"
+     ],
+     "outlinedBoxes": 1,
+     "dashed": 0,
+     "blurred": 1,
+     "roundedBoxes": 7,
+     "boxRadius": 26,
+     "squareMedia": 1,
+     "roundedMedia": 4,
+     "mediaRadius": 26,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.25
+     }
+    ],
+    "nav": {
+     "links": 3,
+     "fixed": true,
+     "height": 55,
+     "floatingPill": true,
+     "blur": true
+    },
+    "fontsLoaded": [
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 1440,
+   "message": "2 headline(s) wrap past two lines at 1440px: \"Siempre curioso. Siempre construyendo.\" → 3 lines (4 words, 60.5px); \"Lo siguiente empieza con una conversación.\" → 3 lines (6 words, 60.5px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 36px or less."
+  },
+  {
+   "level": "FAIL",
+   "id": "eyebrow",
+   "width": 1440,
+   "message": "3 eyebrow/kicker label(s) above headings: \"SOBRE MÍ\" above \"Siempre curioso. Siempre construyendo.\"; \"MI TRAYECTORIA\" above \"Experiencia profesional\"; \"CONECTEMOS\" above \"Lo siguiente empieza con una conversació\"",
+   "fix": "Delete them. If the label carried real information, fold it into the headline or the supporting sentence.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "micro-label",
+   "width": 1440,
+   "message": "3 tiny uppercase letter-spaced labels (e.g. \"SOBRE MÍ\", \"MI TRAYECTORIA\", \"CONECTEMOS\").",
+   "fix": "Use sentence-case text at a readable size, or delete the label.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "shadow",
+   "width": 1440,
+   "message": "1 box-shadow(s) on elements at rest: a.discover-link → rgba(66, 103, 213, 0.1) 0px 12px 28px 0px",
+   "fix": "Remove. Separate surfaces with a tone step or space. Shadows are for things that really float (menus, dialogs, sticky bars).",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "button-fx",
+   "width": 1440,
+   "message": "Buttons with shadow/glow.",
+   "fix": "Flat fill, one colour.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "hairline",
+   "width": 1440,
+   "message": "3 thin rule(s)/divider line(s): section#contacto.connect.page-screen 1440px | footer.footer 1440px | div.footer-bottom 1200px",
+   "fix": "Delete. Separate with space, a tone change, or scale. Lines are only for real tables and form fields.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "outlined-box",
+   "width": 1440,
+   "message": "1 box(es) drawn with a 1px outline.",
+   "fix": "Prefer a filled surface or no box.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "15 different font sizes (10, 11, 12, 13, 14, 15, 16, 17, 19, 23, 34, 59, 61, 64, 81).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "body-size",
+   "width": 1440,
+   "message": "Body text is 14px (the size most of the running text is set in).",
+   "fix": "Body copy 16–20px. Map small sizes from blueprints onto your body step.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "small-text",
+   "width": 1440,
+   "message": "7 text blocks under 13px.",
+   "fix": "Nothing meant to be read goes below 13px.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 768,
+   "message": "2 headline(s) wrap past two lines at 768px: \"Siempre curioso. Siempre construyendo.\" → 3 lines (4 words, 36px); \"Lo siguiente empieza con una conversación.\" → 3 lines (6 words, 36px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 32px or less."
+  },
+  {
+   "level": "FAIL",
+   "id": "headline-lines",
+   "width": 390,
+   "message": "2 headline(s) wrap past two lines at 390px: \"Siempre curioso. Siempre construyendo.\" → 3 lines (4 words, 35.1px); \"Lo siguiente empieza con una conversación.\" → 3 lines (6 words, 35.1px)",
+   "fix": "Cut words first (a headline is a title, not a sentence). Then give it a wider measure. Lower the size only as a last resort and never below the scale you chose. A real statement paragraph belongs in a <p> or <blockquote> at 24px or less."
+  },
+  {
+   "level": "WARN",
+   "id": "pill-nav",
+   "width": 390,
+   "message": "Floating rounded pill navigation.",
+   "fix": "Use a plain bar: wordmark left, a few links, one action."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\inspect\\desktop-page-01.jpg",
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\inspect\\desktop-page-02.jpg"
+   ]
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\inspect\\tablet-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\inspect\\mobile-page-01.jpg"
+   ]
+  }
+ ]
+}

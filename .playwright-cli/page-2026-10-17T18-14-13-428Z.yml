@@ -1,0 +1,151 @@
+- generic [ref=e3]:
+  - link "Saltar al contenido" [ref=e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Martín Fierro, inicio" [ref=e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "Inicio" [ref=e11] [cursor=pointer]:
+              - /url: /#inicio
+          - listitem [ref=e12]:
+            - link "Proyectos" [ref=e13] [cursor=pointer]:
+              - /url: /#proyectos
+          - listitem [ref=e14]:
+            - link "Sobre mí" [ref=e15] [cursor=pointer]:
+              - /url: /#sobre-mi
+          - listitem [ref=e16]:
+            - link "Contacto" [ref=e17] [cursor=pointer]:
+              - /url: /#contacto
+      - generic [ref=e19]:
+        - checkbox "Activar tema oscuro"
+        - generic [ref=e20] [cursor=pointer]
+  - main [ref=e21]:
+    - region [ref=e22]:
+      - generic [ref=e23]:
+        - heading "Martín Fierro" [level=1] [ref=e24]:
+          - generic [ref=e25]: Martín
+          - generic [ref=e26]: Fierro
+        - generic [ref=e28]:
+          - generic [ref=e29]:
+            - generic [aria-hidden] [ref=e30]: ↳
+            - generic [ref=e31]: Proyectos
+            - generic [aria-hidden] [ref=e34]: Listo para explorar
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - generic [aria-hidden] [ref=e37]: Q
+              - generic [aria-hidden] [ref=e38]: W
+              - generic [aria-hidden] [ref=e39]: E
+              - generic [aria-hidden] [ref=e40]: R
+              - generic [aria-hidden] [ref=e41]: T
+              - generic [aria-hidden] [ref=e42]: "Y"
+              - generic [aria-hidden] [ref=e43]: U
+              - generic [aria-hidden] [ref=e44]: I
+              - generic [aria-hidden] [ref=e45]: O
+              - generic [aria-hidden] [ref=e46]: P
+            - generic [ref=e47]:
+              - generic [aria-hidden] [ref=e48]: A
+              - generic [aria-hidden] [ref=e49]: S
+              - generic [aria-hidden] [ref=e50]: D
+              - generic [aria-hidden] [ref=e51]: F
+              - generic [aria-hidden] [ref=e52]: G
+              - generic [aria-hidden] [ref=e53]: H
+              - generic [aria-hidden] [ref=e54]: J
+              - generic [aria-hidden] [ref=e55]: K
+              - generic [aria-hidden] [ref=e56]: L
+            - generic [ref=e57]:
+              - generic [aria-hidden] [ref=e58]: Z
+              - generic [aria-hidden] [ref=e59]: X
+              - generic [aria-hidden] [ref=e60]: C
+              - generic [aria-hidden] [ref=e61]: V
+              - generic [aria-hidden] [ref=e62]: B
+              - generic [aria-hidden] [ref=e63]: "N"
+              - generic [aria-hidden] [ref=e64]: M
+              - link "Abrir proyectos" [ref=e65] [cursor=pointer]:
+                - /url: /#proyectos
+                - generic [ref=e66]: Enter
+                - generic [ref=e70]: Abrir
+            - generic [aria-hidden] [ref=e71]:
+              - generic [ref=e72]: ctrl
+              - generic [ref=e73]: alt
+              - generic [ref=e75]: ←
+              - generic [ref=e76]: →
+        - generic [ref=e77]:
+          - heading "Desarrollador full-stack" [level=2] [ref=e78]: Desarrolladorfull-stack
+          - paragraph [ref=e79]: Ingeniería multimedia para conectar diseño, interacción y datos.
+    - region [ref=e80]:
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - heading "Proyectos" [level=2] [ref=e83]
+          - paragraph [ref=e84]: Aplicaciones, herramientas y experimentos donde combino diseño, lógica y datos.
+          - group [ref=e85]:
+            - generic "Buscar y filtrar" [ref=e86] [cursor=pointer]
+        - generic [ref=e90]:
+          - article [ref=e91]:
+            - link "Ver Portfolio / Martín Fierro" [ref=e92] [cursor=pointer]:
+              - /url: /proyectos/portfolio
+              - generic [ref=e94]:
+                - heading "Portfolio" [level=3] [ref=e95]
+                - paragraph [ref=e96]: Mi perfil y mis proyectos.
+          - article [ref=e100]:
+            - link "Ver Taskflow, proyecto de ejemplo" [ref=e101] [cursor=pointer]:
+              - /url: /proyectos/taskflow
+              - generic [ref=e103]:
+                - heading "Taskflow" [level=3] [ref=e104]
+                - paragraph [ref=e105]: Organización de tareas con estado local.
+          - article [ref=e109]:
+            - link "Ver Pulse API, proyecto de ejemplo" [ref=e110] [cursor=pointer]:
+              - /url: /proyectos/pulse-api
+              - generic [ref=e112]:
+                - heading "Pulse API" [level=3] [ref=e113]
+                - paragraph [ref=e114]: Respuestas JSON y HTTP simulados.
+          - article [ref=e118]:
+            - link "Ver Media Lab, proyecto de ejemplo" [ref=e119] [cursor=pointer]:
+              - /url: /proyectos/media-lab
+              - generic [ref=e121]:
+                - heading "Media Lab" [level=3] [ref=e122]
+                - paragraph [ref=e123]: Exploración de composiciones CSS.
+    - region [ref=e127]:
+      - generic [ref=e128]:
+        - heading "Sobre mí" [level=2] [ref=e130]
+        - generic [ref=e131]:
+          - heading "Soy ingeniero multimedia y desarrollador full-stack." [level=3] [ref=e132]
+          - paragraph [ref=e133]:
+            - text: Me interesa crear experiencias web simples y funcionales, donde el
+            - strong [ref=e134]: diseño, la interacción y los datos
+            - text: se complementan para resolver problemas reales.
+          - paragraph [ref=e135]: Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.
+          - generic [ref=e136]:
+            - generic [ref=e137]:
+              - term [ref=e138]: Frontend
+              - definition [ref=e139]: React, Angular, JavaScript, HTML y CSS
+            - generic [ref=e140]:
+              - term [ref=e141]: Backend
+              - definition [ref=e142]: Node.js, Express, Java y .NET
+            - generic [ref=e143]:
+              - term [ref=e144]: Datos y herramientas
+              - definition [ref=e145]: SQL, PostgreSQL, MySQL, Git y GitHub
+    - region [ref=e146]:
+      - generic [ref=e147]:
+        - generic [ref=e148]:
+          - heading "Hablemos." [level=2] [ref=e149]
+          - paragraph [ref=e150]: Puedes encontrarme en mis redes y seguir lo que construyo.
+        - group "Redes sociales" [ref=e152]:
+          - button "Instagram, enlace pendiente de configurar" [disabled] [ref=e153] [cursor=pointer]:
+            - generic [ref=e158]: Instagram
+          - button "LinkedIn, enlace pendiente de configurar" [disabled] [ref=e159] [cursor=pointer]:
+            - generic [ref=e162]: LinkedIn
+          - link "GitHub" [ref=e163] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+          - button "WhatsApp, enlace pendiente de configurar" [disabled] [ref=e167] [cursor=pointer]:
+            - generic [ref=e170]: WhatsApp
+  - contentinfo [ref=e171]:
+    - generic [ref=e173]:
+      - link "mf." [ref=e174] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=e176]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=e177] [cursor=pointer]:
+        - /url: /#inicio

@@ -1,6 +1,8 @@
 export const projects = [
   {
     slug: "portfolio",
+    listTitle: "Portfolio",
+    listSummary: "Mi perfil y mis proyectos.",
     title: "Portfolio / Martín Fierro",
     category: "Web",
     type: "Sitio personal",
@@ -13,7 +15,7 @@ export const projects = [
     role: "Desarrollo de interfaz y estructura de contenidos",
     stack: ["React", "Vite", "CSS", "Framer Motion", "Lucide React"],
     sourceHref: "https://github.com/martiinfiierro2/Portafolio",
-    demoHref: "/#inicio",
+    demoHref: "/",
     demoLabel: "Explorar sitio",
     problem:
       "Un enlace al repositorio muestra el código, pero deja fuera el contexto: qué se quería resolver, cómo funciona el proyecto y qué decisiones se tomaron durante su construcción.",
@@ -26,9 +28,9 @@ export const projects = [
           "Un catálogo central define los textos, el stack, los enlaces y las imágenes. Añadir una ficha no requiere duplicar componentes.",
       },
       {
-        title: "Navegación por hash",
+        title: "Páginas independientes",
         description:
-          "Cada proyecto tiene una dirección compartible dentro del sitio. Las rutas funcionan en alojamientos estáticos sin configuración de servidor.",
+          "Inicio, proyectos, perfil y contacto tienen su propia ruta. Las fichas y las demos también se pueden abrir y compartir directamente.",
       },
       {
         title: "Componentes con una responsabilidad",
@@ -67,13 +69,13 @@ export const projects = [
     ],
     gallery: [
       {
-        src: "/projects/portfolio-desktop.png",
+        src: "/projects/portfolio-keyboard-desktop.png",
         alt: "Vista del portfolio de Martín Fierro en escritorio",
         caption: "Interfaz en escritorio",
         type: "desktop",
       },
       {
-        src: "/projects/portfolio-mobile.png",
+        src: "/projects/portfolio-keyboard-mobile.png",
         alt: "Vista del portfolio de Martín Fierro en un dispositivo móvil",
         caption: "Distribución en móvil",
         type: "mobile",
@@ -82,6 +84,7 @@ export const projects = [
   },
   {
     slug: "taskflow",
+    listSummary: "Organización de tareas con estado local.",
     title: "Taskflow",
     category: "Web",
     type: "Gestor de tareas",
@@ -147,6 +150,7 @@ export const projects = [
   },
   {
     slug: "pulse-api",
+    listSummary: "Respuestas JSON y HTTP simulados.",
     title: "Pulse API",
     category: "Backend",
     type: "Explorador de API",
@@ -212,6 +216,7 @@ export const projects = [
   },
   {
     slug: "media-lab",
+    listSummary: "Exploración de composiciones CSS.",
     title: "Media Lab",
     category: "Multimedia",
     type: "Galería interactiva",

@@ -1,0 +1,153 @@
+.tablet-scene {
+  width: min(100%, 490px);
+  margin: 0;
+  padding: 4px 16px 0 6px;
+}
+
+.project-tablet {
+  display: block;
+  padding: 16px;
+  border-radius: 25px;
+  background: var(--tablet-frame);
+  box-shadow: 0 12px 0 var(--tablet-edge); /* taste-skill-ignore: physical depth of the tablet explicitly requested by the user. */
+  transform: perspective(1400px) rotateX(8deg) rotateY(-12deg) rotateZ(3deg);
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.tablet-keys {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.tablet-key {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 12px;
+  border-radius: 15px;
+  background: var(--tablet-key);
+  color: var(--tablet-ink);
+  box-shadow: 0 6px 0 var(--tablet-key-edge); /* taste-skill-ignore: raised keys on the requested interactive tablet. */
+  transition: transform 160ms ease;
+}
+
+.tablet-key-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.tablet-key-label svg {
+  flex-shrink: 0;
+}
+
+.tablet-key img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1.9;
+  object-fit: cover;
+  border-radius: 4px;
+  background: var(--tablet-ink);
+}
+
+.tablet-key:hover,
+.tablet-key:focus-visible {
+  transform: translateY(-3px);
+}
+
+.tablet-key:active {
+  transform: translateY(5px);
+}
+
+.tablet-explore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  min-height: 54px;
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--on-accent);
+  font-size: 16px;
+  font-weight: 750;
+  box-shadow: 0 6px 0 var(--accent-depth); /* taste-skill-ignore: bottom key continues the tablet's physical depth. */
+}
+
+.tablet-explore:hover,
+.tablet-explore:focus-visible {
+  transform: translateY(-2px);
+}
+
+.tablet-explore:active {
+  transform: translateY(5px);
+}
+
+.tablet-scene figcaption {
+  margin-top: 30px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: center;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .tablet-scene:focus-within .project-tablet,
+  .tablet-scene:hover .project-tablet {
+    transform: perspective(1400px) rotateX(3deg) rotateY(-5deg) rotateZ(1deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .tablet-scene {
+    width: min(100%, 440px);
+    padding: 0 6px;
+  }
+
+  .project-tablet {
+    padding: 12px;
+    border-radius: 21px;
+    transform: rotate(-2deg);
+  }
+
+  .tablet-keys {
+    gap: 14px 12px;
+  }
+
+  .tablet-key {
+    gap: 9px;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .tablet-key-label {
+    font-size: 14px;
+  }
+
+  .tablet-explore {
+    min-height: 52px;
+    margin-top: 18px;
+  }
+
+  .tablet-scene figcaption {
+    font-size: 14px;
+    margin-top: 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-tablet,
+  .tablet-key,
+  .tablet-explore,
+  .tablet-key:is(:hover, :focus-visible, :active),
+  .tablet-explore:is(:hover, :focus-visible, :active) {
+    transform: none;
+  }
+}

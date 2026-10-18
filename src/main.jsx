@@ -4,6 +4,9 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 
+// Routes and in-page anchors restore their own scroll positions.
+window.history.scrollRestoration = "manual";
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>

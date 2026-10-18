@@ -1,0 +1,195 @@
+.portfolio-journey {
+  --journey-top: calc(var(--header-height) + 40px);
+  --journey-height: calc(100svh - var(--journey-top));
+  --journey-distance: 140svh;
+  position: relative;
+  isolation: isolate;
+}
+
+.journey-stage {
+  overflow: clip;
+}
+
+.hero h1 .hero-name-letter {
+  display: inline-block;
+  transform-origin: center 70%;
+}
+
+.journey-catalog {
+  position: relative;
+  z-index: 2;
+  background: var(--projects-bg);
+}
+
+.journey-catalog .catalog-heading h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 4.5vw, 64px);
+  font-weight: 700;
+}
+
+#projects-title:focus {
+  outline: none;
+}
+
+.portfolio-journey[data-animated="true"] .journey-track {
+  height: calc(var(--journey-height) + var(--journey-distance));
+}
+
+.portfolio-journey[data-animated="true"] .journey-stage {
+  position: sticky;
+  top: var(--journey-top);
+  height: var(--journey-height);
+}
+
+.portfolio-journey[data-animated="true"] .hero {
+  height: 100%;
+  padding-block: 24px 32px;
+}
+
+.portfolio-journey[data-animated="true"] .hero-inner {
+  height: 100%;
+  min-height: 0;
+}
+
+.portfolio-journey[data-animated="true"] .journey-catalog {
+  margin-top: calc(-1 * var(--journey-height));
+}
+
+.portfolio-journey[data-animated="true"] .project-tablet,
+.portfolio-journey[data-animated="true"] .tablet-key,
+.portfolio-journey[data-animated="true"] .tablet-explore {
+  transition: none;
+}
+
+.portfolio-journey[data-animated="true"] .tablet-scene {
+  position: relative;
+  z-index: 1;
+}
+
+.project-tablet {
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.tablet-screen {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--projects-bg);
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 699px) {
+  .portfolio-journey {
+    --journey-distance: 115svh;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero {
+    padding-block: 12px 16px;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero-inner {
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: start;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero h1 {
+    font-size: clamp(64px, 20vw, 116px);
+  }
+
+  .portfolio-journey[data-animated="true"] .hero-copy h2 {
+    font-size: 22px;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero-description {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero-object {
+    width: min(100%, 280px);
+    margin-block: 4px 0;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-scene {
+    padding: 0;
+  }
+
+  .portfolio-journey[data-animated="true"] .project-tablet {
+    padding: 10px;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-keys {
+    gap: 12px 10px;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-key {
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-key-label {
+    font-size: 13px;
+    gap: 2px;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-key-label svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-key img {
+    aspect-ratio: 2.2;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-explore {
+    min-height: 48px;
+    margin-top: 14px;
+    gap: 14px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .portfolio-journey[data-animated="true"] .tablet-scene figcaption {
+    display: none;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero-links a {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 699px) and (max-height: 720px) {
+  .portfolio-journey[data-animated="true"] .hero-inner {
+    gap: 8px;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero h1 {
+    font-size: clamp(56px, 17vw, 76px);
+  }
+
+  .portfolio-journey[data-animated="true"] .hero-object {
+    width: 230px;
+  }
+
+  .portfolio-journey[data-animated="true"] .hero-copy h2 {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-journey[data-animated] .journey-track,
+  .portfolio-journey[data-animated] .journey-stage {
+    position: relative;
+    top: auto;
+    height: auto;
+  }
+
+  .portfolio-journey[data-animated] .journey-catalog {
+    margin-top: 0;
+  }
+}

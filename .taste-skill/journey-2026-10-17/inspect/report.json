@@ -1,0 +1,1468 @@
+{
+ "url": "http://127.0.0.1:5177/",
+ "at": "2026-10-17T13:50:41.642Z",
+ "allow": [
+  "pill-nav",
+  "button-fx",
+  "palette-claude",
+  "few-pictures"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.51,
+    0.12,
+    0.77,
+    0.5
+   ],
+   "motion": {
+    "elements": 44,
+    "css": 0,
+    "transitions": 12,
+    "scripted": 32,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3108,
+     "screens": 3.5,
+     "words": 129,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 18,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "MARTÍN FIERRO",
+     "words": 2,
+     "chars": 13,
+     "lines": 2,
+     "size": 237.6,
+     "vw": 16.5,
+     "font": "Anton",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.99,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "right",
+     "widthRatio": 0.45,
+     "top": 258,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "MARTÍN FIERRO",
+     "words": 2,
+     "lines": 2,
+     "size": 237.6,
+     "font": "Anton"
+    },
+    "headings": [
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Manrope",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.41,
+      "top": 141,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 64,
+      "vw": 4.4,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.62,
+      "top": 180,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "MARTÍN FIERRO",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 237.6,
+      "vw": 16.5,
+      "font": "Anton",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.99,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.45,
+      "top": 258,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Portfolio",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.47,
+      "top": 315,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Taskflow",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.47,
+      "top": 461,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Pulse API",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.47,
+      "top": 607,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Media Lab",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 40,
+      "vw": 2.8,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.47,
+      "top": 754,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.72,
+      "top": 2308,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 2746,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.04,
+       "mono": false
+      },
+      {
+       "family": "Anton",
+       "share": 0.01,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      32,
+      40,
+      64,
+      238
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 18,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14
+     },
+     "measureChars": 78,
+     "max": {
+      "size": 237.6,
+      "vw": 16.5,
+      "font": "Anton",
+      "text": "M"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0.08,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#202123",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 0.04,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#202123",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.04,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#2a2929",
+       "top": 100,
+       "hsl": {
+        "h": 0,
+        "s": 0.01,
+        "l": 0.16
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f5eee2",
+       "share": 0.59
+      },
+      {
+       "color": "#c0b8b0",
+       "share": 0.31
+      },
+      {
+       "color": "#202123",
+       "share": 0.07
+      },
+      {
+       "color": "#262626",
+       "share": 0.04
+      },
+      {
+       "color": "#ff9d81",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#f06b4b",
+      "hsl": {
+       "h": 12,
+       "s": 0.85,
+       "l": 0.62
+      },
+      "fg": "#202123"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 6,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Inicio",
+      "Explorar proyectos"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 6,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 10,
+     "boxRadius": 15,
+     "squareMedia": 0,
+     "roundedMedia": 2,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 62,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "anton",
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.46,
+    0.17,
+    0.44,
+    0.43
+   ],
+   "motion": {
+    "elements": 42,
+    "css": 0,
+    "transitions": 11,
+    "scripted": 31,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3136,
+     "screens": 3.1,
+     "words": 129,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 18,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "MARTÍN FIERRO",
+     "words": 2,
+     "chars": 13,
+     "lines": 1,
+     "size": 138.2,
+     "vw": 18,
+     "font": "Anton",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.99,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.94,
+     "top": 171,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "MARTÍN FIERRO",
+     "words": 2,
+     "lines": 1,
+     "size": 138.2,
+     "font": "Anton"
+    },
+    "headings": [
+     {
+      "text": "MARTÍN FIERRO",
+      "words": 2,
+      "chars": 13,
+      "lines": 1,
+      "size": 138.2,
+      "vw": 18,
+      "font": "Anton",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.99,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.94,
+      "top": 171,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 36,
+      "vw": 4.7,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.72,
+      "top": 180,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Portfolio",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.52,
+      "top": 259,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Taskflow",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.52,
+      "top": 399,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Manrope",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 483,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Pulse API",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.52,
+      "top": 539,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Media Lab",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 28,
+      "vw": 3.6,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "right",
+      "widthRatio": 0.52,
+      "top": 679,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2331,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2610,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.04,
+       "mono": false
+      },
+      {
+       "family": "Anton",
+       "share": 0.01,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      26,
+      28,
+      36,
+      138
+     ],
+     "sizeCount": 10,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 18,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14
+     },
+     "measureChars": 70,
+     "max": {
+      "size": 138.2,
+      "vw": 18,
+      "font": "Anton",
+      "text": "M"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0.08,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#202123",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 0.04,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#202123",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.04,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#2a2929",
+       "top": 100,
+       "hsl": {
+        "h": 0,
+        "s": 0.01,
+        "l": 0.16
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f5eee2",
+       "share": 0.59
+      },
+      {
+       "color": "#c0b8b0",
+       "share": 0.31
+      },
+      {
+       "color": "#202123",
+       "share": 0.07
+      },
+      {
+       "color": "#262626",
+       "share": 0.04
+      },
+      {
+       "color": "#ff9d81",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#f06b4b",
+      "hsl": {
+       "h": 12,
+       "s": 0.85,
+       "l": 0.62
+      },
+      "fg": "#202123"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 6,
+     "inHero": 6,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Inicio",
+      "Explorar proyectos"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 6,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 10,
+     "boxRadius": 12,
+     "squareMedia": 0,
+     "roundedMedia": 1,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 62,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "anton",
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.48,
+    0.12,
+    0.93,
+    0.65,
+    0.63
+   ],
+   "motion": {
+    "elements": 42,
+    "css": 0,
+    "transitions": 10,
+    "scripted": 32,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 3472,
+     "screens": 4.1,
+     "words": 115,
+     "img": 8,
+     "video": 0,
+     "canvas": 0,
+     "svg": 18,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "MARTÍN FIERRO",
+     "words": 2,
+     "chars": 13,
+     "lines": 2,
+     "size": 78,
+     "vw": 20,
+     "font": "Anton",
+     "weight": 400,
+     "tracking": -0.025,
+     "leading": 0.99,
+     "upper": true,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.9,
+     "top": 108,
+     "tag": "h1",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "MARTÍN FIERRO",
+     "words": 2,
+     "lines": 2,
+     "size": 78,
+     "font": "Anton"
+    },
+    "headings": [
+     {
+      "text": "MARTÍN FIERRO",
+      "words": 2,
+      "chars": 13,
+      "lines": 2,
+      "size": 78,
+      "vw": 20,
+      "font": "Anton",
+      "weight": 400,
+      "tracking": -0.025,
+      "leading": 0.99,
+      "upper": true,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 108,
+      "tag": "h1",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 36,
+      "vw": 9.2,
+      "font": "Clash Display",
+      "weight": 700,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.59,
+      "top": 144,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Manrope",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 276,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Portfolio",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 434,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Taskflow",
+      "words": 1,
+      "chars": 8,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 742,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Pulse API",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 1049,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Media Lab",
+      "words": 2,
+      "chars": 9,
+      "lines": 1,
+      "size": 23,
+      "vw": 5.9,
+      "font": "Georgia",
+      "weight": 500,
+      "tracking": -0.035,
+      "leading": 1.15,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.81,
+      "top": 1357,
+      "tag": "h3",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2514,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Manrope",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2923,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 9,
+     "maxLines": 2,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Manrope",
+       "share": 0.93,
+       "mono": false
+      },
+      {
+       "family": "Georgia",
+       "share": 0.05,
+       "mono": false
+      },
+      {
+       "family": "Anton",
+       "share": 0.02,
+       "mono": false
+      },
+      {
+       "family": "Clash Display",
+       "share": 0.01,
+       "mono": false
+      }
+     ],
+     "familyCount": 4,
+     "sizes": [
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      20,
+      22,
+      23,
+      26,
+      36,
+      78
+     ],
+     "sizeCount": 12,
+     "notLoaded": [],
+     "body": {
+      "font": "Manrope",
+      "size": 20,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12.6
+     },
+     "measureChars": 36,
+     "max": {
+      "size": 78,
+      "vw": 20,
+      "font": "Anton",
+      "text": "M"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.02,
+     "centerShare": 0.03,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#202123",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 0.04,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#202123",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.04,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#2a2929",
+       "top": 96,
+       "hsl": {
+        "h": 0,
+        "s": 0.01,
+        "l": 0.16
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f5eee2",
+       "share": 0.62
+      },
+      {
+       "color": "#c0b8b0",
+       "share": 0.28
+      },
+      {
+       "color": "#202123",
+       "share": 0.05
+      },
+      {
+       "color": "#262626",
+       "share": 0.05
+      },
+      {
+       "color": "#ff9d81",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#f06b4b",
+      "hsl": {
+       "h": 12,
+       "s": 0.85,
+       "l": 0.62
+      },
+      "fg": "#202123"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 5,
+     "inHero": 5,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 1,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido",
+      "Explorar proyectos"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 6,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 6,
+     "boxRadius": 8,
+     "squareMedia": 0,
+     "roundedMedia": 4,
+     "mediaRadius": 8,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "img",
+      "ratio": 0.26
+     },
+     {
+      "type": "img",
+      "ratio": 0.22
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 58,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "anton",
+     "clash display",
+     "manrope"
+    ]
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "size-count",
+   "width": 1440,
+   "message": "10 different font sizes (14, 15, 16, 17, 18, 20, 32, 40, 64, 238).",
+   "fix": "A page needs about five: display, heading, lead, body, small.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "FAIL",
+   "id": "covered-text",
+   "width": 1440,
+   "message": "Large text lies under another element at some scroll position: \"Proyectos\" (screen 1, 75% hidden); \"Portfolio\" (screen 1, 25% hidden); \"Taskflow\" (screen 1, 25% hidden); \"Pulse API\" (screen 1, 25% hidden)",
+   "fix": "Nothing may sit on top of a headline or statement. Move the picture, shorten the pinned run, or raise the text above it (z-index) and give it a ground.",
+   "alsoAt": [
+    768,
+    390
+   ]
+  },
+  {
+   "level": "WARN",
+   "id": "long-pin",
+   "width": 1440,
+   "message": "The same large text stays on screen for 3 screens in a row: \"Pulse API\"; \"Media Lab\"",
+   "fix": "A pinned element earns two screens, and something must change at each. Shorten the run or give every screen its own content."
+  },
+  {
+   "level": "WARN",
+   "id": "font-count",
+   "width": 390,
+   "message": "3 typefaces in use (Manrope, Georgia, Anton).",
+   "fix": "Two at most."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\journey-2026-10-17\\inspect\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\journey-2026-10-17\\inspect\\desktop-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\journey-2026-10-17\\inspect\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\journey-2026-10-17\\inspect\\tablet-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\journey-2026-10-17\\inspect\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\journey-2026-10-17\\inspect\\mobile-page-01.jpg"
+   ]
+  }
+ ]
+}

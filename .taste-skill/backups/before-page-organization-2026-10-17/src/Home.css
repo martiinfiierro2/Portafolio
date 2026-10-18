@@ -1,0 +1,370 @@
+.hero {
+  padding-block: 28px 48px;
+}
+
+.hero-inner {
+  width: calc(100% - 112px);
+  max-width: 1320px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  grid-template-areas: "intro name" "object name" "links name";
+  align-items: center;
+  gap: 28px 6%;
+  min-height: min(790px, calc(100svh - 176px));
+}
+
+.hero-heading {
+  grid-area: name;
+  align-self: stretch;
+  display: grid;
+  align-items: center;
+  min-width: 0;
+  height: clamp(500px, calc(100svh - 176px), 820px);
+}
+
+.hero h1 {
+  display: grid;
+  grid-template-rows: minmax(0, 1.12fr) minmax(0, 1fr);
+  gap: clamp(6px, 1.2svh, 12px);
+  height: 100%;
+  margin: 0;
+  color: var(--name-ink);
+  font-family: var(--font-poster);
+  font-size: clamp(144px, 16.5vw, 264px);
+  font-weight: 400;
+  line-height: 0.99;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.hero h1 > span {
+  display: block;
+  min-height: 0;
+}
+
+@media (min-width: 901px) {
+  .hero h1 > span:last-child {
+    width: 94%;
+    justify-self: end;
+  }
+}
+
+.hero-intro {
+  grid-area: intro;
+  padding-top: 12px;
+}
+
+.hero-copy {
+  min-width: 0;
+}
+
+.hero-copy h2 {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: clamp(26px, 2.4vw, 32px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.035em;
+}
+
+.hero-description {
+  max-width: 36ch;
+  margin: 18px 0 0;
+  color: var(--ink);
+  font-size: 18px;
+  line-height: 1.6;
+  text-wrap: pretty;
+}
+
+.hero-object {
+  grid-area: object;
+  min-width: 0;
+  align-self: center;
+}
+
+.hero-links {
+  grid-area: links;
+  align-self: end;
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.hero-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.hero-links svg {
+  transition: transform 180ms ease;
+}
+
+.hero-links a:hover svg,
+.hero-links a:focus-visible svg {
+  transform: translate(3px, -3px);
+}
+
+.about {
+  padding-block: clamp(80px, 8vw, 120px);
+  background: var(--projects-bg);
+}
+
+.about h2,
+.connect h2 {
+  margin: 0 0 24px;
+  font-family: var(--font-body);
+  font-size: clamp(26px, 2.5vw, 32px);
+  font-weight: 650;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.about-lead {
+  max-width: 64ch;
+  margin: 0;
+  color: var(--ink);
+  font-size: 20px;
+  line-height: 1.65;
+  text-wrap: pretty;
+}
+
+.about-lead strong {
+  font-weight: 750;
+}
+
+.about-personal {
+  margin: 24px 0 0;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+.connect {
+  padding-block: 64px 80px;
+  background: var(--bg);
+}
+
+.connect-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 40px;
+  align-items: center;
+}
+
+.connect-copy p {
+  max-width: 36ch;
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.experience-panel {
+  margin-top: 56px;
+}
+
+.experience-panel h3 {
+  font-family: var(--font-body);
+  font-size: 22px;
+}
+
+.experience-list {
+  display: grid;
+  gap: 28px;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-list h4 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.experience-list p {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.experience-company {
+  font-weight: 650;
+}
+
+.cv-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  text-align: left;
+}
+
+.cv-card strong,
+.cv-card small {
+  display: block;
+}
+
+.cv-card small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.cv-dialog {
+  margin: auto;
+  width: min(1000px, 94vw);
+  max-width: none;
+  max-height: 92dvh;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.cv-dialog::backdrop {
+  background: rgb(0 0 0 / 70%);
+}
+
+.cv-toolbar,
+.cv-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cv-toolbar {
+  justify-content: space-between;
+}
+
+.cv-toolbar h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.cv-close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.cv-actions {
+  margin-block: 20px;
+}
+
+.cv-help {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.cv-document {
+  display: block;
+  width: 100%;
+  height: 60dvh;
+  border: 0;
+  background: white;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    padding-block: 20px 56px;
+  }
+
+  .hero-inner {
+    width: calc(100% - 48px);
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "name" "intro" "object" "links";
+    min-height: 0;
+    gap: 28px;
+  }
+
+  .hero-heading {
+    align-self: auto;
+    height: clamp(240px, 65vw, 440px);
+  }
+
+  .hero h1 {
+    font-size: clamp(88px, 26.6vw, 172px);
+    line-height: 0.99;
+    letter-spacing: 0;
+  }
+
+  .hero-intro {
+    padding: 0;
+  }
+
+  .hero-copy {
+    padding: 0;
+  }
+
+  .hero-copy h2 {
+    font-size: 26px;
+  }
+
+  .hero-description {
+    font-size: 18px;
+  }
+
+  .hero-object {
+    width: min(100%, 440px);
+    justify-self: center;
+    margin-block: 8px 0;
+  }
+
+  .hero-links {
+    justify-content: space-between;
+    gap: 24px;
+    padding-inline: 4px;
+  }
+
+  .about {
+    padding-block: 72px;
+  }
+
+  .connect {
+    padding-block: 0 72px;
+  }
+
+  .connect-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    grid-template-areas: "name name" "intro object" "links object";
+    gap: 28px;
+  }
+
+  .hero h1 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: minmax(0, 1fr);
+    gap: 20px;
+    font-size: 18vw;
+  }
+
+  .hero-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-inner {
+    width: calc(100% - 40px);
+  }
+}

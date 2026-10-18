@@ -1,0 +1,20 @@
+{
+  "name": "keyboard",
+  "version": "1.64.0-alpha-1790635538000",
+  "timestamp": 1792269534850,
+  "socketPath": "\\\\.\\pipe\\pw-7347fd3b-cli-43a6b3bae4c2cfbe-keyboard",
+  "cli": {},
+  "browser": {
+    "browserName": "chromium",
+    "launchOptions": {
+      "channel": "msedge",
+      "headless": true,
+      "args": [
+        "--no-sandbox",
+        "--disable-gpu",
+        "--disable-blink-features=AutomationControlled"
+      ],
+      "chromiumSandbox": true
+    }
+  }
+}

@@ -1,0 +1,1086 @@
+{
+ "url": "http://127.0.0.1:5177/",
+ "at": "2026-10-17T15:41:13.317Z",
+ "allow": [
+  "pill-nav",
+  "button-fx",
+  "palette-claude",
+  "few-pictures"
+ ],
+ "viewports": [
+  {
+   "width": 1440,
+   "height": 900,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.53,
+    0.36,
+    0.76,
+    0.49
+   ],
+   "motion": {
+    "elements": 41,
+    "css": 0,
+    "transitions": 12,
+    "scripted": 29,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 1440,
+     "h": 900
+    },
+    "page": {
+     "height": 3108,
+     "screens": 3.5,
+     "words": 103,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 18,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Proyectos",
+     "words": 1,
+     "chars": 9,
+     "lines": 1,
+     "size": 34,
+     "vw": 2.4,
+     "font": "Oswald",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.2,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.08,
+     "top": 641,
+     "tag": "span",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "M A R T I N F I E R R O",
+     "words": 12,
+     "lines": 2,
+     "size": 237.6,
+     "font": "Anton"
+    },
+    "headings": [
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Oswald",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.47,
+      "top": 143,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Abrir",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 30,
+      "vw": 2.1,
+      "font": "Oswald",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.18,
+      "top": 406,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 34,
+      "vw": 2.4,
+      "font": "Oswald",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.08,
+      "top": 641,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Oswald",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.72,
+      "top": 2308,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 32,
+      "vw": 2.2,
+      "font": "Oswald",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.5,
+      "top": 2746,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Oswald",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      15,
+      16,
+      18,
+      20,
+      32
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Oswald",
+      "size": 18,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14
+     },
+     "measureChars": 66,
+     "max": {
+      "size": 34,
+      "vw": 2.4,
+      "font": "Oswald",
+      "text": "Proyectos"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.07,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#202123",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 0.04,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#202123",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.04,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#2a2929",
+       "top": 2193,
+       "hsl": {
+        "h": 0,
+        "s": 0.01,
+        "l": 0.16
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f5eee2",
+       "share": 0.54
+      },
+      {
+       "color": "#c0b8b0",
+       "share": 0.39
+      },
+      {
+       "color": "#202123",
+       "share": 0.07
+      },
+      {
+       "color": "#ff9d81",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#f06b4b",
+      "hsl": {
+       "h": 12,
+       "s": 0.85,
+       "l": 0.62
+      },
+      "fg": "#202123"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 3,
+     "boxRadius": 27,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.17
+     },
+     {
+      "type": "svg",
+      "ratio": 0.14
+     }
+    ],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 62,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "anton",
+     "oswald"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 768,
+   "height": 1024,
+   "load": "load",
+   "screens": 4,
+   "filled": [
+    0.64,
+    0.3,
+    0.39,
+    0.4
+   ],
+   "motion": {
+    "elements": 41,
+    "css": 0,
+    "transitions": 12,
+    "scripted": 29,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 768,
+     "h": 1024
+    },
+    "page": {
+     "height": 3105,
+     "screens": 3,
+     "words": 103,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 18,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 1,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Desarrollador full-stack",
+     "words": 2,
+     "chars": 24,
+     "lines": 1,
+     "size": 26,
+     "vw": 3.4,
+     "font": "Oswald",
+     "weight": 600,
+     "tracking": -0.035,
+     "leading": 1.25,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "left",
+     "widthRatio": 0.38,
+     "top": 560,
+     "tag": "h2",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "M A R T I N F I E R R O",
+     "words": 12,
+     "lines": 1,
+     "size": 138.2,
+     "font": "Anton"
+    },
+    "headings": [
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Oswald",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "left",
+      "widthRatio": 0.38,
+      "top": 560,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Oswald",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2331,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 3.4,
+      "font": "Oswald",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2580,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 3,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Oswald",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      14,
+      15,
+      16,
+      18,
+      20,
+      26
+     ],
+     "sizeCount": 6,
+     "notLoaded": [],
+     "body": {
+      "font": "Oswald",
+      "size": 18,
+      "leading": 1.6,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 14
+     },
+     "measureChars": 66,
+     "max": {
+      "size": 26,
+      "vw": 3.4,
+      "font": "Oswald",
+      "text": "Desarrollador full-stack"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0.01,
+     "centerShare": 0.07,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#202123",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 0.04,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#202123",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.04,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#2a2929",
+       "top": 2259,
+       "hsl": {
+        "h": 0,
+        "s": 0.01,
+        "l": 0.16
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f5eee2",
+       "share": 0.54
+      },
+      {
+       "color": "#c0b8b0",
+       "share": 0.39
+      },
+      {
+       "color": "#202123",
+       "share": 0.07
+      },
+      {
+       "color": "#ff9d81",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#f06b4b",
+      "hsl": {
+       "h": 12,
+       "s": 0.85,
+       "l": 0.62
+      },
+      "fg": "#202123"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 3,
+     "boxRadius": 22,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.12
+     },
+     {
+      "type": "svg",
+      "ratio": 0.12
+     }
+    ],
+    "nav": {
+     "links": 5,
+     "fixed": true,
+     "height": 62,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "anton",
+     "oswald"
+    ]
+   },
+   "consoleErrors": []
+  },
+  {
+   "width": 390,
+   "height": 844,
+   "load": "load",
+   "screens": 5,
+   "filled": [
+    0.75,
+    0.41,
+    0.91,
+    0.56,
+    0.62
+   ],
+   "motion": {
+    "elements": 39,
+    "css": 0,
+    "transitions": 10,
+    "scripted": 29,
+    "videos": 0,
+    "playingVideos": 0
+   },
+   "metrics": {
+    "viewport": {
+     "w": 390,
+     "h": 844
+    },
+    "page": {
+     "height": 3409,
+     "screens": 4,
+     "words": 90,
+     "img": 4,
+     "video": 0,
+     "canvas": 0,
+     "svg": 18,
+     "sections": 4,
+     "horizontalOverflow": 0,
+     "overflowCulprits": [],
+     "uiFragments": 1,
+     "uiAbuse": false,
+     "realPictures": 4,
+     "videoCount": 0,
+     "uiPictures": 0,
+     "pictureSamples": [
+      "portfolio-desktop.png",
+      "taskflow.png",
+      "pulse-api.png",
+      "media-lab.png"
+     ],
+     "blendText": 0,
+     "sideScrollers": 0,
+     "brokenImages": [],
+     "emoji": []
+    },
+    "hero": {
+     "text": "Proyectos",
+     "words": 1,
+     "chars": 9,
+     "lines": 1,
+     "size": 24,
+     "vw": 6.2,
+     "font": "Oswald",
+     "weight": 400,
+     "tracking": 0,
+     "leading": 1.2,
+     "upper": false,
+     "italic": false,
+     "mono": false,
+     "align": "left",
+     "position": "center",
+     "widthRatio": 0.22,
+     "top": 714,
+     "tag": "span",
+     "kind": "heading"
+    },
+    "h1": {
+     "text": "M A R T I N F I E R R O",
+     "words": 12,
+     "lines": 2,
+     "size": 103.7,
+     "font": "Anton"
+    },
+    "headings": [
+     {
+      "text": "Desarrollador full-stack",
+      "words": 2,
+      "chars": 24,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Oswald",
+      "weight": 600,
+      "tracking": -0.035,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.9,
+      "top": 418,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Abrir",
+      "words": 1,
+      "chars": 5,
+      "lines": 1,
+      "size": 22,
+      "vw": 5.6,
+      "font": "Oswald",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.43,
+      "top": 575,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Proyectos",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 24,
+      "vw": 6.2,
+      "font": "Oswald",
+      "weight": 400,
+      "tracking": 0,
+      "leading": 1.2,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.22,
+      "top": 714,
+      "tag": "span",
+      "kind": "heading"
+     },
+     {
+      "text": "Sobre mí",
+      "words": 2,
+      "chars": 8,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Oswald",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2514,
+      "tag": "h2",
+      "kind": "heading"
+     },
+     {
+      "text": "Hablemos.",
+      "words": 1,
+      "chars": 9,
+      "lines": 1,
+      "size": 26,
+      "vw": 6.7,
+      "font": "Oswald",
+      "weight": 650,
+      "tracking": -0.03,
+      "leading": 1.25,
+      "upper": false,
+      "italic": false,
+      "mono": false,
+      "align": "left",
+      "position": "center",
+      "widthRatio": 0.92,
+      "top": 2860,
+      "tag": "h2",
+      "kind": "heading"
+     }
+    ],
+    "headingSummary": {
+     "count": 5,
+     "maxLines": 1,
+     "over2Lines": 0,
+     "statements": 0,
+     "centered": 0,
+     "medianWords": 2,
+     "mixedFontHeadings": 0
+    },
+    "type": {
+     "families": [
+      {
+       "family": "Oswald",
+       "share": 1,
+       "mono": false
+      }
+     ],
+     "familyCount": 1,
+     "sizes": [
+      13,
+      14,
+      16,
+      17,
+      18,
+      20,
+      22,
+      26
+     ],
+     "sizeCount": 8,
+     "notLoaded": [],
+     "body": {
+      "font": "Oswald",
+      "size": 20,
+      "leading": 1.65,
+      "weight": 400,
+      "tracking": 0,
+      "contrast": 12.6
+     },
+     "measureChars": 36,
+     "max": {
+      "size": 26,
+      "vw": 6.7,
+      "font": "Oswald",
+      "text": "Sobre mí"
+     },
+     "monoShare": 0,
+     "monoProseShare": 0,
+     "monoFamilies": [],
+     "monoSamples": [],
+     "microLabels": 0,
+     "microLabelShare": 0,
+     "microSamples": [],
+     "upperShare": 0,
+     "centerShare": 0,
+     "smallText": 0
+    },
+    "eyebrows": [],
+    "numbered": [],
+    "color": {
+     "bodyBg": "#202123",
+     "bodyBgHsl": {
+      "h": 220,
+      "s": 0.04,
+      "l": 0.13
+     },
+     "dark": true,
+     "sectionBgs": [
+      {
+       "color": "#202123",
+       "top": 0,
+       "hsl": {
+        "h": 220,
+        "s": 0.04,
+        "l": 0.13
+       }
+      },
+      {
+       "color": "#2a2929",
+       "top": 2442,
+       "hsl": {
+        "h": 0,
+        "s": 0.01,
+        "l": 0.16
+       }
+      }
+     ],
+     "textColors": [
+      {
+       "color": "#f5eee2",
+       "share": 0.58
+      },
+      {
+       "color": "#c0b8b0",
+       "share": 0.37
+      },
+      {
+       "color": "#202123",
+       "share": 0.05
+      },
+      {
+       "color": "#ff9d81",
+       "share": 0
+      }
+     ],
+     "button": {
+      "bg": "#f06b4b",
+      "hsl": {
+       "h": 12,
+       "s": 0.85,
+       "l": 0.62
+      },
+      "fg": "#202123"
+     },
+     "lowContrast": []
+    },
+    "buttons": {
+     "count": 3,
+     "inHero": 3,
+     "radius": 8,
+     "height": 45,
+     "withShadow": 0,
+     "withGradient": 0,
+     "mono": 0,
+     "upper": 0,
+     "heroLabels": [
+      "Saltar al contenido"
+     ]
+    },
+    "surfaces": {
+     "shadowStatic": 0,
+     "shadowOverlay": 1,
+     "shadowSamples": [],
+     "gradients": 0,
+     "scrims": 0,
+     "gradientSamples": [],
+     "gradientText": 0,
+     "hairlines": 0,
+     "hairlineSamples": [],
+     "outlinedBoxes": 0,
+     "dashed": 0,
+     "blurred": 0,
+     "roundedBoxes": 3,
+     "boxRadius": 22,
+     "squareMedia": 0,
+     "roundedMedia": 0,
+     "mediaRadius": 0,
+     "textShadow": 0,
+     "cardRows": []
+    },
+    "heroMedia": [
+     {
+      "type": "svg",
+      "ratio": 0.16
+     },
+     {
+      "type": "svg",
+      "ratio": 0.14
+     }
+    ],
+    "nav": {
+     "links": 1,
+     "fixed": true,
+     "height": 58,
+     "floatingPill": false,
+     "blur": false
+    },
+    "fontsLoaded": [
+     "anton",
+     "oswald"
+    ]
+   },
+   "consoleErrors": []
+  }
+ ],
+ "findings": [
+  {
+   "level": "WARN",
+   "id": "no-footage",
+   "width": 1440,
+   "message": "No video anywhere on the page.",
+   "fix": "Look for one honest clip with scripts/assets.mjs --video (the place, the material, the process) and use it as a muted loop with a poster frame. Defend its absence only if no clip fits the subject."
+  },
+  {
+   "level": "WARN",
+   "id": "pinned-over-picture",
+   "width": 1440,
+   "message": "Pinned large text slides across pictures while the page scrolls: \"Proyectos\" (screen 1, 100% over a picture)",
+   "fix": "Jurors read a pinned title crossing drawings or photographs as a collision. Keep the pictures in the column the title does not occupy, or unpin it."
+  }
+ ],
+ "images": [
+  {
+   "viewport": "desktop",
+   "width": 1440,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\name-reference-2026-10-17\\inspect-complete\\desktop-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\name-reference-2026-10-17\\inspect-complete\\desktop-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "tablet",
+   "width": 768,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\name-reference-2026-10-17\\inspect-complete\\tablet-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\name-reference-2026-10-17\\inspect-complete\\tablet-page-01.jpg"
+   ]
+  },
+  {
+   "viewport": "mobile",
+   "width": 390,
+   "fold": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\name-reference-2026-10-17\\inspect-complete\\mobile-fold.jpg",
+   "pages": [
+    "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.taste-skill\\name-reference-2026-10-17\\inspect-complete\\mobile-page-01.jpg"
+   ]
+  }
+ ]
+}

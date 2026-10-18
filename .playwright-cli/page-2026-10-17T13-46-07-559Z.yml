@@ -1,0 +1,132 @@
+- generic [ref=e3]:
+  - link "Saltar al contenido" [ref=e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Martín Fierro, inicio" [ref=e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=e8]:
+        - list [ref=e9]:
+          - listitem [ref=e10]:
+            - link "Inicio" [ref=e11] [cursor=pointer]:
+              - /url: /#inicio
+          - listitem [ref=e12]:
+            - link "Proyectos" [ref=e13] [cursor=pointer]:
+              - /url: /#proyectos
+          - listitem [ref=e14]:
+            - link "Sobre mí" [ref=e15] [cursor=pointer]:
+              - /url: /#sobre-mi
+          - listitem [ref=e16]:
+            - link "Contacto" [ref=e17] [cursor=pointer]:
+              - /url: /#contacto
+      - generic [ref=e19]:
+        - checkbox "Activar tema claro" [checked]
+        - generic [ref=e20] [cursor=pointer]
+  - main [ref=e21]:
+    - generic [ref=e22]:
+      - region [ref=e25]:
+        - generic [ref=e26]:
+          - heading "Martín Fierro" [level=1] [ref=e28]:
+            - generic [aria-hidden] [ref=e29]:
+              - generic [ref=e30]: M
+              - generic [ref=e31]: a
+              - generic [ref=e32]: r
+              - generic [ref=e33]: t
+              - generic [ref=e34]: í
+              - generic [ref=e35]: "n"
+            - generic [aria-hidden] [ref=e36]:
+              - generic [ref=e37]: F
+              - generic [ref=e38]: i
+              - generic [ref=e39]: e
+              - generic [ref=e40]: r
+              - generic [ref=e41]: r
+              - generic [ref=e42]: o
+          - generic [ref=e44]:
+            - heading "Desarrollador full-stack" [level=2] [ref=e45]
+            - paragraph [ref=e46]: Ingeniería multimedia para conectar diseño, interacción y datos.
+          - figure "Elige una tecla. Descubre lo que hay detrás." [ref=e48]:
+            - generic [ref=e49]:
+              - navigation "Acceso directo a los proyectos" [ref=e50]:
+                - link "Abrir proyecto Portfolio" [ref=e51] [cursor=pointer]:
+                  - /url: /proyectos/portfolio
+                  - generic [ref=e52]: Portfolio
+                - link "Abrir proyecto Taskflow" [ref=e56] [cursor=pointer]:
+                  - /url: /proyectos/taskflow
+                  - generic [ref=e57]: Taskflow
+                - link "Abrir proyecto Pulse API" [ref=e61] [cursor=pointer]:
+                  - /url: /proyectos/pulse-api
+                  - generic [ref=e62]: Pulse API
+                - link "Abrir proyecto Media Lab" [ref=e66] [cursor=pointer]:
+                  - /url: /proyectos/media-lab
+                  - generic [ref=e67]: Media Lab
+              - link "Explorar proyectos" [ref=e71] [cursor=pointer]:
+                - /url: /#proyectos
+          - generic [ref=e76]:
+            - link "Hablemos" [ref=e77] [cursor=pointer]:
+              - /url: /#contacto
+            - link "GitHub" [ref=e81] [cursor=pointer]:
+              - /url: https://github.com/martiinfiierro2
+      - generic [aria-hidden]:
+        - region:
+          - generic:
+            - generic:
+              - heading [level=2]: Proyectos
+              - group:
+                - generic: Buscar y filtrar
+            - generic:
+              - generic:
+                - article:
+                  - link:
+                    - /url: /proyectos/portfolio
+                    - generic:
+                      - heading [level=3]: Portfolio
+                      - paragraph: Mi perfil y mis proyectos.
+              - generic:
+                - article:
+                  - link:
+                    - /url: /proyectos/taskflow
+                    - generic:
+                      - heading [level=3]: Taskflow
+                      - paragraph: Organización de tareas con estado local.
+              - generic:
+                - article:
+                  - link:
+                    - /url: /proyectos/pulse-api
+                    - generic:
+                      - heading [level=3]: Pulse API
+                      - paragraph: Respuestas JSON y HTTP simulados.
+              - generic:
+                - article:
+                  - link:
+                    - /url: /proyectos/media-lab
+                    - generic:
+                      - heading [level=3]: Media Lab
+                      - paragraph: Exploración de composiciones CSS.
+    - region [ref=e85]:
+      - generic [ref=e87]:
+        - heading "Sobre mí" [level=2] [ref=e88]
+        - paragraph [ref=e89]:
+          - text: Me interesa crear experiencias web simples y funcionales, donde el
+          - strong [ref=e90]: diseño, la interacción y los datos
+          - text: se complementan para resolver problemas reales.
+        - paragraph [ref=e91]: Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.
+    - region [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]:
+          - heading "Hablemos." [level=2] [ref=e95]
+          - paragraph [ref=e96]: Puedes encontrarme en mis redes y seguir lo que construyo.
+        - group "Redes sociales" [ref=e98]:
+          - button "Instagram, enlace pendiente de configurar" [disabled] [ref=e99] [cursor=pointer]
+          - button "LinkedIn, enlace pendiente de configurar" [disabled] [ref=e104] [cursor=pointer]
+          - link "GitHub" [ref=e107] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+          - button "WhatsApp, enlace pendiente de configurar" [disabled] [ref=e110] [cursor=pointer]
+          - generic [aria-hidden]: CONTACTO
+  - contentinfo [ref=e113]:
+    - generic [ref=e115]:
+      - link "mf." [ref=e116] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=e118]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=e119] [cursor=pointer]:
+        - /url: /#inicio

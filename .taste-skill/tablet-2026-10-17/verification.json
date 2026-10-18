@@ -1,0 +1,20 @@
+{
+  "viewports": [1440, 1024, 768, 390, 320],
+  "themes": ["dark", "light"],
+  "horizontalOverflow": 0,
+  "brokenImages": 0,
+  "runtimeErrors": [],
+  "tabletProjectLinks": 4,
+  "mobileCatalogImageWidth": 358,
+  "aboutAnchorTop": 152.40625,
+  "checks": [
+    "all four tablet project links and return links",
+    "catalog search, empty state and reset",
+    "mobile menu navigation and Escape",
+    "keyboard theme toggle and persistence after reload",
+    "legacy catalog hash redirect",
+    "about anchor below floating header",
+    "reduced motion",
+    "original sun/moon CSS preserved exactly"
+  ]
+}

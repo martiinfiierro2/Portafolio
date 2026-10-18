@@ -1,0 +1,223 @@
+
+/* Isolated visual concepts. The application files and original artwork are untouched. */
+.site {--paper:var(--bg);--paper-soft:var(--surface);--blue-paper:#e2eaff;--blue-ink:#274aa8;--folder:#4267d5;--grid-line:rgb(51 66 88 / 6%);padding-top:100px;}
+.site[data-theme="dark"] {--blue-paper:#263d6b;--blue-ink:#c0d0ff;--grid-line:rgb(168 190 255 / 6%);}
+.site[data-theme="light"] {--bg:#fff;--paper:#fff;--paper-soft:#f7f8fb;}
+.site[data-theme] {background-image:none;}
+.site.archive[data-theme="light"],.site.keyboard[data-theme="light"] {background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:32px 32px;} /* taste-skill-ignore: graph-paper background expressly requested and present in the supplied notebook reference. */
+.footer .shell {max-width:1160px;}
+.concept-container {width:calc(100% - 96px);max-width:1160px;margin-inline:auto;}
+.concept-hero h1 {margin:0;font-family:var(--font-heading);font-size:clamp(60px,9.7vw,132px);line-height:1;letter-spacing:-.045em;word-spacing:.12em;font-weight:700;color:var(--ink);}
+.concept-role {margin:18px 0 0;font-size:clamp(24px,2.5vw,32px);font-weight:550;line-height:1.3;letter-spacing:-.025em;}
+.concept-role,.about-copy p {color:var(--ink);}
+.quiet-link {display:inline-block;margin-top:28px;color:var(--accent-ink);font-size:17px;text-decoration:underline;text-underline-offset:5px;}
+.concept-description {font-size:18px;line-height:1.65;max-width:43ch;margin:24px 0 0;color:var(--ink);}
+.concept-button {display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:52px;padding:14px 22px;border-radius:10px;background:var(--accent);color:var(--on-accent);font-size:17px;font-weight:650;}
+.concept-button:hover {transform:translateY(-2px);}
+.concept-button:active {transform:translateY(1px);}
+.concept-button svg {width:20px;height:20px;}
+.concept-hero .concept-button {margin-top:28px;}
+.original-art {display:block;width:100%;height:auto;}
+.concept-work h2,.concept-about h2,.concept-contact h2 {font-family:var(--font-body);font-size:32px;font-weight:650;letter-spacing:-.03em;line-height:1.25;margin:0;}
+.work-heading {display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:32px;}
+.work-heading p {font-size:16px;margin:0;color:var(--muted);}
+.project-grid {display:grid;grid-template-columns:1fr 1fr;gap:40px 32px;}
+.project-card {display:block;min-width:0;}
+.project-card figure {margin:0;aspect-ratio:16/9;overflow:hidden;border-radius:8px;background:#101216;}
+.project-card img {display:block;width:100%;height:100%;object-fit:contain;transition:transform 250ms ease;}
+.project-card:hover img {transform:scale(1.02);}
+.project-caption {display:grid;grid-template-columns:minmax(0,1fr) 28px;gap:6px 16px;margin-top:16px;}
+.project-caption h3 {margin:0;font-family:var(--font-heading);font-weight:600;font-size:29px;line-height:1.1;letter-spacing:-.025em;}
+.project-caption p {margin:0;font-size:16px;line-height:1.5;color:var(--muted);}
+.project-arrow {grid-column:2;grid-row:1/3;align-self:center;justify-self:end;font-size:29px;color:var(--accent-ink);}
+.project-card:focus-visible {outline:2px solid var(--accent);outline-offset:8px;}
+.concept-about {padding-block:80px 40px;}
+.about-grid {display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:80px;align-items:center;}
+.about-copy p {font-size:20px;line-height:1.65;max-width:58ch;margin:24px 0 0;}
+.about-copy p:last-child {font-size:17px;color:var(--muted);}
+.about-copy strong {font-weight:750;}
+.concept-contact {padding-block:40px 64px;}
+.contact-grid {display:flex;align-items:center;justify-content:space-between;gap:40px;}
+.contact-grid p {font-size:17px;line-height:1.6;max-width:38ch;margin:16px 0 0;color:var(--muted);}
+.social-media {--social-size:76px;--social-radius:14px;}
+.social-media::after {content:"";position:absolute;inset:var(--social-half-gap);border-radius:var(--social-radius);z-index:0;background:var(--accent);transition:opacity 180ms;pointer-events:none;}
+.social-media:hover::after,.social-media:focus-within::after {opacity:0;}
+.social-title {font-size:12px;letter-spacing:.12em;}
+.social-tile svg {width:32px;height:32px;}
+.footer-bottom {padding-block:24px;}
+.menu-trigger {display:none;}
+.enter {animation:concept-enter 550ms both;animation-delay:var(--delay,0ms);}
+@keyframes concept-enter {from {opacity:0;transform:translateY(16px)} to {opacity:1;transform:none}}
+/* A: a working notebook, with a blue binding and real project plates. */
+.notebook .notebook-sheet {position:relative;width:calc(100% - 80px);max-width:1280px;margin:20px auto 28px;background-color:var(--paper);border-radius:3px 16px 16px 3px;padding:48px 48px 0 76px;isolation:isolate;}
+.notebook-sheet::before {content:"";position:absolute;inset:0 auto 0 0;width:28px;background:var(--accent);border-radius:3px 0 0 3px;z-index:-1;}
+.notebook-sheet::after {content:"";position:absolute;inset:0 0 0 28px;z-index:-1;background-image:linear-gradient(var(--grid-line) 1px,transparent 1px),linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);background-size:28px 28px;pointer-events:none;} /* taste-skill-ignore: graph-paper background expressly requested and present in the supplied notebook reference. */
+.notebook-sheet .concept-container {width:100%;max-width:none;}
+.notebook .concept-hero {padding-bottom:52px;}
+.notebook .concept-hero h1 {font-size:clamp(60px,8.4vw,116px);}
+.notebook-intro {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start;gap:36px;margin-top:12px;}
+.notebook .concept-role {font-size:28px;}
+.notebook .concept-description {margin-top:18px;font-size:18px;}
+.notebook-art {position:relative;padding:10px 0 0;}
+.notebook .concept-work {padding-block:16px 52px;}
+.notebook .project-grid {gap:36px;}
+.notebook .project-card {position:relative;}
+.notebook .project-card figure {border-radius:3px;}
+.notebook .project-card::before {content:"";position:absolute;top:-9px;left:36%;width:74px;height:18px;background:var(--blue-paper);transform:rotate(-3deg);z-index:1;}
+.notebook .project-caption {background:var(--paper);padding-block:10px;margin-top:0;}
+.notebook .concept-about {padding-block:32px 24px;}
+.notebook .concept-contact {padding-block:32px 40px;}
+.notebook .footer {background:transparent;}
+.notebook .footer .shell {width:100%;max-width:none;}
+.notebook .footer-bottom {padding-block:24px;}
+/* B: an archive whose tabs and sheets are the actual project navigation. */
+.archive .concept-hero {padding-block:32px 52px;}
+.archive-intro {display:flex;align-items:flex-start;justify-content:space-between;gap:48px;margin-top:28px;}
+.archive .concept-role {margin-top:0;max-width:24ch;}
+.archive .concept-description {margin:0;max-width:38ch;}
+.archive .concept-hero .concept-button {margin-top:22px;}
+.archive-folder {position:relative;margin-top:0;}
+.folder-tabs {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;padding-inline:28px;}
+.folder-tabs a {display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 20px 16px;background:var(--blue-paper);color:var(--blue-ink);border-radius:14px 14px 0 0;font-size:17px;font-weight:650;transition:transform 200ms;}
+.folder-tabs a:hover {transform:translateY(-5px);}
+.folder-body {position:relative;z-index:1;background:var(--folder);border-radius:16px 16px 22px 22px;padding:36px 40px 40px;}
+.folder-body>.work-heading {color:#fff;margin-bottom:28px;}
+.folder-body>.work-heading p {color:#fff;}
+.archive .project-card {background:var(--paper);border-radius:10px;overflow:hidden;padding:12px;}
+.archive .project-card figure {border-radius:4px;}
+.archive .project-caption {padding:4px 8px 8px;}
+.archive .project-caption h3 {font-size:27px;}
+.archive .project-caption p {font-size:16px;}
+.archive .project-grid {gap:24px;}
+.archive .concept-about .original-art {max-width:340px;}
+/* C: four equal keys, each opening one of Martin's actual projects. */
+.keyboard .concept-hero {padding-block:44px 56px;}
+.keyboard-hero-grid {display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);align-items:center;gap:48px;}
+.keyboard .concept-hero h1 {font-size:clamp(72px,7.9vw,108px);line-height:.96;}
+.keyboard .concept-hero h1 span {display:block;}
+.keyboard .concept-role {font-size:28px;margin-top:24px;}
+.keyboard .concept-description {max-width:34ch;font-size:18px;}
+.keyboard-art {position:relative;padding:30px 14px 34px 0;perspective:1600px;}
+.keydeck {display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:24px;border-radius:30px;background:#c2ccdf;border-bottom:14px solid #8c9ab5;transform:rotateX(12deg) rotateY(-10deg) rotateZ(5deg);transform-style:preserve-3d;}
+.keycap {display:flex;flex-direction:column;justify-content:space-between;gap:14px;padding:15px 15px 18px;min-height:174px;overflow:hidden;border-radius:16px;background:#f7f9fd;color:#15171c;box-shadow:0 9px 0 #a1aec8;transition:transform 160ms ease,box-shadow 160ms ease;} /* taste-skill-ignore: solid offsets form the physical depth of keyboard keys; the only blurred shadow belongs to the floating mobile menu. */
+.keycap:nth-child(2),.keycap:nth-child(3) {background:#e1e9fa;}
+.keycap span {font-size:20px;font-weight:750;letter-spacing:-.02em;display:flex;justify-content:space-between;align-items:center;}
+.keycap img {display:block;width:100%;aspect-ratio:16/9;object-fit:contain;background:#101216;border-radius:4px;}
+.keycap:hover,.keycap:focus-visible {transform:translateY(5px);box-shadow:0 4px 0 #a1aec8;} /* taste-skill-ignore: solid offsets form the physical depth of keyboard keys; the only blurred shadow belongs to the floating mobile menu. */
+.keycap:active {transform:translateY(9px);box-shadow:none;} /* taste-skill-ignore: solid offsets form the physical depth of keyboard keys; the only blurred shadow belongs to the floating mobile menu. */
+.spacebar {grid-column:1/-1;display:flex;align-items:center;justify-content:center;gap:36px;min-height:64px;background:var(--accent);color:#fff;border-radius:14px;box-shadow:0 8px 0 #2e4da5;font-size:18px;font-weight:650;transition:transform 160ms ease,box-shadow 160ms ease;} /* taste-skill-ignore: solid offsets form the physical depth of keyboard keys; the only blurred shadow belongs to the floating mobile menu. */
+.spacebar:hover {transform:translateY(4px);box-shadow:0 4px 0 #2e4da5;} /* taste-skill-ignore: solid offsets form the physical depth of keyboard keys; the only blurred shadow belongs to the floating mobile menu. */
+.keydeck-note {text-align:center;color:var(--muted);font-size:15px;margin:28px 0 0;}
+.keyboard .concept-work {padding-block:52px;background:var(--projects-bg);}
+.keyboard .project-grid {gap:36px;}
+.keyboard .concept-about {padding-top:64px;}
+@media(max-width:1100px) {
+ .concept-container {width:calc(100% - 64px);}
+ .concept-hero h1 {font-size:10vw;}
+ .notebook .notebook-sheet {width:calc(100% - 48px);padding:36px 32px 0 56px;}
+ .notebook .concept-hero h1 {font-size:8.5vw;}
+ .notebook-intro {gap:20px;}
+ .notebook .concept-role {font-size:25px;}
+ .keyboard-hero-grid {gap:32px;}
+ .keyboard .concept-hero h1 {font-size:8.5vw;}
+ .keydeck {padding:18px;gap:16px;}
+ .keycap {padding:12px;min-height:140px;}
+ .keycap span {font-size:17px;}
+ .about-grid {grid-template-columns:minmax(0,1fr) 280px;gap:40px;}
+ .folder-tabs {padding-inline:16px;gap:6px;}
+ .folder-tabs a {padding:16px 14px;font-size:16px;}
+}
+@media(max-width:760px) {
+ .site {padding-top:96px;}
+ .concept-container {width:calc(100% - 40px);}
+ .concept-hero h1 {font-size:clamp(42px,12vw,86px);line-height:1.02;}
+ .concept-role {font-size:24px;margin-top:16px;}
+ .concept-description {font-size:17px;margin-top:18px;}
+ .concept-hero .concept-button {margin-top:24px;}
+ .work-heading {align-items:flex-start;margin-bottom:24px;gap:16px;}
+ .work-heading p {font-size:14px;max-width:16ch;text-align:right;}
+ .concept-work h2,.concept-about h2,.concept-contact h2 {font-size:27px;}
+ .project-grid {grid-template-columns:1fr;gap:32px;}
+ .project-caption h3 {font-size:28px;}
+ .project-caption p {font-size:16px;}
+ .concept-about {padding-block:48px 28px;}
+ .about-grid {grid-template-columns:1fr;gap:24px;}
+ .about-copy p {font-size:19px;}
+ .about-copy p:last-child {font-size:16px;}
+ .about-grid .original-art {max-width:420px;justify-self:center;}
+ .concept-contact {padding-block:24px 40px;}
+ .contact-grid {align-items:flex-start;flex-direction:column;gap:24px;}
+ .social-media {--social-size:64px;margin:0;}
+ .social-media::after,.social-title {display:none;}
+ .social-media .social-tile {transform:none;border-color:var(--accent);border-radius:13px;background:var(--social-card-bg);color:var(--accent-ink);}
+ .social-media .social-tile svg {opacity:1;width:28px;height:28px;}
+ .notebook .notebook-sheet {width:calc(100% - 24px);padding:24px 18px 0 32px;margin:12px auto 16px;}
+ .notebook-sheet::before {width:12px;}
+ .notebook-sheet::after {left:12px;background-size:24px 24px;}
+ .notebook .concept-hero {padding-bottom:32px;}
+ .notebook .concept-hero h1 {font-size:clamp(38px,10.6vw,70px);}
+ .notebook-intro {grid-template-columns:1fr;gap:18px;margin-top:0;}
+ .notebook .concept-role {font-size:23px;margin-top:14px;}
+ .notebook .concept-description {font-size:16px;margin-top:16px;}
+ .notebook .concept-hero .concept-button {font-size:16px;min-height:48px;padding:12px 16px;}
+ .notebook-art {padding:0;}
+ .notebook .concept-work {padding-block:8px 24px;}
+ .notebook .project-grid {gap:32px;}
+ .notebook .work-heading {gap:8px;}
+ .notebook .work-heading p {display:none;}
+ .notebook .project-caption h3 {font-size:27px;}
+ .notebook .project-caption p {font-size:15px;}
+ .notebook .concept-about {padding-block:20px;}
+ .notebook .about-copy p {font-size:18px;}
+ .notebook .concept-contact {padding-block:20px 24px;}
+ .notebook .footer-bottom {gap:12px;font-size:13px;}
+ .archive .concept-hero {padding-block:28px 32px;}
+ .archive-intro {flex-direction:column;gap:18px;margin-top:18px;}
+ .archive .concept-role {font-size:24px;}
+ .archive .concept-description {font-size:17px;}
+ .archive-folder {width:calc(100% - 24px);}
+ .folder-tabs {grid-template-columns:1fr 1fr;gap:6px;padding-inline:10px;margin-bottom:8px;}
+ .folder-tabs a {padding:12px;font-size:15px;border-radius:8px;min-height:46px;}
+ .folder-body {padding:24px 16px;border-radius:14px;}
+ .folder-body>.work-heading p {display:none;}
+ .archive .project-grid {gap:24px;}
+ .archive .project-card {padding:8px;}
+ .archive .project-caption {padding:6px 4px 4px;}
+ .archive .project-caption h3 {font-size:27px;}
+ .archive .project-caption p {font-size:15px;}
+ .keyboard .concept-hero {padding-block:28px 40px;}
+ .keyboard-hero-grid {grid-template-columns:1fr;gap:24px;}
+ .keyboard .concept-hero h1 {font-size:clamp(44px,12vw,84px);line-height:1.02;}
+ .keyboard .concept-hero h1 span {display:inline;}
+ .keyboard .concept-hero h1 span+span::before {content:" ";}
+ .keyboard .concept-role {font-size:24px;margin-top:18px;}
+ .keyboard .concept-description {font-size:17px;max-width:40ch;margin-top:18px;}
+ .keyboard-art {padding:12px 8px 6px 0;}
+ .keydeck {padding:16px;gap:16px;border-radius:22px;border-bottom-width:10px;transform:rotateX(8deg) rotateY(-5deg) rotateZ(2deg);}
+ .keycap {padding:10px;gap:10px;border-radius:12px;min-height:126px;}
+ .keycap span {font-size:16px;}
+ .spacebar {min-height:52px;font-size:16px;border-radius:10px;}
+ .keydeck-note {font-size:14px;margin-top:22px;}
+ .keyboard .concept-work {padding-block:40px;}
+ .keyboard .concept-about {padding-top:40px;}
+ .header nav::before,.header nav::after {display:none;}
+ .menu-trigger {display:grid;place-items:center;width:36px;height:36px;padding:8px;background:transparent;border:0;color:var(--ink);}
+ .menu-trigger span {display:block;width:20px;height:2px;background:currentColor;position:relative;}
+ .menu-trigger span::before,.menu-trigger span::after {content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;}
+ .menu-trigger span::before {top:-6px}.menu-trigger span::after {top:6px}
+ .header nav:not([data-open]) .example-1 {opacity:0;pointer-events:none;visibility:hidden;}
+ .header nav[data-open] .example-1 {opacity:1;pointer-events:auto;visibility:visible;transform:none;}
+ .header nav .example-1 {box-shadow:0 12px 28px rgb(0 0 0 / 16%);} /* taste-skill-ignore: solid offsets form the physical depth of keyboard keys; the only blurred shadow belongs to the floating mobile menu. */
+}
+@media(max-width:380px) {
+ .concept-container {width:calc(100% - 32px);}
+ .notebook .notebook-sheet {padding-right:14px;padding-left:26px;}
+ .notebook .concept-hero h1 {font-size:10.6vw;}
+ .notebook .concept-role {font-size:21px;}
+ .keydeck {padding:12px;gap:14px;}
+ .keycap {padding:8px;min-height:116px;}
+ .keycap span {font-size:14px;}
+}
+@media(hover:none),(pointer:coarse) {.social-media::after{display:none}}
+@media(prefers-reduced-motion:reduce) {.enter{animation:none}.keydeck{transform:none}*{scroll-behavior:auto!important}}
+

@@ -1,0 +1,137 @@
+- generic [ref=f173e3]:
+  - link "Saltar al contenido" [ref=f173e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f173e5]:
+    - generic [ref=f173e6]:
+      - link "Martín Fierro, inicio" [ref=f173e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=f173e8]:
+        - list [ref=f173e9]:
+          - listitem [ref=f173e10]:
+            - link "Inicio" [ref=f173e11] [cursor=pointer]:
+              - /url: /#inicio
+          - listitem [ref=f173e12]:
+            - link "Proyectos" [ref=f173e13] [cursor=pointer]:
+              - /url: /#proyectos
+          - listitem [ref=f173e14]:
+            - link "Sobre mí" [ref=f173e15] [cursor=pointer]:
+              - /url: /#sobre-mi
+          - listitem [ref=f173e16]:
+            - link "Contacto" [ref=f173e17] [cursor=pointer]:
+              - /url: /#contacto
+      - generic [ref=f173e19]:
+        - checkbox "Activar tema oscuro"
+        - generic [ref=f173e20] [cursor=pointer]
+  - main [ref=f173e21]:
+    - article [ref=f173e22]:
+      - link "Volver a proyectos" [ref=f173e23] [cursor=pointer]:
+        - /url: /#proyectos
+      - generic [ref=f173e26]:
+        - generic [ref=f173e27]:
+          - generic [ref=f173e28]: PROYECTO / Web
+          - generic [ref=f173e29]: Ejemplo
+          - generic [ref=f173e30]: Demo interactiva
+        - heading "Taskflow" [active] [level=1] [ref=f173e31]
+        - paragraph [ref=f173e32]: Un tablero para crear tareas, organizar su estado y seguir el progreso sin perder el contexto.
+        - generic [ref=f173e33]:
+          - link "Abrir demo" [ref=f173e34] [cursor=pointer]:
+            - /url: /demos/taskflow
+          - link "Ver código (abre una nueva pestaña)" [ref=f173e40] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2/Portafolio/blob/feat/portfolio-profesional/src/components/demos/TaskFlowDemo.jsx
+            - text: Ver código
+            - generic [ref=f173e48]: (abre una nueva pestaña)
+        - paragraph [ref=f173e49]: Proyecto de ejemplo · Demo con datos locales o simulados.
+      - generic [ref=f173e50]:
+        - generic [ref=f173e51]:
+          - generic [ref=f173e52]:
+            - generic [ref=f173e53]:
+              - generic [aria-hidden] [ref=f173e54]: "01"
+              - heading "El proyecto" [level=2] [ref=f173e55]
+            - paragraph [ref=f173e56]: Taskflow es un proyecto de ejemplo con una demo interactiva. Permite explorar el recorrido de una tarea en un tablero. Los datos pertenecen a la demostración y se gestionan localmente; no hay un servicio remoto de usuarios o tareas.
+          - generic [ref=f173e57]:
+            - generic [ref=f173e58]:
+              - paragraph [ref=f173e59]: EL RETO
+              - heading "Qué resolver" [level=2] [ref=f173e60]
+              - paragraph [ref=f173e61]: Un listado plano dificulta distinguir qué tareas están pendientes, cuáles están en marcha y cuáles ya se han terminado.
+            - generic [ref=f173e62]:
+              - paragraph [ref=f173e63]: LA PROPUESTA
+              - heading "Cómo abordarlo" [level=2] [ref=f173e64]
+              - paragraph [ref=f173e65]: Un tablero que hace visible el estado de cada tarea y ofrece controles directos para crearla y avanzar su progreso.
+          - generic [ref=f173e66]:
+            - generic [ref=f173e67]:
+              - generic [aria-hidden] [ref=f173e68]: "02"
+              - heading "Decisiones técnicas" [level=2] [ref=f173e69]
+            - generic [ref=f173e70]:
+              - generic [ref=f173e76]:
+                - heading "Estado en el navegador" [level=3] [ref=f173e77]
+                - paragraph [ref=f173e78]: Las operaciones de la demo se resuelven en la interfaz. El ejemplo no representa una API ni una base de datos compartida.
+              - generic [ref=f173e84]:
+                - heading "Flujo de tareas explícito" [level=3] [ref=f173e85]
+                - paragraph [ref=f173e86]: Las tareas se agrupan por estado para que los cambios se entiendan sin depender de información adicional.
+          - generic [ref=f173e87]:
+            - generic [ref=f173e88]:
+              - generic [aria-hidden] [ref=f173e89]: "03"
+              - heading "Proceso de desarrollo" [level=2] [ref=f173e90]
+            - list [ref=f173e91]:
+              - listitem [ref=f173e92]:
+                - generic [aria-hidden] [ref=f173e93]: "01"
+                - generic [ref=f173e94]:
+                  - heading "Modelar una tarea" [level=3] [ref=f173e95]
+                  - paragraph [ref=f173e96]: Definir los campos que permiten identificar cada tarea y seguir su estado dentro del tablero.
+              - listitem [ref=f173e97]:
+                - generic [aria-hidden] [ref=f173e98]: "02"
+                - generic [ref=f173e99]:
+                  - heading "Construir las interacciones" [level=3] [ref=f173e100]
+                  - paragraph [ref=f173e101]: Añadir controles para crear tareas y actualizar su progreso con una respuesta inmediata en pantalla.
+              - listitem [ref=f173e102]:
+                - generic [aria-hidden] [ref=f173e103]: "03"
+                - generic [ref=f173e104]:
+                  - heading "Preparar la demostración" [level=3] [ref=f173e105]
+                  - paragraph [ref=f173e106]: Usar datos de ejemplo y explicar el alcance local de las operaciones para poder probar la interfaz sin configurar servicios.
+          - generic [ref=f173e107]:
+            - generic [ref=f173e108]:
+              - generic [aria-hidden] [ref=f173e109]: "04"
+              - heading "El proyecto en pantalla" [level=2] [ref=f173e110]
+            - paragraph [ref=f173e111]: Abre una captura para verla en detalle.
+            - figure "Tablero interactivo de ejemplo" [ref=f173e113]:
+              - 'button "Ampliar captura: Tablero interactivo de ejemplo" [ref=f173e114] [cursor=pointer]':
+                - img "Tablero de la demo Taskflow con tareas organizadas por estado" [ref=f173e115]
+                - generic [ref=f173e116]: Ampliar
+        - complementary "Datos del proyecto" [ref=f173e123]:
+          - generic [ref=f173e124]:
+            - paragraph [ref=f173e125]: FICHA TÉCNICA
+            - generic [ref=f173e126]:
+              - generic [ref=f173e127]:
+                - term [ref=f173e128]: Tipo
+                - definition [ref=f173e129]: Gestor de tareas
+              - generic [ref=f173e130]:
+                - term [ref=f173e131]: Participación
+                - definition [ref=f173e132]: Ejemplo de interfaz y gestión de estado
+              - generic [ref=f173e133]:
+                - term [ref=f173e134]: Estado
+                - definition [ref=f173e135]: Demo interactiva
+            - heading "Stack" [level=3] [ref=f173e136]
+            - list "Tecnologías" [ref=f173e137]:
+              - listitem [ref=f173e138]: React
+              - listitem [ref=f173e139]: JavaScript
+              - listitem [ref=f173e140]: CSS
+              - listitem [ref=f173e141]: Estado local
+          - generic [ref=f173e142]:
+            - heading "Qué puedes explorar" [level=3] [ref=f173e143]
+            - list [ref=f173e144]:
+              - listitem [ref=f173e145]:
+                - generic [ref=f173e148]: Tablero con estados de trabajo.
+              - listitem [ref=f173e149]:
+                - generic [ref=f173e152]: Creación de tareas desde la demo.
+              - listitem [ref=f173e153]:
+                - generic [ref=f173e156]: Actualización del progreso en la interfaz.
+              - listitem [ref=f173e157]:
+                - generic [ref=f173e160]: Datos locales de demostración.
+  - contentinfo [ref=f173e161]:
+    - generic [ref=f173e163]:
+      - link "mf." [ref=f173e164] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=f173e166]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=f173e167] [cursor=pointer]:
+        - /url: /#inicio

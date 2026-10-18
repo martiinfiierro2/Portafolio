@@ -1,10 +1,10 @@
 # Martín Fierro / Portfolio
 
-Portafolio de ingeniería multimedia y desarrollo full-stack construido con React, React Router y Vite. La página principal se recorre con scroll: portada, proyectos, perfil y contacto. Incluye un catálogo con búsqueda y categorías, fichas individuales de proyectos y demos interactivas locales.
+Portfolio de ingeniería multimedia y desarrollo full-stack con React, React Router y Vite. Un teclado interactivo da acceso a los proyectos; inicio, proyectos, sobre mí y contacto tienen páginas independientes.
 
 ## Desarrollo
 
-Usa Node.js 24 (Vite requiere Node >=20.19 o >=22.12) y npm:
+Usa Node.js 24 y npm:
 
 ```bash
 npm ci
@@ -13,41 +13,50 @@ npm run dev
 
 ```bash
 npm run lint
+npm run check:structure
 npm run build
 npm run preview
 ```
 
-## Estructura
+`check:structure` recorre los imports desde `src/main.jsx` y avisa de módulos JS, JSX o CSS sin uso y de imports relativos que no se pueden resolver.
 
-Cada página o sección principal reúne su contenido en un JSX y tiene al lado un CSS con el mismo nombre. El título y la ilustración de la portada se editan juntos; la galería y su visor forman parte de la ficha del proyecto.
+## Organización
 
-| Apartado                  | Componente                         | Estilos                            |
-| ------------------------- | ---------------------------------- | ---------------------------------- |
-| Cabecera y menú           | `src/Header.jsx`                   | `src/Header.css`                   |
-| Portada y perfil          | `src/Home.jsx`                     | `src/Home.css`                     |
-| Catálogo y filtros        | `src/components/Projects.jsx`      | `src/components/Projects.css`      |
-| Ficha y galería           | `src/components/ProjectDetail.jsx` | `src/components/ProjectDetail.css` |
-| Página de demos           | `src/components/DemoPage.jsx`      | `src/components/DemoPage.css`      |
-| Contacto y pie            | `src/Footer.jsx`                   | `src/Footer.css`                   |
+```text
+src/
+  pages/          Home, Projects, About, Contact, ProjectDetail y DemoPage
+  components/     Header, Footer, ProjectKeyboard, ProjectCard, SocialMedia…
+    demos/        TaskFlowDemo, ApiExplorerDemo y MediaLabDemo
+  data/           Proyectos, experiencia y enlaces de contacto
+  styles/         tokens.css (fuente, temas y colores), base.css (estilos comunes)
+  assets/         Fuente Manrope e ilustración original
+  App.jsx         Rutas, tema y comportamiento de navegación
+  index.css       Entrada de los estilos globales
+scripts/
+  audit-source.mjs
+public/projects/  Capturas de los proyectos
+```
 
-`src/index.css` contiene únicamente los estilos compartidos: fuentes, temas, tipografía, controles, etiquetas de proyectos y reglas generales de adaptación y accesibilidad. Cada componente importa su propio CSS, que incluye también sus ajustes para móvil; no hay un archivo responsive separado.
+Cada página y componente visual importa su CSS del mismo directorio, incluidos sus ajustes de móvil. La interfaz utiliza CSS nativo y una única fuente variable local, Manrope. Los colores y superficies de ambos temas se ajustan en `src/styles/tokens.css`.
 
-Las tres demos de `src/components/demos/` conservan sus componentes porque son aplicaciones independientes. Comparten `DemoPage.css` dentro del mismo apartado, sin crear un CSS por cada detalle. `Reveal.jsx` y el hook de sección activa son utilidades reutilizadas; las rutas se definen en `App.jsx`.
+Consulta [la guía del código](src/README.md) y [cómo añadir proyectos](docs/PROJECTS.md). Los datos y enlaces se editan en `src/data/`; los contactos sin configurar mantienen su valor `null`.
 
-El contenido de las fichas está en `src/data/projects.js` y las ilustraciones en `public/illustrations/`. Las fuentes locales de `src/assets/fonts/` son Clash Display en negrita para títulos y Manrope para textos y controles.
+## Teclado
 
-Consulta [cómo añadir proyectos](docs/PROJECTS.md) para crear nuevas fichas sin duplicar componentes. Cada proyecto tiene una dirección propia, por ejemplo `/proyectos/taskflow`, que se puede abrir directamente o compartir.
+`ProjectKeyboard` construye el objeto con CSS, sin una imagen ni una escena 3D externa. Escribe «cd Proyectos»; las teclas neutras se iluminan durante la pulsación y Enter abre el catálogo. Incluye repetición, sonido opcional y navegación con flechas. La introducción es silenciosa; el sonido solo se activa después de una interacción y respeta la preferencia guardada. Con movimiento reducido se muestra directamente el comando completo.
 
-## Navegación y despliegue
+El enlace «Descargar CV» del inicio utiliza `cv` en `src/data/contact.js`. Añade el PDF a `public/` y configura su ruta, por ejemplo `/cv.pdf`; mientras el valor sea `null`, el control indica que todavía no está disponible. El hero, el menú móvil y las tarjetas tienen entradas breves que se omiten con movimiento reducido.
 
-`BrowserRouter` gestiona `/`, `/proyectos/:slug`, `/demos/:demoId` y las rutas no encontradas. Los enlaces a `/#inicio`, `/#proyectos`, `/#sobre-mi` y `/#contacto` mantienen el scroll dentro de la portada. Los antiguos enlaces `#/proyectos/...` y `#/demos/...` se redirigen a las rutas actuales.
+## Rutas y despliegue
 
-Al desplegar, configura el servidor para servir `index.html` en las rutas de la aplicación que no correspondan a archivos reales. Esto permite abrir o recargar una ficha directamente. Los servidores de desarrollo y vista previa de Vite ya incluyen este comportamiento; GitHub Pages requiere una solución de fallback o un hosting con soporte para SPA.
+React Router gestiona `/`, `/proyectos`, `/sobre-mi`, `/contacto`, `/proyectos/:slug`, `/demos/:demoId` y una página 404. La navegación actualiza el título, vuelve al inicio y mueve el foco al encabezado de cada página. Los enlaces antiguos `/#inicio`, `/#proyectos`, `/#sobre-mi`, `/#contacto` y `#/...` redirigen a sus rutas actuales.
 
-## Demos de ejemplo
+El hosting debe servir `index.html` en las rutas de la aplicación que no correspondan a archivos reales para permitir accesos y recargas directas. Vite incluye ese fallback en desarrollo y preview; GitHub Pages requiere configurarlo por separado o utilizar un hosting con soporte para SPA.
 
-TaskFlow guarda tareas únicamente en el navegador. Pulse API simula respuestas JSON en memoria. Media Lab genera composiciones con CSS y permite ajustar su presentación. Son ejemplos identificados en la interfaz; no usan un servidor, cuentas ni datos de clientes.
+## Catálogo y demos
 
-El catálogo se mantiene en el archivo de datos. No incluye un panel de administración remoto. Para añadir una demo propia, enlaza su URL desplegada; para una demo integrada, añade un componente y regístralo en `DemoPage.jsx`.
+El catálogo incluye tarjetas con capturas completas, búsqueda por texto, filtros por categoría, fichas y una galería ampliable. Las fichas solo muestran las acciones y secciones que tienen datos.
 
-Los temas respetan la elección guardada en el navegador y las animaciones respetan la preferencia de movimiento reducido. Los enlaces de demo y código se muestran solo cuando están definidos.
+Taskflow guarda tareas en el navegador; Pulse API simula respuestas JSON en memoria; Media Lab genera composiciones CSS ajustables. Son demostraciones identificadas como ejemplos y no requieren backend. El catálogo no utiliza un panel remoto de administración.
+
+Los temas guardan la elección en el navegador y las animaciones respetan `prefers-reduced-motion`.

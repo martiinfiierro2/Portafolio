@@ -1,0 +1,123 @@
+- generic [ref=f167e3]:
+  - link "Saltar al contenido" [ref=f167e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f167e5]:
+    - generic [ref=f167e6]:
+      - link "Martín Fierro, inicio" [ref=f167e7] [cursor=pointer]:
+        - /url: /
+        - text: MF
+      - navigation "Navegación principal" [ref=f167e8]:
+        - list [ref=f167e9]:
+          - listitem [ref=f167e10]:
+            - link "Inicio" [ref=f167e11] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f167e12]:
+            - link "Proyectos" [ref=f167e13] [cursor=pointer]:
+              - /url: /proyectos
+          - listitem [ref=f167e14]:
+            - link "Sobre mí" [ref=f167e15] [cursor=pointer]:
+              - /url: /sobre-mi
+          - listitem [ref=f167e16]:
+            - link "Contacto" [ref=f167e17] [cursor=pointer]:
+              - /url: /contacto
+      - generic [ref=f167e19]:
+        - checkbox "Activar tema oscuro"
+        - generic [ref=f167e20] [cursor=pointer]
+  - main [ref=f167e21]:
+    - region [ref=f167e22]:
+      - generic [ref=f167e23]:
+        - heading "Martín Fierro" [active] [level=1] [ref=f167e24]
+        - generic [ref=f167e26]:
+          - paragraph [ref=f167e27]: Desarrollador full-stack
+          - paragraph [ref=f167e28]: Ingeniería multimedia para conectar diseño, interacción y datos.
+          - button "Descargar CV . Todavía no disponible." [disabled] [ref=f167e29]:
+            - text: Descargar CV
+            - generic [ref=f167e33]: . Todavía no disponible.
+        - generic [ref=f167e36]:
+          - generic [ref=f167e37]:
+            - generic [aria-hidden] [ref=f167e38]: MF
+            - generic [ref=f167e39]:
+              - button "Repetir la escritura de Proyectos" [ref=f167e40] [cursor=pointer]
+              - button "Sonido del teclado" [pressed] [ref=f167e44] [cursor=pointer]
+          - generic [ref=f167e49]:
+            - generic [aria-hidden] [ref=f167e50]: ›
+            - generic [ref=f167e51]: Proyectos. Prueba las teclas y pulsa Enter para abrir mis proyectos.
+            - generic [aria-hidden] [ref=f167e54]: Escribiendo
+          - group "Teclado interactivo. Usa las flechas para cambiar de tecla; Enter abre Proyectos." [ref=f167e55]:
+            - generic [ref=f167e56]:
+              - button "Probar tecla Q" [ref=f167e57] [cursor=pointer]:
+                - generic [ref=f167e58]: Q
+              - button "Probar tecla W" [ref=f167e59] [cursor=pointer]:
+                - generic [ref=f167e60]: W
+              - button "Probar tecla E" [ref=f167e61] [cursor=pointer]:
+                - generic [ref=f167e62]: E
+              - button "Probar tecla R" [ref=f167e63] [cursor=pointer]:
+                - generic [ref=f167e64]: R
+              - button "Probar tecla T" [ref=f167e65] [cursor=pointer]:
+                - generic [ref=f167e66]: T
+              - button "Probar tecla Y" [ref=f167e67] [cursor=pointer]:
+                - generic [ref=f167e68]: "Y"
+              - button "Probar tecla U" [ref=f167e69] [cursor=pointer]:
+                - generic [ref=f167e70]: U
+              - button "Probar tecla I" [ref=f167e71] [cursor=pointer]:
+                - generic [ref=f167e72]: I
+              - button "Probar tecla O" [ref=f167e73] [cursor=pointer]:
+                - generic [ref=f167e74]: O
+              - button "Probar tecla P" [ref=f167e75] [cursor=pointer]:
+                - generic [ref=f167e76]: P
+            - generic [ref=f167e77]:
+              - button "Probar tecla A" [ref=f167e78] [cursor=pointer]:
+                - generic [ref=f167e79]: A
+              - button "Probar tecla S" [ref=f167e80] [cursor=pointer]:
+                - generic [ref=f167e81]: S
+              - button "Probar tecla D" [ref=f167e82] [cursor=pointer]:
+                - generic [ref=f167e83]: D
+              - button "Probar tecla F" [ref=f167e84] [cursor=pointer]:
+                - generic [ref=f167e85]: F
+              - button "Probar tecla G" [ref=f167e86] [cursor=pointer]:
+                - generic [ref=f167e87]: G
+              - button "Probar tecla H" [ref=f167e88] [cursor=pointer]:
+                - generic [ref=f167e89]: H
+              - button "Probar tecla J" [ref=f167e90] [cursor=pointer]:
+                - generic [ref=f167e91]: J
+              - button "Probar tecla K" [ref=f167e92] [cursor=pointer]:
+                - generic [ref=f167e93]: K
+              - button "Probar tecla L" [ref=f167e94] [cursor=pointer]:
+                - generic [ref=f167e95]: L
+            - generic [ref=f167e96]:
+              - button "Probar tecla Z" [ref=f167e97] [cursor=pointer]:
+                - generic [ref=f167e98]: Z
+              - button "Probar tecla X" [ref=f167e99] [cursor=pointer]:
+                - generic [ref=f167e100]: X
+              - button "Probar tecla C" [ref=f167e101] [cursor=pointer]:
+                - generic [ref=f167e102]: C
+              - button "Probar tecla V" [ref=f167e103] [cursor=pointer]:
+                - generic [ref=f167e104]: V
+              - button "Probar tecla B" [ref=f167e105] [cursor=pointer]:
+                - generic [ref=f167e106]: B
+              - button "Probar tecla N" [ref=f167e107] [cursor=pointer]:
+                - generic [ref=f167e108]: "N"
+              - button "Probar tecla M" [ref=f167e109] [cursor=pointer]:
+                - generic [ref=f167e110]: M
+              - link "Abrir proyectos" [ref=f167e111] [cursor=pointer]:
+                - /url: /proyectos
+                - generic [ref=f167e112]:
+                  - generic [ref=f167e113]: Abrir
+                  - generic [aria-hidden] [ref=f167e118]: Enter
+            - generic [ref=f167e119]:
+              - button "Probar tecla Control" [ref=f167e120] [cursor=pointer]:
+                - generic [ref=f167e121]: ctrl
+              - button "Probar tecla Alt" [ref=f167e122] [cursor=pointer]:
+                - generic [ref=f167e123]: alt
+              - button "Probar tecla Espacio" [ref=f167e124] [cursor=pointer]
+              - button "Probar tecla Izquierda" [ref=f167e127] [cursor=pointer]:
+                - generic [ref=f167e128]: ←
+              - button "Probar tecla Derecha" [ref=f167e129] [cursor=pointer]:
+                - generic [ref=f167e130]: →
+  - contentinfo [ref=f167e135]:
+    - generic [ref=f167e137]:
+      - link "MF" [ref=f167e138] [cursor=pointer]:
+        - /url: /
+      - generic [ref=f167e139]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=f167e140] [cursor=pointer]:
+        - /url: /

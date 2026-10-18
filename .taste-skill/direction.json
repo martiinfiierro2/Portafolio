@@ -1,0 +1,416 @@
+{
+ "version": 1,
+ "at": "2026-10-16T13:41:56.625Z",
+ "seed": 1296041362,
+ "redraws": 1,
+ "input": {
+  "brief": "Martin Fierro full-stack multimedia engineer. Clean personal portfolio with complete illustrated laptop self-portrait plus integrated technology logos, floating navigation, four equally important real projects. More character through asymmetric composition, type scale and image sizes, not new colors. Retain the last forest green palette and Clash Display plus Manrope. No magazine, giant poster or featured project.",
+  "sector": "personal-portfolio",
+  "tone": "quiet",
+  "have": [
+   "product-ui",
+   "illustration"
+  ],
+  "keep": [
+   "palette",
+   "type"
+  ],
+  "avoid": [],
+  "sections": [
+   "work",
+   "about"
+  ],
+  "direction": "quiet-instrument"
+ },
+ "imagery": "atmosphere",
+ "allow": [],
+ "direction": {
+  "id": "quiet-instrument",
+  "name": "The quiet instrument",
+  "sectors": [
+   "saas",
+   "dev-tool",
+   "ai-product",
+   "personal-portfolio",
+   "consumer-app",
+   "finance",
+   "other"
+  ],
+  "tones": [
+   "quiet",
+   "technical"
+  ],
+  "needs": [],
+  "idea": "Radical understatement. Where every competitor shouts, this page almost whispers: a headline barely larger than body text, a narrow column, small exact demonstrations, and a great deal of untouched space. The restraint is the claim. It says the thing is simple, finished and sure of itself. This only works when it is carried through completely; one loud element breaks it. In the study, a tool for simple lists sold itself with a 27px headline and 12–14px copy and was one of the most confident pages in the set.",
+  "composition": "A single column 440–560px wide, placed left of centre (starting at about 22% of the viewport width) or dead centre, running the whole page. The headline is the one large thing on the first screen: two lines at display size (5–7vw), medium weight, starting on the column's left edge and allowed to run wider than the column. The supporting paragraph follows at body size (17–19px) in the full ink. One small primary button and one text link. Below, each point is a short paragraph followed by a compact demonstration or image no wider than the column. Sections are separated only by space (96–140px). Nothing spans the full width until the footer, which is a single quiet line. The first screen is mostly empty and that emptiness is composed: the column's top edge sits at about 30% of the viewport height.",
+  "typography": "One family, two weights. A display size for the headline (5–7vw), one heading size for section titles (about 32–40px), body at 17–19px, a small size for captions (14–15px). Leading 1.5 for text. Letter-spacing near zero. The typeface must be handsome at small sizes.",
+  "typeClasses": [
+   "grotesk-light",
+   "serif-text",
+   "geometric"
+  ],
+  "colour": "Paper and two inks (full and soft). One accent used on exactly one element per screen.",
+  "paletteTags": [
+   "light-neutral",
+   "mono-accent"
+  ],
+  "imagery": "Precise rather than loud: cropped interface details at true size, and real photographs of the customer's world held to the column width, each doing one job. One short looping clip can sit at column width too. Never a large stock hero image.",
+  "sectionTags": [
+   "quiet",
+   "ui-led",
+   "type-led"
+  ],
+  "motion": "stillness",
+  "richness": "Precision. With so little on the page, alignment, spacing and the exact size relationships are the design. Every element shares the column's left edge.",
+  "pitfalls": "This is the one direction where a small headline is right; the inspector will not object, but do not mix it with a large display line. Emptiness must look decided: keep the column edges exact and the vertical rhythm even. Not suitable when the subject needs emotion or photography to sell. Quiet is not thin: the column must still deliver every piece of content the brief asks for, in full, at 16px or more in the full ink. In blind tests the quiet version lost every time it was quiet everywhere: a small headline beside an empty panel read as unfinished. Quiet means few things, not small things: the headline and the demonstration are large, and every screen holds content.",
+  "seenIn": [
+   "opl-rows",
+   "opl-compile",
+   "opl-plastic",
+   "opl-bueno-fyi",
+   "aww-gil-huybrecht"
+  ],
+  "allow": []
+ },
+ "hero": {
+  "id": "control-reads-the-page",
+  "name": "Control that reads the page",
+  "archetype": "split",
+  "directions": [
+   "product-performs",
+   "quiet-instrument",
+   "dark-room"
+  ],
+  "needs": [],
+  "blueprint": "A near-black or deep neutral ground split into two halves by tone alone: the right half is one step lighter than the left, and they meet at a clean vertical edge at 50%. Left half: a small logo mark top-left at a 40px margin, then two-thirds of empty ground, then everything else anchored bottom-left, 40px from the edges: a one-line headline at clamp(26px, 2.1vw, 32px) in medium weight, one supporting sentence at 17px in the softer ink held to 44ch, and the single action as a light rectangular button. Right half: one fragment of the product, centred, about 450px square, built in HTML and working. It is the product's defining control (a loupe, a picker, a dial, a field) and it acts on the page itself: it reads the real background colour, the real headline size or the pointer position and prints that value in its own readout at 13px. Mark its root with data-ui so the product's own radii and borders apply inside it. There is no navigation bar; one text link sits top-right at 15px.",
+  "mobile": "The halves stack as two tones. The fragment comes first: 78vw square, centred in the lighter block, which is 58svh tall, still live and reading the page under the visitor's finger. The darker block below holds the headline at 6.4vw on up to two lines, the sentence at 16px and the button, left-aligned at 20px. The logo mark sits top-left over the first block.",
+  "headline": "One plain line at 26–32px naming what the tool is, up to about 32 characters, wrapping to two lines on a phone.",
+  "motion": "masked-headline",
+  "seenIn": [
+   "opl-dabbit"
+  ]
+ },
+ "type": null,
+ "palette": null,
+ "photos": {
+  "set": "forest",
+  "title": "Forest",
+  "note": "woodland, paths between trees, moss and filtered light",
+  "treatment": null,
+  "others": [
+   "architecture",
+   "people",
+   "fog-and-quiet",
+   "mountain"
+  ],
+  "photos": [
+   {
+    "id": 229,
+    "alt": "Path through tall pine trees fading into blue-grey fog",
+    "tone": "dark",
+    "colours": [
+     "blue grey",
+     "dark green"
+    ],
+    "mono": false,
+    "calm": "none",
+    "quality": 5,
+    "ratio": 1.5,
+    "by": "Orlova Maria",
+    "page": "https://unsplash.com/photos/7FLh300YONc"
+   },
+   {
+    "id": 805,
+    "alt": "Band of dark conifer forest between a meadow and a blank white sky",
+    "tone": "mid",
+    "colours": [
+     "white",
+     "dark green",
+     "olive brown"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 4,
+    "ratio": 1.49,
+    "by": "Jens Lelie",
+    "page": "https://unsplash.com/photos/GUneOBRhq9w"
+   },
+   {
+    "id": 932,
+    "alt": "Low clouds drifting over an autumn conifer forest",
+    "tone": "mid",
+    "colours": [
+     "dark green",
+     "rust orange",
+     "mist white"
+    ],
+    "mono": false,
+    "calm": "none",
+    "quality": 4,
+    "ratio": 1.5,
+    "by": "Vadim Sherbakov",
+    "page": "https://unsplash.com/photos/NQSWvyVRIJk"
+   },
+   {
+    "id": 243,
+    "alt": "Autumn larch forest on a foggy hillside with a footpath",
+    "tone": "mid",
+    "colours": [
+     "rust brown",
+     "pale grey",
+     "olive green"
+    ],
+    "mono": false,
+    "calm": "top",
+    "quality": 4,
+    "ratio": 1.5,
+    "by": "Orlova Maria",
+    "page": "https://unsplash.com/photos/DYW1s0AfLwo"
+   },
+   {
+    "id": 476,
+    "alt": "Sunlight bursting between tall redwood trunks in a shaded forest",
+    "tone": "dark",
+    "colours": [
+     "dark brown",
+     "deep green",
+     "gold"
+    ],
+    "mono": false,
+    "calm": "none",
+    "quality": 4,
+    "ratio": 1.5,
+    "by": "Mr. Marco",
+    "page": "https://unsplash.com/photos/QP1dUyQ8WsI"
+   },
+   {
+    "id": 919,
+    "alt": "Tall straight pine trunks above a bright green forest floor",
+    "tone": "mid",
+    "colours": [
+     "fresh green",
+     "red brown",
+     "dark brown"
+    ],
+    "mono": false,
+    "calm": "none",
+    "quality": 4,
+    "ratio": 1.5,
+    "by": "Jon Ottosson",
+    "page": "https://unsplash.com/photos/JU2MgHOHDsw"
+   },
+   {
+    "id": 216,
+    "alt": "Narrow dirt trail through mossy green woodland",
+    "tone": "mid",
+    "colours": [
+     "moss green",
+     "brown"
+    ],
+    "mono": false,
+    "calm": "none",
+    "quality": 4,
+    "ratio": 1.5,
+    "by": "Paul Jarvis",
+    "page": "https://unsplash.com/photos/9702xTENR-M"
+   },
+   {
+    "id": 923,
+    "alt": "Misty autumn forest path covered in red fallen leaves",
+    "tone": "mid",
+    "colours": [
+     "rust red",
+     "soft pink",
+     "mist grey"
+    ],
+    "mono": false,
+    "calm": "none",
+    "quality": 4,
+    "ratio": 1.71,
+    "by": "Sebastian Unrau",
+    "page": "https://unsplash.com/photos/CoD2Q92UaEg"
+   }
+  ]
+ },
+ "motion": {
+  "id": "masked-headline",
+  "name": "Masked headline",
+  "description": "On load, each line of the headline rises from behind its own baseline, about 900ms with a strong ease-out, the second line 110ms after the first; the supporting sentence and the action then fade up together. Nothing else on the page performs. Because headlines are two lines at most, you author the line breaks and wrap each line yourself. Recipe: 'Masked line reveal' in references/motion.md."
+ },
+ "sections": [
+  {
+   "id": "work-staggered-tiles-empty-cells",
+   "role": "work",
+   "name": "Staggered tiles, empty cells",
+   "shape": "grid",
+   "tags": [
+    "photo-led",
+    "colour-field"
+   ],
+   "directions": [
+    "uneven-photographs",
+    "editorial-report",
+    "specimen-catalogue",
+    "one-motif",
+    "colour-chapters"
+   ],
+   "needs": [],
+   "blueprint": "A four-column grid with 16px gutters and 5vw margins in which tiles snap to columns but vary in span and height, and some cells are deliberately left empty. Pattern for eight projects: row one, a wide tile spanning columns 1–2 at 3:2 and a single tile in column 4 at 4:5, column 3 empty; row two, single tiles in columns 2 and 3, columns 1 and 4 empty; row three, a wide tile in columns 3–4 and a single in column 1. Each tile is a photograph, or a project image centred with 12% padding on a flat pastel or dark ground from the palette. Square corners, or one consistent shape detail such as a large radius on the bottom-right corner only. Under each tile one caption row at 14px: project name left, year and category right. The heading, two words stacked at clamp(40px, 4.5vw, 68px), occupies the empty cell of row one.",
+   "mobile": "Two columns with 10px gutters. Wide tiles span both columns; single tiles alternate left and right with the other cell left empty beside every second one, so the stagger survives. The heading sits above at 10vw. Captions stack the name over the year.",
+   "seenIn": [
+    "aww-haoqi-design",
+    "aww-revelatio-studio",
+    "opl-nia-creative",
+    "opl-mammut-studios"
+   ]
+  },
+  {
+   "id": "about-founders-letter",
+   "role": "about",
+   "name": "Founder's letter",
+   "shape": "stack",
+   "tags": [
+    "quiet",
+    "type-led",
+    "object-led"
+   ],
+   "directions": [
+    "quiet-instrument",
+    "product-performs",
+    "page-is-the-object",
+    "split-stage"
+   ],
+   "needs": [],
+   "blueprint": "A letter in a centred column 520px wide with at least 160px of empty ground above and below. At the column's top-left, a round portrait 44px across. 28px below it, four or five short paragraphs at 16–17px with leading 1.55, each two to four lines and separated by one blank line, written in the first person. No heading. The sign-off is the writer's name at 22px in the text face's italic, with the role at 14px in the soft ink beneath it. One phrase in the letter may carry a flat marker-colour background. Variant for a page built as an object: the letter sits on a filled paper-colour sheet 640px wide with 60px padding on a contrasting ground, square corners, its bottom edge cut into small scallops with `clip-path`, and below a row of 5px round dots a tear-off strip 72px tall that carries the email address.",
+   "mobile": "The column takes the full width with 24px margins; text at 16px, portrait 40px. In the sheet variant the sheet spans edge to edge with 24px padding and keeps its shaped bottom edge; the tear-off strip stacks the email above a full-width button.",
+   "seenIn": [
+    "opl-mat",
+    "opl-heyclicky",
+    "opl-rafael-derolez-2026"
+   ]
+  }
+ ],
+ "references": [
+  {
+   "id": "aww-gil-huybrecht",
+   "name": "Gil Huybrecht",
+   "url": "https://gilhuybrecht.com/",
+   "source": "Awwwards Site of the Day",
+   "kind": "personal-portfolio",
+   "score": 7.6,
+   "idea": "A portfolio as a contact sheet: every project is a numbered run of miniature page screenshots on black, and all text is set at one small size.",
+   "mood": [
+    "austere",
+    "archival",
+    "confident",
+    "dense"
+   ],
+   "archetype": "grid-index",
+   "hero": "Black field on a seven-column grid with 14px margins. The top band is plain white text at one size, about 16px: name in column one, availability in column two, a services list from column three, a longer awards list from column five, then 'Profile' and 'Email me' at the right. List items are indented one step under their label. Below the lists roughly 300px of black is left empty. At mid-height the thumbnail grid begins: one small website screenshot per column, about 190px wide, each topped by a number at its right corner, with the project name over the first of each run. Two tiny toggle chips sit in the bottom corners.",
+   "type": "One neo-grotesk at a single size, about 16px (1.1vw), medium-bold with tight tracking, white on black, for everything: name, lists, labels, numbers, footer. There is no headline; hierarchy comes only from column position and indentation.",
+   "colour": "#000000 #fcfcfc #272727 #8a8a8a — Pure black with white text; the only colour is whatever appears inside the screenshot thumbnails. Inactive toggle words drop to mid-grey on a dark grey chip.",
+   "imagery": "Miniature full-page captures of the designer's client sites, uncropped at natural aspect ratios, square corners, no frames or shadows, about 190px wide, sitting directly on black.",
+   "layout": "Seven equal columns with 14px gutters and margins for the whole page. Thumbnails align to columns but not to rows: each hangs from its own label at its own height, so bottoms are ragged. Projects flow continuously and wrap across rows.",
+   "sections": [
+    {
+     "role": "work",
+     "description": "A seven-column field of screenshot thumbnails on black. Each project is a consecutive run of four to six thumbnails; the project name sits above the first, and every thumbnail carries its sequence number right-aligned above it in the same 16px white. Thumbnails keep their real proportions, so a row mixes 100px-tall and 280px-tall items with ragged bottoms and about 90px of black between rows. Runs break mid-row and continue on the next line with no divider."
+    },
+    {
+     "role": "other",
+     "description": "View toggles. Two fixed chip pairs sit in the viewport's bottom corners: the left switches between a grid and a gallery view, the right between a normal and a novelty perspective mode. Each pair is a small dark-grey rounded rectangle containing two words, the active one white and the inactive grey, at the same 16px as all other text."
+    },
+    {
+     "role": "footer",
+     "description": "After about a screen of empty black, one band of text on the same seven columns: year and privacy link stacked at the left, then two columns of stacked social links, then two single links toward the right edge. Same size and weight as the header, no rule, no logo."
+    }
+   ],
+   "steal": [
+    "Set every piece of text on the page at one size and weight and build hierarchy only from column position and a one-step indent under labels.",
+    "Show projects as numbered runs of uncropped page screenshots at natural heights on a strict column grid, leaving the bottoms ragged.",
+    "Leave a deliberate 300px void between the text header and the first row of work so the lists read as a letterhead."
+   ]
+  },
+  {
+   "id": "opl-rows",
+   "name": "Rows",
+   "url": "https://rows.gg/",
+   "source": "One Page Love",
+   "kind": "saas",
+   "score": 7.5,
+   "idea": "Radical understatement: a product about simple lists is sold with a 27px headline, 12px copy and a column of small live demos, each proving one interaction.",
+   "mood": [
+    "quiet",
+    "dry",
+    "precise",
+    "warm",
+    "confident"
+   ],
+   "archetype": "left-statement-quiet",
+   "hero": "Warm off-white page, almost empty. Everything hangs on one vertical line 27% in from the left. A small striped-letter logo mark sits there near the top; 220px lower comes a two-line headline at only 27px (under 2vw), then three lines of 13px body about 370px wide, then a near-black rectangular button with 4px corners beside a text link with an arrow. A single grey sign-in link sits in the top-right corner; there is no navigation bar. More than 80% of the viewport is blank. At the bottom edge the first feature module peeks in: grey demo panel left, short text column right.",
+   "type": "Suisse Intl only, weight 450–500, tracking −0.04em. Headline 27px, feature headings about 16px on two lines, body 12px. Three sizes in total, no uppercase and no display moment; hierarchy comes from weight and empty space alone.",
+   "colour": "#f5f6f1 #e6e7e1 #1a191d #ffffff #c7372f #3aa56a — Warm paper off-white with slightly darker grey-green demo panels and near-black type; colour appears only inside the UI as priority dots, outlined status pills and one green or red action button.",
+   "imagery": "No pictures: small live-rendered fragments of the app (two or three white list rows with dots, status pills, avatars and a visible cursor) sit in flat grey panels of fixed 368px width with barely rounded corners.",
+   "layout": "One content block about 650px wide, offset left of centre, repeated down the page: 368px demo panel plus a 245px text column, top-aligned, separated by 200px or more of empty space. The logo mark sticks to the top-left corner on scroll. Footer is one line.",
+   "sections": [
+    {
+     "role": "features",
+     "description": "The repeating module: a flat grey panel roughly 368px wide and 120–190px tall holding a tiny mock list (white rows with 6px radius, a coloured numbered dot at left, task title, an outlined status pill, an avatar, a chevron) and often a cursor mid-action. To its right, 20px away and top-aligned, a medium-weight heading of one or two lines and two short paragraphs at 11–12px in a column only 245px wide. Modules never alternate sides; they stack with large gaps."
+    },
+    {
+     "role": "cta",
+     "description": "The closing block keeps the same narrow measure: a three-line paragraph at 13px, then the identical button and arrow-link pair from the hero, left-aligned on the text column's axis. After a long gap a single hairline spans the 650px block and under it sits one row of tiny footer text: brand line at left, six links and a copyright strung along the right."
+    }
+   ],
+   "steal": [
+    "Set the headline at near-body size (under 2vw) and let empty space, not scale, give it importance.",
+    "Explain each feature with a tiny cropped fragment of real UI in a fixed-width flat panel, one interaction per panel, with the cursor left visible.",
+    "Hang the whole page on one off-centre left edge and never break it, logo and footer included."
+   ]
+  },
+  {
+   "id": "opl-specia1ne",
+   "name": "Specia1ne",
+   "url": "https://specia1ne.com",
+   "source": "One Page Love",
+   "kind": "personal-portfolio",
+   "score": 7.3,
+   "idea": "One thin blue vertical line runs the full height of the page at 60% of the width, and every section hangs off it like entries on a spine.",
+   "mood": [
+    "precise",
+    "systematic",
+    "typographic",
+    "cool"
+   ],
+   "archetype": "type-poster",
+   "hero": "Type only on warm off-white. Header: wordmark left, the word 'Menu' with a four-square blue icon right, a hairline beneath, 56px side margins. A mono index label (blue number, slash, one word) sits 90px under the rule. The headline follows in four left-aligned lines of bold grotesk at 100px (7% of viewport width) with leading under 1.0, the longest line reaching 90% of the width. A two-line grey 18px paragraph sits beneath. A single 1px blue vertical line crosses the whole viewport at 60% width, straight through the headline. Bottom-left: a blue square with mono location and clock. Bottom-right: a two-line bold link wrapped in blue square brackets.",
+   "type": "Geist bold at 100px for the hero, about 44px bold for section heads, 26 to 44px semibold for list entries, 16px body. Geist Mono at 11 to 14px for index labels, tags and status lines. Zero tracking on the headline; four clear steps of scale.",
+   "colour": "#f2f1eb #1d39f5 #141412 #6f6e69 #ffffff — Warm off-white and one saturated cobalt. Blue starts as a hairline, bracket and small square, then takes over a whole section as a flat field with white text, then returns as one button block.",
+   "imagery": "No images at all. Visual interest comes from the spine line, small numbered square chips, square brackets and flat colour fields.",
+   "layout": "56px margins. Every section opens the same way: mono index label, two-line bold heading at left, a short right-aligned note at far right. Content then aligns to the vertical line: titles right-aligned against it, descriptions starting just after it, rows split by hairlines.",
+   "sections": [
+    {
+     "role": "work",
+     "description": "Full-bleed cobalt section. White heading top-left, a right-aligned note top-right, mono counters in the corners. Five project rows about 125px tall, split by faint hairlines: each project name in 44px bold is right-aligned to end just left of the vertical line, a small white numbered square sits on the line, and a mono uppercase category starts just right of it. The active row is brighter and gains a description, an arrow at far right and mono tags at far left."
+    },
+    {
+     "role": "features",
+     "description": "The same spine layout on off-white: four capability names in 30px semibold right-aligned to the line, blue numbered squares on the line, one-line descriptions to its right, hairlines between rows. The list closes with a mirrored pair of captions either side of the line, each under a tiny blue mono label, joined by a bracketed blue square on the line. A blue block wipes upward over the section as a transition."
+    },
+    {
+     "role": "about",
+     "description": "A nearly empty section: heading at left, note at right, then a short segment of the vertical line capped by tick marks with tiny mono labels at its top and bottom. At its midpoint the studio name sits right-aligned on the left of the line, a bracketed blue square on the line, and a two-line caption on the right. It is a diagram of one sentence, with most of the screen blank."
+    },
+    {
+     "role": "cta",
+     "description": "Heading at left, note at right, then a single flat blue rectangle about 480px wide and 195px tall, centred on the vertical line rather than on the page. Inside: a bold white phrase in square brackets and a mono line with an underlined email address. A hairline footer row beneath carries mono legal links at left and the location with a clock at right."
+    }
+   ],
+   "steal": [
+    "Run one 1px coloured vertical line through the whole page at an off-centre position and align lists to it: names right-aligned on one side, descriptions on the other, a numbered square on the line.",
+    "Introduce the accent as a hairline and a bracket, then let it take over one entire section as a flat field.",
+    "Wrap calls to action in square brackets in the accent colour instead of drawing a button."
+   ]
+  }
+ ]
+}

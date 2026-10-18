@@ -1,0 +1,24 @@
+{
+  "playwrightVersion": "1.64.0-alpha-1790635538000",
+  "playwrightLib": "C:\\Users\\Martin\\AppData\\Roaming\\npm\\node_modules\\@playwright\\cli\\node_modules\\playwright-core",
+  "title": "keyboard",
+  "browser": {
+    "guid": "browser@ba1916ae9d0117d97edcd938e186ac39",
+    "browserName": "chromium",
+    "launchOptions": {
+      "channel": "msedge",
+      "args": [
+        "--no-sandbox",
+        "--disable-gpu",
+        "--disable-blink-features=AutomationControlled"
+      ],
+      "ignoreAllDefaultArgs": false,
+      "handleSIGINT": false,
+      "handleSIGTERM": false,
+      "headless": true,
+      "tracesDir": "C:\\Users\\Martin\\OneDrive\\Documentos\\Github\\Portafolio\\.playwright-cli\\traces",
+      "chromiumSandbox": true
+    }
+  },
+  "endpoint": "\\\\.\\pipe\\pw-7347fd3b-browser-browser@ba1916"
+}

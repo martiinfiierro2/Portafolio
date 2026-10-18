@@ -1,0 +1,88 @@
+- generic [ref=f115e3]:
+  - link "Saltar al contenido" [ref=f115e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f115e5]:
+    - generic [ref=f115e6]:
+      - link "Martín Fierro, inicio" [ref=f115e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=f115e8]:
+        - button "Abrir menú" [ref=f115e9] [cursor=pointer]
+      - generic [ref=f115e12]:
+        - checkbox "Activar tema claro" [checked]
+        - generic [ref=f115e13] [cursor=pointer]
+  - main [ref=f115e14]:
+    - generic [ref=f115e15]:
+      - region [aria-hidden] [ref=f115e18]:
+        - generic [ref=f115e19]:
+          - generic [ref=f115e21]:
+            - heading [level=2] [ref=f115e22]: Desarrollador full-stack
+            - paragraph [ref=f115e23]: Ingeniería multimedia para conectar diseño, interacción y datos.
+          - figure [ref=f115e25]:
+            - link [ref=f115e26] [cursor=pointer]:
+              - /url: /#proyectos
+          - generic [aria-hidden] [ref=f115e27]:
+            - link [ref=f115e28] [cursor=pointer]:
+              - /url: /#contacto
+              - text: Hablemos
+            - link [ref=f115e32] [cursor=pointer]:
+              - /url: https://github.com/martiinfiierro2
+              - text: GitHub
+      - region [ref=f115e37]:
+        - generic [ref=f115e38]:
+          - generic [ref=f115e39]:
+            - heading "Proyectos" [active] [level=2] [ref=f115e40]
+            - group [ref=f115e41]:
+              - generic "Buscar y filtrar" [ref=f115e42] [cursor=pointer]
+          - generic [ref=f115e46]:
+            - article [ref=f115e48]:
+              - link "Ver Portfolio / Martín Fierro" [ref=f115e49] [cursor=pointer]:
+                - /url: /proyectos/portfolio
+                - generic [ref=f115e51]:
+                  - heading "Portfolio" [level=3] [ref=f115e52]
+                  - paragraph [ref=f115e53]: Mi perfil y mis proyectos.
+            - article [ref=f115e58]:
+              - link "Ver Taskflow, proyecto de ejemplo" [ref=f115e59] [cursor=pointer]:
+                - /url: /proyectos/taskflow
+                - generic [ref=f115e61]:
+                  - heading "Taskflow" [level=3] [ref=f115e62]
+                  - paragraph [ref=f115e63]: Organización de tareas con estado local.
+            - article [ref=f115e68]:
+              - link "Ver Pulse API, proyecto de ejemplo" [ref=f115e69] [cursor=pointer]:
+                - /url: /proyectos/pulse-api
+                - generic [ref=f115e71]:
+                  - heading "Pulse API" [level=3] [ref=f115e72]
+                  - paragraph [ref=f115e73]: Respuestas JSON y HTTP simulados.
+            - article [ref=f115e78]:
+              - link "Ver Media Lab, proyecto de ejemplo" [ref=f115e79] [cursor=pointer]:
+                - /url: /proyectos/media-lab
+                - generic [ref=f115e81]:
+                  - heading "Media Lab" [level=3] [ref=f115e82]
+                  - paragraph [ref=f115e83]: Exploración de composiciones CSS.
+    - region [ref=f115e87]:
+      - generic [ref=f115e89]:
+        - heading "Sobre mí" [level=2] [ref=f115e90]
+        - paragraph [ref=f115e91]:
+          - text: Me interesa crear experiencias web simples y funcionales, donde el
+          - strong [ref=f115e92]: diseño, la interacción y los datos
+          - text: se complementan para resolver problemas reales.
+        - paragraph [ref=f115e93]: Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.
+    - region [ref=f115e94]:
+      - generic [ref=f115e95]:
+        - generic [ref=f115e96]:
+          - heading "Hablemos." [level=2] [ref=f115e97]
+          - paragraph [ref=f115e98]: Puedes encontrarme en mis redes y seguir lo que construyo.
+        - group "Redes sociales" [ref=f115e100]:
+          - button "Instagram, enlace pendiente de configurar" [disabled] [ref=f115e101] [cursor=pointer]
+          - button "LinkedIn, enlace pendiente de configurar" [disabled] [ref=f115e106] [cursor=pointer]
+          - link "GitHub" [ref=f115e109] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+          - button "WhatsApp, enlace pendiente de configurar" [disabled] [ref=f115e112] [cursor=pointer]
+          - generic [aria-hidden]: CONTACTO
+  - contentinfo [ref=f115e115]:
+    - generic [ref=f115e117]:
+      - link "mf." [ref=f115e118] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=f115e120]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=f115e121] [cursor=pointer]:
+        - /url: /#inicio

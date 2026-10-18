@@ -1,0 +1,85 @@
+- generic [ref=f83e3]:
+  - link "Saltar al contenido" [ref=f83e4] [cursor=pointer]:
+    - /url: "#contenido"
+  - banner [ref=f83e5]:
+    - generic [ref=f83e6]:
+      - link "Martín Fierro, inicio" [ref=f83e7] [cursor=pointer]:
+        - /url: /#inicio
+        - text: MF
+      - navigation "Navegación principal" [ref=f83e8]:
+        - list [ref=f83e9]:
+          - listitem [ref=f83e10]:
+            - link "Inicio" [ref=f83e11] [cursor=pointer]:
+              - /url: /#inicio
+          - listitem [ref=f83e12]:
+            - link "Proyectos" [ref=f83e13] [cursor=pointer]:
+              - /url: /#proyectos
+          - listitem [ref=f83e14]:
+            - link "Sobre mí" [ref=f83e15] [cursor=pointer]:
+              - /url: /#sobre-mi
+          - listitem [ref=f83e16]:
+            - link "Contacto" [ref=f83e17] [cursor=pointer]:
+              - /url: /#contacto
+      - generic [ref=f83e19]:
+        - checkbox "Activar tema claro" [checked]
+        - generic [ref=f83e20] [cursor=pointer]
+  - main [ref=f83e21]:
+    - region [ref=f83e25]:
+      - generic [ref=f83e26]:
+        - heading "Martín Fierro" [level=1] [ref=f83e28]:
+          - img [ref=f83e30]:
+            - generic [ref=f83e31]: M
+            - generic [ref=f83e33]: A
+            - generic [ref=f83e35]: R
+            - generic [ref=f83e37]: T
+            - generic [ref=f83e39]: I
+            - generic [ref=f83e42]: "N"
+          - img [ref=f83e45]:
+            - generic [ref=f83e46]: F
+            - generic [ref=f83e48]: I
+            - generic [ref=f83e50]: E
+            - generic [ref=f83e52]: R
+            - generic [ref=f83e54]: R
+            - generic [ref=f83e56]: O
+        - generic [ref=f83e59]:
+          - heading "Desarrollador full-stack" [level=2] [ref=f83e60]
+          - paragraph [ref=f83e61]: Ingeniería multimedia para conectar diseño, interacción y datos.
+        - figure "Desliza o abre la carpeta para explorar." [ref=f83e63]:
+          - link "Explorar proyectos" [ref=f83e64] [cursor=pointer]:
+            - /url: /#proyectos
+            - generic [aria-hidden] [ref=f83e65]:
+              - generic [ref=f83e66]: ~/proyectos
+              - generic [ref=f83e67]: Abrir
+              - generic [ref=f83e79]: Proyectos
+        - generic [ref=f83e81]:
+          - link "Hablemos" [ref=f83e82] [cursor=pointer]:
+            - /url: /#contacto
+          - link "GitHub" [ref=f83e86] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+    - region [ref=f83e90]:
+      - generic [ref=f83e92]:
+        - heading "Sobre mí" [level=2] [ref=f83e93]
+        - paragraph [ref=f83e94]:
+          - text: Me interesa crear experiencias web simples y funcionales, donde el
+          - strong [ref=f83e95]: diseño, la interacción y los datos
+          - text: se complementan para resolver problemas reales.
+        - paragraph [ref=f83e96]: Fuera de la pantalla, disfruto del deporte. Dentro, me mueven las ganas de entender y mejorar.
+    - region [ref=f83e97]:
+      - generic [ref=f83e98]:
+        - generic [ref=f83e99]:
+          - heading "Hablemos." [level=2] [ref=f83e100]
+          - paragraph [ref=f83e101]: Puedes encontrarme en mis redes y seguir lo que construyo.
+        - group "Redes sociales" [ref=f83e103]:
+          - button "Instagram, enlace pendiente de configurar" [disabled] [ref=f83e104] [cursor=pointer]
+          - button "LinkedIn, enlace pendiente de configurar" [disabled] [ref=f83e109] [cursor=pointer]
+          - link "GitHub" [ref=f83e112] [cursor=pointer]:
+            - /url: https://github.com/martiinfiierro2
+          - button "WhatsApp, enlace pendiente de configurar" [disabled] [ref=f83e115] [cursor=pointer]
+          - generic [aria-hidden]: CONTACTO
+  - contentinfo [ref=f83e118]:
+    - generic [ref=f83e120]:
+      - link "mf." [ref=f83e121] [cursor=pointer]:
+        - /url: /#inicio
+      - generic [ref=f83e123]: © 2026 Martín Fierro
+      - link "Volver al inicio" [ref=f83e124] [cursor=pointer]:
+        - /url: /#inicio

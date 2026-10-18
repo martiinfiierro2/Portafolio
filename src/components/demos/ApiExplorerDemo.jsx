@@ -69,7 +69,6 @@ export default function ApiExplorerDemo() {
   return (
     <div className="api-layout">
       <form className="api-controls" onSubmit={executeRequest}>
-        <p className="demo-section-label">CONFIGURAR CONSULTA</p>
         <h2>Una API para explorar.</h2>
         <p>
           Prueba tres respuestas preparadas y consulta su estructura JSON. Esta

@@ -1,0 +1,212 @@
+.keyboard-scene {
+  --key-top: var(--keyboard-key, #f6f6f0);
+  --key-side: color-mix(in srgb, var(--keyboard-edge, #aaaa9a) 86%, #000);
+  --key-well: color-mix(in srgb, var(--keyboard-edge, #aaaa9a) 58%, #171715);
+  --key-light: var(--accent, #c9bc2d);
+  --case-depth-x: 7px;
+  --case-depth-y: 11px;
+  width: 100%;
+  max-width: 740px;
+  padding: 14px 20px 22px 12px;
+  perspective: 1500px;
+  isolation: isolate;
+}
+
+/* The gradients, shadows and bevels describe a physical keyboard, requested in 3D. */
+.project-keyboard {
+  position: relative;
+  padding: clamp(16px, 2vw, 24px);
+  border: 1px solid color-mix(in srgb, var(--keyboard-body) 66%, #fff);
+  border-radius: 25px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--keyboard-body) 87%, #fff), var(--keyboard-body) 58%, color-mix(in srgb, var(--keyboard-body) 91%, #000)); /* taste-skill-ignore: physical surface shading requested by user. */
+  box-shadow: inset 1px 2px 1px #ffffff69, inset -2px -2px 2px #00000018, 1px 2px 0 var(--keyboard-edge), 3px 5px 0 var(--keyboard-edge), 5px 8px 0 var(--key-side), 7px 11px 0 var(--key-side), 12px 29px 24px -12px #1414144f; /* taste-skill-ignore: two-axis extrusion describes the case side and front. */
+  transform: rotateX(22deg) rotateY(-10deg) rotateZ(-4deg);
+  transform-style: preserve-3d;
+}
+
+/* A continuous lower chassis and a fine top bevel keep the object solid from every side. */
+.project-keyboard::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--key-side) 80%, #000);
+  border-radius: inherit;
+  background: linear-gradient(120deg, var(--keyboard-edge), var(--key-side) 78%); /* taste-skill-ignore: physical lower casing. */
+  transform: translate3d(var(--case-depth-x), var(--case-depth-y), -8px);
+  pointer-events: none;
+}
+
+.project-keyboard::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border: 1px solid #ffffff1a;
+  border-top-color: #ffffff45;
+  border-left-color: #ffffff32;
+  border-radius: 21px;
+  pointer-events: none;
+}
+
+.keyboard-hardware { display: flex; align-items: center; justify-content: space-between; min-height: 32px; margin: -6px 1px 6px; color: var(--ink); }
+.keyboard-signature { font-size: 14px; font-weight: 800; letter-spacing: -0.08em; opacity: 0.76; }
+.keyboard-tools { display: flex; gap: 4px; }
+.keyboard-tool { display: grid; place-items: center; width: 34px; height: 32px; padding: 0; border: 0; border-radius: 6px; background: transparent; color: var(--ink); opacity: 0.8; }
+.keyboard-tool:hover { background: color-mix(in srgb, var(--ink) 9%, transparent); opacity: 1; }
+.keyboard-tool[aria-pressed="false"] { opacity: 0.5; }
+.keyboard-tool:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; opacity: 1; }
+
+.keyboard-display {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  min-height: clamp(52px, 5.2vw, 70px);
+  margin-bottom: 20px;
+  padding: 12px 18px;
+  border: 3px solid var(--key-well);
+  border-radius: 12px;
+  background: var(--keyboard-display);
+  box-shadow: inset 0 2px 6px #00000017, 0 1px 0 #ffffff40; /* taste-skill-ignore: inset screen in physical keyboard. */
+  color: var(--ink);
+  text-align: left;
+}
+.keyboard-prompt { align-self: center; margin-top: -3px; font-size: 36px; font-weight: 400; color: var(--accent-ink); }
+.keyboard-output { display: inline-flex; align-items: center; min-width: 0; font-size: clamp(24px, 2.6vw, 36px); font-weight: 600; letter-spacing: -0.045em; line-height: 1.15; white-space: nowrap; }
+.keyboard-status { justify-self: end; color: var(--muted); font-size: 12px; white-space: nowrap; }
+.keyboard-cursor { width: 2px; height: 0.85em; margin: 3px 0 0 5px; background: currentColor; opacity: 0; }
+.keyboard-cursor.is-writing { opacity: 0.65; animation: keyboard-blink 800ms step-end infinite; }
+
+.keyboard-keys { display: grid; gap: 12px; padding: 4px 2px 0; }
+.keyboard-row { display: flex; align-items: stretch; gap: 7px; }
+.keyboard-row-2 { padding-inline: 2.6%; }
+.keyboard-key {
+  position: relative;
+  display: flex;
+  flex: 1 1 0;
+  align-items: stretch;
+  min-width: 0;
+  height: clamp(39px, 4.05vw, 55px);
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: var(--key-well);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: clamp(11px, 1.1vw, 15px);
+  font-weight: 650;
+  line-height: 1;
+  text-decoration: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
+.keyboard-keycap {
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  margin: 1px 2px 0;
+  border: 1px solid color-mix(in srgb, var(--key-top) 74%, #fff);
+  border-radius: 6px;
+  background: linear-gradient(155deg, color-mix(in srgb, var(--key-top) 94%, #fff), var(--key-top)); /* taste-skill-ignore: keycap bevel lighting. */
+  box-shadow: inset 1px 1px 1px #ffffff80, inset -1px -2px 2px #00000012, 1px 3px 0 var(--key-side), 2px 5px 0 var(--key-side), 2px 6px 2px #00000038; /* taste-skill-ignore: visible front and right keycap side walls. */
+  transform: translateY(-5px);
+  transition: transform 90ms ease, color 90ms ease, background 90ms ease, box-shadow 90ms ease;
+}
+@media (hover: hover) and (pointer: fine) {
+  .keyboard-key:hover .keyboard-keycap { transform: translateY(-6px); }
+}
+.keyboard-key:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; z-index: 1; }
+.keyboard-key.is-typing .keyboard-keycap,
+.keyboard-key:active .keyboard-keycap {
+  background: var(--key-light);
+  color: var(--on-accent, #181715);
+  border-color: color-mix(in srgb, var(--key-light) 68%, #fff);
+  box-shadow: inset 0 1px 2px #ffffff70, 0 1px 0 var(--accent-depth), 0 0 17px color-mix(in srgb, var(--key-light) 45%, transparent); /* taste-skill-ignore: requested illumination only while pressing a key. */
+  transform: translateY(0);
+}
+.keyboard-enter {
+  --key-top: #1066b2;
+  --key-side: #085394;
+  --key-well: #085394;
+  --key-light: rgb(50, 127, 243);
+  --on-accent: #fff;
+  --accent-depth: #085394;
+  flex: 2.5 1 0;
+}
+.keyboard-enter .keyboard-keycap { align-items: stretch; flex-direction: column; gap: 6px; padding: 7px 10px 5px; color: #fff; }
+.keyboard-enter-top { display: flex; align-items: center; justify-content: space-between; gap: 4px; font-size: clamp(12px, 1.25vw, 17px); }
+.keyboard-enter-top svg { flex-shrink: 0; width: 20px; height: 20px; }
+.keyboard-enter-label { font-size: 9px; font-weight: 500; line-height: 1; }
+.keyboard-enter:hover .keyboard-keycap,
+.keyboard-enter:focus-visible .keyboard-keycap { color: #fff; }
+.keyboard-enter:active .keyboard-keycap { color: #fff; }
+.keyboard-bottom { padding-top: 1px; }
+.keyboard-bottom .keyboard-key { height: clamp(28px, 2.8vw, 36px); }
+.keyboard-space { flex: 6.1 1 0; }
+.keyboard-space .keyboard-keycap > span { display: block; width: 38%; height: 2px; border-radius: 2px; background: color-mix(in srgb, var(--ink) 17%, transparent); }
+.keyboard-modifier { font-size: 10px; }
+.keyboard-bottom .keyboard-keycap { transform: translateY(-4px); }
+.keyboard-front-lip { display: flex; justify-content: center; gap: 3px; height: 9px; margin-bottom: -10px; padding-top: 14px; }
+.keyboard-front-lip span { width: 17px; height: 2px; border-radius: 1px; background: color-mix(in srgb, var(--keyboard-edge) 80%, #000); }
+@keyframes keyboard-blink { 50% { opacity: 0; } }
+
+@media (max-width: 1050px) and (min-width: 761px) {
+  .keyboard-scene { padding-inline: 10px; }
+  .project-keyboard { padding: 14px; }
+  .keyboard-keys { gap: 10px; }
+  .keyboard-row { gap: 5px; }
+  .keyboard-key { height: 38px; }
+  .keyboard-display { padding-inline: 12px; margin-bottom: 17px; }
+  .keyboard-status { font-size: 10px; }
+}
+@media (max-width: 760px) {
+  .keyboard-scene { --case-depth-x: 5px; --case-depth-y: 8px; width: 100%; max-width: 570px; padding: 8px 13px 20px 5px; perspective: 1000px; }
+  .project-keyboard {
+    padding: 12px;
+    border-radius: 18px;
+    transform: rotateX(17deg) rotateY(-8deg) rotateZ(-2deg);
+    box-shadow: inset 1px 2px 1px #ffffff69, inset -1px -2px 1px #0000001f, 1px 2px 0 var(--keyboard-edge), 3px 5px 0 var(--keyboard-edge), 5px 8px 0 var(--key-side), 8px 20px 18px -9px #1414144f; /* taste-skill-ignore: mobile keyboard keeps physical front and side walls. */
+  }
+  .project-keyboard::after { border-radius: 14px; }
+  .keyboard-hardware { min-height: 30px; margin-bottom: 5px; }
+  .keyboard-tools { gap: 3px; }
+  .keyboard-tool { width: 34px; height: 34px; }
+  .keyboard-signature { font-size: 12px; }
+  .keyboard-display { min-height: 52px; gap: 8px; margin-bottom: 15px; padding: 8px 11px; border-width: 2px; border-radius: 8px; }
+  .keyboard-prompt { font-size: 30px; }
+  .keyboard-output { font-size: clamp(21px, 5.5vw, 30px); }
+  .keyboard-status { font-size: 10px; }
+  .keyboard-keys { gap: 10px; padding-inline: 0; }
+  .keyboard-row { gap: 4px; }
+  .keyboard-key { height: clamp(34px, 8.4vw, 45px); border-radius: 5px; font-size: clamp(11px, 2.8vw, 13px); }
+  .keyboard-keycap { margin-inline: 1px; border-radius: 4px; transform: translateY(-4px); }
+  .keyboard-enter { flex-grow: 2.7; }
+  .keyboard-enter .keyboard-keycap { gap: 3px; padding: 5px 6px 3px; }
+  .keyboard-enter-top { font-size: 12px; }
+  .keyboard-enter-top svg { width: 16px; height: 16px; }
+  .keyboard-enter-label { font-size: 9px; }
+  .keyboard-bottom .keyboard-key { height: 25px; }
+  .keyboard-modifier { font-size: 9px; }
+}
+@media (max-width: 480px) {
+  /* The status has its own line, so the completed command never competes for width. */
+  .keyboard-display { grid-template-columns: 12px minmax(0, 1fr); column-gap: 7px; row-gap: 2px; min-height: 67px; padding: 8px 10px; }
+  .keyboard-prompt { grid-row: 1; font-size: 25px; }
+  .keyboard-status { grid-column: 2; justify-self: start; font-size: 10px; line-height: 1.3; }
+  .keyboard-enter-top { gap: 2px; }
+}
+@media (max-width: 380px) {
+  .keyboard-scene { padding-inline: 3px 11px; }
+  .project-keyboard { padding: 8px; }
+  .keyboard-row { gap: 2px; }
+  .keyboard-enter .keyboard-keycap { padding-inline: 4px; }
+  .keyboard-enter-top { font-size: 11px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .keyboard-keycap { transition: none; }
+  .keyboard-cursor { display: none; }
+}
