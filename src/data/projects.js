@@ -1,5 +1,109 @@
 export const projects = [
   {
+    slug: "monitorizacion-sistemas-distribuidos",
+    listTitle: "Monitorización distribuida",
+    listSummary: "Estado y conexiones de procesos en grafo y mapa.",
+    title: "Monitorización de sistemas distribuidos",
+    category: "Web",
+    type: "Trabajo de Fin de Grado",
+    status: "Disponible en local",
+    isExample: false,
+    summary: "Aplicación web para consultar el estado de los procesos de un sistema distribuido y explorar sus relaciones mediante un grafo interactivo y un mapa geográfico.",
+    overview: "Proyecto desarrollado como Trabajo de Fin de Grado, centrado en representar los datos que exponen coordinadores, balanceadores y procesadores. La interfaz de escritorio reúne la topología del sistema, la ubicación de los nodos y el detalle de cada proceso. Un catálogo persistente permite organizar las fichas utilizadas en la representación. Editar estas fichas no arranca, detiene ni reconfigura los ejecutables monitorizados.",
+    role: "Desarrollo de la interfaz de monitorización e integración con los servicios y el catálogo de nodos",
+    stack: [
+      "Angular 17",
+      "TypeScript",
+      "RxJS",
+      "Angular Material",
+      "Node.js",
+      "Express",
+      "MySQL / MariaDB",
+      "Sequelize",
+      "ECharts",
+      "Leaflet"
+    ],
+    sourceHref: "https://github.com/martiinfiierro2/Monitorizacion-Sistemas-Distribuidos",
+    problem: "Consultar cada proceso por separado dificulta entender qué componentes responden, qué función cumple cada uno y cómo se relacionan. Además, sus respuestas llegan en momentos distintos, lo que puede producir estados visuales contradictorios durante las actualizaciones.",
+    solution: "Una interfaz con grafo, mapa y detalle de nodo, filtros compartidos y un catálogo central. Las consultas se realizan periódicamente y cada ronda publica sus resultados de forma conjunta, conservando la información anterior mientras llegan las respuestas.",
+    architecture: [
+      {
+        title: "Dos vistas sobre una misma topología",
+        description: "El grafo con ECharts y el mapa con Leaflet comparten el cálculo de relaciones para representar los mismos datos. Los enlaces distinguen supervisión y asignación operativa; no son una medición de tráfico."
+      },
+      {
+        title: "Actualización por rondas completas",
+        description: "RxJS coordina las consultas con concurrencia limitada y tiempos de espera individuales. La última ronda completa permanece visible hasta terminar la siguiente y se evita solapar rondas, de modo que una consulta pendiente no aparezca temporalmente como una desconexión."
+      },
+      {
+        title: "Catálogo separado de los procesos",
+        description: "Una API con Node.js y Express gestiona las fichas en MySQL/MariaDB mediante Sequelize y actúa como proxy para consultar los procesos. El catálogo guarda los datos de representación sin controlar la ejecución de los servicios."
+      },
+      {
+        title: "Interfaz Angular sobre Fuse",
+        description: "La aplicación parte de la base visual de Fuse y utiliza Angular Material. La composición de las vistas, los controles de navegación y el detalle de nodo se adaptan al espacio disponible en ventanas de escritorio."
+      }
+    ],
+    development: [
+      {
+        title: "Organizar los nodos y sus consultas",
+        description: "Integrar el catálogo de direcciones, puertos, tipos y coordenadas con las respuestas que expone cada proceso, y distinguir disponibilidad, configuración y relaciones."
+      },
+      {
+        title: "Construir las vistas de monitorización",
+        description: "Representar el sistema mediante grafo y mapa, añadir filtros compartidos y abrir el detalle de cada nodo desde ambas vistas."
+      },
+      {
+        title: "Revisar la actualización y la navegación",
+        description: "Corregir las inconsistencias del refresco, conservar el encuadre entre consultas y ajustar el zoom, el desplazamiento y los paneles de detalle al uso en escritorio."
+      },
+      {
+        title: "Comprobar los recorridos y los fallos",
+        description: "Verificar reglas de topología y actualización con pruebas Node.js y recorrer las vistas con Playwright CLI, incluyendo respuestas lentas, tiempos de espera, filtros y operaciones del catálogo."
+      }
+    ],
+    features: [
+      "Grafo interactivo con relaciones de supervisión y asignación.",
+      "Mapa geográfico con marcadores por tipo de nodo y acceso a su detalle.",
+      "Filtros por grupo inferido, tipo y disponibilidad.",
+      "Consulta del estado, configuración y datos disponibles según el rol del nodo.",
+      "Refresco periódico que conserva la última ronda completa y el encuadre.",
+      "Catálogo con búsqueda, paginación, edición, visibilidad y exportación de fichas."
+    ],
+    gallery: [
+      {
+        src: "/projects/monitorizacion-sistemas-distribuidos/grafo.png",
+        alt: "Grafo de coordinadores, balanceadores y procesadores con sus relaciones de asignación y supervisión",
+        caption: "Topología y disponibilidad · Datos de demostración",
+        type: "desktop"
+      },
+      {
+        src: "/projects/monitorizacion-sistemas-distribuidos/mapa.png",
+        alt: "Mapa mundial con marcadores de coordinadores, balanceadores y procesadores",
+        caption: "Vista geográfica con datos de demostración",
+        type: "desktop"
+      },
+      {
+        src: "/projects/monitorizacion-sistemas-distribuidos/catalogo.png",
+        alt: "Catálogo de nodos con búsqueda, direcciones, puertos, coordenadas y acciones sobre las fichas",
+        caption: "Catálogo de nodos · Datos de demostración",
+        type: "desktop"
+      },
+      {
+        src: "/projects/monitorizacion-sistemas-distribuidos/detalle.png",
+        alt: "Panel de detalle con información devuelta por un proceso monitorizado",
+        caption: "Detalle de nodo · Datos de demostración",
+        type: "desktop"
+      }
+    ],
+    video: {
+      src: "/projects/monitorizacion-sistemas-distribuidos/demo.webm",
+      poster: "/projects/monitorizacion-sistemas-distribuidos/grafo.png",
+      caption: "Recorrido de la interfaz · 28 segundos · Datos de demostración",
+      description: "El vídeo muestra los filtros y el zoom del grafo, la vista geográfica, la búsqueda en el catálogo y la consulta del detalle y la configuración de un nodo. Es una grabación sin audio con datos de demostración."
+    }
+  },
+  {
     slug: "portfolio",
     listTitle: "Portfolio",
     listSummary: "Mi perfil y mis proyectos.",

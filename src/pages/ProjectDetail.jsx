@@ -16,6 +16,7 @@ export default function ProjectDetail({ project }) {
   const [activeImage, setActiveImage] = useState(null);
   const dialogRef = useRef(null);
   const triggerRef = useRef(null);
+  const recordingRef = useRef(null);
   const titleId = useId();
 
   useEffect(() => {
@@ -62,6 +63,18 @@ export default function ProjectDetail({ project }) {
         </h1>
         <p className="detail-intro">{project.summary}</p>
         <div className="detail-actions">
+          {project.video?.src && (
+            <button
+              type="button"
+              className="detail-action is-primary"
+              onClick={() => {
+                recordingRef.current?.scrollIntoView({ block: "center", behavior: "instant" });
+                recordingRef.current?.focus({ preventScroll: true });
+              }}
+            >
+              <Play size={17} aria-hidden="true" /> Ver recorrido
+            </button>
+          )}
           {project.demoHref && (
             <DemoLink className="detail-action is-primary" {...demoLinkProps}>
               <Play size={17} aria-hidden="true" />
@@ -114,6 +127,34 @@ export default function ProjectDetail({ project }) {
                   <p>{project.solution}</p>
                 </div>
               )}
+            </Reveal>
+          )}
+
+          {project.video?.src && (
+            <Reveal className="detail-section">
+              <div className="detail-section-heading">
+                <h2>Recorrido de la interfaz</h2>
+              </div>
+              <figure className="detail-recording">
+                <video
+                  ref={recordingRef}
+                  className="detail-recording-video"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster={project.video.poster}
+                  aria-label="Recorrido de la interfaz"
+                  aria-describedby="recording-caption"
+                >
+                  <source src={project.video.src} type="video/webm" />
+                  Tu navegador no puede reproducir este vídeo.
+                </video>
+                <figcaption id="recording-caption" className="detail-recording-caption">
+                  <strong>{project.video.caption}</strong>
+                  {project.video.description && <p>{project.video.description}</p>}
+                  <a href={project.video.src} download>Descargar vídeo (WebM)</a>
+                </figcaption>
+              </figure>
             </Reveal>
           )}
 

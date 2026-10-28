@@ -58,6 +58,27 @@ diálogo que admite teclado, Escape y retorno del foco a la miniatura.
 `type: "mobile"` utiliza el formato vertical en la galería. Para otras capturas,
 usa `"desktop"` u omite `type`.
 
+## Vídeo del proyecto (opcional)
+
+Si tienes una grabación, guárdala en `public/projects/tu-proyecto/` y añade
+este objeto a la ficha:
+
+```js
+video: {
+  src: "/projects/tu-proyecto/demo.webm",
+  poster: "/projects/tu-proyecto/escritorio.png",
+  caption: "Recorrido de la interfaz · Datos de demostración",
+  description: "Qué muestra la grabación y el alcance de los datos utilizados.",
+},
+```
+
+El reproductor utiliza controles nativos, no empieza automáticamente y permite
+descargar el WebM. El botón «Ver recorrido» lleva al reproductor de la propia
+ficha. Incluye una descripción textual del recorrido; si el vídeo tiene voz o
+información sonora relevante, añade también los subtítulos correspondientes.
+Para el formato actual, utiliza WebM. Una grabación no requiere `demoHref`:
+ese campo sigue reservado para demostraciones navegables.
+
 ## 3. Documenta el trabajo real
 
 - `summary`: una frase breve que explique el resultado.

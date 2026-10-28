@@ -428,3 +428,46 @@
     height: 320px;
   }
 }
+
+.detail-recording {
+  margin: 0;
+  min-width: 0;
+}
+
+.detail-recording-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  background: var(--surface-high);
+  border-radius: var(--radius-md);
+  scroll-margin-block: calc(var(--header-height) + 24px);
+}
+
+.detail-recording-video:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 5px;
+}
+
+.detail-recording-caption {
+  padding-top: 16px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.detail-recording-caption strong {
+  display: block;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.detail-recording-caption p {
+  margin-block: 8px 12px;
+}
+
+.detail-recording-caption a {
+  color: var(--accent-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
