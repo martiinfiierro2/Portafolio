@@ -52,8 +52,8 @@
   padding-right:16px;
   border-radius: 1em;
   color: var(--ink);
-  font-size: 14px;
-  font-weight: 650;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .header nav .nav-link:hover,
@@ -87,7 +87,7 @@
     --slider-offset: 0.5em;
     position: relative;
     width: var(--width-of-switch);
-    height: var(--height-of-switch);
+    height: 44px;
   }
 
   /* Hide default HTML checkbox */
@@ -101,12 +101,12 @@
   .slider {
     position: absolute;
     cursor: pointer;
-    top: 0;
+    top: 6px;
     left: 0;
     right: 0;
-    bottom: 0;
+    bottom: 6px;
     background-color: #ececaf;
-    transition: .4s;
+    transition: background-color 200ms ease;
     border-radius: 1em;
   }
 
@@ -120,7 +120,7 @@
     top: 50%;
     transform: translateY(-50%);
     background: linear-gradient(40deg,#ff0000,#ff8c00 70%); /* taste-skill-ignore: preserve the user's original animated sun. */
-   transition: .4s;
+    transition: transform 200ms var(--ease-out), background-color 200ms ease, box-shadow 200ms ease;
   }
 
   input:checked + .slider {
@@ -128,7 +128,7 @@
   }
 
   input:checked + .slider:before {
-    left: calc(100% - (var(--size-of-icon,1.4em) + var(--slider-offset,0.3em)));
+    transform: translate(1.25em, -50%);
     background: var(--accent);
     /* change the value of second inset in box-shadow to change the angle and direction of the moon  */
     box-shadow: inset -3px -2px 5px -2px #aca8f4, inset -10px -4px 0 0 #ffffff; /* taste-skill-ignore: preserve the user's original moon shape. */
@@ -173,6 +173,7 @@
   }
 
   .header nav .header-links {
+    transform-origin: top right;
     position: absolute;
     top: calc(100% + 10px);
     inset-inline: 0;
@@ -206,3 +207,5 @@
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+.header .nav-link:active, .mobile-menu-toggle:active { transform: scale(.97); }

@@ -94,7 +94,7 @@ export default function Header({ dark, onToggleTheme }) {
               onChange={onToggleTheme}
               aria-label={dark ? "Activar tema claro" : "Activar tema oscuro"}
             />
-            <span className="slider" />
+            <span className="slider" aria-hidden="true" />
           </label>
         </div>
       </div>

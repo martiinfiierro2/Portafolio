@@ -8,12 +8,14 @@ export default function ProjectCard({ project }) {
     <article className="catalog-card">
       <Link className="catalog-card-link" to={`/proyectos/${project.slug}`} aria-label={`Ver ${project.title}${project.isExample ? ", proyecto de ejemplo" : ""}`}>
         <div className="catalog-preview" data-project={project.slug} aria-hidden="true">
-          {preview?.src ? <img src={preview.src} alt="" loading="lazy" decoding="async" width={1200} height={675} /> : <Layers size={36} strokeWidth={1.2} />}
+          {preview?.src ? <img src={preview.src} alt="" loading="lazy" decoding="async" width={1440} height={900} /> : <Layers size={36} strokeWidth={1.2} />}
         </div>
         <div className="catalog-card-body">
           <div className="catalog-card-copy">
             <h2>{project.listTitle ?? project.title}</h2>
             <p>{project.listSummary ?? project.summary}</p>
+            <p className="catalog-card-kind">{project.isExample ? 'Demo de ejemplo' : project.type}</p>
+            {project.stack?.length > 0 && <ul className="catalog-card-stack" aria-label="Tecnologías principales">{project.stack.slice(0, 3).map((technology) => <li key={technology}>{technology}</li>)}</ul>}
           </div>
           <ArrowUpRight className="catalog-arrow" size={26} strokeWidth={1.5} aria-hidden="true" />
         </div>

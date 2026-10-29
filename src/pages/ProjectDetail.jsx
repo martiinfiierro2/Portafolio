@@ -1,23 +1,10 @@
 import { useEffect, useId, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion as Motion, useReducedMotion } from "framer-motion";
+import Reveal from "../components/Reveal";
 import { ArrowLeft, ArrowUpRight, Maximize2, Play, Plus, X } from "lucide-react";
 import "./ProjectDetail.css";
 
-function CaseReveal({ children, className = "", delay = 0, side = 0 }) {
-  const reduced = useReducedMotion();
-  return (
-    <Motion.div
-      className={className}
-      initial={reduced ? false : { opacity: 0, x: side, y: side ? 0 : 22 }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
-      viewport={{ once: true, amount: 0.12 }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </Motion.div>
-  );
-}
+const CaseReveal = Reveal;
 
 export default function ProjectDetail({ project }) {
   const [activeImage, setActiveImage] = useState(null);
@@ -30,7 +17,11 @@ export default function ProjectDetail({ project }) {
   const recordingId = useId();
 
   useEffect(() => {
-    if (activeImage && dialogRef.current && !dialogRef.current.open) dialogRef.current.showModal();
+    if (!activeImage) return;
+    if (dialogRef.current && !dialogRef.current.open) dialogRef.current.showModal();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => { document.body.style.overflow = previousOverflow; };
   }, [activeImage]);
 
   function openImage(item, event) {

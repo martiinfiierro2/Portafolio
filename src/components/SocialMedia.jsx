@@ -25,12 +25,12 @@ export default function SocialMedia() {
     <div className="social-media" aria-label="Redes sociales">
       {networks.map(({ key, label }) => {
         const href = contact[key];
-        const Tag = href ? "a" : "button";
-        const props = href ? { href, target: "_blank", rel: "noreferrer" } : { type: "button", "aria-disabled": true };
+        if (!href) return null;
         return (
-          <Tag className="social-link" key={key} aria-label={href ? label : `${label}, enlace pendiente de configurar`} {...props}>
-            <SocialIcon network={key} /><span>{label}</span><ArrowUpRight className="social-arrow" size={20} aria-hidden="true" />
-          </Tag>
+          <a className="social-link" key={key} href={href} target="_blank" rel="noopener noreferrer">
+            <SocialIcon network={key} /><span>{label}{key === "github" && <small>{new URL(href).pathname.replaceAll("/", "")}</small>}</span><ArrowUpRight className="social-arrow" size={22} aria-hidden="true" />
+            <span className="sr-only"> (abre una nueva pestaña)</span>
+          </a>
         );
       })}
     </div>

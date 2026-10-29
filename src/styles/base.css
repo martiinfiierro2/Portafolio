@@ -33,10 +33,11 @@ a {
 }
 
 button, a {
-  transition: color 180ms, background 180ms, transform 180ms;
+  touch-action: manipulation;
+  transition: color var(--t-hover) ease, background-color var(--t-hover) ease, transform var(--t-hover) var(--ease-out);
 }
 
-a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
   outline: 2px solid var(--accent-ink);
   outline-offset: 5px;
 }
@@ -70,7 +71,7 @@ main:focus, h1:focus {
 
 .shell {
   width: calc(100% - 80px);
-  max-width: 1120px;
+  max-width: var(--content-width);
   margin-inline: auto;
 }
 
@@ -89,7 +90,7 @@ h1, h2, h3, h4, h5, h6, p {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 650;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.04em;
 }
 
 h1 {
@@ -111,8 +112,8 @@ h3 {
 }
 
 p {
-  color: var(--muted);
-  line-height: 1.7;
+  color: var(--ink);
+  line-height: 1.65;
 }
 
 .button {
@@ -123,8 +124,8 @@ p {
   min-height: 48px;
   padding: 12px 20px;
   border: 0;
-  border-radius: 8px;
-  font-size: 15px;
+  border-radius: var(--radius-pill);
+  font-size: 16px;
   font-weight: 650;
 }
 
@@ -138,9 +139,22 @@ p {
   color: var(--ink);
 }
 
-.primary:hover, .secondary:hover {
-  transform: translateY(-2px);
+@media (hover: hover) and (pointer: fine) {
+  .primary:hover, .secondary:hover { background: var(--accent); color: var(--on-accent); }
 }
+
+.button:active, .catalog-filter:active { transform: scale(.97); }
+.button:disabled, .button[aria-disabled="true"] { transform: none; }
+.text-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 16px; font-weight: 600; }
+.text-link svg { transition: transform var(--t-hover) var(--ease-out); }
+.text-link:focus-visible svg { transform: translate(3px, -3px); }
+@media (hover: hover) and (pointer: fine) { .text-link:hover svg { transform: translate(3px, -3px); } }
+input, textarea { caret-color: var(--accent-ink); }
+.site { scrollbar-color: var(--line) var(--bg); }
+html { scrollbar-gutter: stable; }
+summary { touch-action: manipulation; }
+:is(h1, h2, h3, h4, h5, h6) { text-wrap: balance; }
+:is(h1, h2, h3, h4, h5, h6, p, dd) { overflow-wrap: break-word; }
 
 .project-badge {
   display: inline-flex;

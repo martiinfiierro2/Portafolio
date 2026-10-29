@@ -21,6 +21,11 @@
 
 .site {
   --header-height: 56px;
+  --content-width: 1120px;
+  --page-top: clamp(40px, 4.5vw, 64px);
+  --section-space: clamp(64px, 9vw, 120px);
+  --type-display: clamp(44px, 5vw, 72px);
+  --type-section: clamp(32px, 3.7vw, 48px);
   --bg: #13171d;
   --surface: #20262f;
   --surface-high: #2b333e;

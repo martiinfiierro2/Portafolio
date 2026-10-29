@@ -1,136 +1,37 @@
-.about {
-  padding-block: clamp(80px, 9vw, 136px);
-  background: var(--bg);
-}
-
-.about-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
-  gap: 48px 8%;
-}
-
-.about :is(h1, h2) {
-  margin: 0;
-  font-size: clamp(40px, 4.2vw, 60px);
-  font-weight: 650;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-}
-
-.about-page {
-  min-height: calc(100svh - var(--header-height) - 120px);
-  padding-block: clamp(48px, 7vw, 96px);
-}
-
-.about-page h1:focus {
-  outline: none;
-}
-
-.about-intro {
-  max-width: 24ch;
-  margin: 0 0 28px;
-  color: var(--ink);
-  font-size: clamp(24px, 2.2vw, 30px);
-  font-weight: 600;
-  line-height: 1.4;
-  text-wrap: balance;
-}
-
-.about-lead,
-.about-personal {
-  max-width: 58ch;
-  margin: 0;
-  color: var(--ink);
-  font-size: 18px;
-  line-height: 1.75;
-  text-wrap: pretty;
-}
-
-.about-lead strong {
-  font-weight: 700;
-}
-
-.about-personal {
-  margin-top: 22px;
-  color: var(--muted);
-}
-
-.about-skills-wrap {
-  grid-column: 1 / -1;
-  margin-top: 16px;
-}
-
-.about-skills {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  margin: 0;
-  padding: 32px;
-  background: var(--surface);
-  border-radius: 16px;
-}
-
-.about-skills dt {
-  margin-bottom: 5px;
-  font-weight: 750;
-  font-size: 16px;
-}
-
-.about-skills dd {
-  margin: 0;
-  color: var(--ink);
-  font-size: 16px;
-  line-height: 1.65;
-}
-
-.experience-panel {
-  grid-column: 2;
-}
-
-.experience-panel h3 {
-  font-size: 28px;
-}
-
-.experience-list {
-  display: grid;
-  gap: 28px;
-  padding: 0;
-  list-style: none;
-}
-
-.experience-list h4 {
-  margin: 0 0 8px;
-  font-size: 24px;
-}
-
-.experience-list p {
-  margin: 0 0 8px;
-  font-size: 16px;
-}
-
-.experience-company {
-  font-weight: 650;
-}
-
+.about { padding-block: var(--page-top) var(--section-space); background: var(--bg); }
+.about-inner { display: grid; grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); gap: 72px 10%; }
+.about-title-block { align-self: start; position: sticky; top: 132px; }
+.about h1 { margin: 0 0 28px; font-size: var(--type-display); line-height: 1.05; }
+.about-story { min-width: 0; padding-top: 8px; }
+.about-intro { max-width: 28ch; margin: 0 0 28px; color: var(--ink); font-size: 32px; font-weight: 550; line-height: 1.3; letter-spacing: -.025em; text-wrap: balance; }
+.about-lead, .about-personal { max-width: 58ch; margin: 0; color: var(--ink); font-size: 18px; line-height: 1.75; text-wrap: pretty; }
+.about-personal { margin-top: 24px; }
+.about-lead strong { font-weight: 700; }
+.about-skills-wrap { grid-column: 1 / -1; padding: 44px; background: var(--surface); }
+.about-skills-wrap h2 { margin-bottom: 36px; font-size: 32px; }
+.about-skills { display: grid; grid-template-columns: 1fr 1fr 1.15fr; gap: 32px; margin: 0; }
+.about-skills dt { margin-bottom: 12px; font-weight: 650; font-size: 22px; letter-spacing: -.02em; }
+.about-skills dd { margin: 0; color: var(--ink); font-size: 16px; line-height: 1.65; }
+.experience-panel { grid-column: 2; }
+.experience-panel h2 { font-size: 32px; }
+.experience-list { display: grid; gap: 28px; padding: 0; list-style: none; }
+.experience-list h3 { margin: 0 0 8px; font-size: 24px; }
+.experience-list p { margin: 0 0 8px; font-size: 16px; }
+.experience-company { font-weight: 650; }
+.about-next { display: flex; grid-column: 1 / -1; justify-content: space-between; align-items: center; gap: 24px; padding-block: 12px; font-size: clamp(28px, 3.1vw, 44px); line-height: 1.15; font-weight: 550; letter-spacing: -.03em; }
+.about-next svg { flex-shrink: 0; transition: transform var(--t-hover) var(--ease-out); }
+.about-next:focus-visible svg { transform: translate(4px, -4px); }
+@media (hover: hover) and (pointer: fine) { .about-next:hover svg { transform: translate(4px, -4px); } }
+@media (max-width: 900px) { .about-skills dt { font-size: 20px; } .about-skills-wrap { padding: 32px; } .about-intro { font-size: 28px; } }
 @media (max-width: 760px) {
-  .about {
-    padding-block: 72px;
-  }
-  .about-inner {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-  .about-intro {
-    font-size: 24px;
-  }
-  .about-lead, .about-personal {
-    font-size: 16px;
-  }
-  .experience-panel {
-    grid-column: 1;
-  }
-  .about-skills {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
+  .about-inner { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .about-title-block { position: static; }
+  .about h1 { margin-bottom: 16px; }
+  .about-story { padding-top: 0; }
+  .about-intro { font-size: 24px; margin-bottom: 22px; }
+  .about-lead, .about-personal { font-size: 16px; }
+  .about-skills-wrap { padding: 28px 24px; margin-block: 12px; }
+  .about-skills-wrap h2 { font-size: 28px; }
+  .about-skills { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .experience-panel { grid-column: 1; }
 }

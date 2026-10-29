@@ -30,7 +30,8 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid var(--line-soft);
+  border: 0;
+  background: var(--surface);
   padding: 9px 12px;
   font-size: 13px;
   color: var(--accent-ink);
@@ -45,7 +46,7 @@
 }
 
 .demo-workspace {
-  border: 1px solid var(--line-soft);
+  border: 0;
   background: var(--surface);
   border-radius: var(--radius-lg);
   padding: 28px;
@@ -88,7 +89,7 @@
   border: 1px solid var(--line-soft);
   padding: 12px;
   border-radius: var(--radius-md);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .task-input-row input::placeholder {
@@ -187,8 +188,9 @@
   border: 0;
   background: transparent;
   color: var(--accent-ink);
-  padding: 0;
-  font-size: 13px;
+  min-height: 44px;
+  padding: 8px 0;
+  font-size: 14px;
 }
 
 .task-card-actions .task-delete {
@@ -343,6 +345,7 @@
 .media-filters {
   display: flex;
   gap: 7px;
+  flex-wrap: wrap;
   margin-block: 18px;
 }
 
@@ -682,3 +685,10 @@
     font-size: 13px;
   }
 }
+
+.demo-back { min-height: 44px; }
+.demo-workspace :is(button, input, select) { min-height: 44px; }
+.demo-workspace button:active:not(:disabled) { transform: scale(.98); }
+.demo-workspace :is(input, select) { font-size: 16px; }
+.demo-workspace .api-response { scrollbar-color: var(--line) var(--bg); }
+@media (max-width: 1050px) and (min-width: 761px) { .task-board { gap: 12px; } .task-column { padding: 12px; } .task-card { padding: 12px; } }

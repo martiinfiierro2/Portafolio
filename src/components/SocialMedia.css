@@ -1,33 +1,10 @@
-.social-media {
-  display: grid;
-  gap: 12px;
-}
-
-.social-link {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-  min-height: 68px;
-  padding: 20px 24px;
-  border: 0;
-  border-radius: 12px;
-  background: var(--surface);
-  color: var(--ink);
-  font-size: 17px;
-  font-weight: 600;
-  text-align: left;
-}
-
-.social-arrow {
-  margin-left: auto;
-  transition: transform 180ms;
-}
-
-.social-link:hover, .social-link:focus-visible {
-  background: var(--surface-high);
-}
-
-.social-link:hover .social-arrow {
-  transform: translate(3px,-3px);
-}
+.social-media { display: grid; gap: 12px; }
+.social-link { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; align-items: center; gap: 18px; width: 100%; min-height: 84px; padding: 22px 28px; border: 0; border-radius: 0; background: var(--surface); color: var(--ink); text-align: left; }
+.social-link > span { font-size: 22px; font-weight: 550; }
+.social-link small { display: block; margin-top: 4px; font-size: 14px; font-weight: 400; line-height: 1.5; overflow-wrap: anywhere; }
+.social-link[href] { background: var(--nav-active); color: var(--nav-active-ink); }
+.social-link[href]:focus-visible { outline-offset: 5px; }
+.social-arrow { transition: transform var(--t-hover) var(--ease-out); }
+.social-link[href]:focus-visible .social-arrow { transform: translate(3px, -3px); }
+@media (hover: hover) and (pointer: fine) { .social-link[href]:hover .social-arrow { transform: translate(3px, -3px); } }
+@media (max-width: 760px) { .social-link { padding-inline: 22px; } .social-link > span { font-size: 20px; } }
