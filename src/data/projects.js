@@ -1,6 +1,48 @@
 export const projects = [
   {
     slug: "monitorizacion-sistemas-distribuidos",
+    caseStudy: {
+      headline: "Monitorización distribuida",
+      intro: "Del estado de cada proceso a una visión de todo el sistema.",
+      statement: "Un sistema, varias miradas.",
+      statementBody: "Este TFG convierte las respuestas de los ejecutables en un lugar donde ver qué ocurre, seguir las relaciones y acercarse a cada nodo. Grafo, mapa, catálogo y detalle muestran el mismo sistema desde distintas perspectivas.",
+      roles: [
+        {
+          name: "Coordinador",
+          image: "/projects/monitorizacion-sistemas-distribuidos/roles/coordinador.png"
+        },
+        {
+          name: "Balanceador",
+          image: "/projects/monitorizacion-sistemas-distribuidos/roles/balanceador.png"
+        },
+        {
+          name: "Procesador",
+          image: "/projects/monitorizacion-sistemas-distribuidos/roles/procesador.png"
+        }
+      ],
+      views: [
+        {
+          image: "grafo.png",
+          label: "Conexiones",
+          description: "Sigue las relaciones entre coordinadores, balanceadores y procesadores. Las líneas distinguen la supervisión de la asignación operativa."
+        },
+        {
+          image: "mapa.png",
+          label: "Mapa",
+          description: "El mismo sistema desde otra perspectiva: sus nodos sobre el mapa, con acceso directo a la información de cada proceso."
+        },
+        {
+          image: "catalogo.png",
+          label: "Catálogo",
+          description: "Un lugar para localizar las fichas por nombre, tipo o dirección y organizar los datos que utiliza la representación."
+        },
+        {
+          image: "detalle.png",
+          label: "Detalle",
+          description: "Abre un nodo para consultar lo que está respondiendo: estado, configuración, procesadores registrados y destinos seleccionados."
+        }
+      ]
+    },
     listTitle: "Monitorización distribuida",
     listSummary: "Estado y conexiones de procesos en grafo y mapa.",
     title: "Monitorización de sistemas distribuidos",

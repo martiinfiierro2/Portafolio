@@ -48,17 +48,28 @@ un repositorio público o capturas, omite esos campos. La ficha solo muestra las
 secciones y los botones para los que existen datos. No añadas enlaces `#` como
 relleno.
 
-## Presentación de la ficha
+## Presentación del proyecto
 
-La entrada a cada proyecto muestra una vista previa grande, su descripción
-breve y las tecnologías. Si hay varias imágenes, los botones permiten cambiar
-de vista y ampliar la captura sin bajar hasta la galería. El campo opcional
-`label` de cada imagen define el nombre breve del botón (por ejemplo, «Grafo»
-o «Mapa»); si falta, se utiliza su pie o texto alternativo.
+La página presenta el trabajo como un caso de estudio visual: una portada con
+la captura real, las tecnologías, un índice de perspectivas, el vídeo bajo
+demanda y una galería de capturas del mismo tamaño. Las imágenes se pueden
+ampliar desde la portada, el índice o la galería.
 
-El vídeo, la explicación completa, la ficha técnica y el proceso aparecen
-después de esa presentación. Las tecnologías se muestran una sola vez,
-en la parte inicial.
+El contenido técnico completo se conserva en desplegables bajo «Detrás del
+proyecto»: contexto y reto, decisiones, proceso y funcionalidades. Los datos
+básicos aparecen juntos, sin una columna lateral de fichas.
+
+El objeto opcional `caseStudy` permite dar contexto específico a cada trabajo:
+
+- `headline` e `intro`: nombre breve y presentación para la portada.
+- `statement` y `statementBody`: idea general del proyecto.
+- `views`: perspectivas con `image` (nombre del archivo de la galería),
+  `label` y `description`. El índice permite cambiar de captura con ratón,
+  teclado o toque.
+- `roles`: imágenes y nombres propios del proyecto, si existen.
+
+Sin este objeto se utilizan los textos y las imágenes habituales de la ficha.
+No hacen falta datos ficticios ni imágenes nuevas para publicar otro proyecto.
 
 ## 2. Añade capturas
 
