@@ -8,7 +8,7 @@ export const projects = [
     type: "Trabajo de Fin de Grado",
     status: "Disponible en local",
     isExample: false,
-    summary: "Aplicación web para consultar el estado de los procesos de un sistema distribuido y explorar sus relaciones mediante un grafo interactivo y un mapa geográfico.",
+    summary: "Consulta qué procesos responden, cómo se conectan y dónde se sitúan, desde un grafo y un mapa.",
     overview: "Proyecto desarrollado como Trabajo de Fin de Grado, centrado en representar los datos que exponen coordinadores, balanceadores y procesadores. La interfaz de escritorio reúne la topología del sistema, la ubicación de los nodos y el detalle de cada proceso. Un catálogo persistente permite organizar las fichas utilizadas en la representación. Editar estas fichas no arranca, detiene ni reconfigura los ejecutables monitorizados.",
     role: "Desarrollo de la interfaz de monitorización e integración con los servicios y el catálogo de nodos",
     stack: [
@@ -73,24 +73,28 @@ export const projects = [
     gallery: [
       {
         src: "/projects/monitorizacion-sistemas-distribuidos/grafo.png",
+        label: "Grafo",
         alt: "Grafo de coordinadores, balanceadores y procesadores con sus relaciones de asignación y supervisión",
         caption: "Topología y disponibilidad · Datos de demostración",
         type: "desktop"
       },
       {
         src: "/projects/monitorizacion-sistemas-distribuidos/mapa.png",
+        label: "Mapa",
         alt: "Mapa mundial con marcadores de coordinadores, balanceadores y procesadores",
         caption: "Vista geográfica con datos de demostración",
         type: "desktop"
       },
       {
         src: "/projects/monitorizacion-sistemas-distribuidos/catalogo.png",
+        label: "Catálogo",
         alt: "Catálogo de nodos con búsqueda, direcciones, puertos, coordenadas y acciones sobre las fichas",
         caption: "Catálogo de nodos · Datos de demostración",
         type: "desktop"
       },
       {
         src: "/projects/monitorizacion-sistemas-distribuidos/detalle.png",
+        label: "Detalle",
         alt: "Panel de detalle con información devuelta por un proceso monitorizado",
         caption: "Detalle de nodo · Datos de demostración",
         type: "desktop"

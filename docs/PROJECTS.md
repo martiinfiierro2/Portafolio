@@ -48,6 +48,18 @@ un repositorio público o capturas, omite esos campos. La ficha solo muestra las
 secciones y los botones para los que existen datos. No añadas enlaces `#` como
 relleno.
 
+## Presentación de la ficha
+
+La entrada a cada proyecto muestra una vista previa grande, su descripción
+breve y las tecnologías. Si hay varias imágenes, los botones permiten cambiar
+de vista y ampliar la captura sin bajar hasta la galería. El campo opcional
+`label` de cada imagen define el nombre breve del botón (por ejemplo, «Grafo»
+o «Mapa»); si falta, se utiliza su pie o texto alternativo.
+
+El vídeo, la explicación completa, la ficha técnica y el proceso aparecen
+después de esa presentación. Las tecnologías se muestran una sola vez,
+en la parte inicial.
+
 ## 2. Añade capturas
 
 Copia las imágenes en `public/projects/`. El valor de `src` comienza en
@@ -73,7 +85,10 @@ video: {
 ```
 
 El reproductor utiliza controles nativos, no empieza automáticamente y permite
-descargar el WebM. El botón «Ver recorrido» lleva al reproductor de la propia
+descargar el WebM. Inicialmente se muestra un póster con el botón «Reproducir
+recorrido»; el reproductor se crea al pulsarlo y utiliza `preload="none"`.
+No se descarga el vídeo al abrir la ficha ni al cambiar las capturas.
+El botón «Ver recorrido» lleva al reproductor de la propia
 ficha. Incluye una descripción textual del recorrido; si el vídeo tiene voz o
 información sonora relevante, añade también los subtítulos correspondientes.
 Para el formato actual, utiliza WebM. Una grabación no requiere `demoHref`:
