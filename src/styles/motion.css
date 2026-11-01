@@ -1,0 +1,6 @@
+/* Native progressive enhancement: normal links still work without this API. */
+::view-transition { pointer-events: none; }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: 160ms; }
+::view-transition-group(project-calendar), ::view-transition-group(project-monitorizacion-sistemas-distribuidos) { animation-duration: 280ms; animation-timing-function: var(--ease-out); }
+::view-transition-old(project-calendar), ::view-transition-new(project-calendar), ::view-transition-old(project-monitorizacion-sistemas-distribuidos), ::view-transition-new(project-monitorizacion-sistemas-distribuidos) { height: 100%; object-fit: contain; }
+@media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }

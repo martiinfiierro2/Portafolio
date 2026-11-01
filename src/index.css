@@ -1,2 +1,8 @@
-@import "./styles/tokens.css";
-@import "./styles/base.css";
+@import './styles/tokens.css';
+@import './styles/base.css';
+@import './styles/portfolio.css';
+@import './styles/projects.css';
+@import './styles/technology.css';
+@import './styles/cv.css';
+@import './styles/project.css';
+@import './styles/motion.css';

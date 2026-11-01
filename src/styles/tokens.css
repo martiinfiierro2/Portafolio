@@ -1,74 +1,53 @@
-@font-face {
-  font-family: "Manrope";
-  src: url("../assets/fonts/Manrope-VariableFont_wght.ttf") format("truetype");
-  font-weight: 200 800;
-  font-style: normal;
-  font-display: swap;
-}
+@font-face { font-family: Bricolage; src: url('../assets/fonts/bricolagegrotesque.ttf') format('truetype'); font-weight: 200 800; font-display: swap; }
+@font-face { font-family: 'DM Sans'; src: url('../assets/fonts/dmsans.ttf') format('truetype'); font-weight: 100 1000; font-display: swap; }
+@font-face { font-family: Caveat; src: url('../assets/fonts/caveat.ttf') format('truetype'); font-weight: 400 700; font-display: swap; }
 
 :root {
-  --font-body: "Manrope", sans-serif;
-  --font-heading: var(--font-body);
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --t-hover: 180ms;
-  --t-menu: 200ms;
+  --font-body: 'DM Sans', sans-serif;
+  --font-heading: Bricolage, sans-serif;
+  --ease-out: cubic-bezier(.23, 1, .32, 1);
+  --t-hover: 160ms;
+  --content-width: 1100px;
+  --page-gutter: 32px;
+  --header-offset: 112px;
+  --bg: #ffffff;
+  --ink: #252a30;
+  --body: #49515b;
+  --muted: #626b76;
+  --quiet: #f5f6f7;
+  --line: #e1e4e8;
+  --solid: #30373f;
+  --on-solid: #ffffff;
+  --calendar: #edf1e7;
+  --monitor: #edf2f7;
+  --paper: #fff8ed;
+  --coral: #ad4828;
+  --focus: #ad4828;
+  --nav-shadow: 0 6px 24px #1923300b;
+  color-scheme: light;
+  background: var(--bg);
+  color: var(--ink);
   font-family: var(--font-body);
   font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  background: #f6f7f9;
 }
 
-.site {
-  --header-height: 56px;
-  --content-width: 1120px;
-  --page-top: clamp(40px, 4.5vw, 64px);
-  --section-space: clamp(64px, 9vw, 120px);
-  --type-display: clamp(44px, 5vw, 72px);
-  --type-section: clamp(32px, 3.7vw, 48px);
-  --bg: #13171d;
-  --surface: #20262f;
-  --surface-high: #2b333e;
-  --card-bg: #20262f;
-  --ink: #f0f3f8;
-  --muted: #b0bbc9;
-  --line: #3b4552;
-  --line-soft: #323c47;
-  --accent: #236ea9;
-  --accent-soft: #498dc91a;
-  --accent-ink: #8bc2f0;
-  --accent-depth: #16558e;
-  --on-accent: #fff;
-  --nav-active: #eff2f7;
-  --nav-active-ink: #1b2638;
-  --keyboard-body: #414b57;
-  --keyboard-edge: #28303b;
-  --keyboard-display: #1a222d;
-  --keyboard-key: #627080;
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-pill: 999px;
+:root[data-theme='dark'] {
+  --bg: #2c3036;
+  --ink: #f2f3f5;
+  --body: #d1d6de;
+  --muted: #b5becb;
+  --quiet: #363b43;
+  --line: #515965;
+  --solid: #edf0f4;
+  --on-solid: #29313b;
+  --calendar: #3b4249;
+  --monitor: #3c4754;
+  --paper: #48413c;
+  --coral: #ffb18b;
+  --focus: #ffb18b;
+  --nav-shadow: 0 8px 28px #00000030;
+  color-scheme: dark;
 }
 
-.site[data-theme="light"] {
-  --bg: #f6f7f9;
-  --surface: #e8ecf1;
-  --surface-high: #e0e6ed;
-  --card-bg: #fff;
-  --ink: #1f2b42;
-  --muted: #57667a;
-  --line: #c9d1dc;
-  --line-soft: #dbe1e9;
-  --accent: #1066b2;
-  --accent-soft: #1066b215;
-  --accent-ink: #145c94;
-  --accent-depth: #085394;
-  --on-accent: #fff;
-  --nav-active: #223149;
-  --nav-active-ink: #fff;
-  --keyboard-body: #dce2e9;
-  --keyboard-edge: #a3afbd;
-  --keyboard-display: #f6f8fb;
-  --keyboard-key: #fcfdff;
-}
+@media (max-width: 760px) { :root { --page-gutter: 20px; --header-offset: 100px; } }
+@media (max-width: 360px) { :root { --page-gutter: 16px; } }

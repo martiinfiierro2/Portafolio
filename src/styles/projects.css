@@ -1,0 +1,35 @@
+/* One compact project card; the same hierarchy at every viewport. */
+.project-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.project-item { min-width: 0; }
+.project-card { display: flex; flex-direction: column; height: 100%; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+.project-art { display: flex; align-items: center; justify-content: center; gap: 22px; width: 100%; height: clamp(180px, 20vw, 220px); padding: 22px 28px; overflow: hidden; }
+.project-art.phones { background: var(--calendar); }
+.project-art.graph { background: var(--monitor); }
+.project-art img { display: block; object-fit: contain; width: auto; height: 100%; min-width: 0; max-width: 100%; border-radius: 6px; box-shadow: 0 8px 18px #1b253318; }
+.phones img:first-child { transform: rotate(-4deg) translateY(-2px); }
+.phones img:nth-child(2) { transform: rotate(4deg) translateY(7px); }
+.graph img { width: auto; max-width: 100%; object-fit: contain; }
+.project-copy { display: flex; flex: 1; flex-direction: column; align-items: start; padding: 24px 26px 18px; min-width: 0; }
+.project-copy :is(h2,h3) { font-size: 28px; line-height: 1.15; }
+.project-description { font-size: 16px; line-height: 1.65; color: var(--body); margin-top: 12px; max-width: 44ch; }
+.project-copy .technology-list { margin-block: 18px 12px; }
+.project-open { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; padding-top: 6px; margin-top: auto; font-size: 15px; font-weight: 600; }
+.project-open svg { width: 18px; height: 18px; }
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover .project-open { text-decoration: underline; text-underline-offset: 5px; }
+  .project-card:hover .project-open svg { transform: translate(2px,-2px); }
+}
+@media (prefers-reduced-motion: no-preference) { .project-open svg { transition: transform var(--t-hover) var(--ease-out); } }
+@media (min-width: 600px) and (max-width: 900px) {
+  .project-list { gap: 20px; }
+  .project-copy { padding: 22px 20px 16px; }
+  .project-copy :is(h2,h3) { font-size: 25px; }
+  .project-art { gap: 18px; padding: 18px; }
+}
+@media (max-width: 599px) {
+  .project-list { grid-template-columns: 1fr; gap: 24px; }
+  .project-art { height: 190px; }
+  .project-copy { padding: 24px 22px 18px; }
+  .project-copy :is(h2,h3) { font-size: 27px; }
+}
+@media (max-width: 360px) { .project-art { height: 175px; } .project-copy :is(h2,h3) { font-size: 25px; } }

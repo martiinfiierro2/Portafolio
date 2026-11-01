@@ -1,142 +1,25 @@
-# Añadir un proyecto al portfolio
+# Añadir un proyecto
 
-El catálogo se define en `src/data/projects.js`. Las tarjetas y las fichas se
-generan a partir de ese array; no necesitas duplicar componentes.
+Todas las tarjetas y fichas se generan desde `src/data/projects.js`. Para publicar otro proyecto, añade una entrada al array `projects`; no hay que crear una página ni añadir una ruta.
 
-## 1. Crea una entrada
+Campos:
 
-Copia una entrada existente y utiliza un `slug` único, en minúsculas y con
-guiones. Su dirección será `/proyectos/tu-proyecto`.
+| Campo | Uso |
+| --- | --- |
+| `slug` | Identificador único para `/proyectos/:slug` |
+| `title`, `type`, `status` | Nombre, naturaleza y estado reales |
+| `layout` | `mobile` para capturas verticales o `desktop` para horizontales |
+| `summary` | Descripción breve de la tarjeta |
+| `lead`, `context` | Introducción y párrafos de la ficha |
+| `role` | Participación propia |
+| `cardStack`, `stack` | Tecnologías de la tarjeta y de la ficha |
+| `sourceHref` | Repositorio real |
+| `views` | Grupos de capturas con `label`, `caption` e `images` |
+| `notes` | Pares de título y explicación de las decisiones |
+| `video` | Opcional: `src`, `poster`, `caption` |
 
-```js
-{
-  slug: "tu-proyecto",
-  title: "Nombre del proyecto",
-  category: "Web",
-  type: "Aplicación web",
-  status: "En desarrollo",
-  isExample: false,
-  summary: "Una descripción breve para la tarjeta.",
-  overview: "Contexto, objetivo y alcance real del proyecto.",
-  role: "Tu participación concreta",
-  stack: ["React", "Node.js"],
-  demoHref: "https://tu-demo.example",
-  demoLabel: "Abrir demo",
-  sourceHref: "https://github.com/tu-usuario/tu-proyecto",
-  problem: "Qué problema querías resolver.",
-  solution: "Cómo lo abordaste.",
-  architecture: [
-    { title: "Una decisión técnica", description: "El motivo y su resultado." },
-  ],
-  development: [
-    { title: "Primer paso", description: "Qué construiste y cómo." },
-  ],
-  features: ["Una funcionalidad que se pueda explorar"],
-  gallery: [
-    {
-      src: "/projects/tu-proyecto/escritorio.png",
-      alt: "Descripción concreta de lo que muestra la captura",
-      caption: "Vista en escritorio",
-      type: "desktop",
-    },
-  ],
-}
-```
+Cada imagen tiene `src`, `alt` y `caption`. Los archivos se alojan en `public/projects/<slug>/`. La primera vista también ilustra la tarjeta. La composición depende de `layout`, no del nombre del proyecto.
 
-Sustituye las direcciones del ejemplo antes de publicar. Si no tienes una demo,
-un repositorio público o capturas, omite esos campos. La ficha solo muestra las
-secciones y los botones para los que existen datos. No añadas enlaces `#` como
-relleno.
+Publica únicamente hechos y medios reales. Mantén la indicación de datos de demostración donde corresponda. La galería gestiona carga, errores y ampliación; el vídeo se solicita solo después de pulsar su botón.
 
-## Presentación del proyecto
-
-La página presenta el trabajo como un caso de estudio visual: una portada con
-la captura real, las tecnologías, un índice de perspectivas, el vídeo bajo
-demanda y una galería de capturas del mismo tamaño. Las imágenes se pueden
-ampliar desde la portada, el índice o la galería.
-
-El contenido técnico completo se conserva en desplegables bajo «Detrás del
-proyecto»: contexto y reto, decisiones, proceso y funcionalidades. Los datos
-básicos aparecen juntos, sin una columna lateral de fichas.
-
-El objeto opcional `caseStudy` permite dar contexto específico a cada trabajo:
-
-- `headline` e `intro`: nombre breve y presentación para la portada.
-- `statement` y `statementBody`: idea general del proyecto.
-- `views`: perspectivas con `image` (nombre del archivo de la galería),
-  `label` y `description`. El índice permite cambiar de captura con ratón,
-  teclado o toque.
-- `roles`: imágenes y nombres propios del proyecto, si existen.
-
-Sin este objeto se utilizan los textos y las imágenes habituales de la ficha.
-No hacen falta datos ficticios ni imágenes nuevas para publicar otro proyecto.
-
-## 2. Añade capturas
-
-Copia las imágenes en `public/projects/`. El valor de `src` comienza en
-`/projects/`, sin el prefijo `public`. Usa nombres estables, imágenes optimizadas
-y un texto `alt` que describa la pantalla. Las capturas se pueden ampliar en un
-diálogo que admite teclado, Escape y retorno del foco a la miniatura.
-
-`type: "mobile"` utiliza el formato vertical en la galería. Para otras capturas,
-usa `"desktop"` u omite `type`.
-
-## Vídeo del proyecto (opcional)
-
-Si tienes una grabación, guárdala en `public/projects/tu-proyecto/` y añade
-este objeto a la ficha:
-
-```js
-video: {
-  src: "/projects/tu-proyecto/demo.webm",
-  poster: "/projects/tu-proyecto/escritorio.png",
-  caption: "Recorrido de la interfaz · Datos de demostración",
-  description: "Qué muestra la grabación y el alcance de los datos utilizados.",
-},
-```
-
-El reproductor utiliza controles nativos, no empieza automáticamente y permite
-descargar el WebM. Inicialmente se muestra un póster con el botón «Reproducir
-recorrido»; el reproductor se crea al pulsarlo y utiliza `preload="none"`.
-No se descarga el vídeo al abrir la ficha ni al cambiar las capturas.
-El botón «Ver recorrido» lleva al reproductor de la propia
-ficha. Incluye una descripción textual del recorrido; si el vídeo tiene voz o
-información sonora relevante, añade también los subtítulos correspondientes.
-Para el formato actual, utiliza WebM. Una grabación no requiere `demoHref`:
-ese campo sigue reservado para demostraciones navegables.
-
-## 3. Documenta el trabajo real
-
-- `summary`: una frase breve que explique el resultado.
-- `overview`: contexto, usuarios y alcance.
-- `problem` y `solution`: necesidad y respuesta concreta.
-- `architecture`: decisiones técnicas y sus motivos.
-- `development`: pasos del desarrollo, en orden.
-- `features`: funcionalidades disponibles.
-- `role`: tu aportación, especialmente en trabajos de equipo.
-- `status`: estado actual, sin afirmar un despliegue que no existe.
-
-Las categorías se extraen automáticamente de las entradas. El buscador consulta
-el título, la descripción breve, la categoría y el stack. Una categoría nueva
-aparece en los filtros sin cambios en el componente.
-
-## Demos de ejemplo
-
-Taskflow, Pulse API y Media Lab son ejemplos claramente identificados con
-`isExample: true`. Sus demos viven en `/demos/taskflow`, `/demos/pulse-api` y
-`/demos/media-lab`. Usan datos locales o simulados y no representan proyectos de
-clientes ni servicios de backend desplegados.
-
-Puedes sustituirlos por tus proyectos reales o mantenerlos como ejercicios. Si
-añades una nueva demo interna, implementa su componente y regístrala en
-`src/pages/DemoPage.jsx`; añadir `demoHref` por sí solo no crea una demo.
-Para enlazarla con React Router, utiliza `demoHref: "/demos/tu-proyecto"`.
-
-Las tarjetas utilizan la primera captura de `gallery` como portada. Elige una
-imagen que permita reconocer el proyecto de un vistazo. Cuando no hay capturas,
-la tarjeta muestra una portada sencilla con el nombre del proyecto.
-
-## Comprobación
-
-Ejecuta `npm run lint` y `npm run build`. Comprueba la ficha, los filtros, las
-imágenes y cada enlace en la vista previa antes de publicar.
+La tarjeta compacta utiliza `cardStack` con logotipo y nombre. Los logotipos conocidos se definen en `src/data/technology-icons.js`; una tecnología nueva sin icono configurado conserva su nombre y un símbolo neutro. No es necesario cambiar el componente para añadir un proyecto.

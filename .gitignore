@@ -22,3 +22,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local design/browser output
+output/
+.playwright-cli/
+.taste-skill/
+.impeccable/mocks/
+.impeccable/questions/
+Microsoft/

@@ -1,9 +1,5 @@
-// Completa estos enlaces con los perfiles y el archivo real del currículum.
-// El CV puede ser una ruta pública local (por ejemplo, /cv.pdf) o una URL.
+// Only publish channels that are actually available.
 export const contact = {
-  cv: null,
-  linkedin: null,
-  instagram: null,
-  whatsapp: null,
-  github: 'https://github.com/martiinfiierro2',
+  cv: null, // Public URL of the actual PDF; fetched only when opening Mi CV.
+  github: "https://github.com/martiinfiierro2",
 };

@@ -3,13 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Apply the saved theme before the application paints.
+      let portfolioTheme;
+      try { portfolioTheme = localStorage.getItem("mf-theme"); } catch { /* Use system preference. */ }
+      if (portfolioTheme !== "dark" && portfolioTheme !== "light") portfolioTheme = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      document.documentElement.dataset.theme = portfolioTheme;
+      document.documentElement.style.colorScheme = portfolioTheme;
+      document.documentElement.style.backgroundColor = portfolioTheme === "dark" ? "#2c3036" : "#fff";
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Martín Fierro. Ingeniería multimedia y desarrollo full-stack. Explora proyectos, demos interactivas y su proceso de desarrollo."
+      content="Martín Fierro. Desarrollador full-stack. Explora mis proyectos, sus interfaces y su proceso de desarrollo."
     />
-    <meta name="theme-color" content="#000000" />
-    <title>Martín Fierro — Ingeniería multimedia &amp; Full-stack</title>
+    <meta name="theme-color" content="#ffffff" />
+    <title>Martín Fierro — Desarrollador full-stack</title>
   </head>
   <body>
     <div id="root"></div>

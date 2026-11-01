@@ -1,62 +1,43 @@
-# Martín Fierro / Portfolio
+# Portfolio · Martín Fierro
 
-Portfolio de ingeniería multimedia y desarrollo full-stack con React, React Router y Vite. Un teclado interactivo da acceso a los proyectos; inicio, proyectos, sobre mí y contacto tienen páginas independientes.
+React + Vite. Una portada con inicio, proyectos, sobre mí y contacto completos, más una ficha independiente para cada proyecto. Claro y oscuro, escritorio SVG original animado y navegación adaptable.
 
 ## Desarrollo
 
-Usa Node.js 24 y npm:
-
-```bash
-npm ci
-npm run dev
+```sh
+npm install
+npm run dev -- --port 5174 --strictPort
 ```
 
-```bash
-npm run lint
-npm run check:structure
-npm run build
-npm run preview
-```
-
-`check:structure` recorre los imports desde `src/main.jsx` y avisa de módulos JS, JSX o CSS sin uso y de imports relativos que no se pueden resolver.
+Abrir http://localhost:5174/. La cabecera flotante y el contenido comparten un ancho máximo de 1100 px. Hasta 760 px la navegación se despliega desde el botón Menú; el interruptor de tema permanece visible.
 
 ## Organización
 
-```text
-src/
-  pages/          Home, Projects, About, Contact, ProjectDetail y DemoPage
-  components/     Header, Footer, ProjectKeyboard, ProjectCard, SocialMedia…
-    demos/        TaskFlowDemo, ApiExplorerDemo y MediaLabDemo
-  data/           Proyectos, experiencia y enlaces de contacto
-  styles/         tokens.css (fuente, temas y colores), base.css (estilos comunes)
-  assets/         Fuente Manrope e ilustración original
-  App.jsx         Rutas, tema y comportamiento de navegación
-  index.css       Entrada de los estilos globales
-scripts/
-  audit-source.mjs
-public/projects/  Capturas de los proyectos
+- `src/pages`: portada y ficha de proyecto.
+- `src/components/sections`: contenido completo de proyectos, sobre mí y contacto.
+- `src/components`: navegación, tarjetas, galería ampliable y vídeo bajo petición.
+- `src/data/projects.js`: única definición de los proyectos publicados y sus recursos.
+- `src/data/contact.js`: canales reales disponibles.
+- `src/styles`: tokens, base, portada/navegación, fichas y transiciones.
+
+Las secciones tienen enlaces `/#inicio`, `/#proyectos`, `/#sobre-mi` y `/#contacto`. Las rutas antiguas `/proyectos`, `/sobre-mi` y `/contacto` redirigen a esas secciones. Las fichas conservan `/proyectos/:slug`. Se han retirado las demos de ejemplo y sus rutas.
+
+## Verificación
+
+```sh
+npm run lint
+npm run check:structure
+npm run build
 ```
 
-Cada página y componente visual importa su CSS del mismo directorio, incluidos sus ajustes de móvil. La interfaz utiliza CSS nativo y una única fuente variable local, Manrope. Los colores y superficies de ambos temas se ajustan en `src/styles/tokens.css`.
+Los recorridos de Playwright CLI y su procedimiento están en `scripts/qa` y `docs/qa/README.md`. El vídeo no se solicita hasta pulsar «Ver recorrido». Las fuentes son locales; el tema se guarda en `localStorage`. Las animaciones respetan movimiento reducido.
 
-Consulta [la guía del código](src/README.md) y [cómo añadir proyectos](docs/PROJECTS.md). Los datos y enlaces se editan en `src/data/`; los contactos sin configurar mantienen su valor `null`.
+Para añadir un proyecto, consultar `docs/PROJECTS.md`. En un alojamiento estático, todas las rutas de la aplicación deben reescribirse a `index.html`.
 
-## Teclado
+Los SVG del escritorio y su licencia se conservan sin cambios. `scripts/build-personal-desk.mjs` es su fuente editable y requiere la skill anatomy-asset para regenerarlos; no forma parte de la compilación normal.
 
-`ProjectKeyboard` construye el objeto con CSS, sin una imagen ni una escena 3D externa. Escribe «cd Proyectos»; las teclas neutras se iluminan durante la pulsación y Enter abre el catálogo. Incluye repetición, sonido opcional y navegación con flechas. La introducción es silenciosa; el sonido solo se activa después de una interacción y respeta la preferencia guardada. Con movimiento reducido se muestra directamente el comando completo.
+## CV y presentación de proyectos
 
-El enlace «Descargar CV» del inicio utiliza `cv` en `src/data/contact.js`. Añade el PDF a `public/` y configura su ruta, por ejemplo `/cv.pdf`; mientras el valor sea `null`, el control indica que todavía no está disponible. El hero, el menú móvil y las tarjetas tienen entradas breves que se omiten con movimiento reducido.
+Para publicar el CV, añade el PDF real en `public/cv.pdf` y establece `cv: "/cv.pdf"` en `src/data/contact.js`. «Mi CV» abrirá el documento y permitirá descargarlo como `CV-Martin-Fierro.pdf`. Sin PDF configurado, el modal indica que todavía no está disponible.
 
-## Rutas y despliegue
-
-React Router gestiona `/`, `/proyectos`, `/sobre-mi`, `/contacto`, `/proyectos/:slug`, `/demos/:demoId` y una página 404. La navegación actualiza el título, vuelve al inicio y mueve el foco al encabezado de cada página. Los enlaces antiguos `/#inicio`, `/#proyectos`, `/#sobre-mi`, `/#contacto` y `#/...` redirigen a sus rutas actuales.
-
-El hosting debe servir `index.html` en las rutas de la aplicación que no correspondan a archivos reales para permitir accesos y recargas directas. Vite incluye ese fallback en desarrollo y preview; GitHub Pages requiere configurarlo por separado o utilizar un hosting con soporte para SPA.
-
-## Catálogo y demos
-
-El catálogo incluye tarjetas con capturas completas, búsqueda por texto, filtros por categoría, fichas y una galería ampliable. Las fichas solo muestran las acciones y secciones que tienen datos.
-
-Taskflow guarda tareas en el navegador; Pulse API simula respuestas JSON en memoria; Media Lab genera composiciones CSS ajustables. Son demostraciones identificadas como ejemplos y no requieren backend. El catálogo no utiliza un panel remoto de administración.
-
-Los temas guardan la elección en el navegador y las animaciones respetan `prefers-reduced-motion`.
+Las tarjetas se ordenan como imagen, título, descripción, tecnologías y Abrir proyecto. La cuadrícula tiene dos columnas desde 600 px y una en móvil. Los logotipos se sirven localmente mediante TechnologyList; su catálogo y colores viven en `src/data/technology-icons.js`, con licencia en `public/licenses/simple-icons.md`.

@@ -1,0 +1,13 @@
+.technology-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 28px; }
+.technology-group h4 { margin-bottom: 16px; font-family: var(--font-body); font-size: 15px; font-weight: 600; letter-spacing: 0; color: var(--muted); }
+.technology-list { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.technology-list li { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; padding: 10px 13px; border-radius: 9px; background: var(--quiet); font-size: 14px; line-height: 1.3; white-space: nowrap; }
+.tech-logo { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--tech-light, var(--body)); }
+.tech-logo svg { display: block; width: 20px; height: 20px; }
+[data-theme='dark'] .tech-logo { color: var(--tech-dark, var(--body)); }
+.technology-list.compact { gap: 8px 12px; }
+.technology-list.compact li { gap: 7px; min-height: 32px; padding: 0; background: none; border-radius: 0; color: var(--body); font-size: 13px; }
+.technology-list.compact svg { width: 15px; height: 15px; }
+@media (max-width: 900px) { .technology-groups { gap: 22px; } }
+@media (max-width: 760px) { .technology-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; } }
+@media (max-width: 480px) { .technology-groups { grid-template-columns: 1fr; gap: 28px; } }

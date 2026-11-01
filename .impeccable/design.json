@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-31T20:32:05.935Z",
+  "title": "Design System: Portfolio de Martín Fierro",
+  "extensions": {
+    "shadows": [
+      {
+        "name": "sticker",
+        "value": "0 4px 9px #22322515",
+        "purpose": "Solo la pegatina del hero."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "purpose": "Feedback breve y transiciones de estado."
+      },
+      {
+        "name": "gallery-fade",
+        "value": "160ms",
+        "purpose": "Sustitución de una captura ya cargada."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "tablet",
+        "value": "1000px"
+      },
+      {
+        "name": "mobile",
+        "value": "700px"
+      },
+      {
+        "name": "narrow",
+        "value": "360px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Acción principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Abrir un proyecto o explorar GitHub.",
+      "html": "<button class=\"ds-button\">Explorar proyecto</button>",
+      "css": ".ds-button{display:inline-flex;align-items:center;justify-content:center;background:var(--green);color:var(--on-green);font-family:var(--font-body);font-size:15px;font-weight:600;line-height:1.65;padding:13px 19px;min-height:48px;border:0;border-radius:8px;cursor:pointer}.ds-button:hover{filter:brightness(.93)}.ds-button:focus-visible{outline:2px solid var(--coral);outline-offset:6px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Del primer clic al último dato",
+    "overview": "Apertura asimétrica con el escritorio personal; proyectos a una escala útil y lectura clara.",
+    "keyCharacteristics": [
+      "Escritorio original",
+      "Retícula de 1100 px",
+      "Capturas reales antes de la explicación técnica"
+    ],
+    "dos": [
+      "Usar datos reales",
+      "Mantener ambos temas y movimiento reducido"
+    ],
+    "donts": [
+      "No inventar canales de contacto",
+      "No añadir panel lateral persistente"
+    ]
+  }
+}

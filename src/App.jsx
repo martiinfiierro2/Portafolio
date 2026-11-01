@@ -1,160 +1,78 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft } from "lucide-react";
-import {
-  Link,
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-  useMatch,
-} from "react-router-dom";
+import { Navigate, Route, Routes, useLocation, useMatch } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import SectionLink from "./components/SectionLink";
+import Home from "./pages/Home";
 import ProjectDetail from "./pages/ProjectDetail";
-import DemoPage from "./pages/DemoPage";
-import Projects from "./pages/Projects";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
 import { projects } from "./data/projects";
 
-const pageTitles = {
-  "/": "Martín Fierro — Ingeniería multimedia & Full-stack",
-  "/proyectos": "Proyectos — Martín Fierro",
-  "/sobre-mi": "Sobre mí — Martín Fierro",
-  "/contacto": "Contacto — Martín Fierro",
-};
-
-const legacyPages = {
-  "#inicio": "/",
-  "#enfoque": "/",
-  "#proyectos": "/proyectos",
-  "#sobre-mi": "/sobre-mi",
-  "#contacto": "/contacto",
-};
+const sectionRoutes = { "/proyectos": "proyectos", "/sobre-mi": "sobre-mi", "/contacto": "contacto" };
 
 function readTheme() {
   try {
-    return localStorage.getItem("mf-theme") === "dark";
-  } catch {
-    return false;
-  }
+    const saved = localStorage.getItem("mf-theme");
+    if (saved === "dark" || saved === "light") return saved === "dark";
+  } catch { /* Use the system preference if storage is unavailable. */ }
+  return matchMedia("(prefers-color-scheme: dark)").matches;
 }
 
 export default function App() {
   const [dark, setDark] = useState(readTheme);
   const location = useLocation();
   const projectRoute = useMatch("/proyectos/:slug");
-  const demoRoute = useMatch("/demos/:demoId");
-  const isHome = location.pathname === "/";
-  const project = projectRoute
-    ? projects.find((item) => item.slug === projectRoute.params.slug)
-    : projects.find((item) => item.demoHref === `/demos/${demoRoute?.params.demoId}`);
-  const validDemo = projects.some(
-    (item) => item.demoHref === `/demos/${demoRoute?.params.demoId}`,
-  );
-  const legacyTarget = isHome
-    ? location.hash.startsWith("#/")
-      ? location.hash.slice(1)
-      : legacyPages[location.hash] ?? null
+  const project = projects.find(item => item.slug === projectRoute?.params.slug);
+  const legacyTarget = location.pathname === "/"
+    ? location.hash.startsWith("#/") ? location.hash.slice(1)
+      : ["#trabajo", "#enfoque"].includes(location.hash) ? "/#proyectos" : null
     : null;
-  const pageName = isHome
-    ? "home"
-    : location.pathname === "/proyectos"
-      ? "projects"
-      : location.pathname === "/sobre-mi"
-        ? "about"
-        : location.pathname === "/contacto"
-          ? "contact"
-          : "detail";
 
   useEffect(() => {
-    try {
-      localStorage.setItem("mf-theme", dark ? "dark" : "light");
-    } catch {
-      // The theme still works when storage is unavailable.
-    }
-    document.documentElement.style.colorScheme = dark ? "dark" : "light";
-    const background = getComputedStyle(document.querySelector(".site"))
-      .getPropertyValue("--bg")
-      .trim();
+    const theme = dark ? "dark" : "light";
+    try { localStorage.setItem("mf-theme", theme); } catch { /* Theme still works without storage. */ }
+    document.documentElement.dataset.theme = theme;
+    document.documentElement.style.colorScheme = theme;
+    const background = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim();
     document.documentElement.style.backgroundColor = background;
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", background);
+    document.querySelector('meta[name="theme-color"]')?.setAttribute("content", background);
   }, [dark]);
 
   useEffect(() => {
-    if (legacyTarget) return;
-    document.title = pageTitles[location.pathname]
-      ?? `${project?.title ?? "Página no encontrada"} — Martín Fierro`;
-    const frame = requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, behavior: "instant" });
-      const heading = document.querySelector("main h1")
-        ?? document.getElementById("contenido");
-      heading?.focus({ preventScroll: true });
+    if (legacyTarget || sectionRoutes[location.pathname]) return;
+    document.title = location.pathname === "/" ? "Martín Fierro — Desarrollador full-stack"
+      : `${project?.title ?? "Página no encontrada"} — Martín Fierro`;
+    let cancelled = false;
+    let frame;
+    // Font metrics must settle before measuring a deep section on a fresh visit.
+    document.fonts.ready.then(() => {
+      if (cancelled) return;
+      frame = requestAnimationFrame(() => {
+        const anchor = location.hash && document.getElementById(location.hash.slice(1));
+        const behavior = matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : location.state?.scrollBehavior ?? "instant";
+        if (anchor) {
+          anchor.scrollIntoView({ block: "start", behavior });
+          (anchor.querySelector("h1, h2") ?? anchor).focus({ preventScroll: true });
+        } else {
+          window.scrollTo({ top: 0, behavior: "instant" });
+          document.querySelector("main h1")?.focus({ preventScroll: true });
+        }
+      });
     });
-    return () => cancelAnimationFrame(frame);
-  }, [location.key, location.pathname, legacyTarget, project?.title]);
+    return () => { cancelled = true; cancelAnimationFrame(frame); };
+  }, [location, legacyTarget, project?.title]);
 
-  const notFound = (
-    <section className="not-found shell">
-      <p>404</p>
-      <h1 tabIndex={-1}>Esta ruta no existe.</h1>
-      <p>Vuelve al catálogo para explorar los proyectos disponibles.</p>
-      <Link className="button primary" to="/proyectos">
-        <ArrowLeft size={17} /> Volver a proyectos
-      </Link>
-    </section>
-  );
+  const notFound = <section className="not-found wide"><p>404</p><h1 tabIndex={-1}>Esta ruta no existe.</h1><p>Vuelve a los proyectos para seguir explorando.</p><SectionLink className="button" section="proyectos"><ArrowLeft size={18} aria-hidden="true" />Volver a proyectos</SectionLink></section>;
 
   return (
-    <div className="site" data-theme={dark ? "dark" : "light"} data-page={pageName}>
-      <a
-        className="skip-link"
-        href="#contenido"
-        onClick={(event) => {
-          event.preventDefault();
-          document.getElementById("contenido")?.focus();
-        }}
-      >
-        Saltar al contenido
-      </a>
-      <Header dark={dark} onToggleTheme={() => setDark(!dark)} />
-      <main id="contenido" tabIndex={-1}>
+    <div className="site" data-theme={dark ? "dark" : "light"}>
+      <a className="skip-link" href="#contenido" onClick={event => { event.preventDefault(); document.getElementById("contenido")?.focus(); }}>Saltar al contenido</a>
+      <Header dark={dark} onToggleTheme={() => setDark(value => !value)} />
+      <main id="contenido" className="site-main" tabIndex={-1}>
         <Routes>
-          <Route
-            path="/"
-            element={
-              legacyTarget ? (
-                <Navigate to={legacyTarget} replace />
-              ) : (
-                <Home />
-              )
-            }
-          />
-          <Route path="/proyectos" element={<Projects />} />
-          <Route path="/sobre-mi" element={<About />} />
-          <Route path="/contacto" element={<Contact />} />
-          <Route
-            path="/proyectos/:slug"
-            element={
-              project ? (
-                <ProjectDetail key={project.slug} project={project} />
-              ) : notFound
-            }
-          />
-          <Route
-            path="/demos/:demoId"
-            element={
-              validDemo ? (
-                <DemoPage
-                  key={demoRoute.params.demoId}
-                  demoId={demoRoute.params.demoId}
-                />
-              ) : notFound
-            }
-          />
+          <Route path="/" element={legacyTarget ? <Navigate to={legacyTarget} replace /> : <Home dark={dark} />} />
+          {Object.entries(sectionRoutes).map(([path, section]) => <Route key={path} path={path} element={<Navigate to={`/#${section}`} replace />} />)}
+          <Route path="/proyectos/:slug" element={project ? <ProjectDetail key={project.slug} project={project} /> : notFound} />
           <Route path="*" element={notFound} />
         </Routes>
       </main>
